@@ -133,7 +133,6 @@
       transition: background-color 0.4s ease, color 0.4s ease;
     }
 
-    /* Thanh cuộn thẩm mỹ cho Modal và Khung Chat */
     ::-webkit-scrollbar {
       width: 6px;
       height: 6px;
@@ -149,7 +148,6 @@
       background: var(--accent-gold);
     }
 
-    /* Interactive Particle Background Canvas */
     #ambientCanvas {
       position: fixed;
       inset: 0;
@@ -1688,7 +1686,6 @@
       border-color: var(--accent-gold);
     }
 
-    /* KHẮC PHỤC TRIỆT ĐỂ LỖI CHỮ TRẮNG TRÊN NỀN TRẮNG CỦA <SELECT> <OPTION> */
     select.form-control {
       background-color: var(--select-bg);
       color: var(--select-text);
@@ -1838,7 +1835,6 @@
     </div>
   </div>
 
-  <!-- Hidden File Inputs for Admin Only -->
   <input type="file" id="avatarInput" accept="image/*" style="display:none" onchange="handleImageUpload(event, 'avatar')" />
   <input type="file" id="qrInput" accept="image/*" style="display:none" onchange="handleImageUpload(event, 'qr')" />
 
@@ -1892,7 +1888,6 @@
       </div>
 
       <div class="hero-grid">
-        <!-- Cột trái: Ảnh đại diện có vòng sáng xoay 360 -->
         <div class="hero-avatar-col">
           <div class="avatar-halo-wrap">
             <img src="111.jpg" alt="Lê Phúc Nhật (Hiểu Sâu Sống Tỉnh Hành Đúng)" class="js-avatar-img" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=500&q=80'" />
@@ -1904,7 +1899,6 @@
           </button>
         </div>
 
-        <!-- Cột giữa: Định vị Thương hiệu & Triết lý sống -->
         <div class="hero-center-col">
           <h1 class="hero-title">LÊ PHÚC NHẬT</h1>
           <p class="hero-subtitle">HIỂU SÂU • SỐNG TỈNH • HÀNH ĐÚNG</p>
@@ -1939,7 +1933,6 @@
           </div>
         </div>
 
-        <!-- Cột phải: Mã QR Tinh Khiết (Không đè ảnh đại diện) -->
         <div class="hero-qr-col">
           <div class="clean-qr-frame" onclick="openQrLightbox()" title="Chạm để phóng to Mã QR">
             <img src="qr.jpg" alt="Mã QR Lê Phúc Nhật" class="js-qr-img" onerror="this.src='https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://lephucnhat.github.io/'" />
@@ -1987,7 +1980,6 @@
       </div>
 
       <div class="enterprise-grid">
-        <!-- Trụ cột 1 -->
         <article class="enterprise-card">
           <div class="enterprise-img-wrap">
             <img src="assets/vuon-uom-keo-son.jpg" alt="HTX Lâm Nghiệp Bền Vững Keo Sơn" onerror="this.src='https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=800&q=80'" />
@@ -2005,7 +1997,6 @@
           </div>
         </article>
 
-        <!-- Trụ cột 2 -->
         <article class="enterprise-card">
           <div class="enterprise-img-wrap">
             <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&amp;w=800&amp;q=80" alt="Hệ Thống AI Thực Chiến & Tự Động Hóa" />
@@ -2023,7 +2014,6 @@
           </div>
         </article>
 
-        <!-- Trụ cột 3 -->
         <article class="enterprise-card">
           <div class="enterprise-img-wrap">
             <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&amp;w=800&amp;q=80" alt="Phụng sự & Truyền cảm hứng" />
@@ -2127,7 +2117,7 @@
       </div>
     </section>
 
-    <!-- F. GÓC CHIÊM NGHIỆM: HIỂU SÂU • SỐNG TỈNH • HÀNH ĐÚNG -->
+    <!-- F. GÓC CHIÊM NGHIỆM -->
     <section id="aiPostsSection" class="section-block">
       <div class="wisdom-header-row">
         <div class="section-head">
@@ -2141,7 +2131,6 @@
       </div>
 
       <div class="wisdom-grid" id="wisdomGrid">
-        <!-- Bài #01 -->
         <article class="wisdom-card">
           <div>
             <div class="wisdom-meta">
@@ -2158,7 +2147,6 @@
           </blockquote>
         </article>
 
-        <!-- Bài #02 -->
         <article class="wisdom-card">
           <div>
             <div class="wisdom-meta">
@@ -2175,7 +2163,6 @@
           </blockquote>
         </article>
 
-        <!-- Bài #03 -->
         <article class="wisdom-card">
           <div>
             <div class="wisdom-meta">
@@ -2327,7 +2314,6 @@
     </div>
   </button>
 
-  <!-- Khung Cửa Sổ Chat AI -->
   <section class="ai-chat-window" id="aiChatWindow" aria-label="Trợ lý AI Lê Phúc Nhật">
     <div class="chat-header">
       <div class="chat-agent-info">
@@ -2347,7 +2333,6 @@
       </div>
     </div>
 
-    <!-- 5 Gợi ý câu hỏi nhanh -->
     <div class="chat-chips-bar">
       <button class="quick-chip" onclick="sendQuickQuestion('Triết lý Hiểu sâu Sống tỉnh Hành đúng của anh Lê Phúc Nhật là gì?')">✨ Triết lý Hiểu sâu Sống tỉnh?</button>
       <button class="quick-chip" onclick="sendQuickQuestion('Cho mình hỏi về HTX Lâm Nghiệp Keo Sơn và các sản phẩm dược liệu Xứ Cùa?')">🌱 HTX Keo Sơn &amp; Dược liệu?</button>
@@ -2356,10 +2341,8 @@
       <button class="quick-chip" onclick="sendQuickQuestion('Làm sao để kết nối Facebook và hợp tác cùng anh Lê Phúc Nhật?')">📞 Kết nối Facebook &amp; Hợp tác?</button>
     </div>
 
-    <!-- Danh sách tin nhắn -->
     <div class="chat-messages" id="chatMessages"></div>
 
-    <!-- Ô nhập câu hỏi -->
     <form class="chat-input-bar" onsubmit="handleChatSubmit(event)">
       <input type="text" id="chatInput" placeholder="Nhập câu hỏi gửi đến anh Lê Phúc Nhật..." autocomplete="off" />
       <button type="submit" class="chat-send-btn" title="Gửi">➤</button>
@@ -2370,7 +2353,7 @@
   </section>
 
   <!-- ==========================================================================
-       6. BẢNG CÀI ĐẶT API AI & KIỂM TRA KHÓA TRỰC TIẾP (ĐÃ FIX DROPDOWN & AUTO CLOUD)
+       6. BẢNG CÀI ĐẶT API AI & KIỂM TRA KHÓA TRỰC TIẾP
        ========================================================================== -->
   <div class="modal-backdrop" id="apiSettingsModal">
     <div class="modal-card">
@@ -2383,13 +2366,13 @@
         <label class="form-label">Chế độ &amp; Mô hình AI ưu tiên:</label>
         <select id="preferredProviderSelect" class="form-control">
           <option value="auto-cloud">🌟 Cloud AI Tự Động 24/7 + Đa Mô Hình (Khuyên dùng - Không lo lỗi Key)</option>
-          <option value="gemini">Google Gemini AI (Ưu tiên dùng Gemini API Key cá nhân)</option>
-          <option value="deepseek">DeepSeek AI (Ưu tiên dùng DeepSeek API Key cá nhân)</option>
+          <option value="gemini">Google Gemini AI (Ưu tiên dùng Gemini API Key)</option>
+          <option value="deepseek">DeepSeek AI (Ưu tiên dùng DeepSeek API Key)</option>
         </select>
       </div>
 
       <div class="form-group">
-        <label class="form-label">Dòng Model Google Gemini (Tự động chuyển dự phòng nếu quá tải):</label>
+        <label class="form-label">Dòng Model Google Gemini:</label>
         <select id="geminiModelSelect" class="form-control">
           <option value="gemini-2.5-flash">gemini-2.5-flash (Mới nhất - Tốc độ cao)</option>
           <option value="gemini-2.0-flash">gemini-2.0-flash (Ổn định, phản hồi mượt)</option>
@@ -2397,22 +2380,20 @@
         </select>
       </div>
 
-      <!-- Ô nhập & Kiểm tra khóa Google Gemini -->
       <div class="form-group">
-        <label class="form-label">Google Gemini API Key (Tùy chọn - Lấy miễn phí tại aistudio.google.com):</label>
+        <label class="form-label">Google Gemini API Key (Hỗ trợ định dạng AIza... hoặc AQ...):</label>
         <div class="input-row">
-          <input type="password" id="geminiApiKeyInput" class="form-control" placeholder="AIzaSy... (Để trống vẫn chạy Cloud AI 24/7)" />
+          <input type="password" id="geminiApiKeyInput" class="form-control" placeholder="AIzaSy... hoặc AQ... (Để trống vẫn chạy Cloud AI 24/7)" />
           <button type="button" class="test-key-btn" onclick="togglePasswordVisibility('geminiApiKeyInput')" title="Hiện/Ẩn khóa">👁️</button>
           <button type="button" class="test-key-btn" onclick="testSingleApiKey('gemini')">🔍 Kiểm tra khóa</button>
         </div>
         <div id="geminiKeyStatus" class="key-status-box"></div>
       </div>
 
-      <!-- Ô nhập & Kiểm tra khóa DeepSeek -->
       <div class="form-group">
-        <label class="form-label">DeepSeek API Key (Tùy chọn - Tự động thêm sk- nếu thiếu):</label>
+        <label class="form-label">DeepSeek API Key (Tự động thêm tiền tố sk- nếu thiếu):</label>
         <div class="input-row">
-          <input type="password" id="deepseekApiKeyInput" class="form-control" placeholder="sk-... (Để trống vẫn chạy Cloud AI 24/7)" />
+          <input type="password" id="deepseekApiKeyInput" class="form-control" placeholder="sk-... hoặc dán mã hex 32 ký tự" />
           <button type="button" class="test-key-btn" onclick="togglePasswordVisibility('deepseekApiKeyInput')" title="Hiện/Ẩn khóa">👁️</button>
           <button type="button" class="test-key-btn" onclick="testSingleApiKey('deepseek')">🔍 Kiểm tra khóa</button>
         </div>
@@ -2422,7 +2403,7 @@
       <div class="form-group" style="display:flex; align-items:center; gap:8px;">
         <input type="checkbox" id="autoFallbackToggle" checked />
         <label for="autoFallbackToggle" style="font-size:0.8rem; color:var(--text-secondary);">
-          Tự động nối qua <strong>Cổng Cloud AI Miễn Phí 24/7</strong> &amp; Tri thức Nội bộ nếu khóa cá nhân hết hạn mức.
+          Tự động chuyển tiếp mượt mà qua <strong>Cổng Cloud AI Miễn Phí 24/7</strong> nếu khóa cá nhân lỗi hoặc hết hạn mức.
         </label>
       </div>
 
@@ -2431,10 +2412,10 @@
           ✅ Đã tích hợp sẵn Cổng Cloud AI 24/7 cho mọi khách truy cập:
         </div>
         <div style="font-size:0.75rem; color:var(--text-secondary); margin-bottom:8px;">
-          Ngay cả khi anh không nhập khóa hoặc khóa DeepSeek/Gemini hết hạn mức, trợ lý AI vẫn tự động trả lời thông minh Online qua Cloud AI. Nếu anh có khóa riêng đã kiểm tra báo xanh, bấm nút dưới để copy mã nhúng cố định:
+          Giúp website luôn hoạt động ổn định 24/7 mà không lo gián đoạn.
         </div>
         <button type="button" class="admin-chip-btn" onclick="exportEncryptedConfigForCode()">
-          📋 Sao chép cấu hình mã hóa để nhúng vào index.html
+          📋 Sao chép cấu hình mã hóa nhúng vào index.html
         </button>
       </div>
 
@@ -2445,9 +2426,6 @@
     </div>
   </div>
 
-  <!-- ==========================================================================
-       7. CÁC MODAL PHỤ TRỢ (CHIA SẺ, PHÓNG TO QR, GỬI LỜI CHÚC, THÊM BÀI VIẾT)
-       ========================================================================== -->
   <div class="modal-backdrop" id="shareModal">
     <div class="modal-card" style="max-width:420px; text-align:center;">
       <div class="modal-head">
@@ -2537,21 +2515,21 @@
   </div>
 
   <!-- ==========================================================================
-       8. JAVASCRIPT ENGINE: ADMIN MODE, AUTO-REPAIR KEY, 3-LAYER CLOUD AI
+       8. JAVASCRIPT ENGINE: AUTO-REPAIR KEY & 3-LAYER CLOUD AI
        ========================================================================== -->
   <script>
     const DEFAULT_ENCRYPTED_CONFIG = "";
 
     const STORAGE_KEYS = {
-      ADMIN_PIN: "lpn_admin_pin_v3",
-      ADMIN_ACTIVE: "lpn_admin_session_v3",
-      AI_CONFIG: "lpn_ai_config_v3",
-      AVATAR_DATA: "lpn_custom_avatar_v3",
-      QR_DATA: "lpn_custom_qr_v3",
-      LOVE_COUNT: "lpn_love_count_v3",
-      WISHES: "lpn_wishes_list_v3",
-      WISDOM_POSTS: "lpn_wisdom_posts_v3",
-      THEME: "lpn_selected_theme_v3"
+      ADMIN_PIN: "lpn_admin_pin_v4",
+      ADMIN_ACTIVE: "lpn_admin_session_v4",
+      AI_CONFIG: "lpn_ai_config_v4",
+      AVATAR_DATA: "lpn_custom_avatar_v4",
+      QR_DATA: "lpn_custom_qr_v4",
+      LOVE_COUNT: "lpn_love_count_v4",
+      WISHES: "lpn_wishes_list_v4",
+      WISDOM_POSTS: "lpn_wisdom_posts_v4",
+      THEME: "lpn_selected_theme_v4"
     };
 
     function getAdminPin() {
@@ -2583,7 +2561,7 @@
         if (typeof callbackAfterUnlock === "function") {
           callbackAfterUnlock();
         } else {
-          alert("✅ Đã mở Chế độ Quản trị Admin! Các nút chỉnh sửa và cài đặt API đã hiển thị.");
+          alert("✅ Đã mở Chế độ Quản trị Admin!");
         }
       } else {
         alert("❌ Mã PIN không chính xác!");
@@ -2607,7 +2585,7 @@
       const nextPin = prompt("Nhập Mã PIN Admin mới (tối thiểu 4 ký tự):");
       if (nextPin && nextPin.trim().length >= 4) {
         localStorage.setItem(STORAGE_KEYS.ADMIN_PIN, nextPin.trim());
-        alert("✅ Đã cập nhật Mã PIN Admin mới thành công!");
+        alert("✅ Đã cập nhật Mã PIN Admin mới!");
       }
     }
 
@@ -2656,12 +2634,16 @@
     }
 
     /* ==========================================================================
-       B. QUẢN LÝ CẤU HÌNH API & TỰ ĐỘNG CHUẨN HÓA KHÓA (AUTO-REPAIR KEY)
+       B. AUTO-REPAIR & FORMATTING KEYS (Hỗ trợ AIza, AQ, sk-)
        ========================================================================== */
+    function normalizeGeminiKey(rawKey) {
+      if (!rawKey) return "";
+      return rawKey.trim();
+    }
+
     function normalizeDeepSeekKey(rawKey) {
       if (!rawKey) return "";
       const trimmed = rawKey.trim();
-      // Nếu người dùng dán chuỗi 32 ký tự hex (như 47bac00baa994d39af7a3a0104dc280a) thiếu "sk-"
       if (!trimmed.startsWith("sk-") && /^[a-f0-9]{32,}$/i.test(trimmed)) {
         return "sk-" + trimmed;
       }
@@ -2737,34 +2719,32 @@
       }
     }
 
-    // Kiểm tra từng khóa + tự động sửa lỗi dán nhầm ô hoặc thiếu tiền tố sk-
     async function testSingleApiKey(provider) {
       if (provider === "gemini") {
-        let key = document.getElementById("geminiApiKeyInput").value.trim();
+        let key = normalizeGeminiKey(document.getElementById("geminiApiKeyInput").value);
         const preferredModel = document.getElementById("geminiModelSelect").value || "gemini-2.5-flash";
         const statusBox = document.getElementById("geminiKeyStatus");
 
         if (!key) {
           statusBox.className = "key-status-box valid";
-          statusBox.textContent = "🟢 Đang để trống khóa cá nhân: Hệ thống sử dụng Cổng Cloud AI Miễn Phí 24/7 (Hoạt động bình thường!).";
+          statusBox.textContent = "🟢 Đang sử dụng Cổng Cloud AI Miễn Phí 24/7 (Hoạt động mượt mà không cần khóa!).";
           return true;
         }
 
         statusBox.className = "key-status-box testing";
-        statusBox.textContent = "⏳ Đang kết nối máy chủ Google Gemini để kiểm tra khóa...";
+        statusBox.textContent = "⏳ Đang kết nối kiểm tra khóa Google Gemini...";
 
         const startTime = performance.now();
-        const result = await callGeminiWithFallback(key, preferredModel, "Hãy phản hồi đúng 1 từ: OK", true);
+        const result = await callGeminiWithFallback(key, preferredModel, "OK", true);
         const elapsed = Math.round(performance.now() - startTime);
 
         if (result.ok) {
           statusBox.className = "key-status-box valid";
           statusBox.textContent = `🟢 Khóa Gemini hợp lệ & Đang hoạt động! (${elapsed}ms • Model: ${result.usedModel})`;
-          document.getElementById("geminiModelSelect").value = result.usedModel;
           return true;
         } else {
           statusBox.className = "key-status-box valid";
-          statusBox.textContent = `🟡 Lưu ý: ${result.errorMsg} -> Đã tự động kích hoạt Cổng Cloud AI Dự Phòng Miễn Phí 24/7 để web luôn hoạt động mượt mà!`;
+          statusBox.textContent = `🟢 Đã tự động kích hoạt Cổng Cloud AI Dự Phòng 24/7! (Khóa Gemini có phản hồi: ${result.errorMsg} — Trợ lý AI vẫn trả lời Online bình thường!)`;
           return false;
         }
       }
@@ -2775,31 +2755,27 @@
 
         if (!rawInput) {
           statusBox.className = "key-status-box valid";
-          statusBox.textContent = "🟢 Đang để trống khóa DeepSeek: Hệ thống sử dụng Cổng Cloud AI Miễn Phí 24/7 (Hoạt động bình thường!).";
+          statusBox.textContent = "🟢 Đang sử dụng Cổng Cloud AI Miễn Phí 24/7 (Hoạt động mượt mà không cần khóa!).";
           return true;
         }
 
-        // Nếu người dùng vô tình dán khóa Gemini (AIza...) vào ô DeepSeek
-        if (rawInput.startsWith("AIza")) {
+        if (rawInput.startsWith("AIza") || rawInput.startsWith("AQ")) {
           document.getElementById("geminiApiKeyInput").value = rawInput;
           document.getElementById("deepseekApiKeyInput").value = "";
           document.getElementById("preferredProviderSelect").value = "gemini";
           statusBox.className = "key-status-box valid";
-          statusBox.textContent = "🔄 Phát hiện đây là khóa Google Gemini (AIza...). Đã tự động chuyển khóa lên ô Gemini phía trên!";
+          statusBox.textContent = "🔄 Phát hiện đây là khóa Google Gemini. Đã tự động chuyển khóa lên ô Gemini!";
           return await testSingleApiKey("gemini");
         }
 
-        // Tự động bổ sung tiền tố "sk-" nếu chuỗi 32 ký tự hex thiếu "sk-"
         const normalizedKey = normalizeDeepSeekKey(rawInput);
-        if (normalizedKey !== rawInput) {
-          document.getElementById("deepseekApiKeyInput").value = normalizedKey;
-        }
+        document.getElementById("deepseekApiKeyInput").value = normalizedKey;
 
         statusBox.className = "key-status-box testing";
         statusBox.textContent = "⏳ Đang kiểm tra kết nối khóa DeepSeek...";
 
         const startTime = performance.now();
-        const result = await callDeepSeekApi(normalizedKey, "Hãy phản hồi đúng 1 từ: OK", true);
+        const result = await callDeepSeekApi(normalizedKey, "OK", true);
         const elapsed = Math.round(performance.now() - startTime);
 
         if (result.ok) {
@@ -2807,9 +2783,8 @@
           statusBox.textContent = `🟢 Khóa DeepSeek hợp lệ & Đang hoạt động! (${elapsed}ms)`;
           return true;
         } else {
-          // Không chặn người dùng bằng lỗi đỏ nữa mà tự động nối sang Cloud AI Miễn Phí 24/7
           statusBox.className = "key-status-box valid";
-          statusBox.textContent = `🟢 Đã tự động chuyển sang Cổng Cloud AI Miễn Phí 24/7! (Do mã DeepSeek "${rawInput.slice(0, 8)}..." chưa kích hoạt số dư hoặc không khớp trên platform.deepseek.com — Trợ lý AI trên web vẫn trả lời Online bình thường!)`;
+          statusBox.textContent = `🟢 Đã tự động chuyển sang Cổng Cloud AI Miễn Phí 24/7! (Mã DeepSeek chưa nạp số dư hoặc chờ kích hoạt — Trợ lý AI vẫn trả lời Online bình thường!)`;
           return false;
         }
       }
@@ -2818,22 +2793,15 @@
     async function saveAndVerifyApiSettings() {
       let preferredProvider = document.getElementById("preferredProviderSelect").value;
       const geminiModel = document.getElementById("geminiModelSelect").value;
-      const geminiKey = document.getElementById("geminiApiKeyInput").value.trim();
-      const rawDeepseekKey = document.getElementById("deepseekApiKeyInput").value.trim();
-      const deepseekKey = normalizeDeepSeekKey(rawDeepseekKey);
-      const autoFallback = document.getElementById("autoFallbackToggle").checked;
+      const geminiKey = normalizeGeminiKey(document.getElementById("geminiApiKeyInput").value);
+      const deepseekKey = normalizeDeepSeekKey(document.getElementById("deepseekApiKeyInput").value);
 
       let directGeminiOk = false;
       let directDeepseekOk = false;
 
-      if (geminiKey) {
-        directGeminiOk = await testSingleApiKey("gemini");
-      }
-      if (deepseekKey) {
-        directDeepseekOk = await testSingleApiKey("deepseek");
-      }
+      if (geminiKey) directGeminiOk = await testSingleApiKey("gemini");
+      if (deepseekKey) directDeepseekOk = await testSingleApiKey("deepseek");
 
-      // Nếu khóa cá nhân chưa hợp lệ, tự động chuyển chế độ ưu tiên về "auto-cloud" và xóa khóa lỗi để không gọi lỗi 401
       const finalGeminiKey = directGeminiOk ? geminiKey : "";
       const finalDeepseekKey = directDeepseekOk ? deepseekKey : "";
 
@@ -2844,7 +2812,7 @@
 
       const cfg = {
         preferredProvider,
-        geminiModel: document.getElementById("geminiModelSelect").value,
+        geminiModel,
         geminiKey: finalGeminiKey,
         deepseekKey: finalDeepseekKey,
         autoFallback: true
@@ -2852,7 +2820,6 @@
 
       saveAiConfigObject(cfg);
 
-      // Luôn đóng modal mượt mà sau khi lưu
       setTimeout(() => {
         closeModal("apiSettingsModal");
       }, 650);
@@ -2874,17 +2841,17 @@
       const cfg = {
         preferredProvider: document.getElementById("preferredProviderSelect").value,
         geminiModel: document.getElementById("geminiModelSelect").value,
-        geminiKey: document.getElementById("geminiApiKeyInput").value.trim(),
-        deepseekKey: normalizeDeepSeekKey(document.getElementById("deepseekApiKeyInput").value.trim()),
+        geminiKey: normalizeGeminiKey(document.getElementById("geminiApiKeyInput").value),
+        deepseekKey: normalizeDeepSeekKey(document.getElementById("deepseekApiKeyInput").value),
         autoFallback: true
       };
       const encoded = btoa(unescape(encodeURIComponent(JSON.stringify(cfg))));
       navigator.clipboard.writeText(encoded);
-      alert("✅ Đã sao chép chuỗi cấu hình mã hóa vào bộ nhớ tạm!\nAnh có thể dán vào biến DEFAULT_ENCRYPTED_CONFIG trong file index.html.");
+      alert("✅ Đã sao chép cấu hình mã hóa vào bộ nhớ tạm!");
     }
 
     /* ==========================================================================
-       C. ĐỘNG CƠ 3 LỚP AI ONLINE (GEMINI + DEEPSEEK + FREE CLOUD AI 24/7)
+       C. ĐỘNG CƠ 3 LỚP AI ONLINE (HỖ TRỢ AIza, AQ, DEEPSEEK & FREE CLOUD)
        ========================================================================== */
     const SYSTEM_PERSONA_PROMPT = `Bạn là Trợ lý AI chính thức của anh LÊ PHÚC NHẬT trên website danh thiếp số VIP lephucnhat.vn (lephucnhat.github.io).
 Hãy trả lời theo phong cách ấm áp, chân thành, truyền cảm hứng và mang đậm bản sắc "Hiểu Sâu • Sống Tỉnh • Hành Đúng" của anh Lê Phúc Nhật.
@@ -2905,8 +2872,8 @@ QUY TẮC TRẢ LỜI:
 - Chia đoạn rõ ràng, in đậm (**...**) các ý trọng tâm, dùng biểu tượng cảm xúc tinh tế (🌿, ✨, 🤝, 📌).
 - Ngắn gọn, súc tích (khoảng 90 - 170 từ), đi thẳng vào giá trị thực tế và luôn kết thúc bằng lời chúc bình an hoặc gợi ý kết nối.`;
 
-    // Lớp 1A: Google Gemini API
     async function callGeminiWithFallback(apiKey, preferredModel, userQuestion, isTestPing = false) {
+      const cleanKey = normalizeGeminiKey(apiKey);
       const candidateModels = [
         preferredModel,
         "gemini-2.5-flash",
@@ -2918,7 +2885,7 @@ QUY TẮC TRẢ LỜI:
 
       for (const modelName of candidateModels) {
         try {
-          const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/${modelName}:generateContent?key=${encodeURIComponent(apiKey)}`;
+          const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/${modelName}:generateContent?key=${encodeURIComponent(cleanKey)}`;
           const promptText = isTestPing
             ? userQuestion
             : `${SYSTEM_PERSONA_PROMPT}\n\nCâu hỏi của khách truy cập: "${userQuestion}"\nHãy trả lời ấm áp, sâu sắc và chuẩn xác:`;
@@ -2949,11 +2916,11 @@ QUY TẮC TRẢ LỜI:
             if (code === 400 || code === 401 || code === 403) {
               return {
                 ok: false,
-                errorMsg: `Mã khóa Gemini chưa chính xác (${code}).`
+                errorMsg: `Mã khóa chưa hợp lệ (${code}).`
               };
             }
             if (code === 429) {
-              lastError = "Khóa Gemini vượt hạn mức tạm thời (429).";
+              lastError = "Vượt hạn mức tạm thời (429).";
               continue;
             }
             lastError = `Lỗi ${code} (${modelName})`;
@@ -2966,7 +2933,6 @@ QUY TẮC TRẢ LỜI:
       return { ok: false, errorMsg: lastError };
     }
 
-    // Lớp 1B: DeepSeek API
     async function callDeepSeekApi(apiKey, userQuestion, isTestPing = false) {
       try {
         const cleanKey = normalizeDeepSeekKey(apiKey);
@@ -2997,8 +2963,6 @@ QUY TẮC TRẢ LỜI:
           };
         } else {
           const code = response.status;
-          if (code === 401) return { ok: false, errorMsg: "Mã khóa DeepSeek không hợp lệ (401)." };
-          if (code === 402) return { ok: false, errorMsg: "Tài khoản DeepSeek chưa nạp số dư (402)." };
           return { ok: false, errorMsg: `Lỗi HTTP ${code}` };
         }
       } catch (e) {
@@ -3006,7 +2970,6 @@ QUY TẮC TRẢ LỜI:
       }
     }
 
-    // Lớp 2: Cổng Cloud AI Miễn Phí 24/7 (Hoạt động trực tuyến không cần API Key trả phí)
     async function callFreeCloudAiGateway(userQuestion) {
       try {
         const controller = new AbortController();
@@ -3037,7 +3000,7 @@ QUY TẮC TRẢ LỜI:
     }
 
     /* ==========================================================================
-       D. BỘ TRI THỨC NỘI BỘ THÔNG MINH (ĐÃ FIX LỖI CÚ PHÁP (.vcf))
+       D. BỘ TRI THỨC NỘI BỘ THÔNG MINH
        ========================================================================== */
     function generateSmartOfflineReply(question) {
       const q = question.toLowerCase();
@@ -3100,7 +3063,7 @@ Anh **Lê Phúc Nhật** (*Hiểu Sâu • Sống Tỉnh • Hành Đúng*) hi�
 2. **AI Thực Chiến & Tự Động Hóa:** Kiến tạo **36+ mô-đun ứng dụng AI** và vận hành **24+ kênh nội dung**.
 3. **Lan tỏa lối sống Tử tế từ Gốc:** Chia sẻ tư duy kỷ luật thân - tâm - trí và hạnh phúc gia đình.
 
-✨ Bạn muốn mình chia sẻ chi tiết hơn về **HTX Keo Sơn**, **Giải pháp AI Thực chiến**, hay **Kết nối hợp tác** cùng anh Nhật hôm nay ạ?`;
+✨ Bạn muốn mình chia sẻ chi tiết hơn về **HTX Keo Sơn**, **Giải pháp AI Thực chiến**, hay **Kết nối hợp tác** cùng anh Nhật hôm nhau ạ?`;
     }
 
     /* ==========================================================================
@@ -3191,7 +3154,6 @@ Anh **Lê Phúc Nhật** (*Hiểu Sâu • Sống Tỉnh • Hành Đúng*) hi�
       const cfg = loadAiConfig();
       let finalAnswer = null;
 
-      // Lớp 1: Nếu có khóa Gemini hoặc DeepSeek hợp lệ
       if (cfg.preferredProvider === "deepseek" && cfg.deepseekKey) {
         const res = await callDeepSeekApi(cfg.deepseekKey, question, false);
         if (res.ok) {
@@ -3210,7 +3172,6 @@ Anh **Lê Phúc Nhật** (*Hiểu Sâu • Sống Tỉnh • Hành Đúng*) hi�
         }
       }
 
-      // Lớp 2: Gọi Cổng Cloud AI Miễn Phí 24/7 (Không cần API Key)
       if (!finalAnswer) {
         const cloudRes = await callFreeCloudAiGateway(question);
         if (cloudRes.ok) {
@@ -3218,7 +3179,6 @@ Anh **Lê Phúc Nhật** (*Hiểu Sâu • Sống Tỉnh • Hành Đúng*) hi�
         }
       }
 
-      // Lớp 3: Bộ Tri Thức Nội Bộ Chuẩn Xác 100%
       if (!finalAnswer) {
         finalAnswer = generateSmartOfflineReply(question);
       }
@@ -3228,7 +3188,7 @@ Anh **Lê Phúc Nhật** (*Hiểu Sâu • Sống Tỉnh • Hành Đúng*) hi�
     }
 
     /* ==========================================================================
-       F. TIỆN ÍCH DANH BẠ (.VCF), CHIA SẺ, THẢ TIM, ĐỔI ẢNH ADMIN & ĐỒNG HỒ
+       F. TIỆN ÍCH KHÁC & ADMIN
        ========================================================================== */
     function downloadVCard() {
       const vcardContent = [
@@ -3291,7 +3251,7 @@ Anh **Lê Phúc Nhật** (*Hiểu Sâu • Sống Tỉnh • Hành Đúng*) hi�
       if (navigator.share) {
         navigator.share({
           title: "Lê Phúc Nhật | Hiểu Sâu • Sống Tỉnh • Hành Đúng",
-          text: "Danh thiếp thông minh & Không gian số của anh Lê Phúc Nhật - Chủ tịch HTX Lâm Nghiệp Bền Vững Keo Sơn & Chuyên gia AI Thực Chiến.",
+          text: "Danh thiếp thông minh & Không gian số của anh Lê Phúc Nhật.",
           url: window.location.href
         });
       } else {
