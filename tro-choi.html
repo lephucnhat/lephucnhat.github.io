@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Lê Phúc Nhật | Vũ Trụ Web-in-Web Tỉnh Thức (lephucnhat.vn)</title>
+    <title>Lê Phúc Nhật | Vũ Trụ Web-in-Web Tỉnh Thức v3.0 (lephucnhat.vn)</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts: Be Vietnam Pro -->
@@ -23,8 +23,6 @@
                         emeraldDeep: '#041f18',
                         emeraldCard: '#083327',
                         goldWise: '#f59e0b',
-                        sproutBg: '#f0fdf4',
-                        sproutCard: '#ffffff'
                     }
                 }
             }
@@ -40,7 +38,6 @@
             font-family: 'Be Vietnam Pro', sans-serif;
             overflow-x: hidden;
         }
-        /* Custom Scrollbar */
         ::-webkit-scrollbar {
             width: 5px;
             height: 5px;
@@ -52,58 +49,66 @@
             background: rgba(245, 158, 11, 0.35);
             border-radius: 9999px;
         }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
 
-        /* Animations */
         @keyframes floatSlow {
             0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-6px); }
+            50% { transform: translateY(-5px); }
         }
         .animate-float {
             animation: floatSlow 3.5s ease-in-out infinite;
         }
         @keyframes pulseGlow {
-            0%, 100% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.5); }
-            50% { box-shadow: 0 0 22px 6px rgba(245, 158, 11, 0.28); }
+            0%, 100% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.55); }
+            50% { box-shadow: 0 0 22px 6px rgba(245, 158, 11, 0.3); }
         }
         .glow-gold {
-            animation: pulseGlow 2.5s infinite;
+            animation: pulseGlow 2.4s infinite;
         }
 
-        /* 3D Card Flip */
+        /* 3D Card Flip Engine */
         .perspective-1000 {
             perspective: 1000px;
         }
-        .transform-style-3d {
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
             transform-style: preserve-3d;
-            transition: transform 0.65s cubic-bezier(0.23, 1, 0.32, 1);
         }
-        .backface-hidden {
+        .flip-card-inner.is-flipped {
+            transform: rotateY(180deg);
+        }
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            inset: 0;
             backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
         }
-        .rotate-y-180 {
+        .flip-card-back {
             transform: rotateY(180deg);
         }
 
-        /* Wheel Spin Transition */
+        /* Wheel Spin Physics */
         .wheel-spinning {
-            transition: transform 3.4s cubic-bezier(0.15, 0.85, 0.25, 1);
+            transition: transform 3.2s cubic-bezier(0.12, 0.88, 0.18, 1);
         }
 
         /* Glassmorphism */
         .glass-dark {
-            background: rgba(8, 47, 36, 0.78);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(251, 191, 36, 0.22);
-        }
-        .glass-light {
-            background: rgba(255, 255, 255, 0.88);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(16, 185, 129, 0.3);
+            background: rgba(6, 38, 29, 0.84);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border: 1px solid rgba(251, 191, 36, 0.24);
         }
 
-        /* Particle Canvas */
         #particleCanvas {
             pointer-events: none;
             position: fixed;
@@ -112,86 +117,91 @@
         }
     </style>
 </head>
-<body id="appBody" class="bg-gradient-to-br from-[#02130e] via-[#06281e] to-[#0b192c] text-emerald-50 min-h-screen flex flex-col items-center justify-center md:py-4 transition-colors duration-500">
+<body id="appBody" class="bg-gradient-to-br from-[#02130e] via-[#06281e] to-[#0b192c] text-emerald-50 min-h-screen flex flex-col items-center justify-center md:py-3 transition-colors duration-500">
 
     <!-- Particle Celebration Overlay -->
     <canvas id="particleCanvas"></canvas>
 
-    <!-- Desktop Ambient Backdrop Info (Hidden on Mobile, visible on large screens) -->
-    <div class="hidden xl:flex fixed left-7 top-1/2 -translate-y-1/2 max-w-xs flex-col gap-4 p-5 rounded-3xl glass-dark text-sm border border-amber-500/20 shadow-2xl">
-        <div class="flex items-center gap-3">
-            <div class="w-10 h-10 rounded-2xl bg-gradient-to-br from-amber-400 to-emerald-600 flex items-center justify-center font-extrabold text-slate-950 text-lg shadow-lg">
+    <!-- Desktop Left Control Panel (Visible on large screens) -->
+    <aside class="hidden xl:flex fixed left-6 top-1/2 -translate-y-1/2 w-72 flex-col gap-3.5 p-5 rounded-3xl glass-dark text-sm shadow-2xl z-20">
+        <a href="index.html" class="w-full py-2.5 px-3.5 rounded-2xl bg-white/10 hover:bg-amber-500 hover:text-slate-950 text-amber-300 font-extrabold text-xs border border-amber-400/40 transition flex items-center justify-center gap-2 shadow-md">
+            <span>⬅</span> <span>Về Trang Chủ lephucnhat.vn</span>
+        </a>
+
+        <div class="flex items-center gap-3 pt-1">
+            <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-amber-400 to-emerald-600 flex items-center justify-center font-extrabold text-slate-950 text-base shadow-lg shrink-0">
                 LPN
             </div>
             <div>
-                <h2 class="font-bold text-amber-300 text-base">Lê Phúc Nhật OS</h2>
-                <p class="text-xs text-emerald-300/80">Kiến trúc Web-in-Web v2.4 (24/7)</p>
+                <h2 class="font-extrabold text-amber-300 text-sm">Lê Phúc Nhật OS</h2>
+                <p class="text-[11px] text-emerald-300/80">Web-in-Web v3.0 Pro Max</p>
             </div>
         </div>
-        <p class="text-xs leading-relaxed text-emerald-100/80">
-            Hệ điều hành <strong>N trang web trong 1 trang web</strong>. Tích hợp cơ chế <strong>2 Tầng Nhận Thức</strong> (Hiền Triết & Trẻ Nhỏ) cùng đường ống <strong>Xây Web Bằng Mồm</strong> qua giọng nói & Telegram.
+
+        <p class="text-xs leading-relaxed text-emerald-100/85">
+            Hệ điều hành <strong>N thế giới con trong 1 trang web</strong>. Chuyển hóa Đạo & Đời thành trò chơi tương tác cho cả <strong>Bậc Hiền Triết</strong> lẫn <strong>Trẻ Nhỏ</strong>.
         </p>
+
         <div class="space-y-2 text-xs border-t border-emerald-700/50 pt-3">
-            <div class="flex justify-between">
-                <span class="text-emerald-300/70">Trạng thái Antigravity:</span>
-                <span class="text-emerald-400 font-semibold flex items-center gap-1">
-                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span> Online 24/7
-                </span>
+            <div class="flex justify-between items-center">
+                <span class="text-emerald-300/75">Cấp bậc hiện tại:</span>
+                <span id="desktopRankBadge" class="text-amber-300 font-bold">🌳 Cổ Thụ Tỉnh Thức</span>
             </div>
-            <div class="flex justify-between">
-                <span class="text-emerald-300/70">Tần số âm thanh:</span>
-                <span id="desktopFreqBadge" class="text-amber-300 font-semibold">528Hz Chữa Lành</span>
+            <div class="flex justify-between items-center">
+                <span class="text-emerald-300/75">Tần số âm thanh:</span>
+                <span class="text-emerald-300 font-semibold">528Hz & 432Hz</span>
             </div>
-            <div class="flex justify-between">
-                <span class="text-emerald-300/70">Tổng số Web Con:</span>
+            <div class="flex justify-between items-center">
+                <span class="text-emerald-300/75">Tổng số Thế Giới:</span>
                 <span id="desktopWebCount" class="text-white font-bold">6 Thế Giới</span>
             </div>
         </div>
-        <button onclick="openVoiceBuilderModal()" class="w-full py-2.5 px-4 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 text-slate-950 font-bold text-xs shadow-lg hover:brightness-110 active:scale-95 transition flex items-center justify-center gap-2">
-            <span>🎙️</span> Thử "Xây Web Bằng Mồm" Ngay
+
+        <button onclick="openVoiceBuilderModal()" class="w-full py-2.5 px-4 rounded-xl bg-gradient-to-r from-amber-400 via-amber-500 to-orange-500 text-slate-950 font-extrabold text-xs shadow-lg hover:brightness-110 active:scale-95 transition flex items-center justify-center gap-2">
+            <span>🎙️</span> <span>Xây Web Bằng Mồm AI</span>
         </button>
-    </div>
+    </aside>
 
-    <!-- MAIN SUPER-APP OS CONTAINER (Phone Frame on Desktop, Full Screen on Mobile) -->
-    <main id="phoneShell" class="relative w-full md:max-w-[440px] h-screen md:h-[92vh] md:max-h-[880px] md:rounded-[42px] overflow-hidden flex flex-col shadow-[0_25px_70px_-15px_rgba(0,0,0,0.85)] md:border-[6px] md:border-emerald-950/90 glass-dark transition-all duration-500">
+    <!-- MAIN SUPER-APP OS CONTAINER -->
+    <main id="phoneShell" class="relative w-full md:max-w-[460px] h-screen md:h-[94vh] md:max-h-[900px] md:rounded-[40px] overflow-hidden flex flex-col shadow-[0_25px_70px_-15px_rgba(0,0,0,0.9)] md:border-[5px] md:border-emerald-950/95 glass-dark transition-all duration-500">
 
-        <!-- 1. TOP OS STATUS BAR -->
-        <header id="osStatusBar" class="px-4 pt-3 pb-2 flex items-center justify-between border-b border-white/10 shrink-0 z-20">
-            <!-- Left: Vietnam Clock & Live Pulse -->
+        <!-- 1. TOP OS STATUS BAR (Có nút Thoát Về Trang Chủ rõ ràng) -->
+        <header id="osStatusBar" class="px-3.5 pt-2.5 pb-2 flex items-center justify-between border-b border-white/10 shrink-0 z-20 bg-black/20">
+            <!-- Left: Prominent Back to Main Website Button + Clock -->
             <div class="flex items-center gap-2">
-                <span class="relative flex h-2.5 w-2.5">
-                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                    <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
-                </span>
-                <span id="vnClock" class="text-xs font-bold tracking-wider">04:30</span>
-                <span class="text-[10px] px-1.5 py-0.5 rounded bg-amber-500/20 text-amber-300 font-medium border border-amber-400/30">lephucnhat.vn</span>
+                <a href="index.html" class="flex items-center gap-1 px-2.5 py-1 rounded-full bg-amber-500/20 hover:bg-amber-500 hover:text-slate-950 text-amber-300 border border-amber-400/40 text-[11px] font-extrabold transition active:scale-95 shadow-sm" title="Quay về trang chủ lephucnhat.vn">
+                    <span>⬅</span>
+                    <span>Trang Chủ</span>
+                </a>
+                <div class="hidden sm:flex items-center gap-1.5 pl-1">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                    <span id="vnClock" class="text-[11px] font-bold text-emerald-200">04:30</span>
+                </div>
             </div>
 
             <!-- Right: Seed Counter & 528Hz Audio Toggle -->
-            <div class="flex items-center gap-2">
-                <!-- Seed / EXP Badge -->
-                <button onclick="switchBottomTab('stats')" class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-amber-500/20 border border-amber-400/40 text-amber-300 text-xs font-bold hover:bg-amber-500/30 active:scale-95 transition" title="Hạt Giống Tỉnh Thức">
+            <div class="flex items-center gap-1.5">
+                <button onclick="openMiniWeb('hub-24-channels')" class="flex items-center gap-1 px-2.5 py-1 rounded-full bg-amber-500/20 border border-amber-400/40 text-amber-300 text-xs font-extrabold hover:bg-amber-500/30 active:scale-95 transition" title="Hạt Giống Tỉnh Thức">
                     <span>🌱</span>
                     <span id="seedCountDisplay">108</span>
-                    <span class="text-[10px] opacity-80">Hạt</span>
+                    <span class="text-[10px] opacity-85">Hạt</span>
                 </button>
 
-                <!-- 528Hz Healing Sound & SFX Toggle -->
-                <button id="audioToggleBtn" onclick="toggleHealingAudio()" class="flex items-center gap-1 px-2.5 py-1 rounded-full bg-emerald-800/60 border border-emerald-500/40 text-emerald-200 text-xs font-medium hover:bg-emerald-700/60 active:scale-95 transition">
+                <button id="audioToggleBtn" onclick="toggleHealingAudio()" class="flex items-center gap-1 px-2.5 py-1 rounded-full bg-emerald-800/60 border border-emerald-500/40 text-emerald-200 text-xs font-semibold hover:bg-emerald-700/60 active:scale-95 transition">
                     <span id="audioIcon">🔇</span>
-                    <span id="audioLabel" class="text-[11px]">528Hz</span>
+                    <span id="audioLabel" class="text-[10px]">528Hz</span>
                 </button>
             </div>
         </header>
 
         <!-- 2. DUAL-BRAIN MODE SWITCHER ("Thanh Gạt 2 Tầng Nhận Thức") -->
-        <section class="px-4 pt-3 pb-2 shrink-0 z-10">
-            <div id="modeSwitcherWrap" class="p-1 rounded-2xl bg-black/35 border border-white/10 grid grid-cols-2 gap-1 relative">
+        <section class="px-3.5 pt-2.5 pb-1.5 shrink-0 z-10">
+            <div class="p-1 rounded-2xl bg-black/40 border border-white/10 grid grid-cols-2 gap-1">
                 <button id="btnModeElder" onclick="setCognitiveMode('elder')" class="py-2 px-3 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 transition-all duration-300 bg-gradient-to-r from-amber-500 to-yellow-500 text-slate-950 shadow-md">
                     <span class="text-sm">🌳</span>
                     <div class="text-left leading-tight">
                         <div>Hệ Cổ Thụ</div>
-                        <div class="text-[9px] font-normal opacity-85">Hiền Triết • Nhân Tâm</div>
+                        <div class="text-[9px] font-semibold opacity-85">Hiền Triết • Nhân Tâm</div>
                     </div>
                 </button>
                 <button id="btnModeSprout" onclick="setCognitiveMode('sprout')" class="py-2 px-3 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 transition-all duration-300 text-emerald-200/80 hover:text-white">
@@ -205,229 +215,198 @@
         </section>
 
         <!-- 3. SCROLLABLE OS WORKSPACE -->
-        <div id="osScrollContent" class="flex-1 overflow-y-auto px-4 pb-24 space-y-4">
+        <div id="osScrollContent" class="flex-1 overflow-y-auto px-3.5 pb-24 space-y-3.5 pt-1">
 
-            <!-- Hero Wisdom / Greeting Card -->
-            <div id="heroBanner" class="relative rounded-3xl p-4 overflow-hidden border border-amber-400/30 bg-gradient-to-br from-emerald-900/90 via-emerald-950 to-slate-900 shadow-xl">
-                <div class="absolute -right-6 -bottom-6 text-7xl opacity-15 pointer-events-none select-none" id="heroWatermark">🌲</div>
-                <div class="flex items-start justify-between gap-3">
-                    <div class="space-y-1.5">
-                        <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-semibold bg-amber-400/20 text-amber-300 border border-amber-400/30">
+            <!-- Hero Wisdom / Rank Progress Card -->
+            <div id="heroBanner" class="relative rounded-3xl p-4 overflow-hidden border border-amber-400/35 bg-gradient-to-br from-emerald-900/90 via-emerald-950 to-slate-900 shadow-xl">
+                <div class="absolute -right-5 -bottom-5 text-7xl opacity-15 pointer-events-none select-none">🌲</div>
+                <div class="space-y-1.5 relative z-10">
+                    <div class="flex items-center justify-between gap-2">
+                        <div class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-amber-400/20 text-amber-300 border border-amber-400/30">
                             <span id="heroTagIcon">✨</span>
-                            <span id="heroTagText">Tư Duy Ngược • Đứng Trên Vai Người Khổng Lồ</span>
+                            <span id="heroTagText">Hiểu Sâu • Sống Tỉnh • Hành Đúng</span>
                         </div>
-                        <h1 id="heroTitle" class="text-base font-extrabold text-white leading-snug">
-                            "Cây muốn vươn cao chạm nắng, rễ phải cắm sâu vào lòng đất mẹ."
-                        </h1>
-                        <p id="heroSub" class="text-xs text-emerald-200/85 leading-relaxed">
-                            Chào mừng bạn đến với Vũ Trụ <strong>Lê Phúc Nhật</strong>. Mỗi lần bấm nút là một hạt giống Trí Tuệ, Nhân Tâm & Hạnh Phúc được gieo xuống.
-                        </p>
+                        <span id="rankPill" class="text-[10px] font-extrabold text-emerald-300 bg-black/40 px-2.5 py-0.5 rounded-full border border-emerald-500/30">
+                            Cấp độ: Đại Thụ
+                        </span>
                     </div>
+                    <h1 id="heroTitle" class="text-sm sm:text-base font-extrabold text-white leading-snug pt-0.5">
+                        "Cây muốn vươn cao chạm nắng, rễ phải cắm sâu vào lòng đất mẹ."
+                    </h1>
+                    <p id="heroSub" class="text-[11px] text-emerald-200/90 leading-relaxed">
+                        Chạm vào bất kỳ Thế Giới Con nào bên dưới để trải nghiệm trò chơi trí tuệ và gieo Hạt Giống Tỉnh Thức.
+                    </p>
                 </div>
 
-                <!-- Quick Action Pills inside Hero -->
-                <div class="mt-3 pt-2.5 border-t border-white/10 flex items-center justify-between gap-2 text-[11px]">
-                    <button onclick="openMiniWeb('wheel-wisdom')" class="flex-1 py-1.5 px-2.5 rounded-xl bg-amber-500/20 hover:bg-amber-500/30 border border-amber-400/30 text-amber-200 font-semibold flex items-center justify-center gap-1 active:scale-95 transition">
-                        <span>🎡</span> <span id="quickBtn1">Rút Thẻ Nhân Tâm</span>
+                <!-- Quick Launchers inside Hero -->
+                <div class="mt-3 pt-2.5 border-t border-white/10 grid grid-cols-3 gap-1.5 text-[11px] relative z-10">
+                    <button onclick="openMiniWeb('wheel-wisdom')" class="py-1.5 px-2 rounded-xl bg-amber-500/25 hover:bg-amber-500/35 border border-amber-400/40 text-amber-200 font-bold flex items-center justify-center gap-1 active:scale-95 transition">
+                        <span>🎡</span> <span id="quickBtn1" class="truncate">Vòng Quay</span>
                     </button>
-                    <button onclick="openMiniWeb('forest-quiz')" class="flex-1 py-1.5 px-2.5 rounded-xl bg-emerald-500/20 hover:bg-emerald-500/30 border border-emerald-400/30 text-emerald-200 font-semibold flex items-center justify-center gap-1 active:scale-95 transition">
-                        <span>🦌</span> <span id="quickBtn2">Đố Vui Rừng Xanh</span>
+                    <button onclick="openMiniWeb('so-tay-nhan-tam')" class="py-1.5 px-2 rounded-xl bg-purple-500/25 hover:bg-purple-500/35 border border-purple-400/40 text-purple-200 font-bold flex items-center justify-center gap-1 active:scale-95 transition">
+                        <span>📜</span> <span class="truncate">Lật Thẻ 3D</span>
+                    </button>
+                    <button onclick="openMiniWeb('rung-keo-son')" class="py-1.5 px-2 rounded-xl bg-emerald-500/25 hover:bg-emerald-500/35 border border-emerald-400/40 text-emerald-200 font-bold flex items-center justify-center gap-1 active:scale-95 transition">
+                        <span>🌲</span> <span class="truncate">Trồng Rừng</span>
                     </button>
                 </div>
             </div>
 
-            <!-- Live Search & Category Filter Bar -->
+            <!-- Live Search & Voice-to-Web Button -->
             <div class="flex items-center gap-2">
                 <div class="relative flex-1">
-                    <input id="searchAppInput" oninput="filterMiniApps()" type="text" placeholder="Tìm thế giới con, trò chơi, bài học..." class="w-full pl-9 pr-3 py-2 rounded-2xl bg-black/25 border border-white/15 text-xs placeholder-emerald-200/50 focus:outline-none focus:border-amber-400 transition">
-                    <span class="absolute left-3 top-1/2 -translate-y-1/2 text-xs opacity-60">🔍</span>
+                    <input id="searchAppInput" oninput="renderMiniWebGrid()" type="text" placeholder="Tìm trò chơi, nhân tâm, rừng xanh..." class="w-full pl-8 pr-3 py-2 rounded-2xl bg-black/30 border border-white/15 text-xs text-white placeholder-emerald-200/50 focus:outline-none focus:border-amber-400 transition">
+                    <span class="absolute left-2.5 top-1/2 -translate-y-1/2 text-xs opacity-60">🔍</span>
                 </div>
-                <button onclick="openVoiceBuilderModal()" class="px-3 py-2 rounded-2xl bg-gradient-to-r from-amber-500 to-orange-500 text-slate-950 font-extrabold text-xs flex items-center gap-1 shadow-md active:scale-95 transition shrink-0" title="Xây Web Bằng Mồm">
-                    <span>🎙️</span> <span>+Web Mới</span>
+                <button onclick="openVoiceBuilderModal()" class="px-3 py-2 rounded-2xl bg-gradient-to-r from-amber-400 to-orange-500 text-slate-950 font-extrabold text-xs flex items-center gap-1 shadow-md active:scale-95 transition shrink-0">
+                    <span>🎙️</span> <span>+Đúc Web</span>
                 </button>
             </div>
 
             <!-- Filter Category Pills -->
             <div class="flex items-center gap-1.5 overflow-x-auto pb-1 no-scrollbar text-[11px]">
                 <button onclick="setAppCategory('all')" data-cat="all" class="cat-pill px-3 py-1 rounded-full font-bold bg-amber-500 text-slate-950 shrink-0 transition">Tất cả (<span id="countAll">6</span>)</button>
-                <button onclick="setAppCategory('core')" data-cat="core" class="cat-pill px-3 py-1 rounded-full font-medium bg-white/10 hover:bg-white/20 shrink-0 transition">🔥 3 Siêu Game Gốc</button>
-                <button onclick="setAppCategory('wisdom')" data-cat="wisdom" class="cat-pill px-3 py-1 rounded-full font-medium bg-white/10 hover:bg-white/20 shrink-0 transition">📜 Nhân Tâm & Trí Tuệ</button>
-                <button onclick="setAppCategory('nature')" data-cat="nature" class="cat-pill px-3 py-1 rounded-full font-medium bg-white/10 hover:bg-white/20 shrink-0 transition">🌲 Rừng Xanh & Trẻ Nhỏ</button>
-                <button onclick="setAppCategory('voice')" data-cat="voice" class="cat-pill px-3 py-1 rounded-full font-medium bg-white/10 hover:bg-white/20 shrink-0 transition">⚡ Đúc Bằng Mồm</button>
+                <button onclick="setAppCategory('core')" data-cat="core" class="cat-pill px-3 py-1 rounded-full font-medium bg-white/10 hover:bg-white/20 shrink-0 transition">🔥 Đỉnh Cao</button>
+                <button onclick="setAppCategory('wisdom')" data-cat="wisdom" class="cat-pill px-3 py-1 rounded-full font-medium bg-white/10 hover:bg-white/20 shrink-0 transition">📜 Nhân Tâm & Tư Duy</button>
+                <button onclick="setAppCategory('nature')" data-cat="nature" class="cat-pill px-3 py-1 rounded-full font-medium bg-white/10 hover:bg-white/20 shrink-0 transition">🌲 Rừng Keo Sơn</button>
+                <button onclick="setAppCategory('voice')" data-cat="voice" class="cat-pill px-3 py-1 rounded-full font-medium bg-white/10 hover:bg-white/20 shrink-0 transition">🎙️ Đúc Bằng Mồm</button>
             </div>
 
-            <!-- N-WORLDS SUPER-APP GRID (Web-in-Web Launcher) -->
+            <!-- N-WORLDS SUPER-APP GRID -->
             <section>
-                <div class="flex items-center justify-between mb-2.5">
+                <div class="flex items-center justify-between mb-2">
                     <h2 class="text-xs font-extrabold uppercase tracking-wider text-amber-300 flex items-center gap-1.5">
-                        <span>🪐</span> <span id="gridHeaderTitle">Vũ Trụ Mini-Web (Chạm Để Vào)</span>
+                        <span>🪐</span> <span>6 Thế Giới Tương Tác (Chạm Để Mở)</span>
                     </h2>
-                    <span class="text-[10px] opacity-75" id="activeModeIndicator">Đang ở: Hệ Cổ Thụ</span>
+                    <span class="text-[10px] text-emerald-300 font-semibold" id="activeModeIndicator">🌳 Hệ Cổ Thụ</span>
                 </div>
 
-                <!-- Dynamic Grid populated by WEBVERSE_REGISTRY -->
-                <div id="miniWebGrid" class="grid grid-cols-2 gap-3">
-                    <!-- Rendered dynamically via JS -->
-                </div>
-            </section>
-
-            <!-- 24-CHANNEL LIVE STREAM TICKER (Đồng Bộ Đa Kênh) -->
-            <section class="rounded-3xl p-3.5 bg-black/25 border border-white/10 space-y-2.5">
-                <div class="flex items-center justify-between">
-                    <div class="flex items-center gap-1.5">
-                        <span class="w-2 h-2 rounded-full bg-rose-500 animate-ping"></span>
-                        <h3 class="text-xs font-bold text-amber-300">Dòng Chảy 24 Kênh Về Web</h3>
-                    </div>
-                    <button onclick="openMiniWeb('hub-24-channels')" class="text-[11px] text-emerald-300 hover:underline font-semibold">Mở Trạm Tổng ➔</button>
-                </div>
-                <div class="flex gap-2 overflow-x-auto pb-1 text-xs">
-                    <div onclick="openMiniWeb('hub-24-channels')" class="cursor-pointer shrink-0 px-3 py-2 rounded-2xl bg-white/5 border border-white/10 hover:border-amber-400/50 transition w-44">
-                        <div class="font-bold text-amber-300 truncate">🌳 GỐC & HTX Keo Sơn</div>
-                        <div class="text-[10px] opacity-75 mt-0.5 truncate">Rừng bền vững - Quảng Trị</div>
-                    </div>
-                    <div onclick="openMiniWeb('hub-24-channels')" class="cursor-pointer shrink-0 px-3 py-2 rounded-2xl bg-white/5 border border-white/10 hover:border-amber-400/50 transition w-44">
-                        <div class="font-bold text-emerald-300 truncate">📖 Sổ Tay Nhân Tâm</div>
-                        <div class="text-[10px] opacity-75 mt-0.5 truncate">Nhìn thấu lòng người & đối đãi</div>
-                    </div>
-                    <div onclick="openMiniWeb('hub-24-channels')" class="cursor-pointer shrink-0 px-3 py-2 rounded-2xl bg-white/5 border border-white/10 hover:border-amber-400/50 transition w-44">
-                        <div class="font-bold text-sky-300 truncate">🏃 Happy Run 108 Ngày</div>
-                        <div class="text-[10px] opacity-75 mt-0.5 truncate">4:30 Sáng • Hạnh Phúc - Trí Tuệ</div>
-                    </div>
+                <div id="miniWebGrid" class="grid grid-cols-2 gap-2.5">
+                    <!-- Populated via JS -->
                 </div>
             </section>
 
             <!-- Self-Learning Telemetry Mini Card -->
-            <section class="rounded-3xl p-3.5 bg-gradient-to-r from-emerald-950/80 to-slate-900/80 border border-emerald-500/20 flex items-center justify-between gap-3">
+            <section class="rounded-3xl p-3.5 bg-gradient-to-r from-emerald-950/90 to-slate-900/90 border border-emerald-500/25 flex items-center justify-between gap-3">
                 <div class="space-y-0.5">
                     <div class="text-[10px] uppercase tracking-wider text-emerald-400 font-bold flex items-center gap-1">
-                        <span>🧠</span> AI Tự Học 24/7 (Telemetry)
+                        <span>🧠</span> Radar AI Tự Học 24/7
                     </div>
-                    <p id="telemetryInsight" class="text-xs text-emerald-100/90">
-                        Hệ thống đang ghi nhận thế giới con được yêu thích nhất để tối ưu bài học.
+                    <p id="telemetryInsight" class="text-[11px] text-emerald-100/90">
+                        Đang phân tích thế giới con thu hút nhất trên lephucnhat.vn...
                     </p>
                 </div>
-                <button onclick="openVoiceBuilderModal()" class="px-3 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-[11px] font-bold shrink-0 active:scale-95 transition">
-                    Nâng Cấp
-                </button>
+                <a href="index.html" class="px-3 py-2 rounded-xl bg-white/10 hover:bg-amber-500 hover:text-slate-950 text-[11px] font-bold shrink-0 transition">
+                    Về Web Chính
+                </a>
             </section>
 
         </div>
 
-        <!-- 4. BOTTOM OS DOCK (iOS / Super-App Style) -->
-        <nav id="osBottomDock" class="absolute bottom-3 left-3 right-3 h-16 rounded-3xl glass-dark border border-white/15 px-2 flex items-center justify-around shadow-2xl z-30">
-            <button onclick="switchBottomTab('home')" id="dockHome" class="dock-btn flex flex-col items-center justify-center py-1 px-3 rounded-2xl text-amber-400 font-bold transition active:scale-90">
-                <span class="text-lg">🏠</span>
-                <span class="text-[10px] mt-0.5">Vũ Trụ</span>
+        <!-- 4. BOTTOM OS DOCK -->
+        <nav id="osBottomDock" class="absolute bottom-2.5 left-3 right-3 h-15 py-1.5 rounded-3xl glass-dark border border-white/15 px-2 flex items-center justify-around shadow-2xl z-30">
+            <button onclick="closeMiniWeb()" class="flex flex-col items-center justify-center py-1 px-2.5 rounded-2xl text-amber-400 font-bold transition active:scale-90">
+                <span class="text-base">🏠</span>
+                <span class="text-[10px]">Sảnh Vũ Trụ</span>
             </button>
-            <button onclick="openMiniWeb('wheel-wisdom')" class="dock-btn flex flex-col items-center justify-center py-1 px-3 rounded-2xl text-emerald-100/80 hover:text-white transition active:scale-90">
-                <span class="text-lg">🎡</span>
-                <span class="text-[10px] mt-0.5">Vòng Quay</span>
+            <button onclick="openMiniWeb('wheel-wisdom')" class="flex flex-col items-center justify-center py-1 px-2.5 rounded-2xl text-emerald-100/80 hover:text-white transition active:scale-90">
+                <span class="text-base">🎡</span>
+                <span class="text-[10px]">Vòng Quay</span>
             </button>
-            <!-- Center Floating Action Button: Voice-to-Web Builder -->
-            <button onclick="openVoiceBuilderModal()" class="relative -top-4 w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-400 via-amber-500 to-orange-500 text-slate-950 shadow-xl flex flex-col items-center justify-center border-2 border-amber-200 glow-gold active:scale-90 transition">
-                <span class="text-xl leading-none">🎙️</span>
+            <button onclick="openVoiceBuilderModal()" class="relative -top-3.5 w-13 h-13 px-3 py-2 rounded-2xl bg-gradient-to-br from-amber-400 via-amber-500 to-orange-500 text-slate-950 shadow-xl flex flex-col items-center justify-center border-2 border-amber-200 glow-gold active:scale-90 transition">
+                <span class="text-lg leading-none">🎙️</span>
                 <span class="text-[8px] font-extrabold uppercase tracking-tighter mt-0.5">Đúc Web</span>
             </button>
-            <button onclick="openMiniWeb('forest-quiz')" class="dock-btn flex flex-col items-center justify-center py-1 px-3 rounded-2xl text-emerald-100/80 hover:text-white transition active:scale-90">
-                <span class="text-lg">🌲</span>
-                <span class="text-[10px] mt-0.5">Rừng Xanh</span>
+            <button onclick="openMiniWeb('rung-keo-son')" class="flex flex-col items-center justify-center py-1 px-2.5 rounded-2xl text-emerald-100/80 hover:text-white transition active:scale-90">
+                <span class="text-base">🌲</span>
+                <span class="text-[10px]">Trồng Rừng</span>
             </button>
-            <button onclick="openMiniWeb('hub-24-channels')" class="dock-btn flex flex-col items-center justify-center py-1 px-3 rounded-2xl text-emerald-100/80 hover:text-white transition active:scale-90">
-                <span class="text-lg">🌐</span>
-                <span class="text-[10px] mt-0.5">24 Kênh</span>
+            <button onclick="openMiniWeb('hub-24-channels')" class="flex flex-col items-center justify-center py-1 px-2.5 rounded-2xl text-emerald-100/80 hover:text-white transition active:scale-90">
+                <span class="text-base">🌐</span>
+                <span class="text-[10px]">24 Kênh</span>
             </button>
         </nav>
 
         <!-- ============================================================== -->
-        <!-- MINI-WEB OVERLAY CONTAINER (Web-in-Web Full-Screen View)       -->
+        <!-- MINI-WEB FULL-SCREEN OVERLAY                                   -->
         <!-- ============================================================== -->
-        <div id="miniWebOverlay" class="fixed md:absolute inset-0 z-40 translate-y-full transition-transform duration-300 ease-out flex flex-col bg-[#041f18] text-emerald-50 overflow-hidden">
+        <div id="miniWebOverlay" class="fixed md:absolute inset-0 z-40 translate-y-full transition-transform duration-300 ease-out flex flex-col bg-[#031c15] text-emerald-50 overflow-hidden">
             
-            <!-- Mini-Web Top Bar (WeChat Mini-Program Style Capsule) -->
-            <div id="miniWebHeader" class="px-4 py-3 flex items-center justify-between border-b border-white/10 bg-black/30 backdrop-blur-md shrink-0">
-                <div class="flex items-center gap-2.5 min-w-0">
-                    <span id="activeMiniWebIcon" class="text-xl">🎡</span>
+            <!-- Mini-Web Header Bar -->
+            <div class="px-3.5 py-2.5 flex items-center justify-between border-b border-white/10 bg-black/40 backdrop-blur-md shrink-0">
+                <div class="flex items-center gap-2 min-w-0">
+                    <button onclick="closeMiniWeb()" class="px-2.5 py-1 rounded-xl bg-white/10 hover:bg-amber-500 hover:text-slate-950 text-xs font-extrabold flex items-center gap-1 transition shrink-0">
+                        <span>⬅</span> <span>Đóng</span>
+                    </button>
+                    <span id="activeMiniWebIcon" class="text-lg shrink-0">🎡</span>
                     <div class="truncate">
-                        <h3 id="activeMiniWebTitle" class="text-sm font-extrabold truncate">Vòng Quay Tỉnh Thức</h3>
-                        <p id="activeMiniWebSub" class="text-[10px] text-amber-300/90 truncate">Mini-Web trong lephucnhat.vn</p>
+                        <h3 id="activeMiniWebTitle" class="text-xs sm:text-sm font-extrabold truncate text-white">Vòng Quay Tỉnh Thức</h3>
+                        <p id="activeMiniWebSub" class="text-[10px] text-amber-300/90 truncate">Hệ Cổ Thụ</p>
                     </div>
                 </div>
 
-                <!-- Capsule Controls: Switch Mode Inside Mini-Web + Close -->
-                <div class="flex items-center gap-1.5 bg-white/10 border border-white/15 rounded-full px-2 py-1 shrink-0">
-                    <button onclick="toggleCognitiveMode()" id="capsuleModeBtn" class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-amber-500 text-slate-950 transition" title="Đổi tầng nhận thức ngay trong Game">
+                <!-- Capsule Mode Switcher Inside Game -->
+                <div class="flex items-center gap-1.5 shrink-0">
+                    <button onclick="toggleCognitiveMode()" id="capsuleModeBtn" class="text-[10px] font-extrabold px-2.5 py-1 rounded-full bg-amber-500 text-slate-950 shadow transition" title="Đổi tầng nhận thức ngay trong Game">
                         🌳 Cổ Thụ
-                    </button>
-                    <span class="text-white/25">|</span>
-                    <button onclick="closeMiniWeb()" class="w-6 h-6 rounded-full hover:bg-white/20 flex items-center justify-center text-xs font-bold" title="Đóng về Vũ Trụ">
-                        ✕
                     </button>
                 </div>
             </div>
 
             <!-- Dynamic Mini-Web Body -->
-            <div id="miniWebViewport" class="flex-1 overflow-y-auto p-4 space-y-5">
-                <!-- Populated dynamically when user opens Mini-Web 1, 2, 3, or Custom Voice-Created Webs -->
+            <div id="miniWebViewport" class="flex-1 overflow-y-auto p-3.5 pb-10 space-y-4">
+                <!-- Rendered via JS -->
             </div>
         </div>
 
         <!-- ============================================================== -->
-        <!-- MODAL: "XÂY WEB BẰNG MỒM" (VOICE / TELEGRAM TO MINI-WEB LAB)   -->
+        <!-- MODAL: PHÒNG LAB "XÂY WEB BẰNG MỒM"                            -->
         <!-- ============================================================== -->
         <div id="voiceBuilderModal" class="fixed md:absolute inset-0 z-50 hidden bg-black/80 backdrop-blur-md flex items-end md:items-center justify-center p-3">
-            <div class="w-full max-w-md rounded-3xl glass-dark border border-amber-400/40 p-5 space-y-4 shadow-2xl animate-float">
+            <div class="w-full max-w-md rounded-3xl glass-dark border border-amber-400/50 p-5 space-y-3.5 shadow-2xl">
                 <div class="flex items-center justify-between">
                     <div class="flex items-center gap-2">
                         <span class="text-2xl">🎙️</span>
                         <div>
-                            <h3 class="text-sm font-extrabold text-amber-300">Phòng Lab "Xây Web Bằng Mồm"</h3>
-                            <p class="text-[10px] text-emerald-200/80">Telegram ➔ Antigravity ThinkPad ➔ lephucnhat.vn</p>
+                            <h3 class="text-sm font-extrabold text-amber-300">Phòng Lab "Xây Web Bằng Mồm" v3.0</h3>
+                            <p class="text-[10px] text-emerald-200/80">Khẩu lệnh ➔ Trò chơi tương tác 2 tầng nhận thức</p>
                         </div>
                     </div>
-                    <button onclick="closeVoiceBuilderModal()" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-sm">✕</button>
+                    <button onclick="closeVoiceBuilderModal()" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-sm font-bold">✕</button>
                 </div>
 
-                <p class="text-xs text-emerald-100/90 leading-relaxed">
-                    Ông chủ chỉ cần bấm mic nói hoặc chọn khẩu lệnh mẫu. Hệ thống AI sẽ tự động đúc ngay <strong>1 Trang Web Con có trò chơi tương tác</strong> và gắn thẳng lên màn hình chính của <code class="text-amber-300">lephucnhat.vn</code>!
-                </p>
-
-                <!-- Voice Input Box -->
                 <div class="space-y-2">
                     <div class="relative">
-                        <textarea id="voicePromptInput" rows="3" placeholder="Ví dụ: Tạo cho anh trò chơi Cờ Tướng Nhân Tâm lật thẻ 36 kế xử thế..." class="w-full rounded-2xl bg-black/40 border border-amber-400/40 p-3 text-xs text-white placeholder-emerald-300/40 focus:outline-none focus:border-amber-400"></textarea>
-                        <button id="micRecordBtn" onclick="startSpeechToWeb()" class="absolute right-2.5 bottom-2.5 px-3 py-1.5 rounded-xl bg-rose-500/20 border border-rose-400/40 text-rose-200 text-[11px] font-bold flex items-center gap-1 hover:bg-rose-500/30 active:scale-95 transition">
+                        <textarea id="voicePromptInput" rows="2" placeholder="Nhập chủ đề (VD: Cờ Vua Nhân Tâm, Nghệ Thuật Trà Đạo, Dạy Con Tự Lập)..." class="w-full rounded-2xl bg-black/45 border border-amber-400/40 p-3 pr-24 text-xs text-white placeholder-emerald-300/40 focus:outline-none focus:border-amber-400"></textarea>
+                        <button id="micRecordBtn" onclick="startSpeechToWeb()" class="absolute right-2 bottom-2.5 px-2.5 py-1.5 rounded-xl bg-rose-500/25 border border-rose-400/40 text-rose-200 text-[11px] font-bold flex items-center gap-1 hover:bg-rose-500/40 active:scale-95 transition">
                             <span>🎤</span> <span id="micBtnLabel">Bấm Nói</span>
                         </button>
                     </div>
 
-                    <!-- Instant Presets ("Đứng trên vai người khổng lồ") -->
-                    <div class="text-[10px] text-emerald-300/80 font-semibold">Hoặc chạm khẩu lệnh mẫu để đúc trong 1 giây:</div>
+                    <div class="text-[10px] text-emerald-300/90 font-semibold">Hoặc chọn nhanh khẩu lệnh mẫu:</div>
                     <div class="flex flex-wrap gap-1.5">
-                        <button onclick="fillVoicePreset('Lật Thẻ 36 Kế Khéo Ăn Nói & Đắc Nhân Tâm', '🗣️', 'wisdom')" class="text-[10px] px-2.5 py-1 rounded-xl bg-white/10 hover:bg-amber-500/20 border border-white/10 text-amber-200 transition">
+                        <button onclick="fillVoicePreset('Kỳ Đạo Cờ Vua & Chiến Lược Nhìn Xa Trông Rộng', '♟️')" class="text-[10px] px-2.5 py-1 rounded-xl bg-white/10 hover:bg-amber-500/25 border border-white/10 text-amber-200 transition">
+                            ♟️ Kỳ Đạo Cờ Vua
+                        </button>
+                        <button onclick="fillVoicePreset('36 Kế Khéo Ăn Nói & Hóa Giải Mâu Thuẫn', '🗣️')" class="text-[10px] px-2.5 py-1 rounded-xl bg-white/10 hover:bg-amber-500/25 border border-white/10 text-emerald-200 transition">
                             🗣️ 36 Kế Khéo Ăn Nói
                         </button>
-                        <button onclick="fillVoicePreset('Trạm Gieo Hạt Rừng Keo Sơn & Tính Carbon Xanh', '🌳', 'nature')" class="text-[10px] px-2.5 py-1 rounded-xl bg-white/10 hover:bg-emerald-500/20 border border-white/10 text-emerald-200 transition">
-                            🌳 Trạm Rừng Keo Sơn
-                        </button>
-                        <button onclick="fillVoicePreset('Bản Đồ Hiếu Thảo & Lời Biết Ơn Cha Mẹ Mỗi Ngày', '🏮', 'nature')" class="text-[10px] px-2.5 py-1 rounded-xl bg-white/10 hover:bg-rose-500/20 border border-white/10 text-rose-200 transition">
+                        <button onclick="fillVoicePreset('Bản Đồ Hiếu Thảo & Lời Biết Ơn Cha Mẹ', '🏮')" class="text-[10px] px-2.5 py-1 rounded-xl bg-white/10 hover:bg-amber-500/25 border border-white/10 text-rose-200 transition">
                             🏮 Bản Đồ Hiếu Thảo
                         </button>
-                        <button onclick="fillVoicePreset('Phòng Thiền Chuông Xoay 8 Giây Tĩnh Tâm', '🔔', 'wisdom')" class="text-[10px] px-2.5 py-1 rounded-xl bg-white/10 hover:bg-sky-500/20 border border-white/10 text-sky-200 transition">
-                            🔔 Chuông Xoay 8 Giây
+                        <button onclick="fillVoicePreset('Dược Liệu Sạch Xứ Cùa & Sức Khỏe Tự Nhiên', '🍵')" class="text-[10px] px-2.5 py-1 rounded-xl bg-white/10 hover:bg-amber-500/25 border border-white/10 text-sky-200 transition">
+                            🍵 Dược Liệu Xứ Cùa
                         </button>
                     </div>
                 </div>
 
-                <!-- Spawn Action Button -->
                 <button onclick="spawnNewMiniWebFromVoice()" class="w-full py-3 rounded-2xl bg-gradient-to-r from-amber-400 via-amber-500 to-orange-500 text-slate-950 font-extrabold text-xs shadow-xl hover:brightness-110 active:scale-95 transition flex items-center justify-center gap-2">
-                    <span>⚡</span> <span>ĐÚC NGAY TRANG WEB CON VÀO VŨ TRỤ</span>
+                    <span>⚡</span> <span>ĐÚC NGAY TRÒ CHƠI VÀO VŨ TRỤ</span>
                 </button>
             </div>
         </div>
 
-        <!-- ============================================================== -->
-        <!-- TOAST NOTIFICATION                                             -->
-        <!-- ============================================================== -->
+        <!-- TOAST NOTIFICATION -->
         <div id="osToast" class="fixed top-14 left-1/2 -translate-x-1/2 z-50 pointer-events-none opacity-0 transition-all duration-300 transform -translate-y-2">
             <div class="px-4 py-2 rounded-full bg-amber-400 text-slate-950 font-extrabold text-xs shadow-2xl flex items-center gap-2 border-2 border-white">
                 <span id="toastIcon">🌱</span>
@@ -438,38 +417,42 @@
     </main>
 
     <!-- ================================================================== -->
-    <!-- CORE JAVASCRIPT ENGINE: LPN-WEBVERSE-ARCHITECT                     -->
+    <!-- CORE JAVASCRIPT ENGINE v3.0 PRO MAX                                -->
     <!-- ================================================================== -->
     <script>
         /********************************************************************
-         * 1. STATE & SELF-EVOLVING STORAGE (localStorage + Telemetry)
+         * 1. STATE MANAGEMENT & STORAGE
          ********************************************************************/
-        const STORAGE_KEY = 'LPN_WEBVERSE_STATE_V2';
+        const STORAGE_KEY = 'LPN_WEBVERSE_STATE_V3';
         let appState = {
-            cognitiveMode: 'elder', // 'elder' (Hệ Cổ Thụ) | 'sprout' (Hệ Mầm Xanh)
+            cognitiveMode: 'elder',
             seeds: 108,
             streakDays: 12,
             lastCheckInDate: null,
             healingAudioOn: false,
             activeCategory: 'all',
             telemetryClicks: {
-                'wheel-wisdom': 28,
-                'forest-quiz': 19,
-                'hub-24-channels': 34
+                'wheel-wisdom': 42,
+                'forest-quiz': 29,
+                'so-tay-nhan-tam': 35,
+                'rung-keo-son': 31,
+                'su-that-8-giay': 27,
+                'hub-24-channels': 38
             },
+            forestPlots: [0, 1, 2, 0, 1, 0, 0, 2, 1], // 0: Đất trống, 1: Cây non, 2: Cây Keo Lai lớn, 3: Đại thụ gỗ lớn
             customApps: []
         };
 
-        // Load saved state
         try {
             const saved = localStorage.getItem(STORAGE_KEY);
             if (saved) {
                 const parsed = JSON.parse(saved);
                 appState = { ...appState, ...parsed };
+                if (!Array.isArray(appState.forestPlots) || appState.forestPlots.length !== 9) {
+                    appState.forestPlots = [0, 1, 2, 0, 1, 0, 0, 2, 1];
+                }
             }
-        } catch (e) {
-            console.warn('LocalStorage fallback active');
-        }
+        } catch (e) {}
 
         function saveState() {
             try {
@@ -477,6 +460,13 @@
             } catch (e) {}
             updateHeaderStats();
             updateTelemetryBanner();
+        }
+
+        function getRankTitle(seeds) {
+            if (seeds >= 500) return '👑 Đại Thụ Ngàn Năm';
+            if (seeds >= 250) return '🌳 Cổ Thụ Tỉnh Thức';
+            if (seeds >= 150) return '🌲 Rừng Xanh Vươn Nắng';
+            return '🌱 Hạt Mầm Khởi Nguyên';
         }
 
         function addSeeds(amount, reasonText) {
@@ -493,14 +483,15 @@
             document.getElementById('toastText').textContent = message;
             toast.classList.remove('opacity-0', '-translate-y-2');
             toast.classList.add('opacity-100', 'translate-y-0');
-            setTimeout(() => {
+            clearTimeout(window._toastTimer);
+            window._toastTimer = setTimeout(() => {
                 toast.classList.remove('opacity-100', 'translate-y-0');
                 toast.classList.add('opacity-0', '-translate-y-2');
-            }, 2600);
+            }, 2500);
         }
 
         /********************************************************************
-         * 2. WEB AUDIO API SYNTHESIZER (528Hz Healing + UI Click SFX)
+         * 2. WEB AUDIO API SYNTHESIZER (528Hz + Wheel Tick + Chimes)
          ********************************************************************/
         let audioCtx = null;
         let healingOsc = null;
@@ -516,38 +507,54 @@
             }
         }
 
-        function playClickSfx(freq = 660) {
+        function playClickSfx(freq = 640) {
             try {
                 initAudioContext();
                 const osc = audioCtx.createOscillator();
                 const gain = audioCtx.createGain();
                 osc.type = 'sine';
                 osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
-                osc.frequency.exponentialRampToValueAtTime(freq * 1.35, audioCtx.currentTime + 0.08);
+                osc.frequency.exponentialRampToValueAtTime(freq * 1.3, audioCtx.currentTime + 0.07);
                 gain.gain.setValueAtTime(0.08, audioCtx.currentTime);
-                gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.09);
+                gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.08);
                 osc.connect(gain);
                 gain.connect(audioCtx.destination);
                 osc.start();
-                osc.stop(audioCtx.currentTime + 0.09);
+                osc.stop(audioCtx.currentTime + 0.08);
+            } catch (e) {}
+        }
+
+        function playWheelTicks(durationMs = 3000) {
+            try {
+                initAudioContext();
+                let elapsed = 0;
+                let step = 70;
+                function tick() {
+                    if (elapsed >= durationMs) return;
+                    playClickSfx(420 + (elapsed / durationMs) * 350);
+                    elapsed += step;
+                    step = Math.floor(step * 1.12);
+                    setTimeout(tick, step);
+                }
+                tick();
             } catch (e) {}
         }
 
         function playRewardChime() {
             try {
                 initAudioContext();
-                const notes = [528, 660, 792, 1056]; // Harmonic 528Hz family
+                const notes = [528, 660, 792, 1056];
                 notes.forEach((freq, idx) => {
                     const osc = audioCtx.createOscillator();
                     const gain = audioCtx.createGain();
                     osc.type = 'triangle';
-                    osc.frequency.setValueAtTime(freq, audioCtx.currentTime + idx * 0.07);
-                    gain.gain.setValueAtTime(0.12, audioCtx.currentTime + idx * 0.07);
-                    gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + idx * 0.07 + 0.45);
+                    osc.frequency.setValueAtTime(freq, audioCtx.currentTime + idx * 0.065);
+                    gain.gain.setValueAtTime(0.11, audioCtx.currentTime + idx * 0.065);
+                    gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + idx * 0.065 + 0.4);
                     osc.connect(gain);
                     gain.connect(audioCtx.destination);
-                    osc.start(audioCtx.currentTime + idx * 0.07);
-                    osc.stop(audioCtx.currentTime + idx * 0.07 + 0.46);
+                    osc.start(audioCtx.currentTime + idx * 0.065);
+                    osc.stop(audioCtx.currentTime + idx * 0.065 + 0.42);
                 });
             } catch (e) {}
         }
@@ -559,15 +566,13 @@
             const label = document.getElementById('audioLabel');
 
             if (!appState.healingAudioOn) {
-                // Start gentle 528Hz Solfeggio Ambient Pad
                 healingOsc = audioCtx.createOscillator();
                 healingGain = audioCtx.createGain();
                 healingOsc.type = 'sine';
                 const targetFreq = appState.cognitiveMode === 'elder' ? 528 : 432;
                 healingOsc.frequency.setValueAtTime(targetFreq, audioCtx.currentTime);
                 healingGain.gain.setValueAtTime(0.001, audioCtx.currentTime);
-                healingGain.gain.exponentialRampToValueAtTime(0.035, audioCtx.currentTime + 1.0);
-
+                healingGain.gain.exponentialRampToValueAtTime(0.035, audioCtx.currentTime + 0.8);
                 healingOsc.connect(healingGain);
                 healingGain.connect(audioCtx.destination);
                 healingOsc.start();
@@ -580,14 +585,14 @@
             } else {
                 if (healingGain && healingOsc) {
                     try {
-                        healingGain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 0.3);
+                        healingGain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 0.25);
                         setTimeout(() => {
                             if (healingOsc) {
                                 healingOsc.stop();
                                 healingOsc.disconnect();
                                 healingOsc = null;
                             }
-                        }, 320);
+                        }, 260);
                     } catch (e) {}
                 }
                 appState.healingAudioOn = false;
@@ -599,24 +604,24 @@
         }
 
         /********************************************************************
-         * 3. REGISTRY OF MINI-WEBS (N TRANG WEB TRONG 1 TRANG WEB)
+         * 3. REGISTRY OF 6 CORE MINI-WEBS + CUSTOM VOICE WEBS
          ********************************************************************/
         const CORE_WEBVERSE_REGISTRY = [
             {
                 id: 'wheel-wisdom',
                 icon: '🎡',
                 category: 'core',
-                badge: 'HOT • Chơi Ngay',
+                badge: 'Vòng Quay 8 Cung',
                 colorFrom: 'from-amber-500/30',
-                colorTo: 'to-emerald-900/60',
+                colorTo: 'to-emerald-950/80',
                 borderColor: 'border-amber-400/50',
                 elder: {
                     title: 'Vòng Quay Tỉnh Thức & Nhân Tâm',
-                    desc: 'Quay bánh xe định mệnh & lật thẻ bài học Đắc Nhân Tâm, Quản Trị, GỐC.'
+                    desc: 'Quay bánh xe 8 cung mệnh & giải quyết tình huống Đắc Nhân Tâm, Quản Trị, GỐC.'
                 },
                 sprout: {
                     title: 'Vòng Quay Hạt Giống Tốt',
-                    desc: 'Quay vòng quay kỳ diệu: Học điều hay, hiếu thảo, lễ phép & yêu thiên nhiên!'
+                    desc: 'Quay bánh xe kỳ diệu: Học điều hay, hiếu thảo, lễ phép & yêu thiên nhiên!'
                 }
             },
             {
@@ -625,15 +630,66 @@
                 category: 'core',
                 badge: 'Đố Vui 2 Tầng',
                 colorFrom: 'from-emerald-500/30',
-                colorTo: 'to-teal-900/60',
+                colorTo: 'to-teal-950/80',
                 borderColor: 'border-emerald-400/50',
                 elder: {
                     title: 'Mật Mã Rừng Xanh & Keo Sơn',
-                    desc: 'Thử thách triết lý sinh thái rừng, Khoán 10, cây Keo Lai & quy luật tự nhiên.'
+                    desc: 'Giải mã triết lý sinh thái rừng, Khoán 10, cây Keo Lai & quy luật đại ngàn.'
                 },
                 sprout: {
                     title: 'Đố Vui Rừng Xanh Kỳ Thú',
                     desc: 'Trò chơi giải đố muông thú, cây cối và ca dao dân gian nhận Hạt Giống!'
+                }
+            },
+            {
+                id: 'so-tay-nhan-tam',
+                icon: '📜',
+                category: 'wisdom',
+                badge: 'Lật Thẻ Bài 3D',
+                colorFrom: 'from-purple-500/30',
+                colorTo: 'to-slate-950/85',
+                borderColor: 'border-purple-400/50',
+                elder: {
+                    title: 'Bàn Thẻ 3D Nhân Tâm & Khéo Ăn Nói',
+                    desc: 'Lật 6 thẻ bài 3D đọc vị lòng người, nghệ thuật uốn lưỡi và giữ tâm bất động.'
+                },
+                sprout: {
+                    title: 'Lật Thẻ Lời Nói Hay - Hoa Nở Đẹp',
+                    desc: 'Lật mở 6 chiếc thẻ kỳ diệu về lời cảm ơn, xin lỗi và yêu thương gia đình.'
+                }
+            },
+            {
+                id: 'rung-keo-son',
+                icon: '🌲',
+                category: 'nature',
+                badge: 'Sa Bàn 9 Ô Đất',
+                colorFrom: 'from-lime-500/30',
+                colorTo: 'to-emerald-950/85',
+                borderColor: 'border-lime-400/50',
+                elder: {
+                    title: 'Sa Bàn Trồng Rừng HTX Keo Sơn',
+                    desc: 'Tương tác 9 ô đất rừng: Gieo giống Keo Lai, dưỡng tầng thảm mục & thu tín chỉ Carbon.'
+                },
+                sprout: {
+                    title: 'Khu Vườn Ươm Cây Của Bé',
+                    desc: 'Chạm tay gieo hạt, tưới nước cho 9 ô đất để biến đồi trọc thành rừng xanh mát!'
+                }
+            },
+            {
+                id: 'su-that-8-giay',
+                icon: '⚡',
+                category: 'wisdom',
+                badge: 'Thử Thách 8 Giây',
+                colorFrom: 'from-rose-500/30',
+                colorTo: 'to-slate-950/85',
+                borderColor: 'border-rose-400/50',
+                elder: {
+                    title: 'Sự Thật 8 Giây • Phá Vỡ Ảo Tưởng',
+                    desc: 'Đếm ngược 8 giây sinh tử: Nhìn xuyên qua hào nhoáng để chọn đúng bản chất GỐC.'
+                },
+                sprout: {
+                    title: '8 Giây Phản Xạ Tinh Anh',
+                    desc: 'Trò chơi bấm nút nhanh trong 8 giây phân biệt thói quen tốt và thói quen xấu!'
                 }
             },
             {
@@ -642,76 +698,25 @@
                 category: 'core',
                 badge: '24 Kênh + Happy Run',
                 colorFrom: 'from-sky-500/30',
-                colorTo: 'to-indigo-950/60',
+                colorTo: 'to-indigo-950/85',
                 borderColor: 'border-sky-400/50',
                 elder: {
                     title: 'Trạm Đồng Bộ 24 Kênh & Happy Run 108',
-                    desc: 'Điểm danh 4:30 sáng (Hạnh Phúc - Trí Tuệ - Hành Động) & khám phá 24 kênh.'
+                    desc: 'Điểm danh 4:30 sáng (Hạnh Phúc - Trí Tuệ - Hành Động) & kết nối 24 kênh.'
                 },
                 sprout: {
                     title: 'Trạm Năng Lượng Mặt Trời Nhỏ',
                     desc: 'Cùng gia đình dậy sớm tập thể dục, tích huy hiệu chiến binh 108 ngày!'
                 }
-            },
-            {
-                id: 'so-tay-nhan-tam',
-                icon: '📜',
-                category: 'wisdom',
-                badge: 'Tình Huống Đời',
-                colorFrom: 'from-purple-500/25',
-                colorTo: 'to-slate-900/70',
-                borderColor: 'border-purple-400/40',
-                elder: {
-                    title: 'Sổ Tay Nhân Tâm & Khéo Ăn Nói',
-                    desc: '36 tình huống ứng xử thực chiến: Nhìn người, dùng người và giữ tâm bất động.'
-                },
-                sprout: {
-                    title: 'Lời Nói Hay - Hoa Nở Đẹp',
-                    desc: 'Thực hành nói lời cảm ơn, xin lỗi và chia sẻ yêu thương cùng ông bà cha mẹ.'
-                }
-            },
-            {
-                id: 'rung-keo-son',
-                icon: '🌲',
-                category: 'nature',
-                badge: 'HTX Keo Sơn',
-                colorFrom: 'from-lime-500/25',
-                colorTo: 'to-emerald-950/70',
-                borderColor: 'border-lime-400/40',
-                elder: {
-                    title: 'Sa Bàn Lâm Nghiệp Bền Vững Keo Sơn',
-                    desc: 'Mô phỏng trồng rừng gỗ lớn, tín chỉ Carbon và di sản xanh Cam Lộ - Quảng Trị.'
-                },
-                sprout: {
-                    title: 'Khu Vườn Ươm Cây Của Bé',
-                    desc: 'Tưới nước, chăm sóc mầm cây lớn lên và tìm hiểu vì sao rừng giữ nước cho đời.'
-                }
-            },
-            {
-                id: 'su-that-8-giay',
-                icon: '⚡',
-                category: 'wisdom',
-                badge: 'Tư Duy Ngược',
-                colorFrom: 'from-rose-500/25',
-                colorTo: 'to-slate-900/70',
-                borderColor: 'border-rose-400/40',
-                elder: {
-                    title: 'Sự Thật 8 Giây & Phá Vỡ Ảo Tưởng',
-                    desc: 'Chạm để bóc tách 2 mặt của một vấn đề bằng tư duy ngược sắc bén.'
-                },
-                sprout: {
-                    title: 'Vì Sao Thế Nhỉ? (8 Giây Khám Phá)',
-                    desc: 'Giải thích những hiện tượng kỳ thú quanh ta chỉ trong 8 giây ngắn gọn!'
-                }
             }
         ];
 
         function getAllMiniWebs() {
-            return [...CORE_WEBVERSE_REGISTRY, ...(appState.customApps || [])];
+            return [...(appState.customApps || []), ...CORE_WEBVERSE_REGISTRY];
         }
 
         /********************************************************************
-         * 4. DUAL-BRAIN COGNITIVE MODE ENGINE (Hệ Cổ Thụ vs Hệ Mầm Xanh)
+         * 4. DUAL-BRAIN COGNITIVE MODE ENGINE
          ********************************************************************/
         function setCognitiveMode(mode) {
             playClickSfx(mode === 'elder' ? 528 : 720);
@@ -723,7 +728,6 @@
         function toggleCognitiveMode() {
             const next = appState.cognitiveMode === 'elder' ? 'sprout' : 'elder';
             setCognitiveMode(next);
-            // If a mini-web is currently open, re-render it seamlessly in the new mode!
             if (currentOpenMiniWebId) {
                 renderMiniWebContent(currentOpenMiniWebId);
             }
@@ -738,45 +742,37 @@
             const btnElder = document.getElementById('btnModeElder');
             const btnSprout = document.getElementById('btnModeSprout');
             const capsuleBtn = document.getElementById('capsuleModeBtn');
-            const body = document.getElementById('appBody');
 
             if (isElder) {
                 btnElder.className = 'py-2 px-3 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 transition-all duration-300 bg-gradient-to-r from-amber-500 to-yellow-500 text-slate-950 shadow-md';
                 btnSprout.className = 'py-2 px-3 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 transition-all duration-300 text-emerald-200/80 hover:text-white';
-                body.className = 'bg-gradient-to-br from-[#02130e] via-[#06281e] to-[#0b192c] text-emerald-50 min-h-screen flex flex-col items-center justify-center md:py-4 transition-colors duration-500';
                 document.getElementById('heroTagIcon').textContent = '✨';
-                document.getElementById('heroTagText').textContent = 'Tư Duy Ngược • Đứng Trên Vai Người Khổng Lồ';
+                document.getElementById('heroTagText').textContent = 'Hiểu Sâu • Sống Tỉnh • Hành Đúng';
                 document.getElementById('heroTitle').textContent = '"Cây muốn vươn cao chạm nắng, rễ phải cắm sâu vào lòng đất mẹ."';
-                document.getElementById('heroSub').innerHTML = 'Chào mừng bạn đến với Vũ Trụ <strong>Lê Phúc Nhật</strong>. Mỗi lần bấm nút là một hạt giống Trí Tuệ, Nhân Tâm & Hạnh Phúc được gieo xuống.';
-                document.getElementById('quickBtn1').textContent = 'Rút Thẻ Nhân Tâm';
-                document.getElementById('quickBtn2').textContent = 'Mật Mã Rừng Xanh';
-                document.getElementById('activeModeIndicator').textContent = 'Đang ở: 🌳 Hệ Cổ Thụ';
+                document.getElementById('heroSub').textContent = 'Chạm vào bất kỳ Thế Giới Con nào bên dưới để rèn tư duy thực chiến và gieo Hạt Giống Tỉnh Thức.';
+                document.getElementById('activeModeIndicator').textContent = '🌳 Hệ Cổ Thụ';
                 if (capsuleBtn) {
-                    capsuleBtn.textContent = '🌳 Cổ Thụ';
-                    capsuleBtn.className = 'text-[10px] font-bold px-2 py-0.5 rounded-full bg-amber-500 text-slate-950 transition';
+                    capsuleBtn.textContent = '🌳 Đổi sang Mầm Xanh';
+                    capsuleBtn.className = 'text-[10px] font-extrabold px-2.5 py-1 rounded-full bg-amber-500 text-slate-950 shadow transition';
                 }
             } else {
                 btnSprout.className = 'py-2 px-3 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 transition-all duration-300 bg-gradient-to-r from-emerald-400 to-lime-400 text-slate-950 shadow-md';
                 btnElder.className = 'py-2 px-3 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 transition-all duration-300 text-emerald-200/80 hover:text-white';
-                body.className = 'bg-gradient-to-br from-[#063729] via-[#0a4b38] to-[#0f3d3e] text-emerald-50 min-h-screen flex flex-col items-center justify-center md:py-4 transition-colors duration-500';
                 document.getElementById('heroTagIcon').textContent = '🌈';
                 document.getElementById('heroTagText').textContent = 'Sân Chơi Trí Tuệ • Vừa Chơi Vừa Lớn Khôn';
                 document.getElementById('heroTitle').textContent = '"Mỗi ngày làm một việc tốt, con là Mầm Xanh tỏa bóng mát cho đời!"';
-                document.getElementById('heroSub').innerHTML = 'Chào chiến binh Mầm Xanh! Hãy bấm vào các trò chơi bên dưới để khám phá rừng xanh, giải đố dân gian và sưu tầm <strong>Hạt Giống Tốt</strong> nhé!';
-                document.getElementById('quickBtn1').textContent = 'Vòng Quay Hạt Tốt';
-                document.getElementById('quickBtn2').textContent = 'Đố Vui Muông Thú';
-                document.getElementById('activeModeIndicator').textContent = 'Đang ở: 🌱 Hệ Mầm Xanh';
+                document.getElementById('heroSub').textContent = 'Chào chiến binh Mầm Xanh! Hãy bấm vào các trò chơi bên dưới để khám phá rừng xanh và sưu tầm Hạt Giống Tốt nhé!';
+                document.getElementById('activeModeIndicator').textContent = '🌱 Hệ Mầm Xanh';
                 if (capsuleBtn) {
-                    capsuleBtn.textContent = '🌱 Mầm Xanh';
-                    capsuleBtn.className = 'text-[10px] font-bold px-2 py-0.5 rounded-full bg-lime-400 text-slate-950 transition';
+                    capsuleBtn.textContent = '🌱 Đổi sang Cổ Thụ';
+                    capsuleBtn.className = 'text-[10px] font-extrabold px-2.5 py-1 rounded-full bg-lime-400 text-slate-950 shadow transition';
                 }
             }
-
             renderMiniWebGrid();
         }
 
         /********************************************************************
-         * 5. RENDER N-WORLDS APP GRID & TELEMETRY
+         * 5. RENDER MINI-WEB GRID & DELETE CUSTOM APP
          ********************************************************************/
         function setAppCategory(cat) {
             playClickSfx(600);
@@ -791,8 +787,14 @@
             renderMiniWebGrid();
         }
 
-        function filterMiniApps() {
+        function deleteCustomMiniWeb(event, appId) {
+            event.stopPropagation();
+            playClickSfx(360);
+            appState.customApps = (appState.customApps || []).filter(a => a.id !== appId);
+            delete appState.telemetryClicks[appId];
+            saveState();
             renderMiniWebGrid();
+            showToast('Đã xóa Thế Giới Con khỏi danh sách', '🗑️');
         }
 
         function renderMiniWebGrid() {
@@ -815,27 +817,33 @@
             grid.innerHTML = filtered.map(app => {
                 const content = isElder ? app.elder : app.sprout;
                 const clicks = appState.telemetryClicks[app.id] || 1;
+                const isCustom = app.id.startsWith('voice-web-');
                 return `
                     <div onclick="openMiniWeb('${app.id}')" class="group cursor-pointer rounded-3xl p-3.5 bg-gradient-to-br ${app.colorFrom} ${app.colorTo} border ${app.borderColor} hover:scale-[1.02] active:scale-95 transition-all duration-200 flex flex-col justify-between shadow-lg relative overflow-hidden">
+                        ${isCustom ? `
+                            <button onclick="deleteCustomMiniWeb(event, '${app.id}')" class="absolute top-2 right-2 w-6 h-6 rounded-full bg-rose-500/30 hover:bg-rose-500 text-white text-[11px] flex items-center justify-center z-10 transition" title="Xóa Web Con này">
+                                ✕
+                            </button>
+                        ` : ''}
                         <div>
                             <div class="flex items-start justify-between gap-1 mb-2">
-                                <div class="w-11 h-11 rounded-2xl bg-black/30 border border-white/15 flex items-center justify-center text-2xl shadow-inner group-hover:scale-110 transition">
+                                <div class="w-10 h-10 rounded-2xl bg-black/35 border border-white/15 flex items-center justify-center text-xl shadow-inner group-hover:scale-110 transition">
                                     ${app.icon}
                                 </div>
-                                <span class="text-[9px] font-extrabold px-2 py-0.5 rounded-full bg-black/40 text-amber-300 border border-amber-400/30">
+                                <span class="text-[9px] font-extrabold px-2 py-0.5 rounded-full bg-black/45 text-amber-300 border border-amber-400/30 ${isCustom ? 'mr-6' : ''}">
                                     ${app.badge}
                                 </span>
                             </div>
                             <h3 class="text-xs font-extrabold text-white leading-snug group-hover:text-amber-300 transition">
                                 ${content.title}
                             </h3>
-                            <p class="text-[11px] text-emerald-100/75 mt-1 line-clamp-2 leading-relaxed">
+                            <p class="text-[10px] text-emerald-100/75 mt-1 line-clamp-2 leading-relaxed">
                                 ${content.desc}
                             </p>
                         </div>
-                        <div class="mt-3 pt-2 border-t border-white/10 flex items-center justify-between text-[10px] text-emerald-200/80">
-                            <span>🔥 ${clicks} lượt chạm</span>
-                            <span class="font-bold text-amber-300 group-hover:translate-x-0.5 transition">Mở Web ➔</span>
+                        <div class="mt-2.5 pt-2 border-t border-white/10 flex items-center justify-between text-[10px] text-emerald-200/85">
+                            <span>🔥 ${clicks} lượt</span>
+                            <span class="font-extrabold text-amber-300 group-hover:translate-x-0.5 transition">Chơi Ngay ➔</span>
                         </div>
                     </div>
                 `;
@@ -844,6 +852,11 @@
 
         function updateHeaderStats() {
             document.getElementById('seedCountDisplay').textContent = appState.seeds;
+            const rank = getRankTitle(appState.seeds);
+            const rankPill = document.getElementById('rankPill');
+            const desktopRank = document.getElementById('desktopRankBadge');
+            if (rankPill) rankPill.textContent = rank;
+            if (desktopRank) desktopRank.textContent = rank;
         }
 
         function updateTelemetryBanner() {
@@ -856,14 +869,24 @@
             if (topApp) {
                 const title = appState.cognitiveMode === 'elder' ? topApp.elder.title : topApp.sprout.title;
                 document.getElementById('telemetryInsight').innerHTML =
-                    `Web con hút nhất: <strong class="text-amber-300">${title}</strong> (${topClicks} lượt tương tác). Hệ thống đã ưu tiên hiển thị!`;
+                    `Hút tương tác nhất: <strong class="text-amber-300">${title}</strong> (${topClicks} lượt chạm).`;
             }
         }
 
         /********************************************************************
-         * 6. MINI-WEB ROUTER & 3 FULL PLAYABLE MINI-WEBS
+         * 6. MINI-WEB ROUTER & ESCAPE KEY SUPPORT
          ********************************************************************/
         let currentOpenMiniWebId = null;
+
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                if (!document.getElementById('voiceBuilderModal').classList.contains('hidden')) {
+                    closeVoiceBuilderModal();
+                } else if (currentOpenMiniWebId) {
+                    closeMiniWeb();
+                }
+            }
+        });
 
         function openMiniWeb(appId) {
             playClickSfx(740);
@@ -880,20 +903,13 @@
         function closeMiniWeb() {
             playClickSfx(480);
             currentOpenMiniWebId = null;
+            clearInterval(window._eightSecTimer);
             const overlay = document.getElementById('miniWebOverlay');
             overlay.classList.add('translate-y-full');
         }
 
-        function switchBottomTab(tab) {
-            playClickSfx(620);
-            if (tab === 'home') {
-                closeMiniWeb();
-            } else if (tab === 'stats') {
-                openMiniWeb('hub-24-channels');
-            }
-        }
-
         function renderMiniWebContent(appId) {
+            clearInterval(window._eightSecTimer);
             const app = getAllMiniWebs().find(a => a.id === appId);
             if (!app) return;
             const isElder = appState.cognitiveMode === 'elder';
@@ -902,8 +918,8 @@
             document.getElementById('activeMiniWebIcon').textContent = app.icon;
             document.getElementById('activeMiniWebTitle').textContent = content.title;
             document.getElementById('activeMiniWebSub').textContent = isElder
-                ? 'Tầng nhận thức: 🌳 Hệ Cổ Thụ (Hiền Triết & Người Lớn)'
-                : 'Tầng nhận thức: 🌱 Hệ Mầm Xanh (Trẻ Nhỏ & Gia Đình)';
+                ? '🌳 Hệ Cổ Thụ (Hiền Triết & Người Lớn)'
+                : '🌱 Hệ Mầm Xanh (Trẻ Nhỏ & Gia Đình)';
 
             const viewport = document.getElementById('miniWebViewport');
 
@@ -911,85 +927,108 @@
                 renderWheelWisdomMiniWeb(viewport, isElder);
             } else if (appId === 'forest-quiz') {
                 renderForestQuizMiniWeb(viewport, isElder);
+            } else if (appId === 'so-tay-nhan-tam') {
+                renderFlipCardsMiniWeb(viewport, isElder);
+            } else if (appId === 'rung-keo-son') {
+                renderForestTycoonMiniWeb(viewport, isElder);
+            } else if (appId === 'su-that-8-giay') {
+                renderEightSecondTruthMiniWeb(viewport, isElder);
             } else if (appId === 'hub-24-channels') {
                 renderHub24ChannelsMiniWeb(viewport, isElder);
             } else {
-                // Interactive Scenario Generator for additional & Voice-Spawned Mini-Webs!
-                renderDynamicPlayableMiniWeb(viewport, app, isElder);
+                renderCustomVoiceMiniWeb(viewport, app, isElder);
             }
         }
 
         /* ==================================================================
-         * MINI-WEB 1: VÒNG QUAY TỈNH THỨC & LẬT THẺ NHÂN TÂM (DUAL-BRAIN)
+         * GAME 1: VÒNG QUAY TỈNH THỨC (FIXED SMOOTH 3.2S SPIN + ANTI-SPAM)
          * ================================================================== */
         const WHEEL_DATA = {
             elder: [
                 {
+                    sector: 'Cung Đắc Nhân Tâm',
                     tag: 'NHÂN TÂM • ĐỐI ĐÃI',
                     cardTitle: 'Lòng Biết Ơn & Phép Thử Thủy Chung',
                     quote: '"Kẻ nhớ ơn một giọt nước giữa sa mạc, đáng giao cả cánh rừng. Kẻ quên ơn sau cơn mưa rào, chỉ nên giữ lễ từ xa."',
-                    dilemma: 'Tình huống thực chiến: Một người bạn từng được bạn giúp đỡ lúc ngặt nghèo nay thành đạt nhưng lại thờ ơ, thậm chí nói lời coi nhẹ bạn trước đám đông. Bạn chọn cách nào?',
+                    dilemma: 'Một người từng được bạn giúp đỡ lúc ngặt nghèo nay thành đạt nhưng lại coi nhẹ bạn trước đám đông. Bạn ứng xử thế nào?',
                     options: [
-                        { text: 'Nổi giận kể công ngay tại chỗ để họ biết xấu hổ.', feedback: 'Tâm còn động vì danh. Nổi nóng lúc này chỉ làm hạ thấp khí chất của chính mình.', seeds: 5 },
-                        { text: 'Mỉm cười điềm tĩnh, thu hồi sự kỳ vọng và lặng lẽ rời khỏi vòng tròn tâm giao.', feedback: 'Đỉnh cao Nhân Tâm! Giúp người là phần đức của mình, họ bạc là nhân quả của họ. Giữ tâm bất động mới là bậc trí giả.', seeds: 15 },
-                        { text: 'Tìm cách nói xấu lại họ với người khác.', feedback: 'Lấy oán báo oán chỉ khiến tâm mình vẩn đục thêm.', seeds: 5 }
+                        { text: 'Nổi giận kể công ngay tại chỗ để họ biết xấu hổ.', feedback: 'Nổi nóng lúc này chỉ làm hạ thấp khí chất của chính mình.', seeds: 5, best: false },
+                        { text: 'Mỉm cười điềm tĩnh, thu hồi sự kỳ vọng và lặng lẽ rời khỏi vòng tròn tâm giao.', feedback: 'Đỉnh cao Nhân Tâm! Giúp người là phần đức của mình, họ bạc là nhân quả của họ.', seeds: 20, best: true },
+                        { text: 'Tìm cách nói xấu lại họ với người khác.', feedback: 'Lấy oán báo oán chỉ khiến tâm mình vẩn đục thêm.', seeds: 5, best: false }
                     ]
                 },
                 {
+                    sector: 'Cung GỐC Bền Vững',
                     tag: 'GỐC • LÂM NGHIỆP & CUỘC ĐỜI',
                     cardTitle: 'Triết Lý Cây Keo Lai & Cây Cổ Thụ',
                     quote: '"Muốn có gỗ nhanh thì trồng cây ngắn ngày, muốn để lại di sản trăm năm thì phải dưỡng bộ rễ sâu trong bão gió."',
-                    dilemma: 'Khi đứng trước một cơ hội kiếm lợi nhuận cực nhanh nhưng làm tổn hại uy tín lâu dài, bạn quyết định ra sao?',
+                    dilemma: 'Đứng trước cơ hội kiếm lợi nhuận cực nhanh nhưng làm tổn hại uy tín lâu dài, bạn quyết định ra sao?',
                     options: [
-                        { text: 'Chốt lời nhanh rồi tính sau, thời buổi ai cũng vậy.', feedback: 'Lợi trước mắt nhưng mất GỐC. Uy tín sụp đổ thì vạn sự về không.', seeds: 5 },
-                        { text: 'Chọn con đường bền vững: Chậm hơn một nhịp nhưng giữ trọn chữ Tín và GỐC rễ.', feedback: 'Chuẩn tư duy GỐC! Người giữ được gốc rễ vững vàng mới là người đi đường dài vô địch.', seeds: 15 },
-                        { text: 'Do dự không dám làm gì cả.', feedback: 'Cần phân biệt giữa thận trọng có trí tuệ và sợ hãi thụ động.', seeds: 8 }
+                        { text: 'Chốt lời nhanh rồi tính sau.', feedback: 'Lợi trước mắt nhưng mất GỐC. Uy tín sụp đổ thì vạn sự về không.', seeds: 5, best: false },
+                        { text: 'Chọn con đường bền vững: Chậm hơn một nhịp nhưng giữ trọn chữ Tín và GỐC rễ.', feedback: 'Chuẩn tư duy GỐC! Người giữ được gốc rễ vững vàng mới là người đi đường dài vô địch.', seeds: 20, best: true },
+                        { text: 'Bỏ cuộc không làm gì cả.', feedback: 'Cần phân biệt giữa thận trọng có trí tuệ và sợ hãi thụ động.', seeds: 8, best: false }
                     ]
                 },
                 {
+                    sector: 'Cung Khéo Ăn Nói',
                     tag: 'KHÉO ĂN NÓI • QUẢN TRỊ',
                     cardTitle: 'Lời Nói Như Gió Xuân Hay Dao Sắc',
                     quote: '"Cùng một sự thật, kẻ vụng nói khiến người đóng cửa tâm hồn, bậc trí giả nói khiến người tự nguyện đổi thay."',
                     dilemma: 'Khi một cộng sự trẻ mắc sai lầm làm hỏng việc chung, câu nói đầu tiên của bạn là gì?',
                     options: [
-                        { text: '"Sao việc đơn giản thế này mà cũng làm hỏng?"', feedback: 'Câu nói này kích hoạt cơ chế phòng vệ, khiến cấp dưới sợ hãi và giấu lỗi lần sau.', seeds: 5 },
-                        { text: '"Sự việc đã xảy ra rồi, anh em mình cùng tìm cách khắc phục trước, rồi rút bài học để lần tới thắng lớn hơn nhé."', feedback: 'Thu phục nhân tâm tuyệt đối! Vừa giải quyết được việc, vừa khiến người trẻ biết ơn và trưởng thành.', seeds: 15 },
-                        { text: 'Im lặng tự làm hết một mình.', feedback: 'Làm thay sẽ khiến đội ngũ không bao giờ lớn lên được.', seeds: 8 }
+                        { text: '"Sao việc đơn giản thế này mà cũng làm hỏng?"', feedback: 'Câu nói này kích hoạt cơ chế phòng vệ, khiến cấp dưới sợ hãi và giấu lỗi lần sau.', seeds: 5, best: false },
+                        { text: '"Anh em mình cùng xử lý hậu quả trước, rồi rút bài học để lần tới làm tốt hơn nhé."', feedback: 'Thu phục nhân tâm tuyệt đối! Vừa giải quyết được việc, vừa khiến người trẻ biết ơn.', seeds: 20, best: true },
+                        { text: 'Im lặng tự làm hết một mình.', feedback: 'Làm thay sẽ khiến đội ngũ không bao giờ lớn lên được.', seeds: 8, best: false }
+                    ]
+                },
+                {
+                    sector: 'Cung Tĩnh Lặng Nội Tâm',
+                    tag: 'TUỆ LÂM • TĨNH TÂM',
+                    cardTitle: 'Nước Tĩnh Mới Soi Rõ Trăng Sao',
+                    quote: '"Khi tâm đang dậy sóng, mọi quyết định đưa ra đều là nô lệ của cảm xúc."',
+                    dilemma: 'Khi nhận được một tin nhắn khiêu khích hoặc hiểu lầm nặng nề, bạn làm gì trong 10 giây đầu tiên?',
+                    options: [
+                        { text: 'Nhắn trả đũa ngay lập tức cho bõ tức.', feedback: 'Phản ứng tức thì khi nóng giận thường để lại nuối tiếc dài lâu.', seeds: 5, best: false },
+                        { text: 'Hít sâu 3 hơi, đặt điện thoại xuống 15 phút để tâm thật tĩnh rồi mới phản hồi ngắn gọn, đanh thép.', feedback: 'Bậc thầy làm chủ cảm xúc! Tĩnh lặng là sức mạnh tối thượng.', seeds: 20, best: true },
+                        { text: 'Chặn luôn không cần biết đúng sai.', feedback: 'Đôi khi lắng nghe thêm một nhịp sẽ tránh được hiểu lầm đáng tiếc.', seeds: 8, best: false }
                     ]
                 }
             ],
             sprout: [
                 {
+                    sector: 'Cung Hiếu Thảo',
                     tag: 'HẠT GIỐNG HIẾU THẢO',
                     cardTitle: 'Ly Nước Ấm Mời Cha Mẹ',
                     quote: '"Đi khắp thế gian không ai tốt bằng Mẹ, gánh nặng cuộc đời không ai khổ bằng Cha."',
                     dilemma: 'Khi đi học về thấy Bố Mẹ vừa đi làm về rất mệt, chiến binh Mầm Xanh sẽ làm gì đầu tiên?',
                     options: [
-                        { text: 'Đòi bố mẹ mở điện thoại cho xem hoạt hình ngay.', feedback: 'Ối! Bố mẹ đang mệt lắm, mình thương bố mẹ trước nhé!', seeds: 5 },
-                        { text: 'Khoanh tay chào thật tươi, rót một ly nước mát mời bố mẹ và hỏi: "Bố mẹ hôm nay có mệt không ạ?"', feedback: 'Tuyệt vời quá! Một cử chỉ nhỏ nhưng làm tan biến mọi mệt nhọc của bố mẹ! Con xứng đáng nhận 15 Hạt Giống Tốt!', seeds: 15 },
-                        { text: 'Chạy đi chơi tiếp không chào hỏi.', feedback: 'Lời chào cao hơn mâm cỗ, con nhớ chào ông bà bố mẹ nhé!', seeds: 5 }
+                        { text: 'Đòi bố mẹ mở điện thoại cho xem hoạt hình ngay.', feedback: 'Bố mẹ đang mệt lắm, mình thương bố mẹ trước nhé!', seeds: 5, best: false },
+                        { text: 'Khoanh tay chào thật tươi, rót một ly nước mát mời bố mẹ và bóp vai cho bố mẹ.', feedback: 'Tuyệt vời quá! Cử chỉ hiếu thảo của con làm tan biến mọi mệt nhọc của bố mẹ!', seeds: 20, best: true },
+                        { text: 'Chạy đi chơi tiếp không chào hỏi.', feedback: 'Lời chào cao hơn mâm cỗ, con nhớ chào ông bà bố mẹ nhé!', seeds: 5, best: false }
                     ]
                 },
                 {
-                    tag: 'HẠT GIỐNG RỪNG XANH',
+                    sector: 'Cung Rừng Xanh',
+                    tag: 'HẠT GIỐNG BẢO VỆ RỪNG',
                     cardTitle: 'Người Bạn Nhỏ Của Rừng Cây',
                     quote: '"Một cây làm chẳng nên non, ba cây chụm lại nên hòn núi cao."',
                     dilemma: 'Khi đi dã ngoại trong rừng hoặc công viên, con thấy có vỏ hộp sữa rơi trên cỏ. Con sẽ làm gì?',
                     options: [
-                        { text: 'Bước qua luôn vì không phải do mình vứt.', feedback: 'Nếu ai cũng bỏ qua thì khu rừng sẽ buồn lắm đó!', seeds: 5 },
-                        { text: 'Nhặt lên bỏ vào thùng rác để bảo vệ ngôi nhà sạch đẹp cho chim chóc và cây xanh.', feedback: 'Hoan hô Đại Sứ Rừng Xanh! Cây cối và chim muông đang vỗ tay cảm ơn con đó!', seeds: 15 },
-                        { text: 'Đá cái vỏ hộp ra chỗ khác.', feedback: 'Mình bỏ đúng vào thùng rác mới là chiến binh bảo vệ Trái Đất nhé!', seeds: 5 }
+                        { text: 'Bước qua luôn vì không phải do mình vứt.', feedback: 'Nếu ai cũng bỏ qua thì khu rừng sẽ buồn lắm đó!', seeds: 5, best: false },
+                        { text: 'Nhặt lên bỏ vào thùng rác để bảo vệ ngôi nhà sạch đẹp cho chim chóc và cây xanh.', feedback: 'Hoan hô Đại Sứ Rừng Xanh! Cây cối và chim muông đang vỗ tay cảm ơn con đó!', seeds: 20, best: true },
+                        { text: 'Đá cái vỏ hộp ra chỗ khác.', feedback: 'Mình bỏ đúng vào thùng rác mới là chiến binh bảo vệ Trái Đất nhé!', seeds: 5, best: false }
                     ]
                 },
                 {
-                    tag: 'HẠT GIỐNG TRUNG THỰC',
+                    sector: 'Cung Trung Thực',
+                    tag: 'HẠT GIỐNG DŨNG CẢM',
                     cardTitle: 'Dũng Cảm Nhận Lỗi',
                     quote: '"Người dũng cảm nhất là người dám nói lời thật thà."',
                     dilemma: 'Con lỡ tay làm vỡ chiếc cốc yêu thích ở nhà khi không có ai nhìn thấy. Con chọn cách nào?',
                     options: [
-                        { text: 'Giấu mảnh vỡ đi và đổ lỗi cho em mèo.', feedback: 'Em mèo bị oan tội nghiệp lắm, mà lòng mình cũng sẽ bất an.', seeds: 5 },
-                        { text: 'Cẩn thận gọi người lớn dọn mảnh vỡ cho an toàn và thành thật xin lỗi bố mẹ.', feedback: 'Con cực kỳ dũng cảm và trung thực! Bố mẹ sẽ rất tự hào vì con dám nhận lỗi!', seeds: 15 },
-                        { text: 'Lặng im coi như không biết gì.', feedback: 'Nói thật sẽ giúp lòng con nhẹ nhõm và trưởng thành hơn!', seeds: 5 }
+                        { text: 'Giấu mảnh vỡ đi và đổ lỗi cho em mèo.', feedback: 'Em mèo bị oan tội nghiệp lắm, mà lòng mình cũng sẽ bất an.', seeds: 5, best: false },
+                        { text: 'Cẩn thận gọi người lớn dọn mảnh vỡ cho an toàn và thành thật xin lỗi bố mẹ.', feedback: 'Con cực kỳ dũng cảm và trung thực! Bố mẹ rất tự hào vì con!', seeds: 20, best: true },
+                        { text: 'Lặng im coi như không biết gì.', feedback: 'Nói thật sẽ giúp lòng con nhẹ nhõm và trưởng thành hơn!', seeds: 5, best: false }
                     ]
                 }
             ]
@@ -997,125 +1036,188 @@
 
         let wheelRotation = 0;
         let currentCardIndex = 0;
+        let isWheelSpinning = false;
+        let wheelAnswered = false;
 
         function renderWheelWisdomMiniWeb(viewport, isElder) {
-            const list = isElder ? WHEEL_DATA.elder : WHEEL_DATA.sprout;
-            const currentItem = list[currentCardIndex % list.length];
-
+            isWheelSpinning = false;
+            wheelAnswered = false;
             viewport.innerHTML = `
                 <div class="space-y-4">
-                    <!-- Top Interactive Wheel Section -->
-                    <div class="rounded-3xl p-4 bg-gradient-to-b from-amber-500/15 to-black/40 border border-amber-400/30 flex flex-col items-center text-center relative overflow-hidden">
-                        <div class="text-[11px] font-bold text-amber-300 uppercase tracking-wider mb-2">
-                            ${isElder ? '🎡 Bấm Quay Để Nhận Thông Điệp Tỉnh Thức' : '🎡 Bấm Quay Vòng Quay Hạt Giống Kỳ Diệu'}
+                    <!-- Top Interactive 8-Sector Wheel -->
+                    <div class="rounded-3xl p-4 bg-gradient-to-b from-amber-500/15 to-black/45 border border-amber-400/35 flex flex-col items-center text-center relative overflow-hidden">
+                        <div id="wheelStatusBadge" class="text-[11px] font-extrabold text-amber-300 uppercase tracking-wider mb-2">
+                            ${isElder ? '🎡 Bấm Nút Quay Để Khai Mở Quẻ Nhân Tâm' : '🎡 Bấm Quay Vòng Quay Hạt Giống Kỳ Diệu'}
                         </div>
 
-                        <!-- SVG Wheel -->
-                        <div class="relative w-44 h-44 my-2 flex items-center justify-center">
-                            <!-- Pointer Arrow -->
-                            <div class="absolute -top-3 z-20 text-2xl drop-shadow-lg">🔻</div>
+                        <div class="relative w-48 h-48 my-2 flex items-center justify-center">
+                            <!-- Top Pointer -->
+                            <div class="absolute -top-3.5 z-20 text-2xl drop-shadow-[0_4px_6px_rgba(0,0,0,0.9)]">🔻</div>
 
-                            <div id="wisdomWheelSvg" style="transform: rotate(${wheelRotation}deg)" class="w-full h-full rounded-full border-4 border-amber-400 shadow-[0_0_30px_rgba(245,158,11,0.35)] wheel-spinning relative overflow-hidden bg-gradient-to-tr from-emerald-900 via-amber-700 to-teal-800 flex items-center justify-center">
-                                <div class="absolute inset-0 flex items-center justify-center">
-                                    <div class="w-full h-0.5 bg-amber-300/40 rotate-0"></div>
-                                    <div class="w-full h-0.5 bg-amber-300/40 rotate-60"></div>
-                                    <div class="w-full h-0.5 bg-amber-300/40 rotate-120"></div>
-                                </div>
-                                <span class="absolute top-3 text-lg">🌳</span>
-                                <span class="absolute bottom-3 text-lg">💎</span>
-                                <span class="absolute left-3 text-lg">📜</span>
-                                <span class="absolute right-3 text-lg">🌱</span>
-                                <div class="w-14 h-14 rounded-full bg-slate-950 border-2 border-amber-300 flex items-center justify-center font-extrabold text-amber-300 text-xs z-10 shadow-inner">
-                                    GỐC
+                            <!-- 8-Sector Conic Gradient Wheel -->
+                            <div id="wisdomWheelSvg" onclick="spinWisdomWheel()" style="transform: rotate(${wheelRotation}deg); background: conic-gradient(#b45309 0deg 45deg, #065f46 45deg 90deg, #7e22ce 90deg 135deg, #0f766e 135deg 180deg, #be123c 180deg 225deg, #1d4ed8 225deg 270deg, #a16207 270deg 315deg, #047857 315deg 360deg);" class="cursor-pointer w-full h-full rounded-full border-4 border-amber-300 shadow-[0_0_35px_rgba(245,158,11,0.4)] wheel-spinning relative overflow-hidden flex items-center justify-center">
+                                <span class="absolute top-2.5 text-base">🌳</span>
+                                <span class="absolute bottom-2.5 text-base">💎</span>
+                                <span class="absolute left-2.5 text-base">📜</span>
+                                <span class="absolute right-2.5 text-base">🌱</span>
+                                <span class="absolute top-7 right-7 text-sm">⚡</span>
+                                <span class="absolute top-7 left-7 text-sm">🧭</span>
+                                <span class="absolute bottom-7 right-7 text-sm">🏮</span>
+                                <span class="absolute bottom-7 left-7 text-sm">🔥</span>
+                                <div class="w-16 h-16 rounded-full bg-slate-950 border-2 border-amber-300 flex flex-col items-center justify-center font-extrabold text-amber-300 text-[10px] z-10 shadow-xl">
+                                    <span>QUAY</span>
+                                    <span class="text-[8px] text-emerald-300">GỐC</span>
                                 </div>
                             </div>
                         </div>
 
-                        <button onclick="spinWisdomWheel()" class="mt-2 px-6 py-2.5 rounded-2xl bg-gradient-to-r from-amber-400 via-amber-500 to-orange-500 text-slate-950 font-extrabold text-xs shadow-xl hover:brightness-110 active:scale-95 transition flex items-center gap-2">
-                            <span>⚡</span> <span>QUAY BÁNH XE & LẬT THẺ (+HẠT GIỐNG)</span>
+                        <button id="spinWheelBtn" onclick="spinWisdomWheel()" class="mt-2 px-6 py-2.5 rounded-2xl bg-gradient-to-r from-amber-400 via-amber-500 to-orange-500 text-slate-950 font-extrabold text-xs shadow-xl hover:brightness-110 active:scale-95 transition flex items-center gap-2">
+                            <span>🎯</span> <span>QUAY BÁNH XE TỈNH THỨC</span>
                         </button>
                     </div>
 
-                    <!-- Wisdom Card & Interactive Dilemma -->
-                    <div id="wisdomCardBox" class="rounded-3xl p-4 bg-black/35 border border-white/15 space-y-3 shadow-xl">
-                        <div class="flex items-center justify-between">
-                            <span class="text-[10px] font-extrabold px-2.5 py-0.5 rounded-full bg-amber-500/20 text-amber-300 border border-amber-400/30">
-                                ${currentItem.tag}
-                            </span>
-                            <span class="text-[10px] text-emerald-300/80">Thẻ #${(currentCardIndex % list.length) + 1}/${list.length}</span>
+                    <!-- Dynamic Card Container (Updated without destroying the wheel!) -->
+                    <div id="wisdomCardContainer"></div>
+                </div>
+            `;
+            renderWisdomCardOnly();
+        }
+
+        function renderWisdomCardOnly() {
+            const container = document.getElementById('wisdomCardContainer');
+            if (!container) return;
+            const isElder = appState.cognitiveMode === 'elder';
+            const list = isElder ? WHEEL_DATA.elder : WHEEL_DATA.sprout;
+            const currentItem = list[currentCardIndex % list.length];
+            wheelAnswered = false;
+
+            container.innerHTML = `
+                <div class="rounded-3xl p-4 bg-black/40 border border-white/15 space-y-3 shadow-xl animate-float">
+                    <div class="flex items-center justify-between">
+                        <span class="text-[10px] font-extrabold px-2.5 py-0.5 rounded-full bg-amber-500/20 text-amber-300 border border-amber-400/30">
+                            ${currentItem.tag}
+                        </span>
+                        <span class="text-[10px] text-emerald-300 font-bold">${currentItem.sector} (#${(currentCardIndex % list.length) + 1}/${list.length})</span>
+                    </div>
+
+                    <h4 class="text-sm sm:text-base font-extrabold text-white">${currentItem.cardTitle}</h4>
+
+                    <blockquote class="p-3 rounded-2xl bg-emerald-950/85 border-l-4 border-amber-400 text-xs italic text-amber-100 leading-relaxed">
+                        ${currentItem.quote}
+                    </blockquote>
+
+                    <div class="pt-1 space-y-2">
+                        <div class="text-xs font-extrabold text-emerald-300 flex items-center gap-1.5">
+                            <span>🎯</span> <span>Tình Huống Thực Chiến:</span>
+                        </div>
+                        <p class="text-xs text-emerald-50/95 leading-relaxed">
+                            ${currentItem.dilemma}
+                        </p>
+
+                        <div class="space-y-2 pt-1">
+                            ${currentItem.options.map((opt, idx) => `
+                                <button id="wheelOptBtn_${idx}" onclick="selectWisdomOption(${idx})" class="w-full text-left p-3 rounded-2xl bg-white/5 hover:bg-amber-500/20 border border-white/10 hover:border-amber-400/50 text-xs transition active:scale-[0.99] flex items-start gap-2.5">
+                                    <span class="w-5 h-5 rounded-full bg-amber-500/30 text-amber-200 font-bold flex items-center justify-center shrink-0 text-[10px]">${idx + 1}</span>
+                                    <span class="leading-relaxed">${opt.text}</span>
+                                </button>
+                            `).join('')}
                         </div>
 
-                        <h4 class="text-base font-extrabold text-white">${currentItem.cardTitle}</h4>
-
-                        <blockquote class="p-3 rounded-2xl bg-emerald-950/80 border-l-4 border-amber-400 text-xs italic text-amber-100 leading-relaxed">
-                            ${currentItem.quote}
-                        </blockquote>
-
-                        <div class="pt-2 space-y-2">
-                            <div class="text-xs font-bold text-emerald-300 flex items-center gap-1.5">
-                                <span>🎯</span> <span>Thử Thách Quyết Định:</span>
-                            </div>
-                            <p class="text-xs text-emerald-50/90 leading-relaxed">
-                                ${currentItem.dilemma}
-                            </p>
-
-                            <div class="space-y-2 pt-1">
-                                ${currentItem.options.map((opt, idx) => `
-                                    <button onclick="selectWisdomOption(${idx})" class="w-full text-left p-3 rounded-2xl bg-white/5 hover:bg-amber-500/20 border border-white/10 hover:border-amber-400/50 text-xs transition active:scale-[0.99] flex items-start gap-2.5">
-                                        <span class="w-5 h-5 rounded-full bg-amber-500/30 text-amber-200 font-bold flex items-center justify-center shrink-0 text-[10px]">${idx + 1}</span>
-                                        <span class="leading-relaxed">${opt.text}</span>
-                                    </button>
-                                `).join('')}
-                            </div>
-
-                            <div id="wisdomFeedbackBox" class="hidden mt-3 p-3.5 rounded-2xl bg-gradient-to-r from-amber-500/20 to-emerald-500/20 border border-amber-400/50 text-xs space-y-2">
-                            </div>
-                        </div>
+                        <div id="wisdomFeedbackBox" class="hidden mt-3 p-3.5 rounded-2xl border text-xs space-y-2"></div>
                     </div>
                 </div>
             `;
         }
 
         function spinWisdomWheel() {
-            playClickSfx(820);
-            const extraDeg = 720 + Math.floor(Math.random() * 720);
-            wheelRotation += extraDeg;
+            if (isWheelSpinning) return;
+            isWheelSpinning = true;
+
+            const btn = document.getElementById('spinWheelBtn');
+            const badge = document.getElementById('wheelStatusBadge');
             const wheelEl = document.getElementById('wisdomWheelSvg');
+
+            if (btn) {
+                btn.disabled = true;
+                btn.classList.add('opacity-50');
+                btn.innerHTML = '<span>⏳</span> <span>ĐANG QUAY QUẺ TỈNH THỨC...</span>';
+            }
+            if (badge) {
+                badge.textContent = '⚡ Kim vòng quay đang xoay... Hãy tĩnh tâm đón nhận!';
+            }
+
+            playWheelTicks(3000);
+            const extraDeg = 1080 + Math.floor(Math.random() * 720);
+            wheelRotation += extraDeg;
             if (wheelEl) {
                 wheelEl.style.transform = `rotate(${wheelRotation}deg)`;
             }
+
             setTimeout(() => {
+                isWheelSpinning = false;
                 currentCardIndex++;
                 const isElder = appState.cognitiveMode === 'elder';
-                renderWheelWisdomMiniWeb(document.getElementById('miniWebViewport'), isElder);
-                addSeeds(10, isElder ? 'Khai mở Thẻ Nhân Tâm' : 'Quay trúng Hạt Giống Tốt');
-            }, 1200);
+                const list = isElder ? WHEEL_DATA.elder : WHEEL_DATA.sprout;
+                const landedItem = list[currentCardIndex % list.length];
+
+                if (btn) {
+                    btn.disabled = false;
+                    btn.classList.remove('opacity-50');
+                    btn.innerHTML = '<span>🎯</span> <span>QUAY TIẾP QUẺ MỚI</span>';
+                }
+                if (badge) {
+                    badge.textContent = `✨ Đã trúng: ${landedItem.sector}! (+10 Hạt Giống)`;
+                }
+
+                renderWisdomCardOnly();
+                addSeeds(10, `Mở ${landedItem.sector}`);
+            }, 3250);
         }
 
         function selectWisdomOption(optIndex) {
+            if (wheelAnswered) return;
+            wheelAnswered = true;
+
             const isElder = appState.cognitiveMode === 'elder';
             const list = isElder ? WHEEL_DATA.elder : WHEEL_DATA.sprout;
             const currentItem = list[currentCardIndex % list.length];
             const chosen = currentItem.options[optIndex];
+
+            currentItem.options.forEach((o, i) => {
+                const b = document.getElementById(`wheelOptBtn_${i}`);
+                if (!b) return;
+                b.disabled = true;
+                if (i === optIndex) {
+                    b.className = o.best
+                        ? 'w-full text-left p-3 rounded-2xl bg-emerald-500/30 border-2 border-emerald-400 text-xs flex items-start gap-2.5 font-bold text-white'
+                        : 'w-full text-left p-3 rounded-2xl bg-amber-500/25 border-2 border-amber-400 text-xs flex items-start gap-2.5 text-white';
+                } else {
+                    b.classList.add('opacity-50');
+                }
+            });
+
             const fbBox = document.getElementById('wisdomFeedbackBox');
             if (!fbBox) return;
-
             fbBox.classList.remove('hidden');
+            fbBox.className = chosen.best
+                ? 'mt-3 p-3.5 rounded-2xl bg-emerald-950/90 border border-emerald-400 text-xs space-y-2'
+                : 'mt-3 p-3.5 rounded-2xl bg-amber-950/90 border border-amber-400 text-xs space-y-2';
+
             fbBox.innerHTML = `
                 <div class="font-extrabold text-amber-300 flex items-center justify-between">
-                    <span>💡 Lời Giải Mở Trí Tuệ:</span>
+                    <span>${chosen.best ? '🌟 Lựa Chọn Đỉnh Cao!' : '💡 Góc Nhìn Chiêm Nghiệm:'}</span>
                     <span class="text-emerald-300">+${chosen.seeds} Hạt Giống</span>
                 </div>
                 <p class="text-white leading-relaxed">${chosen.feedback}</p>
-                <button onclick="spinWisdomWheel()" class="w-full py-2 rounded-xl bg-amber-500 text-slate-950 font-extrabold text-xs mt-1">
-                    Tiếp Tục Thử Thách Tiếp Theo ➔
+                <button onclick="spinWisdomWheel()" class="w-full py-2.5 rounded-xl bg-gradient-to-r from-amber-400 to-orange-500 text-slate-950 font-extrabold text-xs mt-1 shadow">
+                    🎡 Quay Tiếp Thử Thách Mới ➔
                 </button>
             `;
-            addSeeds(chosen.seeds, 'Trả lời Tình Huống Tỉnh Thức');
+            addSeeds(chosen.seeds, 'Giải quyết Tình Huống Nhân Tâm');
         }
 
         /* ==================================================================
-         * MINI-WEB 2: KHÁM PHÁ RỪNG XANH & ĐỐ VUI DÂN GIAN (DUAL-BRAIN)
+         * GAME 2: MẬT MÃ RỪNG XANH & ĐỐ VUI DÂN GIAN (ANTI-SPAM LOCKED)
          * ================================================================== */
         const FOREST_QUIZ_DATA = {
             elder: [
@@ -1127,7 +1229,7 @@
                         'Để không phải tốn công dọn cỏ.'
                     ],
                     correct: 1,
-                    explain: 'Giống như con người cần dưỡng khí và văn hóa GỐC, rừng có thảm mục mới giữ được nước ngầm và nuôi cây gỗ lớn bền vững qua nhiều thế hệ.'
+                    explain: 'Giống như con người cần dưỡng khí và văn hóa GỐC, rừng có thảm mục mới giữ được mạch nước ngầm và nuôi cây gỗ lớn bền vững.'
                 },
                 {
                     q: 'Bài học quản trị nhân sự lớn nhất rút ra từ một khu rừng nguyên sinh hỗn giao (nhiều tầng cây) là gì?',
@@ -1142,12 +1244,22 @@
                 {
                     q: 'Chính sách "Khoán 10" trong nông lâm nghiệp Việt Nam dạy chúng ta quy luật Nhân Tâm cốt lõi nào?',
                     answers: [
-                        'Khi người lao động thực sự làm chủ mảnh đất và hưởng thành quả xứng đáng, sức sáng tạo sẽ bùng nổ.',
+                        'Khi người lao động thực sự làm chủ mảnh đất và hưởng thành quả xứng đáng, nội lực sẽ bùng nổ.',
                         'Cứ giao việc mà không cần quan tâm quyền lợi.',
                         'Làm chung không ai chịu trách nhiệm là tốt nhất.'
                     ],
                     correct: 0,
-                    explain: 'Trao quyền gắn liền với trách nhiệm và lợi ích chính đáng là chìa khóa đánh thức nội lực mạnh mẽ nhất của con người.'
+                    explain: 'Trao quyền gắn liền với trách nhiệm và lợi ích chính đáng là chìa khóa đánh thức sức sáng tạo mạnh mẽ nhất.'
+                },
+                {
+                    q: 'Để phòng ngừa bệnh chết héo Ceratocystis trên rừng trồng keo gỗ lớn, giải pháp GỐC bền vững nhất là gì?',
+                    answers: [
+                        'Chọn giống kháng bệnh chuẩn, chăm sóc đúng kỹ thuật tránh gây vết thương cơ giới và bảo vệ cân bằng sinh thái đất.',
+                        'Chặt bỏ toàn bộ rừng không trồng nữa.',
+                        'Bón thật nhiều phân hóa học vô tội vạ.'
+                    ],
+                    correct: 0,
+                    explain: 'Cây khỏe từ giống chuẩn và đất khỏe từ vi sinh bản địa chính là tấm khiên tự nhiên vững chắc nhất.'
                 }
             ],
             sprout: [
@@ -1179,39 +1291,49 @@
                         'Vì mưa sợ cây nên không rơi xuống.'
                     ],
                     correct: 0,
-                    explain: 'Tuyệt vời! Rễ cây như hàng triệu bàn tay ôm chặt đất mẹ. Vì vậy trồng thêm 1 cây xanh là bảo vệ bình yên cho bản làng!'
+                    explain: 'Tuyệt vời! Rễ cây như hàng triệu bàn tay ôm chặt đất mẹ. Trồng thêm 1 cây xanh là bảo vệ bình yên cho bản làng!'
+                },
+                {
+                    q: 'Loài chim nào được mệnh danh là "Bác sĩ của rừng xanh" chuyên bắt sâu đục thân cứu cây?',
+                    answers: [
+                        'Chim Gõ Kiến',
+                        'Chim Cánh Cụt',
+                        'Con Vịt Bầu'
+                    ],
+                    correct: 0,
+                    explain: 'Xuất sắc! Chim Gõ Kiến dùng chiếc mỏ cứng gõ vào thân cây để bắt sâu hại, giúp cây rừng luôn khỏe mạnh!'
                 }
             ]
         };
 
         let quizIdx = 0;
         let quizStreak = 0;
+        let quizAnswered = false;
 
         function renderForestQuizMiniWeb(viewport, isElder) {
+            quizAnswered = false;
             const list = isElder ? FOREST_QUIZ_DATA.elder : FOREST_QUIZ_DATA.sprout;
             const item = list[quizIdx % list.length];
 
             viewport.innerHTML = `
                 <div class="space-y-4">
-                    <!-- Forest Banner -->
-                    <div class="rounded-3xl p-4 bg-gradient-to-br from-emerald-800/60 to-teal-950/80 border border-emerald-400/40 flex items-center justify-between">
+                    <div class="rounded-3xl p-4 bg-gradient-to-br from-emerald-800/60 to-teal-950/85 border border-emerald-400/40 flex items-center justify-between">
                         <div>
                             <div class="text-[10px] font-bold text-emerald-300 uppercase">HTX Lâm Nghiệp Bền Vững Keo Sơn • GỐC</div>
                             <h4 class="text-sm font-extrabold text-white mt-0.5">
                                 ${isElder ? 'Giải Mã Quy Luật Đại Ngàn' : 'Hiệp Sĩ Rừng Xanh Giải Đố'}
                             </h4>
                         </div>
-                        <div class="px-3 py-1.5 rounded-2xl bg-black/40 border border-amber-400/40 text-center">
-                            <div class="text-[9px] text-emerald-200">Chuỗi đúng</div>
+                        <div class="px-3 py-1.5 rounded-2xl bg-black/45 border border-amber-400/40 text-center shrink-0">
+                            <div class="text-[9px] text-emerald-200">Chuỗi thắng</div>
                             <div class="text-sm font-extrabold text-amber-300">🔥 ${quizStreak}</div>
                         </div>
                     </div>
 
-                    <!-- Question Box -->
-                    <div class="rounded-3xl p-4 bg-black/35 border border-white/15 space-y-3.5">
-                        <div class="flex justify-between items-center text-[11px] text-emerald-300">
+                    <div class="rounded-3xl p-4 bg-black/40 border border-white/15 space-y-3.5">
+                        <div class="flex justify-between items-center text-[11px] text-emerald-300 font-bold">
                             <span>Câu hỏi #${(quizIdx % list.length) + 1}/${list.length}</span>
-                            <span>Phần thưởng: +15 🌱</span>
+                            <span class="text-amber-300">Thưởng: +15 🌱</span>
                         </div>
 
                         <p class="text-sm font-bold text-white leading-relaxed">
@@ -1220,7 +1342,7 @@
 
                         <div class="space-y-2.5">
                             ${item.answers.map((ans, i) => `
-                                <button onclick="answerForestQuiz(${i})" class="w-full text-left p-3.5 rounded-2xl bg-white/5 hover:bg-emerald-500/20 border border-white/10 hover:border-emerald-400/50 text-xs transition flex items-center gap-3 active:scale-95">
+                                <button id="quizAnsBtn_${i}" onclick="answerForestQuiz(${i})" class="w-full text-left p-3.5 rounded-2xl bg-white/5 hover:bg-emerald-500/20 border border-white/10 hover:border-emerald-400/50 text-xs transition flex items-center gap-3 active:scale-95">
                                     <span class="w-6 h-6 rounded-xl bg-emerald-500/30 text-emerald-200 font-extrabold flex items-center justify-center shrink-0">${String.fromCharCode(65 + i)}</span>
                                     <span class="leading-relaxed">${ans}</span>
                                 </button>
@@ -1234,20 +1356,36 @@
         }
 
         function answerForestQuiz(choiceIdx) {
+            if (quizAnswered) return;
+            quizAnswered = true;
+
             const isElder = appState.cognitiveMode === 'elder';
             const list = isElder ? FOREST_QUIZ_DATA.elder : FOREST_QUIZ_DATA.sprout;
             const item = list[quizIdx % list.length];
             const fb = document.getElementById('forestQuizFeedback');
             if (!fb) return;
 
+            item.answers.forEach((_, i) => {
+                const btn = document.getElementById(`quizAnsBtn_${i}`);
+                if (!btn) return;
+                btn.disabled = true;
+                if (i === item.correct) {
+                    btn.className = 'w-full text-left p-3.5 rounded-2xl bg-emerald-500/35 border-2 border-emerald-400 text-xs flex items-center gap-3 font-bold text-white';
+                } else if (i === choiceIdx) {
+                    btn.className = 'w-full text-left p-3.5 rounded-2xl bg-rose-500/30 border-2 border-rose-400 text-xs flex items-center gap-3 text-rose-100';
+                } else {
+                    btn.classList.add('opacity-45');
+                }
+            });
+
             fb.classList.remove('hidden');
             if (choiceIdx === item.correct) {
                 quizStreak++;
-                fb.className = 'p-3.5 rounded-2xl bg-emerald-500/25 border border-emerald-400 text-xs space-y-2';
+                fb.className = 'p-3.5 rounded-2xl bg-emerald-950/90 border border-emerald-400 text-xs space-y-2';
                 fb.innerHTML = `
                     <div class="font-extrabold text-amber-300">🎉 Chính xác tuyệt đối! (+15 Hạt Giống)</div>
                     <p class="text-white leading-relaxed">${item.explain}</p>
-                    <button onclick="nextForestQuestion()" class="w-full py-2 rounded-xl bg-amber-400 text-slate-950 font-extrabold text-xs">
+                    <button onclick="nextForestQuestion()" class="w-full py-2.5 rounded-xl bg-gradient-to-r from-amber-400 to-orange-500 text-slate-950 font-extrabold text-xs shadow">
                         Qua Câu Tiếp Theo ➔
                     </button>
                 `;
@@ -1255,11 +1393,11 @@
             } else {
                 quizStreak = 0;
                 playClickSfx(300);
-                fb.className = 'p-3.5 rounded-2xl bg-rose-500/20 border border-rose-400 text-xs space-y-2';
+                fb.className = 'p-3.5 rounded-2xl bg-rose-950/90 border border-rose-400 text-xs space-y-2';
                 fb.innerHTML = `
-                    <div class="font-extrabold text-rose-300">🌱 Chưa trúng rồi! Hãy thử ngẫm lại nhé:</div>
+                    <div class="font-extrabold text-rose-300">🌱 Chưa trúng rồi! Bài học rút ra là:</div>
                     <p class="text-white leading-relaxed">${item.explain}</p>
-                    <button onclick="nextForestQuestion()" class="w-full py-2 rounded-xl bg-white/20 text-white font-bold text-xs">
+                    <button onclick="nextForestQuestion()" class="w-full py-2.5 rounded-xl bg-white/20 hover:bg-white/30 text-white font-bold text-xs">
                         Thử Câu Tiếp Theo ➔
                     </button>
                 `;
@@ -1272,7 +1410,323 @@
         }
 
         /* ==================================================================
-         * MINI-WEB 3: TRẠM ĐỒNG BỘ 24 KÊNH & CỘNG ĐỒNG HAPPY RUN 108
+         * GAME 3: BÀN THẺ BÀI LẬT 3D NHÂN TÂM (NEW INTERACTIVE 3D CARDS)
+         * ================================================================== */
+        const FLIP_CARDS_DATA = {
+            elder: [
+                { icon: '👁️', title: 'Thuật Quan Nhân', secret: 'Muốn biết tâm một người, đừng nghe họ nói lúc trà dư tửu hậu, hãy nhìn cách họ đối xử với người yếu thế hơn mình.' },
+                { icon: '👅', title: 'Uốn Lưỡi 7 Lần', secret: 'Lời khen trao trước mặt đám đông, lời phê bình góp ý trong phòng kín chỉ có hai người.' },
+                { icon: '⚖️', title: 'Cán Cân Lợi Ích', secret: 'Khi hợp tác làm ăn, nói rõ quyền lợi và trách nhiệm từ đầu mới giữ được tình anh em bền lâu.' },
+                { icon: '🛡️', title: 'Từ Chối Thông Minh', secret: 'Thà từ chối thẳng thắn ngay từ đầu còn hơn nhận lời vì cả nể rồi làm trễ việc của người.' },
+                { icon: '🌊', title: 'Nhu Thắng Cương', secret: 'Nước mềm mại nhất thiên hạ nhưng xuyên thủng đá cứng. Gặp kẻ nóng nảy, điềm tĩnh là vũ khí tối thượng.' },
+                { icon: '🌳', title: 'Gốc Rễ Gia Đạo', secret: 'Ngoài xã hội thắng trăm trận không bằng về nhà giữ được tiếng cười ấm áp trong bữa cơm gia đình.' }
+            ],
+            sprout: [
+                { icon: '🙏', title: 'Lời Cảm Ơn Kỳ Diệu', secret: 'Khi ai đó giúp mình, hãy nhìn vào mắt họ, mỉm cười thật tươi và nói: "Con cảm ơn ạ!"' },
+                { icon: '❤️', title: 'Lời Xin Lỗi Dũng Cảm', secret: 'Khi lỡ làm sai, nói lời xin lỗi chân thành sẽ biến lỗi lầm thành bài học quý giá!' },
+                { icon: '🤝', title: 'Chia Sẻ Niềm Vui', secret: 'Một cái bánh chia đôi cho bạn cùng ăn sẽ ngon gấp đôi khi ăn một mình!' },
+                { icon: '👂', title: 'Lắng Nghe Chăm Chú', secret: 'Khi ông bà, cha mẹ hay thầy cô đang nói, lắng nghe hết câu mới là em bé ngoan thông thái.' },
+                { icon: '🌅', title: 'Chào Hỏi Lễ Phép', secret: 'Đi thưa về trình — câu chào lễ phép làm rạng rỡ cả ngôi nhà thân yêu!' },
+                { icon: '🌱', title: 'Thương Yêu Muông Thú', secret: 'Bảo vệ từng nhành cây, chú chim nhỏ là con đang gieo hạt giống thiện lành cho Trái Đất.' }
+            ]
+        };
+
+        let flippedSet = new Set();
+
+        function renderFlipCardsMiniWeb(viewport, isElder) {
+            flippedSet.clear();
+            const cards = isElder ? FLIP_CARDS_DATA.elder : FLIP_CARDS_DATA.sprout;
+
+            viewport.innerHTML = `
+                <div class="space-y-4">
+                    <div class="rounded-3xl p-4 bg-gradient-to-br from-purple-900/60 to-slate-900 border border-purple-400/40 flex items-center justify-between">
+                        <div>
+                            <div class="text-[10px] font-bold text-purple-300 uppercase">Sổ Tay Nhân Tâm • 3D Flashcards</div>
+                            <h4 class="text-sm font-extrabold text-white mt-0.5">
+                                ${isElder ? 'Chạm Để Lật Mở 6 Bí Quyết Nhân Tâm' : 'Chạm Để Lật Mở 6 Bông Hoa Lời Đẹp'}
+                            </h4>
+                        </div>
+                        <div class="px-3 py-1.5 rounded-2xl bg-black/45 border border-amber-400/40 text-xs font-extrabold text-amber-300 shrink-0">
+                            Đã mở: <span id="flipCounter">0</span>/6
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-3">
+                        ${cards.map((c, idx) => `
+                            <div onclick="flipWisdomCard(${idx})" class="perspective-1000 h-44 cursor-pointer">
+                                <div id="flipCardInner_${idx}" class="flip-card-inner">
+                                    <!-- Front -->
+                                    <div class="flip-card-front rounded-3xl p-4 bg-gradient-to-br from-purple-800/45 via-slate-900 to-emerald-950 border-2 border-purple-400/40 flex flex-col items-center justify-center text-center shadow-lg hover:border-amber-400 transition">
+                                        <div class="w-12 h-12 rounded-2xl bg-white/10 flex items-center justify-center text-2xl mb-2 shadow-inner">
+                                            ${c.icon}
+                                        </div>
+                                        <div class="text-xs font-extrabold text-white">${c.title}</div>
+                                        <div class="text-[10px] text-amber-300 mt-2 font-semibold px-2.5 py-0.5 rounded-full bg-amber-500/15 border border-amber-400/30">
+                                            👆 Chạm để lật (+8 🌱)
+                                        </div>
+                                    </div>
+                                    <!-- Back -->
+                                    <div class="flip-card-back rounded-3xl p-3.5 bg-gradient-to-br from-amber-500/25 via-emerald-950 to-slate-950 border-2 border-amber-400 flex flex-col justify-between text-center shadow-xl">
+                                        <div class="text-[10px] font-extrabold text-amber-300 uppercase">${c.icon} ${c.title}</div>
+                                        <p class="text-[11px] text-white leading-relaxed font-medium">
+                                            "${c.secret}"
+                                        </p>
+                                        <div class="text-[9px] text-emerald-300 font-bold">✅ Đã lĩnh hội</div>
+                                    </div>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+        }
+
+        function flipWisdomCard(idx) {
+            const el = document.getElementById(`flipCardInner_${idx}`);
+            if (!el) return;
+            el.classList.toggle('is-flipped');
+            if (!flippedSet.has(idx)) {
+                flippedSet.add(idx);
+                const counter = document.getElementById('flipCounter');
+                if (counter) counter.textContent = flippedSet.size;
+                addSeeds(8, `Lật thẻ Nhân Tâm #${idx + 1}`);
+            } else {
+                playClickSfx(580);
+            }
+        }
+
+        /* ==================================================================
+         * GAME 4: SA BÀN TRỒNG RỪNG HTX KEO SƠN (9-PLOT FOREST SIMULATOR)
+         * ================================================================== */
+        const PLOT_STAGES = [
+            { icon: '🟫', name: 'Đất Đồi Trống', action: 'Bấm Gieo Giống', bg: 'from-amber-950/60 to-stone-900/80 border-amber-700/40' },
+            { icon: '🌱', name: 'Mầm Keo Lai', action: 'Bấm Tưới Nước', bg: 'from-emerald-900/60 to-teal-950/80 border-emerald-500/40' },
+            { icon: '🌲', name: 'Rừng Khép Tán', action: 'Dưỡng Gỗ Lớn', bg: 'from-emerald-700/50 to-emerald-950/90 border-emerald-400/60' },
+            { icon: '🌳', name: 'Đại Thụ Carbon', action: 'Thu Hoạch Bền Vững', bg: 'from-amber-500/35 to-emerald-900/90 border-amber-400' }
+        ];
+
+        function renderForestTycoonMiniWeb(viewport, isElder) {
+            const matureCount = appState.forestPlots.filter(s => s >= 2).length;
+            const carbonTons = appState.forestPlots.reduce((sum, s) => sum + s * 4, 0);
+
+            viewport.innerHTML = `
+                <div class="space-y-4">
+                    <div class="rounded-3xl p-4 bg-gradient-to-br from-lime-900/60 via-emerald-950 to-slate-900 border border-lime-400/40 space-y-2">
+                        <div class="flex items-center justify-between">
+                            <span class="text-[10px] font-extrabold text-lime-300 uppercase">Xứ Cùa • Cam Lộ • Quảng Trị</span>
+                            <span class="text-xs font-extrabold text-amber-300">🌍 Hấp thụ: ${carbonTons} Tấn CO₂</span>
+                        </div>
+                        <h4 class="text-sm font-extrabold text-white">
+                            ${isElder ? 'Sa Bàn Lâm Nghiệp Bền Vững HTX Keo Sơn' : 'Khu Vườn Ươm Cây Xanh Của Bé'}
+                        </h4>
+                        <p class="text-[11px] text-emerald-100/85 leading-relaxed">
+                            ${isElder
+                                ? 'Chạm vào từng ô đất để ươm giống Keo Lai chuẩn, chăm sóc rừng gỗ lớn và thu hoạch luân phiên giữ thảm thực vật.'
+                                : 'Bé hãy chạm tay vào các ô đất để gieo hạt, tưới nước cho cây lớn lên thành khu rừng xanh mát nhé!'}
+                        </p>
+                    </div>
+
+                    <!-- 3x3 Interactive Forest Grid -->
+                    <div class="grid grid-cols-3 gap-2.5">
+                        ${appState.forestPlots.map((stage, idx) => {
+                            const st = PLOT_STAGES[stage] || PLOT_STAGES[0];
+                            return `
+                                <button onclick="advanceForestPlot(${idx})" class="p-3 rounded-3xl bg-gradient-to-b ${st.bg} border-2 flex flex-col items-center justify-center text-center gap-1 hover:scale-105 active:scale-95 transition shadow-lg">
+                                    <span class="text-3xl">${st.icon}</span>
+                                    <span class="text-[10px] font-extrabold text-white leading-tight mt-1">${st.name}</span>
+                                    <span class="text-[9px] text-amber-300 font-semibold bg-black/40 px-2 py-0.5 rounded-full">${st.action}</span>
+                                </button>
+                            `;
+                        }).join('')}
+                    </div>
+
+                    <div class="rounded-2xl p-3 bg-black/35 border border-white/10 flex items-center justify-between text-xs">
+                        <span class="text-emerald-200">Số ô rừng đã khép tán: <strong class="text-amber-300">${matureCount}/9 ô</strong></span>
+                        <button onclick="waterAllForestPlots()" class="px-3 py-1.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-extrabold text-[11px] active:scale-95 transition">
+                            🌧️ Mưa Rào Tưới Cả Rừng (+15 🌱)
+                        </button>
+                    </div>
+                </div>
+            `;
+        }
+
+        function advanceForestPlot(idx) {
+            const current = appState.forestPlots[idx];
+            if (current < 3) {
+                appState.forestPlots[idx] = current + 1;
+                const nextStage = PLOT_STAGES[current + 1];
+                addSeeds(6, `Chăm sóc ô rừng #${idx + 1} lên ${nextStage.name}`);
+            } else {
+                // Replant cycle (keep root cover, replant seedling)
+                appState.forestPlots[idx] = 1;
+                addSeeds(15, `Thu hoạch gỗ lớn & Tái sinh rừng ô #${idx + 1}`);
+            }
+            renderForestTycoonMiniWeb(document.getElementById('miniWebViewport'), appState.cognitiveMode === 'elder');
+        }
+
+        function waterAllForestPlots() {
+            appState.forestPlots = appState.forestPlots.map(s => (s < 3 ? s + 1 : s));
+            addSeeds(15, 'Mưa rào nuôi dưỡng đại ngàn Keo Sơn!');
+            renderForestTycoonMiniWeb(document.getElementById('miniWebViewport'), appState.cognitiveMode === 'elder');
+        }
+
+        /* ==================================================================
+         * GAME 5: SỰ THẬT 8 GIÂY - PHÁ VỠ Ảo TƯỞNG (8-SECOND COUNTDOWN)
+         * ================================================================== */
+        const EIGHT_SEC_DATA = {
+            elder: [
+                {
+                    myth: 'Ảo tưởng đám đông: "Cứ quen biết rộng, đi nhậu nhiều là có nhiều quý nhân giúp đỡ."',
+                    choices: [
+                        { text: 'Sự thật GỐC: Khi bạn chưa có giá trị nội tại và chữ Tín, mọi cuộc vui chỉ là xã giao. Hãy nâng tầm bản thân trước!', correct: true },
+                        { text: 'Đúng vậy, cứ đi tiệc tùng mỗi ngày là tự nhiên giàu.', correct: false }
+                    ]
+                },
+                {
+                    myth: 'Ảo tưởng đám đông: "Người hay nói lời ngọt ngào lấy lòng lúc bạn đắc thế là người trung thành nhất."',
+                    choices: [
+                        { text: 'Đúng, ai khen mình đều là bạn tốt.', correct: false },
+                        { text: 'Sự thật GỐC: Người dám thẳng thắn góp ý riêng khi bạn sai và ở lại khi bạn sa cơ mới là tri kỷ đích thực.', correct: true }
+                    ]
+                },
+                {
+                    myth: 'Ảo tưởng đám đông: "Dùng công nghệ AI là để lười suy nghĩ, phó mặc hết cho máy móc."',
+                    choices: [
+                        { text: 'Sự thật GỐC: AI là đòn bẩy nhân bản trí tuệ. Người có GỐC triết lý sâu sắc mới điều khiển được AI tạo ra kiệt tác.', correct: true },
+                        { text: 'Cứ copy-paste đại không cần đọc lại.', correct: false }
+                    ]
+                }
+            ],
+            sprout: [
+                {
+                    myth: 'Thử thách 8 Giây: Khi thấy một người lạ cho kẹo và rủ đi theo mà chưa xin phép bố mẹ, con làm sao?',
+                    choices: [
+                        { text: 'Lịch sự từ chối ngay và chạy về phía bố mẹ, thầy cô hoặc chú bảo vệ!', correct: true },
+                        { text: 'Cầm kẹo và đi theo người lạ luôn.', correct: false }
+                    ]
+                },
+                {
+                    myth: 'Thử thách 8 Giây: Thói quen nào giúp đôi mắt của con luôn sáng khỏe tinh anh?',
+                    choices: [
+                        { text: 'Tránh nhìn điện thoại trong bóng tối và ra ngoài ngắm cây xanh, tập thể dục!', correct: true },
+                        { text: 'Trùm chăn xem điện thoại sát mắt suốt đêm.', correct: false }
+                    ]
+                }
+            ]
+        };
+
+        let eightSecIdx = 0;
+        let eightSecRemaining = 8.0;
+        let eightSecLocked = false;
+
+        function renderEightSecondTruthMiniWeb(viewport, isElder) {
+            clearInterval(window._eightSecTimer);
+            eightSecRemaining = 8.0;
+            eightSecLocked = false;
+
+            const list = isElder ? EIGHT_SEC_DATA.elder : EIGHT_SEC_DATA.sprout;
+            const item = list[eightSecIdx % list.length];
+
+            viewport.innerHTML = `
+                <div class="space-y-4">
+                    <div class="rounded-3xl p-4 bg-gradient-to-br from-rose-900/60 to-slate-900 border border-rose-400/50 space-y-2">
+                        <div class="flex items-center justify-between">
+                            <span class="text-[10px] font-extrabold text-rose-300 uppercase">Tư Duy Ngược • Sự Thật 8 Giây</span>
+                            <span id="eightSecTimerBadge" class="text-sm font-extrabold text-amber-300 font-mono">⏱️ 8.0s</span>
+                        </div>
+                        <div class="w-full h-2.5 rounded-full bg-black/50 overflow-hidden">
+                            <div id="eightSecProgressBar" class="h-full bg-gradient-to-r from-amber-400 to-rose-500 transition-all duration-100" style="width: 100%"></div>
+                        </div>
+                    </div>
+
+                    <div class="rounded-3xl p-4 bg-black/40 border border-white/15 space-y-3.5">
+                        <div class="p-3.5 rounded-2xl bg-rose-950/60 border border-rose-400/40 text-xs font-bold text-rose-100 leading-relaxed">
+                            ⚡ ${item.myth}
+                        </div>
+
+                        <div class="text-xs font-extrabold text-amber-300">Hãy bấm chọn Sự Thật GỐC trước khi hết 8 giây:</div>
+
+                        <div class="space-y-2.5">
+                            ${item.choices.map((c, i) => `
+                                <button onclick="answerEightSecTruth(${i})" class="w-full text-left p-3.5 rounded-2xl bg-white/5 hover:bg-amber-500/20 border border-white/15 hover:border-amber-400 text-xs font-semibold transition active:scale-95 leading-relaxed">
+                                    ${c.text}
+                                </button>
+                            `).join('')}
+                        </div>
+
+                        <div id="eightSecFeedback" class="hidden p-3.5 rounded-2xl text-xs space-y-2"></div>
+                    </div>
+                </div>
+            `;
+
+            window._eightSecTimer = setInterval(() => {
+                if (eightSecLocked) return;
+                eightSecRemaining = Math.max(0, +(eightSecRemaining - 0.1).toFixed(1));
+                const badge = document.getElementById('eightSecTimerBadge');
+                const bar = document.getElementById('eightSecProgressBar');
+                if (badge) badge.textContent = `⏱️ ${eightSecRemaining.toFixed(1)}s`;
+                if (bar) bar.style.width = `${(eightSecRemaining / 8) * 100}%`;
+
+                if (eightSecRemaining <= 0) {
+                    clearInterval(window._eightSecTimer);
+                    eightSecLocked = true;
+                    const fb = document.getElementById('eightSecFeedback');
+                    if (fb) {
+                        fb.classList.remove('hidden');
+                        fb.className = 'p-3.5 rounded-2xl bg-rose-950/90 border border-rose-400 text-xs space-y-2';
+                        fb.innerHTML = `
+                            <div class="font-extrabold text-rose-300">⏰ Đã hết 8 giây! Đừng để đám đông dẫn dắt tư duy!</div>
+                            <button onclick="nextEightSecChallenge()" class="w-full py-2.5 rounded-xl bg-amber-400 text-slate-950 font-extrabold text-xs">
+                                Phục Thù Thử Thách Tiếp Theo ➔
+                            </button>
+                        `;
+                    }
+                }
+            }, 100);
+        }
+
+        function answerEightSecTruth(idx) {
+            if (eightSecLocked) return;
+            eightSecLocked = true;
+            clearInterval(window._eightSecTimer);
+
+            const isElder = appState.cognitiveMode === 'elder';
+            const list = isElder ? EIGHT_SEC_DATA.elder : EIGHT_SEC_DATA.sprout;
+            const item = list[eightSecIdx % list.length];
+            const picked = item.choices[idx];
+            const fb = document.getElementById('eightSecFeedback');
+            if (!fb) return;
+
+            fb.classList.remove('hidden');
+            if (picked.correct) {
+                fb.className = 'p-3.5 rounded-2xl bg-emerald-950/90 border border-emerald-400 text-xs space-y-2';
+                fb.innerHTML = `
+                    <div class="font-extrabold text-amber-300">⚡ Phản xạ Tỉnh Thức ở giây còn lại ${eightSecRemaining.toFixed(1)}s! (+15 Hạt Giống)</div>
+                    <p class="text-white">Nhìn thấu bản chất chỉ trong chớp mắt chính là nội lực của người có GỐC.</p>
+                    <button onclick="nextEightSecChallenge()" class="w-full py-2.5 rounded-xl bg-gradient-to-r from-amber-400 to-orange-500 text-slate-950 font-extrabold text-xs">
+                        Qua Thử Thách 8 Giây Tiếp Theo ➔
+                    </button>
+                `;
+                addSeeds(15, 'Phá vỡ ảo tưởng trong 8 Giây');
+            } else {
+                playClickSfx(320);
+                fb.className = 'p-3.5 rounded-2xl bg-rose-950/90 border border-rose-400 text-xs space-y-2';
+                fb.innerHTML = `
+                    <div class="font-extrabold text-rose-300">💡 Hãy nhìn sâu hơn vào GỐC rễ của vấn đề!</div>
+                    <button onclick="nextEightSecChallenge()" class="w-full py-2.5 rounded-xl bg-white/20 text-white font-bold text-xs">
+                        Thử Lại Câu Tiếp Theo ➔
+                    </button>
+                `;
+            }
+        }
+
+        function nextEightSecChallenge() {
+            eightSecIdx++;
+            renderEightSecondTruthMiniWeb(document.getElementById('miniWebViewport'), appState.cognitiveMode === 'elder');
+        }
+
+        /* ==================================================================
+         * GAME 6: TRẠM ĐỒNG BỘ 24 KÊNH & HAPPY RUN 108
          * ================================================================== */
         const CHANNELS_ECOSYSTEM = [
             { name: 'GỐC', tag: 'Triết lý & Cội nguồn', icon: '🌳', desc: 'Về với GỐC để vươn tới ngàn sao.' },
@@ -1285,8 +1739,8 @@
             { name: 'Chuyện Gia Đình', tag: 'Cha mẹ & Con cái', icon: '🏡', desc: 'Nơi bão dừng sau cánh cửa.' },
             { name: '108 Ngày & Happy Run', tag: '4:30 Sáng • HTH', icon: '🏃', desc: 'Hạnh Phúc - Trí Tuệ - Hành Động mỗi bình minh.' },
             { name: 'Vạn Vật Có Chuyện', tag: 'Thiên nhiên & Bài học', icon: '🦌', desc: 'Mỗi nhành cây ngọn cỏ đều mang một đạo lý.' },
-            { name: 'HTX Lâm Nghiệp Keo Sơn', tag: 'Rừng bền vững Quảng Trị', icon: '🌲', desc: 'Phát triển rừng gỗ lớn và sinh kế xanh.' },
-            { name: 'Xây Web Bằng Mồm AI', tag: 'Telegram + Antigravity', icon: '🤖', desc: 'Tự động hóa 24/7 biến ý tưởng thành thế giới sống.' }
+            { name: 'HTX Lâm Nghiệp Keo Sơn', tag: 'Rừng bền vững Quảng Trị', icon: '🌲', desc: 'Phát triển rừng gỗ lớn và dược liệu sạch Xứ Cùa.' },
+            { name: 'AI Cho Mọi Người', tag: 'Tự động hóa thực chiến', icon: '🤖', desc: 'Ứng dụng AI giản dị, hiệu quả ngay cho đời sống.' }
         ];
 
         function renderHub24ChannelsMiniWeb(viewport, isElder) {
@@ -1295,7 +1749,6 @@
 
             viewport.innerHTML = `
                 <div class="space-y-4">
-                    <!-- HAPPY RUN 108 CHECK-IN CARD -->
                     <div class="rounded-3xl p-4 bg-gradient-to-br from-amber-500/25 via-emerald-900/70 to-slate-900 border border-amber-400/50 space-y-3 shadow-xl">
                         <div class="flex items-center justify-between">
                             <span class="text-[10px] font-extrabold px-2.5 py-0.5 rounded-full bg-amber-400 text-slate-950">
@@ -1308,8 +1761,8 @@
                         </h4>
                         <p class="text-xs text-emerald-100/85 leading-relaxed">
                             ${isElder
-                                ? 'Kỷ luật dậy sớm lúc 4:30 sáng là lò luyện kim biến ý chí thành vận mệnh. Hãy bấm điểm danh hôm nay để cộng hưởng năng lượng cùng cộng đồng!'
-                                : 'Chiến binh nhỏ ơi! Dậy sớm tập thể dục, hít thở không khí trong lành và mỉm cười thật tươi để nhận Hạt Giống Năng Lượng nhé!'}
+                                ? 'Kỷ luật dậy sớm lúc 4:30 sáng là lò luyện kim biến ý chí thành vận mệnh. Bấm điểm danh hôm nay để cộng hưởng năng lượng!'
+                                : 'Chiến binh nhỏ ơi! Dậy sớm tập thể dục và mỉm cười thật tươi để nhận Hạt Giống Năng Lượng nhé!'}
                         </p>
 
                         <button onclick="checkInHappyRun()" ${checkedInToday ? 'disabled' : ''} class="w-full py-3 rounded-2xl font-extrabold text-xs shadow-lg transition flex items-center justify-center gap-2 ${checkedInToday ? 'bg-emerald-700/50 text-emerald-200 cursor-default' : 'bg-gradient-to-r from-amber-400 to-orange-500 text-slate-950 hover:brightness-110 active:scale-95'}">
@@ -1318,13 +1771,12 @@
                         </button>
                     </div>
 
-                    <!-- 24 CHANNELS MATRIX -->
                     <div class="space-y-2.5">
                         <div class="flex items-center justify-between">
                             <h4 class="text-xs font-extrabold uppercase tracking-wider text-amber-300">
                                 📡 Mạng Lưới Đa Kênh Đổ Về lephucnhat.vn
                             </h4>
-                            <span class="text-[10px] text-emerald-300">Đồng bộ 24/7</span>
+                            <span class="text-[10px] text-emerald-300">Chạm kênh nhận +5 🌱</span>
                         </div>
                         <div class="grid grid-cols-2 gap-2.5">
                             ${CHANNELS_ECOSYSTEM.map(ch => `
@@ -1341,26 +1793,6 @@
                             `).join('')}
                         </div>
                     </div>
-
-                    <!-- DIRECT CONNECTION WITH LE PHUC NHAT -->
-                    <div class="rounded-3xl p-4 bg-black/40 border border-emerald-500/30 space-y-2.5 text-xs">
-                        <div class="font-extrabold text-amber-300 flex items-center gap-1.5">
-                            <span>🤝</span> Kết Nối Trực Tiếp Cùng Lê Phúc Nhật
-                        </div>
-                        <div class="space-y-1 text-emerald-100/90 text-[11px]">
-                            <div>📍 <strong>Tâm điểm:</strong> Cam Lộ, Quảng Trị (HTX Lâm Nghiệp Bền Vững Keo Sơn)</div>
-                            <div>📞 <strong>Hotline / Zalo:</strong> <span class="text-amber-300 font-bold">0905.090.245</span></div>
-                            <div>✉️ <strong>Email:</strong> <span class="text-emerald-300">lephucnhat.vn@gmail.com</span></div>
-                        </div>
-                        <div class="pt-1 flex gap-2">
-                            <button onclick="copyContactInfo('0905090245')" class="flex-1 py-2 rounded-xl bg-amber-500/20 border border-amber-400/40 text-amber-200 font-bold text-[11px] active:scale-95 transition">
-                                📋 Copy Số Zalo
-                            </button>
-                            <button onclick="copyContactInfo('lephucnhat.vn@gmail.com')" class="flex-1 py-2 rounded-xl bg-emerald-500/20 border border-emerald-400/40 text-emerald-200 font-bold text-[11px] active:scale-95 transition">
-                                📋 Copy Email
-                            </button>
-                        </div>
-                    </div>
                 </div>
             `;
         }
@@ -1374,75 +1806,80 @@
             renderHub24ChannelsMiniWeb(document.getElementById('miniWebViewport'), appState.cognitiveMode === 'elder');
         }
 
-        function copyContactInfo(text) {
-            const tempInput = document.createElement('textarea');
-            tempInput.value = text;
-            document.body.appendChild(tempInput);
-            tempInput.select();
-            document.execCommand('copy');
-            document.body.removeChild(tempInput);
-            showToast(`Đã sao chép: ${text}`, '📋');
-        }
-
         /* ==================================================================
-         * DYNAMIC ENGINE FOR EXTRA & VOICE-SPAWNED MINI-WEBS
+         * SMART CUSTOM VOICE MINI-WEB ENGINE (FOR USER-SPAWNED WEBS)
          * ================================================================== */
-        function renderDynamicPlayableMiniWeb(viewport, app, isElder) {
+        function renderCustomVoiceMiniWeb(viewport, app, isElder) {
             const content = isElder ? app.elder : app.sprout;
+            const topic = app.rawTopic || content.title;
+
             viewport.innerHTML = `
                 <div class="space-y-4">
-                    <div class="rounded-3xl p-4 bg-gradient-to-br ${app.colorFrom} ${app.colorTo} border ${app.borderColor} space-y-2">
-                        <span class="text-[10px] font-extrabold px-2.5 py-0.5 rounded-full bg-black/40 text-amber-300">
-                            ${app.badge}
-                        </span>
-                        <h4 class="text-base font-extrabold text-white">${content.title}</h4>
-                        <p class="text-xs text-emerald-100/90 leading-relaxed">${content.desc}</p>
+                    <div class="rounded-3xl p-4 bg-gradient-to-br ${app.colorFrom} ${app.colorTo} border ${app.borderColor} flex items-center justify-between gap-2">
+                        <div>
+                            <span class="text-[10px] font-extrabold px-2.5 py-0.5 rounded-full bg-black/45 text-amber-300">
+                                🎙️ Khởi Tạo Bằng Khẩu Lệnh AI
+                            </span>
+                            <h4 class="text-sm sm:text-base font-extrabold text-white mt-1">${content.title}</h4>
+                            <p class="text-xs text-emerald-100/85 mt-0.5">${content.desc}</p>
+                        </div>
+                        <div class="text-3xl shrink-0">${app.icon}</div>
                     </div>
 
-                    <!-- Interactive Card Draw Inside Any Spawned Mini-Web -->
-                    <div class="rounded-3xl p-4 bg-black/35 border border-white/15 space-y-3 text-center">
-                        <div class="text-3xl animate-bounce">${app.icon}</div>
-                        <h5 class="text-xs font-extrabold text-amber-300 uppercase tracking-wider">
-                            ${isElder ? 'Bấm Nút Khai Mở Bài Học Thực Chiến' : 'Bấm Nút Nhận Thử Thách Vui Nhộn'}
-                        </h5>
-                        <p id="dynamicLessonOutput" class="text-xs text-emerald-50/95 leading-relaxed p-3 rounded-2xl bg-white/5 border border-white/10">
-                            ${isElder
-                                ? '"Muốn đi nhanh hãy đi một mình, muốn đi xa phải cùng nhau giữ GỐC." — Hãy bấm nút bên dưới để AI rút ra 1 tình huống ứng dụng ngay!'
-                                : '"Mỗi ngày gieo một hạt mầm thiện lành, mai sau thành cả khu rừng hạnh phúc!" — Bấm nút để mở hộp quà trí tuệ nhé!'}
-                        </p>
-                        <button onclick="triggerDynamicMiniWebAction('${app.id}')" class="w-full py-3 rounded-2xl bg-gradient-to-r from-amber-400 to-orange-500 text-slate-950 font-extrabold text-xs shadow-lg active:scale-95 transition">
-                            ✨ BẤM NÚT TƯƠNG TÁC & NHẬN +10 HẠT GIỐNG
-                        </button>
+                    <!-- 3-Step Interactive Challenge Generated for the Topic -->
+                    <div class="rounded-3xl p-4 bg-black/40 border border-white/15 space-y-3">
+                        <div class="text-xs font-extrabold text-amber-300 uppercase">
+                            🎯 3 Cửa Ải Tương Tác Chủ Đề: "${topic}"
+                        </div>
+                        <div class="grid grid-cols-3 gap-2">
+                            <button onclick="playCustomStage(1, '${topic.replace(/'/g, '')}')" class="p-3 rounded-2xl bg-white/5 hover:bg-amber-500/25 border border-white/15 text-center space-y-1 active:scale-95 transition">
+                                <div class="text-xl">🌱</div>
+                                <div class="text-[11px] font-bold text-white">Ải 1: GỐC</div>
+                                <div class="text-[9px] text-emerald-300">Hiểu Bản Chất</div>
+                            </button>
+                            <button onclick="playCustomStage(2, '${topic.replace(/'/g, '')}')" class="p-3 rounded-2xl bg-white/5 hover:bg-amber-500/25 border border-white/15 text-center space-y-1 active:scale-95 transition">
+                                <div class="text-xl">⚖️</div>
+                                <div class="text-[11px] font-bold text-white">Ải 2: TỈNH</div>
+                                <div class="text-[9px] text-amber-300">Phá Chấp Ngã</div>
+                            </button>
+                            <button onclick="playCustomStage(3, '${topic.replace(/'/g, '')}')" class="p-3 rounded-2xl bg-white/5 hover:bg-amber-500/25 border border-white/15 text-center space-y-1 active:scale-95 transition">
+                                <div class="text-xl">⚡</div>
+                                <div class="text-[11px] font-bold text-white">Ải 3: HÀNH</div>
+                                <div class="text-[9px] text-sky-300">Ứng Dụng Ngay</div>
+                            </button>
+                        </div>
+
+                        <div id="customStageBox" class="p-3.5 rounded-2xl bg-emerald-950/80 border border-amber-400/40 text-xs text-emerald-50 leading-relaxed">
+                            👆 Hãy chạm vào từng Cửa Ải (Hiểu Sâu - Sống Tỉnh - Hành Đúng) phía trên để khai mở bài học tương tác của chủ đề <strong>${topic}</strong>!
+                        </div>
                     </div>
                 </div>
             `;
         }
 
-        function triggerDynamicMiniWebAction(appId) {
+        function playCustomStage(stageNum, topic) {
             const isElder = appState.cognitiveMode === 'elder';
-            const elderLessons = [
-                '🔥 Đòn bẩy Tư Duy Ngược: Khi đám đông chạy theo ngọn (hào nhoáng bên ngoài), người làm chủ cuộc chơi âm thầm bồi đắp GỐC (năng lực lõi & uy tín).',
-                '🧭 Bài học Nhân Tâm: Đừng nghe những gì người ta hứa khi vui, hãy quan sát cách họ hành xử khi quyền lợi bị va chạm.',
-                '🌲 Quy luật Đại Ngàn: Một cây Keo Lai lớn nhanh nhờ nắng, nhưng đứng vững qua bão là nhờ bộ rễ đan chặt vào nhau dưới lòng đất.',
-                '🗣️ Khéo Ăn Nói: Khen người ở chỗ họ đã nỗ lực âm thầm, góp ý người ở nơi chỉ có hai người.'
-            ];
-            const sproutLessons = [
-                '🌱 Thử thách hôm nay: Hãy ôm bố hoặc mẹ một cái thật chặt và nói "Con yêu bố mẹ nhiều lắm!" nhé!',
-                '🦌 Bí mật rừng xanh: Chim gõ kiến được gọi là "bác sĩ của rừng xanh" vì giúp bắt sâu cho thân cây đó con!',
-                '🏮 Bài học lễ phép: Khi nhận quà hoặc sự giúp đỡ từ người lớn, con nhớ mỉm cười nhìn vào mắt và nói lời Cảm Ơn bằng cả hai tay nhé!',
-                '☀️ Năng lượng mặt trời: Dậy sớm vươn vai 5 cái thật sâu giúp não bộ của con thông minh và nhớ bài nhanh gấp đôi!'
-            ];
-            const pool = isElder ? elderLessons : sproutLessons;
-            const picked = pool[Math.floor(Math.random() * pool.length)];
-            const out = document.getElementById('dynamicLessonOutput');
-            if (out) {
-                out.innerHTML = `<span class="text-amber-300 font-semibold">${picked}</span>`;
-            }
-            addSeeds(10, 'Tương tác Thế Giới Con');
+            const box = document.getElementById('customStageBox');
+            if (!box) return;
+
+            const elderMap = {
+                1: `🌳 <strong>[Ải 1 - HIỂU SÂU về "${topic}"]:</strong> Mọi đỉnh cao đều bắt đầu từ nền móng. Trong <em>${topic}</em>, người bình thường nhìn vào chiêu thức bề nổi, bậc trí giả nhìn vào quy luật nhân quả và chuẩn mực đạo đức cốt lõi.`,
+                2: `⚖️ <strong>[Ải 2 - SỐNG TỈNH trong "${topic}"]:</strong> Giữa lúc thắng lợi hay nghịch cảnh của <em>${topic}</em>, giữ được cái đầu lạnh và trái tim ấm mới không bị cuốn vào bẫy cảm xúc.`,
+                3: `⚡ <strong>[Ải 3 - HÀNH ĐÚNG với "${topic}"]:</strong> Áp dụng quy tắc 80/20 ngay hôm nay: Chọn 1 hành động nhỏ nhất nhưng tạo ra 80% giá trị thực chất trong <em>${topic}</em> và kiên trì suốt 108 ngày!`
+            };
+
+            const sproutMap = {
+                1: `🌱 <strong>[Khám Phá "${topic}"]:</strong> Muốn giỏi <em>${topic}</em>, chiến binh Mầm Xanh hãy bắt đầu từ sự tò mò, quan sát kỹ và học hỏi từ ông bà, cha mẹ nhé!`,
+                2: `🌟 <strong>[Bí Kíp Vui Chơi "${topic}"]:</strong> Khi tham gia <em>${topic}</em>, thắng không kiêu, bại không nản, luôn mỉm cười và tôn trọng bạn bè mới là nhà vô địch thực sự!`,
+                3: `🚀 <strong>[Hành Động Nhỏ Hôm Nay]:</strong> Hãy kể cho bố mẹ nghe 1 điều thú vị nhất mà con học được từ <em>${topic}</em> ngay tối nay nhé!`
+            };
+
+            box.innerHTML = isElder ? elderMap[stageNum] : sproutMap[stageNum];
+            addSeeds(10, `Vượt Ải #${stageNum} (${topic})`);
         }
 
         /********************************************************************
-         * 7. "XÂY WEB BẰNG MỒM" (VOICE / PROMPT TO MINI-WEB GENERATOR)
+         * 7. VOICE-TO-WEB MODAL & SPEECH RECOGNITION
          ********************************************************************/
         function openVoiceBuilderModal() {
             playClickSfx(700);
@@ -1454,21 +1891,19 @@
             document.getElementById('voiceBuilderModal').classList.add('hidden');
         }
 
-        let presetIconTemp = '🚀';
-        let presetCatTemp = 'voice';
+        let presetIconTemp = '♟️';
 
-        function fillVoicePreset(text, icon, cat) {
+        function fillVoicePreset(text, icon) {
             playClickSfx(650);
             document.getElementById('voicePromptInput').value = text;
             presetIconTemp = icon;
-            presetCatTemp = cat;
         }
 
         function startSpeechToWeb() {
             const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
             const label = document.getElementById('micBtnLabel');
             if (!SpeechRecognition) {
-                showToast('Trình duyệt này chưa bật Mic trực tiếp, anh dùng nút khẩu lệnh mẫu hoặc gõ chữ nhé!', '💡');
+                showToast('Trình duyệt chưa cấp quyền Mic trực tiếp, ông chủ dùng khẩu lệnh mẫu hoặc gõ chữ nhé!', '💡');
                 return;
             }
             try {
@@ -1480,14 +1915,10 @@
                     const transcript = event.results[0][0].transcript;
                     document.getElementById('voicePromptInput').value = transcript;
                     label.textContent = 'Bấm Nói';
-                    showToast('Đã thu giọng nói thành công!', '🎙️');
+                    showToast('Đã thu khẩu lệnh thành công!', '🎙️');
                 };
-                recognition.onerror = () => {
-                    label.textContent = 'Bấm Nói';
-                };
-                recognition.onend = () => {
-                    label.textContent = 'Bấm Nói';
-                };
+                recognition.onerror = () => { label.textContent = 'Bấm Nói'; };
+                recognition.onend = () => { label.textContent = 'Bấm Nói'; };
                 recognition.start();
             } catch (e) {
                 label.textContent = 'Bấm Nói';
@@ -1504,19 +1935,20 @@
             const newId = 'voice-web-' + Date.now();
             const newMiniWeb = {
                 id: newId,
+                rawTopic: rawPrompt,
                 icon: presetIconTemp || '⚡',
                 category: 'voice',
                 badge: 'Đúc Bằng Mồm AI',
                 colorFrom: 'from-amber-500/30',
-                colorTo: 'to-purple-950/70',
+                colorTo: 'to-purple-950/80',
                 borderColor: 'border-amber-400/60',
                 elder: {
                     title: rawPrompt,
-                    desc: `Thế giới con được khởi tạo tức thì từ khẩu lệnh của Lê Phúc Nhật (Hệ Cổ Thụ).`
+                    desc: `Thế giới tương tác 3 Cửa Ải (Hiểu Sâu - Sống Tỉnh - Hành Đúng) được đúc từ khẩu lệnh.`
                 },
                 sprout: {
                     title: `Sân Chơi: ${rawPrompt}`,
-                    desc: `Trò chơi khám phá vui nhộn dành cho Mầm Xanh được đúc tự động bằng AI!`
+                    desc: `Trò chơi khám phá 3 Cửa Ải dành cho Mầm Xanh được đúc tự động bằng AI!`
                 }
             };
 
@@ -1528,14 +1960,14 @@
             document.getElementById('voicePromptInput').value = '';
             closeVoiceBuilderModal();
             setAppCategory('all');
-            addSeeds(25, 'Đúc thành công 1 Trang Web Con mới!');
+            addSeeds(25, 'Đúc thành công 1 Thế Giới Con mới!');
             setTimeout(() => {
                 openMiniWeb(newId);
-            }, 350);
+            }, 300);
         }
 
         /********************************************************************
-         * 8. PARTICLE CELEBRATION ENGINE & REAL-TIME VIETNAM CLOCK
+         * 8. PARTICLE ENGINE & REAL-TIME VIETNAM CLOCK
          ********************************************************************/
         const canvas = document.getElementById('particleCanvas');
         const ctx = canvas.getContext('2d');
@@ -1550,7 +1982,7 @@
 
         function burstParticles(x, y) {
             const colors = ['#f59e0b', '#10b981', '#fde047', '#34d399', '#ffffff'];
-            for (let i = 0; i < 32; i++) {
+            for (let i = 0; i < 28; i++) {
                 particles.push({
                     x,
                     y,
@@ -1569,8 +2001,8 @@
                 const p = particles[i];
                 p.x += p.vx;
                 p.y += p.vy;
-                p.vy += 0.18; // gravity
-                p.alpha -= 0.022;
+                p.vy += 0.18;
+                p.alpha -= 0.024;
                 if (p.alpha <= 0) {
                     particles.splice(i, 1);
                 } else {
@@ -1594,9 +2026,6 @@
             if (clockEl) clockEl.textContent = `${hh}:${mm}`;
         }
 
-        /********************************************************************
-         * 9. INITIALIZE ON WINDOW LOAD
-         ********************************************************************/
         window.onload = function () {
             updateVietnamClock();
             setInterval(updateVietnamClock, 15000);
