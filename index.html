@@ -3,18 +3,28 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
-  <title>Lê Phúc Nhật (Hiểu Sâu Sống Tỉnh Hành Đúng) | Chủ tịch HTX Keo Sơn & Chuyên gia AI Thực Chiến</title>
-  <meta name="description" content="Không gian số & Danh thiếp thông minh của Lê Phúc Nhật (Hiểu Sâu • Sống Tỉnh • Hành Đúng) - Chủ tịch HĐQT HTX Lâm Nghiệp Bền Vững Keo Sơn, Chuyên gia AI Thực Chiến Xứ Cùa, Quảng Trị." />
-  <meta name="keywords" content="Lê Phúc Nhật, Hiểu Sâu Sống Tỉnh Hành Đúng, HTX Lâm Nghiệp Bền Vững Keo Sơn, AI Thực Chiến, Dược liệu Xứ Cùa, Cam Lộ Quảng Trị, lephucnhat.vn" />
+  <title>Lê Phúc Nhật (Hiểu Sâu Sống Tỉnh Hành Đúng) | Chủ tịch HTX Keo Sơn &amp; Chuyên gia AI Thực Chiến</title>
+  <meta name="description" content="Không gian số &amp; Danh thiếp thông minh của Lê Phúc Nhật (Hiểu Sâu • Sống Tỉnh • Hành Đúng) - Chủ tịch HĐQT HTX Lâm Nghiệp Bền Vững Keo Sơn, Chuyên gia AI Thực Chiến Xứ Cùa, Quảng Trị." />
+  <meta name="keywords" content="Lê Phúc Nhật, Hiểu Sâu Sống Tỉnh Hành Đúng, HTX Lâm Nghiệp Bền Vững Keo Sơn, AI Thực Chiến, Dược liệu Xứ Cùa, Cao An Xoa, Cao Chè Vằng, Bột Ngũ Cốc, Cam Lộ Quảng Trị, lephucnhat.vn" />
   <meta name="author" content="Lê Phúc Nhật" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#070b14" />
   <link rel="canonical" href="https://lephucnhat.vn/" />
 
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://lephucnhat.github.io/" />
+  <!-- Open Graph / Facebook / Zalo -->
+  <meta property="og:type" content="profile" />
+  <meta property="og:locale" content="vi_VN" />
+  <meta property="og:site_name" content="Lê Phúc Nhật • lephucnhat.vn" />
+  <meta property="og:url" content="https://lephucnhat.vn/" />
   <meta property="og:title" content="Lê Phúc Nhật | Hiểu Sâu • Sống Tỉnh • Hành Đúng" />
-  <meta property="og:description" content="Chủ tịch HĐQT HTX Lâm Nghiệp Bền Vững Keo Sơn • Chuyên gia AI Thực Chiến • Kiến tạo giá trị thực từ Gốc!" />
-  <meta property="og:image" content="111.jpg" />
+  <meta property="og:description" content="Chủ tịch HĐQT HTX Lâm Nghiệp Bền Vững Keo Sơn • Kiến Trúc Sư Hệ Thống Nội Dung &amp; AI Thực Chiến • Kiến tạo giá trị thực từ Gốc!" />
+  <meta property="og:image" content="https://lephucnhat.vn/111.jpg" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Lê Phúc Nhật | Hiểu Sâu • Sống Tỉnh • Hành Đúng" />
+  <meta name="twitter:description" content="Chủ tịch HĐQT HTX Lâm Nghiệp Bền Vững Keo Sơn • Chuyên gia AI Thực Chiến Xứ Cùa, Quảng Trị." />
+  <meta name="twitter:image" content="https://lephucnhat.vn/111.jpg" />
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -82,7 +92,7 @@
 
     [data-theme="pearl-light"] {
       --bg-primary: #f8fafc;
-      --bg-secondary: #f1f5f9;
+      --bg-secondary: #ffffff;
       --bg-card: rgba(255, 255, 255, 0.94);
       --bg-card-hover: rgba(255, 255, 255, 1);
       --bg-glass: rgba(255, 255, 255, 0.92);
@@ -805,7 +815,7 @@
     }
 
     /* ==========================================================================
-       7. STATS GRID (4 PILLARS)
+       7. STATS GRID (4 PILLARS) & PORTAL BUTTON
        ========================================================================== */
     .stats-grid {
       display: grid;
@@ -853,8 +863,29 @@
       color: var(--text-muted);
     }
 
+    .portal-play-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 16px 32px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 50%, #10b981 100%);
+      color: #041611;
+      font-size: 0.95rem;
+      font-weight: 800;
+      text-decoration: none;
+      box-shadow: 0 12px 30px rgba(245, 158, 11, 0.35);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .portal-play-btn:hover {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 16px 36px rgba(245, 158, 11, 0.5);
+    }
+
     /* ==========================================================================
-       8. SECTION HEADERS & PORTFOLIO / ENTERPRISE
+       8. SECTION HEADERS, ENTERPRISE (3 PILLARS) & PRODUCT SHOWCASE SHELF
        ========================================================================== */
     .section-block {
       display: flex;
@@ -988,6 +1019,106 @@
       border-color: transparent;
     }
 
+    /* Kệ Trưng Bày Tiêu Điểm Sản Phẩm & Giải Pháp Thực Chiến */
+    .showcase-shelf-wrap {
+      margin-top: 8px;
+      padding: 24px 26px;
+      border-radius: 24px;
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.08), rgba(245, 158, 11, 0.08));
+      border: 1px solid var(--border-highlight);
+    }
+
+    .showcase-shelf-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .showcase-shelf-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--accent-gold-light);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .showcase-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .showcase-item-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 18px;
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 14px;
+      transition: all 0.28s ease;
+    }
+
+    .showcase-item-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent-emerald);
+      box-shadow: var(--shadow-luxury);
+    }
+
+    .showcase-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--accent-emerald);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 6px;
+    }
+
+    .showcase-name {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 6px;
+      line-height: 1.35;
+    }
+
+    .showcase-desc {
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+      line-height: 1.55;
+    }
+
+    .showcase-ask-btn {
+      width: 100%;
+      padding: 9px 12px;
+      border-radius: 11px;
+      background: rgba(245, 158, 11, 0.14);
+      border: 1px solid rgba(245, 158, 11, 0.38);
+      color: var(--accent-gold-light);
+      font-size: 0.8rem;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: all 0.22s ease;
+    }
+
+    .showcase-ask-btn:hover {
+      background: linear-gradient(135deg, var(--accent-gold), #d97706);
+      color: #090d16;
+      border-color: transparent;
+    }
+
     /* ==========================================================================
        9. PERSONAL LIFE & HERITAGE
        ========================================================================== */
@@ -1088,7 +1219,7 @@
     }
 
     /* ==========================================================================
-       11. WISDOM & AI ACTION (11 BÀI CHIÊM NGHIỆM + BỘ LỌC SHUHARI)
+       11. WISDOM & AI ACTION (11 BÀI CHIÊM NGHIỆM + BỘ LỌC & TÌM KIẾM SHUHARI)
        ========================================================================== */
     .wisdom-header-row {
       display: flex;
@@ -1096,6 +1227,14 @@
       justify-content: space-between;
       flex-wrap: wrap;
       gap: 14px;
+    }
+
+    .wisdom-controls-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
     }
 
     .wisdom-filter-bar {
@@ -1122,6 +1261,38 @@
       color: #090d16;
       border-color: transparent;
       box-shadow: 0 4px 15px var(--accent-gold-glow);
+    }
+
+    .wisdom-search-box {
+      position: relative;
+      min-width: 260px;
+      flex: 0 1 310px;
+    }
+
+    .wisdom-search-box input {
+      width: 100%;
+      padding: 9px 14px 9px 36px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-primary);
+      font-size: 0.83rem;
+      outline: none;
+      transition: border-color 0.2s ease;
+    }
+
+    .wisdom-search-box input:focus {
+      border-color: var(--accent-gold);
+    }
+
+    .wisdom-search-icon {
+      position: absolute;
+      left: 13px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 0.85rem;
+      opacity: 0.7;
+      pointer-events: none;
     }
 
     .wisdom-grid {
@@ -1231,6 +1402,36 @@
       color: var(--accent-gold);
     }
 
+    /* Reader View Deep Sections */
+    .reader-section-box {
+      padding: 16px 18px;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.035);
+      border: 1px solid var(--border-subtle);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .reader-section-heading {
+      font-size: 0.96rem;
+      font-weight: 700;
+      color: var(--accent-gold-light);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .reader-toolbar-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 18px;
+      padding-top: 14px;
+      border-top: 1px dashed var(--border-subtle);
+    }
+
     /* ==========================================================================
        12. COMMUNITY WALL
        ========================================================================== */
@@ -1285,12 +1486,14 @@
       border: 1px solid var(--border-subtle);
       border-radius: 16px;
       padding: 16px;
+      position: relative;
     }
 
     .wish-head {
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 8px;
       margin-bottom: 8px;
       font-size: 0.84rem;
     }
@@ -1308,6 +1511,23 @@
     .wish-content {
       font-size: 0.86rem;
       color: var(--text-secondary);
+      word-break: break-word;
+    }
+
+    .wish-delete-btn {
+      margin-top: 8px;
+      padding: 3px 9px;
+      border-radius: 8px;
+      background: rgba(244, 63, 94, 0.16);
+      border: 1px solid rgba(244, 63, 94, 0.4);
+      color: #fda4af;
+      font-size: 0.72rem;
+      font-weight: 700;
+    }
+
+    .wish-delete-btn:hover {
+      background: #e11d48;
+      color: #fff;
     }
 
     /* ==========================================================================
@@ -1362,7 +1582,7 @@
 
     .site-footer {
       text-align: center;
-      padding: 40px 20px 110px;
+      padding: 40px 20px 115px;
       border-top: 1px solid var(--border-subtle);
       color: var(--text-muted);
       font-size: 0.85rem;
@@ -1378,6 +1598,14 @@
       font-size: 1.05rem;
       color: var(--accent-gold-light);
       font-weight: 600;
+    }
+
+    .footer-signature {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.92rem;
+      color: var(--accent-emerald);
+      font-weight: 700;
+      letter-spacing: 0.04em;
     }
 
     .footer-links {
@@ -1713,7 +1941,53 @@
     }
 
     /* ==========================================================================
-       15. MODALS & READERS
+       15. MOBILE BOTTOM QUICK DOCK (< 768px)
+       ========================================================================== */
+    .mobile-quick-dock {
+      display: none;
+      position: fixed;
+      left: 12px;
+      right: 12px;
+      bottom: 10px;
+      z-index: 990;
+      background: var(--bg-glass);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--border-highlight);
+      border-radius: 20px;
+      padding: 6px 8px;
+      box-shadow: 0 14px 35px rgba(0, 0, 0, 0.65);
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    .dock-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2px;
+      padding: 5px 8px;
+      border-radius: 12px;
+      font-size: 0.68rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      transition: all 0.2s ease;
+    }
+
+    .dock-item span.dock-icon {
+      font-size: 1.12rem;
+      line-height: 1.1;
+    }
+
+    .dock-item:hover,
+    .dock-item.highlight {
+      color: var(--accent-gold-light);
+      background: rgba(245, 158, 11, 0.14);
+    }
+
+    /* ==========================================================================
+       16. MODALS, SMART IDENTITY SHARE CARD & READERS
        ========================================================================== */
     .modal-backdrop {
       position: fixed;
@@ -1751,7 +2025,7 @@
     }
 
     .modal-card.large-reader {
-      max-width: 720px;
+      max-width: 760px;
     }
 
     .modal-head {
@@ -1785,6 +2059,79 @@
     .modal-close-btn:hover {
       background: rgba(255, 255, 255, 0.2);
       color: #fff;
+    }
+
+    /* Smart Identity Card Preview in Share Modal */
+    .smart-id-preview {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.14), rgba(245, 158, 11, 0.14));
+      border: 1px solid var(--border-highlight);
+      margin-bottom: 18px;
+      text-align: left;
+    }
+
+    .smart-id-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .smart-id-avatar {
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--accent-gold);
+      box-shadow: 0 0 15px var(--accent-gold-glow);
+      flex-shrink: 0;
+    }
+
+    .smart-id-name {
+      font-weight: 800;
+      font-size: 0.96rem;
+      color: var(--text-primary);
+      line-height: 1.25;
+    }
+
+    .smart-id-Philosophy {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--accent-gold-light);
+      margin-top: 2px;
+    }
+
+    .smart-id-domains {
+      font-size: 0.74rem;
+      color: var(--text-secondary);
+      margin-top: 3px;
+    }
+
+    .smart-id-qr {
+      width: 62px;
+      height: 62px;
+      border-radius: 10px;
+      background: #ffffff;
+      padding: 4px;
+      flex-shrink: 0;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+    }
+
+    .smart-id-qr img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    .share-buttons-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
     }
 
     .form-group {
@@ -1960,7 +2307,8 @@
       .quote-glass-box {
         text-align: left;
       }
-      .stats-grid {
+      .stats-grid,
+      .showcase-grid {
         grid-template-columns: repeat(2, 1fr);
       }
       .enterprise-grid,
@@ -1980,6 +2328,26 @@
       }
     }
 
+    @media (max-width: 767px) {
+      .mobile-quick-dock {
+        display: flex;
+      }
+      .ai-floating-launcher {
+        bottom: 76px;
+        right: 14px;
+        padding: 9px 15px 9px 11px;
+      }
+      .ai-chat-window {
+        right: 10px;
+        bottom: 138px;
+        width: calc(100vw - 20px);
+        max-height: calc(100vh - 155px);
+      }
+      .site-footer {
+        padding-bottom: 145px;
+      }
+    }
+
     @media (max-width: 600px) {
       .live-location-pill {
         display: none;
@@ -1987,15 +2355,12 @@
       .hero-card {
         padding: 20px 18px 26px;
       }
-      .ai-floating-launcher {
-        right: 14px;
-        bottom: 14px;
-        padding: 9px 15px 9px 11px;
+      .showcase-grid,
+      .share-buttons-grid {
+        grid-template-columns: 1fr;
       }
-      .ai-chat-window {
-        right: 10px;
-        bottom: 76px;
-        width: calc(100vw - 20px);
+      .wisdom-search-box {
+        flex: 1 1 100%;
       }
     }
   </style>
@@ -2014,10 +2379,12 @@
       🛡️ <strong>Chế độ Quản trị (Admin Mode):</strong> Đang kích hoạt
     </div>
     <div class="admin-toolbar-actions">
-      <button class="admin-chip-btn" onclick="openApiSettingsModal()">⚙️ Cài đặt API Key</button>
+      <button class="admin-chip-btn" onclick="openApiSettingsModal()">⚙️ Cài đặt AI (Gemini &amp; DeepSeek)</button>
       <button class="admin-chip-btn" onclick="triggerFileUpload('avatarInput')">📷 Đổi Avatar</button>
       <button class="admin-chip-btn" onclick="triggerFileUpload('qrInput')">🔳 Đổi Mã QR</button>
+      <button class="admin-chip-btn" onclick="openPhoneConfigModal()">📞 Cài đặt SĐT/Zalo</button>
       <button class="admin-chip-btn" onclick="openAddWisdomModal()">✍️ Thêm bài Chiêm nghiệm</button>
+      <button class="admin-chip-btn" onclick="openBackupRestoreModal()">📦 Xuất / Nhập JSON</button>
       <button class="admin-chip-btn" onclick="changeAdminPin()">🔑 Đổi mã PIN</button>
       <button class="admin-chip-btn" onclick="disableAdminMode()">🔒 Thoát Admin</button>
     </div>
@@ -2026,12 +2393,13 @@
   <!-- Hidden File Inputs for Admin Only -->
   <input type="file" id="avatarInput" accept="image/*" style="display:none" onchange="handleImageUpload(event, 'avatar')" />
   <input type="file" id="qrInput" accept="image/*" style="display:none" onchange="handleImageUpload(event, 'qr')" />
+  <input type="file" id="jsonImportInput" accept=".json,application/json" style="display:none" onchange="handleJsonImportFile(event)" />
 
   <!-- 2. STICKY LUXURY HEADER -->
   <header class="site-header">
     <nav class="header-inner" aria-label="Điều hướng chính">
       <a href="#heroCard" class="brand-mini">
-        <img src="111.jpg" alt="Lê Phúc Nhật" class="js-avatar-img" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80'" />
+        <img src="data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20200%20200%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23042f24%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23064e3b%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%22gold%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23fde68a%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23f59e0b%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Ccircle%20cx%3D%22100%22%20cy%3D%22100%22%20r%3D%2296%22%20fill%3D%22url(%23bg)%22%20stroke%3D%22url(%23gold)%22%20stroke-width%3D%226%22%2F%3E%3Ctext%20x%3D%22100%22%20y%3D%22115%22%20text-anchor%3D%22middle%22%20fill%3D%22url(%23gold)%22%20font-family%3D%22Georgia%2C%20serif%22%20font-weight%3D%22bold%22%20font-size%3D%2256%22%3ELPN%3C%2Ftext%3E%3C%2Fsvg%3E" alt="Lê Phúc Nhật" class="js-avatar-img" />
         <div class="brand-mini-text">
           <span class="brand-mini-name">Lê Phúc Nhật</span>
           <span class="brand-mini-domain">lephucnhat.vn</span>
@@ -2087,7 +2455,7 @@
         <!-- Cột trái: Ảnh đại diện có vòng sáng xoay 360 -->
         <div class="hero-avatar-col">
           <div class="avatar-halo-wrap">
-            <img src="111.jpg" alt="Lê Phúc Nhật (Hiểu Sâu Sống Tỉnh Hành Đúng)" class="js-avatar-img" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=500&q=80'" />
+            <img src="data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20200%20200%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23042f24%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23064e3b%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%22gold%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23fde68a%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23f59e0b%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Ccircle%20cx%3D%22100%22%20cy%3D%22100%22%20r%3D%2296%22%20fill%3D%22url(%23bg)%22%20stroke%3D%22url(%23gold)%22%20stroke-width%3D%226%22%2F%3E%3Ctext%20x%3D%22100%22%20y%3D%22115%22%20text-anchor%3D%22middle%22%20fill%3D%22url(%23gold)%22%20font-family%3D%22Georgia%2C%20serif%22%20font-weight%3D%22bold%22%20font-size%3D%2256%22%3ELPN%3C%2Ftext%3E%3C%2Fsvg%3E" alt="Lê Phúc Nhật (Hiểu Sâu Sống Tỉnh Hành Đúng)" class="js-avatar-img" />
             <span class="avatar-status-dot" title="Đang trực tuyến"></span>
           </div>
           <p class="location-subtext">📍 Xứ Cùa – Cam Lộ, Quảng Trị</p>
@@ -2137,7 +2505,7 @@
         <!-- Cột phải: Mã QR Tinh Khiết -->
         <div class="hero-qr-col">
           <div class="clean-qr-frame" onclick="openQrLightbox()" title="Chạm để phóng to Mã QR">
-            <img src="qr.jpg" alt="Mã QR Lê Phúc Nhật" class="js-qr-img" onerror="this.src='https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://lephucnhat.github.io/'" />
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://lephucnhat.vn/" alt="Mã QR Lê Phúc Nhật" class="js-qr-img" />
           </div>
           <p class="qr-caption">Quét Mã QR<br />Kết nối &amp; Lưu danh thiếp</p>
           <button class="admin-upload-btn admin-only" onclick="triggerFileUpload('qrInput')">
@@ -2172,73 +2540,61 @@
         </div>
       </div>
     </section>
-<!-- BÀI 1 DƯỚI PROFILE: CỔNG VŨ TRỤ WEB-IN-WEB & TRÒ CHƠI TỈNH THỨC -->
-<section id="webverseGamePortal" style="margin: 28px 0 36px 0;">
-  <div class="border-beam-card shimmer-surface" style="
-    position: relative;
-    overflow: hidden;
-    border-radius: 26px;
-    padding: 28px 30px;
-    background: linear-gradient(135deg, rgba(6, 40, 30, 0.92) 0%, var(--bg-card) 60%, rgba(15, 23, 42, 0.95) 100%);
-    border: 1.5px solid var(--border-highlight);
-    box-shadow: var(--shadow-luxury);
-  ">
-    <div style="position: absolute; right: -40px; top: -40px; width: 180px; height: 180px; background: var(--accent-emerald-glow); filter: blur(55px); border-radius: 50%; pointer-events: none;"></div>
-    <div style="position: absolute; left: -30px; bottom: -30px; width: 150px; height: 150px; background: var(--accent-gold-glow); filter: blur(50px); border-radius: 50%; pointer-events: none;"></div>
 
-    <div style="position: relative; z-index: 2; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px;">
-      <div style="flex: 1 1 420px;">
-        <div style="display: inline-flex; align-items: center; gap: 8px; padding: 5px 14px; border-radius: 999px; background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(252, 211, 77, 0.35); margin-bottom: 12px;">
-          <span style="font-size: 0.9rem;">🪐</span>
-          <span style="font-size: 0.72rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent-gold-light);">
-            Trải Nghiệm Tương Tác Độc Quyền • 2 Tầng Nhận Thức
-          </span>
-        </div>
+    <!-- BÀI 1 DƯỚI PROFILE: CỔNG VŨ TRỤ WEB-IN-WEB & TRÒ CHƠI TỈNH THỨC -->
+    <section id="webverseGamePortal" style="margin: 28px 0 36px 0;">
+      <div class="border-beam-card shimmer-surface" style="
+        position: relative;
+        overflow: hidden;
+        border-radius: 26px;
+        padding: 28px 30px;
+        background: linear-gradient(135deg, rgba(6, 40, 30, 0.92) 0%, var(--bg-card) 60%, rgba(15, 23, 42, 0.95) 100%);
+        border: 1.5px solid var(--border-highlight);
+        box-shadow: var(--shadow-luxury);
+      ">
+        <div style="position: absolute; right: -40px; top: -40px; width: 180px; height: 180px; background: var(--accent-emerald-glow); filter: blur(55px); border-radius: 50%; pointer-events: none;"></div>
+        <div style="position: absolute; left: -30px; bottom: -30px; width: 150px; height: 150px; background: var(--accent-gold-glow); filter: blur(50px); border-radius: 50%; pointer-events: none;"></div>
 
-        <h2 style="font-size: clamp(1.35rem, 2.5vw, 1.85rem); font-weight: 800; color: var(--text-primary); margin: 0 0 10px 0; line-height: 1.3;">
-          Vũ Trụ Trò Chơi Tỉnh Thức & Nhân Tâm
-        </h2>
+        <div style="position: relative; z-index: 2; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px;">
+          <div style="flex: 1 1 420px;">
+            <div style="display: inline-flex; align-items: center; gap: 8px; padding: 5px 14px; border-radius: 999px; background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(252, 211, 77, 0.35); margin-bottom: 12px;">
+              <span style="font-size: 0.9rem;">🪐</span>
+              <span style="font-size: 0.72rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent-gold-light);">
+                Trải Nghiệm Tương Tác Độc Quyền • 2 Tầng Nhận Thức
+              </span>
+            </div>
 
-        <p style="font-size: 0.92rem; color: var(--text-secondary); line-height: 1.65; margin: 0 0 16px 0;">
-          Hệ điều hành <strong>6 Thế Giới Con</strong> thu nhỏ ngay trên <span style="color: var(--accent-gold); font-weight: 600;">lephucnhat.vn</span>: Quay bánh xe Nhân Tâm, Lật thẻ 3D Khéo Ăn Nói, Ươm mầm Sa bàn Rừng Keo Sơn và Phá vỡ ảo tưởng trong 8 Giây — thiết kế riêng cho cả <strong>Bậc Hiền Triết (Hệ Cổ Thụ)</strong> lẫn <strong>Trẻ Nhỏ (Hệ Mầm Xanh)</strong>.
-        </p>
+            <h2 style="font-size: clamp(1.35rem, 2.5vw, 1.85rem); font-weight: 800; color: var(--text-primary); margin: 0 0 10px 0; line-height: 1.3;">
+              Vũ Trụ Trò Chơi Tỉnh Thức &amp; Nhân Tâm
+            </h2>
 
-        <div style="display: flex; flex-wrap: wrap; gap: 8px; font-size: 0.75rem; color: var(--text-primary);">
-          <span style="padding: 4px 11px; border-radius: 999px; background: rgba(255,255,255,0.06); border: 1px solid var(--border-subtle);">🎡 Vòng Quay 8 Cung</span>
-          <span style="padding: 4px 11px; border-radius: 999px; background: rgba(255,255,255,0.06); border: 1px solid var(--border-subtle);">📜 Lật Thẻ 3D Nhân Tâm</span>
-          <span style="padding: 4px 11px; border-radius: 999px; background: rgba(255,255,255,0.06); border: 1px solid var(--border-subtle);">🌲 Sa Bàn Rừng Keo Sơn</span>
-          <span style="padding: 4px 11px; border-radius: 999px; background: rgba(255,255,255,0.06); border: 1px solid var(--border-subtle);">🎵 Sóng Âm 528Hz</span>
+            <p style="font-size: 0.92rem; color: var(--text-secondary); line-height: 1.65; margin: 0 0 16px 0;">
+              Hệ điều hành <strong>6 Thế Giới Con</strong> thu nhỏ ngay trên <span style="color: var(--accent-gold); font-weight: 600;">lephucnhat.vn</span>: Quay bánh xe Nhân Tâm, Lật thẻ 3D Khéo Ăn Nói, Ươm mầm Sa bàn Rừng Keo Sơn và Phá vỡ ảo tưởng trong 8 Giây — thiết kế riêng cho cả <strong>Bậc Hiền Triết (Hệ Cổ Thụ)</strong> lẫn <strong>Trẻ Nhỏ (Hệ Mầm Xanh)</strong>.
+            </p>
+
+            <div style="display: flex; flex-wrap: wrap; gap: 8px; font-size: 0.75rem; color: var(--text-primary);">
+              <span style="padding: 4px 11px; border-radius: 999px; background: rgba(255,255,255,0.06); border: 1px solid var(--border-subtle);">🎡 Vòng Quay 8 Cung</span>
+              <span style="padding: 4px 11px; border-radius: 999px; background: rgba(255,255,255,0.06); border: 1px solid var(--border-subtle);">📜 Lật Thẻ 3D Nhân Tâm</span>
+              <span style="padding: 4px 11px; border-radius: 999px; background: rgba(255,255,255,0.06); border: 1px solid var(--border-subtle);">🌲 Sa Bàn Rừng Keo Sơn</span>
+              <span style="padding: 4px 11px; border-radius: 999px; background: rgba(255,255,255,0.06); border: 1px solid var(--border-subtle);">🎵 Sóng Âm 528Hz</span>
+            </div>
+          </div>
+
+          <div style="flex: 0 0 auto; display: flex; flex-direction: column; align-items: center; gap: 10px; margin-left: auto; margin-right: auto;">
+            <a href="https://lephucnhat.vn/tro-choi.html" onclick="openGamePortal(event)" class="portal-play-btn">
+              <span style="font-size: 1.25rem;">🎯</span>
+              <span>BẤM VÀO CHƠI NGAY</span>
+              <span>➔</span>
+            </a>
+            <span style="font-size: 0.72rem; color: var(--text-muted);">
+              ⚡ Chạm mở tức thì • Tích lũy Hạt Giống Tỉnh Thức
+            </span>
+          </div>
         </div>
       </div>
+    </section>
 
-      <div style="flex: 0 0 auto; display: flex; flex-direction: column; align-items: center; gap: 10px; margin-left: auto; margin-right: auto;">
-        <a href="tro-choi.html" style="
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          gap: 10px;
-          padding: 16px 32px;
-          border-radius: 16px;
-          background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 50%, #10b981 100%);
-          color: #041611;
-          font-size: 0.95rem;
-          font-weight: 800;
-          text-decoration: none;
-          box-shadow: 0 12px 30px rgba(245, 158, 11, 0.35);
-          transition: transform 0.2s ease, box-shadow 0.2s ease;
-        " onmouseover="this.style.transform='translateY(-2px) scale(1.02)'" onmouseout="this.style.transform='none'">
-          <span style="font-size: 1.25rem;">🎯</span>
-          <span>BẤM VÀO CHƠI NGAY</span>
-          <span>➔</span>
-        </a>
-        <span style="font-size: 0.72rem; color: var(--text-muted);">
-          ⚡ Chạm mở tức thì • Tích lũy Hạt Giống Tỉnh Thức
-        </span>
-      </div>
-    </div>
-  </div>
-</section>
-    <!-- C. HỆ SINH THÁI DOANH NGHIỆP & DỰ ÁN (3 TRỤ CỘT) -->
+    <!-- C. HỆ SINH THÁI DOANH NGHIỆP & DỰ ÁN (3 TRỤ CỘT + KỆ TRƯNG BÀY TIÊU ĐIỂM) -->
     <section id="enterpriseSection" class="section-block">
       <div class="section-head">
         <span class="section-eyebrow">Portfolio &amp; Enterprise</span>
@@ -2301,6 +2657,77 @@
           </div>
         </article>
       </div>
+
+      <!-- KỆ TRƯNG BÀY ĐIỂM NHẤN: TIÊU ĐIỂM SẢN PHẨM & GIẢI PHÁP THỰC CHIẾN -->
+      <div class="showcase-shelf-wrap shimmer-surface">
+        <div class="showcase-shelf-head">
+          <h3 class="showcase-shelf-title">
+            <span>🌟</span>
+            <span>Tiêu Điểm Sản Phẩm HTX Keo Sơn &amp; Giải Pháp AI Thực Chiến</span>
+          </h3>
+          <span style="font-size:0.8rem; color:var(--text-secondary);">
+            Chạm vào từng mục để nhận tư vấn trực tiếp từ Trợ lý AI Lê Phúc Nhật
+          </span>
+        </div>
+
+        <div class="showcase-grid">
+          <!-- Mục 1 -->
+          <div class="showcase-item-card">
+            <div>
+              <span class="showcase-badge">🌱 Lâm Nghiệp Bền Vững</span>
+              <h4 class="showcase-name">Cây Giống Keo Lai Chuẩn Nguồn</h4>
+              <p class="showcase-desc">
+                Ươm tạo từ vườn đầu dòng chất lượng cao tại Thôn An Sơn, Cam Lộ. Cây giống keo lai mô và giâm cành khỏe mạnh, bộ rễ cọc phát triển sâu, chống chịu gió bão miền Trung vượt trội.
+              </p>
+            </div>
+            <button type="button" class="showcase-ask-btn" onclick="askShowcaseTopic('Cây Giống Keo Lai Chuẩn Nguồn của HTX Keo Sơn: kỹ thuật chọn giống, chăm sóc và liên hệ đặt hàng')">
+              ✨ Hỏi AI chi tiết
+            </button>
+          </div>
+
+          <!-- Mục 2 -->
+          <div class="showcase-item-card">
+            <div>
+              <span class="showcase-badge">🍵 Tinh Hoa Thảo Dược</span>
+              <h4 class="showcase-name">Cao An Xoa &amp; Cao Chè Vằng Xứ Cùa</h4>
+              <p class="showcase-desc">
+                Cô đặc truyền thống nhiều giờ liền từ dược liệu sạch vùng đất đỏ bazan Xứ Cùa. Cao An Xoa hỗ trợ giải độc, mát gan; Cao Chè Vằng thanh nhiệt, lợi sữa, giúp giấc ngủ sâu.
+              </p>
+            </div>
+            <button type="button" class="showcase-ask-btn" onclick="askShowcaseTopic('Cao An Xoa và Cao Chè Vằng Xứ Cùa của HTX Keo Sơn: công dụng, cách pha uống và điểm khác biệt')">
+              ✨ Hỏi AI chi tiết
+            </button>
+          </div>
+
+          <!-- Mục 3 -->
+          <div class="showcase-item-card">
+            <div>
+              <span class="showcase-badge">🌾 Thực Dưỡng Tự Nhiên</span>
+              <h4 class="showcase-name">Bột Ngũ Cốc Dinh Dưỡng</h4>
+              <p class="showcase-desc">
+                Phối trộn theo tỷ lệ vàng từ các loại hạt bản địa tuyển chọn kỹ lưỡng, rang xay thơm dịu, giữ trọn dưỡng chất tự nhiên, bồi bổ sức khỏe lành mạnh cho cả gia đình.
+              </p>
+            </div>
+            <button type="button" class="showcase-ask-btn" onclick="askShowcaseTopic('Bột Ngũ Cốc Dinh Dưỡng của HTX Keo Sơn: thành phần hạt, giá trị dinh dưỡng và cách sử dụng')">
+              ✨ Hỏi AI chi tiết
+            </button>
+          </div>
+
+          <!-- Mục 4 -->
+          <div class="showcase-item-card">
+            <div>
+              <span class="showcase-badge">🤖 Hệ Sinh Thái Số</span>
+              <h4 class="showcase-name">Bộ Quy Trình 36+ Mô-đun AI Tự Động Hóa</h4>
+              <p class="showcase-desc">
+                Tích hợp Gemini, DeepSeek, NotebookLM, Python &amp; PowerShell giúp tự động hóa sản xuất kịch bản, xử lý đa phương tiện và vận hành mạng lưới 24+ kênh nội dung tỉnh thức.
+              </p>
+            </div>
+            <button type="button" class="showcase-ask-btn" onclick="askShowcaseTopic('Bộ Quy Trình 36+ Mô-đun AI Tự Động Hóa của anh Lê Phúc Nhật và cách ứng dụng vào công việc thực tế')">
+              ✨ Hỏi AI chi tiết
+            </button>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- D. GIA ĐÌNH & CÁC DẤU MỐC -->
@@ -2352,7 +2779,7 @@
       <div class="border-beam-card vcard-box">
         <div class="vcard-qr-col">
           <div class="clean-qr-frame" onclick="openQrLightbox()" title="Chạm để phóng to Mã QR">
-            <img src="qr.jpg" alt="QR Code Danh Thiếp Lê Phúc Nhật" loading="lazy" class="js-qr-img" onerror="this.src='https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://lephucnhat.github.io/'" />
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://lephucnhat.vn/" alt="QR Code Danh Thiếp Lê Phúc Nhật" loading="lazy" class="js-qr-img" />
           </div>
           <p class="qr-caption">Quét bằng Camera để lưu vào danh bạ điện thoại</p>
           <button class="admin-upload-btn admin-only" onclick="triggerFileUpload('qrInput')">
@@ -2368,8 +2795,9 @@
             <li><strong>YouTube:</strong> <a href="https://www.youtube.com/@LePhucNhatOfficial" target="_blank" rel="noopener">@LePhucNhatOfficial</a></li>
             <li><strong>TikTok:</strong> <a href="https://www.tiktok.com/@kyluat.tritue.chuyenhoa" target="_blank" rel="noopener">@kyluat.tritue.chuyenhoa</a></li>
             <li><strong>Email:</strong> <a href="mailto:lephucnhat.vn@gmail.com">lephucnhat.vn@gmail.com</a></li>
-            <li><strong>Website:</strong> <a href="https://lephucnhat.vn/" target="_blank" rel="noopener">lephucnhat.vn</a></li>
+            <li><strong>Website:</strong> <a href="https://lephucnhat.vn/" target="_blank" rel="noopener">lephucnhat.vn</a> • <a href="https://lephucnhat.github.io/" target="_blank" rel="noopener">lephucnhat.github.io</a></li>
             <li><strong>Trụ sở chính:</strong> Thôn An Sơn, Xã Cam Lộ, Tỉnh Quảng Trị (Xứ Cùa)</li>
+            <li id="vcardPhoneRow" style="display:none;"><strong>Điện thoại / Zalo:</strong> <a href="https://zalo.me/" id="vcardPhoneLink" target="_blank" rel="noopener"></a></li>
           </ul>
 
           <div class="hero-cta-row">
@@ -2400,18 +2828,25 @@
         </button>
       </div>
 
-      <!-- Bộ lọc Danh mục SHUHARI -->
-      <div class="wisdom-filter-bar" role="tablist" aria-label="Bộ lọc bài viết chiêm nghiệm">
-        <button class="filter-tab-btn active" onclick="filterWisdomPosts('all', this)">🌟 Tất cả (11 bài)</button>
-        <button class="filter-tab-btn" onclick="filterWisdomPosts('triet-ly', this)">🧭 Triết Lý &amp; Di Sản</button>
-        <button class="filter-tab-btn" onclick="filterWisdomPosts('lam-nghiep', this)">🌱 Rừng Xanh &amp; Dược Liệu</button>
-        <button class="filter-tab-btn" onclick="filterWisdomPosts('ai-thuc-chien', this)">🤖 Hệ Thống &amp; AI Thực Chiến</button>
-        <button class="filter-tab-btn" onclick="filterWisdomPosts('gia-dinh', this)">❤️ Gia Đình &amp; Quê Hương</button>
+      <!-- Bộ lọc Danh mục SHUHARI + Ô Tìm kiếm nhanh -->
+      <div class="wisdom-controls-bar">
+        <div class="wisdom-filter-bar" role="tablist" aria-label="Bộ lọc bài viết chiêm nghiệm">
+          <button class="filter-tab-btn active" onclick="filterWisdomPosts('all', this)">🌟 Tất cả (11 bài)</button>
+          <button class="filter-tab-btn" onclick="filterWisdomPosts('triet-ly', this)">🧭 Triết Lý &amp; Di Sản</button>
+          <button class="filter-tab-btn" onclick="filterWisdomPosts('lam-nghiep', this)">🌱 Rừng Xanh &amp; Dược Liệu</button>
+          <button class="filter-tab-btn" onclick="filterWisdomPosts('ai-thuc-chien', this)">🤖 Hệ Thống &amp; AI Thực Chiến</button>
+          <button class="filter-tab-btn" onclick="filterWisdomPosts('gia-dinh', this)">❤️ Gia Đình &amp; Quê Hương</button>
+        </div>
+
+        <div class="wisdom-search-box">
+          <span class="wisdom-search-icon">🔍</span>
+          <input type="search" id="wisdomSearchInput" placeholder="Tìm nhanh bài chiêm nghiệm, từ khóa..." oninput="handleWisdomSearch()" aria-label="Tìm kiếm bài chiêm nghiệm" />
+        </div>
       </div>
 
       <div class="wisdom-grid" id="wisdomGrid">
         <!-- Bài #01 -->
-        <article class="wisdom-card" data-category="triet-ly">
+        <article class="wisdom-card" data-category="triet-ly" data-article-id="#01">
           <div>
             <div class="wisdom-meta">
               <span>NGHỊCH CẢNH &amp; NỘI LỰC</span>
@@ -2434,7 +2869,7 @@
         </article>
 
         <!-- Bài #02 -->
-        <article class="wisdom-card" data-category="ai-thuc-chien">
+        <article class="wisdom-card" data-category="ai-thuc-chien" data-article-id="#02">
           <div>
             <div class="wisdom-meta">
               <span>QUY LUẬT NHÂN QUẢ • GIEO HẠT</span>
@@ -2457,7 +2892,7 @@
         </article>
 
         <!-- Bài #03 -->
-        <article class="wisdom-card" data-category="gia-dinh">
+        <article class="wisdom-card" data-category="gia-dinh" data-article-id="#03">
           <div>
             <div class="wisdom-meta">
               <span>PHÁT TRIỂN TỪ GỐC</span>
@@ -2480,7 +2915,7 @@
         </article>
 
         <!-- Bài #04 -->
-        <article class="wisdom-card" data-category="triet-ly">
+        <article class="wisdom-card" data-category="triet-ly" data-article-id="#04">
           <div>
             <div class="wisdom-meta">
               <span>ĐỘ LƯỢNG &amp; TẦM VÓC</span>
@@ -2503,7 +2938,7 @@
         </article>
 
         <!-- Bài #05 -->
-        <article class="wisdom-card" data-category="lam-nghiep">
+        <article class="wisdom-card" data-category="lam-nghiep" data-article-id="#05">
           <div>
             <div class="wisdom-meta">
               <span>LIÊN MINH CỘNG SINH</span>
@@ -2526,7 +2961,7 @@
         </article>
 
         <!-- Bài #06 -->
-        <article class="wisdom-card" data-category="ai-thuc-chien">
+        <article class="wisdom-card" data-category="ai-thuc-chien" data-article-id="#06">
           <div>
             <div class="wisdom-meta">
               <span>KIẾN TRÚC VẬN HÀNH</span>
@@ -2549,7 +2984,7 @@
         </article>
 
         <!-- Bài #07 -->
-        <article class="wisdom-card" data-category="gia-dinh">
+        <article class="wisdom-card" data-category="gia-dinh" data-article-id="#07">
           <div>
             <div class="wisdom-meta">
               <span>GIA ĐẠO &amp; ƯƠM MẦM</span>
@@ -2572,7 +3007,7 @@
         </article>
 
         <!-- Bài #08 -->
-        <article class="wisdom-card" data-category="ai-thuc-chien">
+        <article class="wisdom-card" data-category="ai-thuc-chien" data-article-id="#08">
           <div>
             <div class="wisdom-meta">
               <span>TRUYỀN THÔNG CHÂN THẬT</span>
@@ -2595,7 +3030,7 @@
         </article>
 
         <!-- Bài #09 -->
-        <article class="wisdom-card" data-category="lam-nghiep">
+        <article class="wisdom-card" data-category="lam-nghiep" data-article-id="#09">
           <div>
             <div class="wisdom-meta">
               <span>TINH LỌC BẢN CHẤT</span>
@@ -2618,7 +3053,7 @@
         </article>
 
         <!-- Bài #10 -->
-        <article class="wisdom-card" data-category="gia-dinh">
+        <article class="wisdom-card" data-category="gia-dinh" data-article-id="#10">
           <div>
             <div class="wisdom-meta">
               <span>NÔNG THÔN MỚI TỈNH THỨC</span>
@@ -2641,7 +3076,7 @@
         </article>
 
         <!-- Bài #11 -->
-        <article class="wisdom-card" data-category="triet-ly">
+        <article class="wisdom-card" data-category="triet-ly" data-article-id="#11">
           <div>
             <div class="wisdom-meta">
               <span>KIỂM TOÁN CUỘC ĐỜI</span>
@@ -2688,35 +3123,7 @@
           </button>
         </div>
 
-        <div class="wishes-grid" id="wishesContainer">
-          <div class="wish-item">
-            <div class="wish-head">
-              <span class="wish-author">Nguyễn Hoàng Nam (Cộng đồng AI Thực Chiến)</span>
-              <span class="wish-time">Vừa xong</span>
-            </div>
-            <p class="wish-content">
-              Cảm ơn anh Nhật đã truyền lửa triết lý "Hiểu sâu - Sống tỉnh - Hành đúng". Các quy trình tự động hóa AI của anh thật sự giản dị và áp dụng được ngay!
-            </p>
-          </div>
-          <div class="wish-item">
-            <div class="wish-head">
-              <span class="wish-author">Trần Văn Minh (Đối tác Lâm nghiệp Quảng Trị)</span>
-              <span class="wish-time">Hôm qua</span>
-            </div>
-            <p class="wish-content">
-              Cây giống keo lai và dược liệu Cao Chè Vằng, Cao An Xoa của HTX Keo Sơn chất lượng rất tuyệt vời. Chúc anh Nhật và HTX ngày càng vươn xa!
-            </p>
-          </div>
-          <div class="wish-item">
-            <div class="wish-head">
-              <span class="wish-author">Lê Thị Thu Hà (Giáo viên)</span>
-              <span class="wish-time">2 ngày trước</span>
-            </div>
-            <p class="wish-content">
-              Ngưỡng mộ tổ ấm bình yên và năng lượng tử tế từ gốc của gia đình anh Nhật. Chúc anh chị và hai cháu luôn mạnh khỏe, hạnh phúc viên mãn!
-            </p>
-          </div>
-        </div>
+        <div class="wishes-grid" id="wishesContainer"></div>
       </div>
     </section>
 
@@ -2780,11 +3187,14 @@
     <p class="footer-quote">
       “Hạnh phúc từ Tử tế – Tử tế để Hạnh phúc • Kiến tạo giá trị thực từ Gốc!”
     </p>
+    <div class="footer-signature">
+      { Cherish mindfulness • Hiểu sâu Sống tỉnh Hành đúng }
+    </div>
     <div>
       © 2026 <strong>Lê Phúc Nhật</strong> • <em>Hiểu Sâu • Sống Tỉnh • Hành Đúng</em>. Bảo lưu mọi quyền.
     </div>
     <div style="font-size:0.78rem;">
-      Chủ tịch HĐQT HTX Lâm Nghiệp Bền Vững Keo Sơn • Xứ Cùa, Cam Lộ, Quảng Trị
+      Chủ tịch HĐQT HTX Lâm Nghiệp Bền Vững Keo Sơn • Thôn An Sơn, Xã Cam Lộ, Tỉnh Quảng Trị (Xứ Cùa)
     </div>
     <div class="footer-links">
       <a href="#heroCard">Lên đầu trang ↑</a>
@@ -2795,6 +3205,30 @@
     </div>
   </footer>
 
+  <!-- 4B. MOBILE BOTTOM QUICK DOCK (CHỈ HIỆN TRÊN MÀN HÌNH < 768PX) -->
+  <nav class="mobile-quick-dock" aria-label="Điều hướng nhanh trên di động">
+    <a href="#heroCard" class="dock-item">
+      <span class="dock-icon">🏠</span>
+      <span>Đầu trang</span>
+    </a>
+    <a href="#enterpriseSection" class="dock-item">
+      <span class="dock-icon">🌱</span>
+      <span>Hệ sinh thái</span>
+    </a>
+    <a href="#aiPostsSection" class="dock-item">
+      <span class="dock-icon">📚</span>
+      <span>11 Chiêm nghiệm</span>
+    </a>
+    <a href="#vcardSection" class="dock-item">
+      <span class="dock-icon">🔳</span>
+      <span>Mã QR</span>
+    </a>
+    <button type="button" class="dock-item highlight" onclick="toggleChatWindow(true)">
+      <span class="dock-icon">✨</span>
+      <span>Hỏi AI</span>
+    </button>
+  </nav>
+
   <!-- 5. FLOATING AI LAUNCHER BUTTON -->
   <aside class="ai-floating-launcher" onclick="toggleChatWindow()" title="Mở Trợ lý AI Lê Phúc Nhật">
     <div class="launcher-sparkle-box">✨</div>
@@ -2804,21 +3238,22 @@
     </div>
   </aside>
 
-  <!-- 6. CHATBOT WINDOW -->
+  <!-- 6. CHATBOT WINDOW (ĐA MÔ HÌNH GEMINI + DEEPSEEK + OFFLINE) -->
   <section class="ai-chat-window" id="aiChatWindow" aria-label="Cửa sổ Trò chuyện Trợ lý AI Lê Phúc Nhật">
     <header class="chat-header">
       <div class="chat-agent-info">
-        <img src="111.jpg" alt="Lê Phúc Nhật Avatar" class="js-avatar-img" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80'" />
+        <img src="data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20200%20200%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23042f24%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23064e3b%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%22gold%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23fde68a%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23f59e0b%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Ccircle%20cx%3D%22100%22%20cy%3D%22100%22%20r%3D%2296%22%20fill%3D%22url(%23bg)%22%20stroke%3D%22url(%23gold)%22%20stroke-width%3D%226%22%2F%3E%3Ctext%20x%3D%22100%22%20y%3D%22115%22%20text-anchor%3D%22middle%22%20fill%3D%22url(%23gold)%22%20font-family%3D%22Georgia%2C%20serif%22%20font-weight%3D%22bold%22%20font-size%3D%2256%22%3ELPN%3C%2Ftext%3E%3C%2Fsvg%3E" alt="Lê Phúc Nhật Avatar" class="js-avatar-img" />
         <div>
           <div class="chat-agent-name">
             Lê Phúc Nhật AI
-            <span class="chat-mode-badge" id="chatModeBadge">Chế độ Tri Thức Cốt Lõi</span>
+            <span class="chat-mode-badge" id="chatModeBadge">Tri Thức Cốt Lõi</span>
           </div>
           <div class="chat-agent-sub">Hiểu sâu • Sống tỉnh • Hành đúng</div>
         </div>
       </div>
       <div class="chat-header-btns">
-        <button class="chat-icon-btn" onclick="openApiSettingsModal()" title="Cài đặt API Key">⚙️</button>
+        <button class="chat-icon-btn" onclick="openApiSettingsModal()" title="Cài đặt AI (Gemini &amp; DeepSeek)">⚙️</button>
+        <button class="chat-icon-btn" onclick="clearChatConversation()" title="Xóa lịch sử đoạn chat hiện tại">🗑️</button>
         <button class="chat-icon-btn" onclick="toggleChatWindow()" title="Đóng cửa sổ">✕</button>
       </div>
     </header>
@@ -2828,17 +3263,18 @@
       <button class="quick-chip" onclick="sendQuickPrompt('Giới thiệu tóm tắt về anh Lê Phúc Nhật?')">👤 Lê Phúc Nhật là ai?</button>
       <button class="quick-chip" onclick="sendQuickPrompt('HTX Lâm Nghiệp Keo Sơn có những sản phẩm gì?')">🌱 HTX Keo Sơn</button>
       <button class="quick-chip" onclick="sendQuickPrompt('Dược liệu Xứ Cùa: Cao An Xoa và Chè Vằng có công dụng gì?')">🍵 Dược liệu Xứ Cùa</button>
-      <button class="quick-chip" onclick="sendQuickPrompt('Anh Nhật ứng dụng AI thực chiến như thế nào?')">🤖 AI Thực Chiến</button>
+      <button class="quick-chip" onclick="sendQuickPrompt('Bột ngũ cốc dinh dưỡng Keo Sơn có gì đặc biệt?')">🌾 Bột Ngũ Cốc</button>
+      <button class="quick-chip" onclick="sendQuickPrompt('Anh Nhật ứng dụng 36+ mô-đun AI thực chiến như thế nào?')">🤖 AI Thực Chiến</button>
       <button class="quick-chip" onclick="sendQuickPrompt('Giải thích triết lý Hiểu Sâu • Sống Tỉnh • Hành Đúng?')">🧭 Triết lý 3 Chữ Sống</button>
     </div>
 
     <!-- Messages Container -->
     <div class="chat-messages" id="chatMessages">
       <div class="msg-row bot">
-        <img src="111.jpg" alt="Lê Phúc Nhật" class="msg-avatar js-avatar-img" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80'" />
+        <img src="data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20200%20200%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23042f24%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23064e3b%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%22gold%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23fde68a%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23f59e0b%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Ccircle%20cx%3D%22100%22%20cy%3D%22100%22%20r%3D%2296%22%20fill%3D%22url(%23bg)%22%20stroke%3D%22url(%23gold)%22%20stroke-width%3D%226%22%2F%3E%3Ctext%20x%3D%22100%22%20y%3D%22115%22%20text-anchor%3D%22middle%22%20fill%3D%22url(%23gold)%22%20font-family%3D%22Georgia%2C%20serif%22%20font-weight%3D%22bold%22%20font-size%3D%2256%22%3ELPN%3C%2Ftext%3E%3C%2Fsvg%3E" alt="Lê Phúc Nhật" class="msg-avatar js-avatar-img" />
         <div class="msg-bubble">
           <p>Xin chào quý bạn hữu! Tôi là trợ lý số đồng hành cùng anh <strong>Lê Phúc Nhật</strong>.</p>
-          <p>Rất vui được cùng bạn trao đổi về: <strong>Lâm nghiệp bền vững Xứ Cùa</strong>, <strong>Dược liệu sạch Keo Sơn</strong>, <strong>Ứng dụng AI thực chiến</strong> hoặc những bài học chiêm nghiệm sống tỉnh thức. Bạn muốn tìm hiểu điều gì hôm nay?</p>
+          <p>Rất vui được cùng bạn trao đổi về: <strong>Lâm nghiệp bền vững Xứ Cùa</strong>, <strong>Dược liệu sạch Keo Sơn (Cao An Xoa, Cao Chè Vằng, Bột Ngũ Cốc)</strong>, <strong>Ứng dụng 36+ mô-đun AI thực chiến</strong> hoặc <strong>11 bài học chiêm nghiệm sống tỉnh thức</strong>. Bạn muốn tìm hiểu điều gì hôm nay?</p>
         </div>
       </div>
     </div>
@@ -2849,22 +3285,32 @@
       <button type="submit" class="chat-send-btn" title="Gửi tin nhắn">➤</button>
     </form>
     <div class="chat-footer-note">
-      Trợ lý hoạt động kết hợp: Tri thức nội tại chuyên sâu + Gemini AI
+      Đa mô hình: Google Gemini AI • DeepSeek AI • Tri Thức Cốt Lõi (Multi-turn Context)
     </div>
   </section>
 
   <!-- 7. MODALS -->
 
-  <!-- Modal A: Cài đặt API Key & Ping Test -->
+  <!-- Modal A: Cài đặt Trợ lý AI Đa Mô Hình (Gemini & DeepSeek) -->
   <div class="modal-backdrop" id="apiSettingsModal">
     <div class="modal-card">
       <div class="modal-head">
-        <h3 class="modal-title">⚙️ Cài đặt Gemini API Key</h3>
+        <h3 class="modal-title">⚙️ Cài đặt Trợ Lý AI Đa Mô Hình</h3>
         <button class="modal-close-btn" onclick="closeModal('apiSettingsModal')">✕</button>
       </div>
       <p style="font-size:0.83rem; color:var(--text-secondary); margin-bottom:14px;">
-        Hệ thống mặc định có <strong>Tri Thức Cốt Lõi Offline</strong>. Khi cấu hình thêm Google Gemini API Key cá nhân, bạn có thể trò chuyện chuyên sâu không giới hạn với sức mạnh trí tuệ nhân tạo thế hệ mới.
+        Hệ thống luôn sẵn sàng <strong>Tri Thức Cốt Lõi Offline (16+ chủ đề)</strong>. Khi nhập thêm khóa API của <strong>Google Gemini</strong> hoặc <strong>DeepSeek AI</strong>, trợ lý sẽ tự động ghi nhớ ngữ cảnh hội thoại nhiều lượt và chuyển đổi dự phòng thông minh.
       </p>
+
+      <div class="form-group">
+        <label class="form-label" for="geminiModelSelect">Chế độ &amp; Mô hình AI ưu tiên:</label>
+        <select id="geminiModelSelect" class="form-control">
+          <option value="auto">✨ Tự động (Ưu tiên API đã nhập + Auto-Fallback thông minh)</option>
+          <option value="gemini-2.5-flash">Google Gemini 2.5 Flash (Tốc độ nhanh &amp; Tối ưu nhất)</option>
+          <option value="gemini-2.5-pro">Google Gemini 2.5 Pro (Phân tích &amp; Tư duy chuyên sâu)</option>
+          <option value="deepseek-chat">DeepSeek AI (deepseek-chat • Lập luận sắc bén)</option>
+        </select>
+      </div>
 
       <div class="form-group">
         <label class="form-label" for="geminiApiKeyInput">Google Gemini API Key:</label>
@@ -2876,33 +3322,48 @@
       </div>
 
       <div class="form-group">
-        <label class="form-label" for="geminiModelSelect">Mô hình AI:</label>
-        <select id="geminiModelSelect" class="form-control">
-          <option value="gemini-2.5-flash">Gemini 2.5 Flash (Nhanh &amp; Tối ưu nhất)</option>
-          <option value="gemini-2.5-pro">Gemini 2.5 Pro (Tư duy chuyên sâu)</option>
-        </select>
+        <label class="form-label" for="deepseekApiKeyInput">DeepSeek API Key (api.deepseek.com):</label>
+        <div class="input-row">
+          <input type="password" id="deepseekApiKeyInput" class="form-control" placeholder="sk-..." />
+          <button type="button" class="test-key-btn" onclick="testDeepseekApiKey()">Kiểm tra (Ping)</button>
+        </div>
+        <div id="deepseekKeyStatusBox" class="key-status-box"></div>
       </div>
 
-      <div style="display:flex; justify-content:flex-end; gap:8px; margin-top:20px;">
-        <button type="button" class="cta-btn" onclick="clearApiKey()">Xóa Key</button>
-        <button type="button" class="cta-btn primary" onclick="saveApiSettings()">Lưu Cài Đặt</button>
+      <div style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; margin-top:20px;">
+        <button type="button" class="cta-btn" onclick="clearApiKey()">Khôi phục mặc định</button>
+        <div style="display:flex; gap:8px;">
+          <button type="button" class="cta-btn" onclick="closeModal('apiSettingsModal')">Đóng</button>
+          <button type="button" class="cta-btn primary" onclick="saveApiSettings()">Lưu Cài Đặt</button>
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- Modal B: Đọc Trọn Vẹn Bài Viết (Reader View) -->
+  <!-- Modal B: Đọc Trọn Vẹn Bài Viết (Reader View 3 Phần + Text-to-Speech) -->
   <div class="modal-backdrop" id="articleReaderModal">
     <div class="modal-card large-reader">
       <div class="modal-head">
         <span id="readerMeta" style="font-size:0.78rem; font-weight:700; color:var(--accent-emerald);">CHIÊM NGHIỆM</span>
-        <button class="modal-close-btn" onclick="closeModal('articleReaderModal')">✕</button>
+        <button class="modal-close-btn" onclick="closeArticleReaderModal()">✕</button>
       </div>
       <h2 id="readerTitle" style="font-family:'Playfair Display',serif; font-size:1.45rem; margin-bottom:14px; color:var(--text-primary); line-height:1.35;"></h2>
-      <div id="readerContent" style="font-size:0.92rem; color:var(--text-secondary); line-height:1.75; display:flex; flex-direction:column; gap:12px;"></div>
-      <blockquote id="readerQuote" style="margin-top:16px; padding:14px; border-radius:12px; background:rgba(255,255,255,0.05); border-left:4px solid var(--accent-gold); color:var(--accent-gold-light); font-style:italic;"></blockquote>
-      <div style="margin-top:22px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
-        <span style="font-size:0.8rem; color:var(--text-muted);">Tác giả: Lê Phúc Nhật • Xứ Cùa, Quảng Trị</span>
-        <button class="cta-btn primary" id="readerAskAiBtn">✨ Đặt câu hỏi với AI về bài này</button>
+      <div id="readerContent" style="font-size:0.92rem; color:var(--text-secondary); line-height:1.75; display:flex; flex-direction:column; gap:14px;"></div>
+      <blockquote id="readerQuote" style="margin-top:16px; padding:14px 16px; border-radius:12px; background:rgba(255,255,255,0.05); border-left:4px solid var(--accent-gold); color:var(--accent-gold-light); font-style:italic;"></blockquote>
+
+      <div class="reader-toolbar-row">
+        <button type="button" class="cta-btn emerald" id="readerTtsBtn" onclick="toggleSpeakCurrentArticle()">
+          🔊 Nghe đọc bài viết
+        </button>
+        <button type="button" class="cta-btn" id="readerCopyQuoteBtn" onclick="copyCurrentArticleQuote()">
+          📋 Chép câu trích dẫn
+        </button>
+        <button type="button" class="cta-btn primary" id="readerAskAiBtn">
+          ✨ Thảo luận cùng AI về bài này
+        </button>
+      </div>
+      <div style="margin-top:12px; font-size:0.78rem; color:var(--text-muted); text-align:right;">
+        Tác giả: Lê Phúc Nhật • Xứ Cùa, Cam Lộ, Quảng Trị
       </div>
     </div>
   </div>
@@ -2931,24 +3392,47 @@
     </div>
   </div>
 
-  <!-- Modal D: Chia Sẻ Danh Thiếp -->
+  <!-- Modal D: Chia Sẻ Danh Thiếp Số (Smart Identity Card Preview phong cách tuantute.life) -->
   <div class="modal-backdrop" id="shareModal">
     <div class="modal-card">
       <div class="modal-head">
         <h3 class="modal-title">🔗 Chia Sẻ Danh Thiếp Lê Phúc Nhật</h3>
         <button class="modal-close-btn" onclick="closeModal('shareModal')">✕</button>
       </div>
-      <div style="text-align:center; padding:10px 0;">
-        <p style="font-size:0.9rem; color:var(--text-secondary); margin-bottom:14px;">
-          Lan tỏa thông điệp sống tử tế và kết nối cùng anh Lê Phúc Nhật
-        </p>
-        <div style="display:flex; flex-direction:column; gap:10px;">
-          <button class="cta-btn primary" onclick="copyShareLink()">📋 Sao chép đường dẫn trang web</button>
-          <button class="cta-btn" onclick="shareNative()">📱 Chia sẻ nhanh qua ứng dụng di động</button>
-          <a href="https://www.facebook.com/sharer/sharer.php?u=https://lephucnhat.vn/" target="_blank" rel="noopener" class="cta-btn">
-            📘 Chia sẻ lên Facebook
-          </a>
+
+      <!-- Thẻ Nhận Diện Thu Nhỏ (Mini Identity Card) -->
+      <div class="smart-id-preview">
+        <div class="smart-id-left">
+          <img src="data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20200%20200%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23042f24%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23064e3b%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%22gold%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23fde68a%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23f59e0b%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Ccircle%20cx%3D%22100%22%20cy%3D%22100%22%20r%3D%2296%22%20fill%3D%22url(%23bg)%22%20stroke%3D%22url(%23gold)%22%20stroke-width%3D%226%22%2F%3E%3Ctext%20x%3D%22100%22%20y%3D%22115%22%20text-anchor%3D%22middle%22%20fill%3D%22url(%23gold)%22%20font-family%3D%22Georgia%2C%20serif%22%20font-weight%3D%22bold%22%20font-size%3D%2256%22%3ELPN%3C%2Ftext%3E%3C%2Fsvg%3E" alt="Lê Phúc Nhật" class="smart-id-avatar js-avatar-img" />
+          <div>
+            <div class="smart-id-name">Lê Phúc Nhật</div>
+            <div class="smart-id-Philosophy">Hiểu Sâu • Sống Tỉnh • Hành Đúng</div>
+            <div class="smart-id-domains">lephucnhat.vn • fb.com/lephucnhat.vn</div>
+          </div>
         </div>
+        <div class="smart-id-qr">
+          <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://lephucnhat.vn/" alt="QR Mini" class="js-qr-img" />
+        </div>
+      </div>
+
+      <p style="font-size:0.86rem; color:var(--text-secondary); margin-bottom:14px; text-align:center;">
+        Lan tỏa thông điệp sống tử tế từ gốc và kết nối cùng anh Lê Phúc Nhật
+      </p>
+
+      <!-- Lưới 4 nút chia sẻ trực quan -->
+      <div class="share-buttons-grid">
+        <button type="button" class="cta-btn primary" style="justify-content:center;" onclick="copyShareLink()">
+          📋 Sao chép liên kết
+        </button>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://lephucnhat.vn/" target="_blank" rel="noopener" class="cta-btn" style="justify-content:center;">
+          📘 Facebook
+        </a>
+        <button type="button" class="cta-btn emerald" style="justify-content:center;" onclick="shareViaZalo()">
+          💬 Zalo
+        </button>
+        <button type="button" class="cta-btn" style="justify-content:center;" onclick="shareNative()">
+          📲 Chia sẻ hệ thống
+        </button>
       </div>
     </div>
   </div>
@@ -2961,7 +3445,7 @@
         <button class="modal-close-btn" onclick="closeModal('lightboxModal')">✕</button>
       </div>
       <div class="lightbox-content">
-        <img id="lightboxImage" src="qr.jpg" alt="Mã QR phóng to" class="lightbox-img" onerror="this.src='https://api.qrserver.com/v1/create-qr-code/?size=400x400&data=https://lephucnhat.github.io/'" />
+        <img id="lightboxImage" src="https://api.qrserver.com/v1/create-qr-code/?size=400x400&data=https://lephucnhat.vn/" alt="Mã QR phóng to" class="lightbox-img" />
         <p style="font-size:0.86rem; color:var(--text-secondary);" id="lightboxCaption">
           Quét camera điện thoại để truy cập và lưu danh bạ tức thì.
         </p>
@@ -2996,8 +3480,12 @@
           <input type="text" id="newWisdomTitle" class="form-control" placeholder="Nhập tiêu đề truyền cảm hứng..." required />
         </div>
         <div class="form-group">
-          <label class="form-label" for="newWisdomExcerpt">Nội dung chiêm nghiệm:</label>
+          <label class="form-label" for="newWisdomExcerpt">Nội dung chiêm nghiệm (Tóm tắt &amp; Bối cảnh):</label>
           <textarea id="newWisdomExcerpt" class="form-control" rows="4" placeholder="Đúc kết bài học..." required></textarea>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="newWisdomAction">Bài học ứng dụng thực tiễn (Tùy chọn):</label>
+          <textarea id="newWisdomAction" class="form-control" rows="3" placeholder="Gợi ý hành động thực tế cho người đọc..."></textarea>
         </div>
         <div class="form-group">
           <label class="form-label" for="newWisdomQuote">Câu nói cốt lõi (Trích dẫn):</label>
@@ -3011,10 +3499,129 @@
     </div>
   </div>
 
+  <!-- Modal G: Mở Khóa & Đổi Mã PIN Admin (Thay thế prompt/alert) -->
+  <div class="modal-backdrop" id="adminPinModal">
+    <div class="modal-card" style="max-width:420px;">
+      <div class="modal-head">
+        <h3 class="modal-title" id="adminPinModalTitle">🔒 Xác Thực Quản Trị Viên</h3>
+        <button class="modal-close-btn" onclick="closeModal('adminPinModal')">✕</button>
+      </div>
+      <form onsubmit="handleAdminPinSubmit(event)">
+        <div class="form-group">
+          <label class="form-label" for="adminPinInput">Nhập mã PIN Quản trị Lê Phúc Nhật:</label>
+          <input type="password" id="adminPinInput" class="form-control" placeholder="Nhập mã PIN (Mặc định: 1982)" autocomplete="off" required />
+        </div>
+        <div class="form-group" id="newPinGroup" style="display:none;">
+          <label class="form-label" for="adminNewPinInput">Mã PIN mới (tối thiểu 4 ký tự):</label>
+          <input type="password" id="adminNewPinInput" class="form-control" placeholder="Nhập mã PIN mới..." autocomplete="off" />
+        </div>
+        <div style="display:flex; justify-content:flex-end; gap:8px; margin-top:16px;">
+          <button type="button" class="cta-btn" onclick="closeModal('adminPinModal')">Hủy</button>
+          <button type="submit" class="cta-btn primary">Xác Nhận</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal H: Cài đặt Số Điện Thoại / Zalo Động (Admin) -->
+  <div class="modal-backdrop" id="phoneConfigModal">
+    <div class="modal-card" style="max-width:460px;">
+      <div class="modal-head">
+        <h3 class="modal-title">📞 Cài Đặt Số Điện Thoại &amp; Zalo</h3>
+        <button class="modal-close-btn" onclick="closeModal('phoneConfigModal')">✕</button>
+      </div>
+      <form onsubmit="handlePhoneConfigSubmit(event)">
+        <p style="font-size:0.82rem; color:var(--text-secondary); margin-bottom:12px;">
+          Khi nhập số điện thoại thực tế của anh Nhật, hệ thống sẽ tự động gắn vào nút kết nối Zalo, bảng Danh Thiếp Thông Minh và trường <code>TEL</code> trong file <code>.vcf</code>. Nếu để trống, trường <code>TEL</code> sẽ được ẩn để đảm bảo tính chính xác tuyệt đối.
+        </p>
+        <div class="form-group">
+          <label class="form-label" for="adminPhoneInput">Số điện thoại / Zalo chính thức:</label>
+          <input type="tel" id="adminPhoneInput" class="form-control" placeholder="VD: 0912345678 (Để trống nếu muốn ẩn)" />
+        </div>
+        <div style="display:flex; justify-content:flex-end; gap:8px; margin-top:16px;">
+          <button type="button" class="cta-btn" onclick="closeModal('phoneConfigModal')">Hủy</button>
+          <button type="submit" class="cta-btn primary">Lưu Số Điện Thoại</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal I: Xuất / Nhập Dữ Liệu JSON (Backup & Restore) -->
+  <div class="modal-backdrop" id="backupRestoreModal">
+    <div class="modal-card" style="max-width:500px;">
+      <div class="modal-head">
+        <h3 class="modal-title">📦 Sao Lưu &amp; Khôi Phục Dữ Liệu (JSON)</h3>
+        <button class="modal-close-btn" onclick="closeModal('backupRestoreModal')">✕</button>
+      </div>
+      <p style="font-size:0.84rem; color:var(--text-secondary); margin-bottom:16px;">
+        Dễ dàng tải xuống toàn bộ dữ liệu tùy chỉnh (bài chiêm nghiệm mới, lời chúc cộng đồng, lượt thả tim, giao diện, SĐT/Zalo, Avatar &amp; QR) thành tệp <code>.json</code> hoặc nạp lại bất cứ lúc nào.
+      </p>
+      <div style="display:flex; flex-direction:column; gap:12px;">
+        <button type="button" class="cta-btn primary" style="justify-content:center;" onclick="exportSiteDataJson()">
+          📥 Xuất file sao lưu dữ liệu (.json)
+        </button>
+        <button type="button" class="cta-btn emerald" style="justify-content:center;" onclick="triggerFileUpload('jsonImportInput')">
+          📤 Nhập dữ liệu từ file (.json)
+        </button>
+      </div>
+    </div>
+  </div>
+
   <!-- ==========================================================================
-       8. JAVASCRIPT LOGIC TRỌN VẸN
+       8. JAVASCRIPT LOGIC TRỌN VẸN (SINGLE-FILE ARCHITECTURE)
        ========================================================================== -->
   <script>
+    /* --------------------------------------------------------------------------
+       0. TIỆN ÍCH AN TOÀN (SAFE STORAGE, ESCAPE HTML CHỐNG XSS, SVG FALLBACK)
+       -------------------------------------------------------------------------- */
+    const DEFAULT_LPN_AVATAR_SVG = "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20200%20200%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23042f24%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23064e3b%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%22gold%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23fde68a%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23f59e0b%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Ccircle%20cx%3D%22100%22%20cy%3D%22100%22%20r%3D%2296%22%20fill%3D%22url(%23bg)%22%20stroke%3D%22url(%23gold)%22%20stroke-width%3D%226%22%2F%3E%3Ctext%20x%3D%22100%22%20y%3D%22115%22%20text-anchor%3D%22middle%22%20fill%3D%22url(%23gold)%22%20font-family%3D%22Georgia%2C%20serif%22%20font-weight%3D%22bold%22%20font-size%3D%2256%22%3ELPN%3C%2Ftext%3E%3C%2Fsvg%3E";
+    const DEFAULT_QR_FALLBACK = "https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://lephucnhat.vn/";
+
+    function safeGetStorage(key, fallback = null) {
+      try {
+        const val = localStorage.getItem(key);
+        return val !== null ? val : fallback;
+      } catch (e) {
+        return fallback;
+      }
+    }
+
+    function safeSetStorage(key, value) {
+      try {
+        localStorage.setItem(key, value);
+      } catch (e) {
+        // Ignore storage quota / sandbox restrictions
+      }
+    }
+
+    function safeRemoveStorage(key) {
+      try {
+        localStorage.removeItem(key);
+      } catch (e) {
+        // Ignore
+      }
+    }
+
+    function escapeHTML(str) {
+      if (str === null || str === undefined) return '';
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+    }
+
+    function openGamePortal(event) {
+      // Nếu chạy trên tên miền thực tế có file tro-choi.html, điều hướng mượt mà
+      if (window.location.protocol.startsWith('http') && (window.location.hostname.includes('lephucnhat') || window.location.hostname === 'localhost')) {
+        return true;
+      }
+      if (event) event.preventDefault();
+      window.open('https://lephucnhat.vn/tro-choi.html', '_blank', 'noopener');
+      return false;
+    }
+
     /* --------------------------------------------------------------------------
        A. CANVAS HẠT NĂNG LƯỢNG 60FPS
        -------------------------------------------------------------------------- */
@@ -3088,19 +3695,18 @@
     setInterval(updateClock, 1000);
     updateClock();
 
-    // Theme Switcher
     const themeButtons = document.querySelectorAll('.theme-btn');
     themeButtons.forEach(btn => {
       btn.addEventListener('click', () => {
         const targetTheme = btn.getAttribute('data-theme-set');
         document.documentElement.setAttribute('data-theme', targetTheme);
-        localStorage.setItem('lpn_theme', targetTheme);
+        safeSetStorage('lpn_theme', targetTheme);
         themeButtons.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
       });
     });
 
-    const savedTheme = localStorage.getItem('lpn_theme');
+    const savedTheme = safeGetStorage('lpn_theme');
     if (savedTheme) {
       document.documentElement.setAttribute('data-theme', savedTheme);
       themeButtons.forEach(b => {
@@ -3110,22 +3716,57 @@
     }
 
     /* --------------------------------------------------------------------------
-       C. QUẢN TRỊ ADMIN BÍ MẬT & BẢO VỆ PIN
+       C. QUẢN TRỊ ADMIN BÍ MẬT, BẢO VỆ PIN, SĐT/ZALO ĐỘNG & BACKUP/RESTORE JSON
        -------------------------------------------------------------------------- */
     let vipClickCount = 0;
     let vipClickTimer = null;
     let vipHoldTimer = null;
+    let pinModalMode = 'unlock'; // 'unlock' | 'change'
     const vipBadge = document.getElementById('verifiedVipBadge');
 
     function checkAdminPin() {
-      const correctPin = localStorage.getItem('lpn_admin_pin') || '1982';
-      const inputPin = prompt('🔒 Nhập mã PIN Quản trị Viên Lê Phúc Nhật:');
-      if (inputPin === null) return;
-      if (inputPin.trim() === correctPin) {
+      pinModalMode = 'unlock';
+      document.getElementById('adminPinModalTitle').textContent = '🔒 Xác Thực Quản Trị Viên';
+      document.getElementById('adminPinInput').value = '';
+      document.getElementById('newPinGroup').style.display = 'none';
+      openModal('adminPinModal');
+      setTimeout(() => document.getElementById('adminPinInput')?.focus(), 150);
+    }
+
+    function changeAdminPin() {
+      pinModalMode = 'change';
+      document.getElementById('adminPinModalTitle').textContent = '🔑 Đổi Mã PIN Quản Trị';
+      document.getElementById('adminPinInput').value = '';
+      document.getElementById('adminNewPinInput').value = '';
+      document.getElementById('newPinGroup').style.display = 'block';
+      openModal('adminPinModal');
+      setTimeout(() => document.getElementById('adminPinInput')?.focus(), 150);
+    }
+
+    function handleAdminPinSubmit(event) {
+      event.preventDefault();
+      const correctPin = safeGetStorage('lpn_admin_pin', '1982');
+      const inputPin = document.getElementById('adminPinInput').value.trim();
+
+      if (inputPin !== correctPin) {
+        showToast('❌ Mã PIN không chính xác! Quyền truy cập bị từ chối.');
+        return;
+      }
+
+      if (pinModalMode === 'unlock') {
         document.body.classList.add('is-admin');
+        closeModal('adminPinModal');
+        renderAllWishes();
         showToast('🛡️ Chào mừng anh Lê Phúc Nhật đã kích hoạt chế độ Quản trị!');
       } else {
-        alert('Mã PIN không chính xác. Quyền truy cập bị từ chối.');
+        const newPin = document.getElementById('adminNewPinInput').value.trim();
+        if (!newPin || newPin.length < 4) {
+          showToast('⚠️ Vui lòng nhập mã PIN mới tối thiểu 4 ký tự!');
+          return;
+        }
+        safeSetStorage('lpn_admin_pin', newPin);
+        closeModal('adminPinModal');
+        showToast('🔑 Đã cập nhật mã PIN Quản trị mới thành công!');
       }
     }
 
@@ -3152,23 +3793,121 @@
 
     function disableAdminMode() {
       document.body.classList.remove('is-admin');
+      renderAllWishes();
       showToast('🔒 Đã thoát chế độ Quản trị.');
     }
 
-    function changeAdminPin() {
-      const currentPin = localStorage.getItem('lpn_admin_pin') || '1982';
-      const oldPin = prompt('Nhập mã PIN hiện tại:');
-      if (oldPin !== currentPin) {
-        alert('Mã PIN hiện tại không đúng!');
-        return;
-      }
-      const newPin = prompt('Nhập mã PIN mới (ít nhất 4 chữ số):');
-      if (newPin && newPin.trim().length >= 4) {
-        localStorage.setItem('lpn_admin_pin', newPin.trim());
-        showToast('🔑 Đã cập nhật mã PIN mới thành công!');
+    function openPhoneConfigModal() {
+      const currentPhone = safeGetStorage('lpn_custom_phone', '');
+      document.getElementById('adminPhoneInput').value = currentPhone;
+      openModal('phoneConfigModal');
+    }
+
+    function handlePhoneConfigSubmit(event) {
+      event.preventDefault();
+      const rawPhone = document.getElementById('adminPhoneInput').value.trim();
+      const cleaned = rawPhone.replace(/[^\d+]/g, '');
+      if (cleaned) {
+        safeSetStorage('lpn_custom_phone', cleaned);
+        showToast('📞 Đã cập nhật SĐT / Zalo: ' + cleaned);
       } else {
-        alert('Mã PIN không hợp lệ!');
+        safeRemoveStorage('lpn_custom_phone');
+        showToast('📞 Đã ẩn trường SĐT khỏi danh thiếp.');
       }
+      syncPhoneDisplay();
+      closeModal('phoneConfigModal');
+    }
+
+    function syncPhoneDisplay() {
+      const phone = safeGetStorage('lpn_custom_phone', '');
+      const row = document.getElementById('vcardPhoneRow');
+      const link = document.getElementById('vcardPhoneLink');
+      if (!row || !link) return;
+      if (phone) {
+        row.style.display = 'list-item';
+        link.textContent = phone + ' (Zalo / Điện thoại)';
+        link.href = 'https://zalo.me/' + phone.replace(/^\+84/, '0');
+      } else {
+        row.style.display = 'none';
+      }
+    }
+
+    function openBackupRestoreModal() {
+      openModal('backupRestoreModal');
+    }
+
+    function exportSiteDataJson() {
+      const backupPayload = {
+        version: 'LPN_MASTER_2026',
+        exportedAt: new Date().toISOString(),
+        theme: safeGetStorage('lpn_theme', 'royal-dark'),
+        phone: safeGetStorage('lpn_custom_phone', ''),
+        hearts: parseInt(safeGetStorage('lpn_hearts', '2168'), 10),
+        customAvatar: safeGetStorage('lpn_custom_avatar', ''),
+        customQr: safeGetStorage('lpn_custom_qr', ''),
+        customPosts: JSON.parse(safeGetStorage('lpn_custom_posts', '[]')),
+        wishes: JSON.parse(safeGetStorage('lpn_wishes', '[]'))
+      };
+      const blob = new Blob([JSON.stringify(backupPayload, null, 2)], { type: 'application/json;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      const dateStr = new Date().toISOString().slice(0, 10);
+      a.href = url;
+      a.download = `LePhucNhat_Backup_${dateStr}.json`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      closeModal('backupRestoreModal');
+      showToast('📦 Đã tải xuống file sao lưu JSON thành công!');
+    }
+
+    function handleJsonImportFile(event) {
+      const file = event.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        try {
+          const data = JSON.parse(e.target.result);
+          if (data.theme) {
+            safeSetStorage('lpn_theme', data.theme);
+            document.documentElement.setAttribute('data-theme', data.theme);
+          }
+          if (typeof data.phone === 'string') {
+            if (data.phone) safeSetStorage('lpn_custom_phone', data.phone);
+            else safeRemoveStorage('lpn_custom_phone');
+            syncPhoneDisplay();
+          }
+          if (data.hearts) {
+            safeSetStorage('lpn_hearts', String(data.hearts));
+            const counterEl = document.getElementById('loveCounter');
+            if (counterEl) counterEl.textContent = Number(data.hearts).toLocaleString('vi-VN');
+          }
+          if (data.customAvatar) {
+            safeSetStorage('lpn_custom_avatar', data.customAvatar);
+            document.querySelectorAll('.js-avatar-img').forEach(img => img.src = data.customAvatar);
+          }
+          if (data.customQr) {
+            safeSetStorage('lpn_custom_qr', data.customQr);
+            document.querySelectorAll('.js-qr-img').forEach(img => img.src = data.customQr);
+          }
+          if (Array.isArray(data.customPosts)) {
+            safeSetStorage('lpn_custom_posts', JSON.stringify(data.customPosts));
+            document.querySelectorAll('.wisdom-card[data-custom="true"]').forEach(el => el.remove());
+            loadCustomWisdomPosts();
+          }
+          if (Array.isArray(data.wishes)) {
+            safeSetStorage('lpn_wishes', JSON.stringify(data.wishes));
+            renderAllWishes();
+          }
+          closeModal('backupRestoreModal');
+          showToast('✅ Đã khôi phục dữ liệu từ file JSON thành công!');
+        } catch (err) {
+          showToast('❌ File JSON không hợp lệ hoặc bị lỗi cấu trúc.');
+        }
+      };
+      reader.readAsText(file);
+      event.target.value = '';
     }
 
     function triggerFileUpload(inputId) {
@@ -3184,53 +3923,192 @@
         const dataUrl = e.target.result;
         if (type === 'avatar') {
           document.querySelectorAll('.js-avatar-img').forEach(img => img.src = dataUrl);
-          localStorage.setItem('lpn_custom_avatar', dataUrl);
+          safeSetStorage('lpn_custom_avatar', dataUrl);
           showToast('📷 Đã cập nhật ảnh đại diện mới!');
         } else if (type === 'qr') {
           document.querySelectorAll('.js-qr-img').forEach(img => img.src = dataUrl);
           const lbImg = document.getElementById('lightboxImage');
           if (lbImg) lbImg.src = dataUrl;
-          localStorage.setItem('lpn_custom_qr', dataUrl);
+          safeSetStorage('lpn_custom_qr', dataUrl);
           showToast('🔳 Đã cập nhật mã QR mới!');
         }
       };
       reader.readAsDataURL(file);
     }
 
-    // Khôi phục avatar/QR nếu đã lưu
-    window.addEventListener('DOMContentLoaded', () => {
-      const customAvatar = localStorage.getItem('lpn_custom_avatar');
+    // Tự động nạp 111.jpg / qr.jpg nếu tồn tại trên máy chủ (hoặc giữ nguyên SVG LPN sang trọng)
+    function initAvatarAndQrAssets() {
+      document.querySelectorAll('.js-avatar-img').forEach(img => {
+        img.onerror = function() {
+          if (this.src !== DEFAULT_LPN_AVATAR_SVG) {
+            this.src = DEFAULT_LPN_AVATAR_SVG;
+          }
+        };
+      });
+      document.querySelectorAll('.js-qr-img').forEach(img => {
+        img.onerror = function() {
+          if (this.src !== DEFAULT_QR_FALLBACK) {
+            this.src = DEFAULT_QR_FALLBACK;
+          }
+        };
+      });
+
+      const customAvatar = safeGetStorage('lpn_custom_avatar');
       if (customAvatar) {
         document.querySelectorAll('.js-avatar-img').forEach(img => img.src = customAvatar);
+      } else {
+        const probeAvatar = new Image();
+        probeAvatar.onload = function() {
+          document.querySelectorAll('.js-avatar-img').forEach(img => img.src = '111.jpg');
+        };
+        probeAvatar.src = '111.jpg';
       }
-      const customQr = localStorage.getItem('lpn_custom_qr');
+
+      const customQr = safeGetStorage('lpn_custom_qr');
       if (customQr) {
         document.querySelectorAll('.js-qr-img').forEach(img => img.src = customQr);
+      } else {
+        const probeQr = new Image();
+        probeQr.onload = function() {
+          document.querySelectorAll('.js-qr-img').forEach(img => img.src = 'qr.jpg');
+        };
+        probeQr.src = 'qr.jpg';
       }
-      // Load love counter
-      const savedHearts = localStorage.getItem('lpn_hearts');
-      if (savedHearts) {
-        const counterEl = document.getElementById('loveCounter');
-        if (counterEl) counterEl.textContent = parseInt(savedHearts).toLocaleString('vi-VN');
-      }
-      // Load saved wishes
-      loadLocalWishes();
-      // Load custom wisdom posts
-      loadCustomWisdomPosts();
-    });
+    }
 
     /* --------------------------------------------------------------------------
-       D. BỘ LỌC CHIÊM NGHIỆM & MODAL ĐỌC TRỌN VẸN
+       D. KHO DỮ LIỆU CHUYÊN SÂU 11 BÀI CHIÊM NGHIỆM (FULL_ARTICLES_DATA)
+          + TÌM KIẾM TỨC THÌ + TEXT-TO-SPEECH (NGHE ĐỌC BÀI VIẾT)
        -------------------------------------------------------------------------- */
+    const FULL_ARTICLES_DATA = {
+      "#01": {
+        num: "#01",
+        tag: "NGHỊCH CẢNH & NỘI LỰC",
+        title: "Từ Đôi Chân Bỏng Nặng Của Glenn Cunningham Đến Đôi Cánh Trí Tuệ AI: Vượt Ngưỡng Bằng Nội Lực Tỉnh Thức",
+        context: "Câu chuyện có thật về Tiến sĩ Glenn Cunningham — cậu bé từng bị bỏng nặng trong vụ nổ lò sưởi ở trường học tại Kansas đến mức các bác sĩ dự đoán cậu không bao giờ đi lại được. Thế nhưng bằng ý chí sắt đá và sự kiên trì xoa bóp, tập chạy từng bước đẫm mồ hôi trên cánh đồng quê, ông đã lập kỷ lục thế giới cự ly chạy 1 dặm (4 phút 06 giây 8). Câu chuyện ấy soi chiếu trực tiếp vào hành trình làm nông lâm nghiệp giữa nắng gió miền Trung và cuộc cách mạng công nghệ AI hôm nay: xuất phát điểm khó khăn hay khoảng cách địa lý chưa bao giờ là bản án cuối cùng.",
+        threePillars: "• Hiểu Sâu: Nhìn thấu rằng giới hạn lớn nhất không nằm ở đôi chân hay điều kiện thiếu thốn bên ngoài, mà nằm ở niềm tin tự giới hạn trong tâm thức.\n• Sống Tỉnh: Không hoảng loạn trước làn sóng công nghệ mới, cũng không tự ti khi mình bắt đầu từ một vùng quê như Xứ Cùa – Quảng Trị.\n• Hành Đúng: Biến kỷ luật rèn luyện mỗi ngày thành thói quen, đồng thời biết mượn sức mạnh của Trí tuệ Nhân tạo (AI) như đôi cánh nối dài cho đôi chân kiên cường.",
+        action: "Mỗi ngày dành ít nhất 30 phút học sâu một kỹ năng số hoặc một câu lệnh AI phục vụ trực tiếp cho công việc hiện tại. Đừng đợi đủ điều kiện hoàn hảo mới bắt đầu — hãy bước đi ngay từ nơi mình đang đứng.",
+        quote: "Nghịch cảnh không định nghĩa chúng ta. Hiểu sâu giới hạn để vượt qua, Sống tỉnh trước biến cố và Hành đúng cùng kỷ luật mỗi ngày mới là thứ kiến tạo vận mệnh."
+      },
+      "#02": {
+        num: "#02",
+        tag: "QUY LUẬT NHÂN QUẢ • GIEO HẠT",
+        title: "Giải Mã \"May Mắn Thật Sự\": Khi Sự Chuẩn Bị Tỉnh Thức Gặp Gỡ Công Cụ Đúng Thời Đại",
+        context: "Hơn 15 năm gắn bó với vườn ươm cây giống tại HTX Lâm Nghiệp Bền Vững Keo Sơn, tôi chứng kiến cùng một cơn mưa đầu mùa nhưng vườn nào đã làm đất kỹ, chọn hom giống khỏe, khử nấm đúng quy trình thì cây bật chồi xanh mướt; vườn nào làm ẩu thì úng rễ. Người ngoài nhìn vào thành quả thường gọi đó là 'may mắn', nhưng người làm nghề hiểu đó là kết quả tất yếu của hàng trăm giờ chuẩn bị âm thầm.",
+        threePillars: "• Hiểu Sâu: Thấu triệt quy luật Nhân – Duyên – Quả. Hạt giống tốt (Nhân) phải gặp đất lành, nước đủ và công cụ đúng thời đại (Duyên) mới trổ quả ngọt.\n• Sống Tỉnh: Kiên nhẫn vun bồi kiến thức nền tảng và đạo đức nghề nghiệp ngay cả khi chưa ai nhìn thấy.\n• Hành Đúng: Làm chủ nghệ thuật đặt câu lệnh (Prompt Engineering) với tư duy rõ ràng, coi AI là đội ngũ cộng sự tinh nhuệ để nhân rộng giá trị thực.",
+        action: "Trước khi giao việc cho AI hay cộng sự, hãy viết rõ 3 yếu tố: Bối cảnh thật – Mục tiêu cụ thể – Tiêu chuẩn chất lượng đầu ra. Câu hỏi càng sâu sắc, câu trả lời càng đắt giá.",
+        quote: "May mắn không rơi xuống từ bầu trời. Đó là khoảnh khắc một tâm trí đã Hiểu sâu - Sống tỉnh bắt gặp công cụ đúng và Hành đúng lúc."
+      },
+      "#03": {
+        num: "#03",
+        tag: "PHÁT TRIỂN TỪ GỐC",
+        title: "Gốc Rễ Của Phát Triển Bền Vững: Khi Tri Thức Hiện Đại Hòa Quyện Cùng Đạo Hiếu & Tình Đất Quê Hương",
+        context: "Rừng keo lai ở Quảng Trị mỗi năm đều phải đối diện với gió Lào khô rát và những cơn bão lớn từ biển Đông. Những cây chỉ tốt lá bề nổi mà rễ ăn nông sẽ bật gốc ngay trong cơn lốc đầu tiên; chỉ những cây có bộ rễ cọc đâm thẳng xuống tầng đất cái mới sừng sững qua mùa giông bão. Con người và doanh nghiệp trong kỷ nguyên số cũng vận hành theo đúng quy luật tự nhiên ấy.",
+        threePillars: "• Hiểu Sâu: Nhận thức rõ công nghệ hay thuật toán chỉ là phần ngọn, phần cành; còn Đạo hiếu với cha mẹ, tình nghĩa vợ chồng và chữ Tín với khách hàng mới là bộ rễ cọc.\n• Sống Tỉnh: Giữa nhịp sống số hối hả, luôn giữ tâm quay về chăm sóc gia đình và trân quý cội nguồn đất mẹ Xứ Cùa.\n• Hành Đúng: Ứng dụng chuyển đổi số để nâng tầm nông sản, dược liệu quê hương chứ không chạy theo những trào lưu hào nhoáng rỗng ruột.",
+        action: "Dù bận rộn dự án công nghệ đến đâu, hãy giữ trọn bữa cơm ấm áp bên gia đình và kiểm tra chất lượng sản phẩm từ gốc trước khi bấm nút truyền thông.",
+        quote: "Cây có gốc mới trổ cành xanh lá, người có nguồn mới vững chãi giữa kỷ nguyên số."
+      },
+      "#04": {
+        num: "#04",
+        tag: "ĐỘ LƯỢNG & TẦM VÓC",
+        title: "Đại Lượng Của Đất Đỏ Bazan: Càng Cho Đi Phù Sa, Rừng Càng Vươn Tầm Đại Ngàn",
+        context: "Vùng đất đỏ bazan Xứ Cùa (Cam Lộ, Quảng Trị) bao đời nay nổi tiếng với hồ tiêu, chè vằng, an xoa đậm vị dược tính. Đất không giữ khoáng chất cho riêng mình mà hiến dâng trọn vẹn cho từng thớ rễ; rồi đến mùa lá rụng, rừng lại trả về cho đất lớp mùn màu mỡ hơn. Khi xây dựng hơn 36+ mô-đun AI thực chiến và chia sẻ cho anh em học viên, tôi nhận ra càng mở lòng hướng dẫn tận tình, chính mình lại càng sáng ra nhiều giải pháp mới.",
+        threePillars: "• Hiểu Sâu: Hiểu quy luật tuần hoàn của tri thức — kiến thức giữ kín trong ngăn kéo sẽ trở thành kiến thức chết, kiến thức được đem ra phụng sự sẽ sinh sôi.\n• Sống Tỉnh: Vượt qua tâm lý sợ người khác giỏi hơn mình hay tâm lý giấu nghề hẹp hòi.\n• Hành Đúng: Đóng gói quy trình phức tạp thành những bước giản dị, dễ hiểu để người nông dân, giáo viên hay người mới đều áp dụng được ngay.",
+        action: "Khi học được một quy trình tốt hoặc một công cụ AI hữu ích, hãy đúc kết lại và hướng dẫn cho ít nhất 3 người xung quanh cùng làm chủ được nó.",
+        quote: "Sự hào phóng chia sẻ tri thức không làm ta vơi đi, mà biến ta thành mạch nguồn không bao giờ cạn."
+      },
+      "#05": {
+        num: "#05",
+        tag: "LIÊN MINH CỘNG SINH",
+        title: "Mạng Lưới Rễ Ngầm Dưới Tán Rừng: Triết Lý Kết Nối Giao Thương Bằng Giá Trị Thật",
+        context: "Khoa học lâm nghiệp gọi mạng lưới nấm rễ dưới lòng đất là 'Wood Wide Web' — nơi những cây cổ thụ truyền carbon và dưỡng chất cứu các cây non thiếu nắng, đồng thời phát tín hiệu cảnh báo sâu bệnh cho cả cánh rừng. Tại HTX Lâm Nghiệp Bền Vững Keo Sơn, chúng tôi không làm ăn theo kiểu mua đứt bán đoạn, mà đồng hành cùng bà con từ khâu chọn cây giống, kỹ thuật trồng đến thu mua và chế biến dược liệu.",
+        threePillars: "• Hiểu Sâu: Thấu hiểu rằng không ai có thể tự mình làm hết mọi khâu mà vẫn xuất sắc; sức mạnh bền vững nằm ở mạng lưới liên minh cùng chuẩn mực đạo đức.\n• Sống Tỉnh: Chọn đối tác bằng sự đồng điệu về chữ Tín và lòng tử tế, không vì lợi nhuận ngắn hạn mà làm tổn thương chuỗi giá trị.\n• Hành Đúng: Minh bạch nguồn gốc xuất xứ, giữ đúng cam kết chất lượng trong từng bầu cây keo lai và từng hũ cao dược liệu.",
+        action: "Rà soát lại mạng lưới đối tác và khách hàng của bạn: hãy chủ động trao đi một giá trị hỗ trợ thiết thực trước khi đề cập đến lợi ích thương mại.",
+        quote: "Muốn đứng vững qua mùa giông bão, đừng mọc như một thân cây đơn độc; hãy đan rễ vào nhau thành một cánh rừng."
+      },
+      "#06": {
+        num: "#06",
+        tag: "KIẾN TRÚC VẬN HÀNH",
+        title: "Nghệ Thuật Điều Phối Giao Hưởng: Từ Vườn Ươm Vạn Cây Đến Dàn Nhạc Đa Tác Tử AI",
+        context: "Nhiều người hỏi tôi làm sao vừa điều hành HTX Keo Sơn với hàng vạn bầu cây giống và xưởng nấu cao dược liệu, vừa vận hành mạng lưới hơn 24 kênh nội dung số mỗi ngày. Câu trả lời nằm ở tư duy Hệ thống (System Thinking): ở vườn ươm có quy trình đóng bầu, tưới phun sương, phân loại cây theo tiêu chuẩn; trên máy tính có hệ thống 36+ mô-đun AI, kịch bản PowerShell và Python phối hợp nhịp nhàng như một dàn nhạc giao hưởng.",
+        threePillars: "• Hiểu Sâu: Phân biệt rõ giữa 'làm việc chăm chỉ một cách thủ công' và 'thiết kế hệ thống thông minh để giải phóng sức lao động'.\n• Sống Tỉnh: Không để bản thân rơi vào bẫy ôm đồm kiệt sức, giữ tâm trí tĩnh lặng để làm người nhạc trưởng cầm đũa chỉ huy.\n• Hành Đúng: Chuẩn hóa mọi công việc lặp đi lặp lại thành quy trình chuẩn (SOP) và ủy quyền cho các tác tử AI (AI Agents) thực thi chính xác.",
+        action: "Liệt kê 3 việc tốn thời gian lặp đi lặp lại nhất trong tuần của bạn và bắt đầu xây dựng quy trình mẫu (Template / Script / Prompt) để tự động hóa 80% khối lượng đó.",
+        quote: "Tự do thực sự của người lãnh đạo bắt đầu từ ngày hệ thống có thể tự vận hành trơn tru mà không cần tiếng thúc giục."
+      },
+      "#07": {
+        num: "#07",
+        tag: "GIA ĐẠO & ƯƠM MẦM",
+        title: "Bản Giao Hưởng Của Hai Người Gieo Hạt: Khi Vườn Ươm Lâm Nghiệp Gặp Ngôi Trường Mầm Non",
+        context: "Mỗi chiều về dưới mái nhà tại Xứ Cùa, nghe vợ tôi — cô giáo mầm non trường Lê Thế Hiếu — kể chuyện chăm các bé ở lớp và nhìn hai cô con gái nhỏ ríu rít bên mâm cơm, tôi luôn cảm thấy một niềm biết ơn sâu sắc. Nghề lâm nghiệp của tôi và nghề giáo dục mầm non của vợ tuy hai mà một: cả hai đều là nghề 'gieo hạt và chăm mầm', đòi hỏi sự nhẫn nại, dịu dàng và tình thương vô điều kiện.",
+        threePillars: "• Hiểu Sâu: Thấu hiểu rằng mỗi đứa trẻ hay mỗi mầm cây đều có nhịp điệu sinh trưởng riêng, cần sự nâng đỡ đúng cách chứ không phải sự thúc ép thô bạo.\n• Sống Tỉnh: Biết buông bỏ áp lực công việc bên ngoài trước khi bước qua hiên nhà, trọn vẹn hiện diện cùng vợ con.\n• Hành Đúng: Làm gương cho con bằng chính lối sống kỷ luật, hiếu thảo và tử tế mỗi ngày của cha mẹ.",
+        action: "Hôm nay hãy dành trọn vẹn ít nhất 30 phút tắt điện thoại, lắng nghe người bạn đời và trò chuyện cùng con cái bằng ánh mắt trìu mến nhất.",
+        quote: "Thành tựu rực rỡ nhất của người đàn ông không nằm ở những tấm biển chức danh, mà ở ánh mắt bình yên của vợ và tiếng cười trong trẻo của các con."
+      },
+      "#08": {
+        num: "#08",
+        tag: "TRUYỀN THÔNG CHÂN THẬT",
+        title: "Khước Từ Hào Quang Ảo: Sức Nặng Của Giọng Nói Thật Giữa Thời Đại Nội Dung Công Nghiệp",
+        context: "Chưa bao giờ việc sản xuất hàng loạt video, bài viết lại dễ dàng như hiện nay. Nhưng cũng chính vì thế, không gian mạng ngập tràn những nội dung na ná nhau, hào nhoáng mà vô hồn. Khi xây dựng các kênh truyền thông của hệ sinh thái Lê Phúc Nhật, nguyên tắc bất di bất dịch của tôi là: dùng AI để tối ưu kỹ thuật và tốc độ, nhưng chất liệu cốt lõi phải là câu chuyện thật, đất rừng thật, sản phẩm thật và trăn trở thật.",
+        threePillars: "• Hiểu Sâu: Nhận ra rằng khán giả ngày càng tinh tế; họ không kết nối với sự hoàn hảo nhân tạo, họ kết nối với nhân cách và trải nghiệm thực chứng.\n• Sống Tỉnh: Không chạy theo những chiêu trò giật gân câu tương tác ngắn hạn làm tổn hại đến phẩm giá thương hiệu.\n• Hành Đúng: Dùng công nghệ để làm sáng rõ sự thật, truyền tải thông điệp hướng thiện và mang lại giá trị hữu ích cho người xem.",
+        action: "Trước khi đăng tải bất kỳ nội dung nào, hãy tự hỏi: 'Bài viết/video này có mang lại sự bình an, tri thức thực tế hay năng lượng tử tế cho người đọc không?'",
+        quote: "Kỹ xảo có thể chạm tới thị giác trong ba giây, nhưng chỉ có sự chân thành mới neo đậu lại trong trái tim người nghe suốt nhiều năm."
+      },
+      "#09": {
+        num: "#09",
+        tag: "TINH LỌC BẢN CHẤT",
+        title: "Triết Lý Cô Đặc Cao Dược Liệu: Lọc Bỏ Tạp Chất Để Giữ Lại Tinh Hoa Cốt Lõi",
+        context: "Tại xưởng chế biến của HTX Keo Sơn, để nấu được 1kg Cao An Xoa hay Cao Chè Vằng đạt chuẩn, anh em phải tuyển chọn hàng chục ký thảo mộc tươi vùng Cùa, rửa sạch, đun chiết suốt ngày đêm, liên tục canh lửa và lọc bỏ cặn bã. Quá trình học tập và rèn luyện trí tuệ trong thời đại bùng nổ thông tin cũng giống hệt như nấu cao dược liệu vậy.",
+        threePillars: "• Hiểu Sâu: Phân biệt được đâu là 'dược chất cốt lõi' (nguyên lý gốc, tri thức thực chứng) và đâu là 'bọt tạp chất' (tin rác, sự phô trương hình thức).\n• Sống Tỉnh: Giữ ngọn lửa tập trung bền bỉ, không để tâm trí bị phân tán bởi hàng trăm luồng thông tin vô bổ mỗi ngày.\n• Hành Đúng: Sử dụng các công cụ như NotebookLM, Gemini, DeepSeek để tóm lược, đối chiếu và chắt lọc lấy tinh hoa ứng dụng ngay vào đời sống.",
+        action: "Thực hành 'nhịn thông tin rác': cắt giảm 50% thời gian lướt mạng vô định và thay bằng việc đọc sâu, ghi chú lại 3 bài học cốt lõi mỗi tuần.",
+        quote: "Trí tuệ không phải là tích trữ thật nhiều chữ nghĩa thô, mà là khả năng cô đặc vạn trang sách thành một hành động chuẩn xác."
+      },
+      "#10": {
+        num: "#10",
+        tag: "NÔNG THÔN MỚI TỈNH THỨC",
+        title: "Trao Chiếc Cần Câu Số Cho Người Trẻ Quê Mình: Khát Vọng Ly Nông Bất Ly Hương",
+        context: "Sinh ra và lớn lên ở Quảng Trị, tôi từng chứng kiến biết bao thế hệ thanh niên phải rời quê hương vào Nam ra Bắc mưu sinh, để lại những ngôi làng vắng tiếng người trẻ. Ngày nay, hạ tầng Internet và Trí tuệ nhân tạo đã xóa nhòa khoảng cách giữa thôn An Sơn – Cam Lộ với các trung tâm kinh tế lớn. Người trẻ hoàn toàn có thể làm việc toàn cầu, vận hành thương mại số và làm giàu từ chính nông lâm sản bản địa ngay trên mảnh đất chôn nhau cắt rốn.",
+        threePillars: "• Hiểu Sâu: Nhìn thấy mỏ vàng từ tài nguyên bản địa (rừng bền vững, dược liệu Xứ Cùa, văn hóa quê hương) khi được kết hợp với đòn bẩy công nghệ số.\n• Sống Tỉnh: Tự hào về quê hương, không mặc cảm tỉnh lẻ, kiên định xây dựng sự nghiệp gắn liền với chữ Hiếu và cộng đồng làng xã.\n• Hành Đúng: Chủ động học tập kỹ năng AI, thiết kế, truyền thông đa kênh để tự tay mở cánh cửa thị trường rộng lớn ngay tại quê nhà.",
+        action: "Mỗi người con quê hương hãy chọn một sản phẩm thực chất của vùng đất mình và dùng công nghệ số để kể câu chuyện tử tế của sản phẩm đó ra thế giới.",
+        quote: "Khi tri thức số về tới từng mái nhà thôn xóm, mảnh đất quê hương chính là thung lũng khởi nghiệp màu mỡ nhất."
+      },
+      "#11": {
+        num: "#11",
+        tag: "KIỂM TOÁN CUỘC ĐỜI",
+        title: "Bảng Cân Đối Của Lương Tri: Di Sản Lớn Nhất Không Nằm Trong Bản Sao Kê",
+        context: "Trong quản trị hợp tác xã và doanh nghiệp, chúng ta có bảng cân đối kế toán để đo lường tài sản, nguồn vốn và lợi nhuận. Nhưng khi bước qua tuổi 40, ngồi tĩnh lặng giữa hương rừng Xứ Cùa, tôi nhận ra mỗi người đều có một 'Bảng cân đối của Lương tri'. Có những thứ nhìn như chi phí (thời gian giúp đỡ cộng đồng, sự tận tâm vượt cam kết) nhưng thực chất lại là khoản đầu tư sinh lời bền vững nhất.",
+        threePillars: "• Hiểu Sâu: Nhận chân rằng tiền bạc là phương tiện quý giá để vận hành cuộc sống, nhưng Uy tín, Sự tử tế và Tình người mới là di sản ở lại sau cùng.\n• Sống Tỉnh: Mỗi tối dành 5 phút tự kiểm toán tâm mình: hôm nay mình đã nói lời chân thật chưa, đã làm điều gì có ích cho đất rừng và mọi người chưa?\n• Hành Đúng: Kinh doanh minh bạch, phụng sự tận tâm từ gốc để mỗi sản phẩm trao đi đều mang theo năng lượng bình an và thiện lành.",
+        action: "Tối nay trước khi nghỉ ngơi, hãy viết xuống 3 điều bạn biết ơn và 1 việc tử tế bạn sẽ chủ động thực hiện vào sáng ngày mai.",
+        quote: "Tiền bạc chỉ là tờ biên nhận tạm thời của thị trường; uy tín và lòng biết ơn của con người mới là tài sản vĩnh cửu."
+      }
+    };
+
+    let currentWisdomCategory = 'all';
+    let currentReaderArticleData = null;
+
     function filterWisdomPosts(category, btnElement) {
+      currentWisdomCategory = category;
       const buttons = document.querySelectorAll('.filter-tab-btn');
       buttons.forEach(b => b.classList.remove('active'));
       if (btnElement) btnElement.classList.add('active');
+      applyWisdomFilters();
+    }
 
-      const cards = document.querySelectorAll('.wisdom-card');
+    function handleWisdomSearch() {
+      applyWisdomFilters();
+    }
+
+    function applyWisdomFilters() {
+      const searchInput = document.getElementById('wisdomSearchInput');
+      const keyword = (searchInput ? searchInput.value : '').trim().toLowerCase();
+      const cards = document.querySelectorAll('#wisdomGrid .wisdom-card');
+
       cards.forEach(card => {
         const cardCat = card.getAttribute('data-category');
-        if (category === 'all' || cardCat === category) {
+        const matchCat = (currentWisdomCategory === 'all' || cardCat === currentWisdomCategory);
+        const textContent = card.textContent.toLowerCase();
+        const matchKeyword = !keyword || textContent.includes(keyword);
+
+        if (matchCat && matchKeyword) {
           card.style.display = 'flex';
         } else {
           card.style.display = 'none';
@@ -3239,38 +4117,132 @@
     }
 
     function openArticleReader(btn) {
+      stopArticleSpeech();
       const card = btn.closest('.wisdom-card');
       if (!card) return;
-      const meta = card.querySelector('.wisdom-meta span:first-child')?.textContent || 'CHIÊM NGHIỆM';
-      const num = card.querySelector('.wisdom-num')?.textContent || '#';
-      const title = card.querySelector('.wisdom-title')?.textContent || '';
-      const excerpt = card.querySelector('.wisdom-excerpt')?.textContent || '';
-      const quote = card.querySelector('.wisdom-quote')?.textContent || '';
+      const num = (card.querySelector('.wisdom-num')?.textContent || '#01').trim();
+      const metaTag = (card.querySelector('.wisdom-meta span:first-child')?.textContent || 'CHIÊM NGHIỆM').trim();
+      const title = (card.querySelector('.wisdom-title')?.textContent || '').trim();
+      const excerpt = (card.querySelector('.wisdom-excerpt')?.textContent || '').trim();
+      const quote = (card.querySelector('.wisdom-quote')?.textContent || '').trim().replace(/^"|"$/g, '');
+      const customAction = card.getAttribute('data-custom-action') || '';
 
-      document.getElementById('readerMeta').textContent = `${meta} • ${num}`;
-      document.getElementById('readerTitle').textContent = title;
+      const articleObj = FULL_ARTICLES_DATA[num] || {
+        num: num,
+        tag: metaTag,
+        title: title,
+        context: excerpt,
+        threePillars: "• Hiểu Sâu: Thấu cảm bản chất cốt lõi của vấn đề từ thực tiễn đời sống và công việc.\n• Sống Tỉnh: Giữ tâm bình an, sáng suốt trước mọi biến động để chọn hướng đi tử tế.\n• Hành Đúng: Biến nhận thức thành hành động kỷ luật, tạo ra giá trị thật từ Gốc.",
+        action: customAction || "Áp dụng ngay bài học này vào một quyết định hoặc công việc cụ thể trong ngày hôm nay với tinh thần tận tâm 100%.",
+        quote: quote
+      };
 
+      currentReaderArticleData = articleObj;
+
+      document.getElementById('readerMeta').textContent = `${articleObj.tag} • ${articleObj.num}`;
+      document.getElementById('readerTitle').textContent = articleObj.title;
+
+      const pillarsFormatted = escapeHTML(articleObj.threePillars).replace(/\n/g, '<br/>');
       const contentBox = document.getElementById('readerContent');
       contentBox.innerHTML = `
-        <p>${excerpt}</p>
-        <p>Thực hành triết lý <strong>Hiểu Sâu • Sống Tỉnh • Hành Đúng</strong> không phải là khẩu hiệu lý thuyết, mà là kim chỉ nam được tôi luyện qua từng giọt mồ hôi trên bãi ươm cây keo giống và từng dòng lệnh tự động hóa AI mỗi đêm tại vùng quê Xứ Cùa, Quảng Trị.</p>
-        <p>Khi ta chọn xuất phát từ Gốc, lấy sự Tử tế và Chân thật làm thước đo giá trị, mọi công nghệ tân tiến nhất sẽ trở thành người bạn đồng hành thủy chung đưa những giá trị bản địa vươn tầm cao mới.</p>
+        <div class="reader-section-box">
+          <div class="reader-section-heading">🌿 1. Bối cảnh &amp; Câu chuyện thực tiễn</div>
+          <p>${escapeHTML(articleObj.context)}</p>
+        </div>
+        <div class="reader-section-box">
+          <div class="reader-section-heading">🧭 2. Lăng kính Ba Chữ Sống (Hiểu Sâu • Sống Tỉnh • Hành Đúng)</div>
+          <p>${pillarsFormatted}</p>
+        </div>
+        <div class="reader-section-box">
+          <div class="reader-section-heading">⚡ 3. Bài học ứng dụng ngay</div>
+          <p>${escapeHTML(articleObj.action)}</p>
+        </div>
       `;
 
-      document.getElementById('readerQuote').textContent = quote;
+      document.getElementById('readerQuote').textContent = `"${articleObj.quote}"`;
 
       const askAiBtn = document.getElementById('readerAskAiBtn');
       askAiBtn.onclick = function() {
-        closeModal('articleReaderModal');
-        askAiAboutArticle(`${num}: ${title}`);
+        closeArticleReaderModal();
+        askAiAboutArticle(`${articleObj.num}: ${articleObj.title}`);
       };
 
       openModal('articleReaderModal');
     }
 
+    function closeArticleReaderModal() {
+      stopArticleSpeech();
+      closeModal('articleReaderModal');
+    }
+
+    function toggleSpeakCurrentArticle() {
+      if (!('speechSynthesis' in window)) {
+        showToast('⚠️ Trình duyệt của bạn chưa hỗ trợ đọc giọng nói trực tiếp.');
+        return;
+      }
+      const ttsBtn = document.getElementById('readerTtsBtn');
+      if (window.speechSynthesis.speaking) {
+        stopArticleSpeech();
+        showToast('⏹️ Đã dừng đọc bài chiêm nghiệm.');
+        return;
+      }
+      if (!currentReaderArticleData) return;
+
+      const textToRead = [
+        currentReaderArticleData.title,
+        'Phần 1: Bối cảnh và câu chuyện thực tiễn.',
+        currentReaderArticleData.context,
+        'Phần 2: Lăng kính Ba Chữ Sống: Hiểu Sâu, Sống Tỉnh, Hành Đúng.',
+        currentReaderArticleData.threePillars.replace(/•/g, ''),
+        'Phần 3: Bài học ứng dụng ngay.',
+        currentReaderArticleData.action,
+        'Trích dẫn tâm đắc:',
+        currentReaderArticleData.quote
+      ].join(' ');
+
+      const utterance = new SpeechSynthesisUtterance(textToRead);
+      utterance.lang = 'vi-VN';
+      utterance.rate = 0.98;
+      const voices = window.speechSynthesis.getVoices();
+      const viVoice = voices.find(v => v.lang && v.lang.toLowerCase().includes('vi'));
+      if (viVoice) utterance.voice = viVoice;
+
+      utterance.onstart = function() {
+        if (ttsBtn) ttsBtn.textContent = '⏹️ Dừng nghe bài viết';
+      };
+      utterance.onend = function() {
+        if (ttsBtn) ttsBtn.textContent = '🔊 Nghe đọc bài viết';
+      };
+      utterance.onerror = function() {
+        if (ttsBtn) ttsBtn.textContent = '🔊 Nghe đọc bài viết';
+      };
+
+      window.speechSynthesis.speak(utterance);
+      showToast('🔊 Đang đọc bài chiêm nghiệm bằng giọng tiếng Việt...');
+    }
+
+    function stopArticleSpeech() {
+      if ('speechSynthesis' in window && window.speechSynthesis.speaking) {
+        window.speechSynthesis.cancel();
+      }
+      const ttsBtn = document.getElementById('readerTtsBtn');
+      if (ttsBtn) ttsBtn.textContent = '🔊 Nghe đọc bài viết';
+    }
+
+    function copyCurrentArticleQuote() {
+      if (!currentReaderArticleData) return;
+      const quoteStr = `"${currentReaderArticleData.quote}" — Lê Phúc Nhật (${currentReaderArticleData.title})`;
+      copyText(quoteStr, '📋 Đã sao chép câu trích dẫn tâm đắc!');
+    }
+
     function askAiAboutArticle(articleTitle) {
       toggleChatWindow(true);
       sendQuickPrompt(`Xin chào anh Nhật, tôi muốn cùng anh luận bàn sâu hơn về "${articleTitle}". Anh có thể chia sẻ thêm góc nhìn thực tế không?`);
+    }
+
+    function askShowcaseTopic(topicText) {
+      toggleChatWindow(true);
+      sendQuickPrompt(`Xin tư vấn chi tiết về ${topicText}?`);
     }
 
     function openAddWisdomModal() {
@@ -3283,9 +4255,10 @@
       const tag = document.getElementById('newWisdomTag').value.trim();
       const title = document.getElementById('newWisdomTitle').value.trim();
       const excerpt = document.getElementById('newWisdomExcerpt').value.trim();
+      const action = document.getElementById('newWisdomAction').value.trim();
       const quote = document.getElementById('newWisdomQuote').value.trim();
 
-      const newPost = { category, tag, title, excerpt, quote, id: 'custom_' + Date.now() };
+      const newPost = { category, tag, title, excerpt, action, quote, id: 'custom_' + Date.now() };
       saveCustomPostToLocal(newPost);
       renderWisdomCard(newPost);
 
@@ -3295,13 +4268,13 @@
     }
 
     function saveCustomPostToLocal(post) {
-      const posts = JSON.parse(localStorage.getItem('lpn_custom_posts') || '[]');
+      const posts = JSON.parse(safeGetStorage('lpn_custom_posts', '[]'));
       posts.push(post);
-      localStorage.setItem('lpn_custom_posts', JSON.stringify(posts));
+      safeSetStorage('lpn_custom_posts', JSON.stringify(posts));
     }
 
     function loadCustomWisdomPosts() {
-      const posts = JSON.parse(localStorage.getItem('lpn_custom_posts') || '[]');
+      const posts = JSON.parse(safeGetStorage('lpn_custom_posts', '[]'));
       posts.forEach(p => renderWisdomCard(p));
     }
 
@@ -3309,25 +4282,41 @@
       const grid = document.getElementById('wisdomGrid');
       if (!grid) return;
       const totalCards = grid.querySelectorAll('.wisdom-card').length + 1;
-      const padNum = totalCards < 10 ? '0' + totalCards : totalCards;
+      const padNum = totalCards < 10 ? '0' + totalCards : String(totalCards);
+      const numCode = '#' + padNum;
+
+      FULL_ARTICLES_DATA[numCode] = {
+        num: numCode,
+        tag: post.tag.toUpperCase(),
+        title: post.title,
+        context: post.excerpt,
+        threePillars: "• Hiểu Sâu: Nhìn thấu bản chất cốt lõi từ thực tiễn lao động và sáng tạo tại Xứ Cùa, Quảng Trị.\n• Sống Tỉnh: Giữ vững định hướng tử tế, bình an giữa dòng chảy công nghệ.\n• Hành Đúng: Triển khai thành hành động cụ thể, mang lại giá trị bền vững cho gia đình và cộng đồng.",
+        action: post.action || "Hãy chọn ngay một ý tâm đắc nhất trong bài viết này để thực hành ngay hôm nay.",
+        quote: post.quote
+      };
 
       const card = document.createElement('article');
       card.className = 'wisdom-card';
       card.setAttribute('data-category', post.category);
+      card.setAttribute('data-article-id', numCode);
+      card.setAttribute('data-custom', 'true');
+      if (post.action) card.setAttribute('data-custom-action', post.action);
+
+      const safeTitleForJs = escapeHTML(post.title).replace(/'/g, "\\'");
       card.innerHTML = `
         <div>
           <div class="wisdom-meta">
-            <span>${post.tag.toUpperCase()}</span>
-            <span class="wisdom-num">#${padNum}</span>
+            <span>${escapeHTML(post.tag.toUpperCase())}</span>
+            <span class="wisdom-num">${numCode}</span>
           </div>
-          <h3 class="wisdom-title">${post.title}</h3>
-          <p class="wisdom-excerpt">${post.excerpt}</p>
+          <h3 class="wisdom-title">${escapeHTML(post.title)}</h3>
+          <p class="wisdom-excerpt">${escapeHTML(post.excerpt)}</p>
         </div>
         <div class="wisdom-footer-box">
-          <blockquote class="wisdom-quote">"${post.quote}"</blockquote>
+          <blockquote class="wisdom-quote">"${escapeHTML(post.quote)}"</blockquote>
           <div class="wisdom-card-actions">
             <button class="read-more-btn" onclick="openArticleReader(this)">📖 Đọc trọn vẹn</button>
-            <button class="ask-ai-about-btn" onclick="askAiAboutArticle('Bài #${padNum}: ${post.title}')">✨ Thảo luận cùng AI</button>
+            <button class="ask-ai-about-btn" onclick="askAiAboutArticle('Bài ${numCode}: ${safeTitleForJs}')">✨ Thảo luận cùng AI</button>
           </div>
         </div>
       `;
@@ -3335,18 +4324,38 @@
     }
 
     /* --------------------------------------------------------------------------
-       E. BỨC TƯỜNG TỬ TẾ & HIỆU ỨNG THẢ TIM
+       E. BỨC TƯỜNG TỬ TẾ (CHỐNG XSS BẰNG escapeHTML + XÓA LỜI CHÚC TRONG ADMIN)
        -------------------------------------------------------------------------- */
+    const DEFAULT_INITIAL_WISHES = [
+      {
+        id: 'default_1',
+        author: 'Nguyễn Hoàng Nam (Cộng đồng AI Thực Chiến)',
+        time: 'Vừa xong',
+        content: 'Cảm ơn anh Nhật đã truyền lửa triết lý "Hiểu sâu - Sống tỉnh - Hành đúng". Các quy trình tự động hóa AI của anh thật sự giản dị và áp dụng được ngay!'
+      },
+      {
+        id: 'default_2',
+        author: 'Trần Văn Minh (Đối tác Lâm nghiệp Quảng Trị)',
+        time: 'Hôm qua',
+        content: 'Cây giống keo lai và dược liệu Cao Chè Vằng, Cao An Xoa của HTX Keo Sơn chất lượng rất tuyệt vời. Chúc anh Nhật và HTX ngày càng vươn xa!'
+      },
+      {
+        id: 'default_3',
+        author: 'Lê Thị Thu Hà (Giáo viên)',
+        time: '2 ngày trước',
+        content: 'Ngưỡng mộ tổ ấm bình yên và năng lượng tử tế từ gốc của gia đình anh Nhật. Chúc anh chị và hai cháu luôn mạnh khỏe, hạnh phúc viên mãn!'
+      }
+    ];
+
     function triggerLoveHeart() {
       const counterEl = document.getElementById('loveCounter');
       let count = 2168;
-      const saved = localStorage.getItem('lpn_hearts');
-      if (saved) count = parseInt(saved);
+      const saved = safeGetStorage('lpn_hearts');
+      if (saved) count = parseInt(saved, 10);
       count++;
-      localStorage.setItem('lpn_hearts', count);
+      safeSetStorage('lpn_hearts', String(count));
       if (counterEl) counterEl.textContent = count.toLocaleString('vi-VN');
 
-      // Create floating heart animation
       for (let i = 0; i < 3; i++) {
         setTimeout(() => {
           const heart = document.createElement('div');
@@ -3366,65 +4375,104 @@
       openModal('wishModal');
     }
 
+    function getStoredWishesList() {
+      const raw = safeGetStorage('lpn_wishes');
+      if (!raw) {
+        safeSetStorage('lpn_wishes', JSON.stringify(DEFAULT_INITIAL_WISHES));
+        return [...DEFAULT_INITIAL_WISHES];
+      }
+      try {
+        const parsed = JSON.parse(raw);
+        if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+      } catch (e) {}
+      return [...DEFAULT_INITIAL_WISHES];
+    }
+
     function handleWishSubmit(event) {
       event.preventDefault();
       const author = document.getElementById('wishAuthorInput').value.trim();
       const content = document.getElementById('wishContentInput').value.trim();
       if (!author || !content) return;
 
-      const wish = { author, content, time: 'Vừa xong' };
-      const localWishes = JSON.parse(localStorage.getItem('lpn_wishes') || '[]');
-      localWishes.unshift(wish);
-      localStorage.setItem('lpn_wishes', JSON.stringify(localWishes));
+      const wish = {
+        id: 'wish_' + Date.now(),
+        author: author,
+        content: content,
+        time: new Date().toLocaleDateString('vi-VN')
+      };
+      const wishes = getStoredWishesList();
+      wishes.unshift(wish);
+      safeSetStorage('lpn_wishes', JSON.stringify(wishes));
 
-      renderWish(wish, true);
+      renderAllWishes();
       closeModal('wishModal');
       showToast('❤️ Cảm ơn bạn đã trao gửi lời chúc tử tế!');
       event.target.reset();
     }
 
-    function renderWish(wish, prepend = false) {
-      const container = document.getElementById('wishesContainer');
-      if (!container) return;
-      const item = document.createElement('div');
-      item.className = 'wish-item';
-      item.innerHTML = `
-        <div class="wish-head">
-          <span class="wish-author">${wish.author}</span>
-          <span class="wish-time">${wish.time}</span>
-        </div>
-        <p class="wish-content">${wish.content}</p>
-      `;
-      if (prepend) container.prepend(item);
-      else container.appendChild(item);
+    function deleteWishItem(wishId) {
+      const wishes = getStoredWishesList().filter(w => w.id !== wishId);
+      safeSetStorage('lpn_wishes', JSON.stringify(wishes));
+      renderAllWishes();
+      showToast('🗑️ Đã xóa lời chúc khỏi Bức tường tử tế.');
     }
 
-    function loadLocalWishes() {
-      const localWishes = JSON.parse(localStorage.getItem('lpn_wishes') || '[]');
-      localWishes.forEach(w => renderWish(w, true));
+    function renderAllWishes() {
+      const container = document.getElementById('wishesContainer');
+      if (!container) return;
+      container.innerHTML = '';
+      const wishes = getStoredWishesList();
+
+      wishes.forEach((wish, idx) => {
+        const wishId = wish.id || ('wish_idx_' + idx);
+        wish.id = wishId;
+        const item = document.createElement('div');
+        item.className = 'wish-item';
+        item.innerHTML = `
+          <div class="wish-head">
+            <span class="wish-author">${escapeHTML(wish.author)}</span>
+            <span class="wish-time">${escapeHTML(wish.time || 'Vừa xong')}</span>
+          </div>
+          <p class="wish-content">${escapeHTML(wish.content)}</p>
+          <button type="button" class="wish-delete-btn admin-only" onclick="deleteWishItem('${escapeHTML(wishId)}')">
+            🗑️ Xóa lời chúc (Admin)
+          </button>
+        `;
+        container.appendChild(item);
+      });
     }
 
     /* --------------------------------------------------------------------------
-       F. TẢI FILE VCARD (.VCF) & CHIA SẺ
+       F. TẢI FILE VCARD (.VCF) ĐỘNG & HỘP THOẠI CHIA SẺ SMART IDENTITY CARD
        -------------------------------------------------------------------------- */
     function downloadVCard() {
-      const vCardData = [
+      const customPhone = safeGetStorage('lpn_custom_phone', '');
+      const vCardLines = [
         'BEGIN:VCARD',
         'VERSION:3.0',
         'FN;CHARSET=UTF-8:Lê Phúc Nhật',
         'N;CHARSET=UTF-8:Lê;Phúc Nhật;;;',
         'NICKNAME;CHARSET=UTF-8:Hiểu Sâu Sống Tỉnh Hành Đúng',
-        'TITLE;CHARSET=UTF-8:Chủ tịch HĐQT HTX Lâm Nghiệp Keo Sơn - Chuyên gia AI Thực Chiến',
+        'TITLE;CHARSET=UTF-8:Chủ tịch HĐQT HTX Lâm Nghiệp Bền Vững Keo Sơn - Chuyên gia AI Thực Chiến',
         'ORG;CHARSET=UTF-8:HTX Lâm Nghiệp Bền Vững Keo Sơn',
-        'EMAIL;TYPE=INTERNET,PREF:lephucnhat.vn@gmail.com',
+        'BDAY:1982-07-09',
+        'EMAIL;TYPE=INTERNET,PREF:lephucnhat.vn@gmail.com'
+      ];
+      if (customPhone) {
+        vCardLines.push(`TEL;TYPE=CELL,VOICE:${customPhone}`);
+      }
+      vCardLines.push(
         'URL;TYPE=WORK:https://lephucnhat.vn/',
+        'URL:https://lephucnhat.github.io/',
         'URL:https://www.facebook.com/lephucnhat.vn',
         'URL:https://www.youtube.com/@LePhucNhatOfficial',
+        'URL:https://www.tiktok.com/@kyluat.tritue.chuyenhoa',
         'ADR;TYPE=WORK;CHARSET=UTF-8:;;Thôn An Sơn, Xã Cam Lộ, Tỉnh Quảng Trị;Quảng Trị;;;Việt Nam',
         'NOTE;CHARSET=UTF-8:Hiểu sâu để thấy bản chất - Sống tỉnh để giữ bình an - Hành đúng để tạo giá trị. Hạnh phúc từ Tử tế - Tử tế để Hạnh phúc!',
         'END:VCARD'
-      ].join('\r\n');
+      );
 
+      const vCardData = vCardLines.join('\r\n');
       const blob = new Blob([vCardData], { type: 'text/vcard;charset=utf-8;' });
       const url = URL.createObjectURL(blob);
       const link = document.createElement('a');
@@ -3458,7 +4506,7 @@
         document.execCommand('copy');
         showToast(successMsg || 'Đã sao chép vào bộ nhớ tạm!');
       } catch (err) {
-        showToast('Vui lòng sao chép thủ công: ' + text);
+        showToast('Sao chép: ' + text);
       }
       document.body.removeChild(textarea);
     }
@@ -3467,17 +4515,40 @@
       openModal('shareModal');
     }
 
+    function getCanonicalShareUrl() {
+      if (window.location.protocol.startsWith('http') && window.location.hostname.includes('lephucnhat')) {
+        return window.location.href;
+      }
+      return 'https://lephucnhat.vn/';
+    }
+
     function copyShareLink() {
-      copyText(window.location.href, '🔗 Đã sao chép đường dẫn trang cá nhân!');
+      copyText(getCanonicalShareLinkText(), '🔗 Đã sao chép liên kết Danh thiếp Số Lê Phúc Nhật!');
       closeModal('shareModal');
     }
 
+    function getCanonicalShareLinkText() {
+      return getCanonicalShareUrl();
+    }
+
+    function shareViaZalo() {
+      const phone = safeGetStorage('lpn_custom_phone', '');
+      const shareUrl = getCanonicalShareUrl();
+      copyText(shareUrl, '💬 Đã sao chép liên kết và đang mở Zalo...');
+      if (phone) {
+        window.open('https://zalo.me/' + phone.replace(/^\+84/, '0'), '_blank', 'noopener');
+      } else {
+        window.open('https://zalo.me/', '_blank', 'noopener');
+      }
+    }
+
     function shareNative() {
+      const shareUrl = getCanonicalShareUrl();
       if (navigator.share) {
         navigator.share({
           title: 'Lê Phúc Nhật | Hiểu Sâu • Sống Tỉnh • Hành Đúng',
-          text: 'Danh thiếp thông minh & Không gian tri thức của Lê Phúc Nhật (Chủ tịch HTX Keo Sơn & AI Thực Chiến)',
-          url: window.location.href
+          text: 'Danh thiếp thông minh & Không gian tri thức của Lê Phúc Nhật (Chủ tịch HĐQT HTX Lâm Nghiệp Bền Vững Keo Sơn & Chuyên gia AI Thực Chiến)',
+          url: shareUrl
         }).catch(() => {});
       } else {
         copyShareLink();
@@ -3485,43 +4556,85 @@
     }
 
     function openQrLightbox() {
-      const qrSrc = document.querySelector('.js-qr-img')?.src || 'qr.jpg';
+      const qrSrc = document.querySelector('.js-qr-img')?.src || DEFAULT_QR_FALLBACK;
       const lbImg = document.getElementById('lightboxImage');
       if (lbImg) lbImg.src = qrSrc;
       openModal('lightboxModal');
     }
 
     /* --------------------------------------------------------------------------
-       G. TRỢ LÝ AI LÊ PHÚC NHẬT (KNOWLEDGE BASE OFFLINE + GEMINI API LIVE)
+       G. TRỢ LÝ AI ĐA MÔ HÌNH (GEMINI + DEEPSEEK + OFFLINE 18 CHỦ ĐỀ + MULTI-TURN)
        -------------------------------------------------------------------------- */
+    let chatHistory = []; // Lưu tối đa 6 lượt hội thoại gần nhất (12 messages)
+
     const OFFLINE_KNOWLEDGE = [
       {
-        keywords: ['ai là', 'tiểu sử', 'sinh năm', 'quê ở', 'giới thiệu', 'lê phúc nhật', 'tuổi gì'],
-        answer: 'Anh <strong>Lê Phúc Nhật</strong> sinh ngày 09/07/1982 (tuổi Nhâm Tuất), quê quán tại Xứ Cùa (Cam Lộ, Quảng Trị). Anh là <strong>Chủ tịch HĐQT HTX Lâm Nghiệp Bền Vững Keo Sơn</strong>, đồng thời là <strong>Chuyên gia AI Thực Chiến</strong> và Nhà sáng tạo nội dung lan tỏa triết lý sống tử tế từ gốc.'
+        keywords: ['ai là', 'tiểu sử', 'sinh năm', 'quê ở', 'giới thiệu', 'lê phúc nhật', 'tuổi gì', '1982', 'nhâm tuất'],
+        answer: 'Anh <strong>Lê Phúc Nhật</strong> sinh ngày <strong>09/07/1982</strong> (tuổi Nhâm Tuất), quê hương và trụ sở làm việc tại <strong>Thôn An Sơn, Xã Cam Lộ, Tỉnh Quảng Trị (Xứ Cùa)</strong>.<br/>• <strong>Vai trò:</strong> Chủ tịch HĐQT HTX Lâm Nghiệp Bền Vững Keo Sơn, Kiến Trúc Sư Hệ Thống Nội Dung &amp; AI Thực Chiến, Chuyên Gia Lâm Nghiệp &amp; Dược Liệu Sạch Xứ Cùa.<br/>• <strong>Triết lý định danh:</strong> <em>Hiểu Sâu • Sống Tỉnh • Hành Đúng</em> (Hạnh phúc từ Tử tế – Tử tế để Hạnh phúc).'
       },
       {
-        keywords: ['htx keo sơn', 'keo sơn', 'cây giống', 'keo lai', 'lâm nghiệp'],
-        answer: '<strong>HTX Lâm Nghiệp Bền Vững Keo Sơn</strong> (Trụ sở tại Thôn An Sơn, Xã Cam Lộ, Quảng Trị) chuyên ươm tạo vườn cây giống lâm nghiệp chất lượng cao (cây keo lai dòng mô/giâm cành) phục vụ trồng rừng bền vững miền Trung, kết hợp phát triển chế biến dược liệu sạch xứ Cùa.'
+        keywords: ['htx keo sơn', 'keo sơn', 'hợp tác xã', 'trụ sở', 'an sơn', 'cam lộ'],
+        answer: '<strong>HTX Lâm Nghiệp Bền Vững Keo Sơn</strong> đặt trụ sở tại <strong>Thôn An Sơn, Xã Cam Lộ, Tỉnh Quảng Trị (Xứ Cùa)</strong> do anh Lê Phúc Nhật làm Chủ tịch HĐQT. HTX hoạt động trên 2 mũi nhọn: ươm tạo <strong>cây giống keo lai chuẩn nguồn</strong> phục vụ trồng rừng bền vững và chế biến <strong>dược liệu sạch Xứ Cùa</strong> (Cao An Xoa, Cao Chè Vằng, Bột Ngũ Cốc dinh dưỡng).'
       },
       {
-        keywords: ['dược liệu', 'an xoa', 'chè vằng', 'cao an xoa', 'cao chè vằng', 'xứ cùa'],
-        answer: 'Dược liệu nổi tiếng của HTX Keo Sơn gồm: <strong>Cao An Xoa Quảng Trị</strong> (hỗ trợ giải độc, phục hồi chức năng gan, tiêu mỡ gan), <strong>Cao Chè Vằng Xứ Cùa</strong> (lợi sữa cho mẹ sau sinh, thanh nhiệt, ổn định huyết áp) và Bột ngũ cốc dinh dưỡng tự nhiên được cô đặc theo phương pháp thủ công chuẩn chất lượng.'
+        keywords: ['cây giống', 'keo lai', 'trồng rừng', 'lâm nghiệp', 'vườn ươm', 'keo mô', 'giâm cành'],
+        answer: '<strong>Cây Giống Keo Lai Chuẩn Nguồn (HTX Keo Sơn):</strong><br/>• Ươm tạo từ vườn cây đầu dòng khỏe mạnh tại Xứ Cùa, Cam Lộ, Quảng Trị.<br/>• Quy trình đóng bầu, chăm sóc, đảo bầu và huấn luyện nắng nghiêm ngặt giúp cây có bộ rễ cọc khỏe, thân cứng cáp, tỷ lệ sống cao và khả năng chống chịu gió bão miền Trung vượt trội.'
       },
       {
-        keywords: ['ai thực chiến', 'tự động hóa', 'công nghệ', 'notebooklm', 'python', 'powershell', 'mô đun'],
-        answer: 'Anh Lê Phúc Nhật đã đúc kết và làm chủ hơn <strong>36+ giải pháp mô-đun AI thực chiến</strong>, ứng dụng linh hoạt các công cụ như Gemini, NotebookLM, PowerShell, Python để vận hành hệ thống hơn 24 kênh nội dung đa nền tảng, giúp giải phóng sức lao động và tự động hóa quy trình sản xuất nội dung số.'
+        keywords: ['an xoa', 'cao an xoa', 'mát gan', 'giải độc gan', 'xơ gan', 'men gan'],
+        answer: '<strong>Cao An Xoa Xứ Cùa (HTX Keo Sơn):</strong><br/>• Được nấu cô đặc thủ công nhiều giờ từ cây An Xoa sạch thu hái trên vùng đất đỏ bazan Cam Lộ, Quảng Trị.<br/>• <strong>Công dụng:</strong> Hỗ trợ thanh nhiệt, giải độc gan, hạ men gan, phục hồi chức năng gan và hỗ trợ giấc ngủ ngon.<br/>• <strong>Cách dùng:</strong> Pha 1/2 – 1 thìa cà phê cao với 150–200ml nước ấm, uống sau bữa ăn.'
       },
       {
-        keywords: ['hiểu sâu', 'sống tỉnh', 'hành đúng', 'triết lý', 'tử tế'],
-        answer: 'Triết lý cốt lõi của anh Nhật gồm 3 vế:<br/>• <strong>Hiểu Sâu:</strong> Nhìn thấu bản chất của sự vật và quy luật nhân quả.<br/>• <strong>Sống Tỉnh:</strong> Giữ tâm an định, tỉnh thức trước mọi biến động và cám dỗ.<br/>• <strong>Hành Đúng:</strong> Hành động chuẩn mực, kiên định với sự tử tế và tạo giá trị thực từ Gốc.'
+        keywords: ['chè vằng', 'cao chè vằng', 'lợi sữa', 'sau sinh', 'vằng sẻ'],
+        answer: '<strong>Cao Chè Vằng Xứ Cùa (HTX Keo Sơn):</strong><br/>• Chiết xuất 100% từ lá và thân cây Chè Vằng sẻ vùng đất đỏ bazan Xứ Cùa – nơi cho hàm lượng hoạt chất đậm đặc, thơm dịu.<br/>• <strong>Công dụng:</strong> Lợi sữa cho phụ nữ sau sinh, kháng khuẩn, thanh nhiệt, hỗ trợ tiêu hóa, giảm mỡ máu và giúp ngủ sâu giấc.'
       },
       {
-        keywords: ['vợ', 'gia đình', 'con gái', 'cô giáo', 'hôn nhân'],
-        answer: 'Hậu phương bình yên và niềm tự hào lớn nhất của anh Nhật là <strong>MỘT người vợ hiền</strong> (cô giáo mầm non tại trường mầm non Lê Thế Hiếu) cùng <strong>HAI cô con gái</strong> chăm ngoan, là điểm tựa ấm áp nuôi dưỡng tinh thần sống tử tế.'
+        keywords: ['ngũ cốc', 'bột ngũ cốc', 'dinh dưỡng', 'thực dưỡng'],
+        answer: '<strong>Bột Ngũ Cốc Dinh Dưỡng HTX Keo Sơn:</strong><br/>• Phối trộn từ các loại đậu và hạt bản địa sạch (đậu xanh, đậu đen xanh lòng, đậu đỏ, hạt sen, mè đen, gạo lứt...), sơ chế sạch, rang chín thơm và nghiền mịn.<br/>• Bổ sung năng lượng lành mạnh, giàu chất xơ và protein thực vật cho người lớn tuổi, trẻ em và người bận rộn.'
       },
       {
-        keywords: ['liên hệ', 'email', 'số điện thoại', 'địa chỉ', 'kết nối'],
-        answer: 'Bạn có thể kết nối trực tiếp với anh Lê Phúc Nhật qua:<br/>• <strong>Email:</strong> <a href="mailto:lephucnhat.vn@gmail.com" style="color:var(--accent-gold);">lephucnhat.vn@gmail.com</a><br/>• <strong>Facebook:</strong> <a href="https://www.facebook.com/lephucnhat.vn" target="_blank" style="color:var(--accent-gold);">facebook.com/lephucnhat.vn</a><br/>• <strong>Trụ sở HTX:</strong> Thôn An Sơn, Xã Cam Lộ, Tỉnh Quảng Trị.'
+        keywords: ['dược liệu', 'xứ cùa', 'sản phẩm'],
+        answer: 'Các dòng sản phẩm tiêu biểu của <strong>HTX Lâm Nghiệp Bền Vững Keo Sơn</strong> gồm:<br/>1. <strong>Cây giống Keo lai</strong> chất lượng cao.<br/>2. <strong>Cao An Xoa Xứ Cùa</strong> (mát gan, giải độc).<br/>3. <strong>Cao Chè Vằng Xứ Cùa</strong> (thanh nhiệt, lợi sữa, an thần).<br/>4. <strong>Bột Ngũ Cốc Dinh Dưỡng</strong> tự nhiên.'
+      },
+      {
+        keywords: ['ai thực chiến', 'tự động hóa', 'công nghệ', 'notebooklm', 'python', 'powershell', 'mô đun', 'mô-đun', '36'],
+        answer: '<strong>Hệ Thống 36+ Mô-đun AI Thực Chiến:</strong><br/>Anh Lê Phúc Nhật thiết kế kiến trúc tự động hóa kết hợp <strong>Google Gemini, DeepSeek AI, NotebookLM, VS Code, Python, FFmpeg &amp; PowerShell</strong> để vận hành mạng lưới hơn 24 kênh nội dung số. Triết lý ứng dụng AI của anh là biến công nghệ phức tạp thành quy trình 1-Click giản dị để ai cũng làm chủ được.'
+      },
+      {
+        keywords: ['hiểu sâu', 'sống tỉnh', 'hành đúng', 'triết lý', 'tử tế', '3 chữ sống'],
+        answer: 'Triết lý định danh <strong>HIỂU SÂU • SỐNG TỈNH • HÀNH ĐÚNG</strong>:<br/>• <strong>Hiểu Sâu (Understand deeply):</strong> Thấu suốt bản chất sự vật và quy luật nhân quả từ gốc.<br/>• <strong>Sống Tỉnh (Live mindfully):</strong> Giữ tâm bình an, tỉnh thức trước mọi biến động.<br/>• <strong>Hành Đúng (Act rightly):</strong> Làm đúng đạo lý, chuẩn mực kỹ thuật để tạo giá trị thực.<br/>Khẩu hiệu tâm huyết: <em>“Hạnh phúc từ Tử tế – Tử tế để Hạnh phúc • Kiến tạo giá trị thực từ Gốc!”</em>'
+      },
+      {
+        keywords: ['vợ', 'gia đình', 'con gái', 'cô giáo', 'lê thế hiếu', 'hôn nhân'],
+        answer: 'Tổ ấm viên mãn và hậu phương lớn nhất của anh Lê Phúc Nhật là <strong>MỘT người vợ hiền</strong> (cô giáo mầm non tại <strong>trường mầm non Lê Thế Hiếu</strong>) cùng <strong>HAI cô con gái</strong> yêu thương.'
+      },
+      {
+        keywords: ['liên hệ', 'email', 'số điện thoại', 'địa chỉ', 'kết nối', 'zalo', 'facebook', 'youtube', 'tiktok'],
+        answer: 'Kênh kết nối chính thức của anh <strong>Lê Phúc Nhật</strong>:<br/>• <strong>Website:</strong> <a href="https://lephucnhat.vn/" target="_blank" style="color:var(--accent-gold);">lephucnhat.vn</a> &amp; <a href="https://lephucnhat.github.io/" target="_blank" style="color:var(--accent-gold);">lephucnhat.github.io</a><br/>• <strong>Facebook:</strong> <a href="https://www.facebook.com/lephucnhat.vn" target="_blank" style="color:var(--accent-gold);">facebook.com/lephucnhat.vn</a> (7.3K+ Followers)<br/>• <strong>YouTube:</strong> <a href="https://www.youtube.com/@LePhucNhatOfficial" target="_blank" style="color:var(--accent-gold);">@LePhucNhatOfficial</a><br/>• <strong>TikTok:</strong> <a href="https://www.tiktok.com/@kyluat.tritue.chuyenhoa" target="_blank" style="color:var(--accent-gold);">@kyluat.tritue.chuyenhoa</a><br/>• <strong>Email:</strong> <a href="mailto:lephucnhat.vn@gmail.com" style="color:var(--accent-gold);">lephucnhat.vn@gmail.com</a><br/>• <strong>Trụ sở:</strong> Thôn An Sơn, Xã Cam Lộ, Tỉnh Quảng Trị.'
+      },
+      {
+        keywords: ['bài #01', 'bài 1', 'glenn cunningham', 'đôi chân bỏng'],
+        answer: '<strong>Bài chiêm nghiệm #01 (Nghịch cảnh &amp; Nội lực):</strong> Từ câu chuyện Tiến sĩ Glenn Cunningham vượt qua đôi chân bỏng nặng để lập kỷ lục chạy 1 dặm thế giới, anh Nhật đúc kết: khi có nội lực tỉnh thức và biết mượn đôi cánh Trí tuệ AI, mỗi người đều có thể bứt phá ngoạn mục ngay trên quê hương mình.'
+      },
+      {
+        keywords: ['bài #02', 'bài 2', 'may mắn thật sự', 'gieo hạt', 'prompt'],
+        answer: '<strong>Bài chiêm nghiệm #02 (Quy luật nhân quả • Gieo hạt):</strong> May mắn không tự nhiên rơi xuống, mà là khoảnh khắc một tâm trí đã chuẩn bị kỹ càng (Hiểu sâu - Sống tỉnh) bắt gặp công cụ đúng thời đại (như tư duy đặt câu lệnh Prompt AI chuẩn xác) và Hành đúng lúc.'
+      },
+      {
+        keywords: ['bài #03', 'bài 3', 'bài #04', 'bài 4', 'đất đỏ bazan', 'rễ cọc'],
+        answer: '<strong>Bài #03 &amp; #04:</strong> Cây keo lai đứng vững trước bão miền Trung nhờ bộ rễ cọc cắm sâu — con người bền vững nhờ giữ trọn Đạo hiếu và chữ Tín làm gốc (#03). Và giống như đất đỏ bazan Xứ Cùa không giữ dinh dưỡng cho riêng mình, người dẫn đường càng rộng lượng chia sẻ tri thức thì mạch nguồn sáng tạo càng dồi dào (#04).'
+      },
+      {
+        keywords: ['bài #05', 'bài 5', 'bài #06', 'bài 6', 'rễ ngầm', 'giao hưởng', 'sop'],
+        answer: '<strong>Bài #05 &amp; #06:</strong> Thương trường bền vững là liên minh cộng sinh như mạng lưới nấm rễ dưới tán rừng nâng đỡ nhau bằng chất lượng thật (#05). Và để điều phối từ vườn ươm vạn cây đến dàn nhạc 24+ kênh AI mà không kiệt sức, người lãnh đạo cần thiết kế quy trình chuẩn SOP như một nhạc trưởng (#06).'
+      },
+      {
+        keywords: ['bài #07', 'bài 7', 'bài #08', 'bài 8', 'trường mầm non', 'hào quang ảo'],
+        answer: '<strong>Bài #07 &amp; #08:</strong> Sự đồng điệu đẹp đẽ giữa chồng ươm cây rừng và vợ là cô giáo mầm non trường Lê Thế Hiếu ươm mầm tâm hồn trẻ thơ bằng sự kiên nhẫn và yêu thương (#07). Trong truyền thông số, kỹ xảo AI giúp tăng tốc nhưng chính giọng nói thật và sự chân thành mới neo đậu lâu dài trong tim khán giả (#08).'
+      },
+      {
+        keywords: ['bài #09', 'bài 9', 'bài #10', 'bài 10', 'bài #11', 'bài 11', 'cô đặc', 'ly nông', 'kiểm toán'],
+        answer: '<strong>Bài #09, #10 &amp; #11:</strong> Học tập thời số hóa cần như nấu cô đặc Cao An Xoa, Cao Chè Vằng: lọc bỏ tạp chất tin rác để giữ lấy tinh hoa (#09); trao chiếc cần câu số để người trẻ thực hiện khát vọng "Ly nông bất ly hương" ngay tại thôn An Sơn (#10); và cuối mỗi ngày hãy kiểm toán lương tri, bởi uy tín và sự tử tế mới là di sản vĩnh cửu (#11).'
       }
     ];
 
@@ -3537,16 +4650,47 @@
       }
     }
 
+    function clearChatConversation() {
+      chatHistory = [];
+      const container = document.getElementById('chatMessages');
+      if (!container) return;
+      const avatarSrc = document.querySelector('.js-avatar-img')?.src || DEFAULT_LPN_AVATAR_SVG;
+      container.innerHTML = `
+        <div class="msg-row bot">
+          <img src="${avatarSrc}" alt="Lê Phúc Nhật" class="msg-avatar js-avatar-img" />
+          <div class="msg-bubble">
+            <p>Xin chào quý bạn hữu! Tôi là trợ lý số đồng hành cùng anh <strong>Lê Phúc Nhật</strong>.</p>
+            <p>Lịch sử trò chuyện vừa được làm mới. Bạn muốn trao đổi về <strong>HTX Lâm Nghiệp Keo Sơn</strong>, <strong>Dược liệu sạch Xứ Cùa</strong>, <strong>Giải pháp AI Thực Chiến</strong> hay <strong>11 bài học chiêm nghiệm</strong>?</p>
+          </div>
+        </div>
+      `;
+      showToast('🗑️ Đã xóa lịch sử đoạn chat hiện tại.');
+    }
+
     function updateChatModeBadge() {
       const badge = document.getElementById('chatModeBadge');
-      const apiKey = localStorage.getItem('lpn_gemini_api_key');
-      if (apiKey && apiKey.trim().length > 15) {
-        badge.textContent = 'Gemini AI Trực Tuyến';
+      if (!badge) return;
+      const preferredModel = safeGetStorage('lpn_gemini_model', 'auto');
+      const geminiKey = safeGetStorage('lpn_gemini_api_key', '').trim();
+      const deepseekKey = safeGetStorage('lpn_deepseek_api_key', '').trim();
+
+      if (preferredModel === 'deepseek-chat' && deepseekKey.length > 10) {
+        badge.textContent = 'DeepSeek AI Live';
+        badge.style.background = 'rgba(59, 130, 246, 0.24)';
+        badge.style.color = '#93c5fd';
+        badge.style.borderColor = '#60a5fa';
+      } else if ((preferredModel.startsWith('gemini') || preferredModel === 'auto') && geminiKey.length > 15) {
+        badge.textContent = 'Gemini AI Live';
         badge.style.background = 'rgba(245, 158, 11, 0.22)';
         badge.style.color = 'var(--accent-gold-light)';
         badge.style.borderColor = 'var(--accent-gold)';
+      } else if (preferredModel === 'auto' && deepseekKey.length > 10) {
+        badge.textContent = 'DeepSeek AI Live';
+        badge.style.background = 'rgba(59, 130, 246, 0.24)';
+        badge.style.color = '#93c5fd';
+        badge.style.borderColor = '#60a5fa';
       } else {
-        badge.textContent = 'Chế độ Tri Thức Cốt Lõi';
+        badge.textContent = 'Tri Thức Cốt Lõi';
         badge.style.background = 'rgba(16, 185, 129, 0.22)';
         badge.style.color = '#6ee7b7';
         badge.style.borderColor = 'rgba(16, 185, 129, 0.5)';
@@ -3559,15 +4703,15 @@
       const row = document.createElement('div');
       row.className = `msg-row ${sender}`;
 
-      const avatarSrc = document.querySelector('.js-avatar-img')?.src || '111.jpg';
+      const avatarSrc = document.querySelector('.js-avatar-img')?.src || DEFAULT_LPN_AVATAR_SVG;
       if (sender === 'bot') {
         row.innerHTML = `
-          <img src="${avatarSrc}" alt="Lê Phúc Nhật AI" class="msg-avatar" />
+          <img src="${avatarSrc}" alt="Lê Phúc Nhật AI" class="msg-avatar js-avatar-img" />
           <div class="msg-bubble">${htmlContent}</div>
         `;
       } else {
         row.innerHTML = `
-          <div class="msg-bubble">${htmlContent}</div>
+          <div class="msg-bubble">${escapeHTML(htmlContent)}</div>
         `;
       }
       container.appendChild(row);
@@ -3580,6 +4724,14 @@
       handleChatSubmit(new Event('submit'));
     }
 
+    function pushToChatHistory(role, text) {
+      chatHistory.push({ role, text });
+      // Giữ tối đa 6 lượt hội thoại gần nhất (12 messages)
+      if (chatHistory.length > 12) {
+        chatHistory = chatHistory.slice(chatHistory.length - 12);
+      }
+    }
+
     async function handleChatSubmit(event) {
       if (event) event.preventDefault();
       const input = document.getElementById('chatInput');
@@ -3589,38 +4741,73 @@
       input.value = '';
       appendChatMessage('user', query);
 
-      // Bot loading indicator
       const loadingRow = document.createElement('div');
       loadingRow.className = 'msg-row bot loading-temp';
-      const avatarSrc = document.querySelector('.js-avatar-img')?.src || '111.jpg';
+      const avatarSrc = document.querySelector('.js-avatar-img')?.src || DEFAULT_LPN_AVATAR_SVG;
       loadingRow.innerHTML = `
-        <img src="${avatarSrc}" alt="Lê Phúc Nhật AI" class="msg-avatar" />
+        <img src="${avatarSrc}" alt="Lê Phúc Nhật AI" class="msg-avatar js-avatar-img" />
         <div class="msg-bubble"><em>Đang suy ngẫm câu trả lời...</em></div>
       `;
-      document.getElementById('chatMessages')?.appendChild(loadingRow);
-      document.getElementById('chatMessages').scrollTop = document.getElementById('chatMessages').scrollHeight;
+      const msgBox = document.getElementById('chatMessages');
+      msgBox?.appendChild(loadingRow);
+      if (msgBox) msgBox.scrollTop = msgBox.scrollHeight;
 
-      const apiKey = localStorage.getItem('lpn_gemini_api_key');
-      const selectedModel = localStorage.getItem('lpn_gemini_model') || 'gemini-2.5-flash';
+      const preferredModel = safeGetStorage('lpn_gemini_model', 'auto');
+      const geminiKey = safeGetStorage('lpn_gemini_api_key', '').trim();
+      const deepseekKey = safeGetStorage('lpn_deepseek_api_key', '').trim();
 
-      if (apiKey && apiKey.trim().length > 15) {
-        try {
-          const responseText = await callGeminiLive(apiKey, selectedModel, query);
-          loadingRow.remove();
-          appendChatMessage('bot', formatAiResponse(responseText));
-        } catch (err) {
-          loadingRow.remove();
-          // Fallback offline
-          const fallback = matchOfflineKnowledge(query);
-          appendChatMessage('bot', `<span style="color:#fcd34d;">(Chế độ Offline dự phòng do kết nối API gián đoạn)</span><br/>` + fallback);
-        }
-      } else {
-        // Offline response
+      const hasGemini = geminiKey.length > 15;
+      const hasDeepseek = deepseekKey.length > 10;
+
+      if (!hasGemini && !hasDeepseek) {
         setTimeout(() => {
           loadingRow.remove();
           const answer = matchOfflineKnowledge(query);
+          pushToChatHistory('user', query);
+          pushToChatHistory('assistant', answer.replace(/<[^>]+>/g, ''));
           appendChatMessage('bot', answer);
-        }, 350);
+        }, 320);
+        return;
+      }
+
+      // Xây dựng chuỗi thứ tự ưu tiên mô hình (Auto-Fallback)
+      const providersQueue = [];
+      if (preferredModel === 'deepseek-chat') {
+        if (hasDeepseek) providersQueue.push({ type: 'deepseek', model: 'deepseek-chat', key: deepseekKey });
+        if (hasGemini) providersQueue.push({ type: 'gemini', model: 'gemini-2.5-flash', key: geminiKey });
+      } else if (preferredModel === 'gemini-2.5-pro') {
+        if (hasGemini) providersQueue.push({ type: 'gemini', model: 'gemini-2.5-pro', key: geminiKey });
+        if (hasDeepseek) providersQueue.push({ type: 'deepseek', model: 'deepseek-chat', key: deepseekKey });
+      } else {
+        // 'auto' hoặc 'gemini-2.5-flash'
+        if (hasGemini) providersQueue.push({ type: 'gemini', model: 'gemini-2.5-flash', key: geminiKey });
+        if (hasDeepseek) providersQueue.push({ type: 'deepseek', model: 'deepseek-chat', key: deepseekKey });
+      }
+
+      let finalResponse = null;
+      for (const provider of providersQueue) {
+        try {
+          if (provider.type === 'gemini') {
+            finalResponse = await callGeminiLive(provider.key, provider.model, query, chatHistory);
+          } else {
+            finalResponse = await callDeepseekLive(provider.key, query, chatHistory);
+          }
+          if (finalResponse) break;
+        } catch (err) {
+          // Tự động chuyển sang mô hình dự phòng tiếp theo
+        }
+      }
+
+      loadingRow.remove();
+      if (finalResponse) {
+        pushToChatHistory('user', query);
+        pushToChatHistory('assistant', finalResponse);
+        appendChatMessage('bot', formatAiResponse(finalResponse));
+      } else {
+        const fallback = matchOfflineKnowledge(query);
+        pushToChatHistory('user', query);
+        pushToChatHistory('assistant', fallback.replace(/<[^>]+>/g, ''));
+        appendChatMessage('bot', `<span style="color:#fcd34d; font-size:0.78rem;">⚡ Tự động chuyển sang Tri Thức Cốt Lõi Offline:</span><br/>` + fallback);
       }
     }
 
@@ -3631,58 +4818,117 @@
           return item.answer;
         }
       }
-      return `Cảm ơn bạn đã đặt câu hỏi. Về nội dung "<em>${query}</em>", anh Lê Phúc Nhật luôn hướng đến giải pháp thực tế: <strong>Hiểu sâu để nhìn rõ gốc rễ – Sống tỉnh để giữ tâm an – Hành đúng để kiến tạo giá trị thực</strong>.<br/><br/>Bạn có thể kết nối trực tiếp qua email: <strong>lephucnhat.vn@gmail.com</strong> hoặc cấu hình Gemini API Key ở biểu tượng bánh răng ⚙️ trên góc để trò chuyện trực tiếp không giới hạn!`;
+      return `Cảm ơn bạn đã đặt câu hỏi về "<em>${escapeHTML(query)}</em>". Anh <strong>Lê Phúc Nhật</strong> luôn hướng đến nguyên lý thực chứng: <strong>Hiểu sâu để thấy bản chất – Sống tỉnh để giữ bình an – Hành đúng để tạo giá trị thực từ Gốc</strong>.<br/><br/>• Về <strong>Lâm nghiệp &amp; Dược liệu sạch Xứ Cùa</strong>: HTX Keo Sơn cung ứng Cây giống Keo lai, Cao An Xoa, Cao Chè Vằng, Bột Ngũ Cốc tại Thôn An Sơn, Xã Cam Lộ, Quảng Trị.<br/>• Về <strong>AI Thực Chiến</strong>: Hệ thống 36+ mô-đun tự động hóa nội dung đa kênh.<br/>Bạn có thể kết nối qua email <strong>lephucnhat.vn@gmail.com</strong> hoặc nhập khóa Gemini / DeepSeek API ở nút ⚙️ để trò chuyện chuyên sâu!`;
     }
 
-    async function callGeminiLive(apiKey, model, userQuery) {
-      const systemInstruction = `Bạn là Trợ lý AI đại diện cho anh Lê Phúc Nhật - Chủ tịch HĐQT HTX Lâm Nghiệp Bền Vững Keo Sơn (Quảng Trị), Chuyên gia AI Thực Chiến, triết lý sống: "Hiểu Sâu • Sống Tỉnh • Hành Đúng" và "Hạnh phúc từ Tử tế - Tử tế để Hạnh phúc". Bạn sinh năm 1982, có vợ là giáo viên mầm non trường Lê Thế Hiếu và 2 con gái. HTX chuyên về cây giống keo lai, dược liệu Cao An Xoa và Chè Vằng Xứ Cùa. Hãy trả lời với phong thái từ tốn, ấm áp, sâu sắc, tử tế, chân thực, khiêm nhường nhưng giàu tinh thần thực chứng. Trả lời bằng tiếng Việt gãy gọn, có cấu trúc rõ ràng.`;
+    function getSystemPersonaPrompt() {
+      return `Bạn là Trợ lý AI chính thức đại diện cho anh Lê Phúc Nhật (sinh ngày 09/07/1982 - tuổi Nhâm Tuất, quê hương và trụ sở tại Thôn An Sơn, Xã Cam Lộ, Tỉnh Quảng Trị - Xứ Cùa).
+Thông tin cốt lõi bắt buộc chính xác:
+1. Chức vụ & Vai trò:
+   - Chủ tịch HĐQT HTX Lâm Nghiệp Bền Vững Keo Sơn
+   - Kiến Trúc Sư Hệ Thống Nội Dung & AI Thực Chiến (36+ mô-đun ứng dụng NotebookLM, Gemini, DeepSeek, Python, PowerShell, VS Code, vận hành 24+ kênh nội dung)
+   - Chuyên Gia Lâm Nghiệp & Dược Liệu Sạch Xứ Cùa (Cây giống Keo lai, Cao An Xoa, Cao Chè Vằng, Bột Ngũ Cốc dinh dưỡng)
+   - Người Truyền Cảm Hứng Sống Tử Tế Từ Gốc
+2. Triết lý định danh: "HIỂU SÂU • SỐNG TỈNH • HÀNH ĐÚNG" (Understand deeply to see the essence – Live mindfully to keep inner peace – Act rightly to create true value / Hiểu sâu để thấy bản chất – Sống tỉnh để giữ bình an – Hành đúng để tạo giá trị).
+3. Thông điệp cốt lõi: "Hạnh phúc từ Tử tế – Tử tế để Hạnh phúc • Kiến tạo giá trị thực từ Gốc!"
+4. Gia đình: MỘT vợ (cô giáo mầm non trường Lê Thế Hiếu) và HAI con gái yêu thương.
+5. Kênh kết nối: Website lephucnhat.vn & lephucnhat.github.io, Facebook facebook.com/lephucnhat.vn (7.3K+ Followers), YouTube @LePhucNhatOfficial, TikTok @kyluat.tritue.chuyenhoa, Email lephucnhat.vn@gmail.com.
+Hãy trả lời bằng tiếng Việt với phong thái từ tốn, ấm áp, sâu sắc, chân thành, giàu tính thực tiễn và đúng tinh thần Hiểu Sâu - Sống Tỉnh - Hành Đúng.`;
+    }
 
+    async function callGeminiLive(apiKey, model, userQuery, historyArr = []) {
       const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey.trim()}`;
+      const contents = [];
+
+      // Đưa lịch sử hội thoại gần nhất vào contents để giữ ngữ cảnh nhiều lượt
+      for (const turn of historyArr.slice(-6)) {
+        contents.push({
+          role: turn.role === 'assistant' ? 'model' : 'user',
+          parts: [{ text: turn.text }]
+        });
+      }
+      contents.push({
+        role: 'user',
+        parts: [{ text: userQuery }]
+      });
+
       const payload = {
-        contents: [
-          {
-            role: "user",
-            parts: [
-              { text: systemInstruction + "\n\nNgười dùng hỏi: " + userQuery }
-            ]
-          }
-        ]
+        systemInstruction: {
+          parts: [{ text: getSystemPersonaPrompt() }]
+        },
+        contents: contents
       };
 
       const res = await fetch(endpoint, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
       });
 
       if (!res.ok) {
-        throw new Error(`HTTP error ${res.status}`);
+        throw new Error(`HTTP ${res.status}`);
       }
       const data = await res.json();
-      return data?.candidates?.[0]?.content?.parts?.[0]?.text || "Không nhận được phản hồi từ mô hình AI.";
+      return data?.candidates?.[0]?.content?.parts?.[0]?.text || 'Không nhận được phản hồi từ mô hình Gemini AI.';
+    }
+
+    async function callDeepseekLive(apiKey, userQuery, historyArr = []) {
+      const endpoint = 'https://api.deepseek.com/chat/completions';
+      const messages = [
+        { role: 'system', content: getSystemPersonaPrompt() }
+      ];
+      for (const turn of historyArr.slice(-6)) {
+        messages.push({
+          role: turn.role === 'assistant' ? 'assistant' : 'user',
+          content: turn.text
+        });
+      }
+      messages.push({ role: 'user', content: userQuery });
+
+      const res = await fetch(endpoint, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${apiKey.trim()}`
+        },
+        body: JSON.stringify({
+          model: 'deepseek-chat',
+          messages: messages,
+          temperature: 0.7
+        })
+      });
+
+      if (!res.ok) {
+        throw new Error(`HTTP ${res.status}`);
+      }
+      const data = await res.json();
+      return data?.choices?.[0]?.message?.content || 'Không nhận được phản hồi từ mô hình DeepSeek AI.';
     }
 
     function formatAiResponse(text) {
-      // Basic markdown parser
-      let formatted = text
+      const safe = escapeHTML(text);
+      return safe
         .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
         .replace(/\*(.*?)\*/g, '<em>$1</em>')
         .replace(/\n\n/g, '<br/><br/>')
         .replace(/\n/g, '<br/>');
-      return formatted;
     }
 
     /* --------------------------------------------------------------------------
-       H. CÀI ĐẶT API KEY & PING TEST
+       H. CÀI ĐẶT AI ĐA MÔ HÌNH & KIỂM TRA PING GEMINI + DEEPSEEK
        -------------------------------------------------------------------------- */
     function openApiSettingsModal() {
       const keyInput = document.getElementById('geminiApiKeyInput');
+      const deepseekInput = document.getElementById('deepseekApiKeyInput');
       const modelSelect = document.getElementById('geminiModelSelect');
       const statusBox = document.getElementById('keyStatusBox');
+      const dsStatusBox = document.getElementById('deepseekKeyStatusBox');
 
-      if (keyInput) keyInput.value = localStorage.getItem('lpn_gemini_api_key') || '';
-      if (modelSelect) modelSelect.value = localStorage.getItem('lpn_gemini_model') || 'gemini-2.5-flash';
+      if (keyInput) keyInput.value = safeGetStorage('lpn_gemini_api_key', '');
+      if (deepseekInput) deepseekInput.value = safeGetStorage('lpn_deepseek_api_key', '');
+      if (modelSelect) modelSelect.value = safeGetStorage('lpn_gemini_model', 'auto');
       if (statusBox) statusBox.style.display = 'none';
+      if (dsStatusBox) dsStatusBox.style.display = 'none';
 
       openModal('apiSettingsModal');
     }
@@ -3690,50 +4936,92 @@
     async function testGeminiApiKey() {
       const key = document.getElementById('geminiApiKeyInput')?.value.trim();
       const statusBox = document.getElementById('keyStatusBox');
-      const model = document.getElementById('geminiModelSelect')?.value || 'gemini-2.5-flash';
+      const selected = document.getElementById('geminiModelSelect')?.value || 'gemini-2.5-flash';
+      const model = selected.startsWith('gemini') ? selected : 'gemini-2.5-flash';
 
       if (!key) {
         statusBox.className = 'key-status-box invalid';
-        statusBox.textContent = 'Vui lòng nhập API Key trước khi kiểm tra!';
+        statusBox.style.display = 'block';
+        statusBox.textContent = 'Vui lòng nhập Google Gemini API Key trước khi kiểm tra!';
         return;
       }
 
       statusBox.className = 'key-status-box testing';
-      statusBox.textContent = '⏳ Đang gửi yêu cầu ping đến máy chủ Google Gemini...';
+      statusBox.style.display = 'block';
+      statusBox.textContent = '⏳ Đang gửi yêu cầu Ping đến máy chủ Google Gemini...';
 
       try {
-        const testRes = await callGeminiLive(key, model, "Chào bạn, hãy phản hồi đúng 1 từ: SẴN SÀNG");
+        await callGeminiLive(key, model, 'Chào bạn, hãy phản hồi đúng 1 từ: SẴN SÀNG', []);
         statusBox.className = 'key-status-box valid';
-        statusBox.textContent = `✔ API Key hợp lệ và hoạt động tốt! (Mô hình: ${model})`;
+        statusBox.textContent = `✔ Gemini API Key hợp lệ và hoạt động mượt mà! (Mô hình: ${model})`;
       } catch (err) {
         statusBox.className = 'key-status-box invalid';
-        statusBox.textContent = `✖ Không thể xác thực API Key: ${err.message}. Vui lòng kiểm tra lại Key hoặc kết nối mạng.`;
+        statusBox.textContent = `✖ Không thể xác thực Gemini API Key (${err.message}). Vui lòng kiểm tra lại Key.`;
+      }
+    }
+
+    async function testDeepseekApiKey() {
+      const key = document.getElementById('deepseekApiKeyInput')?.value.trim();
+      const statusBox = document.getElementById('deepseekKeyStatusBox');
+
+      if (!key) {
+        statusBox.className = 'key-status-box invalid';
+        statusBox.style.display = 'block';
+        statusBox.textContent = 'Vui lòng nhập DeepSeek API Key trước khi kiểm tra!';
+        return;
+      }
+
+      statusBox.className = 'key-status-box testing';
+      statusBox.style.display = 'block';
+      statusBox.textContent = '⏳ Đang gửi yêu cầu Ping đến máy chủ DeepSeek AI...';
+
+      try {
+        await callDeepseekLive(key, 'Chào bạn, hãy phản hồi đúng 1 từ: SẴN SÀNG', []);
+        statusBox.className = 'key-status-box valid';
+        statusBox.textContent = '✔ DeepSeek API Key hợp lệ và kết nối thành công! (Mô hình: deepseek-chat)';
+      } catch (err) {
+        statusBox.className = 'key-status-box invalid';
+        statusBox.textContent = `✖ Không thể xác thực DeepSeek API Key (${err.message}). Vui lòng kiểm tra lại Key hoặc số dư tài khoản.`;
       }
     }
 
     function saveApiSettings() {
-      const key = document.getElementById('geminiApiKeyInput')?.value.trim() || '';
-      const model = document.getElementById('geminiModelSelect')?.value || 'gemini-2.5-flash';
+      const geminiKey = document.getElementById('geminiApiKeyInput')?.value.trim() || '';
+      const deepseekKey = document.getElementById('deepseekApiKeyInput')?.value.trim() || '';
+      const model = document.getElementById('geminiModelSelect')?.value || 'auto';
 
-      localStorage.setItem('lpn_gemini_api_key', key);
-      localStorage.setItem('lpn_gemini_model', model);
+      safeSetStorage('lpn_gemini_api_key', geminiKey);
+      safeSetStorage('lpn_deepseek_api_key', deepseekKey);
+      safeSetStorage('lpn_gemini_model', model);
 
       updateChatModeBadge();
       closeModal('apiSettingsModal');
-      showToast(key ? '⚙️ Đã lưu cấu hình Gemini API Key!' : 'Đã xóa cấu hình API Key.');
+      showToast('⚙️ Đã lưu cấu hình Trợ lý AI Đa mô hình!');
     }
 
     function clearApiKey() {
-      document.getElementById('geminiApiKeyInput').value = '';
-      localStorage.removeItem('lpn_gemini_api_key');
+      const gInput = document.getElementById('geminiApiKeyInput');
+      const dInput = document.getElementById('deepseekApiKeyInput');
+      const mSelect = document.getElementById('geminiModelSelect');
+      if (gInput) gInput.value = '';
+      if (dInput) dInput.value = '';
+      if (mSelect) mSelect.value = 'auto';
+
+      safeRemoveStorage('lpn_gemini_api_key');
+      safeRemoveStorage('lpn_deepseek_api_key');
+      safeSetStorage('lpn_gemini_model', 'auto');
+
       const statusBox = document.getElementById('keyStatusBox');
+      const dsStatusBox = document.getElementById('deepseekKeyStatusBox');
       if (statusBox) statusBox.style.display = 'none';
+      if (dsStatusBox) dsStatusBox.style.display = 'none';
+
       updateChatModeBadge();
-      showToast('Đã xóa API Key khỏi bộ nhớ.');
+      showToast('🔄 Đã khôi phục cài đặt AI về chế độ Tri Thức Cốt Lõi mặc định.');
     }
 
     /* --------------------------------------------------------------------------
-       I. TIỆN ÍCH MODAL & TOAST
+       I. TIỆN ÍCH MODAL, TOAST & KHỞI TẠO TOÀN TRANG
        -------------------------------------------------------------------------- */
     function openModal(modalId) {
       const modal = document.getElementById(modalId);
@@ -3745,14 +5033,15 @@
       if (modal) modal.classList.remove('open');
     }
 
-    // Đóng modal khi bấm ra ngoài
     document.querySelectorAll('.modal-backdrop').forEach(modal => {
       modal.addEventListener('click', (e) => {
-        if (e.target === modal) modal.classList.remove('open');
+        if (e.target === modal) {
+          if (modal.id === 'articleReaderModal') stopArticleSpeech();
+          modal.classList.remove('open');
+        }
       });
     });
 
-    // Toast function
     let toastTimeout;
     function showToast(message) {
       const toast = document.getElementById('toastBox');
@@ -3764,6 +5053,19 @@
         toast.classList.remove('show');
       }, 3200);
     }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      initAvatarAndQrAssets();
+      syncPhoneDisplay();
+      const savedHearts = safeGetStorage('lpn_hearts');
+      if (savedHearts) {
+        const counterEl = document.getElementById('loveCounter');
+        if (counterEl) counterEl.textContent = parseInt(savedHearts, 10).toLocaleString('vi-VN');
+      }
+      renderAllWishes();
+      loadCustomWisdomPosts();
+      updateChatModeBadge();
+    });
   </script>
 </body>
 </html>
