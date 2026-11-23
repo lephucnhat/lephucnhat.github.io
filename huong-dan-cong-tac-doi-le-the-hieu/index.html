@@ -1,0 +1,2081 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="pioneer-light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Cẩm Nang Hướng Dẫn Sử Dụng Trợ Lý Số Công Tác Đội 4D – Liên Đội Trường TH Lê Thế Hiếu | lephucnhat.vn</title>
+    <meta name="description" content="Trang web hướng dẫn sử dụng chi tiết từ A-Z ứng dụng Trợ Lý Số Công Tác Đội 4D dành cho Giáo viên Tổng phụ trách Đội, GVCN phụ trách Chi đội/Sao Nhi đồng và Ban Chỉ huy Liên đội Trường Tiểu học Lê Thế Hiếu, xã Cam Lộ, tỉnh Quảng Trị." />
+    <meta name="keywords" content="Hướng dẫn sử dụng Trợ lý số công tác Đội, Trường Tiểu học Lê Thế Hiếu, Cam Lộ Quảng Trị, Cẩm nang công tác Đội, lephucnhat.vn" />
+    <meta name="author" content="Lê Phúc Nhật • Liên đội Trường Tiểu học Lê Thế Hiếu" />
+    <link rel="canonical" href="https://lephucnhat.vn/huong-dan-cong-tac-doi-le-the-hieu/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="vi_VN" />
+    <meta property="og:site_name" content="Cẩm Nang Hướng Dẫn Công Tác Đội • lephucnhat.vn" />
+    <meta property="og:url" content="https://lephucnhat.vn/huong-dan-cong-tac-doi-le-the-hieu/" />
+    <meta property="og:title" content="Cẩm Nang Hướng Dẫn Sử Dụng Trợ Lý Số Công Tác Đội 4D – Liên Đội Trường TH Lê Thế Hiếu" />
+    <meta property="og:description" content="Cẩm nang trực quan từng bước giúp thầy cô làm chủ công cụ tạo Prompt AI Công tác Đội trong 60 giây, kèm trình mô phỏng tương tác và giọng đọc thuyết minh tự động." />
+    <meta property="og:image" content="https://lephucnhat.vn/huong-dan-cong-tac-doi-le-the-hieu/logo-doi.jpg" />
+    <link rel="icon" type="image/jpeg" href="./logo-doi.jpg" />
+    <link rel="apple-touch-icon" href="./logo-doi.jpg" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Playfair+Display:ital,wght@0,700;0,800;1,600&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        /* ==========================================================================
+           1. TINH TÚY LEPHUCNHAT.VN: CSS VARIABLES & 3 LUXURY THEMES
+           ========================================================================== */
+        @property --beam-angle {
+            syntax: '<angle>';
+            initial-value: 0deg;
+            inherits: false;
+        }
+
+        :root,
+        [data-theme="pioneer-light"] {
+            --red-primary: #D32F2F;
+            --red-dark: #9A0007;
+            --red-light: #FFEBEE;
+            --red-glow: rgba(211, 47, 47, 0.25);
+            --yellow-star: #FBC02D;
+            --yellow-dark: #D97706;
+            --yellow-light: #FEF9C3;
+            --yellow-glow: rgba(251, 192, 45, 0.32);
+            --blue-youth: #1976D2;
+            --blue-dark: #0D47A1;
+            --blue-light: #E3F2FD;
+            --emerald: #059669;
+            --emerald-glow: rgba(5, 150, 105, 0.25);
+
+            --bg-primary: #F8FAFC;
+            --bg-secondary: #FFFFFF;
+            --bg-card: rgba(255, 255, 255, 0.96);
+            --bg-card-hover: #FFFFFF;
+            --bg-glass: rgba(255, 255, 255, 0.90);
+            --bg-subtle: #F1F5F9;
+            --input-bg: #FFFFFF;
+
+            --text-primary: #0F172A;
+            --text-secondary: #334155;
+            --text-muted: #64748B;
+
+            --border-subtle: rgba(15, 23, 42, 0.11);
+            --border-highlight: rgba(211, 47, 47, 0.42);
+            --shadow-luxury: 0 18px 42px rgba(15, 23, 42, 0.08), 0 4px 12px rgba(15, 23, 42, 0.04);
+            --beam-color-1: #D32F2F;
+            --beam-color-2: #FBC02D;
+            --particle-color: 211, 47, 47;
+        }
+
+        [data-theme="royal-dark"] {
+            --red-primary: #EF4444;
+            --red-dark: #B91C1C;
+            --red-light: rgba(239, 68, 68, 0.16);
+            --red-glow: rgba(239, 68, 68, 0.35);
+            --yellow-star: #F59E0B;
+            --yellow-dark: #FCD34D;
+            --yellow-light: rgba(245, 158, 11, 0.15);
+            --yellow-glow: rgba(245, 158, 11, 0.35);
+            --blue-youth: #38BDF8;
+            --blue-dark: #7DD3FC;
+            --blue-light: rgba(56, 189, 248, 0.15);
+            --emerald: #10B981;
+            --emerald-glow: rgba(16, 185, 129, 0.35);
+
+            --bg-primary: #070B14;
+            --bg-secondary: #0D1424;
+            --bg-card: rgba(16, 24, 42, 0.88);
+            --bg-card-hover: rgba(22, 33, 58, 0.96);
+            --bg-glass: rgba(13, 20, 36, 0.88);
+            --bg-subtle: rgba(15, 23, 42, 0.78);
+            --input-bg: #0F172A;
+
+            --text-primary: #F8FAFC;
+            --text-secondary: #CBD5E1;
+            --text-muted: #94A3B8;
+
+            --border-subtle: rgba(255, 255, 255, 0.11);
+            --border-highlight: rgba(252, 211, 77, 0.45);
+            --shadow-luxury: 0 20px 50px rgba(0, 0, 0, 0.65), 0 0 30px rgba(245, 158, 11, 0.1);
+            --beam-color-1: #FCD34D;
+            --beam-color-2: #EF4444;
+            --particle-color: 252, 211, 77;
+        }
+
+        [data-theme="emerald-forest"] {
+            --red-primary: #F43F5E;
+            --red-dark: #E11D48;
+            --red-light: rgba(244, 63, 94, 0.16);
+            --red-glow: rgba(244, 63, 94, 0.32);
+            --yellow-star: #FBBF24;
+            --yellow-dark: #FDE68A;
+            --yellow-light: rgba(251, 191, 36, 0.16);
+            --yellow-glow: rgba(251, 191, 36, 0.35);
+            --blue-youth: #34D399;
+            --blue-dark: #A7F3D0;
+            --blue-light: rgba(52, 211, 153, 0.16);
+            --emerald: #34D399;
+            --emerald-glow: rgba(52, 211, 153, 0.4);
+
+            --bg-primary: #041611;
+            --bg-secondary: #08261E;
+            --bg-card: rgba(9, 38, 29, 0.88);
+            --bg-card-hover: rgba(14, 52, 40, 0.96);
+            --bg-glass: rgba(6, 28, 21, 0.90);
+            --bg-subtle: rgba(5, 28, 21, 0.82);
+            --input-bg: #062019;
+
+            --text-primary: #ECFDF5;
+            --text-secondary: #A7F3D0;
+            --text-muted: #6EE7B7;
+
+            --border-subtle: rgba(167, 243, 208, 0.15);
+            --border-highlight: rgba(52, 211, 153, 0.45);
+            --shadow-luxury: 0 20px 50px rgba(0, 0, 0, 0.65), 0 0 35px rgba(16, 185, 129, 0.15);
+            --beam-color-1: #34D399;
+            --beam-color-2: #FBBF24;
+            --particle-color: 52, 211, 153;
+        }
+
+        /* ==========================================================================
+           2. RESET & BASE STYLES
+           ========================================================================== */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-family: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.65;
+        }
+
+        body {
+            min-height: 100vh;
+            background:
+                radial-gradient(circle at 12% 12%, var(--red-glow), transparent 34%),
+                radial-gradient(circle at 88% 18%, var(--yellow-glow), transparent 36%),
+                radial-gradient(circle at 50% 82%, var(--emerald-glow), transparent 45%),
+                var(--bg-primary);
+            overflow-x: hidden;
+            position: relative;
+            transition: background-color 0.35s ease, color 0.35s ease;
+        }
+
+        ::-webkit-scrollbar {
+            width: 7px;
+            height: 7px;
+        }
+        ::-webkit-scrollbar-track {
+            background: rgba(15, 23, 42, 0.15);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--red-primary);
+            border-radius: 999px;
+        }
+
+        #ambientCanvas {
+            position: fixed;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+            transition: all 0.25s ease;
+        }
+
+        button {
+            font-family: inherit;
+            cursor: pointer;
+            border: none;
+            background: none;
+        }
+
+        /* ==========================================================================
+           3. ANIMATED BORDER BEAM & SHIMMER SWEEP
+           ========================================================================== */
+        @keyframes rotateBeam {
+            to { --beam-angle: 360deg; }
+        }
+
+        @keyframes shimmerSweep {
+            0% { transform: translateX(-140%) skewX(-22deg); }
+            35%, 100% { transform: translateX(220%) skewX(-22deg); }
+        }
+
+        @keyframes pulseOnline {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.75); }
+            50% { box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
+        }
+
+        .border-beam-card {
+            position: relative;
+            background: var(--bg-card);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 24px;
+            border: 1px solid var(--border-subtle);
+            box-shadow: var(--shadow-luxury);
+            overflow: hidden;
+        }
+
+        .border-beam-card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            padding: 1.8px;
+            background: conic-gradient(
+                from var(--beam-angle),
+                transparent 20%,
+                var(--beam-color-1) 45%,
+                var(--beam-color-2) 55%,
+                transparent 80%
+            );
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            animation: rotateBeam 6s linear infinite;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .shimmer-surface {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .shimmer-surface::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 45%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255, 255, 255, 0.08),
+                rgba(251, 192, 45, 0.12),
+                transparent
+            );
+            animation: shimmerSweep 6.5s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        /* ==========================================================================
+           4. STICKY FLOATING PILL HEADER
+           ========================================================================== */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 950;
+            background: var(--bg-glass);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border-bottom: 1px solid var(--border-subtle);
+            transition: all 0.3s ease;
+        }
+
+        @media (min-width: 1080px) {
+            .site-header {
+                max-width: 1380px;
+                margin: 12px auto 0;
+                top: 12px;
+                border-radius: 999px;
+                border: 1.5px solid var(--border-highlight);
+                box-shadow: 0 14px 36px rgba(0, 0, 0, 0.16);
+            }
+        }
+
+        .header-inner {
+            max-width: 1380px;
+            margin: 0 auto;
+            padding: 9px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .brand-mini {
+            display: flex;
+            align-items: center;
+            gap: 11px;
+        }
+
+        .brand-emblem {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 30% 30%, #FFF59D, #FBC02D 65%, #D32F2F);
+            border: 2px solid var(--yellow-star);
+            box-shadow: 0 0 14px var(--yellow-glow);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #B71C1C;
+            font-size: 1.15rem;
+            flex-shrink: 0;
+        }
+
+        .brand-mini-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+        }
+
+        .brand-mini-name {
+            font-weight: 800;
+            font-size: 0.92rem;
+            color: var(--text-primary);
+        }
+
+        .brand-mini-domain {
+            font-size: 0.73rem;
+            color: var(--red-primary);
+            font-weight: 700;
+        }
+
+        .header-nav-links {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            flex-wrap: wrap;
+        }
+
+        .nav-pill-link {
+            font-size: 0.77rem;
+            font-weight: 700;
+            color: var(--text-secondary);
+            padding: 6px 11px;
+            border-radius: 999px;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .nav-pill-link:hover {
+            color: var(--red-primary);
+            background: var(--red-light);
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .header-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 7px 14px;
+            border-radius: 999px;
+            font-size: 0.78rem;
+            font-weight: 800;
+            background: var(--bg-subtle);
+            color: var(--text-primary);
+            border: 1px solid var(--border-subtle);
+            transition: all 0.25s ease;
+        }
+
+        .header-btn.primary-red {
+            background: linear-gradient(135deg, #D32F2F, #B71C1C);
+            color: #FFFFFF;
+            border: none;
+            box-shadow: 0 4px 14px var(--red-glow);
+        }
+
+        .header-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .theme-switcher {
+            display: inline-flex;
+            background: var(--bg-subtle);
+            border: 1px solid var(--border-subtle);
+            border-radius: 999px;
+            padding: 3px;
+            gap: 2px;
+        }
+
+        .theme-btn {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            font-size: 0.85rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+            opacity: 0.65;
+        }
+
+        .theme-btn.active,
+        .theme-btn:hover {
+            opacity: 1;
+            background: var(--yellow-light);
+            transform: scale(1.08);
+        }
+
+        /* ==========================================================================
+           5. MAIN CONTAINER & HERO CARD VIP
+           ========================================================================== */
+        .page-container {
+            position: relative;
+            z-index: 1;
+            max-width: 1380px;
+            margin: 22px auto 80px;
+            padding: 0 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        .hero-card {
+            padding: 26px 30px;
+        }
+
+        .hero-topbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+            padding-bottom: 16px;
+            margin-bottom: 22px;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .pioneer-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 15px;
+            border-radius: 999px;
+            background: linear-gradient(135deg, rgba(211, 47, 47, 0.14), rgba(251, 192, 45, 0.16));
+            border: 1px solid var(--border-highlight);
+            color: var(--red-primary);
+            font-size: 0.81rem;
+            font-weight: 800;
+        }
+
+        [data-theme="royal-dark"] .pioneer-pill,
+        [data-theme="emerald-forest"] .pioneer-pill {
+            color: var(--yellow-dark);
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 185px 1fr 185px;
+            gap: 28px;
+            align-items: center;
+        }
+
+        .hero-avatar-col {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 10px;
+        }
+
+        .avatar-halo-wrap {
+            position: relative;
+            width: 152px;
+            height: 152px;
+            border-radius: 50%;
+            padding: 5px;
+            background: conic-gradient(
+                from var(--beam-angle),
+                #D32F2F,
+                #FBC02D,
+                #1976D2,
+                #FBC02D,
+                #D32F2F
+            );
+            animation: rotateBeam 4.5s linear infinite;
+            box-shadow: 0 0 32px var(--red-glow);
+        }
+
+        .emblem-core {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: radial-gradient(circle at 35% 30%, #1E3A8A, #0F172A);
+            border: 4px solid var(--bg-secondary);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #FFFFFF;
+        }
+
+        .emblem-core i.main-icon {
+            font-size: 2.9rem;
+            color: #FBC02D;
+            filter: drop-shadow(0 3px 6px rgba(0,0,0,0.4));
+        }
+
+        .emblem-core span.sub-ribbon {
+            margin-top: 6px;
+            font-size: 0.66rem;
+            font-weight: 800;
+            letter-spacing: 0.8px;
+            background: #D32F2F;
+            color: #FFFFFF;
+            padding: 2px 10px;
+            border-radius: 99px;
+            border: 1px solid #FBC02D;
+        }
+
+        .hero-center-col {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.6rem, 2.7vw, 2.3rem);
+            font-weight: 800;
+            line-height: 1.22;
+            background: linear-gradient(90deg, var(--red-primary), #D97706, var(--blue-youth));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        [data-theme="royal-dark"] .hero-title,
+        [data-theme="emerald-forest"] .hero-title {
+            background: linear-gradient(90deg, #FFFFFF, #FCD34D, #34D399);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .quote-glass-box {
+            position: relative;
+            padding: 12px 16px 12px 40px;
+            border-radius: 14px;
+            background: var(--bg-subtle);
+            border-left: 4px solid var(--yellow-star);
+            font-size: 0.85rem;
+        }
+
+        .quote-mark {
+            position: absolute;
+            left: 12px;
+            top: 2px;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: var(--red-primary);
+            opacity: 0.75;
+            line-height: 1;
+        }
+
+        .hero-cta-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 4px;
+        }
+
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 18px;
+            border-radius: 12px;
+            font-size: 0.84rem;
+            font-weight: 800;
+            border: 1px solid var(--border-subtle);
+            background: var(--bg-subtle);
+            color: var(--text-primary);
+            transition: all 0.25s ease;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            border-color: var(--red-primary);
+        }
+
+        .cta-btn.primary-red {
+            background: linear-gradient(135deg, #D32F2F, #B71C1C);
+            color: #FFFFFF;
+            border: none;
+            box-shadow: 0 8px 20px var(--red-glow);
+        }
+
+        .cta-btn.gold-btn {
+            background: linear-gradient(135deg, #FBC02D, #F59E0B);
+            color: #0F172A;
+            border: none;
+            box-shadow: 0 8px 20px var(--yellow-glow);
+        }
+
+        .cta-btn.blue-btn {
+            background: linear-gradient(135deg, #1976D2, #0D47A1);
+            color: #FFFFFF;
+            border: none;
+        }
+
+        .hero-qr-col {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 8px;
+        }
+
+        .clean-qr-frame {
+            padding: 10px;
+            background: #FFFFFF;
+            border-radius: 18px;
+            border: 2px solid var(--yellow-star);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+            cursor: pointer;
+            transition: transform 0.25s ease;
+        }
+
+        .clean-qr-frame:hover {
+            transform: scale(1.04);
+        }
+
+        .clean-qr-frame img {
+            width: 124px;
+            height: 124px;
+            display: block;
+            border-radius: 8px;
+        }
+
+        /* ==========================================================================
+           6. SECTION HEADINGS & CARDS
+           ========================================================================== */
+        .panel-card {
+            background: var(--bg-card);
+            border-radius: 24px;
+            box-shadow: var(--shadow-luxury);
+            border: 1px solid var(--border-subtle);
+            padding: 28px;
+        }
+
+        .section-head {
+            margin-bottom: 22px;
+        }
+
+        .section-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.74rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.11em;
+            color: var(--red-primary);
+            background: var(--red-light);
+            padding: 4px 12px;
+            border-radius: 999px;
+            margin-bottom: 8px;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.35rem, 2.3vw, 1.85rem);
+            font-weight: 800;
+            color: var(--text-primary);
+        }
+
+        .section-desc {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            margin-top: 4px;
+        }
+
+        /* ==========================================================================
+           7. LỘ TRÌNH 5 BƯỚC LÀM CHỦ TRONG 60 GIÂY (INTERACTIVE STEPPER)
+           ========================================================================== */
+        .steps-master-grid {
+            display: grid;
+            grid-template-columns: 0.95fr 1.05fr;
+            gap: 24px;
+            align-items: stretch;
+        }
+
+        .steps-nav-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .step-nav-item {
+            background: var(--bg-subtle);
+            border: 1.5px solid var(--border-subtle);
+            border-radius: 16px;
+            padding: 14px 16px;
+            cursor: pointer;
+            transition: all 0.22s ease;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            text-align: left;
+        }
+
+        .step-nav-item:hover {
+            border-color: var(--red-primary);
+            transform: translateX(4px);
+        }
+
+        .step-nav-item.active {
+            background: linear-gradient(135deg, rgba(211, 47, 47, 0.12), rgba(251, 192, 45, 0.15));
+            border-color: var(--red-primary);
+            box-shadow: 0 6px 20px var(--red-glow);
+        }
+
+        .step-num-circle {
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
+            background: var(--bg-secondary);
+            border: 1.5px solid var(--border-subtle);
+            color: var(--red-primary);
+            font-weight: 800;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: all 0.22s ease;
+        }
+
+        .step-nav-item.active .step-num-circle {
+            background: linear-gradient(135deg, #D32F2F, #B71C1C);
+            color: #FFFFFF;
+            border-color: transparent;
+        }
+
+        .step-nav-info h4 {
+            font-size: 0.92rem;
+            font-weight: 800;
+            color: var(--text-primary);
+        }
+
+        .step-nav-info p {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+
+        /* Step Detail Stage */
+        .step-stage-box {
+            background: var(--bg-subtle);
+            border: 1.5px solid var(--border-highlight);
+            border-radius: 20px;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 16px;
+            position: relative;
+        }
+
+        .stage-badge-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .stage-time-pill {
+            font-size: 0.75rem;
+            font-weight: 800;
+            padding: 4px 12px;
+            border-radius: 999px;
+            background: var(--yellow-light);
+            color: #B45309;
+        }
+
+        .stage-title {
+            font-size: 1.22rem;
+            font-weight: 800;
+            color: var(--red-primary);
+            margin-top: 8px;
+        }
+
+        .stage-checklist {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .stage-checklist li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            background: var(--bg-secondary);
+            padding: 11px 14px;
+            border-radius: 12px;
+            border-left: 3.5px solid var(--blue-youth);
+            font-size: 0.85rem;
+            color: var(--text-primary);
+        }
+
+        .stage-checklist li i {
+            color: var(--blue-youth);
+            margin-top: 3px;
+        }
+
+        .stage-tip-box {
+            background: rgba(16, 185, 129, 0.12);
+            border: 1px solid rgba(16, 185, 129, 0.35);
+            padding: 12px 14px;
+            border-radius: 12px;
+            font-size: 0.82rem;
+            color: var(--text-primary);
+        }
+
+        /* ==========================================================================
+           8. BẢNG ĐỐI CHIẾU TRƯỚC & SAU KHI DÙNG TRỢ LÝ SỐ (BEFORE vs AFTER)
+           ========================================================================== */
+        .compare-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .compare-col {
+            border-radius: 20px;
+            padding: 22px;
+            border: 1.5px solid var(--border-subtle);
+            background: var(--bg-subtle);
+        }
+
+        .compare-col.after-col {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.08), rgba(251, 192, 45, 0.08));
+            border-color: var(--emerald);
+        }
+
+        .compare-head {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1rem;
+            font-weight: 800;
+            padding-bottom: 12px;
+            margin-bottom: 14px;
+            border-bottom: 1px dashed var(--border-subtle);
+        }
+
+        .compare-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            font-size: 0.85rem;
+        }
+
+        .compare-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 9px;
+        }
+
+        /* ==========================================================================
+           9. CẨM NANG CHUYÊN BIỆT CHO 4 NHÓM NGƯỜI DÙNG (4 PERSONAS)
+           ========================================================================== */
+        .persona-tabs {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .persona-tab-btn {
+            background: var(--bg-subtle);
+            border: 1.5px solid var(--border-subtle);
+            border-radius: 14px;
+            padding: 12px 10px;
+            text-align: center;
+            font-size: 0.82rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            transition: all 0.2s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .persona-tab-btn i {
+            font-size: 1.35rem;
+            color: var(--blue-youth);
+        }
+
+        .persona-tab-btn.active,
+        .persona-tab-btn:hover {
+            background: linear-gradient(135deg, #D32F2F, #B71C1C);
+            color: #FFFFFF;
+            border-color: transparent;
+            box-shadow: 0 6px 18px var(--red-glow);
+        }
+
+        .persona-tab-btn.active i,
+        .persona-tab-btn:hover i {
+            color: var(--yellow-star);
+        }
+
+        .persona-content-card {
+            background: var(--bg-subtle);
+            border: 1.5px solid var(--border-subtle);
+            border-radius: 20px;
+            padding: 22px;
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 22px;
+            align-items: center;
+        }
+
+        /* ==========================================================================
+           10. GIẢI MÃ 6 VÙNG GIAO DIỆN TRÊN TRANG WEB (VISUAL ANATOMY)
+           ========================================================================== */
+        .anatomy-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+
+        .anatomy-card {
+            background: var(--bg-subtle);
+            border: 1px solid var(--border-subtle);
+            border-radius: 18px;
+            padding: 18px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 12px;
+            transition: all 0.25s ease;
+        }
+
+        .anatomy-card:hover {
+            border-color: var(--red-primary);
+            transform: translateY(-4px);
+            background: var(--bg-card-hover);
+        }
+
+        .anatomy-num {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.73rem;
+            font-weight: 800;
+            padding: 3px 10px;
+            border-radius: 999px;
+            background: var(--red-light);
+            color: var(--red-primary);
+            width: fit-content;
+        }
+
+        /* ==========================================================================
+           11. TRÌNH MÔ PHỎNG THỰC HÀNH THử 1 CHẠM (INTERACTIVE SANDBOX)
+           ========================================================================== */
+        .sandbox-grid {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 20px;
+            align-items: stretch;
+        }
+
+        .sandbox-controls {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            background: var(--bg-subtle);
+            padding: 18px;
+            border-radius: 18px;
+            border: 1px solid var(--border-subtle);
+        }
+
+        .sandbox-terminal {
+            background: #0B1120;
+            color: #F8FAFC;
+            border-radius: 18px;
+            padding: 18px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.81rem;
+            line-height: 1.65;
+            white-space: pre-wrap;
+            overflow-y: auto;
+            max-height: 360px;
+            border: 1.5px solid #1E293B;
+        }
+
+        /* ==========================================================================
+           12. CÂU HỎI THƯỜNG GẶP (FAQ ACCORDION)
+           ========================================================================== */
+        .faq-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .faq-item {
+            background: var(--bg-subtle);
+            border: 1px solid var(--border-subtle);
+            border-radius: 14px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 14px 18px;
+            text-align: left;
+            font-size: 0.9rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+        }
+
+        .faq-answer {
+            display: none;
+            padding: 0 18px 16px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            border-top: 1px dashed var(--border-subtle);
+            padding-top: 12px;
+        }
+
+        .faq-item.open .faq-answer {
+            display: block;
+        }
+
+        /* Floating Launch Button */
+        .launch-app-fab {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 1500;
+            background: linear-gradient(135deg, #D32F2F, #9A0007);
+            color: #FFFFFF;
+            padding: 13px 20px;
+            border-radius: 999px;
+            font-weight: 800;
+            font-size: 0.88rem;
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            box-shadow: 0 10px 28px rgba(211, 47, 47, 0.45);
+            border: 2px solid var(--yellow-star);
+            transition: all 0.25s ease;
+        }
+
+        .launch-app-fab:hover {
+            transform: translateY(-3px) scale(1.03);
+        }
+
+        .toast-container {
+            position: fixed;
+            bottom: 84px;
+            right: 24px;
+            z-index: 3000;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .toast {
+            background: #0F172A;
+            color: #FFFFFF;
+            padding: 12px 18px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.84rem;
+            font-weight: 600;
+            border-left: 4px solid var(--yellow-star);
+        }
+
+        .app-footer {
+            background: #070B14;
+            color: #94A3B8;
+            padding: 28px 24px;
+            font-size: 0.82rem;
+            border-top: 3px solid var(--red-primary);
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-inner {
+            max-width: 1380px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+        }
+
+        @media (max-width: 1080px) {
+            .hero-grid,
+            .steps-master-grid,
+            .compare-grid,
+            .persona-content-card,
+            .sandbox-grid {
+                grid-template-columns: 1fr;
+            }
+            .persona-tabs,
+            .anatomy-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 720px) {
+            .persona-tabs,
+            .anatomy-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 0. CANVAS HẠT ÁNH SÁNG 60FPS CHUẨN LEPHUCNHAT.VN -->
+    <canvas id="ambientCanvas"></canvas>
+
+    <!-- 1. STICKY FLOATING PILL HEADER -->
+    <header class="site-header">
+        <nav class="header-inner" aria-label="Điều hướng chính">
+            <a href="#heroGuide" class="brand-mini">
+                <div class="brand-emblem" title="Huy hiệu Đội TNTP Hồ Chí Minh" style="padding:2px; background:#fff; overflow:hidden;">
+                    <img src="./logo-doi.jpg" alt="Huy hiệu Đội TNTP Hồ Chí Minh" style="width:100%; height:100%; object-fit:contain; border-radius:50%; display:block;" />
+                </div>
+                <div class="brand-mini-text">
+                    <span class="brand-mini-name">CẨM NANG HƯỚNG DẪN SỬ DỤNG</span>
+                    <span class="brand-mini-domain">Trợ Lý Số Công Tác Đội • TH Lê Thế Hiếu</span>
+                </div>
+            </a>
+
+            <div class="header-nav-links">
+                <a href="#fiveStepsSection" class="nav-pill-link"><i class="fa-solid fa-list-ol"></i> 5 Bước 60 Giây</a>
+                <a href="#personaSection" class="nav-pill-link"><i class="fa-solid fa-users-gear"></i> Theo Vai Trò GV</a>
+                <a href="#anatomySection" class="nav-pill-link"><i class="fa-solid fa-map"></i> Sơ Đồ 6 Vùng Web</a>
+                <a href="#sandboxSection" class="nav-pill-link"><i class="fa-solid fa-flask"></i> Thực Hành Thử</a>
+                <a href="#faqSection" class="nav-pill-link"><i class="fa-solid fa-circle-question"></i> Hỏi &amp; Đáp</a>
+                <a href="https://lephucnhat.vn/" class="nav-pill-link" style="color: var(--emerald);"><i class="fa-solid fa-house"></i> lephucnhat.vn</a>
+            </div>
+
+            <div class="header-actions">
+                <a href="https://lephucnhat.vn/tro-ly-cong-tac-doi-le-the-hieu/" class="header-btn primary-red">
+                    <i class="fa-solid fa-rocket"></i> Mở Web Công Tác Đội Ngay
+                </a>
+                <div class="theme-switcher" role="group" aria-label="Chuyển đổi giao diện">
+                    <button type="button" class="theme-btn active" data-theme-set="pioneer-light" title="Sáng Khăn Quàng Đỏ">☀️</button>
+                    <button type="button" class="theme-btn" data-theme-set="royal-dark" title="Tối Hoàng Gia">🌌</button>
+                    <button type="button" class="theme-btn" data-theme-set="emerald-forest" title="Ngọc Lục Bảo Xứ Cùa">🌿</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 2. MAIN CONTENT -->
+    <main class="page-container">
+
+        <!-- A. HERO CARD VIP -->
+        <section id="heroGuide" class="border-beam-card shimmer-surface hero-card">
+            <div class="hero-topbar">
+                <span class="pioneer-pill">
+                    <i class="fa-solid fa-graduation-cap"></i> CẨM NANG CẦM TAY CHỈ VIỆC 4D • DÀNH CHO GIÁO VIÊN KHÔNG RÀNH CÔNG NGHỆ
+                </span>
+                <span class="pioneer-pill" style="background: rgba(16, 185, 129, 0.14); color: var(--emerald); border-color: rgba(16, 185, 129, 0.4);">
+                    <i class="fa-solid fa-volume-high"></i> Có Giọng Đọc Thuyết Minh Từng Bước (TTS)
+                </span>
+            </div>
+
+            <div class="hero-grid">
+                <div class="hero-avatar-col">
+                    <div class="avatar-halo-wrap">
+                        <div class="emblem-core" style="background:#FFFFFF; padding:6px; overflow:hidden;">
+                            <img src="./logo-doi.jpg" alt="Huy hiệu Đội TNTP Hồ Chí Minh - Sẵn Sàng" style="width:100%; height:100%; object-fit:contain; border-radius:50%; display:block;" />
+                        </div>
+                    </div>
+                    <p style="font-size: 0.79rem; font-weight: 700; color: var(--text-secondary);">
+                        📍 Liên đội TH Lê Thế Hiếu
+                    </p>
+                </div>
+
+                <div class="hero-center-col">
+                    <div style="font-size: 0.88rem; font-weight: 800; color: var(--red-primary); text-transform: uppercase; letter-spacing: 0.08em;">
+                        HƯỚNG DẪN SỬ DỤNG TOÀN DIỆN • XÃ CAM LỘ, TỈNH QUẢNG TRỊ
+                    </div>
+                    <h1 class="hero-title">LÀM CHỦ "TRỢ LÝ SỐ CÔNG TÁC ĐỘI" CHỈ VỚI 5 THAO TÁC CHẠM</h1>
+
+                    <div class="quote-glass-box">
+                        <span class="quote-mark">“</span>
+                        <p style="font-weight: 700; color: var(--text-primary);">
+                            Thầy cô không cần nhớ câu lệnh AI phức tạp, không lo AI viết sai thuật ngữ Đội bậc Tiểu học hay bịa đặt số liệu!
+                        </p>
+                        <p style="font-size: 0.82rem; color: var(--text-secondary); margin-top: 3px;">
+                            Trang hướng dẫn này giúp Giáo viên Tổng phụ trách Đội, Giáo viên chủ nhiệm khối 1–5 và Ban Chỉ huy Liên đội Trường Tiểu học Lê Thế Hiếu nắm vững cách vận hành trang web trong vòng <strong>60 giây</strong>.
+                        </p>
+                    </div>
+
+                    <div class="hero-cta-row">
+                        <a href="https://lephucnhat.vn/tro-ly-cong-tac-doi-le-the-hieu/" class="cta-btn primary-red">
+                            <i class="fa-solid fa-up-right-from-square"></i> Mở Ngay Trang Web Công Tác Đội
+                        </a>
+                        <button type="button" class="cta-btn gold-btn" onclick="speakFullGuideOverview()">
+                            <i class="fa-solid fa-volume-high"></i> Nghe Thuyết Minh Tổng Quan
+                        </button>
+                        <a href="#fiveStepsSection" class="cta-btn blue-btn">
+                            <i class="fa-solid fa-shoe-prints"></i> Xem 5 Bước Thực Hành
+                        </a>
+                        <button type="button" class="cta-btn" onclick="window.print()">
+                            <i class="fa-solid fa-print"></i> In Cẩm Nang Này
+                        </button>
+                    </div>
+                </div>
+
+                <div class="hero-qr-col">
+                    <div class="clean-qr-frame" onclick="copyGuideLink()" title="Chạm để sao chép liên kết trang hướng dẫn">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=260x260&data=https://lephucnhat.vn/huong-dan-cong-tac-doi-le-the-hieu/" alt="QR Hướng dẫn sử dụng Công tác Đội" />
+                    </div>
+                    <p style="font-size: 0.74rem; color: var(--text-muted); font-weight: 600;">
+                        Quét QR mở Cẩm nang<br>trên điện thoại của Thầy Cô
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- B. LỘ TRÌNH 5 BƯỚC LÀM CHỦ TRONG 60 GIÂY (INTERACTIVE STEPPER + TTS) -->
+        <section id="fiveStepsSection" class="panel-card">
+            <div class="section-head">
+                <span class="section-eyebrow"><i class="fa-solid fa-bolt"></i> Quy Trình Chuẩn 5 Bước • Ai Cũng Làm Được Ngay</span>
+                <h2 class="section-title">🚀 Lộ Trình 5 Bước Tạo Kế Hoạch &amp; Kịch Bản Đội Trong 60 Giây</h2>
+                <p class="section-desc">Bấm vào từng bước bên trái để xem hướng dẫn thao tác chi tiết, mẹo sư phạm và nghe giọng đọc chỉ dẫn.</p>
+            </div>
+
+            <div class="steps-master-grid">
+                <!-- Cột trái: 5 Bước -->
+                <div class="steps-nav-list" id="stepsNavList">
+                    <button type="button" class="step-nav-item active" data-step="0">
+                        <span class="step-num-circle">01</span>
+                        <div class="step-nav-info">
+                            <h4>Bước 1: Chọn nhanh Mẫu sẵn có hoặc Nhóm nghiệp vụ</h4>
+                            <p>5 nhóm nghiệp vụ Đội &amp; 12 mẫu thực chiến 1 chạm</p>
+                        </div>
+                    </button>
+                    <button type="button" class="step-nav-item" data-step="1">
+                        <span class="step-num-circle">02</span>
+                        <div class="step-nav-info">
+                            <h4>Bước 2: Chọn Chủ điểm tháng &amp; Đối tượng học sinh</h4>
+                            <p>10 chủ điểm năm học + Chọn nhiều khối lớp (Nhi đồng / Đội viên)</p>
+                        </div>
+                    </button>
+                    <button type="button" class="step-nav-item" data-step="2">
+                        <span class="step-num-circle">03</span>
+                        <div class="step-nav-info">
+                            <h4>Bước 3: Điền Điều kiện thực tế &amp; Chèn thẻ gợi ý</h4>
+                            <p>Sân trường, thời lượng 35 phút, đạo cụ &amp; truyền thống Lê Thế Hiếu</p>
+                        </div>
+                    </button>
+                    <button type="button" class="step-nav-item" data-step="3">
+                        <span class="step-num-circle">04</span>
+                        <div class="step-nav-info">
+                            <h4>Bước 4: Chọn Văn phong &amp; Định dạng sản phẩm</h4>
+                            <p>Văn bản Nghị định 30, Kịch bản kèm lời MC, Bảng phân công</p>
+                        </div>
+                    </button>
+                    <button type="button" class="step-nav-item" data-step="4">
+                        <span class="step-num-circle">05</span>
+                        <div class="step-nav-info">
+                            <h4>Bước 5: Sao chép 1 chạm hoặc Bấm "Chạy AI Soạn Ngay"</h4>
+                            <p>Nhận văn bản hoàn chỉnh, lưu lịch sử &amp; tải về file Word (.DOC)</p>
+                        </div>
+                    </button>
+                </div>
+
+                <!-- Cột phải: Nội dung chi tiết của Bước đang chọn -->
+                <div class="step-stage-box" id="stepStageBox">
+                    <!-- Rendered dynamically via JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- C. SO SÁNH TRƯỚC & SAU KHI SỬ DỤNG TRỢ LÝ SỐ CÔNG TÁC ĐỘI -->
+        <section class="panel-card">
+            <div class="section-head">
+                <span class="section-eyebrow"><i class="fa-solid fa-scale-balanced"></i> Hiệu Quả Thực Tế Tại Liên Đội</span>
+                <h2 class="section-title">⚖️ Sự Khác Biệt Giữa Cách Gõ AI Thông Thường &amp; Dùng Trợ Lý Số Lê Thế Hiếu</h2>
+            </div>
+
+            <div class="compare-grid">
+                <div class="compare-col">
+                    <div class="compare-head" style="color: var(--red-primary);">
+                        <i class="fa-solid fa-circle-xmark" style="font-size: 1.3rem;"></i>
+                        <span>Khi tự gõ câu lệnh ngắn gọn vào ChatGPT / Gemini</span>
+                    </div>
+                    <ul class="compare-list">
+                        <li><i class="fa-solid fa-xmark" style="color: var(--red-primary); margin-top: 4px;"></i> <span><strong>Sai thuật ngữ bậc Tiểu học:</strong> AI thường gọi nhầm lớp 1, 2 là "Chi đội" hoặc "Đoàn viên" thay vì "Sao Nhi đồng" và "Nhi đồng".</span></li>
+                        <li><i class="fa-solid fa-xmark" style="color: var(--red-primary); margin-top: 4px;"></i> <span><strong>Kịch bản xa rời thực tế:</strong> Viết lời dẫn sáo rỗng, thời lượng kéo dài 90 phút trong khi tiết Chào cờ chỉ có 35–40 phút.</span></li>
+                        <li><i class="fa-solid fa-xmark" style="color: var(--red-primary); margin-top: 4px;"></i> <span><strong>Tự bịa đặt số liệu:</strong> AI tự điền ngày tháng, kinh phí và tên người không có thật gây mất thời gian rà soát sửa lại.</span></li>
+                        <li><i class="fa-solid fa-xmark" style="color: var(--red-primary); margin-top: 4px;"></i> <span><strong>Thiếu bản sắc địa phương:</strong> Không gắn với truyền thống anh hùng Lê Thế Hiếu và quê hương Cam Lộ, Quảng Trị.</span></li>
+                    </ul>
+                </div>
+
+                <div class="compare-col after-col">
+                    <div class="compare-head" style="color: var(--emerald);">
+                        <i class="fa-solid fa-circle-check" style="font-size: 1.3rem;"></i>
+                        <span>Khi dùng Trợ Lý Số Công Tác Đội TH Lê Thế Hiếu</span>
+                    </div>
+                    <ul class="compare-list">
+                        <li><i class="fa-solid fa-check" style="color: var(--emerald); margin-top: 4px;"></i> <span><strong>Chuẩn 100% Điều lệ &amp; Nghi thức Đội:</strong> Phân biệt rõ Sao Nhi đồng (khối 1–3), Chi đội (khối 4–5), Phụ trách Sao, BCH Liên đội.</span></li>
+                        <li><i class="fa-solid fa-check" style="color: var(--emerald); margin-top: 4px;"></i> <span><strong>Khớp từng phút &amp; điều kiện sân trường:</strong> Kịch bản chia rõ từng mục 5 phút – 7 phút – 20 phút kèm lời dẫn MC và nhạc hiệu.</span></li>
+                        <li><i class="fa-solid fa-check" style="color: var(--emerald); margin-top: 4px;"></i> <span><strong>Khóa quy tắc trung thực `[Cần điền: ...]`:</strong> Mọi vị trí số liệu thực tế đều được đóng khung rõ ràng để thầy cô điền chính xác.</span></li>
+                        <li><i class="fa-solid fa-check" style="color: var(--emerald); margin-top: 4px;"></i> <span><strong>Đậm đà bản sắc Trường TH Lê Thế Hiếu:</strong> Tự động lồng ghép giáo dục truyền thống quê hương xã Cam Lộ, tỉnh Quảng Trị.</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- D. HƯỚNG DẪN CHUYÊN BIỆT THEO 4 VAI TRÒ NGƯỜI DÙNG -->
+        <section id="personaSection" class="panel-card">
+            <div class="section-head">
+                <span class="section-eyebrow"><i class="fa-solid fa-user-check"></i> Cẩm Nang Theo Từng Vị Trí Công Tác</span>
+                <h2 class="section-title">👩‍🏫 Thầy Cô Đang Đảm Nhận Vai Trò Nào Tại Trường TH Lê Thế Hiếu?</h2>
+                <p class="section-desc">Chọn đúng vai trò của mình để xem kịch bản sử dụng nhanh nhất trong tuần học.</p>
+            </div>
+
+            <div class="persona-tabs" id="personaTabs">
+                <button type="button" class="persona-tab-btn active" data-persona="tpt">
+                    <i class="fa-solid fa-user-tie"></i>
+                    <span>1. Giáo viên Tổng phụ trách Đội</span>
+                </button>
+                <button type="button" class="persona-tab-btn" data-persona="gvcn45">
+                    <i class="fa-solid fa-chalkboard-user"></i>
+                    <span>2. GVCN Phụ trách Chi đội (Khối 4–5)</span>
+                </button>
+                <button type="button" class="persona-tab-btn" data-persona="gvcn13">
+                    <i class="fa-solid fa-child-reaching"></i>
+                    <span>3. GVCN Phụ trách Sao Nhi đồng (Khối 1–3)</span>
+                </button>
+                <button type="button" class="persona-tab-btn" data-persona="bch">
+                    <i class="fa-solid fa-medal"></i>
+                    <span>4. Ban Chỉ huy Liên đội &amp; Đội Phát thanh</span>
+                </button>
+            </div>
+
+            <div class="persona-content-card" id="personaContentCard">
+                <!-- Rendered dynamically via JS -->
+            </div>
+        </section>
+
+        <!-- E. SƠ ĐỒ GIẢI MÃ 6 VÙNG CHỨC NĂNG TRÊN TRANG WEB -->
+        <section id="anatomySection" class="panel-card">
+            <div class="section-head">
+                <span class="section-eyebrow"><i class="fa-solid fa-compass-drafting"></i> Bản Đồ Giao Diện Trực Quan</span>
+                <h2 class="section-title">🗺️ Giải Mã 6 Khu Vực Chức Năng Trên Web Công Tác Đội</h2>
+                <p class="section-desc">Hiểu rõ tác dụng của từng khu vực giúp thầy cô khai thác tối đa 100% sức mạnh của hệ thống.</p>
+            </div>
+
+            <div class="anatomy-grid">
+                <div class="anatomy-card">
+                    <div>
+                        <span class="anatomy-num"><i class="fa-solid fa-1"></i> Khu vực 1 • Đầu trang</span>
+                        <h3 style="font-size: 0.98rem; font-weight: 800; margin-top: 8px;">Thanh Điều Hướng &amp; 3 Nút Nạp Mẫu Khẩn Cấp</h3>
+                        <p style="font-size: 0.82rem; color: var(--text-secondary); margin-top: 6px;">
+                            Nằm ngay đầu trang kèm đồng hồ thời gian thực, lịch chủ điểm tháng hiện tại, nút chuyển 3 giao diện (Sáng / Tối / Rừng Xanh) và 3 nút nạp mẫu nhanh (Sinh hoạt 26/3, Trò chơi dân gian, Lễ kết nạp Đội).
+                        </p>
+                    </div>
+                    <div style="font-size: 0.76rem; font-weight: 700; color: var(--red-primary);">
+                        💡 Mẹo: Bấm vào Mã QR góc phải để chép link gửi qua Zalo cho đồng nghiệp.
+                    </div>
+                </div>
+
+                <div class="anatomy-card">
+                    <div>
+                        <span class="anatomy-num"><i class="fa-solid fa-2"></i> Khu vực 2 • Cột Trái</span>
+                        <h3 style="font-size: 0.98rem; font-weight: 800; margin-top: 8px;">Bảng Thiết Lập Thông Tin 7 Mục Chuẩn Sư Phạm</h3>
+                        <p style="font-size: 0.82rem; color: var(--text-secondary); margin-top: 6px;">
+                            Nơi thầy cô chọn 1 trong 5 nhóm nghiệp vụ, chọn tác vụ con, chọn chủ điểm tháng, đánh dấu đối tượng học sinh, điền điều kiện sân trường và bấm các thẻ gợi ý xanh dương để chèn nhanh yêu cầu.
+                        </p>
+                    </div>
+                    <div style="font-size: 0.76rem; font-weight: 700; color: var(--blue-youth);">
+                        💡 Mẹo: Tên trường Tiểu học Lê Thế Hiếu đã được điền sẵn mặc định.
+                    </div>
+                </div>
+
+                <div class="anatomy-card">
+                    <div>
+                        <span class="anatomy-num"><i class="fa-solid fa-3"></i> Khu vực 3 • Cột Phải</span>
+                        <h3 style="font-size: 0.98rem; font-weight: 800; margin-top: 8px;">Khung Câu Lệnh, Xem Cấu Trúc &amp; Thần Đèn AI</h3>
+                        <p style="font-size: 0.82rem; color: var(--text-secondary); margin-top: 6px;">
+                            Cập nhật câu lệnh theo thời gian thực ngay khi thầy cô gõ. Có 3 tab chuyển đổi: <strong>Câu lệnh AI</strong> (để sao chép), <strong>Xem cấu trúc</strong> (xem bố cục văn bản) và <strong>Kết quả AI</strong> (xem bản dự thảo do AI soạn trực tiếp).
+                        </p>
+                    </div>
+                    <div style="font-size: 0.76rem; font-weight: 700; color: var(--emerald);">
+                        💡 Mẹo: Có thể sửa trực tiếp chữ ngay bên trong khung màu đen nếu muốn.
+                    </div>
+                </div>
+
+                <div class="anatomy-card">
+                    <div>
+                        <span class="anatomy-num"><i class="fa-solid fa-4"></i> Khu vực 4 • Giữa Trang</span>
+                        <h3 style="font-size: 0.98rem; font-weight: 800; margin-top: 8px;">Kho 12 Mẫu Tình Huống Công Tác Đội Thực Chiến</h3>
+                        <p style="font-size: 0.82rem; color: var(--text-secondary); margin-top: 6px;">
+                            Tuyển tập 12 kịch bản và kế hoạch hay dùng nhất trong năm học (Đại hội Liên đội, Sinh hoạt Sao khối 1–3, Kế hoạch 20/11, Tiểu phẩm phòng chống đuối nước, Phát thanh Măng non...).
+                        </p>
+                    </div>
+                    <div style="font-size: 0.76rem; font-weight: 700; color: var(--red-primary);">
+                        💡 Mẹo: Bấm "Nạp Mẫu Này" là toàn bộ thông số tự động điền lên trên.
+                    </div>
+                </div>
+
+                <div class="anatomy-card">
+                    <div>
+                        <span class="anatomy-num"><i class="fa-solid fa-5"></i> Khu vực 5 • Chuyên Mục Bài Viết</span>
+                        <h3 style="font-size: 0.98rem; font-weight: 800; margin-top: 8px;">9 Bài Cẩm Nang Sư Phạm Đội Có Đọc Giọng Nói</h3>
+                        <p style="font-size: 0.82rem; color: var(--text-secondary); margin-top: 6px;">
+                            Đúc kết kinh nghiệm tổ chức tiết Chào cờ "3 Ngắn – 2 Sâu – 1 Tương tác", bồi dưỡng Phụ trách Sao nhí, trò chơi dân gian an toàn... Tích hợp nút nghe đọc tự động và nút chuyển hóa thành Prompt.
+                        </p>
+                    </div>
+                    <div style="font-size: 0.76rem; font-weight: 700; color: var(--blue-youth);">
+                        💡 Mẹo: Dùng làm tài liệu sinh hoạt chuyên môn cho GVCN đầu tháng.
+                    </div>
+                </div>
+
+                <div class="anatomy-card">
+                    <div>
+                        <span class="anatomy-num"><i class="fa-solid fa-6"></i> Khu vực 6 • Cuối Trang</span>
+                        <h3 style="font-size: 0.98rem; font-weight: 800; margin-top: 8px;">Thẻ Lật 3D Nghi Thức Đội &amp; Lịch Sử Lưu Trữ</h3>
+                        <p style="font-size: 0.82rem; color: var(--text-secondary); margin-top: 6px;">
+                            4 thẻ lật 3D (5 Điều Bác Hồ dạy, 7 Yêu cầu Đội viên, Lời hứa Đội viên, Truyền thống Lê Thế Hiếu) để chiếu lên Tivi lớp học, cùng kho lưu trữ lịch sử câu lệnh và xuất file Word `.DOC`.
+                        </p>
+                    </div>
+                    <div style="font-size: 0.76rem; font-weight: 700; color: var(--emerald);">
+                        💡 Mẹo: Bấm vào thẻ 3D trên màn hình cảm ứng/Tivi để lật mặt sau.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- F. PHÒNG THỰC HÀNH THỬ 1 CHẠM NGAY TRÊN TRANG HƯỚNG DẪN (MINI SANDBOX) -->
+        <section id="sandboxSection" class="panel-card">
+            <div class="section-head">
+                <span class="section-eyebrow"><i class="fa-solid fa-flask-vial"></i> Trải Nghiệm Tương Tác Trực Tiếp</span>
+                <h2 class="section-title">🧪 Phòng Thực Hành Thử: Chạm Để Xem Câu Lệnh Tự Động Ghép Như Thế Nào</h2>
+                <p class="section-desc">Thầy cô hãy thử đổi 3 tùy chọn bên trái để thấy khung câu lệnh bên phải tự động biến đổi tức thì trước khi mở trang web chính.</p>
+            </div>
+
+            <div class="sandbox-grid">
+                <div class="sandbox-controls">
+                    <div>
+                        <label style="font-size: 0.8rem; font-weight: 800; display: block; margin-bottom: 5px;">1. Chọn thử một tình huống tại Trường TH Lê Thế Hiếu:</label>
+                        <select id="simTask" style="width: 100%; padding: 9px 12px; border-radius: 10px; border: 1.5px solid var(--border-subtle); background: var(--input-bg); color: var(--text-primary); font-family: inherit; font-size: 0.84rem;">
+                            <option value="Kịch bản Chào cờ đầu tuần & Sinh hoạt dưới cờ chủ điểm Tôn sư trọng đạo 20/11">Kịch bản Sinh hoạt dưới cờ 20/11 (Tôn sư trọng đạo)</option>
+                            <option value="Tổ chức Trò chơi dân gian Ô ăn quan & Kéo co trong giờ ra chơi">Tổ chức Trò chơi dân gian giờ ra chơi (20 phút)</option>
+                            <option value="Kịch bản Sinh hoạt Sao Nhi đồng lớp 1, 2, 3 tự quản theo 5 bước">Kịch bản Sinh hoạt Sao Nhi đồng khối 1–3</option>
+                            <option value="Bài đăng Fanpage Liên đội & Prompt vẽ Backdrop sân khấu">Bài đăng Fanpage Liên đội &amp; Prompt Backdrop</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label style="font-size: 0.8rem; font-weight: 800; display: block; margin-bottom: 5px;">2. Chọn đối tượng học sinh:</label>
+                        <select id="simTarget" style="width: 100%; padding: 9px 12px; border-radius: 10px; border: 1.5px solid var(--border-subtle); background: var(--input-bg); color: var(--text-primary); font-family: inherit; font-size: 0.84rem;">
+                            <option value="Học sinh toàn trường (Khối 1–5) & Ban Chỉ huy Liên đội">Học sinh toàn trường (Khối 1–5) &amp; BCH Liên đội</option>
+                            <option value="Nhi đồng khối lớp 1–3 & Phụ trách Sao">Nhi đồng khối lớp 1–3 &amp; Phụ trách Sao</option>
+                            <option value="Đội viên khối lớp 3–5 & Giáo viên chủ nhiệm">Đội viên khối lớp 3–5 &amp; Giáo viên chủ nhiệm</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label style="font-size: 0.8rem; font-weight: 800; display: block; margin-bottom: 5px;">3. Chọn định dạng sản phẩm mong muốn:</label>
+                        <select id="simFormat" style="width: 100%; padding: 9px 12px; border-radius: 10px; border: 1.5px solid var(--border-subtle); background: var(--input-bg); color: var(--text-primary); font-family: inherit; font-size: 0.84rem;">
+                            <option value="Kịch bản chi tiết từng phút kèm lời dẫn MC, hiệu lệnh Nghi thức Đội và câu hỏi đố vui">Kịch bản chi tiết từng phút kèm lời dẫn MC</option>
+                            <option value="Văn bản Kế hoạch chuẩn thể thức Nghị định 30/2020/NĐ-CP và hướng dẫn Hội đồng Đội">Văn bản Kế hoạch chuẩn thể thức Nghị định 30</option>
+                            <option value="Bảng biểu phân công nhiệm vụ rõ người, rõ việc, rõ đạo cụ chuẩn bị">Bảng biểu phân công nhiệm vụ trực quan</option>
+                        </select>
+                    </div>
+
+                    <div style="display: flex; gap: 10px; margin-top: 6px; flex-wrap: wrap;">
+                        <button type="button" class="cta-btn primary-red" onclick="copySimPrompt()" style="flex: 1; justify-content: center;">
+                            <i class="fa-regular fa-copy"></i> Sao Chép Thử
+                        </button>
+                        <button type="button" class="cta-btn gold-btn" onclick="runSimLiveAi()" style="flex: 1; justify-content: center;">
+                            <i class="fa-solid fa-bolt"></i> Chạy Thử AI Live (Gemini/DeepSeek)
+                        </button>
+                    </div>
+                    <div style="font-size: 0.75rem; color: var(--emerald); font-weight: 700; margin-top: 4px;">
+                        <i class="fa-solid fa-circle-check"></i> Đã tích hợp sẵn 3 khóa Gemini &amp; khóa DeepSeek thực chiến!
+                    </div>
+                </div>
+
+                <div class="sandbox-terminal" id="simTerminalOutput"></div>
+            </div>
+        </section>
+
+        <!-- G. CÂU HỎI THƯỜNG GẶP (FAQ) -->
+        <section id="faqSection" class="panel-card">
+            <div class="section-head">
+                <span class="section-eyebrow"><i class="fa-solid fa-comments"></i> Giải Đáp Thắc Mắc Nhanh</span>
+                <h2 class="section-title">❓ 6 Câu Hỏi Thường Gặp Khi Thầy Cô Sử Dụng</h2>
+            </div>
+
+            <div class="faq-list">
+                <div class="faq-item open">
+                    <button type="button" class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        <span>1. Sau khi bấm nút "Sao chép câu lệnh (1 chạm)", tôi làm gì tiếp theo?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        Thầy cô có <strong>2 cách cực kỳ tiện lợi</strong>:<br>
+                        • <strong>Cách 1 (Ngay trên trang web):</strong> Bấm luôn nút màu vàng <strong>"⚡ Chạy AI Soạn Ngay"</strong> nằm cạnh nút Sao chép để trang web tự động sinh bản dự thảo hoàn chỉnh ngay tại tab <em>Kết quả AI</em>.<br>
+                        • <strong>Cách 2 (Dùng với Gemini / ChatGPT):</strong> Bấm vào nút mở nhanh <strong>Gemini</strong> hoặc <strong>ChatGPT</strong> ở ngay bên dưới, sau đó nhấn tổ hợp phím <code>Ctrl + V</code> (hoặc chạm giữ chọn <em>Dán</em> trên điện thoại) rồi bấm Gửi.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button type="button" class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        <span>2. Vì sao trong kết quả có các dòng chữ dạng [Cần điền: ...] màu vàng?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        Đây là <strong>quy tắc bảo vệ tính chính xác hành chính sư phạm</strong> của hệ thống: AI tuyệt đối không tự bịa đặt số lượng học sinh, ngày tháng, kinh phí hay họ tên Hiệu trưởng / Tổng phụ trách. Những chỗ đánh dấu <code>[Cần điền: ...]</code> giúp thầy cô nhìn thấy ngay để điền số liệu thật của Liên đội Trường Tiểu học Lê Thế Hiếu trước khi in ấn.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button type="button" class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        <span>3. Tôi có thể chỉnh sửa trực tiếp nội dung câu lệnh trước khi sao chép không?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <strong>Hoàn toàn được!</strong> Khung hiển thị câu lệnh màu đen ở cột bên phải cho phép thầy cô nhấp chuột vào bất kỳ dòng nào để gõ thêm hoặc chỉnh sửa trực tiếp trước khi bấm Sao chép hoặc Xuất file Word (`.DOC`).
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button type="button" class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        <span>4. Làm sao để lưu lại câu lệnh tâm đắc cho tháng sau hoặc năm học sau dùng lại?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        Thầy cô chỉ cần bấm nút <strong>"Lưu lịch sử"</strong> (hoặc tải về máy bằng nút <strong>"Xuất Word .DOC"</strong> / <strong>"Sao lưu JSON"</strong>). Toàn bộ câu lệnh đã lưu sẽ nằm ở mục <em>Lịch Sử Câu Lệnh Đã Lưu</em> cuối trang, lần sau mở trình duyệt lên chỉ cần 1 chạm là nạp lại được ngay.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button type="button" class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        <span>5. Giáo viên trường khác trên địa bàn xã Cam Lộ hoặc tỉnh Quảng Trị muốn dùng thì làm thế nào?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        Ở ô đầu tiên <strong>"Tên đơn vị sử dụng"</strong>, hệ thống mặc định điền sẵn <em>Liên đội Trường Tiểu học Lê Thế Hiếu, xã Cam Lộ, tỉnh Quảng Trị</em> nhưng hoàn toàn <strong>cho phép sửa</strong>. Thầy cô chỉ cần gõ tên Liên đội mới vào ô đó, toàn bộ câu lệnh bên phải sẽ tự động cập nhật theo tên trường mới tức thì.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button type="button" class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                        <span>6. Trang web có dùng tốt trên điện thoại thông minh khi đang đứng dưới sân trường không?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        Trang web được thiết kế chuẩn Responsive tự động xếp dọc 1 cột mượt mà trên mọi màn hình điện thoại (iPhone / Android). Thầy cô có thể mở trực tiếp trên điện thoại dưới sân trường để xem kịch bản MC, lật thẻ 3D 5 Điều Bác Hồ dạy hoặc bấm nghe giọng đọc cẩm nang.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FLOATING LAUNCH BUTTON -->
+    <a href="https://lephucnhat.vn/tro-ly-cong-tac-doi-le-the-hieu/" class="launch-app-fab">
+        <i class="fa-solid fa-wand-magic-sparkles" style="color: var(--yellow-star);"></i>
+        <span>Mở Trợ Lý Số Công Tác Đội ➔</span>
+    </a>
+
+    <!-- TOAST CONTAINER -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- FOOTER -->
+    <footer class="app-footer">
+        <div class="footer-inner">
+            <div>
+                <strong style="color: #FFFFFF; font-size: 0.92rem;">CẨM NANG HƯỚNG DẪN SỬ DỤNG TRỢ LÝ SỐ CÔNG TÁC ĐỘI 4D – LIÊN ĐỘI TRƯỜNG TH LÊ THẾ HIẾU</strong>
+                <div style="margin-top: 3px;">Xã Cam Lộ, tỉnh Quảng Trị • Hệ sinh thái Giáo dục &amp; AI Thực Chiến <a href="https://lephucnhat.vn/" style="color: var(--yellow-star); font-weight: 700;">lephucnhat.vn</a></div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 14px; flex-wrap: wrap;">
+                <a href="https://lephucnhat.vn/tro-ly-cong-tac-doi-le-the-hieu/" style="color: var(--yellow-star); font-weight: 800;"><i class="fa-solid fa-rocket"></i> Mở Web Công Tác Đội</a>
+                <a href="https://lephucnhat.vn/" style="color: #E2E8F0; font-weight: 700;"><i class="fa-solid fa-globe"></i> Trang chủ lephucnhat.vn</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ================= JAVASCRIPT ENGINE ================= -->
+    <script>
+        /* 1. CANVAS HẠT ÁNH SÁNG 60FPS */
+        (function initAmbientParticles() {
+            const canvas = document.getElementById('ambientCanvas');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            let width, height, particles = [];
+
+            function resize() {
+                width = canvas.width = window.innerWidth;
+                height = canvas.height = window.innerHeight;
+            }
+            window.addEventListener('resize', resize);
+            resize();
+
+            const count = Math.min(34, Math.floor(window.innerWidth / 40));
+            for (let i = 0; i < count; i++) {
+                particles.push({
+                    x: Math.random() * width,
+                    y: Math.random() * height,
+                    r: Math.random() * 2.2 + 0.8,
+                    vx: (Math.random() - 0.5) * 0.35,
+                    vy: (Math.random() - 0.5) * 0.35,
+                    alpha: Math.random() * 0.45 + 0.15
+                });
+            }
+
+            function draw() {
+                ctx.clearRect(0, 0, width, height);
+                const rgb = getComputedStyle(document.documentElement).getPropertyValue('--particle-color').trim() || '211, 47, 47';
+                for (const p of particles) {
+                    p.x += p.vx;
+                    p.y += p.vy;
+                    if (p.x < 0) p.x = width;
+                    if (p.x > width) p.x = 0;
+                    if (p.y < 0) p.y = height;
+                    if (p.y > height) p.y = 0;
+
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(${rgb}, ${p.alpha})`;
+                    ctx.fill();
+                }
+                requestAnimationFrame(draw);
+            }
+            draw();
+        })();
+
+        /* 2. DỮ LIỆU CHI TIẾT 5 BƯỚC HƯỚNG DẪN */
+        const GUIDE_STEPS_DATA = [
+            {
+                stepNum: "BƯỚC 1 / 5",
+                time: "⏱️ Chỉ mất 5 giây",
+                title: "Chọn Nhanh Tình Huống Mẫu Hoặc Nhóm Nghiệp Vụ Đội",
+                desc: "Khi vừa mở trang web Trợ lý số Công tác Đội, thầy cô có 2 cách bắt đầu cực nhanh:",
+                checklist: [
+                    "Cách nhanh nhất (1 chạm): Bấm vào 1 trong 3 nút mẫu nổi bật ngay đầu trang hoặc kéo xuống Kho 12 Mẫu Thực Chiến để bấm 'Nạp Mẫu Này'. Toàn bộ các ô bên dưới sẽ tự động được điền sẵn chuẩn xác.",
+                    "Cách tự thiết lập theo ý muốn: Bấm chọn 1 trong 5 tab nghiệp vụ ở đầu Cột Trái (1. Văn bản hành chính, 2. Kịch bản hoạt động, 3. Trò chơi & Sân chơi, 4. Truyền thông & Học liệu số, 5. Nghiệp vụ & Bồi dưỡng BCH).",
+                    "Ngay dưới 5 tab lớn, bấm chọn nút tròn 'Tác vụ cụ thể' (Ví dụ: Kế hoạch tháng, Kịch bản Chào cờ, Lễ kết nạp Đội viên, Sinh hoạt Sao Nhi đồng...)."
+                ],
+                tip: "💡 Mẹo cho thầy cô mới dùng lần đầu: Hãy bấm thử nút 'Nạp Mẫu 1: Sinh Hoạt Dưới Cờ Tiến Bước Lên Đoàn' ở ngay đầu trang để quan sát cách trang web tự động làm việc!",
+                ttsText: "Bước 1: Chọn nhanh mẫu sẵn có hoặc nhóm nghiệp vụ Đội. Thầy cô có thể bấm 1 chạm vào các nút Nạp mẫu ở đầu trang hoặc chọn 1 trong 5 nhóm nghiệp vụ lớn ở cột bên trái, sau đó chọn tác vụ cụ thể."
+            },
+            {
+                stepNum: "BƯỚC 2 / 5",
+                time: "⏱️ Chỉ mất 10 giây",
+                title: "Kiểm Tra Tên Đơn Vị, Chọn Chủ Điểm Tháng & Đối Tượng Học Sinh",
+                desc: "Thiết lập bối cảnh thời gian và đúng lứa tuổi học sinh Tiểu học:",
+                checklist: [
+                    "Ô Tên đơn vị: Đã được điền sẵn 'Liên đội Trường Tiểu học Lê Thế Hiếu, xã Cam Lộ, tỉnh Quảng Trị'. Thầy cô giữ nguyên hoặc sửa lại nếu cần.",
+                    "Menu Thời gian & Chủ điểm: Bấm chọn chủ điểm tương ứng từ Tháng 9 đến Hè (Ví dụ: Tháng 11 Tôn sư trọng đạo, Tháng 3 Tiến bước lên Đoàn, Tháng 5 Bác Hồ kính yêu...) hoặc chọn mục cuối cùng để tự gõ tên chủ điểm riêng.",
+                    "Mục Đối tượng tham gia: Bấm chuột vào các ô để chọn một hoặc nhiều nhóm cùng lúc (Học sinh khối 1–5, Nhi đồng lớp 1–3, Đội viên lớp 3–5, Ban Chỉ huy Liên đội, Giáo viên chủ nhiệm)."
+                ],
+                tip: "💡 Mẹo Sư phạm: Khi tổ chức hoạt động cho riêng khối lớp 1, 2, 3, thầy cô hãy chọn 'Nhi đồng lớp 1–3' và 'Ban Chỉ huy Liên đội' để AI dùng đúng thuật ngữ Sao Nhi đồng và Phụ trách Sao.",
+                ttsText: "Bước 2: Chọn chủ điểm tháng và đối tượng học sinh. Tên Liên đội Trường Tiểu học Lê Thế Hiếu đã được điền sẵn. Thầy cô chỉ cần chọn chủ điểm tháng trong menu và bấm chọn các nhóm đối tượng tham gia."
+            },
+            {
+                stepNum: "BƯỚC 3 / 5",
+                time: "⏱️ Chỉ mất 20 giây",
+                title: "Điền Điều Kiện Thực Tế & Bấm Chèn Nhanh Các Thẻ Gợi Ý",
+                desc: "Giúp AI viết kịch bản/kế hoạch sát 100% với điều kiện sân bãi, thời lượng của nhà trường:",
+                checklist: [
+                    "Khung 6 ô Điều kiện thực tế: Chọn địa điểm (Sân trường ngoài trời, Nhà đa năng, Tại lớp học, Địa chỉ đỏ Cam Lộ...), kiểm tra thời lượng (35-40 phút), kinh phí và đạo cụ hiện có (loa, micro, trống Đội, cờ Đội).",
+                    "Ô Mô tả yêu cầu chi tiết: Nơi thầy cô ghi thêm ý tưởng riêng của mình.",
+                    "6 Nút gợi ý xanh dương bên dưới ô mô tả: Chỉ cần bấm chuột vào các thẻ như '+ Truyền thống Lê Thế Hiếu', '+ Chuẩn Nghi thức Đội', '+ Đố vui phân tầng Khối 1-5', '+ Phương án dự phòng mưa' là câu văn chuẩn sẽ tự động chèn vào ô!"
+                ],
+                tip: "💡 Mẹo tiết kiệm thời gian: Thầy cô không cần gõ phím dài dòng, chỉ cần bấm liên tiếp 3-4 thẻ gợi ý màu xanh dương là đã có ngay bộ yêu cầu chuyên môn cực kỳ chặt chẽ.",
+                ttsText: "Bước 3: Điền điều kiện thực tế và chèn thẻ gợi ý. Thầy cô chọn địa điểm, thời lượng và bấm vào các thẻ gợi ý màu xanh dương bên dưới ô mô tả để chèn nhanh yêu cầu truyền thống Lê Thế Hiếu, chuẩn Nghi thức Đội và phương án an toàn."
+            },
+            {
+                stepNum: "BƯỚC 4 / 5",
+                time: "⏱️ Chỉ mất 10 giây",
+                title: "Chọn Văn Phong Sư Phạm & Định Dạng Sản Phẩm Đầu Ra",
+                desc: "Quyết định hình thức trình bày của văn bản hoặc kịch bản mà AI sẽ xuất ra:",
+                checklist: [
+                    "Chọn 1 trong 3 Văn phong: (1) Hành chính sư phạm trang trọng; (2) Vui tươi, gần gũi học sinh Tiểu học; hoặc (3) Kết hợp hài hòa cả hai (Khuyên dùng nhất).",
+                    "Chọn 1 trong 4 Định dạng đầu ra: (1) Văn bản chuẩn thể thức Nghị định 30; (2) Kịch bản chi tiết từng phút kèm lời dẫn MC; (3) Bảng biểu phân công rõ người rõ việc; (4) Gói bài đăng Fanpage + Prompt tạo ảnh Poster/Backdrop.",
+                    "Bấm sang tab 'Xem cấu trúc' ở cột bên phải nếu muốn kiểm tra trước dàn ý văn bản."
+                ],
+                tip: "💡 Mẹo chọn định dạng: Khi làm Kế hoạch/Báo cáo trình BGH và Hội đồng Đội xã Cam Lộ, hãy chọn 'Văn bản chuẩn thể thức NĐ 30'. Khi chuẩn bị Chào cờ/Lễ kết nạp, hãy chọn 'Kịch bản chi tiết kèm lời dẫn MC'.",
+                ttsText: "Bước 4: Chọn văn phong và định dạng đầu ra. Thầy cô bấm chọn văn phong kết hợp hài hòa và chọn định dạng văn bản Nghị định 30, kịch bản kèm lời dẫn MC, bảng phân công hoặc gói truyền thông."
+            },
+            {
+                stepNum: "BƯỚC 5 / 5",
+                time: "⏱️ Chỉ mất 15 giây",
+                title: "Sao Chép 1 Chạm Sang AI Hoặc Bấm 'Chạy AI Soạn Ngay'",
+                desc: "Hoàn tất và nhận sản phẩm công tác Đội hoàn chỉnh:",
+                checklist: [
+                    "Cách A – Dùng Thần Đèn AI ngay trên web: Bấm nút màu vàng '⚡ CHẠY AI SOẠN NGAY' ở cột phải. Bản dự thảo kế hoạch/kịch bản sẽ hiện ra ngay lập tức trong tab 'Kết quả AI' để thầy cô chép về dùng.",
+                    "Cách B – Đưa sang Google Gemini / ChatGPT: Bấm nút màu đỏ 'SAO CHÉP CÂU LỆNH (1 CHẠM)', sau đó bấm vào link Gemini hoặc ChatGPT ngay bên dưới và dán (Ctrl + V) vào.",
+                    "Lưu trữ & Xuất file: Bấm 'Lưu lịch sử' để cất vào trình duyệt hoặc bấm 'Xuất Word .DOC' / 'Xuất tệp .TXT' để tải thẳng về máy tính in ấn."
+                ],
+                tip: "💡 Lưu ý cuối cùng: Khi nhận văn bản từ AI, thầy cô chỉ cần tìm các chỗ đánh dấu [Cần điền: ...] để điền số liệu thật của Liên đội mình vào là hoàn tất 100%!",
+                ttsText: "Bước 5: Sao chép 1 chạm hoặc bấm Chạy AI Soạn Ngay. Thầy cô bấm nút Sao chép câu lệnh để dán vào Gemini, ChatGPT, hoặc bấm nút Chạy AI Soạn Ngay màu vàng để nhận bản dự thảo ngay trên trang web, sau đó tải về file Word."
+            }
+        ];
+
+        /* 3. DỮ LIỆU 4 VAI TRÒ NGƯỜI DÙNG (4 PERSONAS) */
+        const PERSONAS_DATA = {
+            "tpt": {
+                badge: "Vai trò trung tâm của Liên đội",
+                title: "Cẩm Nang Dành Cho Giáo Viên Tổng Phụ Trách Đội",
+                summary: "Giúp thầy/cô Tổng phụ trách Đội Trường Tiểu học Lê Thế Hiếu giảm 80% thời gian làm hồ sơ sổ sách, kịch bản sự kiện lớn và tập huấn kỹ năng Đội.",
+                tasks: [
+                    "Đầu năm / Đầu tháng: Chọn nhóm '1. Văn bản hành chính' -> Chọn 'Kế hoạch năm/tháng' + Định dạng 'Văn bản chuẩn thể thức NĐ 30' để hoàn thiện nhanh kế hoạch trình BGH và Hội đồng Đội xã Cam Lộ.",
+                    "Mỗi sáng thứ Hai: Chọn nhóm '2. Kịch bản hoạt động' -> Dùng kịch bản Sinh hoạt dưới cờ kèm lời dẫn MC và 5 câu hỏi đố vui phân tầng khối 1–5.",
+                    "Đợt 26/3 & 15/5: Nạp nhanh mẫu 'Lễ Kết nạp Đội viên mới khối 3', mẫu 'Đại hội Liên đội' và mẫu 'Tập huấn Ban Chỉ huy Liên đội'.",
+                    "Sau mỗi hoạt động: Chọn nhóm '4. Truyền thông & Học liệu số' để viết bài đăng Fanpage Liên đội và tạo câu lệnh vẽ Backdrop sân khấu trong 1 phút."
+                ],
+                quickActionText: "Mở Web Với Cấu Hình Tổng Phụ Trách Đội"
+            },
+            "gvcn45": {
+                badge: "Phụ trách Chi đội Khối 4 & Khối 5",
+                title: "Cẩm Nang Dành Cho Giáo Viên Chủ Nhiệm Khối 4 – 5 (Phụ Trách Chi Đội)",
+                summary: "Đồng hành cùng thầy cô GVCN lớp 4, lớp 5 trong việc tổ chức Đại hội Chi đội, tiết Sinh hoạt Chi đội cuối tuần và trực tuần Sinh hoạt dưới cờ.",
+                tasks: [
+                    "Khi lớp đến lượt trực tuần Sinh hoạt dưới cờ: Nạp ngay mẫu 'Sinh hoạt dưới cờ theo chủ điểm tháng' hoặc mẫu 'Tiểu phẩm dưới cờ phòng chống đuối nước & ATGT' để có sẵn kịch bản cho học sinh lớp mình tập luyện.",
+                    "Đầu năm học: Chọn tác vụ 'Kịch bản Đại hội Chi đội đầu năm' với quy mô 1 lớp học để hướng dẫn Ban Chỉ huy Chi đội tự điều hành.",
+                    "Giờ sinh hoạt lớp chiều thứ Sáu: Sử dụng '4 Thẻ lật 3D Nghi thức Đội' chiếu lên Tivi lớp học để ôn luyện 7 yêu cầu Đội viên và Chương trình Rèn luyện Đội viên Hạng Một."
+                ],
+                quickActionText: "Mở Web Soạn Kịch Bản Chi Đội Khối 4–5"
+            },
+            "gvcn13": {
+                badge: "Phụ trách Lớp Nhi đồng Khối 1, 2, 3",
+                title: "Cẩm Nang Dành Cho Giáo Viên Chủ Nhiệm Khối 1 – 2 – 3 (Sao Nhi Đồng)",
+                summary: "Thiết kế các buổi sinh hoạt Sao Nhi đồng vui tươi, nhẹ nhàng, trò chơi vòng tròn an toàn và bồi dưỡng Nhi đồng lớp 3 ưu tú chuẩn bị kết nạp Đội.",
+                tasks: [
+                    "Sinh hoạt Sao hàng tuần: Nạp ngay Mẫu số 8 'Kịch bản Sinh hoạt Sao Nhi đồng Khối 1–3' theo đúng quy trình 5 bước (Hát bài Sao -> Kiểm tra tay sạch -> Kể chuyện/Đố vui chủ điểm -> Gắn sao ngoan -> Dặn dò).",
+                    "Tổ chức giờ ra chơi: Chọn nhóm '3. Trò chơi & Sân chơi' -> Chọn 'Trò chơi sinh hoạt vòng tròn cho Sao Nhi đồng lớp 1, 2, 3' với văn phong 'Vui tươi, gần gũi HS'.",
+                    "Đối với GVCN Lớp 3: Sử dụng thẻ lật 3D '5 Điều Bác Hồ dạy' và 'Lời hứa Đội viên' trên web để hướng dẫn các em Nhi đồng tiêu biểu tìm hiểu Điều lệ Đội trước lễ kết nạp."
+                ],
+                quickActionText: "Mở Web Soạn Kịch Bản Sao Nhi Đồng Khối 1–3"
+            },
+            "bch": {
+                badge: "Đội ngũ Tự quản & Phát thanh Măng non",
+                title: "Cẩm Nang Dành Cho Ban Chỉ Huy Liên Đội, Phụ Trách Sao & Đội Phát Thanh",
+                summary: "Giúp các em Liên đội trưởng, Liên đội phó, Chi đội trưởng và Phát thanh viên nhí rèn luyện phong thái tự quản dưới sự hướng dẫn của thầy cô.",
+                tasks: [
+                    "Đội Phát thanh Măng non: Nạp ngay Mẫu số 11 'Bản tin Phát thanh Măng non hàng tuần' để có sẵn kịch bản đọc 10 phút cho 2 phát thanh viên nam - nữ (Lời chào, Điểm tin hoa việc tốt, Kể chuyện anh hùng Lê Thế Hiếu, Quà tặng âm nhạc).",
+                    "Phụ trách Sao nhí (Khối 4–5): Xem và nghe đọc Bài viết Cẩm nang số #02 'Công thức 5 bước sinh hoạt Sao tự quản 25 phút' trước khi sang sinh hoạt với các em lớp 1, 2.",
+                    "Ôn luyện Nghi thức Đội: Lật xem 4 thẻ 3D cuối trang web để thuộc lòng khẩu hiệu Đội, Lời hứa Đội viên và 7 yêu cầu Đội viên."
+                ],
+                quickActionText: "Mở Web Xem Bản Tin Măng Non & Thẻ 3D"
+            }
+        };
+
+        /* 4. RENDER LỘ TRÌNH 5 BƯỚC */
+        function renderStepDetail(idx) {
+            const step = GUIDE_STEPS_DATA[idx];
+            const box = document.getElementById("stepStageBox");
+            const listHtml = step.checklist.map(item => `
+                <li>
+                    <i class="fa-solid fa-circle-check"></i>
+                    <span>${item}</span>
+                </li>
+            `).join("");
+
+            box.innerHTML = `
+                <div>
+                    <div class="stage-badge-row">
+                        <span class="pioneer-pill">${step.stepNum}</span>
+                        <span class="stage-time-pill">${step.time}</span>
+                    </div>
+                    <h3 class="stage-title">${step.title}</h3>
+                    <p style="font-size: 0.86rem; color: var(--text-secondary); margin-top: 4px;">${step.desc}</p>
+                    <ul class="stage-checklist">
+                        ${listHtml}
+                    </ul>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 12px;">
+                    <div class="stage-tip-box">
+                        ${step.tip}
+                    </div>
+                    <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
+                        <button type="button" class="cta-btn gold-btn" onclick="speakText('${step.ttsText.replace(/'/g, "\\'")}')">
+                            <i class="fa-solid fa-volume-high"></i> Nghe Đọc Bước Này
+                        </button>
+                        <a href="https://lephucnhat.vn/tro-ly-cong-tac-doi-le-the-hieu/" class="cta-btn primary-red">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i> Thực Hành Ngay Trên Web Chính ➔
+                        </a>
+                    </div>
+                </div>
+            `;
+        }
+
+        /* 5. RENDER 4 PERSONAS */
+        function renderPersonaDetail(key) {
+            const p = PERSONAS_DATA[key];
+            const card = document.getElementById("personaContentCard");
+            const tasksHtml = p.tasks.map(t => `
+                <li style="display: flex; align-items: flex-start; gap: 10px; background: var(--bg-secondary); padding: 10px 14px; border-radius: 12px; border-left: 3.5px solid var(--red-primary); font-size: 0.84rem;">
+                    <i class="fa-solid fa-star" style="color: var(--yellow-dark); margin-top: 3px;"></i>
+                    <span>${t}</span>
+                </li>
+            `).join("");
+
+            card.innerHTML = `
+                <div>
+                    <span class="pioneer-pill">${p.badge}</span>
+                    <h3 style="font-size: 1.18rem; font-weight: 800; color: var(--text-primary); margin-top: 10px;">${p.title}</h3>
+                    <p style="font-size: 0.86rem; color: var(--text-secondary); margin-top: 6px;">${p.summary}</p>
+                    <ul style="list-style: none; display: flex; flex-direction: column; gap: 9px; margin-top: 14px;">
+                        ${tasksHtml}
+                    </ul>
+                </div>
+                <div style="background: var(--bg-secondary); border: 1.5px solid var(--border-highlight); border-radius: 18px; padding: 20px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 12px;">
+                    <div style="width: 64px; height: 64px; border-radius: 50%; background: var(--red-light); color: var(--red-primary); display: flex; align-items: center; justify-content: center; font-size: 1.8rem;">
+                        <i class="fa-solid fa-rocket"></i>
+                    </div>
+                    <h4 style="font-size: 0.96rem; font-weight: 800;">Sẵn sàng áp dụng ngay!</h4>
+                    <p style="font-size: 0.8rem; color: var(--text-secondary);">
+                        Toàn bộ mẫu câu lệnh dành riêng cho vai trò này đã được cài đặt sẵn trên Trợ lý số Công tác Đội.
+                    </p>
+                    <a href="https://lephucnhat.vn/tro-ly-cong-tac-doi-le-the-hieu/" class="cta-btn primary-red" style="width: 100%; justify-content: center;">
+                        <span>${p.quickActionText}</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            `;
+        }
+
+        /* 6. TRÌNH MÔ PHỎNG SANDBOX */
+        function updateSandboxPrompt() {
+            const task = document.getElementById("simTask").value;
+            const target = document.getElementById("simTarget").value;
+            const format = document.getElementById("simFormat").value;
+
+            const preview = `# VAI TRÒ (ROLE)
+Bạn là Chuyên gia tư vấn công tác Đội TNTP Hồ Chí Minh bậc Tiểu học giàu kinh nghiệm, am hiểu sâu sắc Điều lệ Đội, Nghi thức Đội và tâm lý học sinh từ lớp 1 đến lớp 5.
+
+# NGỮ CẢNH THỰC TẾ (CONTEXT)
+- Đơn vị áp dụng: Liên đội Trường Tiểu học Lê Thế Hiếu, xã Cam Lộ, tỉnh Quảng Trị.
+- Tác vụ thực hiện: ${task}.
+- Đối tượng tham gia: ${target}.
+- Điều kiện thực tế: Sân trường / Lớp học • Thời lượng 35 phút • Kinh phí tiết kiệm.
+
+# NHIỆM VỤ & QUY TẮC BẮT BUỘC
+1. Xây dựng trọn vẹn "${task}" bám sát truyền thống anh hùng Lê Thế Hiếu và quê hương Cam Lộ, Quảng Trị.
+2. Tuyệt đối KHÔNG tự bịa đặt số liệu; đánh dấu rõ [Cần điền: ...] cho các số liệu thực tế của nhà trường.
+3. Định dạng đầu ra: ${format}.`;
+
+            document.getElementById("simTerminalOutput").textContent = preview;
+        }
+
+        function copySimPrompt() {
+            const text = document.getElementById("simTerminalOutput").textContent;
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(text);
+            }
+            showToast("✅ Đã sao chép câu lệnh thử nghiệm! Hãy mở trang chính để dùng trọn bộ 35+ tác vụ.");
+        }
+
+        const BUILTIN_GEMINI_KEYS = [
+            "",
+            "",
+            ""
+        ];
+        const BUILTIN_GEMINI_MODELS = [
+            "gemini-flash-lite-latest",
+            "gemini-3-flash-preview",
+            "gemini-2.5-flash"
+        ];
+        const BUILTIN_DEEPSEEK_KEY = "";
+
+        // Tự động đồng bộ sẵn khóa vào LocalStorage cho toàn hệ sinh thái lephucnhat.vn
+        try {
+            if (!localStorage.getItem("LPN_DOI_GEMINI_KEY")) localStorage.setItem("LPN_DOI_GEMINI_KEY", BUILTIN_GEMINI_KEYS[0]);
+            if (!localStorage.getItem("LPN_DOI_DEEPSEEK_KEY")) localStorage.setItem("LPN_DOI_DEEPSEEK_KEY", BUILTIN_DEEPSEEK_KEY);
+            if (!localStorage.getItem("lpn_gemini_api_key")) localStorage.setItem("lpn_gemini_api_key", BUILTIN_GEMINI_KEYS[0]);
+            if (!localStorage.getItem("lpn_deepseek_api_key")) localStorage.setItem("lpn_deepseek_api_key", BUILTIN_DEEPSEEK_KEY);
+        } catch (e) {}
+
+        async function runSimLiveAi() {
+            updateSandboxPrompt();
+            const terminal = document.getElementById("simTerminalOutput");
+            const promptText = terminal.textContent;
+            terminal.textContent = "⏳ Đang gọi trực tiếp Thần Đèn AI (DeepSeek / Gemini Live đã tích hợp sẵn khóa)... Vui lòng đợi vài giây...";
+
+            let aiOutput = null;
+            let engineName = "DeepSeek AI Live";
+
+            try {
+                const res = await fetch("https://api.deepseek.com/chat/completions", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Authorization": `Bearer ${BUILTIN_DEEPSEEK_KEY}`
+                    },
+                    body: JSON.stringify({
+                        model: "deepseek-chat",
+                        messages: [
+                            { role: "system", content: "Bạn là Chuyên gia Công tác Đội TNTP Hồ Chí Minh bậc Tiểu học tại Liên đội Trường Tiểu học Lê Thế Hiếu, xã Cam Lộ, tỉnh Quảng Trị. Hãy soạn thảo ngắn gọn, chuẩn mực theo yêu cầu." },
+                            { role: "user", content: promptText }
+                        ],
+                        temperature: 0.7
+                    })
+                });
+                if (res.ok) {
+                    const data = await res.json();
+                    aiOutput = data?.choices?.[0]?.message?.content;
+                }
+            } catch (e) {}
+
+            if (!aiOutput) {
+                for (const gKey of BUILTIN_GEMINI_KEYS) {
+                    if (aiOutput) break;
+                    for (const gModel of BUILTIN_GEMINI_MODELS) {
+                        try {
+                            const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${gModel}:generateContent?key=${gKey}`, {
+                                method: "POST",
+                                headers: { "Content-Type": "application/json" },
+                                body: JSON.stringify({
+                                    contents: [{ role: "user", parts: [{ text: promptText }] }]
+                                })
+                            });
+                            if (res.ok) {
+                                const data = await res.json();
+                                aiOutput = data?.candidates?.[0]?.content?.parts?.[0]?.text;
+                                if (aiOutput) {
+                                    engineName = `Google Gemini Live (${gModel})`;
+                                    break;
+                                }
+                            }
+                        } catch (e) {}
+                    }
+                }
+            }
+
+            if (aiOutput) {
+                terminal.textContent = `✨ [KẾT QUẢ THỰC THI TRỰC TIẾP TỪ ${engineName.toUpperCase()}]:\n\n` + aiOutput;
+                showToast(`⚡ Đã sinh kết quả trực tiếp từ ${engineName}!`);
+            } else {
+                terminal.textContent = promptText + "\n\n⚡ [Gợi ý]: Hãy mở trang chính Trợ Lý Số Công Tác Đội để xuất trọn bộ dự thảo chi tiết!";
+            }
+        }
+
+        /* 7. GIỌNG ĐỌC THUYẾT MINH TTS & TIỆN ÍCH */
+        function speakText(text) {
+            if (!('speechSynthesis' in window)) {
+                showToast("Trình duyệt không hỗ trợ đọc giọng nói TTS.");
+                return;
+            }
+            if (window.speechSynthesis.speaking) {
+                window.speechSynthesis.cancel();
+            }
+            const utter = new SpeechSynthesisUtterance(text);
+            utter.lang = "vi-VN";
+            utter.rate = 1.02;
+            window.speechSynthesis.speak(utter);
+            showToast("🔊 Đang phát giọng đọc hướng dẫn...");
+        }
+
+        function speakFullGuideOverview() {
+            const overview = "Chào mừng quý thầy cô đến với Cẩm nang hướng dẫn sử dụng Trợ lý số Công tác Đội Liên đội Trường Tiểu học Lê Thế Hiếu, xã Cam Lộ, tỉnh Quảng Trị. Chỉ với 5 bước thao tác trong 60 giây: Bước 1, chọn mẫu sẵn có hoặc nhóm nghiệp vụ Đội. Bước 2, chọn chủ điểm tháng và đối tượng học sinh. Bước 3, điền điều kiện thực tế và bấm các thẻ gợi ý xanh dương. Bước 4, chọn văn phong và định dạng Nghị định 30 hoặc kịch bản MC. Bước 5, bấm Sao chép câu lệnh 1 chạm hoặc bấm Chạy AI Soạn Ngay để nhận sản phẩm hoàn chỉnh.";
+            speakText(overview);
+        }
+
+        function copyGuideLink() {
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText("https://lephucnhat.vn/huong-dan-cong-tac-doi-le-the-hieu/");
+            }
+            showToast("🔗 Đã sao chép liên kết Trang Hướng Dẫn trên lephucnhat.vn!");
+        }
+
+        function showToast(msg) {
+            const container = document.getElementById("toastContainer");
+            const toast = document.createElement("div");
+            toast.className = "toast";
+            toast.innerHTML = `<i class="fa-solid fa-circle-check" style="color: var(--yellow-star);"></i> <span>${msg}</span>`;
+            container.appendChild(toast);
+            setTimeout(() => {
+                toast.style.opacity = "0";
+                toast.style.transition = "opacity 0.25s ease";
+                setTimeout(() => toast.remove(), 250);
+            }, 3000);
+        }
+
+        /* 8. KHỞI TẠO SỰ KIỆN */
+        document.addEventListener("DOMContentLoaded", () => {
+            // Theme switcher
+            const THEME_KEY = "LPN_TRO_LY_DOI_THEME";
+            const savedTheme = localStorage.getItem(THEME_KEY) || "pioneer-light";
+            document.documentElement.setAttribute("data-theme", savedTheme);
+            document.querySelectorAll(".theme-btn").forEach(btn => {
+                btn.classList.toggle("active", btn.getAttribute("data-theme-set") === savedTheme);
+                btn.addEventListener("click", () => {
+                    const t = btn.getAttribute("data-theme-set");
+                    document.documentElement.setAttribute("data-theme", t);
+                    localStorage.setItem(THEME_KEY, t);
+                    document.querySelectorAll(".theme-btn").forEach(b => b.classList.remove("active"));
+                    btn.classList.add("active");
+                    showToast("Đã chuyển đổi giao diện!");
+                });
+            });
+
+            // 5 Steps Navigation
+            renderStepDetail(0);
+            document.querySelectorAll("#stepsNavList .step-nav-item").forEach(btn => {
+                btn.addEventListener("click", () => {
+                    document.querySelectorAll("#stepsNavList .step-nav-item").forEach(b => b.classList.remove("active"));
+                    btn.classList.add("active");
+                    renderStepDetail(parseInt(btn.getAttribute("data-step"), 10));
+                });
+            });
+
+            // 4 Personas Navigation
+            renderPersonaDetail("tpt");
+            document.querySelectorAll("#personaTabs .persona-tab-btn").forEach(btn => {
+                btn.addEventListener("click", () => {
+                    document.querySelectorAll("#personaTabs .persona-tab-btn").forEach(b => b.classList.remove("active"));
+                    btn.classList.add("active");
+                    renderPersonaDetail(btn.getAttribute("data-persona"));
+                });
+            });
+
+            // Sandbox Simulator
+            updateSandboxPrompt();
+            ["simTask", "simTarget", "simFormat"].forEach(id => {
+                document.getElementById(id).addEventListener("change", updateSandboxPrompt);
+            });
+        });
+    </script>
+</body>
+</html>

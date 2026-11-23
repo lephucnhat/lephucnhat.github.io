@@ -1,0 +1,3796 @@
+<!DOCTYPE html>
+<!--
+  ==========================================================================
+  TÊN FILE: 20261115 - Ke_Hoach_Bai_Day_Tuan_10_Lop_4B1_Nguyen_Huu_Khanh.html
+  PHIÊN BẢN: V04 (Bản Thiết Kế Sư Phạm 4D • Khung Ngang 16:9 Nguyên Bản + Hiệu Ứng Động 4D + Bộ 4 Thẻ Bài Lật Tương Phản)
+  CHỦ ĐỀ: KẾ HOẠCH BÀI DẠY TUẦN 10 – LỚP 4B1 (09/11 – 13/11/2026)
+  GIÁO VIÊN THIẾT KẾ: NGUYỄN HỮU KHANH
+  ==========================================================================
+-->
+<html lang="vi">
+<head>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KẾ HOẠCH BÀI DẠY TUẦN 10 • LỚP 4B1 • GV NGUYỄN HỮU KHANH • 16:9 Living HTML 4D</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Dancing+Script:wght@700&family=Patrick+Hand&family=Playfair+Display:ital,wght@0,700;0,800;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <style>
+    :root {
+      --bg-deep: #030712;
+      --bg-navy: #0a1428;
+      --bg-card: rgba(9, 18, 38, 0.96);
+      --bg-panel: rgba(7, 14, 32, 0.94);
+      --crimson: #cf2030;
+      --gold-primary: #f5c451;
+      --gold-light: #ffe9ad;
+      --gold-dark: #c48a10;
+      --cyan-sky: #38bdf8;
+      --emerald-peace: #34d399;
+      --rose-warm: #fb7185;
+      --text-main: #ffffff;
+      --text-muted: #e2e8f0;
+      --border-glass: rgba(245, 196, 81, 0.48);
+      --shadow-elevated: 0 20px 55px rgba(0, 0, 0, 0.88);
+      --font-body: 'Be Vietnam Pro', sans-serif;
+      --font-heading: 'Playfair Display', serif;
+      --card-radius: 20px;
+      --topbar-h: 62px;
+      --bottomdock-h: 58px;
+    }
+
+    /* 5 PHONG CÁCH NGHỆ THUẬT ĐỒNG BỘ 100% */
+    body.style-realistic {
+      --bg-deep: #07121c;
+      --bg-navy: #0e2233;
+      --bg-card: rgba(12, 28, 42, 0.96);
+      --bg-panel: rgba(16, 36, 54, 0.94);
+      --gold-primary: #38bdf8;
+      --gold-light: #e0f2fe;
+      --gold-dark: #0284c7;
+      --cyan-sky: #34d399;
+      --emerald-peace: #fbbf24;
+      --border-glass: rgba(56, 189, 248, 0.52);
+    }
+
+    body.style-infographic {
+      --bg-deep: #0b192c;
+      --bg-navy: #1e3e62;
+      --bg-card: rgba(15, 34, 60, 0.96);
+      --bg-panel: rgba(22, 48, 82, 0.92);
+      --gold-primary: #ff6500;
+      --gold-light: #ffd1a6;
+      --gold-dark: #cc5200;
+      --cyan-sky: #00d2ff;
+      --emerald-peace: #00f5d4;
+      --border-glass: rgba(0, 210, 255, 0.55);
+    }
+
+    body.style-painting {
+      --bg-deep: #1b1128;
+      --bg-navy: #2b1b3f;
+      --bg-card: rgba(42, 24, 64, 0.95);
+      --bg-panel: rgba(56, 32, 84, 0.88);
+      --gold-primary: #f472b6;
+      --gold-light: #fce7f3;
+      --gold-dark: #db2777;
+      --cyan-sky: #c084fc;
+      --emerald-peace: #fbbf24;
+      --border-glass: rgba(244, 114, 182, 0.55);
+    }
+
+    body.style-handdrawn {
+      --bg-deep: #f4ebd9;
+      --bg-navy: #efe2c8;
+      --bg-card: #fffdf7;
+      --bg-panel: #faf3e3;
+      --gold-primary: #b45309;
+      --gold-light: #991b1b;
+      --gold-dark: #92400e;
+      --cyan-sky: #0369a1;
+      --emerald-peace: #15803d;
+      --rose-warm: #be123c;
+      --text-main: #1e293b;
+      --text-muted: #334155;
+      --border-glass: #991b1b;
+      --shadow-elevated: 6px 8px 0px rgba(153, 27, 27, 0.22);
+      --font-body: 'Patrick Hand', 'Be Vietnam Pro', cursive;
+      --font-heading: 'Dancing Script', 'Playfair Display', cursive;
+      background-image: radial-gradient(rgba(120, 53, 15, 0.15) 1px, transparent 1px);
+      background-size: 22px 22px;
+    }
+
+    body.style-handdrawn .slide-inner { border: 3px dashed #991b1b; }
+    body.style-handdrawn .senior-panel { border: 2px solid #92400e; }
+    body.style-handdrawn .state-old-lg { color: #be123c; }
+    body.style-handdrawn .state-new-lg { color: #15803d; }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      width: 100%;
+      height: 100%;
+      background-color: var(--bg-deep);
+      color: var(--text-main);
+      font-family: var(--font-body);
+      overflow: hidden;
+      transition: background-color 0.35s ease, color 0.35s ease;
+    }
+
+    body.mode-scroll, html.mode-scroll,
+    body.workspace-converter, html.workspace-converter,
+    body.workspace-skill, html.workspace-skill {
+      height: auto !important;
+      overflow-y: auto !important;
+      overflow-x: hidden !important;
+    }
+
+    #cosmosCanvas {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    /* =========================================================================
+       TẦNG 1: THANH ĐIỀU KHIỂN ĐỈNH (TOP HUD CONTROL BAR)
+       ========================================================================= */
+    .hud-topbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: var(--topbar-h);
+      background: rgba(4, 7, 17, 0.96);
+      backdrop-filter: blur(22px);
+      border-bottom: 2px solid var(--border-glass);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 10px;
+      z-index: 1000;
+      gap: 6px;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .hud-topbar::-webkit-scrollbar { display: none; }
+
+    .workspace-tabs {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      background: rgba(15, 29, 60, 0.95);
+      padding: 3px;
+      border-radius: 999px;
+      border: 1.5px solid rgba(245, 196, 81, 0.55);
+      flex-shrink: 0;
+    }
+
+    .ws-tab-btn {
+      background: transparent;
+      border: none;
+      color: #cbd5e1;
+      padding: 5px 11px;
+      border-radius: 999px;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 0.73rem;
+      font-weight: 800;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .ws-tab-btn.active {
+      background: linear-gradient(135deg, #cf2030, #f59e0b);
+      color: #ffffff;
+      box-shadow: 0 0 14px rgba(245, 158, 11, 0.5);
+    }
+
+    .hud-group {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      flex-shrink: 0;
+    }
+
+    .slide-select-dropdown, .style-select-dropdown {
+      background: rgba(14, 29, 62, 0.96);
+      color: #ffe9ad;
+      border: 1px solid rgba(245, 196, 81, 0.45);
+      padding: 5px 8px;
+      border-radius: 999px;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      cursor: pointer;
+      outline: none;
+    }
+    .slide-select-dropdown { max-width: 195px; }
+    .style-select-dropdown { border-color: rgba(56, 189, 248, 0.55); color: #38bdf8; max-width: 150px; }
+
+    .pill-switcher {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      background: rgba(12, 27, 58, 0.95);
+      padding: 3px;
+      border-radius: 999px;
+      border: 1px solid rgba(56, 189, 248, 0.42);
+    }
+
+    .pill-btn {
+      background: transparent;
+      border: none;
+      color: #cbd5e1;
+      padding: 5px 8px;
+      border-radius: 999px;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 0.71rem;
+      font-weight: 700;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.2s;
+    }
+    .pill-btn.active {
+      background: linear-gradient(135deg, #38bdf8, #0284c7);
+      color: #fff;
+    }
+    .pill-btn.gold-active.active {
+      background: linear-gradient(135deg, #f5c451, #c48a10);
+      color: #030714;
+      font-weight: 800;
+    }
+
+    .speed-slider-pill {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      background: rgba(12, 27, 58, 0.95);
+      padding: 4px 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(52, 211, 153, 0.45);
+      color: #fff;
+      font-size: 0.71rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .speed-step-btn {
+      background: rgba(255, 255, 255, 0.14);
+      border: none;
+      color: #ffe9ad;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      font-weight: 800;
+      cursor: pointer;
+    }
+    .top-speed-range {
+      width: 56px;
+      accent-color: #34d399;
+      cursor: pointer;
+    }
+    .speed-val-badge {
+      color: #34d399;
+      font-weight: 800;
+      min-width: 34px;
+      text-align: center;
+    }
+
+    .btn-hud-action {
+      background: rgba(245, 196, 81, 0.16);
+      border: 1px solid rgba(245, 196, 81, 0.45);
+      color: #ffe9ad;
+      padding: 5px 10px;
+      border-radius: 999px;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 0.71rem;
+      font-weight: 800;
+      cursor: pointer;
+      white-space: nowrap;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: all 0.2s;
+    }
+    .btn-hud-action:hover, .btn-hud-action.active { background: #f5c451; color: #030714; }
+    .btn-hud-action.primary-speak {
+      background: linear-gradient(135deg, #10b981, #059669);
+      color: #fff;
+      border-color: rgba(255,255,255,0.4);
+      box-shadow: 0 0 14px rgba(16, 185, 129, 0.45);
+    }
+    .btn-hud-action.primary-speak.speaking {
+      background: linear-gradient(135deg, #f59e0b, #dc2626);
+    }
+    .btn-hud-action.crimson-info {
+      background: linear-gradient(135deg, #0284c7, #0ea5e9);
+      color: #fff;
+      border-color: #bae6fd;
+    }
+
+    .hide-count-badge {
+      display: inline-block;
+      min-width: 16px;
+      padding: 0 5px;
+      border-radius: 999px;
+      background: #fb7185;
+      color: #1a0509;
+      font-size: 0.67rem;
+      text-align: center;
+    }
+    .hide-count-badge.zero {
+      background: rgba(255,255,255,0.22);
+      color: #fff;
+    }
+
+    .deck-progress {
+      position: fixed;
+      left: 0;
+      top: var(--topbar-h);
+      height: 4px;
+      width: 0;
+      z-index: 1001;
+      background: linear-gradient(90deg, #cf2030, #f5c451, #38bdf8);
+      box-shadow: 0 0 10px #f5c451;
+      transition: width 0.45s ease;
+    }
+
+    .voice-toast {
+      position: fixed;
+      top: 70px;
+      right: 18px;
+      background: rgba(6, 19, 45, 0.96);
+      border: 2px solid #f5c451;
+      color: #ffe9ad;
+      padding: 8px 15px;
+      border-radius: 14px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      z-index: 3000;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.85);
+      opacity: 0;
+      transform: translateY(-10px);
+      pointer-events: none;
+      transition: all 0.25s ease;
+    }
+    .voice-toast.show { opacity: 1; transform: translateY(0); }
+
+    /* =========================================================================
+       TẦNG 2A: KHUNG TRÌNH CHIẾU BÀI GIẢNG 4D CHUẨN 16:9 (KHÔNG CẮT ẢNH)
+       ========================================================================= */
+    .deck-viewport {
+      position: relative;
+      width: 100vw;
+      height: calc(100vh - var(--topbar-h) - var(--bottomdock-h));
+      margin-top: var(--topbar-h);
+      z-index: 10;
+      overflow: hidden;
+    }
+    body.mode-scroll .deck-viewport {
+      height: auto !important;
+      overflow: visible !important;
+      margin-bottom: 78px;
+    }
+
+    .slides-track {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: transform;
+    }
+    body.mode-horizontal .slides-track { flex-direction: row; }
+    body.mode-vertical .slides-track { flex-direction: column; }
+    body.mode-scroll .slides-track {
+      display: block !important;
+      height: auto !important;
+      transform: none !important;
+      padding-bottom: 76px;
+    }
+
+    .slide {
+      flex: 0 0 100%;
+      width: 100vw;
+      min-width: 100vw;
+      height: calc(100vh - var(--topbar-h) - var(--bottomdock-h));
+      padding: 5px 0.6vw;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    body.mode-scroll .slide {
+      height: auto !important;
+      min-height: 85vh;
+      padding: 14px 1vw;
+      margin-bottom: 16px;
+    }
+    body.mode-scroll .slide.is-hidden { display: none !important; }
+
+    .slide-inner {
+      width: 98.8vw;
+      height: 100%;
+      background: var(--bg-card);
+      backdrop-filter: blur(22px);
+      border: 2px solid var(--border-glass);
+      border-radius: var(--card-radius);
+      padding: 0.9vh 1.2vw 1.1vh;
+      box-shadow: var(--shadow-elevated);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .slide-inner::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #cf2030, var(--gold-primary), var(--cyan-sky), var(--gold-primary), #cf2030);
+    }
+    .slide-inner.narrating-glow {
+      border-color: var(--gold-primary);
+      box-shadow: 0 0 42px rgba(245, 196, 81, 0.42), var(--shadow-elevated);
+    }
+
+    /* Thanh tiêu đề gọn tinh tế */
+    .slide-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.7vh;
+      padding-bottom: 0.5vh;
+      border-bottom: 1px solid rgba(148, 163, 184, 0.18);
+      gap: 10px;
+      flex-shrink: 0;
+    }
+    .slide-title-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+    }
+    .slide-num-pill {
+      background: linear-gradient(135deg, #cf2030, #f59e0b);
+      color: #fff;
+      font-weight: 900;
+      font-size: 0.76rem;
+      padding: 4px 10px;
+      border-radius: 999px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .slide-title {
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: clamp(1.08rem, 2.35vh, 1.78rem);
+      font-weight: 900;
+      color: var(--gold-light);
+      line-height: 1.18;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .slide-header-actions {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-shrink: 0;
+    }
+
+    .header-hide-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(251, 113, 133, 0.14);
+      border: 1px solid rgba(251, 113, 133, 0.5);
+      color: #ffe4e8;
+      font-size: 0.72rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .header-hide-label input { accent-color: #fb7185; width: 14px; height: 14px; cursor: pointer; }
+
+    .btn-slide-voice {
+      background: rgba(52, 211, 153, 0.18);
+      border: 1.5px solid rgba(52, 211, 153, 0.65);
+      color: var(--emerald-peace);
+      padding: 5px 12px;
+      border-radius: 999px;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 800;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .btn-slide-voice:hover { background: var(--emerald-peace); color: #030714; }
+
+    /* BỐ CỤC SÂN KHẤU 16:9 NGUYÊN BẢN KẾT HỢP KHAY THẺ BÀI LẬT 3D */
+    .senior-stage {
+      flex: 1;
+      min-height: 0;
+      display: grid;
+      grid-template-columns: 1.32fr 0.98fr;
+      gap: 1vw;
+      align-items: stretch;
+      transition: grid-template-columns 0.35s ease;
+    }
+    body.stage-wide-16x9 .senior-stage {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto;
+      overflow-y: auto;
+      gap: 10px;
+    }
+    body.stage-wide-16x9 .flip-cards-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .senior-panel {
+      background: var(--bg-panel);
+      border: 1px solid rgba(148, 163, 184, 0.22);
+      border-radius: 16px;
+      padding: 10px 12px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 0;
+      overflow-y: auto;
+      scrollbar-width: thin;
+      position: relative;
+      gap: 8px;
+    }
+    .senior-panel.visual-panel-16x9 {
+      padding: 10px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      background: radial-gradient(circle at 50% 50%, #0d1f3d 0%, #020611 100%);
+    }
+
+    /* KHUNG SÂN KHẤU CHUẨN NGANG 16:9 TUYỆT ĐỐI */
+    .giant-art-frame {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      max-height: calc(100vh - var(--topbar-h) - var(--bottomdock-h) - 135px);
+      margin: 0 auto;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 2px solid var(--border-glass);
+      background: radial-gradient(circle at 50% 45%, #0b1c38 0%, #02050d 100%);
+      transition: transform 0.22s ease-out, box-shadow 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 12px 38px rgba(0, 0, 0, 0.75), 0 0 25px rgba(56, 189, 248, 0.18);
+    }
+    body.style-handdrawn .giant-art-frame {
+      background: radial-gradient(circle at 50% 45%, #fffdf7 0%, #efe2c8 100%);
+    }
+
+    .pdf-image-16x9-wrapper {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .giant-art-frame img.bg-photo {
+      width: 100%;
+      height: 100%;
+      object-fit: contain !important;
+      display: block;
+      transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1), filter 0.35s ease;
+      animation: livingFloat16x9 9s ease-in-out infinite alternate;
+      filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.75));
+    }
+
+    @keyframes livingFloat16x9 {
+      0% { transform: scale(0.992) translateY(0px); }
+      50% { transform: scale(1.0) translateY(-4px); }
+      100% { transform: scale(0.995) translateY(3px); }
+    }
+
+    .giant-art-frame.zoom-focus-0 img.bg-photo { animation: none; transform: scale(1.42) translate(14%, 12%); }
+    .giant-art-frame.zoom-focus-1 img.bg-photo { animation: none; transform: scale(1.42) translate(-14%, 12%); }
+    .giant-art-frame.zoom-focus-2 img.bg-photo { animation: none; transform: scale(1.42) translate(14%, -12%); }
+    .giant-art-frame.zoom-focus-3 img.bg-photo { animation: none; transform: scale(1.42) translate(-14%, -12%); }
+
+    .fx-living-overlay-canvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 3;
+    }
+
+    .magnifier-lens-4d {
+      position: absolute;
+      width: 210px;
+      height: 210px;
+      border-radius: 50%;
+      border: 3px solid #f5c451;
+      box-shadow: 0 0 32px rgba(245, 196, 81, 0.85), inset 0 0 18px rgba(56, 189, 248, 0.5);
+      pointer-events: none;
+      z-index: 8;
+      display: none;
+      background-repeat: no-repeat;
+      background-color: #030712;
+      transform: translate(-50%, -50%);
+    }
+    .giant-art-frame.lens-active .magnifier-lens-4d { display: block; }
+
+    .hotspot-layer-4d {
+      position: absolute;
+      inset: 0;
+      z-index: 4;
+      pointer-events: none;
+    }
+    .hotspot-pin-4d {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: rgba(245, 196, 81, 0.92);
+      color: #030714;
+      font-weight: 900;
+      font-size: 0.78rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      pointer-events: auto;
+      box-shadow: 0 0 0 0 rgba(245, 196, 81, 0.8);
+      animation: hotspotPulse 2.2s infinite;
+      border: 2px solid #fff;
+      transition: transform 0.2s;
+    }
+    .hotspot-pin-4d:hover { transform: scale(1.25); background: #34d399; }
+    @keyframes hotspotPulse {
+      0% { box-shadow: 0 0 0 0 rgba(245, 196, 81, 0.85); }
+      70% { box-shadow: 0 0 0 14px rgba(245, 196, 81, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(245, 196, 81, 0); }
+    }
+
+    .visual-svg-stage {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    .visual-svg-stage svg {
+      width: 100%;
+      height: 100%;
+      max-height: 100%;
+      display: block;
+    }
+
+    /* Keyframe Animations cho Đồ họa 4D */
+    .anim-float { animation: float4D 4.2s ease-in-out infinite; }
+    .anim-pulse { animation: pulse4D 2.8s ease-in-out infinite; transform-origin: center; }
+    .anim-spin { animation: spin4D 22s linear infinite; transform-origin: center; }
+    .anim-spin-rev { animation: spinRev4D 28s linear infinite; transform-origin: center; }
+    .anim-dash { stroke-dasharray: 12 8; animation: dashFlow 1.8s linear infinite; }
+
+    @keyframes float4D {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-9px); }
+    }
+    @keyframes pulse4D {
+      0%, 100% { transform: scale(0.97); opacity: 0.85; }
+      50% { transform: scale(1.04); opacity: 1; }
+    }
+    @keyframes spin4D {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    @keyframes spinRev4D {
+      from { transform: rotate(360deg); }
+      to { transform: rotate(0deg); }
+    }
+    @keyframes dashFlow {
+      to { stroke-dashoffset: -40; }
+    }
+
+    .photo-tools {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      z-index: 9;
+      opacity: 0.35;
+      transition: opacity 0.25s;
+    }
+    .giant-art-frame:hover .photo-tools { opacity: 1; }
+    .photo-tools label, .photo-tools button {
+      background: rgba(4, 7, 17, 0.88);
+      color: #ffe9ad;
+      border: 1px solid rgba(245, 196, 81, 0.65);
+      border-radius: 999px;
+      padding: 4px 9px;
+      font-size: 0.69rem;
+      font-weight: 800;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .photo-tools label:hover, .photo-tools button:hover, .photo-tools button.active {
+      background: #f5c451;
+      color: #030714;
+    }
+
+    /* =========================================================================
+       HỆ THỐNG BỘ 4 THẺ BÀI LẬT 3D TƯƠNG PHẢN (4-CARD 3D CONTRAST FLIP DECK)
+       ========================================================================= */
+    .right-panel-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+      margin-bottom: 0.4vh;
+    }
+    .slide-tag {
+      font-size: 0.72rem;
+      font-weight: 900;
+      color: var(--gold-primary);
+      letter-spacing: 0.4px;
+    }
+    .btn-flip-all {
+      background: rgba(56, 189, 248, 0.16);
+      border: 1px solid rgba(56, 189, 248, 0.55);
+      color: var(--cyan-sky);
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 800;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.2s;
+    }
+    .btn-flip-all:hover { background: var(--cyan-sky); color: #030714; }
+
+    .flip-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.65vw;
+      margin-bottom: 0.4vh;
+      flex: 1;
+    }
+
+    .flip-card-3d {
+      cursor: pointer;
+      user-select: none;
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
+    }
+    .flip-card-inner {
+      width: 100%;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      animation: flipBounceIn 0.42s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    @keyframes flipBounceIn {
+      0% { transform: perspective(800px) rotateY(75deg) scale(0.96); opacity: 0.5; }
+      100% { transform: perspective(800px) rotateY(0deg) scale(1); opacity: 1; }
+    }
+
+    .flip-face {
+      position: relative;
+      width: 100%;
+      flex: 1;
+      border-radius: 13px;
+      padding: 10px 12px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 5px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
+      word-break: break-word;
+    }
+
+    .flip-front {
+      background: linear-gradient(145deg, rgba(207, 32, 48, 0.24), rgba(15, 23, 42, 0.96));
+      border: 1.5px solid rgba(251, 113, 133, 0.55);
+    }
+    body.style-handdrawn .flip-front {
+      background: #fff1f2;
+      border: 2px dashed #be123c;
+    }
+
+    .flip-back {
+      display: none;
+      background: linear-gradient(145deg, rgba(16, 185, 129, 0.28), rgba(12, 32, 54, 0.96));
+      border: 2px solid var(--emerald-peace);
+      box-shadow: 0 0 22px rgba(52, 211, 153, 0.28);
+    }
+    .flip-card-3d.flipped .flip-front { display: none; }
+    .flip-card-3d.flipped .flip-back { display: flex; }
+    body.style-handdrawn .flip-back {
+      background: #f0fdf4;
+      border: 2px solid #15803d;
+    }
+
+    .flip-slice-thumb {
+      width: 100%;
+      height: 54px;
+      object-fit: cover;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      margin-bottom: 4px;
+      flex-shrink: 0;
+    }
+
+    .flip-badge {
+      display: flex;
+      width: 100%;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      font-size: clamp(0.66rem, 1.25vh, 0.8rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding: 3px 9px;
+      border-radius: 999px;
+      margin-bottom: 4px;
+    }
+    .flip-front .flip-badge {
+      background: rgba(251, 113, 133, 0.2);
+      color: #fda4af;
+    }
+    .flip-back .flip-badge {
+      background: rgba(52, 211, 153, 0.24);
+      color: #6ee7b7;
+    }
+    body.style-handdrawn .flip-front .flip-badge { color: #be123c; }
+    body.style-handdrawn .flip-back .flip-badge { color: #15803d; }
+
+    .flip-title {
+      font-size: clamp(0.84rem, 1.62vh, 1.06rem);
+      font-weight: 800;
+      color: var(--gold-light);
+      line-height: 1.25;
+      margin-bottom: 2px;
+    }
+    .flip-desc {
+      font-size: clamp(0.75rem, 1.46vh, 0.95rem);
+      line-height: 1.38;
+      color: var(--text-muted);
+    }
+
+    .transform-row-large {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      background: rgba(148, 163, 184, 0.1);
+      border: 2px solid rgba(245, 196, 81, 0.45);
+      padding: 7px 12px;
+      border-radius: 13px;
+      margin-top: 3px;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+    .transform-row-large:hover {
+      border-color: var(--emerald-peace);
+      box-shadow: 0 0 18px rgba(52, 211, 153, 0.25);
+    }
+    .state-old-lg {
+      color: #fecdd3;
+      font-weight: 700;
+      font-size: clamp(0.78rem, 1.58vh, 1.08rem);
+      flex: 1;
+    }
+    .verb-bridge-lg {
+      background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark));
+      color: #030714;
+      font-weight: 900;
+      font-size: clamp(0.66rem, 1.35vh, 0.9rem);
+      padding: 4px 10px;
+      border-radius: 999px;
+      text-transform: uppercase;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .state-new-lg {
+      color: var(--emerald-peace);
+      font-weight: 800;
+      font-size: clamp(0.78rem, 1.58vh, 1.08rem);
+      flex: 1;
+      text-align: right;
+    }
+
+    .widget-box-4d {
+      margin-top: 4px;
+      padding: 7px 10px;
+      border-radius: 11px;
+      background: rgba(4, 12, 28, 0.65);
+      border: 1px solid rgba(56, 189, 248, 0.4);
+    }
+    body.style-handdrawn .widget-box-4d {
+      background: rgba(255, 255, 255, 0.75);
+      border-color: #92400e;
+    }
+
+    .interactive-btn-lg {
+      background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark));
+      color: #030714;
+      border: none;
+      padding: 7px 15px;
+      border-radius: 999px;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-weight: 800;
+      font-size: clamp(0.78rem, 1.55vh, 1.02rem);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 4px 14px rgba(245, 196, 81, 0.35);
+      transition: transform 0.2s;
+    }
+    .interactive-btn-lg:hover { transform: translateY(-2px); }
+
+    /* =========================================================================
+       TẦNG 2B: XƯỞNG CHUYỂN HÓA PDF NOTEBOOKLM SANG HTML 4D (CONVERTER STUDIO)
+       ========================================================================= */
+    .studio-workspace {
+      display: none;
+      margin-top: var(--topbar-h);
+      padding: 20px 2vw 86px;
+      max-width: 1680px;
+      margin-left: auto;
+      margin-right: auto;
+      position: relative;
+      z-index: 20;
+    }
+    body.workspace-converter #converterWorkspace { display: block; }
+    body.workspace-skill #skillWorkspace { display: block; }
+    body.workspace-converter #deckViewport,
+    body.workspace-skill #deckViewport { display: none !important; }
+
+    .studio-banner {
+      background: linear-gradient(135deg, rgba(15, 29, 62, 0.96), rgba(30, 20, 56, 0.95));
+      border: 2px solid var(--gold-primary);
+      border-radius: 20px;
+      padding: 18px 22px;
+      margin-bottom: 18px;
+      box-shadow: 0 18px 45px rgba(0,0,0,0.65);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .dropzone-card {
+      background: rgba(10, 22, 48, 0.92);
+      border: 3px dashed #38bdf8;
+      border-radius: 20px;
+      padding: 22px 20px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      margin-bottom: 18px;
+    }
+    .dropzone-card:hover, .dropzone-card.dragover {
+      border-color: #f5c451;
+      background: rgba(245, 196, 81, 0.12);
+    }
+
+    .converter-controls-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 12px;
+      margin-bottom: 16px;
+      background: rgba(8, 17, 38, 0.92);
+      border: 1px solid rgba(245, 196, 81, 0.35);
+      border-radius: 16px;
+      padding: 14px 16px;
+    }
+    .ctrl-field label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 800;
+      color: #ffe9ad;
+      margin-bottom: 4px;
+    }
+    .ctrl-field select, .ctrl-field input {
+      width: 100%;
+      background: #040d21;
+      color: #fff;
+      border: 1px solid rgba(56, 189, 248, 0.5);
+      padding: 7px 10px;
+      border-radius: 9px;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+
+    .extracted-pages-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(460px, 1fr));
+      gap: 16px;
+      margin-top: 14px;
+    }
+    .page-editor-card {
+      background: rgba(12, 24, 52, 0.95);
+      border: 1.5px solid rgba(245, 196, 81, 0.45);
+      border-radius: 16px;
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.55);
+    }
+    .page-editor-card img.thumb-preview {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: contain;
+      border-radius: 10px;
+      border: 1px solid rgba(56, 189, 248, 0.45);
+      background: #020611;
+    }
+    .page-editor-card input, .page-editor-card textarea, .page-editor-card select {
+      width: 100%;
+      background: rgba(4, 9, 22, 0.9);
+      color: #fff;
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      border-radius: 8px;
+      padding: 6px 9px;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 0.8rem;
+    }
+    .page-editor-card textarea { min-height: 54px; resize: vertical; }
+
+    /* =========================================================================
+       TẦNG 3: DẢI STUDIO CHÂN TRANG (BOTTOM DOCK)
+       ========================================================================= */
+    .bottom-studio-dock {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      height: var(--bottomdock-h);
+      background: rgba(4, 7, 17, 0.96);
+      backdrop-filter: blur(20px);
+      border-top: 2px solid var(--border-glass);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 14px;
+      gap: 10px;
+      z-index: 1000;
+    }
+
+    .dock-nav-cluster {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+    .nav-action-btn {
+      background: rgba(245, 196, 81, 0.18);
+      border: 1px solid rgba(245, 196, 81, 0.48);
+      color: #ffe9ad;
+      padding: 6px 13px;
+      border-radius: 999px;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 0.76rem;
+      font-weight: 800;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .nav-action-btn:hover { background: #f5c451; color: #030714; }
+
+    .dots-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .slide-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.28);
+      cursor: pointer;
+      transition: all 0.25s;
+    }
+    .slide-dot.active {
+      width: 22px;
+      background: #f5c451;
+      box-shadow: 0 0 10px #f5c451;
+    }
+    .slide-dot.is-hidden { display: none; }
+
+    .dock-teleprompter-stage {
+      flex: 1;
+      height: 40px;
+      background: rgba(12, 27, 58, 0.92);
+      border: 1.5px solid rgba(245, 196, 81, 0.42);
+      border-radius: 999px;
+      padding: 0 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      overflow: hidden;
+    }
+    .dock-teleprompter-stage.active-speaking {
+      border-color: #34d399;
+      box-shadow: 0 0 18px rgba(52, 211, 153, 0.35);
+    }
+    .voice-wave-bars {
+      display: flex;
+      align-items: center;
+      gap: 3px;
+      height: 18px;
+      flex-shrink: 0;
+      opacity: 0.35;
+    }
+    .dock-teleprompter-stage.active-speaking .voice-wave-bars { opacity: 1; }
+    .voice-wave-bars span {
+      width: 4px;
+      height: 8px;
+      background: #34d399;
+      border-radius: 99px;
+    }
+    .dock-teleprompter-stage.active-speaking .voice-wave-bars span {
+      animation: waveBounce 0.75s infinite ease-in-out;
+    }
+    .voice-wave-bars span:nth-child(2) { animation-delay: 0.15s; height: 14px; }
+    .voice-wave-bars span:nth-child(3) { animation-delay: 0.3s; height: 18px; background: #f5c451; }
+    .voice-wave-bars span:nth-child(4) { animation-delay: 0.45s; height: 10px; }
+    @keyframes waveBounce {
+      0%, 100% { transform: scaleY(0.4); }
+      50% { transform: scaleY(1.15); }
+    }
+
+    .teleprompter-text {
+      flex: 1;
+      font-size: clamp(0.82rem, 0.98vw, 0.98rem);
+      font-weight: 700;
+      color: #ffe9ad;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .dock-hide-check {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 11px;
+      border-radius: 999px;
+      border: 1px solid rgba(251, 113, 133, 0.55);
+      background: rgba(251, 113, 133, 0.14);
+      color: #ffe4e8;
+      font-size: 0.74rem;
+      font-weight: 800;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .dock-hide-check input { width: 15px; height: 15px; accent-color: #fb7185; cursor: pointer; }
+
+    /* MODALS */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(2, 6, 23, 0.92);
+      backdrop-filter: blur(16px);
+      z-index: 2500;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 18px;
+    }
+    .modal-backdrop.open { display: flex; }
+    .modal-card {
+      width: 100%;
+      max-width: 820px;
+      max-height: 88vh;
+      overflow-y: auto;
+      background: #081530;
+      border: 2px solid #f5c451;
+      border-radius: 24px;
+      padding: 22px 26px;
+      box-shadow: 0 25px 70px rgba(0,0,0,0.95);
+      color: #fff;
+    }
+
+    .hide-list {
+      max-height: 52vh;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-top: 10px;
+    }
+    .hide-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 9px 14px;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.14);
+      cursor: pointer;
+      font-size: 0.92rem;
+      font-weight: 700;
+    }
+    .hide-row.is-hidden { opacity: 0.58; border-style: dashed; border-color: #fb7185; }
+    .hide-row.is-hidden .hide-row-title { text-decoration: line-through; }
+
+    .code-box-pre {
+      background: #030816;
+      border: 1px solid rgba(56, 189, 248, 0.45);
+      border-radius: 12px;
+      padding: 14px;
+      font-family: Consolas, monospace;
+      font-size: 0.82rem;
+      color: #38bdf8;
+      overflow-x: auto;
+      white-space: pre-wrap;
+      line-height: 1.5;
+      margin: 10px 0;
+    }
+
+    .schedule-grid-modal {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      margin-top: 12px;
+    }
+    .sched-card {
+      background: rgba(15, 29, 60, 0.9);
+      border: 1px solid rgba(56, 189, 248, 0.45);
+      border-radius: 14px;
+      padding: 12px 14px;
+      text-align: left;
+    }
+
+    @media (max-width: 1150px) {
+      .senior-stage { grid-template-columns: 1fr; }
+      .flip-cards-grid { grid-template-columns: 1fr 1fr; }
+      .extracted-pages-grid { grid-template-columns: 1fr; }
+      .dots-wrapper { display: none; }
+    }
+  </style>
+</head>
+<body class="mode-horizontal style-cinematic workspace-deck">
+<!-- =========================================================================
+     UNIVERSAL ECOSYSTEM TOPBAR (THANH ĐIỀU HƯỚNG HỆ SINH THÁI TOÀN CẦU)
+     Tự động hiển thị trên Trang Chủ và tất cả 6 Trang Con
+     ========================================================================= -->
+<div id="universalEcosystemBar" class="sticky top-0 z-[99999] w-full bg-slate-950/95 backdrop-blur-md border-b-2 border-amber-500/50 shadow-2xl transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-2 sm:px-4 py-1.5 flex items-center justify-between gap-2 text-xs">
+    
+    <!-- BRAND / LOGO -->
+    <a href="https://lephucnhat.vn/" class="flex items-center gap-2 group flex-shrink-0 text-slate-100 hover:text-amber-300 transition">
+      <div class="w-7 h-7 rounded-full bg-gradient-to-tr from-amber-600 via-yellow-500 to-amber-300 flex items-center justify-center font-black text-slate-950 shadow-md group-hover:scale-110 transition">
+        🌟
+      </div>
+      <div class="flex flex-col">
+        <span class="font-black text-amber-300 text-xs sm:text-sm tracking-wide flex items-center gap-1">
+          HỆ SINH THÁI HAPPY RUN 108
+          <span class="hidden md:inline px-1.5 py-0.2 rounded bg-amber-500/20 text-amber-300 border border-amber-500/40 text-[10px]">6 CỔNG</span>
+        </span>
+        <span class="text-[10px] text-slate-400 hidden sm:inline">Kỷ Luật Tự Thân • Trí Tuệ Nguyên Bản • Tộc Phả & Giáo Dục</span>
+      </div>
+    </a>
+
+    <!-- LINKS STRIP (HORIZONTAL SCROLL ON MOBILE) -->
+    <nav class="flex items-center gap-1.5 overflow-x-auto py-1 scrollbar-none max-w-full">
+      
+      <!-- 0. TRANG CHỦ -->
+      <a href="https://lephucnhat.vn/" data-eco="home" class="eco-nav-link flex-shrink-0 px-2.5 py-1 rounded-lg font-bold flex items-center gap-1 text-slate-200 hover:text-white hover:bg-slate-800/80 border border-slate-700/60 transition">
+        <span>🏠</span><span>Trang Chủ</span>
+      </a>
+
+      <!-- 1. HỌ LÊ SÉC -->
+      <a href="https://lephucnhat.vn/ho-le-cong-hoa-sec/" data-eco="ho-le-sec" class="eco-nav-link flex-shrink-0 px-2.5 py-1 rounded-lg font-bold flex items-center gap-1 text-amber-300 hover:text-amber-200 bg-red-950/60 hover:bg-red-900/60 border border-red-500/60 transition">
+        <span>🏛️</span><span>Họ Lê CH Séc (27/11)</span>
+      </a>
+
+      <!-- 2. GIA PHẢ 4D -->
+      <a href="https://lephucnhat.vn/gia-pho-ho-le/" data-eco="gia-pho-4d" class="eco-nav-link flex-shrink-0 px-2.5 py-1 rounded-lg font-bold flex items-center gap-1 text-amber-300 hover:text-amber-200 bg-amber-950/50 hover:bg-amber-900/60 border border-amber-500/60 transition">
+        <span>🌳</span><span>Gia Phả 4D</span>
+      </a>
+
+      <!-- 3. GIA PHẢ LÊ VĂN -->
+      <a href="https://lephucnhat.vn/gia-pho-ho-le-van/" data-eco="gia-pho-le-van" class="eco-nav-link flex-shrink-0 px-2.5 py-1 rounded-lg font-bold flex items-center gap-1 text-slate-200 hover:text-white hover:bg-slate-800/80 border border-slate-700/60 transition">
+        <span>📜</span><span>Gia Phả Lê Văn</span>
+      </a>
+
+      <!-- 4. GIÁO ÁN TUẦN 10 -->
+      <a href="https://lephucnhat.vn/ke-hoach-tuan-10/" data-eco="giao-an-4b1" class="eco-nav-link flex-shrink-0 px-2.5 py-1 rounded-lg font-bold flex items-center gap-1 text-emerald-300 hover:text-emerald-200 bg-emerald-950/50 hover:bg-emerald-900/60 border border-emerald-500/60 transition">
+        <span>📖</span><span>Giáo Án Tuần 10 (4B1)</span>
+      </a>
+
+      <!-- 5. HỆ THỐNG AI -->
+      <a href="https://lephucnhat.vn/he-thong-ai/" data-eco="he-thong-ai" class="eco-nav-link flex-shrink-0 px-2.5 py-1 rounded-lg font-bold flex items-center gap-1 text-cyan-300 hover:text-cyan-200 bg-blue-950/50 hover:bg-blue-900/60 border border-blue-500/60 transition">
+        <span>🤖</span><span>Hệ Thống AI 3.0</span>
+      </a>
+
+      <!-- 6. BÀI GIẢNG V07 -->
+      <a href="https://lephucnhat.vn/1112_LPN_Happy_Run_Day_Do_Doi_Dech_De_Doi_Do_V07.html" data-eco="bai-giang-v07" class="eco-nav-link flex-shrink-0 px-2.5 py-1 rounded-lg font-bold flex items-center gap-1 text-purple-300 hover:text-purple-200 bg-purple-950/50 hover:bg-purple-900/60 border border-purple-500/60 transition">
+        <span>🏃</span><span>Bài Giảng V07</span>
+      </a>
+
+      <!-- NÚT MỞ MODAL 6 CỔNG -->
+      <button type="button" onclick="openEcosystemModal()" class="flex-shrink-0 px-2.5 py-1 rounded-lg font-extrabold bg-gradient-to-r from-amber-500 to-yellow-400 text-slate-950 hover:brightness-110 shadow-md flex items-center gap-1 transition">
+        <span>⚡</span><span>Mở Sơ Đồ Hệ Thống</span>
+      </button>
+
+    </nav>
+  </div>
+</div>
+
+<!-- MODAL SƠ ĐỒ TOÀN CẢNH HỆ SINH THÁI (ECOSYSTEM MODAL) -->
+<div id="ecoModalBackdrop" class="fixed inset-0 z-[100000] bg-slate-950/80 backdrop-blur-md hidden items-center justify-center p-3 sm:p-6" onclick="closeEcosystemModal()">
+  <div class="relative w-full max-w-4xl bg-slate-900 border-2 border-amber-400/80 rounded-3xl p-5 sm:p-8 shadow-2xl max-h-[92vh] overflow-y-auto" onclick="event.stopPropagation()">
+    
+    <!-- MODAL HEADER -->
+    <div class="flex items-center justify-between pb-4 border-b border-slate-800 gap-3">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-amber-500 to-yellow-300 flex items-center justify-center text-xl text-slate-950 font-black shadow-lg">
+          🌟
+        </div>
+        <div>
+          <h3 class="text-base sm:text-xl font-black text-amber-300">SƠ ĐỒ HỆ SINH THÁI HAPPY RUN 108</h3>
+          <p class="text-xs text-slate-400">Trang chủ trung tâm kết nối trực tiếp 6 Cổng chuyên đề trực tuyến</p>
+        </div>
+      </div>
+      <button type="button" onclick="closeEcosystemModal()" class="w-9 h-9 rounded-full bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white flex items-center justify-center font-bold text-lg transition">
+        ✕
+      </button>
+    </div>
+
+    <!-- 6 CARDS GRID -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5 mt-5">
+      
+      <!-- CARD 0: TRANG CHỦ -->
+      <a href="https://lephucnhat.vn/" class="group p-4 rounded-2xl bg-slate-950/80 border border-slate-700 hover:border-amber-400 hover:bg-slate-800/80 transition flex flex-col justify-between shadow-lg">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-2xl">🏠</span>
+            <span class="px-2 py-0.5 rounded text-[10px] font-black bg-blue-500/20 text-blue-300 border border-blue-500/40">TRUNG TÂM</span>
+          </div>
+          <h4 class="font-extrabold text-sm text-slate-100 group-hover:text-amber-300 transition">Trang Chủ Happy Run 108</h4>
+          <p class="text-xs text-slate-400 mt-1">Hệ điều hành rèn luyện Thân - Tâm - Trí, Buồng lái 4h30, 35 Lớp học & Bảng vàng 108.</p>
+        </div>
+        <div class="mt-3 pt-2 border-t border-slate-800/80 flex items-center justify-between text-xs font-bold text-amber-400">
+          <span>Vào Trang Chủ</span><span>→</span>
+        </div>
+      </a>
+
+      <!-- CARD 1: HỌ LÊ SÉC -->
+      <a href="https://lephucnhat.vn/ho-le-cong-hoa-sec/" class="group p-4 rounded-2xl bg-slate-950/80 border border-red-500/50 hover:border-red-400 hover:bg-red-950/30 transition flex flex-col justify-between shadow-lg">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-2xl">🏛️</span>
+            <span class="px-2 py-0.5 rounded text-[10px] font-black bg-red-500/20 text-red-300 border border-red-500/40">27/11/2026</span>
+          </div>
+          <h4 class="font-extrabold text-sm text-amber-200 group-hover:text-amber-300 transition">Cổng Họ Lê CH Séc</h4>
+          <p class="text-xs text-slate-400 mt-1">Đại Lễ Gặp Mặt 27/11/2026 tại Praha, 3 bức ảnh tư liệu gốc, đăng ký tham dự & dâng hương từ đường.</p>
+        </div>
+        <div class="mt-3 pt-2 border-t border-slate-800/80 flex items-center justify-between text-xs font-bold text-red-400">
+          <span>Khám Phá Cổng Séc</span><span>→</span>
+        </div>
+      </a>
+
+      <!-- CARD 2: GIA PHẢ 4D -->
+      <a href="https://lephucnhat.vn/gia-pho-ho-le/" class="group p-4 rounded-2xl bg-slate-950/80 border border-amber-500/50 hover:border-amber-400 hover:bg-amber-950/30 transition flex flex-col justify-between shadow-lg">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-2xl">🌳</span>
+            <span class="px-2 py-0.5 rounded text-[10px] font-black bg-amber-500/20 text-amber-300 border border-amber-500/40">12 TRẠM</span>
+          </div>
+          <h4 class="font-extrabold text-sm text-amber-200 group-hover:text-amber-300 transition">Gia Phả Họ Lê 4D</h4>
+          <p class="text-xs text-slate-400 mt-1">12 Trạm Tộc Phả khởi nguồn Gio Linh ➔ Cam Lộ (1978), 165+ nhân đinh, lật thẻ 3D & âm thanh cổ cầm.</p>
+        </div>
+        <div class="mt-3 pt-2 border-t border-slate-800/80 flex items-center justify-between text-xs font-bold text-amber-400">
+          <span>Khám Phá Tộc Phả 4D</span><span>→</span>
+        </div>
+      </a>
+
+      <!-- CARD 3: GIA PHẢ LÊ VĂN -->
+      <a href="https://lephucnhat.vn/gia-pho-ho-le-van/" class="group p-4 rounded-2xl bg-slate-950/80 border border-slate-700 hover:border-amber-400 hover:bg-slate-800/80 transition flex flex-col justify-between shadow-lg">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-2xl">📜</span>
+            <span class="px-2 py-0.5 rounded text-[10px] font-black bg-amber-500/20 text-amber-300 border border-amber-500/40">8 THẾ HỆ</span>
+          </div>
+          <h4 class="font-extrabold text-sm text-slate-100 group-hover:text-amber-300 transition">Gia Phả Họ Lê Văn</h4>
+          <p class="text-xs text-slate-400 mt-1">Tộc phổ chi phái Phường An, Cam Lộ, tra cứu danh xưng, ngày kỵ âm lịch và gia huấn tiên tổ.</p>
+        </div>
+        <div class="mt-3 pt-2 border-t border-slate-800/80 flex items-center justify-between text-xs font-bold text-amber-400">
+          <span>Xem Phả Ký Lê Văn</span><span>→</span>
+        </div>
+      </a>
+
+      <!-- CARD 4: GIÁO ÁN TUẦN 10 -->
+      <a href="https://lephucnhat.vn/ke-hoach-tuan-10/" class="group p-4 rounded-2xl bg-slate-950/80 border border-emerald-500/50 hover:border-emerald-400 hover:bg-emerald-950/30 transition flex flex-col justify-between shadow-lg">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-2xl">📖</span>
+            <span class="px-2 py-0.5 rounded text-[10px] font-black bg-emerald-500/20 text-emerald-300 border border-emerald-500/40">15 TIẾT GDPT</span>
+          </div>
+          <h4 class="font-extrabold text-sm text-emerald-200 group-hover:text-emerald-300 transition">Giáo Án Tuần 10 (Lớp 4B1)</h4>
+          <p class="text-xs text-slate-400 mt-1">Kế hoạch bài dạy chuẩn GDPT 2018, Đạo đức, Khoa học, Lịch sử - Địa lý, tích hợp Trợ lý AI sư phạm.</p>
+        </div>
+        <div class="mt-3 pt-2 border-t border-slate-800/80 flex items-center justify-between text-xs font-bold text-emerald-400">
+          <span>Mở Giáo Án Sư Phạm</span><span>→</span>
+        </div>
+      </a>
+
+      <!-- CARD 5: HỆ THỐNG AI -->
+      <a href="https://lephucnhat.vn/he-thong-ai/" class="group p-4 rounded-2xl bg-slate-950/80 border border-blue-500/50 hover:border-blue-400 hover:bg-blue-950/30 transition flex flex-col justify-between shadow-lg">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-2xl">🤖</span>
+            <span class="px-2 py-0.5 rounded text-[10px] font-black bg-blue-500/20 text-blue-300 border border-blue-500/40">MASTER XAI</span>
+          </div>
+          <h4 class="font-extrabold text-sm text-cyan-200 group-hover:text-cyan-300 transition">Hệ Thống AI 3.0</h4>
+          <p class="text-xs text-slate-400 mt-1">Bộ công cụ Master Command xAI, kịch bản tự động hóa, sáng tạo nội dung và quản trị tổ chức.</p>
+        </div>
+        <div class="mt-3 pt-2 border-t border-slate-800/80 flex items-center justify-between text-xs font-bold text-cyan-400">
+          <span>Vào Buồng Lái AI</span><span>→</span>
+        </div>
+      </a>
+
+      <!-- CARD 6: BÀI GIẢNG V07 -->
+      <a href="https://lephucnhat.vn/1112_LPN_Happy_Run_Day_Do_Doi_Dech_De_Doi_Do_V07.html" class="group p-4 rounded-2xl bg-slate-950/80 border border-purple-500/50 hover:border-purple-400 hover:bg-purple-950/30 transition flex flex-col justify-between shadow-lg">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-2xl">🏃</span>
+            <span class="px-2 py-0.5 rounded text-[10px] font-black bg-purple-500/20 text-purple-300 border border-purple-500/40">TRIẾT LÝ V07</span>
+          </div>
+          <h4 class="font-extrabold text-sm text-purple-200 group-hover:text-purple-300 transition">Bài Giảng V07: ĐÂY ĐO ĐỜI</h4>
+          <p class="text-xs text-slate-400 mt-1">Triết lý sống tự chủ, nội lực phi thường: “Đây Đo Đời, Đếch Để Đời Đo”, chuyển hóa tâm thế vững chãi.</p>
+        </div>
+        <div class="mt-3 pt-2 border-t border-slate-800/80 flex items-center justify-between text-xs font-bold text-purple-400">
+          <span>Xem Bài Giảng V07</span><span>→</span>
+        </div>
+      </a>
+
+    </div>
+
+    <!-- MODAL FOOTER -->
+    <div class="mt-6 pt-4 border-t border-slate-800 flex flex-wrap items-center justify-between gap-3 text-xs text-slate-400">
+      <span>Tác quyền & Sáng lập: <strong>Lê Phúc Nhật</strong> • Tặng cộng đồng vì sự chuyển hóa toàn diện</span>
+      <button type="button" onclick="closeEcosystemModal()" class="px-4 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold transition">
+        ✕ Đóng Sơ Đồ
+      </button>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  function openEcosystemModal() {
+    const m = document.getElementById('ecoModalBackdrop');
+    if (m) {
+      m.classList.remove('hidden');
+      m.classList.add('flex');
+    }
+  }
+  function closeEcosystemModal() {
+    const m = document.getElementById('ecoModalBackdrop');
+    if (m) {
+      m.classList.add('hidden');
+      m.classList.remove('flex');
+    }
+  }
+  // Auto highlight active nav link based on current location
+  (function highlightActiveEcosystemLink() {
+    const path = window.location.pathname.toLowerCase();
+    const links = document.querySelectorAll('.eco-nav-link');
+    links.forEach(link => {
+      const href = link.getAttribute('href').toLowerCase();
+      let isActive = false;
+      if (href.endsWith('ho-le-cong-hoa-sec/') && path.includes('ho-le-cong-hoa-sec')) isActive = true;
+      else if (href.endsWith('gia-pho-ho-le/') && path.includes('gia-pho-ho-le') && !path.includes('gia-pho-ho-le-van')) isActive = true;
+      else if (href.endsWith('gia-pho-ho-le-van/') && path.includes('gia-pho-ho-le-van')) isActive = true;
+      else if (href.endsWith('ke-hoach-tuan-10/') && path.includes('ke-hoach-tuan-10')) isActive = true;
+      else if (href.endsWith('he-thong-ai/') && path.includes('he-thong-ai')) isActive = true;
+      else if (href.includes('1112_lpn_happy_run') && path.includes('1112_lpn_happy_run')) isActive = true;
+      else if ((path === '/' || path.endsWith('/index.html') || path === '') && link.dataset.eco === 'home' && !path.includes('gia-pho') && !path.includes('ho-le') && !path.includes('ke-hoach') && !path.includes('he-thong')) isActive = true;
+
+      if (isActive) {
+        link.classList.add('ring-2', 'ring-amber-400', 'bg-amber-500/30', 'text-amber-300', 'font-black');
+        link.insertAdjacentHTML('beforeend', '<span class="ml-1 text-[10px] px-1 py-0.2 rounded bg-amber-400 text-slate-950 font-black">ĐANG XEM</span>');
+      }
+    });
+  })();
+</script>
+
+  <canvas id="cosmosCanvas"></canvas>
+  <div class="voice-toast" id="voiceToast">🏫 Kế Hoạch Bài Dạy Tuần 10 • Lớp 4B1 • GV Nguyễn Hữu Khanh</div>
+  <div class="deck-progress" id="deckProgress"></div>
+
+  <!-- =========================================================================
+       TẦNG 1: THANH CÔNG CỤ ĐỈNH
+       ========================================================================= -->
+  <header class="hud-topbar">
+    <div class="workspace-tabs" role="tablist">
+      <button class="ws-tab-btn active" id="tabBtnDeck" onclick="switchWorkspace('deck')">
+        🎬 Kế Hoạch Tuần 10 (<span id="totalSlidesBadge">10</span>)
+      </button>
+      <button class="ws-tab-btn" id="tabBtnConverter" onclick="switchWorkspace('converter')">
+        🛠️ Chỉnh Sửa &amp; Nạp PDF
+      </button>
+      <button class="ws-tab-btn" id="tabBtnSkill" onclick="switchWorkspace('skill')">
+        📋 Lịch Dạy &amp; Xuất Bản
+      </button>
+    </div>
+
+    <div class="hud-group">
+      <select class="slide-select-dropdown" id="slideJumpSelect" onchange="goToSlide(parseInt(this.value, 10), true)" aria-label="Chọn nhanh trang kế hoạch"></select>
+
+      <select class="style-select-dropdown" id="artStyleSelect" onchange="setVisualArtStyle(this.value)" aria-label="Chọn 5 phong cách nghệ thuật">
+        <option value="cinematic">🎬 Điện Ảnh 4D</option>
+        <option value="realistic">📸 Chân Thực Sắc Nét</option>
+        <option value="infographic">📊 Đồ Họa Infographic</option>
+        <option value="painting">🎨 Bức Vẽ Nghệ Thuật</option>
+        <option value="handdrawn">✍️ Viết Tay Sketchnote</option>
+      </select>
+    </div>
+
+    <div class="pill-switcher" role="group" aria-label="Chế độ lật trang">
+      <button class="pill-btn active" id="btnModeHorizontal" onclick="setDeckMode('horizontal')">↔ Ngang</button>
+      <button class="pill-btn" id="btnModeVertical" onclick="setDeckMode('vertical')">↕ Dọc</button>
+      <button class="pill-btn" id="btnModeScroll" onclick="setDeckMode('scroll')">☰ Toàn Trang</button>
+    </div>
+
+    <div class="pill-switcher" role="group" aria-label="Chọn giọng đọc Nam hoặc Nữ">
+      <button class="pill-btn gold-active active" id="btnVoiceMale" onclick="setVoiceGender('male', true)">👨 Nam</button>
+      <button class="pill-btn gold-active" id="btnVoiceFemale" onclick="setVoiceGender('female', true)">👩 Nữ</button>
+    </div>
+
+    <div class="speed-slider-pill" title="Đổi tốc độ đọc ngay tại từ đang nói">
+      <button class="speed-step-btn" onclick="stepSpeechSpeed(-0.1)">-</button>
+      <input type="range" class="top-speed-range" id="topSpeedSlider" min="0.5" max="1.8" step="0.05" value="1.0" oninput="onTopSpeedInput(this.value)" onchange="onTopSpeedCommit(this.value)" />
+      <button class="speed-step-btn" onclick="stepSpeechSpeed(0.1)">+</button>
+      <span class="speed-val-badge" id="topSpeedVal">1.00x</span>
+    </div>
+
+    <div class="speed-slider-pill" title="Nhạc nền nhẹ 432Hz & Hiệu ứng âm thanh">
+      <button class="pill-btn" id="btnMusicToggle" onclick="toggleMusic()">🎵 Nhạc</button>
+      <input type="range" id="musicVolSlider" min="0" max="100" value="35" style="width:50px; accent-color:#f5c451;" oninput="setMusicVol(this.value)" aria-label="Âm lượng nhạc nền" />
+      <button class="pill-btn active" id="btnSfxToggle" onclick="toggleSfx()">🔔 SFX</button>
+    </div>
+
+    <div class="hud-group">
+      <button class="btn-hud-action primary-speak" id="btnMasterSpeak" onclick="toggleAutoLecture()">
+        <span id="speakIcon">🎙️</span>
+        <span id="speakLabel">BẤM NÚT NÓI</span>
+      </button>
+      <button class="btn-hud-action" id="btnToggleWide16x9" onclick="toggleWide16x9Stage()" title="Phóng rộng khung ảnh 16:9 cực đại hoặc chia cột Thẻ Lật">
+        📺 Cực Đại 16:9
+      </button>
+      <button class="btn-hud-action" onclick="flipAllCardsOnCurrentSlide()" title="Lật đồng loạt toàn bộ thẻ bài tương phản (Phím R)">
+        🔄 Lật Thẻ
+      </button>
+      <button class="btn-hud-action" onclick="openHideModal()" title="Quản lý Ẩn/Hiện từng trang (Phím H)">
+        👁 Ẩn Trang <span class="hide-count-badge zero" id="hideCountBadge">0</span>
+      </button>
+      <button class="btn-hud-action crimson-info" onclick="openInfoModal()">
+        🏫 Hồ Sơ Tuần 10
+      </button>
+      <button class="btn-hud-action" onclick="exportStandaloneHtml4D()" title="Tải trọn bộ kế hoạch thành 1 file HTML 4D độc lập">
+        📥 Tải HTML 4D
+      </button>
+      <button class="btn-hud-action" onclick="toggleFullScreen()" title="Phóng toàn màn hình giữ nguyên trang hiện tại">
+        ⛶
+      </button>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       TẦNG 2A: KHUNG TRÌNH CHIẾU BÀI GIẢNG 4D (16:9 VIEWPORT)
+       ========================================================================= -->
+  <main class="deck-viewport" id="deckViewport">
+    <div class="slides-track" id="slidesTrack"></div>
+  </main>
+
+  <!-- =========================================================================
+       TẦNG 2B: XƯỞNG CHỈNH SỬA & CHUYỂN HÓA PDF SANG HTML 4D
+       ========================================================================= -->
+  <section class="studio-workspace" id="converterWorkspace" aria-label="Xưởng chỉnh sửa và chuyển hóa PDF sang HTML 4D">
+    <div class="studio-banner">
+      <div>
+        <span class="slide-tag">🛠️ XƯỞNG BIÊN TẬP KẾ HOẠCH BÀI DẠY 4D • KHUNG NGANG 16:9 CHUẨN</span>
+        <h2 style="font-size:1.55rem; font-weight:900; color:#ffe9ad; margin-top:4px;">
+          Biên Tập Nội Dung Kế Hoạch Tuần 10 – Lớp 4B1 (GV Nguyễn Hữu Khanh)
+        </h2>
+        <p style="color:#cbd5e1; font-size:0.9rem; margin-top:4px;">
+          Thầy có thể chỉnh sửa trực tiếp nội dung từng trang, thay ảnh minh họa thực tế của lớp 4B1 hoặc nạp thêm file PDF để xuất bản thành 1 file HTML 4D độc lập.
+        </p>
+      </div>
+      <div style="display:flex; gap:10px; flex-wrap:wrap;">
+        <button class="interactive-btn-lg" onclick="applyExtractedToLiveDeck()">
+          🚀 Áp Dụng Vào Trình Chiếu 4D Ngay
+        </button>
+        <button class="interactive-btn-lg" style="background:linear-gradient(135deg,#10b981,#059669); color:#fff;" onclick="exportStandaloneHtml4D()">
+          ⚡ Xuất File Kế Hoạch HTML 4D (.html)
+        </button>
+        <button class="btn-hud-action" style="padding:9px 15px;" onclick="exportSlidesJson()">
+          📦 Xuất JSON
+        </button>
+      </div>
+    </div>
+
+    <div class="converter-controls-grid">
+      <div class="ctrl-field">
+        <label for="pdfScaleSelect">1. Độ phân giải trích xuất ảnh PDF 16:9 (Scale):</label>
+        <select id="pdfScaleSelect">
+          <option value="1.5">1.5x HD Nhanh</option>
+          <option value="2.0" selected>2.0x Full HD Retina (Chuẩn Zoom 16:9)</option>
+          <option value="2.8">2.8x Ultra 4K Sắc Nét</option>
+        </select>
+      </div>
+      <div class="ctrl-field">
+        <label for="pdfCropModeSelect">2. Tỷ lệ khung hình trích xuất:</label>
+        <select id="pdfCropModeSelect">
+          <option value="full" selected>Nguyên bản 16:9 Toàn Trang</option>
+          <option value="right_half">Cắt lấy nửa phải trang PDF</option>
+          <option value="left_half">Cắt lấy nửa trái trang PDF</option>
+          <option value="center_art">Cắt khung trung tâm trang PDF</option>
+        </select>
+      </div>
+      <div class="ctrl-field">
+        <label for="pdfCourseTagInput">3. Nhãn Lớp Học &amp; Giáo Viên:</label>
+        <input type="text" id="pdfCourseTagInput" value="🏫 LỚP 4B1 • TUẦN 10 • GV NGUYỄN HỮU KHANH" />
+      </div>
+      <div class="ctrl-field">
+        <label for="pdfBridgeVerbSelect">4. Động từ cầu nối Chuyển Hóa:</label>
+        <select id="pdfBridgeVerbSelect">
+          <option value="CHUYỂN HÓA THÀNH" selected>CHUYỂN HÓA THÀNH</option>
+          <option value="KIẾN TẠO THÀNH">KIẾN TẠO THÀNH</option>
+          <option value="ỨNG DỤNG THÀNH">ỨNG DỤNG THÀNH</option>
+          <option value="NÂNG TẦM THÀNH">NÂNG TẦM THÀNH</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="dropzone-card" id="pdfDropZone" onclick="document.getElementById('pdfFileInput').click()">
+      <input type="file" id="pdfFileInput" accept="application/pdf,.pdf" style="display:none;" onchange="handlePdfFileSelect(event)" />
+      <div style="font-size:2.5rem; margin-bottom:6px;">📄 (16:9) ➔ ✨ 4D Motion + 🎴 4 Thẻ Lật</div>
+      <h3 style="font-size:1.2rem; font-weight:800; color:#ffe9ad;">
+        Nạp Thêm File PDF Slide (Hoặc Kéo &amp; Thả file .PDF vào khung này)
+      </h3>
+      <p style="color:#94a3b8; font-size:0.88rem; margin-top:5px;" id="pdfProgressStatus">
+        Hiện đang hiển thị trọn bộ 10 trang Kế hoạch bài dạy Tuần 10 lớp 4B1 (tổng hợp đầy đủ từ file PDF Bản Thiết Kế Sư Phạm và file Word giáo án chi tiết).
+      </p>
+      <div style="margin-top:12px; display:flex; justify-content:center; gap:10px; flex-wrap:wrap;" onclick="event.stopPropagation()">
+        <button class="interactive-btn-lg" onclick="document.getElementById('pdfFileInput').click()">
+          📂 Chọn File PDF Khác
+        </button>
+        <button class="btn-hud-action" style="padding:8px 14px;" onclick="addBlankCustomSlide()">
+          ➕ Thêm Trang Slide Mới
+        </button>
+        <label class="btn-hud-action" style="padding:8px 14px; cursor:pointer;">
+          📥 Nhập JSON
+          <input type="file" accept=".json,application/json" style="display:none;" onchange="importSlidesJson(event)" />
+        </label>
+        <button class="btn-hud-action" style="padding:8px 14px;" onclick="resetToDefaultMasterDeck()">
+          🔄 Khôi Phục Kế Hoạch Tuần 10 Lớp 4B1
+        </button>
+      </div>
+    </div>
+
+    <div id="extractedPagesContainer" class="extracted-pages-grid"></div>
+  </section>
+
+  <!-- =========================================================================
+       TẦNG 2C: TỔNG HỢP LỊCH DẠY TUẦN 10 & XUẤT BẢN WEB
+       ========================================================================= -->
+  <section class="studio-workspace" id="skillWorkspace" aria-label="Tổng hợp lịch dạy Tuần 10 và xuất bản">
+    <div class="studio-banner">
+      <div>
+        <span class="slide-tag">📅 TỔNG HỢP CHƯƠNG TRÌNH TUẦN 10 (09/11 – 13/11/2026) • LỚP 4B1</span>
+        <h2 style="font-size:1.55rem; font-weight:900; color:#ffe9ad; margin-top:4px;">
+          Phân Phối Chương Trình 18 Tiết &amp; Kế Hoạch Giáo Dục Hòa Nhập
+        </h2>
+      </div>
+      <button class="interactive-btn-lg" onclick="switchWorkspace('deck')">
+        🎬 Quay Lại Màn Hình Trình Chiếu 4D
+      </button>
+    </div>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px;">
+      <div class="page-editor-card">
+        <span class="slide-tag">📚 CHI TIẾT 18 TIẾT HỌC TUẦN 10 – GV NGUYỄN HỮU KHANH</span>
+        <h3 style="font-size:1.15rem; color:#ffe9ad; font-weight:800;">
+          1. Phân Bổ Môn Học &amp; Nội Dung Trọng Tâm
+        </h3>
+        <div class="code-box-pre" style="color:#e2e8f0; font-family:'Be Vietnam Pro', sans-serif; font-size:0.86rem;">• MÔN TIẾNG VIỆT (7 tiết – Ngày 9, 10, 12, 13/11/2026):
+  - Tiết 1, 2: Đọc – Bài 18: Đồng cỏ nở hoa
+  - Tiết 3: Viết – Tìm hiểu cách viết đoạn văn tưởng tượng
+  - Tiết 4: Viết – Tìm ý cho đoạn văn tưởng tượng
+  - Tiết 5: Nói và nghe – Chúng em sáng tạo
+  - Tiết 6: Đọc – Bài 19: Thanh âm của núi
+  - Tiết 7: Luyện từ và câu – Luyện tập về biện pháp nhân hóa
+
+• MÔN TOÁN (5 tiết – Ngày 9, 10, 12, 13/11/2026):
+  - Tiết 1, 2, 3: Bài 20 – Thực hành và trải nghiệm sử dụng một số đơn vị đo đại lượng (T1, T2, T3)
+  - Tiết 4, 5: Bài học STEM – Bài 4: Thế kỉ (2 tiết – Sơ đồ dòng thời gian)
+
+• MÔN KHOA HỌC (2 tiết – Ngày 9, 12, 13/11/2026):
+  - Tiết 1: Bài 11 – Âm thanh trong cuộc sống (Tiết 2: Chống ô nhiễm tiếng ồn)
+  - Tiết 2: Ôn tập Giữa học kì 1 (Sơ đồ tư duy & Nhà khoa học trẻ)
+
+• MÔN HOẠT ĐỘNG TRẢI NGHIỆM (2 tiết – Ngày 9, 13/11/2026):
+  - Tiết 1: Sinh hoạt dưới cờ – Mái trường thân yêu
+  - Tiết 2: Sinh hoạt lớp – Hành động giữ gìn trường học Xanh, Sạch, Đẹp
+
+• MÔN ĐẠO ĐỨC (1 tiết – Ngày 9/11/2026) &amp; Tích hợp nền nếp tuần.</div>
+      </div>
+
+      <div class="page-editor-card">
+        <span class="slide-tag">♿ CHIẾN LƯỢC GIÁO DỤC HÒA NHẬP (01 HS KHUYẾT TẬT VẬN ĐỘNG)</span>
+        <h3 style="font-size:1.15rem; color:#ffe9ad; font-weight:800;">
+          2. Bảng Điều Chỉnh Sư Phạm Từng Phân Môn
+        </h3>
+        <div class="code-box-pre" style="color:#6ee7b7; font-family:'Be Vietnam Pro', sans-serif; font-size:0.86rem;">✔ Vị trí ngồi: Bố trí ở đầu bàn sát lối đi (lớp học) và ghế có tựa ở vị trí thoáng (sân trường) để thuận tiện xoay trở, quan sát màn hình.
+✔ Tiếng Việt: Đọc/trả lời tại chỗ với âm lượng vừa nghe; đóng vai Giám khảo chấm điểm thi đọc diễn cảm; bạn cùng bàn hỗ trợ ghi dàn ý và giơ cao sản phẩm khi thuyết trình.
+✔ Toán học: Đảm nhận vai trò Người bấm đồng hồ, Thư ký chốt kết quả và Chủ cửa hàng / Thu ngân ngồi tại quầy trong trò chơi Đi chợ.
+✔ Bài học STEM (Thế kỉ): Là "Bộ não lên ý tưởng" sắp xếp mốc thời gian; ghép đôi cùng bạn khéo tay cắt dán; đại diện nhóm thuyết trình miệng.
+✔ Khoa học &amp; HĐTN: Gọi tên bạn tại chỗ; ghép đôi làm nhạc cụ tái chế; lau lá cây cảnh tại bàn, sắp xếp góc thư viện lớp và làm Thư ký thi đua.</div>
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <button class="interactive-btn-lg" onclick="exportStandaloneHtml4D()">
+            📥 Tải File HTML 4D Về Máy
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       TẦNG 3: DẢI STUDIO CHÂN TRANG (PHỤ ĐỀ & ĐIỀU HƯỚNG)
+       ========================================================================= -->
+  <footer class="bottom-studio-dock" aria-label="Thanh Phụ đề và Điều hướng">
+    <div class="dock-nav-cluster">
+      <button class="nav-action-btn" onclick="prevSlide()" id="btnPrevNav">◀ Trang Trước</button>
+      <div class="dots-wrapper" id="dotsContainer"></div>
+    </div>
+
+    <div class="dock-teleprompter-stage" id="teleprompterBar">
+      <div class="voice-wave-bars">
+        <span></span><span></span><span></span><span></span>
+      </div>
+      <div class="teleprompter-text" id="teleprompterText">
+        🏫 Kế Hoạch Bài Dạy Tuần 10 • Lớp 4B1 • Giáo viên thiết kế: Nguyễn Hữu Khanh
+      </div>
+      <button class="pill-btn" id="btnStopInline" style="background:rgba(251,113,133,0.25); color:#fecdd3; display:none;" onclick="stopAutoLecture()">⏹ Dừng</button>
+    </div>
+
+    <div class="dock-nav-cluster">
+      <label class="dock-hide-check" title="Phím tắt: H">
+        <input type="checkbox" id="chkShowCurrent" checked onchange="toggleShowSlide(currentSlide, this.checked)" />
+        ✓ Hiển thị trang này
+      </label>
+      <button class="nav-action-btn" onclick="nextSlide()" id="btnNextNav">Trang Tiếp ▶</button>
+    </div>
+  </footer>
+
+  <!-- MODAL QUẢN LÝ ẨN / HIỆN TỪNG TRANG (HIDE SLIDE) -->
+  <div class="modal-backdrop" id="hideModal" onclick="closeHideModal()">
+    <div class="modal-card" onclick="event.stopPropagation()">
+      <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid rgba(255,255,255,0.15); padding-bottom:10px; margin-bottom:12px;">
+        <div>
+          <span class="slide-tag">🗂️ QUẢN LÝ ẨN / HIỆN TỪNG TRANG SLIDE</span>
+          <h3 style="font-size:1.35rem; color:#ffe9ad;">Danh sách các trang hiển thị khi báo cáo chuyên môn</h3>
+          <div id="hideSummaryText" style="font-size:0.84rem; color:#cbd5e1; margin-top:4px;"></div>
+        </div>
+        <button class="btn-hud-action" onclick="closeHideModal()">✕ Đóng</button>
+      </div>
+      <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:10px;">
+        <button class="btn-hud-action" onclick="showAllSlides()">👁 Hiện tất cả các trang</button>
+        <button class="btn-hud-action" onclick="hideAllExceptCurrent()">🎯 Chỉ giữ lại trang đang xem</button>
+        <button class="btn-hud-action" onclick="invertHiddenSlides()">🔄 Đảo lựa chọn Ẩn/Hiện</button>
+      </div>
+      <div class="hide-list" id="hideListContainer"></div>
+    </div>
+  </div>
+
+  <!-- MODAL HỒ SƠ CHUYÊN MÔN TUẦN 10 - LỚP 4B1 -->
+  <div class="modal-backdrop" id="infoModal" onclick="closeInfoModal()">
+    <div class="modal-card" style="max-width:760px; border:3px solid #f5c451;" onclick="event.stopPropagation()">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; border-bottom:1px solid rgba(255,255,255,0.15); padding-bottom:10px;">
+        <span style="background:#cf2030; color:#fff; font-weight:800; font-size:0.82rem; padding:6px 14px; border-radius:999px;">
+          🏫 HỒ SƠ KẾ HOẠCH BÀI DẠY TUẦN 10 • LỚP 4B1
+        </span>
+        <button class="btn-hud-action" onclick="closeInfoModal()">✕ Đóng</button>
+      </div>
+      <h2 style="font-size:1.5rem; color:#ffe9ad; font-weight:900; margin-bottom:6px;">
+        Bản Thiết Kế Trải Nghiệm Học Tập &amp; Giáo Dục Hòa Nhập
+      </h2>
+      <p style="color:#38bdf8; font-weight:800; font-size:0.96rem; margin-bottom:12px;">
+        👨‍🏫 Giáo viên thiết kế: Nguyễn Hữu Khanh • 🗓️ Thời gian: 09/11 – 13/11/2026 • ⏱️ Tổng thời lượng: 18 Tiết
+      </p>
+      <div class="schedule-grid-modal">
+        <div class="sched-card">
+          <div style="color:#38bdf8; font-weight:900; font-size:0.95rem;">📘 Tiếng Việt (7 Tiết)</div>
+          <p style="font-size:0.82rem; color:#e2e8f0; margin-top:4px;">Bài 18: Đồng cỏ nở hoa (4t) &amp; Bài 19: Thanh âm của núi (3t). Rèn trí tưởng tượng, cảm thụ văn hóa Tây Bắc và biện pháp nhân hóa.</p>
+        </div>
+        <div class="sched-card">
+          <div style="color:#fb923c; font-weight:900; font-size:0.95rem;">📐 Toán học (5 Tiết)</div>
+          <p style="font-size:0.82rem; color:#e2e8f0; margin-top:4px;">Bài 20: Đơn vị đo đại lượng (3t) &amp; Bài học STEM Bài 4: Thế kỉ (2t – Sơ đồ dòng thời gian lịch sử).</p>
+        </div>
+        <div class="sched-card">
+          <div style="color:#34d399; font-weight:900; font-size:0.95rem;">🔬 Khoa học (2 Tiết)</div>
+          <p style="font-size:0.82rem; color:#e2e8f0; margin-top:4px;">Bài 11: Âm thanh trong cuộc sống (Chống ô nhiễm tiếng ồn) &amp; Ôn tập Giữa học kì 1 bằng Sơ đồ tư duy.</p>
+        </div>
+        <div class="sched-card">
+          <div style="color:#facc15; font-weight:900; font-size:0.95rem;">🌱 HĐTN (2 Tiết) &amp; Đạo đức (1t)</div>
+          <p style="font-size:0.82rem; color:#e2e8f0; margin-top:4px;">SHDC: Mái trường thân yêu &amp; SHL: Hành động giữ gìn trường học Xanh – Sạch – Đẹp.</p>
+        </div>
+      </div>
+      <div style="margin-top:14px; background:rgba(52,211,153,0.12); border:1px solid #34d399; border-radius:12px; padding:12px; font-size:0.86rem; color:#a7f3d0;">
+        <strong>♿ Điểm sáng Giáo dục hòa nhập:</strong> Toàn bộ 18 tiết đều có phương án điều chỉnh riêng cho 01 học sinh khuyết tật vận động, đảm bảo 100% học sinh được tham gia chủ động, an toàn và bình đẳng.
+      </div>
+    </div>
+  </div>
+
+  <script>
+    if (window.pdfjsLib) {
+      window.pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+    }
+
+    const DEFAULT_MASTER_SLIDES = /*__DEFAULT_SLIDES_START__*/[{"id": 1, "tag": "🏫 KẾ HOẠCH BÀI DẠY TUẦN 10 • LỚP 4B1", "title": "01. KẾ HOẠCH BÀI DẠY TUẦN 10 – LỚP 4B1", "flipCards": [{"frontTitle": "THỜI GIAN & QUY MÔ", "frontText": "Thực hiện từ ngày 09/11 đến 13/11/2026 tại lớp 4B1 – Giáo viên thiết kế: Nguyễn Hữu Khanh.", "backTitle": "TỔNG THỜI LƯỢNG 18 TIẾT", "backText": "Phân bổ khoa học qua 4 môn chủ đạo: Tiếng Việt (7t), Toán học (5t), Khoa học (2t), HĐTN (2t) & Đạo đức."}, {"frontTitle": "DẠY HỌC TRUYỀN THỐNG", "frontText": "Truyền đạt lý thuyết một chiều từ sách giáo khoa, học sinh thụ động ghi chép trên lớp.", "backTitle": "THIẾT KẾ TRẢI NGHIỆM", "backText": "100% tiết học được thiết kế để học sinh trực tiếp kiến tạo, đóng vai và thao tác thực tế."}, {"frontTitle": "RÀO CẢN VẬN ĐỘNG", "frontText": "Lớp có 01 học sinh khuyết tật vận động dễ gặp khó khăn khi di chuyển hoặc cắt dán thủ công.", "backTitle": "GIÁO DỤC HÒA NHẬP 100%", "backText": "Cá nhân hóa từng hoạt động để 100% học sinh có không gian tỏa sáng an toàn, bình đẳng."}, {"frontTitle": "MỤC TIÊU TUẦN HỌC", "frontText": "Hoàn thành đúng tiến độ chương trình Tuần 10 theo quy định của Bộ GD&ĐT.", "backTitle": "PHÁT TRIỂN TOÀN DIỆN", "backText": "Hình thành đồng bộ 5 trụ cột: Năng lực giải quyết vấn đề, Ngôn ngữ, Khoa học & Toán, Nhân ái, Trách nhiệm."}], "bullets": ["🔹 <strong>Thông tin chung:</strong> Kế hoạch bài dạy <strong>Tuần 10 – Lớp 4B1</strong> (Từ 09/11/2026 đến 13/11/2026) • Tổng số: <strong>18 Tiết</strong> • Giáo viên thiết kế: <strong>Nguyễn Hữu Khanh</strong>.", "🔹 <strong>Triết lý xuyên suốt:</strong> Kết hợp chặt chẽ giữa <em>Dạy học trải nghiệm thực tiễn</em> và <em>Chiến lược Giáo dục hòa nhập</em> cho học sinh khuyết tật vận động."], "stateOld": "📘 Giáo án truyền thống nặng về truyền thụ lý thuyết", "bridgeVerb": "CHUYỂN HÓA THÀNH", "stateNew": "🌟 Bản thiết kế trải nghiệm & Giáo dục hòa nhập 4B1", "image": "", "visualTheme": "week10_overview", "widgetType": "none", "script": "Chào mừng quý thầy cô đến với Kế hoạch bài dạy Tuần 10 lớp 4B1, thời gian thực hiện từ ngày 9 tháng 11 đến ngày 13 tháng 11 năm 2026, do thầy giáo Nguyễn Hữu Khanh thiết kế. Với tổng thời lượng 18 tiết, bản kế hoạch này kết tinh trọn vẹn tinh thần trải nghiệm thực tiễn và giáo dục hòa nhập, không bỏ lại bất kỳ học sinh nào phía sau."}, {"id": 2, "tag": "📊 PHÂN BỔ THỜI LƯỢNG 18 TIẾT", "title": "02. BỨC TRANH TOÀN CẢNH TUẦN 10", "flipCards": [{"frontTitle": "TIẾNG VIỆT (7 TIẾT)", "frontText": "Bài 18: Đồng cỏ nở hoa (4t) & Bài 19: Thanh âm của núi (3t).", "backTitle": "TRỌNG TÂM NGÔN NGỮ", "backText": "Phát triển trí tưởng tượng, cảm thụ văn hóa Tây Bắc, luyện biện pháp nhân hóa và kỹ năng thuyết trình."}, {"frontTitle": "TOÁN HỌC (5 TIẾT)", "frontText": "Sử dụng đơn vị đo đại lượng (3t) & Bài học STEM: Thế kỉ (2t).", "backTitle": "TRỌNG TÂM THỰC TIỄN", "backText": "Đọc cân đồng hồ, bấm giờ, tính diện tích đồ vật, trò chơi Đi chợ đổi tiền và chế tạo Sơ đồ dòng thời gian."}, {"frontTitle": "KHOA HỌC (2 TIẾT)", "frontText": "Bài 11: Âm thanh trong cuộc sống (T2) & Ôn tập Giữa học kì 1.", "backTitle": "TRỌNG TÂM TƯ DUY", "backText": "Đề xuất giải pháp chống ô nhiễm tiếng ồn và hệ thống hóa kiến thức Nước – Không khí – Ánh sáng – Âm thanh bằng Mindmap."}, {"frontTitle": "HĐTN (2 TIẾT) & ĐẠO ĐỨC", "frontText": "SHDC: Mái trường thân yêu & SHL: Giữ gìn trường học Xanh - Sạch - Đẹp.", "backTitle": "TRỌNG TÂM TRÁCH NHIỆM", "backText": "Lập kế hoạch vệ sinh lớp học, tuân thủ quy trình an toàn lao động và đánh giá chéo cuối tuần."}], "bullets": ["🔹 <strong>Cấu trúc 18 Tiết Tuần 10:</strong> Tiếng Việt (7 tiết), Toán học (5 tiết), Khoa học (2 tiết), Hoạt động trải nghiệm (2 tiết) và Đạo đức.", "🔹 Mỗi phân môn đều gắn liền với sản phẩm trực quan, trò chơi đóng vai và nhiệm vụ điều chỉnh riêng cho học sinh hòa nhập."], "stateOld": "📋 Phân bổ các tiết học rời rạc theo từng môn", "bridgeVerb": "KẾT NỐI THÀNH", "stateNew": "🎯 Hệ sinh thái 18 tiết liên môn giàu trải nghiệm", "image": "", "visualTheme": "donut_18_periods", "widgetType": "none", "script": "Bức tranh toàn cảnh Tuần 10 gồm 18 tiết học được phân bổ cân đối: Tiếng Việt 7 tiết nuôi dưỡng trí tưởng tượng và bản sắc văn hóa; Toán học 5 tiết đưa con số vào đời sống cùng dự án STEM; Khoa học 2 tiết giải quyết ô nhiễm tiếng ồn và ôn tập giữa kì; cùng Hoạt động trải nghiệm và Đạo đức rèn ý thức trách nhiệm với mái trường."}, {"id": 3, "tag": "🏛️ TRIẾT LÝ SƯ PHẠM LỚP 4B1", "title": "03. BA TRỤ CỘT SƯ PHẠM CỐT LÕI", "flipCards": [{"frontTitle": "TRỤ CỘT 1: NĂNG LỰC THỰC TIỄN", "frontText": "Học sinh thường chỉ làm bài tập trên giấy, thiếu trải nghiệm đo lường và giao dịch thật.", "backTitle": "CHUYỂN HÓA KỸ NĂNG SỐNG", "backText": "Tự cân vật nặng trên 1 yến, đo diện tích biển trại, đóng vai đi chợ tính tiền thừa và làm đồ chơi tái chế."}, {"frontTitle": "TRỤ CỘT 2: TƯ DUY SÁNG TẠO", "frontText": "Dễ rập khuôn theo văn mẫu hoặc học thuộc lòng máy móc.", "backTitle": "KHAI PHÓNG TRÍ TƯỞNG TƯỢNG", "backText": "Sáng tạo lời thoại mới, viết tiếp hồi kết cổ tích, hóa thân nghệ nhân người Mông và vẽ sơ đồ tư duy."}, {"frontTitle": "TRỤ CỘT 3: GIÁO DỤC HÒA NHẬP", "frontText": "Học sinh khuyết tật vận động dễ bị đứng ngoài các trò chơi chạy nhảy hay cắt dán.", "backTitle": "100% HÒA NHẬP & TỎA SÁNG", "backText": "Thiết kế vai trò Giám khảo, Thu ngân tại quầy, Bộ não lên ý tưởng STEM và Thư ký thi đua."}, {"frontTitle": "TRUNG TÂM LỚP HỌC", "frontText": "Giáo viên giữ vai trò thuyết giảng chính trên bục giảng.", "backTitle": "HỌC SINH 4B1 LÀM CHỦ", "backText": "Thầy Nguyễn Hữu Khanh đóng vai trò người thiết kế, kiến tạo sân khấu an toàn cho từng học trò."}], "bullets": ["🔹 <strong>Ba vòng tròn hội tụ:</strong> <em>Năng lực thực tiễn</em> + <em>Tư duy sáng tạo</em> + <em>Giáo dục hòa nhập</em> đặt <strong>Học sinh 4B1</strong> làm trung tâm.", "🔹 Mọi hoạt động đều chú trọng phát triển đồng thời năng lực đặc thù, năng lực chung và 3 phẩm chất: Nhân ái – Chăm chỉ – Trách nhiệm."], "stateOld": "🧱 Dạy học đồng loạt theo một khuôn mẫu chung", "bridgeVerb": "KIẾN TẠO THÀNH", "stateNew": "⭐ Ba trụ cột sư phạm nâng đỡ mọi học sinh 4B1", "image": "", "visualTheme": "three_pillars_venn", "widgetType": "none", "script": "Trái tim của bản thiết kế sư phạm Tuần 10 nằm ở ba trụ cột cốt lõi hội tụ quanh học sinh lớp 4B1: Một là Năng lực thực tiễn gắn liền với đời sống; Hai là Tư duy sáng tạo khơi mở bản sắc cá nhân; và Ba là Giáo dục hòa nhập đảm bảo một trăm phần trăm học sinh đều có cơ hội tỏa sáng an toàn và bình đẳng."}, {"id": 4, "tag": "📖 TIẾNG VIỆT • BÀI 18 (TIẾT 1, 2, 3, 4)", "title": "04. ĐỒNG CỎ NỞ HOA & ĐOẠN VĂN TƯỞNG TƯỢNG", "flipCards": [{"frontTitle": "ĐỌC: ĐỒNG CỎ NỞ HOA (T1–2)", "frontText": "Khởi động qua video họa sĩ Tô Ngọc Vân; luyện đọc diễn cảm câu chuyện về cô bé Bống mê vẽ.", "backTitle": "TÔN TRỌNG GÓC NHÌN RIÊNG", "backText": "Trân trọng nét vẽ hồn nhiên ('mặt tròn như đồng xu, mắt lá răm'); hiểu đam mê hội họa mang lại niềm vui."}, {"frontTitle": "TÌM HIỂU CÁCH VIẾT (TIẾT 3)", "frontText": "Phân tích đoạn văn của Vũ Tú Nam: Cách thêm lời thoại của Công và Chích chòe.", "backTitle": "3 KỸ THUẬT TƯỞNG TƯỢNG", "backText": "Bổ sung chi tiết kể/tả, thêm lời thoại nhân vật, hoặc thay đổi/viết tiếp đoạn kết đầy bất ngờ."}, {"frontTitle": "TÌM Ý ĐOẠN VĂN (TIẾT 4)", "frontText": "Lựa chọn truyện yêu thích (VD: Sự tích cây vú sữa) và thảo luận nhóm 4 hoàn thiện dàn ý.", "backTitle": "SÁNG TẠO KẾT THÚC MỚI", "backText": "Viết kết thúc hạnh phúc mẹ con đoàn tụ hoặc mở ra góc nhìn giấc mơ thức tỉnh đầy nhân văn."}, {"frontTitle": "HỖ TRỢ HÒA NHẬP (BÀI 18)", "frontText": "Học sinh khuyết tật vận động gặp khó khăn khi di chuyển lên bảng hoặc viết bài dài.", "backTitle": "GIÁM KHẢO & NÓI Ý TƯỞNG", "backText": "Ngồi đầu bàn làm Giám khảo thi đọc diễn cảm; trình bày ý tưởng bằng lời để nhóm trưởng ghi chép."}], "bullets": ["🔹 <strong>Tiết 1–2 (Đọc):</strong> Luyện đọc đúng từ khó (<em>xấp tranh, tặc lưỡi, trầm trồ</em>), cảm nhận lời khen của họa sĩ Phan: <em>“Vẽ như đồng cỏ đến kì nở hoa!”</em>.", "🔹 <strong>Tiết 3–4 (Viết):</strong> Thực hành tìm ý và viết đoạn văn tưởng tượng dựa trên câu chuyện đã đọc/nghe theo nhóm 4 và cá nhân."], "stateOld": "✍️ Chép lại cốt truyện có sẵn theo lối mòn", "bridgeVerb": "KHAI PHÓNG THÀNH", "stateNew": "🎨 Bay bổng trí tưởng tượng & Trân trọng nét riêng", "image": "", "visualTheme": "tv_meadow_painting", "widgetType": "none", "script": "Trong 4 tiết đầu môn Tiếng Việt với Bài 18 Đồng cỏ nở hoa, học sinh được truyền cảm hứng từ danh họa Tô Ngọc Vân và cô bé Bống để trân trọng góc nhìn riêng của mỗi người. Tiếp đó, các em học cách thêm lời thoại, miêu tả và sáng tạo đoạn kết mới cho truyện cổ tích, với sự hỗ trợ ghi chép tận tình dành cho bạn khuyết tật vận động."}, {"id": 5, "tag": "🏔️ TIẾNG VIỆT • NÓI VÀ NGHE & BÀI 19 (TIẾT 5, 6, 7)", "title": "05. CHÚNG EM SÁNG TẠO & THANH ÂM CỦA NÚI", "flipCards": [{"frontTitle": "NÓI & NGHE: CHÚNG EM SÁNG TẠO", "frontText": "Khởi động bài hát Chiếc đèn ông sao; giới thiệu đồ chơi tự làm (máy bay giấy, diều, đèn ông sao).", "backTitle": "4 TIÊU CHÍ THUYẾT TRÌNH", "backText": "Đánh giá qua: 1. Hình thức sản phẩm, 2. Ngôn ngữ cơ thể, 3. Từ ngữ miêu tả, 4. Tương tác phản hồi."}, {"frontTitle": "ĐỌC: THANH ÂM CỦA NÚI", "frontText": "Khám phá nghệ thuật thổi khèn của người Mông vùng Tây Bắc qua 4 đoạn văn giàu cảm xúc.", "backTitle": "BÁU VẬT DI SẢN DÂN TỘC", "backText": "Đóng vai nghệ nhân người Mông giới thiệu cây khèn 6 ống trúc tượng trưng tình anh em tụ hợp."}, {"frontTitle": "LUYỆN TẬP NHÂN HÓA", "frontText": "Khởi động trò chơi Truyền điện; nhận diện sự vật, hiện tượng thiên nhiên được nhân hóa.", "backTitle": "THỔI HỒN VÀO CÂU VĂN", "backText": "Viết 2–3 câu văn nhân hóa sinh động (VD: 'Ông Mặt Trời đạp xe qua núi') và thi Ai nhanh – Ai đúng."}, {"frontTitle": "HÒA NHẬP SÂN KHẤU LỚP HỌC", "frontText": "Hạn chế di chuyển lên bục giảng hoặc đứng lên ngồi xuống nhiều lần.", "backTitle": "TRỌNG TÀI & BAN GIÁM KHẢO", "backText": "Bạn cùng bàn giơ cao sản phẩm khi em thuyết trình; em làm Ban Giám khảo và Trọng tài tại chỗ."}], "bullets": ["🔹 <strong>Tiết 5 (Nói và nghe):</strong> Cuộc thi <em>“Ai là người sáng tạo nhất?”</em> rèn bản lĩnh tự tin giới thiệu quy trình làm đồ chơi thủ công.", "🔹 <strong>Tiết 6–7 (Bài 19):</strong> Cảm nhận tiếng khèn Tây Bắc trong <em>Thanh âm của núi</em> và thực hành biện pháp nghệ thuật <em>Nhân hóa</em>."], "stateOld": "😶 Rụt rè khi đứng nói trước đám đông", "bridgeVerb": "TỎA SÁNG THÀNH", "stateNew": "🎤 Nghệ sĩ nhí tự tin giới thiệu văn hóa & sản phẩm", "image": "", "visualTheme": "tv_khen_mountain", "widgetType": "none", "script": "Ba tiết Tiếng Việt tiếp theo mở ra không gian sân khấu rực rỡ: các em tự tay làm đồ chơi và thuyết trình quy trình sáng tạo; hóa thân thành nghệ nhân người Mông giới thiệu cây khèn sáu ống trúc trong bài Thanh âm của núi; và thổi hồn cho cảnh vật qua biện pháp nhân hóa."}, {"id": 6, "tag": "📐 TOÁN HỌC • BÀI 20 (TIẾT 1, 2, 3)", "title": "06. ĐƠN VỊ ĐO ĐẠI LƯỢNG & TRÒ CHƠI ĐI CHỢ", "flipCards": [{"frontTitle": "TIẾT 1: KHỐI LƯỢNG & THỜI GIAN", "frontText": "Đọc cân đồng hồ thực tế vật nặng trên 1 yến (5 yến, đủ 1 tạ) và đo diện tích bìa (9 dm²).", "backTitle": "THỰC HÀNH BẤM GIỜ", "backText": "Dùng đồng hồ bấm giờ đo tốc độ lọc nước (250 giây) và luyện căn chuẩn mốc 20–30 giây."}, {"frontTitle": "TIẾT 2: DIỆN TÍCH & TIỀN TỆ", "frontText": "Chọn đơn vị đo biển trại hợp lý (40 dm²); nhận diện tờ tiền mệnh giá 100.000đ, 200.000đ, 500.000đ.", "backTitle": "TRÒ CHƠI ĐÓNG VAI ĐI CHỢ", "backText": "Thực hành nhẩm tổng tiền mua đồ dùng học tập, tính tiền thừa và xử lý tình huống đổi tiền lẻ."}, {"frontTitle": "TIẾT 3: VẬN DỤNG TỔNG HỢP", "frontText": "Tính tiền vé trò chơi Phi tiêu theo số người trong gia đình; so sánh cân nặng động vật hoang dã.", "backTitle": "CHIA HÌNH & MỐC THẾ KỈ", "backText": "Tính diện tích khu vườn ghép (192 m²) và xác định cây cổ thụ trồng năm 1864 thuộc thế kỉ XIX."}, {"frontTitle": "VAI TRÒ THU NGÂN HÒA NHẬP", "frontText": "Trò chơi đi chợ yêu cầu các nhóm di chuyển qua lại giữa các quầy hàng.", "backTitle": "CHỦ CỬA HÀNG TẠI QUẦY", "backText": "Bố trí học sinh khuyết tật vận động ngồi tại quầy làm Chủ cửa hàng / Thu ngân và Người bấm đồng hồ."}], "bullets": ["🔹 <strong>Gắn Toán học với thực tiễn:</strong> Học sinh trực tiếp thao tác trên cân đồng hồ, đồng hồ bấm giờ, thước đo diện tích và mô hình tiền Việt Nam.", "🔹 <strong>Tư duy giải quyết vấn đề:</strong> Biết so sánh giá mua lẻ từng dụng cụ (ê ke, thước đo độ) với mua trọn bộ để tối ưu chi phí."], "stateOld": "🔢 Làm bài tập đổi đơn vị khô khan trên bảng", "bridgeVerb": "ỨNG DỤNG THÀNH", "stateNew": "🛒 Kỹ năng đo lường, quản lý tiền tệ & tính toán đời sống", "image": "", "visualTheme": "math_measurement_market", "widgetType": "market_sim", "script": "Trong 3 tiết Toán thực hành sử dụng đơn vị đo đại lượng, các con số bước ra khỏi trang sách để đi vào đời sống. Học sinh lớp 4B1 được thực hành cân vật nặng trên một yến, bấm giờ lọc nước, ước lượng diện tích biển trại và đặc biệt là nhập vai Chủ cửa hàng, Thu ngân trong trò chơi Đi chợ tính tiền thừa."}, {"id": 7, "tag": "🚀 TOÁN HỌC TÍCH HỢP STEM • BÀI 4 (2 TIẾT)", "title": "07. DỰ ÁN STEM: SƠ ĐỒ DÒNG THỜI GIAN THẾ KỈ", "flipCards": [{"frontTitle": "BƯỚC 1: QUY ĐỔI THẾ KỈ", "frontText": "Nắm vững quy tắc 1 thế kỉ = 100 năm; quy đổi chính xác các mốc năm lịch sử sang chữ số La Mã.", "backTitle": "THỬ THÁCH THẾ KỈ", "backText": "Năm 40 (TK I), 938 (TK X), 1010 (TK XI), 1698 (TK XVII), 1885 (TK XIX), 1945 (TK XX), 2012 (TK XXI)."}, {"frontTitle": "BƯỚC 2: THEO DÒNG LỊCH SỬ", "frontText": "Khởi động qua bài hát về các triều đại Đinh, Lý, Trần, Lê và cội nguồn Con Rồng Cháu Tiên.", "backTitle": "GẮN THẺ SỰ KIỆN VÀNG", "backText": "Sắp xếp đúng trình tự Lý Thái Tổ dời đô (1010), Bác Hồ ra đi tìm đường cứu nước (1911), Tuyên ngôn Độc lập (1945)."}, {"frontTitle": "BƯỚC 3: CHẾ TẠO MÔ HÌNH", "frontText": "Vật liệu đơn giản: 4 tờ giấy A4, 10 tờ giấy màu, keo dán, bút màu, kéo và thước kẻ.", "backTitle": "3 TIÊU CHÍ SẢN PHẨM STEM", "backText": "1. Đúng mốc năm & thế kỉ; 2. Trực quan, dễ nhìn; 3. Chắc chắn, đảm bảo tính thẩm mỹ cao."}, {"frontTitle": "BƯỚC 4: THI KỂ CHUYỆN LỊCH SỬ", "frontText": "Trưng bày sản phẩm trước lớp và tổ chức trò chơi 'Đố bạn: Thế kỉ nào?' & đánh giá đồng đẳng.", "backTitle": "BỘ NÃO Ý TƯỞNG HÒA NHẬP", "backText": "Học sinh khuyết tật vận động làm 'Bộ não lên ý tưởng' sắp xếp mốc thời gian và đại diện thuyết trình."}], "bullets": ["🔹 <strong>Tích hợp liên môn 4 trong 1:</strong> <strong>Toán học</strong> (Thế kỉ) + <strong>Lịch sử</strong> (Các dấu mốc dựng nước & giữ nước) + <strong>Mĩ thuật</strong> (Thiết kế mô hình) + <strong>Ngôn ngữ</strong> (Thuyết trình).", "🔹 Rèn luyện kỹ năng làm việc nhóm 4–6 học sinh, từ khâu phác thảo bản vẽ đến chế tạo và bảo vệ sản phẩm."], "stateOld": "📅 Ghi nhớ rời rạc các năm lịch sử khó thuộc", "bridgeVerb": "KIẾN TẠO THÀNH", "stateNew": "🏛️ Sơ đồ dòng thời gian STEM trực quan & sống động", "image": "", "visualTheme": "stem_timeline_project", "widgetType": "century_calc", "script": "Hai tiết Toán tích hợp STEM Bài 4 Thế kỉ kết nối bốn lĩnh vực Toán, Lịch sử, Mĩ thuật và Ngôn ngữ. Qua bốn bước từ quy đổi thế kỉ đến chế tạo mô hình sơ đồ dòng thời gian và thi kể chuyện lịch sử, học sinh khuyết tật vận động phát huy tối đa vai trò bộ não lên ý tưởng và đại diện thuyết trình."}, {"id": 8, "tag": "🔬 KHOA HỌC • BÀI 11 & ÔN TẬP GIỮA KÌ 1 (2 TIẾT)", "title": "08. CHỐNG Ô NHIỄM TIẾNG ỒN & NHÀ KHOA HỌC TRẺ", "flipCards": [{"frontTitle": "NHẬN DIỆN Ô NHIỄM TIẾNG ỒN", "frontText": "Phân tích 3 nguồn tiếng ồn thực tế: Máy khoan bê tông (H3a), Máy cưa gỗ (H3b), Động cơ xe cộ (H3c).", "backTitle": "GIẢI PHÁP CÁCH ÂM THỰC TIỄN", "backText": "Đóng cửa kính, đeo thiết bị bịt tai bảo hộ, dựng vách cách âm và trồng nhiều cây xanh ven đường."}, {"frontTitle": "CHỦ ĐỀ 1: CHẤT (NƯỚC & KHÍ)", "frontText": "Tổng hợp bằng sơ đồ tư duy: Tính chất, sự chuyển thể của nước và vòng tuần hoàn trong tự nhiên.", "backTitle": "BẢO VỆ NGUỒN NƯỚC & BẦU KHÍ", "backText": "Vai trò của không khí với sự sống, sự cháy; nguyên nhân ô nhiễm và kỹ năng phòng chống gió bão."}, {"frontTitle": "CHỦ ĐỀ 2: ÁNH SÁNG & ÂM THANH", "frontText": "Phân biệt vật chiếu sáng – vật được chiếu sáng; vật cho ánh sáng truyền qua và vật cản sáng.", "backTitle": "SỰ LAN TRUYỀN ÂM THANH", "backText": "Giải thích cơ chế mắt nhìn thấy vật và ứng dụng làm nhạc cụ phát ra âm thanh từ vật liệu tái chế."}, {"frontTitle": "NHÀ KHOA HỌC TRẺ HÒA NHẬP", "frontText": "Bốc thăm 6 phiếu thí nghiệm chứng minh tính chất của Nước, Không khí, Ánh sáng và Âm thanh.", "backTitle": "TUYÊN TRUYỀN VIÊN NHÍ", "backText": "Học sinh hòa nhập gọi tên bạn tại chỗ trong trò chơi 'Bắn tên' và thuyết trình tranh bảo vệ môi trường."}], "bullets": ["🔹 <strong>Tiết 1 (Bài 11 – T2):</strong> Thảo luận kỹ thuật <em>Khăn trải bàn</em> đề xuất biện pháp giảm tiếng ồn và giữ trật tự khi tham quan bảo tàng.", "🔹 <strong>Tiết 2 (Ôn tập Giữa kì 1):</strong> Hệ thống hóa kiến thức bằng <em>Sơ đồ tư duy</em> và thi tài qua 6 phiếu thí nghiệm <em>“Nhà khoa học trẻ”</em>."], "stateOld": "🔊 Chịu đựng tiếng ồn & ôn tập lý thuyết rời rạc", "bridgeVerb": "HỆ THỐNG HÓA THÀNH", "stateNew": "🧪 Tư duy Nhà khoa học trẻ & Tuyên truyền viên xanh", "image": "", "visualTheme": "science_sound_mindmap", "widgetType": "noise_shield_sim", "script": "Ở môn Khoa học, học sinh nhận diện tác hại của tiếng máy khoan, máy cưa, còi xe và đề xuất các giải pháp chống ô nhiễm tiếng ồn thiết thực. Sang tiết ôn tập giữa học kì một, cả lớp cùng vẽ sơ đồ tư duy tổng hợp hai chủ đề Chất và Năng lượng, rồi tranh tài sôi nổi qua trò chơi Nhà khoa học trẻ."}, {"id": 9, "tag": "🌱 HOẠT ĐỘNG TRẢI NGHIỆM & ĐẠO ĐỨC", "title": "09. HÀNH ĐỘNG GIỮ GÌN TRƯỜNG HỌC XANH – SẠCH – ĐẸP", "flipCards": [{"frontTitle": "BƯỚC 1: SINH HOẠT DƯỚI CỜ", "frontText": "Biểu diễn văn nghệ chủ đề 'Mái trường mến yêu' và giao lưu cùng thầy cô Tổng phụ trách Đội.", "backTitle": "KHỞI ĐỘNG Ý TƯỞNG XANH", "backText": "Lắng nghe thông điệp đầu tuần và chia sẻ các sáng kiến chăm sóc cảnh quan trường lớp."}, {"frontTitle": "BƯỚC 2: ĐÁNH GIÁ & LẬP KẾ HOẠCH", "frontText": "Lớp trưởng điều hành đánh giá nền nếp, thi đua cờ đỏ tuần cũ và biểu quyết mục tiêu tuần mới.", "backTitle": "PHÂN CÔNG & AN TOÀN", "backText": "Phân công dụng cụ từng tổ; thống nhất quy trình đeo khẩu trang và vẩy nước trước khi quét sân."}, {"frontTitle": "BƯỚC 3: THỰC THI HÀNH ĐỘNG", "frontText": "Các tổ đồng loạt thực hiện: Gom lá cây từ hai bên vào, lau chậu cảnh và dọn dẹp lớp học.", "backTitle": "ĐÁNH GIÁ CHÉO & CAM KẾT", "backText": "Kiểm tra kết quả giữa các tổ, chia sẻ niềm tự hào và cam kết duy trì trường lớp Xanh – Sạch – Đẹp."}, {"frontTitle": "NHIỆM VỤ VỪA SỨC HÒA NHẬP", "frontText": "Tránh tuyệt đối việc mang vác nặng hay quét sân diện rộng gây mệt mỏi cho bạn khuyết tật.", "backTitle": "CHĂM SÓC GÓC XANH TẠI CHỖ", "backText": "Em đảm nhận lau lá chậu cây cảnh trên bàn, sắp xếp góc thư viện lớp và làm Thư ký theo dõi thi đua."}], "bullets": ["🔹 <strong>Quy trình 4 bước khép kín:</strong> Lắng nghe thông điệp SHDC ➔ Đánh giá nền nếp tuần cũ ➔ Lập kế hoạch an toàn ➔ Thực thi & Tự hào ngắm thành quả.", "🔹 Kết nối nhà trường với gia đình: Học sinh về nhà thảo luận cùng người thân những việc làm cụ thể giữ gìn môi trường sống."], "stateOld": "🧹 Dọn vệ sinh theo mệnh lệnh thụ động", "bridgeVerb": "TỰ GIÁC THÀNH", "stateNew": "🌳 Trách nhiệm công dân nhí vì Mái trường Xanh – Sạch – Đẹp", "image": "", "visualTheme": "green_school_steps", "widgetType": "none", "script": "Trong mạch Hoạt động trải nghiệm và Đạo đức, học sinh lớp 4B1 thực hiện trọn vẹn bốn bước từ Sinh hoạt dưới cờ chủ đề Mái trường mến yêu đến Sinh hoạt lớp hành động giữ gìn trường học Xanh – Sạch – Đẹp. Mọi quy trình an toàn như đeo khẩu trang, vẩy nước khi quét và phân công nhiệm vụ vừa sức tại chỗ đều được thiết kế chu đáo."}, {"id": 10, "tag": "🧭 TỔNG HỢP PHƯƠNG PHÁP & GIÁO DỤC HÒA NHẬP", "title": "10. MA TRẬN PHƯƠNG PHÁP CHỦ ĐỘNG & HÒA NHẬP 4B1", "flipCards": [{"frontTitle": "1. PHƯƠNG PHÁP ĐÓNG VAI", "frontText": "Tiếng Việt: Hóa thân du khách & nghệ nhân người Mông. Toán: Người bán & Thượng đế đi chợ.", "backTitle": "ĐIỀU CHỈNH HÒA NHẬP", "backText": "Đóng vai nghệ nhân giới thiệu khèn tại chỗ; làm Chủ cửa hàng / Thu ngân ngồi tại quầy giao dịch."}, {"frontTitle": "2. TRÒ CHƠI HÓA HỌC TẬP", "frontText": "Truyền điện (Nhân hóa), Phóng viên, Bắn tên, Đố bạn – Thế kỉ nào?, Ai nhanh – Ai đúng.", "backTitle": "ĐIỀU CHỈNH HÒA NHẬP", "backText": "Làm Trọng tài kiểm tra đáp án, Người hô hiệu lệnh, Người bấm đồng hồ và gọi tên bạn tại chỗ."}, {"frontTitle": "3. DẠY HỌC DỰ ÁN", "frontText": "Chế tạo đồ chơi tái chế, làm nhạc cụ phát âm thanh, Sơ đồ dòng thời gian STEM, Lớp học Xanh.", "backTitle": "ĐIỀU CHỈNH HÒA NHẬP", "backText": "Làm 'Bộ não lên ý tưởng' sắp xếp mốc thời gian; ghép đôi bạn khéo tay; lau lá cây và xếp thư viện."}, {"frontTitle": "4. KỸ NĂNG THUYẾT TRÌNH", "frontText": "Giới thiệu sản phẩm sáng tạo, Thi kể chuyện lịch sử và Tuyên truyền viên nhí bảo vệ môi trường.", "backTitle": "ĐIỀU CHỈNH HÒA NHẬP", "backText": "Đại diện nhóm thuyết trình miệng; bạn cùng bàn và thầy giáo hỗ trợ cầm, treo tranh/sản phẩm."}], "bullets": ["🔹 <strong>100% tiết học lấy học sinh làm trung tâm:</strong> Biến hạn chế thể chất của 01 học sinh khuyết tật vận động thành cơ hội vàng phát triển năng lực ngôn ngữ, tư duy quản lý và quan sát.", "🔹 <strong>Thông điệp sư phạm của thầy Nguyễn Hữu Khanh:</strong> Giáo dục tiểu học là kiến tạo một sân khấu trải nghiệm an toàn để mọi học sinh đều được tỏa sáng theo cách riêng của mình."], "stateOld": "🚧 Giới hạn thể chất trở thành rào cản tham gia", "bridgeVerb": "NÂNG TẦM THÀNH", "stateNew": "🏆 Sân khấu hòa nhập nơi 100% học sinh 4B1 cùng tỏa sáng", "image": "", "visualTheme": "inclusive_matrix_star", "widgetType": "student_radar", "script": "Khép lại bản thiết kế sư phạm Tuần 10 là ma trận bốn phương pháp dạy học chủ động kết hợp chiến lược giáo dục hòa nhập toàn diện. Bằng sự linh hoạt và trái tim tận tụy của thầy giáo Nguyễn Hữu Khanh, mọi hạn chế thể chất đều được chuyển hóa thành cơ hội phát triển tư duy, ngôn ngữ và sự tự tin cho học sinh lớp 4B1."}]/*__DEFAULT_SLIDES_END__*/;
+
+    let SLIDES_DATA = /*__SLIDES_DATA_START__*/JSON.parse(JSON.stringify(DEFAULT_MASTER_SLIDES))/*__SLIDES_DATA_END__*/;
+    let currentSlide = 0;
+    let currentMode = "horizontal";
+    let currentWorkspace = "deck";
+    let isWide16x9Stage = false;
+    let hiddenSlides = new Set();
+    const HIDE_STORAGE_KEY = "khbd_4b1_tuan10_hidden_v01";
+    const SLIDES_STORAGE_KEY = "khbd_4b1_tuan10_slides_v01";
+
+    // =========================================================================
+    // 2. ĐỒ HỌA MINH HỌA ĐỘNG 4D TRỰC QUAN KHỔ NGANG 16:9 CHO TỪNG CHỦ ĐỀ TUẦN 10
+    // =========================================================================
+    function buildAnimatedVisual4D(slide, idx) {
+      const theme = slide.visualTheme || "auto";
+      const h = (idx * 36 + 195) % 360;
+
+      if (theme === "week10_overview" || idx === 0) {
+        return `<svg viewBox="0 0 960 540" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="glow_t10" cx="50%" cy="45%" r="58%">
+              <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.28"/>
+              <stop offset="100%" stop-color="#040711" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <rect width="960" height="540" fill="url(#glow_t10)"/>
+          <g class="anim-float">
+            <rect x="65" y="34" width="265" height="62" rx="14" fill="rgba(15,29,60,0.9)" stroke="#38bdf8" stroke-width="2"/>
+            <text x="197" y="60" text-anchor="middle" fill="#7dd3fc" font-size="13" font-weight="800">🗓️ THỜI GIAN THỰC HIỆN</text>
+            <text x="197" y="83" text-anchor="middle" fill="#ffffff" font-size="17" font-weight="900">09/11 – 13/11/2026</text>
+
+            <rect x="348" y="34" width="264" height="62" rx="14" fill="rgba(15,29,60,0.9)" stroke="#f5c451" stroke-width="2.5"/>
+            <text x="480" y="60" text-anchor="middle" fill="#ffe9ad" font-size="13" font-weight="800">⏱️ TỔNG THỜI LƯỢNG</text>
+            <text x="480" y="83" text-anchor="middle" fill="#f5c451" font-size="18" font-weight="900">18 TIẾT • LỚP 4B1</text>
+
+            <rect x="630" y="34" width="265" height="62" rx="14" fill="rgba(15,29,60,0.9)" stroke="#34d399" stroke-width="2"/>
+            <text x="762" y="60" text-anchor="middle" fill="#6ee7b7" font-size="13" font-weight="800">👨‍🏫 GIÁO VIÊN THIẾT KẾ</text>
+            <text x="762" y="83" text-anchor="middle" fill="#ffffff" font-size="17" font-weight="900">Nguyễn Hữu Khanh</text>
+          </g>
+
+          <line x1="170" y1="125" x2="790" y2="125" stroke="#f5c451" stroke-width="3" class="anim-dash"/>
+
+          <g class="anim-float">
+            <rect x="65" y="150" width="195" height="270" rx="18" fill="rgba(29,78,216,0.28)" stroke="#60a5fa" stroke-width="2.5"/>
+            <text x="162" y="192" text-anchor="middle" fill="#93c5fd" font-size="19" font-weight="900">TIẾNG VIỆT</text>
+            <text x="162" y="232" text-anchor="middle" fill="#ffffff" font-size="34" font-weight="900">7 Tiết</text>
+            <text x="162" y="275" text-anchor="middle" fill="#dbeafe" font-size="13" font-weight="700">Đồng cỏ nở hoa</text>
+            <text x="162" y="298" text-anchor="middle" fill="#dbeafe" font-size="13" font-weight="700">Thanh âm của núi</text>
+            <text x="162" y="321" text-anchor="middle" fill="#dbeafe" font-size="13" font-weight="700">Viết tưởng tượng</text>
+            <text x="162" y="344" text-anchor="middle" fill="#dbeafe" font-size="13" font-weight="700">Biện pháp nhân hóa</text>
+
+            <rect x="278" y="150" width="195" height="270" rx="18" fill="rgba(234,88,12,0.28)" stroke="#fb923c" stroke-width="2.5"/>
+            <text x="375" y="192" text-anchor="middle" fill="#fdba74" font-size="19" font-weight="900">TOÁN HỌC</text>
+            <text x="375" y="232" text-anchor="middle" fill="#ffffff" font-size="34" font-weight="900">5 Tiết</text>
+            <text x="375" y="275" text-anchor="middle" fill="#ffedd5" font-size="13" font-weight="700">Đơn vị đo đại lượng</text>
+            <text x="375" y="298" text-anchor="middle" fill="#ffedd5" font-size="13" font-weight="700">Cân, đo, bấm giờ</text>
+            <text x="375" y="321" text-anchor="middle" fill="#ffedd5" font-size="13" font-weight="700">Trò chơi Đi chợ</text>
+            <text x="375" y="344" text-anchor="middle" fill="#ffedd5" font-size="13" font-weight="700">STEM: Thế kỉ</text>
+
+            <rect x="491" y="150" width="195" height="270" rx="18" fill="rgba(16,185,129,0.28)" stroke="#34d399" stroke-width="2.5"/>
+            <text x="588" y="192" text-anchor="middle" fill="#6ee7b7" font-size="19" font-weight="900">KHOA HỌC</text>
+            <text x="588" y="232" text-anchor="middle" fill="#ffffff" font-size="34" font-weight="900">2 Tiết</text>
+            <text x="588" y="275" text-anchor="middle" fill="#d1fae5" font-size="13" font-weight="700">Âm thanh cuộc sống</text>
+            <text x="588" y="298" text-anchor="middle" fill="#d1fae5" font-size="13" font-weight="700">Chống ô nhiễm ồn</text>
+            <text x="588" y="321" text-anchor="middle" fill="#d1fae5" font-size="13" font-weight="700">Ôn tập Giữa kì 1</text>
+            <text x="588" y="344" text-anchor="middle" fill="#d1fae5" font-size="13" font-weight="700">Nhà khoa học trẻ</text>
+
+            <rect x="704" y="150" width="195" height="270" rx="18" fill="rgba(245,158,11,0.28)" stroke="#facc15" stroke-width="2.5"/>
+            <text x="801" y="192" text-anchor="middle" fill="#fde047" font-size="18" font-weight="900">HĐTN &amp; ĐĐ</text>
+            <text x="801" y="232" text-anchor="middle" fill="#ffffff" font-size="34" font-weight="900">2+1 Tiết</text>
+            <text x="801" y="275" text-anchor="middle" fill="#fef9c3" font-size="13" font-weight="700">Mái trường thân yêu</text>
+            <text x="801" y="298" text-anchor="middle" fill="#fef9c3" font-size="13" font-weight="700">Trường Xanh-Sạch-Đẹp</text>
+            <text x="801" y="321" text-anchor="middle" fill="#fef9c3" font-size="13" font-weight="700">Kế hoạch hành động</text>
+            <text x="801" y="344" text-anchor="middle" fill="#fef9c3" font-size="13" font-weight="700">Giáo dục hòa nhập</text>
+          </g>
+
+          <rect x="135" y="452" width="690" height="44" rx="12" fill="#081530" stroke="#f5c451" stroke-width="2.5"/>
+          <text x="480" y="479" text-anchor="middle" fill="#ffe9ad" font-size="16" font-weight="900">BẢN THIẾT KẾ TRẢI NGHIỆM HỌC TẬP &amp; GIÁO DỤC HÒA NHẬP LỚP 4B1</text>
+        </svg>`;
+      }
+
+      if (theme === "donut_18_periods" || idx === 1) {
+        return `<svg viewBox="0 0 960 540" xmlns="http://www.w3.org/2000/svg">
+          <g class="anim-spin" style="transform-origin:480px 270px;">
+            <circle cx="480" cy="270" r="175" fill="none" stroke="#1e293b" stroke-width="46"/>
+            <circle cx="480" cy="270" r="175" fill="none" stroke="#2563eb" stroke-width="46" stroke-dasharray="430 1100" stroke-dashoffset="0"/>
+            <circle cx="480" cy="270" r="175" fill="none" stroke="#ea580c" stroke-width="46" stroke-dasharray="310 1100" stroke-dashoffset="-435"/>
+            <circle cx="480" cy="270" r="175" fill="none" stroke="#10b981" stroke-width="46" stroke-dasharray="155 1100" stroke-dashoffset="-750"/>
+            <circle cx="480" cy="270" r="175" fill="none" stroke="#eab308" stroke-width="46" stroke-dasharray="185 1100" stroke-dashoffset="-910"/>
+          </g>
+          <circle cx="480" cy="270" r="122" fill="#071226" stroke="#f5c451" stroke-width="3" class="anim-pulse"/>
+          <text x="480" y="256" text-anchor="middle" fill="#ffe9ad" font-size="22" font-weight="900">TỔNG THỜI LƯỢNG</text>
+          <text x="480" y="294" text-anchor="middle" fill="#38bdf8" font-size="30" font-weight="900">18 TIẾT (100%)</text>
+
+          <g class="anim-float">
+            <rect x="45" y="75" width="235" height="82" rx="14" fill="rgba(37,99,235,0.28)" stroke="#60a5fa" stroke-width="2"/>
+            <text x="162" y="106" text-anchor="middle" fill="#93c5fd" font-size="17" font-weight="900">Tiếng Việt (7 Tiết)</text>
+            <text x="162" y="132" text-anchor="middle" fill="#e2e8f0" font-size="13">Trí tưởng tượng &amp; Văn hóa</text>
+
+            <rect x="680" y="75" width="235" height="82" rx="14" fill="rgba(234,88,12,0.28)" stroke="#fb923c" stroke-width="2"/>
+            <text x="797" y="106" text-anchor="middle" fill="#fdba74" font-size="17" font-weight="900">Toán học (5 Tiết)</text>
+            <text x="797" y="132" text-anchor="middle" fill="#e2e8f0" font-size="13">Đo lường, Tiền tệ &amp; STEM</text>
+
+            <rect x="45" y="380" width="235" height="82" rx="14" fill="rgba(16,185,129,0.28)" stroke="#34d399" stroke-width="2"/>
+            <text x="162" y="411" text-anchor="middle" fill="#6ee7b7" font-size="17" font-weight="900">Khoa học (2 Tiết)</text>
+            <text x="162" y="437" text-anchor="middle" fill="#e2e8f0" font-size="13">Chống tiếng ồn &amp; Mindmap</text>
+
+            <rect x="680" y="380" width="235" height="82" rx="14" fill="rgba(234,179,8,0.28)" stroke="#facc15" stroke-width="2"/>
+            <text x="797" y="411" text-anchor="middle" fill="#fde047" font-size="17" font-weight="900">HĐTN (2t) &amp; Đạo đức</text>
+            <text x="797" y="437" text-anchor="middle" fill="#e2e8f0" font-size="13">Trường học Xanh-Sạch-Đẹp</text>
+          </g>
+        </svg>`;
+      }
+
+      if (theme === "three_pillars_venn" || idx === 2) {
+        return `<svg viewBox="0 0 960 540" xmlns="http://www.w3.org/2000/svg">
+          <g class="anim-pulse">
+            <circle cx="480" cy="185" r="135" fill="rgba(56,189,248,0.16)" stroke="#38bdf8" stroke-width="3.5"/>
+            <circle cx="385" cy="335" r="135" fill="rgba(251,146,60,0.16)" stroke="#fb923c" stroke-width="3.5"/>
+            <circle cx="575" cy="335" r="135" fill="rgba(52,211,153,0.16)" stroke="#34d399" stroke-width="3.5"/>
+          </g>
+          <circle cx="480" cy="285" r="78" fill="#081530" stroke="#f5c451" stroke-width="4" class="anim-float"/>
+          <text x="480" y="275" text-anchor="middle" fill="#f5c451" font-size="22">⭐</text>
+          <text x="480" y="302" text-anchor="middle" fill="#ffe9ad" font-size="18" font-weight="900">Học sinh 4B1</text>
+
+          <g class="anim-float">
+            <rect x="315" y="26" width="330" height="58" rx="14" fill="#0c2448" stroke="#38bdf8" stroke-width="2.5"/>
+            <text x="480" y="52" text-anchor="middle" fill="#7dd3fc" font-size="16" font-weight="900">1. NĂNG LỰC THỰC TIỄN</text>
+            <text x="480" y="73" text-anchor="middle" fill="#e2e8f0" font-size="12">Đo lường diện tích, giao dịch tiền tệ, tái chế</text>
+
+            <rect x="45" y="365" width="295" height="68" rx="14" fill="#2d1810" stroke="#fb923c" stroke-width="2.5"/>
+            <text x="192" y="393" text-anchor="middle" fill="#fdba74" font-size="16" font-weight="900">2. TƯ DUY SÁNG TẠO</text>
+            <text x="192" y="416" text-anchor="middle" fill="#ffedd5" font-size="12">Viết tiếp hồi kết, hóa thân &amp; Mindmap</text>
+
+            <rect x="620" y="365" width="295" height="68" rx="14" fill="#062e24" stroke="#34d399" stroke-width="2.5"/>
+            <text x="767" y="393" text-anchor="middle" fill="#6ee7b7" font-size="16" font-weight="900">3. GIÁO DỤC HÒA NHẬP</text>
+            <text x="767" y="416" text-anchor="middle" fill="#d1fae5" font-size="12">100% HS khuyết tật vận động tỏa sáng</text>
+          </g>
+        </svg>`;
+      }
+
+      if (theme === "tv_meadow_painting" || idx === 3) {
+        return `<svg viewBox="0 0 960 540" xmlns="http://www.w3.org/2000/svg">
+          <text x="480" y="48" text-anchor="middle" fill="#ffe9ad" font-size="24" font-weight="900">TIẾNG VIỆT (BÀI 18): ĐỒNG CỎ NỞ HOA &amp; ĐOẠN VĂN TƯỞNG TƯỢNG</text>
+          <g class="anim-float">
+            <rect x="65" y="85" width="390" height="330" rx="20" fill="rgba(30,58,138,0.32)" stroke="#60a5fa" stroke-width="3"/>
+            <text x="260" y="135" text-anchor="middle" fill="#93c5fd" font-size="21" font-weight="900">🎨 ĐỌC: ĐỒNG CỎ NỞ HOA</text>
+            <text x="260" y="175" text-anchor="middle" fill="#ffffff" font-size="15" font-weight="700">• Họa sĩ Tô Ngọc Vân &amp; Cô bé Bống</text>
+            <text x="260" y="210" text-anchor="middle" fill="#dbeafe" font-size="15">• "Mặt tròn như đồng xu, mắt lá răm"</text>
+            <text x="260" y="245" text-anchor="middle" fill="#fde047" font-size="15" font-weight="800">• "Vẽ như đồng cỏ đến kì nở hoa!"</text>
+            <text x="260" y="285" text-anchor="middle" fill="#6ee7b7" font-size="14" font-weight="700">✔ Đam mê mang lại niềm vui &amp; bản sắc</text>
+            <rect x="115" y="325" width="290" height="54" rx="12" fill="#081530" stroke="#34d399" stroke-width="2"/>
+            <text x="260" y="357" text-anchor="middle" fill="#6ee7b7" font-size="14" font-weight="800">♿ Hòa nhập: Giám khảo tại chỗ</text>
+
+            <rect x="505" y="85" width="390" height="330" rx="20" fill="rgba(16,185,129,0.24)" stroke="#34d399" stroke-width="3"/>
+            <text x="700" y="135" text-anchor="middle" fill="#6ee7b7" font-size="21" font-weight="900">✍️ VIẾT: ĐOẠN VĂN TƯỞNG TƯỢNG</text>
+            <text x="700" y="175" text-anchor="middle" fill="#ffffff" font-size="15" font-weight="700">1. Thêm lời thoại (Công &amp; Chích chòe)</text>
+            <text x="700" y="210" text-anchor="middle" fill="#d1fae5" font-size="15">2. Bổ sung chi tiết kể, tả sinh động</text>
+            <text x="700" y="245" text-anchor="middle" fill="#fde047" font-size="15" font-weight="800">3. Viết tiếp đoạn kết (Cây vú sữa)</text>
+            <text x="700" y="285" text-anchor="middle" fill="#93c5fd" font-size="14" font-weight="700">✔ Thoát khỏi khuôn mẫu, tự do sáng tạo</text>
+            <rect x="555" y="325" width="290" height="54" rx="12" fill="#081530" stroke="#f5c451" stroke-width="2"/>
+            <text x="700" y="357" text-anchor="middle" fill="#ffe9ad" font-size="14" font-weight="800">♿ Hòa nhập: Nói ý tưởng – Bạn ghi chép</text>
+          </g>
+          <line x1="455" y1="250" x2="505" y2="250" stroke="#f5c451" stroke-width="5" class="anim-dash"/>
+        </svg>`;
+      }
+
+      if (theme === "tv_khen_mountain" || idx === 4) {
+        return `<svg viewBox="0 0 960 540" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="70,410 270,130 460,410" fill="#1e3a5f" stroke="#38bdf8" stroke-width="3"/>
+          <polygon points="290,410 520,95 750,410" fill="#0f2942" stroke="#f5c451" stroke-width="3.5"/>
+          <g class="anim-float">
+            <line x1="390" y1="330" x2="640" y2="170" stroke="#fde047" stroke-width="7"/>
+            <line x1="405" y1="345" x2="655" y2="185" stroke="#f59e0b" stroke-width="7"/>
+            <line x1="420" y1="360" x2="670" y2="200" stroke="#38bdf8" stroke-width="7"/>
+            <ellipse cx="515" cy="275" rx="46" ry="22" transform="rotate(-32 515 275)" fill="#b45309" stroke="#fff" stroke-width="2.5"/>
+            <text x="520" y="145" text-anchor="middle" fill="#ffe9ad" font-size="22" font-weight="900">🎶 THANH ÂM CỦA NÚI</text>
+            <text x="520" y="175" text-anchor="middle" fill="#7dd3fc" font-size="15" font-weight="800">Khèn 6 ống trúc người Mông • Tây Bắc</text>
+          </g>
+          <rect x="85" y="425" width="790" height="75" rx="16" fill="rgba(8,21,48,0.92)" stroke="#34d399" stroke-width="2.5"/>
+          <text x="480" y="456" text-anchor="middle" fill="#6ee7b7" font-size="16" font-weight="900">🎤 NÓI &amp; NGHE: CHÚNG EM SÁNG TẠO (Đèn ông sao, Máy bay) + LUYỆN TẬP NHÂN HÓA</text>
+          <text x="480" y="482" text-anchor="middle" fill="#e2e8f0" font-size="14">4 Tiêu chí thuyết trình • Trò chơi Truyền điện &amp; Ai nhanh – Ai đúng (Hòa nhập: Ban Giám khảo &amp; Trọng tài)</text>
+        </svg>`;
+      }
+
+      if (theme === "math_measurement_market" || idx === 5) {
+        return `<svg viewBox="0 0 960 540" xmlns="http://www.w3.org/2000/svg">
+          <text x="480" y="48" text-anchor="middle" fill="#ffe9ad" font-size="24" font-weight="900">TOÁN HỌC (BÀI 20): SỬ DỤNG ĐƠN VỊ ĐO ĐẠI LƯỢNG TRONG ĐỜI SỐNG</text>
+          <g class="anim-float">
+            <rect x="55" y="85" width="265" height="330" rx="18" fill="rgba(234,88,12,0.24)" stroke="#fb923c" stroke-width="2.5"/>
+            <text x="187" y="135" text-anchor="middle" fill="#fdba74" font-size="19" font-weight="900">⚖️ KHỐI LƯỢNG &amp; GIỜ</text>
+            <text x="187" y="185" text-anchor="middle" fill="#fff" font-size="16" font-weight="700">• Cân đồng hồ (&gt; 1 yến)</text>
+            <text x="187" y="220" text-anchor="middle" fill="#ffedd5" font-size="15">• 5 yến • Đủ 1 tạ</text>
+            <text x="187" y="260" text-anchor="middle" fill="#38bdf8" font-size="16" font-weight="800">⏱️ Đồng hồ bấm giờ</text>
+            <text x="187" y="292" text-anchor="middle" fill="#e2e8f0" font-size="15">Đo lọc nước: 250 giây</text>
+            <text x="187" y="345" text-anchor="middle" fill="#6ee7b7" font-size="13" font-weight="800">♿ Hòa nhập: Bấm đồng hồ</text>
+
+            <rect x="347" y="85" width="265" height="330" rx="18" fill="rgba(56,189,248,0.22)" stroke="#38bdf8" stroke-width="2.5"/>
+            <text x="479" y="135" text-anchor="middle" fill="#7dd3fc" font-size="19" font-weight="900">📐 DIỆN TÍCH THỰC TẾ</text>
+            <text x="479" y="185" text-anchor="middle" fill="#fff" font-size="16" font-weight="700">• Chọn đơn vị: mm², dm², m²</text>
+            <text x="479" y="220" text-anchor="middle" fill="#e0f2fe" font-size="15">• Tấm bìa: 9 dm²</text>
+            <text x="479" y="255" text-anchor="middle" fill="#e0f2fe" font-size="15">• Biển trại: 40 dm²</text>
+            <text x="479" y="290" text-anchor="middle" fill="#fde047" font-size="16" font-weight="800">• Khu vườn ghép: 192 m²</text>
+            <text x="479" y="345" text-anchor="middle" fill="#6ee7b7" font-size="13" font-weight="800">• Cây cổ thụ 1864 (TK XIX)</text>
+
+            <rect x="639" y="85" width="265" height="330" rx="18" fill="rgba(16,185,129,0.24)" stroke="#34d399" stroke-width="2.5"/>
+            <text x="771" y="135" text-anchor="middle" fill="#6ee7b7" font-size="19" font-weight="900">💵 TRÒ CHƠI: ĐI CHỢ</text>
+            <text x="771" y="185" text-anchor="middle" fill="#fff" font-size="16" font-weight="700">• Mệnh giá: 100k, 200k, 500k</text>
+            <text x="771" y="220" text-anchor="middle" fill="#d1fae5" font-size="15">• Nhẩm tính tổng tiền mua</text>
+            <text x="771" y="255" text-anchor="middle" fill="#d1fae5" font-size="15">• Kỹ năng thối tiền thừa</text>
+            <text x="771" y="290" text-anchor="middle" fill="#fde047" font-size="15" font-weight="800">• Xử lý tình huống đổi tiền lẻ</text>
+            <text x="771" y="345" text-anchor="middle" fill="#ffe9ad" font-size="13" font-weight="800">♿ Hòa nhập: Thu ngân tại quầy</text>
+          </g>
+          <rect x="110" y="442" width="740" height="48" rx="12" fill="#081530" stroke="#f5c451" stroke-width="2"/>
+          <text x="480" y="471" text-anchor="middle" fill="#ffe9ad" font-size="15" font-weight="900">ĐƯA CON SỐ VÀO ĐỜI SỐNG • THỰC HÀNH TRẢI NGHIỆM 3 TIẾT LIÊN TIẾP</text>
+        </svg>`;
+      }
+
+      if (theme === "stem_timeline_project" || idx === 6) {
+        return `<svg viewBox="0 0 960 540" xmlns="http://www.w3.org/2000/svg">
+          <text x="480" y="48" text-anchor="middle" fill="#ffe9ad" font-size="24" font-weight="900">DỰ ÁN STEM TOÁN HỌC (2 TIẾT): SƠ ĐỒ DÒNG THỜI GIAN THẾ KỈ</text>
+          <g class="anim-float">
+            <rect x="60" y="88" width="195" height="235" rx="16" fill="rgba(37,99,235,0.28)" stroke="#60a5fa" stroke-width="2.5"/>
+            <text x="157" y="130" text-anchor="middle" fill="#93c5fd" font-size="17" font-weight="900">BƯỚC 1</text>
+            <text x="157" y="156" text-anchor="middle" fill="#fff" font-size="16" font-weight="800">Quy đổi Thế kỉ</text>
+            <text x="157" y="192" text-anchor="middle" fill="#dbeafe" font-size="13">1 thế kỉ = 100 năm</text>
+            <text x="157" y="218" text-anchor="middle" fill="#fde047" font-size="13" font-weight="700">1010 ➔ Thế kỉ XI</text>
+            <text x="157" y="244" text-anchor="middle" fill="#fde047" font-size="13" font-weight="700">1945 ➔ Thế kỉ XX</text>
+            <text x="157" y="270" text-anchor="middle" fill="#fde047" font-size="13" font-weight="700">2012 ➔ Thế kỉ XXI</text>
+
+            <rect x="275" y="88" width="195" height="235" rx="16" fill="rgba(234,88,12,0.28)" stroke="#fb923c" stroke-width="2.5"/>
+            <text x="372" y="130" text-anchor="middle" fill="#fdba74" font-size="17" font-weight="900">BƯỚC 2</text>
+            <text x="372" y="156" text-anchor="middle" fill="#fff" font-size="16" font-weight="800">Nhận diện Sự kiện</text>
+            <text x="372" y="192" text-anchor="middle" fill="#ffedd5" font-size="13">Theo dòng lịch sử:</text>
+            <text x="372" y="218" text-anchor="middle" fill="#fff" font-size="13">• Lý Thái Tổ dời đô</text>
+            <text x="372" y="244" text-anchor="middle" fill="#fff" font-size="13">• Bác Hồ tìm đường</text>
+            <text x="372" y="270" text-anchor="middle" fill="#fff" font-size="13">• Tuyên ngôn Độc lập</text>
+
+            <rect x="490" y="88" width="195" height="235" rx="16" fill="rgba(168,85,247,0.28)" stroke="#c084fc" stroke-width="2.5"/>
+            <text x="587" y="130" text-anchor="middle" fill="#e9d5ff" font-size="17" font-weight="900">BƯỚC 3</text>
+            <text x="587" y="156" text-anchor="middle" fill="#fff" font-size="16" font-weight="800">Chế tạo Mô hình</text>
+            <text x="587" y="192" text-anchor="middle" fill="#f3e8ff" font-size="13">Giấy A4, giấy màu,</text>
+            <text x="587" y="218" text-anchor="middle" fill="#f3e8ff" font-size="13">keo dán, bút màu</text>
+            <text x="587" y="248" text-anchor="middle" fill="#6ee7b7" font-size="13" font-weight="700">Trực quan • Chắc chắn</text>
+
+            <rect x="705" y="88" width="195" height="235" rx="16" fill="rgba(16,185,129,0.28)" stroke="#34d399" stroke-width="2.5"/>
+            <text x="802" y="130" text-anchor="middle" fill="#6ee7b7" font-size="17" font-weight="900">BƯỚC 4</text>
+            <text x="802" y="156" text-anchor="middle" fill="#fff" font-size="16" font-weight="800">Thuyết trình</text>
+            <text x="802" y="192" text-anchor="middle" fill="#d1fae5" font-size="13">Thi kể chuyện lịch sử</text>
+            <text x="802" y="218" text-anchor="middle" fill="#d1fae5" font-size="13">&amp; Đố bạn Thế kỉ nào?</text>
+            <text x="802" y="252" text-anchor="middle" fill="#ffe9ad" font-size="13" font-weight="800">♿ Bộ não ý tưởng</text>
+          </g>
+          <line x1="90" y1="385" x2="870" y2="385" stroke="#f5c451" stroke-width="5" class="anim-dash"/>
+          <circle cx="160" cy="385" r="14" fill="#38bdf8"/><text x="160" y="422" text-anchor="middle" fill="#7dd3fc" font-size="14" font-weight="900">1010 (TK XI)</text>
+          <circle cx="370" cy="385" r="14" fill="#fb923c"/><text x="370" y="422" text-anchor="middle" fill="#fdba74" font-size="14" font-weight="900">1698 (TK XVII)</text>
+          <circle cx="585" cy="385" r="14" fill="#c084fc"/><text x="585" y="422" text-anchor="middle" fill="#e9d5ff" font-size="14" font-weight="900">1945 (TK XX)</text>
+          <circle cx="800" cy="385" r="14" fill="#34d399"/><text x="800" y="422" text-anchor="middle" fill="#6ee7b7" font-size="14" font-weight="900">2012 (TK XXI)</text>
+          <text x="480" y="485" text-anchor="middle" fill="#ffe9ad" font-size="16" font-weight="900">TÍCH HỢP 4 MÔN: TOÁN HỌC • LỊCH SỬ • MĨ THUẬT • NGÔN NGỮ</text>
+        </svg>`;
+      }
+
+      if (theme === "science_sound_mindmap" || idx === 7) {
+        return `<svg viewBox="0 0 960 540" xmlns="http://www.w3.org/2000/svg">
+          <text x="480" y="48" text-anchor="middle" fill="#ffe9ad" font-size="24" font-weight="900">KHOA HỌC: CHỐNG Ô NHIỄM TIẾNG ỒN &amp; ÔN TẬP GIỮA HỌC KÌ 1</text>
+          <g class="anim-float">
+            <rect x="55" y="85" width="380" height="350" rx="20" fill="rgba(207,32,48,0.22)" stroke="#fb7185" stroke-width="2.5"/>
+            <text x="245" y="132" text-anchor="middle" fill="#fda4af" font-size="20" font-weight="900">🔇 ÂM THANH TRONG CUỘC SỐNG</text>
+            <text x="245" y="175" text-anchor="middle" fill="#fff" font-size="15" font-weight="700">• Nguồn ồn: Máy khoan, máy cưa, còi xe</text>
+            <text x="245" y="215" text-anchor="middle" fill="#6ee7b7" font-size="16" font-weight="800">🛡️ 4 Giải pháp chống tiếng ồn:</text>
+            <text x="245" y="250" text-anchor="middle" fill="#e2e8f0" font-size="15">1. Đóng cửa kính ngăn âm thanh</text>
+            <text x="245" y="282" text-anchor="middle" fill="#e2e8f0" font-size="15">2. Đeo thiết bị bịt tai bảo hộ</text>
+            <text x="245" y="314" text-anchor="middle" fill="#e2e8f0" font-size="15">3. Dựng vách cách âm &amp; trồng cây xanh</text>
+            <text x="245" y="346" text-anchor="middle" fill="#e2e8f0" font-size="15">4. Đi nhẹ, nói khẽ nơi công cộng</text>
+            <text x="245" y="395" text-anchor="middle" fill="#ffe9ad" font-size="14" font-weight="800">🎵 Làm nhạc cụ phát âm thanh tái chế</text>
+
+            <rect x="465" y="85" width="440" height="350" rx="20" fill="rgba(16,185,129,0.22)" stroke="#34d399" stroke-width="2.5"/>
+            <text x="685" y="132" text-anchor="middle" fill="#6ee7b7" font-size="20" font-weight="900">🧠 ÔN TẬP GIỮA KÌ 1 (MINDMAP)</text>
+            <text x="685" y="175" text-anchor="middle" fill="#7dd3fc" font-size="16" font-weight="800">💧 Nước: Chuyển thể, tuần hoàn, hòa tan</text>
+            <text x="685" y="212" text-anchor="middle" fill="#fdba74" font-size="16" font-weight="800">🌬️ Không khí: Sự cháy, áp suất, gió bão</text>
+            <text x="685" y="249" text-anchor="middle" fill="#fde047" font-size="16" font-weight="800">💡 Ánh sáng &amp; Âm thanh: Vật cản/vật dẫn</text>
+            <rect x="505" y="282" width="360" height="122" rx="14" fill="#081530" stroke="#f5c451" stroke-width="2"/>
+            <text x="685" y="315" text-anchor="middle" fill="#ffe9ad" font-size="16" font-weight="900">🔬 TRÒ CHƠI: NHÀ KHOA HỌC TRẺ</text>
+            <text x="685" y="344" text-anchor="middle" fill="#cbd5e1" font-size="14">Bốc thăm 6 phiếu thí nghiệm thực hành</text>
+            <text x="685" y="374" text-anchor="middle" fill="#6ee7b7" font-size="14" font-weight="800">&amp; Tuyên truyền viên nhí bảo vệ môi trường</text>
+          </g>
+        </svg>`;
+      }
+
+      if (theme === "green_school_steps" || idx === 8) {
+        return `<svg viewBox="0 0 960 540" xmlns="http://www.w3.org/2000/svg">
+          <text x="480" y="48" text-anchor="middle" fill="#ffe9ad" font-size="24" font-weight="900">HĐTN &amp; ĐẠO ĐỨC: HÀNH ĐỘNG GIỮ GÌN TRƯỜNG HỌC XANH – SẠCH – ĐẸP</text>
+          <path d="M90,440 L310,340 L530,240 L780,120" fill="none" stroke="#facc15" stroke-width="8" class="anim-dash"/>
+          <g class="anim-float">
+            <rect x="55" y="370" width="240" height="78" rx="14" fill="#0f2942" stroke="#38bdf8" stroke-width="2.5"/>
+            <text x="175" y="402" text-anchor="middle" fill="#7dd3fc" font-size="15" font-weight="900">1. SINH HOẠT DƯỚI CỜ</text>
+            <text x="175" y="428" text-anchor="middle" fill="#fff" font-size="13">Chủ đề: Mái trường thân yêu</text>
+
+            <rect x="260" y="275" width="245" height="78" rx="14" fill="#0f2942" stroke="#fb923c" stroke-width="2.5"/>
+            <text x="382" y="307" text-anchor="middle" fill="#fdba74" font-size="15" font-weight="900">2. SINH HOẠT CUỐI TUẦN</text>
+            <text x="382" y="333" text-anchor="middle" fill="#fff" font-size="13">Đánh giá nền nếp &amp; Thi đua</text>
+
+            <rect x="470" y="180" width="250" height="78" rx="14" fill="#0f2942" stroke="#facc15" stroke-width="2.5"/>
+            <text x="595" y="212" text-anchor="middle" fill="#fde047" font-size="15" font-weight="900">3. LẬP KẾ HOẠCH AN TOÀN</text>
+            <text x="595" y="238" text-anchor="middle" fill="#fff" font-size="13">Đeo khẩu trang, vẩy nước quét sân</text>
+
+            <rect x="665" y="82" width="250" height="82" rx="14" fill="#064e3b" stroke="#34d399" stroke-width="3"/>
+            <text x="790" y="115" text-anchor="middle" fill="#6ee7b7" font-size="15" font-weight="900">4. THÀNH QUẢ XANH-SẠCH-ĐẸP</text>
+            <text x="790" y="142" text-anchor="middle" fill="#fff" font-size="13">Gom lá cây, lau chậu cảnh, đánh giá chéo</text>
+          </g>
+          <rect x="490" y="365" width="420" height="105" rx="16" fill="rgba(8,21,48,0.94)" stroke="#34d399" stroke-width="2.5"/>
+          <text x="700" y="400" text-anchor="middle" fill="#6ee7b7" font-size="16" font-weight="900">♿ NHIỆM VỤ HÒA NHẬP VỪA SỨC</text>
+          <text x="700" y="428" text-anchor="middle" fill="#e2e8f0" font-size="14">Lau lá chậu cây cảnh trên bàn, sắp xếp góc thư viện</text>
+          <text x="700" y="452" text-anchor="middle" fill="#ffe9ad" font-size="14" font-weight="700">&amp; Thư ký ghi nhận thi đua các tổ</text>
+        </svg>`;
+      }
+
+      if (theme === "inclusive_matrix_star" || idx === 9) {
+        return `<svg viewBox="0 0 960 540" xmlns="http://www.w3.org/2000/svg">
+          <text x="480" y="46" text-anchor="middle" fill="#ffe9ad" font-size="24" font-weight="900">CHÂN DUNG HỌC SINH 4B1 SAU TUẦN HỌC &amp; CHIẾN LƯỢC HÒA NHẬP</text>
+          <g class="anim-pulse">
+            <polygon points="480,105 645,225 582,415 378,415 315,225" fill="rgba(56,189,248,0.18)" stroke="#38bdf8" stroke-width="3"/>
+            <polygon points="480,145 605,235 558,382 402,382 355,235" fill="rgba(245,196,81,0.22)" stroke="#f5c451" stroke-width="3"/>
+          </g>
+          <circle cx="480" cy="272" r="64" fill="#081530" stroke="#34d399" stroke-width="4" class="anim-float"/>
+          <text x="480" y="266" text-anchor="middle" fill="#ffe9ad" font-size="17" font-weight="900">LỚP 4B1</text>
+          <text x="480" y="290" text-anchor="middle" fill="#6ee7b7" font-size="13" font-weight="800">100% TỎA SÁNG</text>
+
+          <g class="anim-float">
+            <rect x="330" y="62" width="300" height="44" rx="12" fill="#0f2942" stroke="#38bdf8" stroke-width="2"/>
+            <text x="480" y="89" text-anchor="middle" fill="#7dd3fc" font-size="14" font-weight="900">1. Năng lực Giải quyết vấn đề</text>
+
+            <rect x="35" y="185" width="255" height="58" rx="12" fill="#0f2942" stroke="#fb7185" stroke-width="2"/>
+            <text x="162" y="211" text-anchor="middle" fill="#fda4af" font-size="14" font-weight="900">2. Phẩm chất Nhân ái</text>
+            <text x="162" y="231" text-anchor="middle" fill="#e2e8f0" font-size="12">Hỗ trợ bạn khuyết tật vận động</text>
+
+            <rect x="670" y="185" width="255" height="58" rx="12" fill="#0f2942" stroke="#fb923c" stroke-width="2"/>
+            <text x="797" y="211" text-anchor="middle" fill="#fdba74" font-size="14" font-weight="900">3. Năng lực Ngôn ngữ</text>
+            <text x="797" y="231" text-anchor="middle" fill="#e2e8f0" font-size="12">Tự tin thuyết trình văn hóa &amp; STEM</text>
+
+            <rect x="65" y="405" width="285" height="58" rx="12" fill="#0f2942" stroke="#facc15" stroke-width="2"/>
+            <text x="207" y="431" text-anchor="middle" fill="#fde047" font-size="14" font-weight="900">4. Phẩm chất Trách nhiệm</text>
+            <text x="207" y="451" text-anchor="middle" fill="#e2e8f0" font-size="12">Giữ gìn trường lớp Xanh – Sạch – Đẹp</text>
+
+            <rect x="610" y="405" width="285" height="58" rx="12" fill="#0f2942" stroke="#34d399" stroke-width="2"/>
+            <text x="752" y="431" text-anchor="middle" fill="#6ee7b7" font-size="14" font-weight="900">5. Năng lực Khoa học &amp; Toán</text>
+            <text x="752" y="451" text-anchor="middle" fill="#e2e8f0" font-size="12">Đổi đại lượng, Thế kỉ &amp; Thí nghiệm</text>
+          </g>
+          <text x="480" y="505" text-anchor="middle" fill="#ffe9ad" font-size="15" font-weight="900">GIÁO VIÊN THIẾT KẾ: NGUYỄN HỮU KHANH • TUẦN 10 (09/11 – 13/11/2026)</text>
+        </svg>`;
+      }
+
+      return `<svg viewBox="0 0 960 540" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="rg_${idx}" cx="50%" cy="50%" r="55%">
+            <stop offset="0%" stop-color="hsl(${h},85%,55%)" stop-opacity="0.34"/>
+            <stop offset="100%" stop-color="#040711" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <rect width="960" height="540" fill="url(#rg_${idx})"/>
+        <circle cx="480" cy="260" r="145" fill="#081530" stroke="#ffe9ad" stroke-width="4" class="anim-pulse"/>
+        <text x="480" y="252" text-anchor="middle" fill="#ffe9ad" font-size="20" font-weight="900">${slide.title.slice(0, 32)}</text>
+        <text x="480" y="280" text-anchor="middle" fill="#34d399" font-size="14" font-weight="800">LỚP 4B1 • GV NGUYỄN HỮU KHANH</text>
+      </svg>`;
+    }
+
+    // =========================================================================
+    // 3. WIDGET TƯƠNG TÁC SƯ PHẠM TRỰC QUAN TRÊN SLIDE
+    // =========================================================================
+    function buildSlideWidgetHtml(slide, idx) {
+      const wType = slide.widgetType || "none";
+      if (wType === "market_sim") {
+        return `<div class="widget-box-4d" style="display:flex; justify-content:space-between; align-items:center; gap:8px; flex-wrap:wrap;">
+          <span style="font-size:0.78rem; font-weight:800; color:#ffe9ad;">🛒 Mô phỏng Đi chợ: Đưa 100.000đ, mua đồ 40.000đ ➔ Tiền thừa:</span>
+          <button class="interactive-btn-lg" style="padding:4px 11px; font-size:0.74rem;" onclick="showVoiceToast('💵 Đúng rồi! Tiền thừa trả lại khách là 60.000đ (Đổi 1 tờ 50k + 1 tờ 10k)!')">
+            💵 Kiểm tra: 60.000đ
+          </button>
+        </div>`;
+      }
+      if (wType === "century_calc") {
+        return `<div class="widget-box-4d" style="display:flex; justify-content:space-between; align-items:center; gap:8px; flex-wrap:wrap;">
+          <span style="font-size:0.78rem; font-weight:800; color:#7dd3fc;">⏳ Đố bạn Thế kỉ nào:</span>
+          <div style="display:flex; gap:5px; flex-wrap:wrap;">
+            <button class="pill-btn active" onclick="showVoiceToast('🏛️ Năm 1010 (Lý Thái Tổ dời đô) thuộc Thế kỉ XI!')">Năm 1010?</button>
+            <button class="pill-btn active" onclick="showVoiceToast('🇻🇳 Năm 1945 (Tuyên ngôn Độc lập) thuộc Thế kỉ XX!')">Năm 1945?</button>
+            <button class="pill-btn active" onclick="showVoiceToast('🏫 Năm 2026 (Tuần 10 Lớp 4B1) thuộc Thế kỉ XXI!')">Năm 2026?</button>
+          </div>
+        </div>`;
+      }
+      if (wType === "noise_shield_sim") {
+        return `<div class="widget-box-4d" style="display:flex; align-items:center; justify-content:space-between; gap:6px; flex-wrap:wrap;">
+          <div style="display:flex; flex-wrap:wrap; gap:4px;">
+            <button class="pill-btn active" onclick="toggleNoiseShield(this, ${idx})">🪟 Đóng cửa (-25dB)</button>
+            <button class="pill-btn active" onclick="toggleNoiseShield(this, ${idx})">🎧 Bịt tai (-30dB)</button>
+            <button class="pill-btn active" onclick="toggleNoiseShield(this, ${idx})">🌳 Trồng cây (-20dB)</button>
+            <button class="pill-btn active" onclick="toggleNoiseShield(this, ${idx})">🧱 Vách cách âm (-25dB)</button>
+          </div>
+          <span id="noiseScoreText_${idx}" style="font-size:0.78rem; color:#34d399; font-weight:800;">🔇 Giảm ồn: 100%</span>
+        </div>`;
+      }
+      if (wType === "student_radar") {
+        return `<div class="widget-box-4d" style="display:flex; justify-content:space-between; align-items:center; gap:8px; flex-wrap:wrap;">
+          <span style="font-size:0.78rem; font-weight:800; color:#6ee7b7;">♿ 100% học sinh lớp 4B1 hòa nhập &amp; tỏa sáng an toàn</span>
+          <button class="interactive-btn-lg" style="padding:4px 11px; font-size:0.74rem;" onclick="openInfoModal()">
+            📋 Xem Hồ Sơ 18 Tiết
+          </button>
+        </div>`;
+      }
+      return "";
+    }
+
+    function toggleNoiseShield(btn, idx) {
+      btn.classList.toggle("active");
+      const parent = btn.parentElement;
+      const activeBtns = parent ? parent.querySelectorAll(".pill-btn.active").length : 4;
+      const pct = activeBtns * 25;
+      const scoreEl = document.getElementById("noiseScoreText_" + idx);
+      if (scoreEl) scoreEl.textContent = `🔇 Giảm ồn: ${pct}%`;
+      sfxChime();
+    }
+
+    function ensureSlideFlipCards(slide, idx) {
+      if (Array.isArray(slide.flipCards) && slide.flipCards.length >= 4) {
+        return slide.flipCards;
+      }
+      const existing = Array.isArray(slide.flipCards) ? slide.flipCards.slice() : [];
+      const defaults = [
+        { frontTitle: "NỘI DUNG TRỌNG TÂM 1", frontText: "Kiến thức nền tảng cần đạt trong tiết học.", backTitle: "TRẢI NGHIỆM THỰC TIỄN", backText: "Vận dụng trực tiếp vào cuộc sống hằng ngày của học sinh." },
+        { frontTitle: "NỘI DUNG TRỌNG TÂM 2", frontText: "Hoạt động khám phá và luyện tập theo nhóm.", backTitle: "PHÁT TRIỂN NĂNG LỰC", backText: "Rèn tư duy sáng tạo, giao tiếp và hợp tác tích cực." },
+        { frontTitle: "NỘI DUNG TRỌNG TÂM 3", frontText: "Vận dụng sản phẩm và chia sẻ trước lớp.", backTitle: "TỰ TIN TỎA SÁNG", backText: "Khẳng định bản sắc cá nhân và lòng nhân ái, trách nhiệm." },
+        { frontTitle: "ĐIỀU CHỈNH HÒA NHẬP", frontText: "Hỗ trợ 01 học sinh khuyết tật vận động.", backTitle: "100% THAM GIA BÌNH ĐẲNG", backText: "Phân công vai trò phù hợp thể chất, phát huy thế mạnh ngôn ngữ." }
+      ];
+      while (existing.length < 4) existing.push(defaults[existing.length]);
+      return existing;
+    }
+
+    // =========================================================================
+    // 4. RENDER TOÀN BỘ SLIDE TRONG TRÌNH CHIẾU 4D
+    // =========================================================================
+    function renderAllSlides() {
+      const track = document.getElementById("slidesTrack");
+      const jumpSelect = document.getElementById("slideJumpSelect");
+      const dotsContainer = document.getElementById("dotsContainer");
+      const totalBadge = document.getElementById("totalSlidesBadge");
+      if (!track || !jumpSelect || !dotsContainer) return;
+
+      totalBadge.textContent = String(SLIDES_DATA.length);
+      track.innerHTML = "";
+      jumpSelect.innerHTML = "";
+      dotsContainer.innerHTML = "";
+
+      SLIDES_DATA.forEach((slide, idx) => {
+        const isHidden = hiddenSlides.has(idx);
+        const sec = document.createElement("section");
+        sec.className = "slide" + (idx === currentSlide ? " active-slide" : "") + (isHidden ? " is-hidden" : "");
+
+        const cleanTitle = (slide.title || `Trang ${idx + 1}`).trim();
+        const hasCustomOrPdfImg = Boolean(slide.image && slide.image.trim().length > 0);
+        const safeImgSrc = hasCustomOrPdfImg ? slide.image : "";
+
+        const visualStageContent = hasCustomOrPdfImg
+          ? `<div class="pdf-image-16x9-wrapper" onmousemove="onPdfStageMouseMove(event, ${idx})" onmouseleave="onPdfStageMouseLeave(${idx})" onclick="onPdfStageClickRipple(event, ${idx})">
+               <img class="bg-photo" id="slideImg_${idx}" src="${safeImgSrc}" alt="${cleanTitle.replace(/"/g, '&quot;')}" />
+               <canvas class="fx-living-overlay-canvas" id="fxCanvas_${idx}"></canvas>
+               <div class="magnifier-lens-4d" id="magLens_${idx}"></div>
+               <div class="hotspot-layer-4d">
+                 <div class="hotspot-pin-4d" style="left:22%; top:26%;" onclick="event.stopPropagation(); toggleZoomQuadrant(${idx}, 0)" title="Phóng to góc trên trái">1</div>
+                 <div class="hotspot-pin-4d" style="left:78%; top:26%;" onclick="event.stopPropagation(); toggleZoomQuadrant(${idx}, 1)" title="Phóng to góc trên phải">2</div>
+                 <div class="hotspot-pin-4d" style="left:22%; top:74%;" onclick="event.stopPropagation(); toggleZoomQuadrant(${idx}, 2)" title="Phóng to góc dưới trái">3</div>
+                 <div class="hotspot-pin-4d" style="left:78%; top:74%;" onclick="event.stopPropagation(); toggleZoomQuadrant(${idx}, 3)" title="Phóng to góc dưới phải">4</div>
+               </div>
+             </div>`
+          : `<div class="visual-svg-stage" onclick="onPdfStageClickRipple(event, ${idx})">
+               ${buildAnimatedVisual4D(slide, idx)}
+               <canvas class="fx-living-overlay-canvas" id="fxCanvas_${idx}"></canvas>
+             </div>`;
+
+        const cards = ensureSlideFlipCards(slide, idx);
+        const flipCardsHtml = cards.slice(0, 4).map((c, cIdx) => {
+          const sliceThumbHtml = c.sliceImg
+            ? `<img class="flip-slice-thumb" src="${c.sliceImg}" alt="${(c.frontTitle || '').replace(/"/g, '&quot;')}" />`
+            : "";
+          return `
+            <div class="flip-card-3d" id="flipCard_${idx}_${cIdx}" onclick="onFlipCardClick(this, ${idx}, ${cIdx})">
+              <div class="flip-card-inner">
+                <div class="flip-face flip-front">
+                  <div>
+                    <div class="flip-badge"><span>📌 MỤC ${cIdx + 1}</span><span>⇄ LẬT</span></div>
+                    ${sliceThumbHtml}
+                    <div class="flip-title">${c.frontTitle || "NỘI DUNG"}</div>
+                    <div class="flip-desc">${c.frontText || ""}</div>
+                  </div>
+                </div>
+                <div class="flip-face flip-back">
+                  <div>
+                    <div class="flip-badge"><span>🌟 TRẢI NGHIỆM ${cIdx + 1}</span><span>✓</span></div>
+                    ${sliceThumbHtml}
+                    <div class="flip-title">${c.backTitle || "CHUYỂN HÓA"}</div>
+                    <div class="flip-desc">${c.backText || ""}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          `;
+        }).join("");
+
+        const widgetHtml = buildSlideWidgetHtml(slide, idx);
+
+        sec.innerHTML = `
+          <div class="slide-inner">
+            <div class="slide-header">
+              <div class="slide-title-wrap">
+                <span class="slide-num-pill">TRANG ${String(idx + 1).padStart(2, "0")} / ${String(SLIDES_DATA.length).padStart(2, "0")}</span>
+                <h1 class="slide-title">${cleanTitle}</h1>
+              </div>
+              <div class="slide-header-actions">
+                <button class="btn-hud-action" onclick="toggleMagnifierForSlide(${idx})" id="btnLens_${idx}" title="Bật/Tắt Kính lúp 4D soi chi tiết trên ảnh">
+                  🔍 Kính Lúp 4D
+                </button>
+                <button class="btn-hud-action" onclick="resetZoomQuadrant(${idx})" title="Khôi phục khung ảnh 16:9 toàn cảnh">
+                  🖼️ Toàn Cảnh 16:9
+                </button>
+                <label class="header-hide-label">
+                  <input type="checkbox" ${!isHidden ? "checked" : ""} onchange="toggleShowSlide(${idx}, this.checked)" />
+                  ✓ Hiển thị trang này
+                </label>
+                <button class="btn-slide-voice" onclick="speakSingleSlide(${idx})">🔊 Giảng Trang Này</button>
+              </div>
+            </div>
+
+            <div class="senior-stage">
+              <div class="senior-panel visual-panel-16x9">
+                <div class="giant-art-frame" id="artFrame_${idx}">
+                  ${visualStageContent}
+                  <div class="photo-tools">
+                    <button onclick="toggleMagnifierForSlide(${idx})">🔍 Soi 2.2x</button>
+                    <button onclick="cycleZoomQuadrant(${idx})">🎯 Zoom Vùng</button>
+                    <label>
+                      🖼 Nạp Ảnh 16:9
+                      <input type="file" accept="image/*" style="display:none;" onchange="uploadSlideCustomPhoto(event, ${idx})" />
+                    </label>
+                    <button onclick="resetSlideDefaultArt(${idx})">↺ Đồ Họa 4D</button>
+                  </div>
+                </div>
+                <div class="transform-row-large" style="width:100%;" onclick="flipAllCardsForSlide(${idx})">
+                  <span class="state-old-lg">${slide.stateOld || "📘 Kiến thức nền tảng"}</span>
+                  <span class="verb-bridge-lg">${slide.bridgeVerb || "CHUYỂN HÓA THÀNH"}</span>
+                  <span class="state-new-lg">${slide.stateNew || "🌟 Trải nghiệm & Hòa nhập 4B1"}</span>
+                </div>
+              </div>
+
+              <div class="senior-panel">
+                <div style="display:flex; flex-direction:column; height:100%; justify-content:space-between; gap:8px;">
+                  <div class="right-panel-header">
+                    <span class="slide-tag">🎴 BỘ 4 THẺ BÀI LẬT SƯ PHẠM &amp; HÒA NHẬP</span>
+                    <button class="btn-flip-all" onclick="flipAllCardsForSlide(${idx})">🔄 Lật 4 Thẻ</button>
+                  </div>
+                  <div class="flip-cards-grid" id="flipGrid_${idx}">
+                    ${flipCardsHtml}
+                  </div>
+                  ${widgetHtml}
+                </div>
+              </div>
+            </div>
+          </div>
+        `;
+        track.appendChild(sec);
+
+        const opt = document.createElement("option");
+        opt.value = String(idx);
+        opt.textContent = (isHidden ? "🙈 [ẨN] " : "") + cleanTitle;
+        jumpSelect.appendChild(opt);
+
+        const dot = document.createElement("div");
+        dot.className = "slide-dot" + (idx === currentSlide ? " active" : "") + (isHidden ? " is-hidden" : "");
+        dot.title = cleanTitle;
+        dot.onclick = () => goToSlide(idx, true);
+        dotsContainer.appendChild(dot);
+      });
+
+      initLivingOverlayCanvases();
+      updateSlidePosition();
+    }
+
+    // =========================================================================
+    // 5. HIỆU ỨNG ĐỘNG 4D SỐNG ĐỘNG TRỰC TIẾP TRÊN KHUNG 16:9
+    // =========================================================================
+    let overlayAnimControllers = [];
+    let activeZoomQuadrantBySlide = {};
+
+    function initLivingOverlayCanvases() {
+      overlayAnimControllers = [];
+      SLIDES_DATA.forEach((_, idx) => {
+        const cv = document.getElementById("fxCanvas_" + idx);
+        if (!cv) return;
+        cv.width = 960;
+        cv.height = 540;
+        const ctx = cv.getContext("2d");
+        const nodes = [];
+        for (let i = 0; i < 24; i++) {
+          nodes.push({
+            x: Math.random() * 960,
+            y: Math.random() * 540,
+            vx: (Math.random() - 0.5) * 0.85,
+            vy: (Math.random() - 0.5) * 0.85,
+            r: Math.random() * 2.6 + 1.2,
+            alpha: Math.random() * 0.5 + 0.2
+          });
+        }
+        overlayAnimControllers.push({ idx, cv, ctx, nodes, ripples: [], scanX: 0 });
+      });
+    }
+
+    function animateLivingOverlaysLoop() {
+      overlayAnimControllers.forEach(ctrl => {
+        if (currentMode !== "scroll" && ctrl.idx !== currentSlide) return;
+        const { ctx, cv, nodes, ripples } = ctrl;
+        const w = cv.width;
+        const h = cv.height;
+        ctx.clearRect(0, 0, w, h);
+
+        ctrl.scanX = (ctrl.scanX + 2.0) % (w + 260);
+        const grad = ctx.createLinearGradient(ctrl.scanX - 240, 0, ctrl.scanX, h * 0.4);
+        grad.addColorStop(0, "rgba(56, 189, 248, 0)");
+        grad.addColorStop(0.5, "rgba(245, 196, 81, 0.055)");
+        grad.addColorStop(1, "rgba(56, 189, 248, 0)");
+        ctx.fillStyle = grad;
+        ctx.fillRect(0, 0, w, h);
+
+        for (let i = 0; i < nodes.length; i++) {
+          const p = nodes[i];
+          p.x += p.vx;
+          p.y += p.vy;
+          if (p.x < 0 || p.x > w) p.vx = -p.vx;
+          if (p.y < 0 || p.y > h) p.vy = -p.vy;
+
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(245, 196, 81, ${p.alpha})`;
+          ctx.fill();
+
+          for (let j = i + 1; j < nodes.length; j++) {
+            const q = nodes[j];
+            const dx = p.x - q.x;
+            const dy = p.y - q.y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+            if (dist < 110) {
+              ctx.beginPath();
+              ctx.moveTo(p.x, p.y);
+              ctx.lineTo(q.x, q.y);
+              ctx.strokeStyle = `rgba(56, 189, 248, ${(1 - dist / 110) * 0.14})`;
+              ctx.lineWidth = 1;
+              ctx.stroke();
+            }
+          }
+        }
+
+        for (let r = ripples.length - 1; r >= 0; r--) {
+          const rp = ripples[r];
+          rp.radius += 3.8;
+          rp.alpha -= 0.022;
+          if (rp.alpha <= 0) {
+            ripples.splice(r, 1);
+          } else {
+            ctx.beginPath();
+            ctx.arc(rp.x, rp.y, rp.radius, 0, Math.PI * 2);
+            ctx.strokeStyle = `rgba(52, 211, 153, ${rp.alpha})`;
+            ctx.lineWidth = 3;
+            ctx.stroke();
+          }
+        }
+      });
+      requestAnimationFrame(animateLivingOverlaysLoop);
+    }
+
+    function onPdfStageClickRipple(ev, slideIdx) {
+      const ctrl = overlayAnimControllers.find(c => c.idx === slideIdx);
+      if (!ctrl) return;
+      const rect = ctrl.cv.getBoundingClientRect();
+      const x = ((ev.clientX - rect.left) / Math.max(1, rect.width)) * ctrl.cv.width;
+      const y = ((ev.clientY - rect.top) / Math.max(1, rect.height)) * ctrl.cv.height;
+      ctrl.ripples.push({ x, y, radius: 6, alpha: 0.95 });
+      ctrl.ripples.push({ x, y, radius: 18, alpha: 0.65 });
+      sfxChime();
+    }
+
+    function toggleMagnifierForSlide(slideIdx) {
+      const frame = document.getElementById("artFrame_" + slideIdx);
+      const btn = document.getElementById("btnLens_" + slideIdx);
+      if (!frame) return;
+      const img = document.getElementById("slideImg_" + slideIdx);
+      if (!img) {
+        showVoiceToast("ℹ️ Nạp ảnh 16:9 vào khung để dùng Kính Lúp 4D soi chi tiết!");
+        return;
+      }
+      const isNowOn = !frame.classList.contains("lens-active");
+      frame.classList.toggle("lens-active", isNowOn);
+      if (btn) btn.classList.toggle("active", isNowOn);
+      showVoiceToast(isNowOn ? "🔍 Đã bật Kính Lúp 4D (Di chuột trên ảnh để soi 2.2x)" : "🔍 Đã tắt Kính Lúp 4D");
+    }
+
+    function onPdfStageMouseMove(ev, slideIdx) {
+      const frame = document.getElementById("artFrame_" + slideIdx);
+      const lens = document.getElementById("magLens_" + slideIdx);
+      const img = document.getElementById("slideImg_" + slideIdx);
+      if (!frame || !lens || !img || !frame.classList.contains("lens-active")) return;
+
+      const rect = frame.getBoundingClientRect();
+      const relX = ev.clientX - rect.left;
+      const relY = ev.clientY - rect.top;
+      const pctX = Math.max(0, Math.min(100, (relX / rect.width) * 100));
+      const pctY = Math.max(0, Math.min(100, (relY / rect.height) * 100));
+
+      lens.style.left = relX + "px";
+      lens.style.top = relY + "px";
+      lens.style.backgroundImage = `url('${img.src}')`;
+      lens.style.backgroundSize = `${rect.width * 2.2}px ${rect.height * 2.2}px`;
+      lens.style.backgroundPosition = `${pctX}% ${pctY}%`;
+    }
+
+    function onPdfStageMouseLeave(slideIdx) {
+      const lens = document.getElementById("magLens_" + slideIdx);
+      if (lens) lens.style.left = "-9999px";
+    }
+
+    function toggleZoomQuadrant(slideIdx, qIdx) {
+      const frame = document.getElementById("artFrame_" + slideIdx);
+      if (!frame) return;
+      const cls = "zoom-focus-" + qIdx;
+      const already = frame.classList.contains(cls);
+      frame.classList.remove("zoom-focus-0", "zoom-focus-1", "zoom-focus-2", "zoom-focus-3");
+      if (!already) {
+        frame.classList.add(cls);
+        activeZoomQuadrantBySlide[slideIdx] = qIdx;
+      } else {
+        delete activeZoomQuadrantBySlide[slideIdx];
+      }
+      sfxChime();
+    }
+
+    function cycleZoomQuadrant(slideIdx) {
+      const cur = activeZoomQuadrantBySlide[slideIdx];
+      const next = cur === undefined ? 0 : (cur + 1) % 5;
+      if (next === 4) resetZoomQuadrant(slideIdx);
+      else toggleZoomQuadrant(slideIdx, next);
+    }
+
+    function resetZoomQuadrant(slideIdx) {
+      const frame = document.getElementById("artFrame_" + slideIdx);
+      if (!frame) return;
+      frame.classList.remove("zoom-focus-0", "zoom-focus-1", "zoom-focus-2", "zoom-focus-3");
+      delete activeZoomQuadrantBySlide[slideIdx];
+      sfxChime();
+    }
+
+    function toggleWide16x9Stage() {
+      isWide16x9Stage = !isWide16x9Stage;
+      document.body.classList.toggle("stage-wide-16x9", isWide16x9Stage);
+      const btn = document.getElementById("btnToggleWide16x9");
+      if (btn) btn.classList.toggle("active", isWide16x9Stage);
+      showVoiceToast(isWide16x9Stage ? "📺 Chế độ Khung Hình 16:9 Cực Đại" : "🎬 Chế độ Cân Đối 16:9 + Bộ 4 Thẻ Lật");
+    }
+
+    function onFlipCardClick(cardEl, slideIdx, cardIdx) {
+      if (!cardEl) return;
+      cardEl.classList.toggle("flipped");
+      const inner = cardEl.querySelector(".flip-card-inner");
+      if (inner) {
+        inner.style.animation = "none";
+        void inner.offsetWidth;
+        inner.style.animation = "flipBounceIn 0.42s cubic-bezier(0.22, 1, 0.36, 1)";
+      }
+      sfxChime();
+    }
+
+    function flipAllCardsForSlide(slideIdx) {
+      const grid = document.getElementById("flipGrid_" + slideIdx);
+      if (!grid) return;
+      const cards = grid.querySelectorAll(".flip-card-3d");
+      const anyUnflipped = Array.from(cards).some(c => !c.classList.contains("flipped"));
+      cards.forEach(c => c.classList.toggle("flipped", anyUnflipped));
+      sfxChime();
+    }
+
+    function flipAllCardsOnCurrentSlide() {
+      flipAllCardsForSlide(currentSlide);
+    }
+
+    // =========================================================================
+    // 6. ENGINE CHUYỂN HÓA PDF SANG HTML 4D
+    // =========================================================================
+    function initPdfDropZone() {
+      const dz = document.getElementById("pdfDropZone");
+      if (!dz) return;
+      dz.addEventListener("dragover", (e) => { e.preventDefault(); dz.classList.add("dragover"); });
+      dz.addEventListener("dragleave", () => { dz.classList.remove("dragover"); });
+      dz.addEventListener("drop", (e) => {
+        e.preventDefault();
+        dz.classList.remove("dragover");
+        if (e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files.length > 0) {
+          processNotebookPdfFile(e.dataTransfer.files[0]);
+        }
+      });
+    }
+
+    function handlePdfFileSelect(event) {
+      const file = event.target.files && event.target.files[0];
+      if (file) processNotebookPdfFile(file);
+    }
+
+    function extractFourVisualSlicesFromCanvas(sourceCanvas) {
+      const w = sourceCanvas.width;
+      const h = sourceCanvas.height;
+      const regions = [
+        { sx: Math.floor(w * 0.04), sy: Math.floor(h * 0.12), sw: Math.floor(w * 0.44), sh: Math.floor(h * 0.38) },
+        { sx: Math.floor(w * 0.52), sy: Math.floor(h * 0.12), sw: Math.floor(w * 0.44), sh: Math.floor(h * 0.38) },
+        { sx: Math.floor(w * 0.04), sy: Math.floor(h * 0.52), sw: Math.floor(w * 0.44), sh: Math.floor(h * 0.38) },
+        { sx: Math.floor(w * 0.52), sy: Math.floor(h * 0.52), sw: Math.floor(w * 0.44), sh: Math.floor(h * 0.38) }
+      ];
+      return regions.map(rg => {
+        const c = document.createElement("canvas");
+        c.width = 320;
+        c.height = 140;
+        c.getContext("2d").drawImage(sourceCanvas, rg.sx, rg.sy, rg.sw, rg.sh, 0, 0, 320, 140);
+        return c.toDataURL("image/jpeg", 0.82);
+      });
+    }
+
+    async function processNotebookPdfFile(file) {
+      const statusEl = document.getElementById("pdfProgressStatus");
+      if (!window.pdfjsLib) return;
+      try {
+        statusEl.textContent = `⏳ Đang giải nén file PDF "${file.name}"...`;
+        const arrayBuf = await file.arrayBuffer();
+        const pdfDoc = await window.pdfjsLib.getDocument({ data: arrayBuf }).promise;
+        const numPages = pdfDoc.numPages;
+        const scaleVal = parseFloat(document.getElementById("pdfScaleSelect").value || "2.0");
+        const courseTag = document.getElementById("pdfCourseTagInput").value.trim() || "🏫 LỚP 4B1 • TUẦN 10 • GV NGUYỄN HỮU KHANH";
+        const bridgeVerb = document.getElementById("pdfBridgeVerbSelect").value || "CHUYỂN HÓA THÀNH";
+
+        const extractedSlides = [];
+        for (let p = 1; p <= numPages; p++) {
+          statusEl.textContent = `⚡ Đang xử lý Trang ${p} / ${numPages}...`;
+          const page = await pdfDoc.getPage(p);
+          const viewport = page.getViewport({ scale: scaleVal });
+          const offCanvas = document.createElement("canvas");
+          offCanvas.width = viewport.width;
+          offCanvas.height = viewport.height;
+          await page.render({ canvasContext: offCanvas.getContext("2d"), viewport }).promise;
+
+          const finalDataUrl = offCanvas.toDataURL("image/jpeg", 0.9);
+          const sliceThumbs = extractFourVisualSlicesFromCanvas(offCanvas);
+          const textContent = await page.getTextContent();
+          const rawText = (textContent.items || []).map(it => it.str).join(" ").trim();
+          const title = `${String(p).padStart(2, "0")}. ${(rawText.slice(0, 65) || "KẾ HOẠCH BÀI DẠY TUẦN 10 – LỚP 4B1")}`;
+
+          extractedSlides.push({
+            id: p,
+            tag: courseTag,
+            title,
+            flipCards: [
+              { frontTitle: "TRỌNG TÂM 1", frontText: rawText.slice(0, 90) || "Nội dung trọng tâm tiết học.", backTitle: "TRẢI NGHIỆM 1", backText: "Vận dụng thực hành trực tiếp trên lớp.", sliceImg: sliceThumbs[0] },
+              { frontTitle: "TRỌNG TÂM 2", frontText: rawText.slice(90, 180) || "Hoạt động khám phá kiến thức.", backTitle: "TRẢI NGHIỆM 2", backText: "Thảo luận nhóm và tương tác sáng tạo.", sliceImg: sliceThumbs[1] },
+              { frontTitle: "TRỌNG TÂM 3", frontText: rawText.slice(180, 270) || "Luyện tập củng cố kỹ năng.", backTitle: "TRẢI NGHIỆM 3", backText: "Trò chơi học tập và trình bày sản phẩm.", sliceImg: sliceThumbs[2] },
+              { frontTitle: "HÒA NHẬP 4B1", frontText: "Điều chỉnh cho HS khuyết tật vận động.", backTitle: "100% TỎA SÁNG", backText: "Phân công vai trò phù hợp, an toàn, bình đẳng.", sliceImg: sliceThumbs[3] }
+            ],
+            bullets: ["🔹 " + (rawText.slice(0, 160) || "Nội dung Kế hoạch bài dạy Tuần 10 lớp 4B1.")],
+            stateOld: "📘 Kiến thức lý thuyết trên trang sách",
+            bridgeVerb,
+            stateNew: "🌟 Hoạt động trải nghiệm & Giáo dục hòa nhập 4B1",
+            image: finalDataUrl,
+            visualTheme: "auto",
+            widgetType: "none",
+            script: rawText.slice(0, 260) || title
+          });
+        }
+
+        SLIDES_DATA = extractedSlides;
+        currentSlide = 0;
+        hiddenSlides.clear();
+        saveSlidesToStorage();
+        renderExtractedPagesEditor();
+        renderAllSlides();
+        statusEl.innerHTML = `<strong style="color:#34d399;">✅ Đã nạp hoàn tất ${numPages} trang từ "${file.name}"!</strong>`;
+        showVoiceToast(`🎉 Đã nạp ${numPages} trang PDF thành công!`);
+      } catch (err) {
+        statusEl.textContent = "⚠️ Lỗi khi đọc file PDF.";
+      }
+    }
+
+    function renderExtractedPagesEditor() {
+      const container = document.getElementById("extractedPagesContainer");
+      if (!container) return;
+      container.innerHTML = "";
+
+      SLIDES_DATA.forEach((slide, idx) => {
+        const card = document.createElement("div");
+        card.className = "page-editor-card";
+        const cards = ensureSlideFlipCards(slide, idx);
+        slide.flipCards = cards;
+
+        const visualPreviewHtml = (slide.image && slide.image.trim().length > 0)
+          ? `<img class="thumb-preview" src="${slide.image}" alt="Slide ${idx + 1}" />`
+          : `<div style="aspect-ratio:16/9; width:100%; border-radius:10px; overflow:hidden; border:1px solid rgba(56,189,248,0.45); background:#020611;">${buildAnimatedVisual4D(slide, idx)}</div>`;
+
+        card.innerHTML = `
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <span class="slide-tag">TRANG ${idx + 1} / ${SLIDES_DATA.length} (KHUNG 16:9 CHUẨN)</span>
+            <div style="display:flex; gap:6px;">
+              <button class="btn-hud-action" onclick="previewSingleSlideFromStudio(${idx})">👁 Xem 4D</button>
+              <button class="btn-hud-action" style="border-color:#fb7185; color:#fecdd3;" onclick="deleteSlideAtIndex(${idx})">🗑 Xóa</button>
+            </div>
+          </div>
+          ${visualPreviewHtml}
+          <div>
+            <label style="font-size:0.74rem; color:#ffe9ad; font-weight:700;">Tiêu đề Slide:</label>
+            <input type="text" value="${(slide.title || "").replace(/"/g, '&quot;')}" oninput="updateSlideField(${idx}, 'title', this.value)" />
+          </div>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:6px;">
+            <div>
+              <label style="font-size:0.72rem; color:#fda4af; font-weight:700;">Thẻ 1 (Mặt Trước):</label>
+              <input type="text" value="${(cards[0].frontText || "").replace(/"/g, '&quot;')}" oninput="updateFlipCardField(${idx}, 0, 'frontText', this.value)" />
+            </div>
+            <div>
+              <label style="font-size:0.72rem; color:#6ee7b7; font-weight:700;">Thẻ 1 (Mặt Sau):</label>
+              <input type="text" value="${(cards[0].backText || "").replace(/"/g, '&quot;')}" oninput="updateFlipCardField(${idx}, 0, 'backText', this.value)" />
+            </div>
+          </div>
+          <div style="display:grid; grid-template-columns:1fr auto 1fr; gap:6px; align-items:center;">
+            <input type="text" value="${(slide.stateOld || "").replace(/"/g, '&quot;')}" oninput="updateSlideField(${idx}, 'stateOld', this.value)" />
+            <span style="font-size:0.72rem; font-weight:900; color:#f5c451;">➔</span>
+            <input type="text" value="${(slide.stateNew || "").replace(/"/g, '&quot;')}" oninput="updateSlideField(${idx}, 'stateNew', this.value)" />
+          </div>
+          <div>
+            <label style="font-size:0.74rem; color:#34d399; font-weight:700;">Kịch bản lời thuyết minh &amp; Giọng đọc AI:</label>
+            <textarea oninput="updateSlideField(${idx}, 'script', this.value)">${slide.script || ""}</textarea>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    function updateSlideField(idx, field, val) {
+      if (!SLIDES_DATA[idx]) return;
+      SLIDES_DATA[idx][field] = val;
+      saveSlidesToStorage();
+    }
+
+    function updateFlipCardField(slideIdx, cardIdx, key, val) {
+      if (!SLIDES_DATA[slideIdx]) return;
+      const cards = ensureSlideFlipCards(SLIDES_DATA[slideIdx], slideIdx);
+      if (cards[cardIdx]) {
+        cards[cardIdx][key] = val;
+        SLIDES_DATA[slideIdx].flipCards = cards;
+        saveSlidesToStorage();
+      }
+    }
+
+    function previewSingleSlideFromStudio(idx) {
+      renderAllSlides();
+      switchWorkspace("deck");
+      goToSlide(idx, true);
+    }
+
+    function deleteSlideAtIndex(idx) {
+      if (SLIDES_DATA.length <= 1) {
+        showVoiceToast("⚠️ Bộ bài giảng phải có ít nhất 1 trang!");
+        return;
+      }
+      SLIDES_DATA.splice(idx, 1);
+      if (currentSlide >= SLIDES_DATA.length) currentSlide = SLIDES_DATA.length - 1;
+      saveSlidesToStorage();
+      renderExtractedPagesEditor();
+      renderAllSlides();
+      showVoiceToast(`🗑 Đã xóa trang ${idx + 1}`);
+    }
+
+    function addBlankCustomSlide() {
+      const newIdx = SLIDES_DATA.length + 1;
+      SLIDES_DATA.push({
+        id: newIdx,
+        tag: "🏫 LỚP 4B1 • TUẦN 10 • GV NGUYỄN HỮU KHANH",
+        title: `${String(newIdx).padStart(2, "0")}. HOẠT ĐỘNG BỔ SUNG LỚP 4B1`,
+        flipCards: ensureSlideFlipCards({}, newIdx),
+        bullets: ["🔹 Nội dung hoạt động trải nghiệm bổ sung."],
+        stateOld: "📘 Hoạt động trên lớp",
+        bridgeVerb: "CHUYỂN HÓA THÀNH",
+        stateNew: "🌟 Trải nghiệm sáng tạo & Hòa nhập 4B1",
+        image: "",
+        visualTheme: "week10_overview",
+        widgetType: "none",
+        script: `Trang ${newIdx}. Hoạt động bổ sung trong Kế hoạch bài dạy Tuần 10 lớp 4B1 của thầy Nguyễn Hữu Khanh.`
+      });
+      saveSlidesToStorage();
+      renderExtractedPagesEditor();
+      renderAllSlides();
+      showVoiceToast(`➕ Đã thêm Trang ${newIdx} mới!`);
+    }
+
+    function resetToDefaultMasterDeck() {
+      SLIDES_DATA = JSON.parse(JSON.stringify(DEFAULT_MASTER_SLIDES));
+      currentSlide = 0;
+      hiddenSlides.clear();
+      try { localStorage.removeItem(SLIDES_STORAGE_KEY); } catch (e) {}
+      renderExtractedPagesEditor();
+      renderAllSlides();
+      showVoiceToast("🔄 Đã khôi phục trọn bộ 10 trang Kế hoạch Tuần 10 Lớp 4B1!");
+    }
+
+    function applyExtractedToLiveDeck() {
+      renderAllSlides();
+      switchWorkspace("deck");
+      goToSlide(0, false);
+      showVoiceToast("🎬 Đã áp dụng vào màn hình Trình Chiếu 4D!");
+    }
+
+    function saveSlidesToStorage() {
+      try { localStorage.setItem(SLIDES_STORAGE_KEY, JSON.stringify(SLIDES_DATA)); } catch (e) {}
+    }
+
+    function loadSlidesFromStorage() {
+      try {
+        const raw = localStorage.getItem(SLIDES_STORAGE_KEY);
+        if (raw) {
+          const parsed = JSON.parse(raw);
+          if (Array.isArray(parsed) && parsed.length > 0) SLIDES_DATA = parsed;
+        }
+      } catch (e) {}
+    }
+
+    function uploadSlideCustomPhoto(event, idx) {
+      const file = event.target.files && event.target.files[0];
+      if (!file || !SLIDES_DATA[idx]) return;
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        SLIDES_DATA[idx].image = e.target.result;
+        saveSlidesToStorage();
+        renderAllSlides();
+        renderExtractedPagesEditor();
+        showVoiceToast(`🖼 Đã nạp ảnh 16:9 cho Trang ${idx + 1}!`);
+      };
+      reader.readAsDataURL(file);
+    }
+
+    function resetSlideDefaultArt(idx) {
+      if (!SLIDES_DATA[idx]) return;
+      SLIDES_DATA[idx].image = "";
+      saveSlidesToStorage();
+      renderAllSlides();
+      renderExtractedPagesEditor();
+      showVoiceToast(`↺ Đã bật Đồ Họa Động 4D cho Trang ${idx + 1}!`);
+    }
+
+    // =========================================================================
+    // 7. ĐIỀU HƯỚNG SLIDE, 5 PHONG CÁCH, ẨN/HIỆN TRANG & TOÀN MÀN HÌNH
+    // =========================================================================
+    function switchWorkspace(ws) {
+      currentWorkspace = ws;
+      document.body.classList.remove("workspace-deck", "workspace-converter", "workspace-skill");
+      document.documentElement.classList.remove("workspace-deck", "workspace-converter", "workspace-skill");
+      document.body.classList.add("workspace-" + ws);
+      document.documentElement.classList.add("workspace-" + ws);
+
+      document.getElementById("tabBtnDeck").classList.toggle("active", ws === "deck");
+      document.getElementById("tabBtnConverter").classList.toggle("active", ws === "converter");
+      document.getElementById("tabBtnSkill").classList.toggle("active", ws === "skill");
+
+      if (ws === "converter") renderExtractedPagesEditor();
+      else if (ws === "deck") updateSlidePosition();
+    }
+
+    function setVisualArtStyle(styleKey) {
+      document.body.classList.remove("style-cinematic", "style-realistic", "style-infographic", "style-painting", "style-handdrawn");
+      document.body.classList.add("style-" + styleKey);
+      sfxChime();
+      renderAllSlides();
+      const labels = {
+        cinematic: "🎬 Điện Ảnh 4D",
+        realistic: "📸 Chân Thực Sắc Nét",
+        infographic: "📊 Đồ Họa Infographic",
+        painting: "🎨 Bức Vẽ Nghệ Thuật",
+        handdrawn: "✍️ Viết Tay Sketchnote"
+      };
+      showVoiceToast("🎨 Phong cách: " + (labels[styleKey] || styleKey));
+    }
+
+    function setDeckMode(mode) {
+      currentMode = mode;
+      document.documentElement.classList.remove("mode-horizontal", "mode-vertical", "mode-scroll");
+      document.body.classList.remove("mode-horizontal", "mode-vertical", "mode-scroll");
+      document.documentElement.classList.add("mode-" + mode);
+      document.body.classList.add("mode-" + mode);
+
+      document.getElementById("btnModeHorizontal").classList.toggle("active", mode === "horizontal");
+      document.getElementById("btnModeVertical").classList.toggle("active", mode === "vertical");
+      document.getElementById("btnModeScroll").classList.toggle("active", mode === "scroll");
+
+      if (currentWorkspace !== "deck") switchWorkspace("deck");
+      updateSlidePosition();
+    }
+
+    function visibleCount() {
+      return Math.max(1, SLIDES_DATA.length - hiddenSlides.size);
+    }
+
+    function findVisibleSlide(fromIdx, dir) {
+      for (let i = fromIdx + dir; i >= 0 && i < SLIDES_DATA.length; i += dir) {
+        if (!hiddenSlides.has(i)) return i;
+      }
+      return -1;
+    }
+
+    function visiblePosition(idx) {
+      let n = 0;
+      for (let i = 0; i <= idx && i < SLIDES_DATA.length; i++) {
+        if (!hiddenSlides.has(i)) n++;
+      }
+      return Math.max(1, n);
+    }
+
+    function updateSlidePosition() {
+      const track = document.getElementById("slidesTrack");
+      const jumpSelect = document.getElementById("slideJumpSelect");
+      const dotsContainer = document.getElementById("dotsContainer");
+      if (!track) return;
+
+      if (jumpSelect) jumpSelect.value = String(currentSlide);
+
+      document.querySelectorAll(".slide").forEach((s, idx) => {
+        s.classList.toggle("active-slide", idx === currentSlide);
+        s.classList.toggle("is-hidden", hiddenSlides.has(idx));
+      });
+
+      if (dotsContainer) {
+        dotsContainer.querySelectorAll(".slide-dot").forEach((d, idx) => {
+          d.classList.toggle("active", idx === currentSlide);
+          d.classList.toggle("is-hidden", hiddenSlides.has(idx));
+        });
+      }
+
+      const chkBottom = document.getElementById("chkShowCurrent");
+      if (chkBottom) chkBottom.checked = !hiddenSlides.has(currentSlide);
+
+      const badge = document.getElementById("hideCountBadge");
+      if (badge) {
+        badge.textContent = String(hiddenSlides.size);
+        badge.classList.toggle("zero", hiddenSlides.size === 0);
+      }
+
+      const bar = document.getElementById("deckProgress");
+      if (bar) {
+        bar.style.width = ((visiblePosition(currentSlide) / visibleCount()) * 100).toFixed(1) + "%";
+      }
+
+      const tele = document.getElementById("teleprompterText");
+      if (tele && !isAutoLecturing && SLIDES_DATA[currentSlide]) {
+        tele.textContent = "🏫 " + SLIDES_DATA[currentSlide].script;
+      }
+
+      if (currentMode === "scroll") {
+        track.style.transform = "none";
+        return;
+      }
+      if (currentMode === "horizontal") {
+        track.style.transform = `translate3d(-${currentSlide * 100}vw, 0, 0)`;
+      } else {
+        track.style.transform = `translate3d(0, -${currentSlide * 100}%, 0)`;
+      }
+    }
+
+    function goToSlide(index, manualTrigger) {
+      if (index < 0) index = 0;
+      if (index >= SLIDES_DATA.length) index = SLIDES_DATA.length - 1;
+      if (hiddenSlides.has(index) && index !== currentSlide) {
+        let nextVis = findVisibleSlide(index, index > currentSlide ? 1 : -1);
+        if (nextVis === -1) nextVis = findVisibleSlide(index, index > currentSlide ? -1 : 1);
+        if (nextVis === -1) return;
+        index = nextVis;
+      }
+      const changed = currentSlide !== index;
+      currentSlide = index;
+      if (changed) sfxWhoosh();
+      updateSlidePosition();
+
+      if (currentMode === "scroll") {
+        const slides = document.querySelectorAll(".slide");
+        if (slides[currentSlide]) slides[currentSlide].scrollIntoView({ behavior: "smooth" });
+      }
+      if (manualTrigger && isAutoLecturing) {
+        playSlideNarration(currentSlide, true, 0);
+      }
+    }
+
+    function nextSlide() {
+      const target = findVisibleSlide(currentSlide, 1);
+      if (target !== -1) goToSlide(target, true);
+    }
+
+    function prevSlide() {
+      const target = findVisibleSlide(currentSlide, -1);
+      if (target !== -1) goToSlide(target, true);
+    }
+
+    function toggleShowSlide(idx, shouldShow) {
+      const shouldHide = !shouldShow;
+      if (shouldHide && !hiddenSlides.has(idx) && visibleCount() <= 1) {
+        showVoiceToast("⚠️ Phải giữ lại ít nhất 1 trang hiển thị!");
+        renderAllSlides();
+        return;
+      }
+      if (shouldHide) hiddenSlides.add(idx);
+      else hiddenSlides.delete(idx);
+
+      try { localStorage.setItem(HIDE_STORAGE_KEY, JSON.stringify(Array.from(hiddenSlides))); } catch (e) {}
+
+      if (shouldHide && idx === currentSlide) {
+        let nextVis = findVisibleSlide(currentSlide, 1);
+        if (nextVis === -1) nextVis = findVisibleSlide(currentSlide, -1);
+        if (nextVis !== -1) currentSlide = nextVis;
+      }
+
+      renderAllSlides();
+      if (document.getElementById("hideModal").classList.contains("open")) renderHideModalList();
+      showVoiceToast(shouldHide ? `🙈 Đã ẩn Trang ${idx + 1}` : `👁 Đã hiển thị Trang ${idx + 1}`);
+    }
+
+    function openHideModal() {
+      renderHideModalList();
+      document.getElementById("hideModal").classList.add("open");
+    }
+
+    function closeHideModal() {
+      document.getElementById("hideModal").classList.remove("open");
+    }
+
+    function renderHideModalList() {
+      const list = document.getElementById("hideListContainer");
+      const summary = document.getElementById("hideSummaryText");
+      if (!list) return;
+      list.innerHTML = "";
+      SLIDES_DATA.forEach((s, idx) => {
+        const isHidden = hiddenSlides.has(idx);
+        const row = document.createElement("label");
+        row.className = "hide-row" + (isHidden ? " is-hidden" : "");
+        row.innerHTML = `
+          <input type="checkbox" ${!isHidden ? "checked" : ""} onchange="toggleShowSlide(${idx}, this.checked)" style="width:18px; height:18px; accent-color:#34d399;" />
+          <span class="hide-row-title" style="flex:1;">${s.title}</span>
+          <span style="font-size:0.76rem; color:${isHidden ? '#fb7185' : '#34d399'};">${isHidden ? '🙈 ĐÃ ẨN' : '✔ HIỂN THỊ'}</span>
+        `;
+        list.appendChild(row);
+      });
+      if (summary) summary.textContent = `Đang hiển thị ${visibleCount()} / ${SLIDES_DATA.length} trang • Đã ẩn ${hiddenSlides.size} trang.`;
+    }
+
+    function showAllSlides() {
+      hiddenSlides.clear();
+      try { localStorage.setItem(HIDE_STORAGE_KEY, "[]"); } catch (e) {}
+      renderAllSlides();
+      renderHideModalList();
+      showVoiceToast("👁 Đã hiện tất cả các trang!");
+    }
+
+    function hideAllExceptCurrent() {
+      hiddenSlides.clear();
+      SLIDES_DATA.forEach((_, idx) => { if (idx !== currentSlide) hiddenSlides.add(idx); });
+      try { localStorage.setItem(HIDE_STORAGE_KEY, JSON.stringify(Array.from(hiddenSlides))); } catch (e) {}
+      renderAllSlides();
+      renderHideModalList();
+      showVoiceToast("🎯 Đã chỉ giữ lại trang hiện tại!");
+    }
+
+    function invertHiddenSlides() {
+      const nextSet = new Set();
+      SLIDES_DATA.forEach((_, idx) => { if (!hiddenSlides.has(idx)) nextSet.add(idx); });
+      if (nextSet.size >= SLIDES_DATA.length) return;
+      hiddenSlides = nextSet;
+      if (hiddenSlides.has(currentSlide)) {
+        const firstVis = findVisibleSlide(-1, 1);
+        if (firstVis !== -1) currentSlide = firstVis;
+      }
+      try { localStorage.setItem(HIDE_STORAGE_KEY, JSON.stringify(Array.from(hiddenSlides))); } catch (e) {}
+      renderAllSlides();
+      renderHideModalList();
+    }
+
+    function resyncCurrentSlideLock() {
+      const lockedIdx = currentSlide;
+      const track = document.getElementById("slidesTrack");
+      if (!track) return;
+      track.style.transition = "none";
+      currentSlide = lockedIdx;
+      updateSlidePosition();
+      void track.offsetWidth;
+      track.style.transition = "";
+    }
+
+    document.addEventListener("fullscreenchange", () => {
+      [0, 60, 180, 450].forEach(ms => setTimeout(resyncCurrentSlideLock, ms));
+    });
+
+    function toggleFullScreen() {
+      if (!document.fullscreenElement) document.documentElement.requestFullscreen().catch(() => {});
+      else document.exitFullscreen().catch(() => {});
+    }
+
+    // =========================================================================
+    // 8. GIỌNG ĐỌC TIẾNG VIỆT KÉP (DUAL-ENGINE TTS: HỆ THỐNG + AUDIO STREAM DỰ PHÒNG CHỐNG CÂM LOA)
+    // =========================================================================
+    let isAutoLecturing = false;
+    let voiceGender = "male";
+    let speechRate = 1.0;
+    let speechSessionId = 0;
+    let currentUtterance = null;
+    let currentAudioPlayer = null;
+    let currentCharOffset = 0;
+    let currentFullSpokenText = "";
+    let speechStartedAtMs = 0;
+    let baseOffsetAtStart = 0;
+    let activeTimers = [];
+    let cachedSystemVoices = [];
+
+    if ("speechSynthesis" in window) {
+      const refreshVoices = () => {
+        cachedSystemVoices = window.speechSynthesis.getVoices() || [];
+      };
+      refreshVoices();
+      window.speechSynthesis.onvoiceschanged = refreshVoices;
+    }
+
+    function toSpokenVietnameseText(raw) {
+      if (!raw) return "";
+      return raw
+        .replace(/==>|->|➔|⇒/g, " chuyển hóa thành ")
+        .replace(/09\/11/g, "mùng 9 tháng 11")
+        .replace(/13\/11\/2026/g, "13 tháng 11 năm 2026")
+        .replace(/4B1/g, "bốn Bê một")
+        .replace(/HĐTN/g, "Hoạt động trải nghiệm")
+        .replace(/SHDC/g, "Sinh hoạt dưới cờ")
+        .replace(/SHL/g, "Sinh hoạt lớp")
+        .replace(/STEM/g, "Xì-tem")
+        .replace(/Mindmap/gi, "Sơ đồ tư duy")
+        .replace(/4D/g, "bốn đê")
+        .replace(/[\u{1F300}-\u{1FAFF}\u{2600}-\u{27BF}]/gu, "")
+        .replace(/\s+/g, " ")
+        .trim();
+    }
+
+    function cancelSpeechSession() {
+      speechSessionId++;
+      activeTimers.forEach(t => clearTimeout(t));
+      activeTimers = [];
+      if (currentUtterance) {
+        currentUtterance.onend = null;
+        currentUtterance.onerror = null;
+        currentUtterance.onboundary = null;
+        currentUtterance = null;
+      }
+      if (currentAudioPlayer) {
+        try {
+          currentAudioPlayer.pause();
+          currentAudioPlayer.src = "";
+        } catch (e) {}
+        currentAudioPlayer = null;
+      }
+      if ("speechSynthesis" in window) {
+        try { window.speechSynthesis.cancel(); } catch (e) {}
+      }
+      return speechSessionId;
+    }
+
+    function estimateCurrentCharOffset() {
+      if (currentCharOffset > baseOffsetAtStart) return currentCharOffset;
+      if (!speechStartedAtMs || !currentFullSpokenText) return baseOffsetAtStart;
+      const elapsedSec = (performance.now() - speechStartedAtMs) / 1000;
+      const charsPerSec = 13.5 * speechRate;
+      const est = baseOffsetAtStart + Math.floor(elapsedSec * charsPerSec);
+      return Math.min(currentFullSpokenText.length - 1, Math.max(baseOffsetAtStart, est));
+    }
+
+    function snapToNextWordBoundary(fullText, approxIdx) {
+      if (!fullText || approxIdx <= 0) return 0;
+      if (approxIdx >= fullText.length) return fullText.length;
+      const spaceIdx = fullText.indexOf(" ", approxIdx);
+      return spaceIdx !== -1 ? spaceIdx + 1 : approxIdx;
+    }
+
+    function selectVietnameseSystemVoice(gender) {
+      if (!("speechSynthesis" in window)) return null;
+      const voices = (cachedSystemVoices && cachedSystemVoices.length > 0)
+        ? cachedSystemVoices
+        : (window.speechSynthesis.getVoices() || []);
+      const viVoices = voices.filter(v =>
+        (v.lang && v.lang.toLowerCase().includes("vi")) ||
+        /vietnam|tiếng việt|tieng viet|hoaimy|namminh/i.test(v.name || "")
+      );
+      if (viVoices.length === 0) return null;
+      if (gender === "female") {
+        return viVoices.find(v => /hoaimy|linh|female|nữ|nu|google/i.test(v.name) && !/\ban\b/i.test(v.name)) || viVoices[0];
+      }
+      return viVoices.find(v => /namminh|\ban\b|male|nam/i.test(v.name)) || viVoices[0];
+    }
+
+    function splitVietnameseChunks(text, maxLen) {
+      const sentences = text.split(/(?<=[.!?;:])\s+/);
+      const chunks = [];
+      let current = "";
+      for (const s of sentences) {
+        if (!s.trim()) continue;
+        if ((current + " " + s).trim().length <= maxLen) {
+          current = (current + " " + s).trim();
+        } else {
+          if (current) chunks.push(current);
+          if (s.length <= maxLen) {
+            current = s.trim();
+          } else {
+            const words = s.split(" ");
+            let sub = "";
+            for (const w of words) {
+              if ((sub + " " + w).trim().length <= maxLen) {
+                sub = (sub + " " + w).trim();
+              } else {
+                if (sub) chunks.push(sub);
+                sub = w;
+              }
+            }
+            current = sub;
+          }
+        }
+      }
+      if (current) chunks.push(current);
+      return chunks;
+    }
+
+    // Luồng dự phòng Audio Stream Tiếng Việt chuẩn (chạy khi trình duyệt/Windows chưa cài gói giọng vi-VN)
+    function playFallbackVietnameseAudioStream(text, mySession, onComplete) {
+      const chunks = splitVietnameseChunks(text, 165);
+      let idx = 0;
+
+      function playNextChunk() {
+        if (mySession !== speechSessionId || !isAutoLecturing) return;
+        if (idx >= chunks.length) {
+          if (onComplete) onComplete();
+          return;
+        }
+        const chunkText = chunks[idx++];
+        const url = `https://translate.googleapis.com/translate_tts?ie=UTF-8&client=tw-ob&tl=vi&q=${encodeURIComponent(chunkText)}`;
+        const audio = new Audio(url);
+        audio.playbackRate = speechRate;
+        currentAudioPlayer = audio;
+
+        audio.onended = () => {
+          if (mySession !== speechSessionId || !isAutoLecturing) return;
+          playNextChunk();
+        };
+        audio.onerror = () => {
+          if (mySession !== speechSessionId || !isAutoLecturing) return;
+          // Thử tiếp chunk sau nếu có lỗi mạng tạm thời
+          const tid = setTimeout(playNextChunk, 300);
+          activeTimers.push(tid);
+        };
+        audio.play().catch(() => {
+          showVoiceToast("⚠️ Trình duyệt chặn tự phát âm thanh — hãy bấm lại nút BẤM NÚT NÓI!");
+        });
+      }
+
+      playNextChunk();
+    }
+
+    function finishSlideNarration(slideIdx, autoAdvance, mySession) {
+      if (mySession !== speechSessionId || !isAutoLecturing) return;
+      const nextVis = findVisibleSlide(slideIdx, 1);
+      if (autoAdvance && nextVis !== -1) {
+        const tid = setTimeout(() => {
+          if (mySession !== speechSessionId || !isAutoLecturing) return;
+          goToSlide(nextVis, false);
+          playSlideNarration(nextVis, true, 0);
+        }, 650);
+        activeTimers.push(tid);
+      } else {
+        stopAutoLecture();
+      }
+    }
+
+    function playSlideNarration(slideIdx, autoAdvance, startCharIndex) {
+      const mySession = cancelSpeechSession();
+      if (!isAutoLecturing || !SLIDES_DATA[slideIdx]) return;
+
+      const rawScript = SLIDES_DATA[slideIdx].script || SLIDES_DATA[slideIdx].title;
+      currentFullSpokenText = toSpokenVietnameseText(rawScript);
+      baseOffsetAtStart = Math.max(0, Math.min(startCharIndex || 0, currentFullSpokenText.length - 1));
+      currentCharOffset = baseOffsetAtStart;
+
+      const remainingText = currentFullSpokenText.slice(baseOffsetAtStart).trim();
+      document.getElementById("teleprompterText").textContent = "🎙️ " + (remainingText || rawScript);
+
+      document.querySelectorAll(".slide-inner").forEach((el, idx) => {
+        el.classList.toggle("narrating-glow", idx === slideIdx);
+      });
+
+      if (!remainingText) return;
+      speechStartedAtMs = performance.now();
+
+      const viVoice = selectVietnameseSystemVoice(voiceGender);
+
+      if ("speechSynthesis" in window && viVoice) {
+        let didStartSpeaking = false;
+        const utter = new SpeechSynthesisUtterance(remainingText);
+        utter.lang = "vi-VN";
+        utter.voice = viVoice;
+        utter.rate = speechRate;
+        utter.pitch = voiceGender === "female" ? 1.18 : 0.92;
+
+        utter.onstart = () => {
+          didStartSpeaking = true;
+        };
+
+        utter.onboundary = (ev) => {
+          if (mySession !== speechSessionId) return;
+          if (typeof ev.charIndex === "number") {
+            currentCharOffset = baseOffsetAtStart + ev.charIndex;
+          }
+        };
+
+        utter.onend = () => {
+          finishSlideNarration(slideIdx, autoAdvance, mySession);
+        };
+
+        utter.onerror = () => {
+          if (mySession !== speechSessionId || !isAutoLecturing) return;
+          playFallbackVietnameseAudioStream(remainingText, mySession, () => {
+            finishSlideNarration(slideIdx, autoAdvance, mySession);
+          });
+        };
+
+        currentUtterance = utter;
+        window.speechSynthesis.speak(utter);
+
+        // Nếu sau 900ms giọng hệ thống không phát tiếng (do lỗi OS), tự chuyển sang luồng Audio Tiếng Việt
+        const watchdog = setTimeout(() => {
+          if (mySession === speechSessionId && isAutoLecturing && !didStartSpeaking && !window.speechSynthesis.speaking) {
+            try { window.speechSynthesis.cancel(); } catch (e) {}
+            playFallbackVietnameseAudioStream(remainingText, mySession, () => {
+              finishSlideNarration(slideIdx, autoAdvance, mySession);
+            });
+          }
+        }, 900);
+        activeTimers.push(watchdog);
+      } else {
+        // Máy không có sẵn giọng vi-VN -> phát thẳng tiếng Việt qua luồng Audio
+        playFallbackVietnameseAudioStream(remainingText, mySession, () => {
+          finishSlideNarration(slideIdx, autoAdvance, mySession);
+        });
+      }
+    }
+
+    function resumeMidSentenceOnVoiceOrSpeedChange() {
+      if (!isAutoLecturing) return;
+      const resumeIdx = snapToNextWordBoundary(currentFullSpokenText, estimateCurrentCharOffset());
+      playSlideNarration(currentSlide, true, resumeIdx);
+    }
+
+    function setVoiceGender(gender, userClicked) {
+      voiceGender = gender;
+      document.getElementById("btnVoiceMale").classList.toggle("active", gender === "male");
+      document.getElementById("btnVoiceFemale").classList.toggle("active", gender === "female");
+      showVoiceToast(gender === "male" ? `👨 Giọng Nam (${speechRate.toFixed(2)}x)` : `👩 Giọng Nữ (${speechRate.toFixed(2)}x)`);
+      if (isAutoLecturing) resumeMidSentenceOnVoiceOrSpeedChange();
+      else if (userClicked) sfxChime();
+    }
+
+    function onTopSpeedInput(val) {
+      speechRate = Math.max(0.5, Math.min(1.8, parseFloat(val)));
+      document.getElementById("topSpeedVal").textContent = speechRate.toFixed(2) + "x";
+    }
+
+    function onTopSpeedCommit(val) {
+      onTopSpeedInput(val);
+      showVoiceToast(`⚡ Tốc độ đọc: ${speechRate.toFixed(2)}x`);
+      if (isAutoLecturing) resumeMidSentenceOnVoiceOrSpeedChange();
+    }
+
+    function stepSpeechSpeed(delta) {
+      const nextVal = Math.round((speechRate + delta) * 100) / 100;
+      document.getElementById("topSpeedSlider").value = String(Math.max(0.5, Math.min(1.8, nextVal)));
+      onTopSpeedCommit(nextVal);
+    }
+
+    function toggleAutoLecture() {
+      if (isAutoLecturing) stopAutoLecture();
+      else startAutoLecture();
+    }
+
+    function startAutoLecture() {
+      if (currentWorkspace !== "deck") switchWorkspace("deck");
+      isAutoLecturing = true;
+      document.getElementById("btnMasterSpeak").classList.add("speaking");
+      document.getElementById("speakIcon").textContent = "⏹";
+      document.getElementById("speakLabel").textContent = "ĐANG GIẢNG (DỪNG)";
+      document.getElementById("teleprompterBar").classList.add("active-speaking");
+      document.getElementById("btnStopInline").style.display = "inline-block";
+      playSlideNarration(currentSlide, true, 0);
+    }
+
+    function speakSingleSlide(idx) {
+      if (currentWorkspace !== "deck") switchWorkspace("deck");
+      if (currentSlide !== idx) goToSlide(idx, false);
+      isAutoLecturing = true;
+      document.getElementById("btnMasterSpeak").classList.add("speaking");
+      document.getElementById("speakIcon").textContent = "⏹";
+      document.getElementById("speakLabel").textContent = "ĐANG GIẢNG (DỪNG)";
+      document.getElementById("teleprompterBar").classList.add("active-speaking");
+      document.getElementById("btnStopInline").style.display = "inline-block";
+      playSlideNarration(idx, false, 0);
+    }
+
+    function stopAutoLecture() {
+      isAutoLecturing = false;
+      cancelSpeechSession();
+      document.getElementById("btnMasterSpeak").classList.remove("speaking");
+      document.getElementById("speakIcon").textContent = "🎙️";
+      document.getElementById("speakLabel").textContent = "BẤM NÚT NÓI";
+      document.getElementById("teleprompterBar").classList.remove("active-speaking");
+      document.getElementById("btnStopInline").style.display = "none";
+      document.querySelectorAll(".slide-inner").forEach(el => el.classList.remove("narrating-glow"));
+    }
+
+    // =========================================================================
+    // 9. ÂM THANH WEB AUDIO API
+    // =========================================================================
+    let AC = null;
+    let musicGain = null;
+    let musicOn = false;
+    let musicTimer = null;
+    let sfxOn = true;
+    let musicVolPct = 35;
+
+    function ensureAudioCtx() {
+      if (!AC) {
+        AC = new (window.AudioContext || window.webkitAudioContext)();
+        musicGain = AC.createGain();
+        musicGain.connect(AC.destination);
+        updateMusicGainLevel();
+      }
+      if (AC.state === "suspended") AC.resume();
+    }
+
+    function updateMusicGainLevel() {
+      if (!musicGain || !AC) return;
+      const duck = isAutoLecturing ? 0.4 : 1.0;
+      musicGain.gain.setTargetAtTime((musicVolPct / 100) * 0.24 * duck, AC.currentTime, 0.3);
+    }
+
+    function playAmbientChord(freqs, dur) {
+      if (!AC) return;
+      const now = AC.currentTime;
+      freqs.forEach(f => {
+        const osc = AC.createOscillator();
+        const g = AC.createGain();
+        osc.type = "triangle";
+        osc.frequency.value = f;
+        g.gain.setValueAtTime(0, now);
+        g.gain.linearRampToValueAtTime(0.35, now + dur * 0.3);
+        g.gain.exponentialRampToValueAtTime(0.001, now + dur);
+        osc.connect(g);
+        g.connect(musicGain);
+        osc.start(now);
+        osc.stop(now + dur + 0.1);
+      });
+    }
+
+    function toggleMusic() {
+      ensureAudioCtx();
+      musicOn = !musicOn;
+      document.getElementById("btnMusicToggle").classList.toggle("active", musicOn);
+      if (musicOn) {
+        const chords = [
+          [220, 261.63, 329.63],
+          [174.61, 220, 261.63],
+          [261.63, 329.63, 392.0],
+          [196.0, 246.94, 293.66]
+        ];
+        let cIdx = 0;
+        playAmbientChord(chords[0], 6.5);
+        musicTimer = setInterval(() => {
+          if (!musicOn) return;
+          cIdx = (cIdx + 1) % chords.length;
+          playAmbientChord(chords[cIdx], 6.5);
+        }, 6500);
+        showVoiceToast("🎵 Đã bật nhạc nền nhẹ");
+      } else {
+        clearInterval(musicTimer);
+        showVoiceToast("🔇 Đã tắt nhạc nền");
+      }
+    }
+
+    function setMusicVol(val) {
+      musicVolPct = parseFloat(val);
+      updateMusicGainLevel();
+    }
+
+    function toggleSfx() {
+      sfxOn = !sfxOn;
+      document.getElementById("btnSfxToggle").classList.toggle("active", sfxOn);
+      showVoiceToast(sfxOn ? "🔔 Đã bật SFX" : "🔕 Đã tắt SFX");
+    }
+
+    function sfxChime() {
+      if (!sfxOn) return;
+      try {
+        ensureAudioCtx();
+        [528, 792].forEach((freq, i) => {
+          const t = AC.currentTime + i * 0.09;
+          const o = AC.createOscillator();
+          const g = AC.createGain();
+          o.type = "sine";
+          o.frequency.value = freq;
+          g.gain.setValueAtTime(0, t);
+          g.gain.linearRampToValueAtTime(0.12, t + 0.02);
+          g.gain.exponentialRampToValueAtTime(0.001, t + 0.7);
+          o.connect(g);
+          g.connect(AC.destination);
+          o.start(t);
+          o.stop(t + 0.75);
+        });
+      } catch (e) {}
+    }
+
+    function sfxWhoosh() {
+      if (!sfxOn) return;
+      try {
+        ensureAudioCtx();
+        const t = AC.currentTime;
+        const o = AC.createOscillator();
+        const g = AC.createGain();
+        o.type = "sine";
+        o.frequency.setValueAtTime(280, t);
+        o.frequency.exponentialRampToValueAtTime(520, t + 0.16);
+        g.gain.setValueAtTime(0.07, t);
+        g.gain.exponentialRampToValueAtTime(0.001, t + 0.18);
+        o.connect(g);
+        g.connect(AC.destination);
+        o.start(t);
+        o.stop(t + 0.2);
+      } catch (e) {}
+    }
+
+    function exportStandaloneHtml4D() {
+      const currentHtml = document.documentElement.outerHTML;
+      const serializedSlides = JSON.stringify(SLIDES_DATA);
+      const updatedHtml = currentHtml.replace(
+        /\/\*__SLIDES_DATA_START__\*\/[\s\S]*?\/\*__SLIDES_DATA_END__\*\//,
+        `/*__SLIDES_DATA_START__*/${serializedSlides}/*__SLIDES_DATA_END__*/`
+      );
+      const fullDoc = "<!DOCTYPE html>\n" + updatedHtml;
+      const blob = new Blob([fullDoc], { type: "text/html;charset=utf-8" });
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = "20261115-Ke-Hoach-Bai-Day-Tuan-10-Lop-4B1-Nguyen-Huu-Khanh.html";
+      a.click();
+      showVoiceToast("📥 Đã tải File Kế Hoạch Tuần 10 Lớp 4B1 (.html)!");
+    }
+
+    function exportSlidesJson() {
+      const blob = new Blob([JSON.stringify(SLIDES_DATA, null, 2)], { type: "application/json;charset=utf-8" });
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = "ke_hoach_tuan_10_lop_4b1_nguyen_huu_khanh.json";
+      a.click();
+      showVoiceToast("📦 Đã xuất file dữ liệu JSON!");
+    }
+
+    function importSlidesJson(event) {
+      const file = event.target.files && event.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        try {
+          const parsed = JSON.parse(e.target.result);
+          if (Array.isArray(parsed) && parsed.length > 0) {
+            SLIDES_DATA = parsed;
+            currentSlide = 0;
+            hiddenSlides.clear();
+            saveSlidesToStorage();
+            renderExtractedPagesEditor();
+            renderAllSlides();
+            showVoiceToast(`📥 Đã nạp ${parsed.length} trang từ JSON!`);
+          }
+        } catch (err) {
+          showVoiceToast("⚠️ File JSON không hợp lệ!");
+        }
+      };
+      reader.readAsText(file);
+    }
+
+    function openInfoModal() {
+      sfxChime();
+      document.getElementById("infoModal").classList.add("open");
+    }
+
+    function closeInfoModal() {
+      document.getElementById("infoModal").classList.remove("open");
+    }
+
+    let toastTimeout = null;
+    function showVoiceToast(msg) {
+      const el = document.getElementById("voiceToast");
+      if (!el) return;
+      el.textContent = msg;
+      el.classList.add("show");
+      clearTimeout(toastTimeout);
+      toastTimeout = setTimeout(() => el.classList.remove("show"), 2600);
+    }
+
+    // =========================================================================
+    // 10. PHÍM TẮT BÀN PHÍM, LĂN CHUỘT, VUỐT CHẠM CẢM ỨNG & HẠT CANVAS 4D
+    // =========================================================================
+    window.addEventListener("keydown", (e) => {
+      const tag = (e.target && e.target.tagName) || "";
+      if (["INPUT", "TEXTAREA", "SELECT"].includes(tag)) return;
+      if (e.key === "Escape") {
+        closeHideModal();
+        closeInfoModal();
+        return;
+      }
+      if (currentWorkspace !== "deck") return;
+      if (["ArrowRight", "ArrowDown", "PageDown", " "].includes(e.key)) {
+        if (currentMode !== "scroll") { e.preventDefault(); nextSlide(); }
+      } else if (["ArrowLeft", "ArrowUp", "PageUp"].includes(e.key)) {
+        if (currentMode !== "scroll") { e.preventDefault(); prevSlide(); }
+      } else if ((e.key === "h" || e.key === "H") && !e.ctrlKey && !e.metaKey) {
+        e.preventDefault();
+        toggleShowSlide(currentSlide, hiddenSlides.has(currentSlide));
+      } else if ((e.key === "r" || e.key === "R") && !e.ctrlKey && !e.metaKey) {
+        e.preventDefault();
+        flipAllCardsOnCurrentSlide();
+      } else if ((e.key === "w" || e.key === "W") && !e.ctrlKey && !e.metaKey) {
+        e.preventDefault();
+        toggleWide16x9Stage();
+      }
+    });
+
+    let wheelLock = false;
+    window.addEventListener("wheel", (e) => {
+      if (currentWorkspace !== "deck" || currentMode === "scroll") return;
+      if (document.getElementById("hideModal").classList.contains("open")) return;
+      if (document.getElementById("infoModal").classList.contains("open")) return;
+      if (Math.abs(e.deltaY) < 22 || wheelLock) return;
+      wheelLock = true;
+      if (e.deltaY > 0) nextSlide();
+      else prevSlide();
+      setTimeout(() => { wheelLock = false; }, 600);
+    }, { passive: true });
+
+    let touchStartX = 0;
+    let touchStartY = 0;
+    window.addEventListener("touchstart", (e) => {
+      if (!e.touches || !e.touches[0]) return;
+      touchStartX = e.touches[0].clientX;
+      touchStartY = e.touches[0].clientY;
+    }, { passive: true });
+
+    window.addEventListener("touchend", (e) => {
+      if (currentWorkspace !== "deck" || currentMode === "scroll") return;
+      if (!e.changedTouches || !e.changedTouches[0]) return;
+      const dx = e.changedTouches[0].clientX - touchStartX;
+      const dy = e.changedTouches[0].clientY - touchStartY;
+      if (Math.abs(dx) > 55 && Math.abs(dx) > Math.abs(dy)) {
+        if (dx < 0) nextSlide();
+        else prevSlide();
+      }
+    }, { passive: true });
+
+    document.addEventListener("mousemove", (e) => {
+      const frame = e.target.closest && e.target.closest(".giant-art-frame");
+      if (!frame || frame.classList.contains("lens-active")) return;
+      const r = frame.getBoundingClientRect();
+      const rx = -((e.clientY - r.top) / r.height - 0.5) * 6;
+      const ry = ((e.clientX - r.left) / r.width - 0.5) * 6;
+      frame.style.transform = `perspective(1000px) rotateX(${rx.toFixed(2)}deg) rotateY(${ry.toFixed(2)}deg)`;
+    });
+    document.addEventListener("mouseout", (e) => {
+      const frame = e.target.closest && e.target.closest(".giant-art-frame");
+      if (frame) frame.style.transform = "";
+    });
+
+    const cosmosCanvas = document.getElementById("cosmosCanvas");
+    const cCtx = cosmosCanvas.getContext("2d");
+    const stars = [];
+
+    function resizeCosmos() {
+      cosmosCanvas.width = window.innerWidth;
+      cosmosCanvas.height = window.innerHeight;
+    }
+    window.addEventListener("resize", resizeCosmos);
+    resizeCosmos();
+
+    for (let i = 0; i < 85; i++) {
+      stars.push({
+        x: Math.random() * cosmosCanvas.width,
+        y: Math.random() * cosmosCanvas.height,
+        r: Math.random() * 1.6 + 0.4,
+        a: Math.random(),
+        s: Math.random() * 0.012 + 0.003
+      });
+    }
+
+    function animateStars() {
+      cCtx.clearRect(0, 0, cosmosCanvas.width, cosmosCanvas.height);
+      stars.forEach(st => {
+        st.a += st.s;
+        if (st.a > 1 || st.a < 0.2) st.s = -st.s;
+        cCtx.beginPath();
+        cCtx.arc(st.x, st.y, st.r, 0, Math.PI * 2);
+        cCtx.fillStyle = `rgba(255, 233, 173, ${st.a * 0.58})`;
+        cCtx.fill();
+      });
+      requestAnimationFrame(animateStars);
+    }
+    animateStars();
+
+    (function initStudioApp() {
+      try {
+        const savedHidden = localStorage.getItem(HIDE_STORAGE_KEY);
+        if (savedHidden) {
+          JSON.parse(savedHidden).forEach(n => {
+            if (Number.isInteger(n) && n >= 0 && n < SLIDES_DATA.length) hiddenSlides.add(n);
+          });
+        }
+      } catch (e) {}
+      loadSlidesFromStorage();
+      if (hiddenSlides.size >= SLIDES_DATA.length) hiddenSlides.clear();
+      initPdfDropZone();
+      renderAllSlides();
+      renderExtractedPagesEditor();
+      animateLivingOverlaysLoop();
+    })();
+  </script>
+</body>
+</html>

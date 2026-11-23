@@ -1,0 +1,3780 @@
+<!DOCTYPE html>
+<!--
+  ==========================================================================
+  GIA PHỔ HỌ LÊ VĂN • NGUỒN CỘI TRI ÂN • BÁCH NIÊN TRƯỜNG TỒN
+  PHIÊN BẢN: V04 (Chuẩn Khung 16:9 Living HTML 4D + Bộ 4 Thẻ Bài Lật 3D + Cây Phả Hệ Tương Tác)
+  XUẤT XỨ GIA TỘC: Khởi nguyên Gio Linh, định cư Phường An, Mai Lộc, Cam Lộ, Quảng Trị
+  BẢN THẢO GỐC: Ngày 15 tháng 9 năm Mậu Ngọ (1978) & Cập nhật hậu duệ đời 6, đời 7
+  ==========================================================================
+-->
+<html lang="vi">
+<head>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GIA PHỔ HỌ LÊ VĂN • NGUỒN CỘI TRI ÂN • 16:9 Living HTML 4D</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Dancing+Script:wght@700&family=Patrick+Hand&family=Playfair+Display:ital,wght@0,700;0,800;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    :root {
+      --bg-deep: #050a17;
+      --bg-navy: #0c1833;
+      --bg-card: rgba(10, 20, 44, 0.96);
+      --bg-panel: rgba(8, 16, 36, 0.94);
+      --crimson: #c22026;
+      --gold-primary: #f5c451;
+      --gold-light: #ffe9ad;
+      --gold-dark: #c48a10;
+      --cyan-sky: #38bdf8;
+      --emerald-peace: #34d399;
+      --rose-warm: #fb7185;
+      --text-main: #ffffff;
+      --text-muted: #e2e8f0;
+      --border-glass: rgba(245, 196, 81, 0.48);
+      --shadow-elevated: 0 20px 55px rgba(0, 0, 0, 0.88);
+      --font-body: 'Be Vietnam Pro', sans-serif;
+      --font-heading: 'Playfair Display', serif;
+      --card-radius: 20px;
+      --eco-bar-h: 44px;
+      --topbar-h: 62px;
+      --bottomdock-h: 58px;
+    }
+
+    body.style-realistic {
+      --bg-deep: #0b1522;
+      --bg-navy: #15263a;
+      --bg-card: rgba(15, 30, 48, 0.96);
+      --bg-panel: rgba(20, 38, 60, 0.94);
+      --gold-primary: #fcd34d;
+      --gold-light: #fef3c7;
+      --gold-dark: #d97706;
+      --cyan-sky: #67e8f9;
+      --emerald-peace: #4ade80;
+      --border-glass: rgba(252, 211, 77, 0.52);
+    }
+
+    body.style-infographic {
+      --bg-deep: #091e2f;
+      --bg-navy: #0e3757;
+      --bg-card: rgba(14, 46, 74, 0.96);
+      --bg-panel: rgba(18, 58, 92, 0.92);
+      --gold-primary: #38bdf8;
+      --gold-light: #e0f2fe;
+      --gold-dark: #0284c7;
+      --cyan-sky: #2dd4bf;
+      --emerald-peace: #a3e635;
+      --border-glass: rgba(56, 189, 248, 0.55);
+    }
+
+    body.style-painting {
+      --bg-deep: #1e131d;
+      --bg-navy: #311c2f;
+      --bg-card: rgba(45, 25, 43, 0.95);
+      --bg-panel: rgba(60, 32, 57, 0.88);
+      --gold-primary: #f472b6;
+      --gold-light: #fce7f3;
+      --gold-dark: #db2777;
+      --cyan-sky: #c084fc;
+      --emerald-peace: #fbbf24;
+      --border-glass: rgba(244, 114, 182, 0.55);
+    }
+
+    body.style-handdrawn {
+      --bg-deep: #f6efe2;
+      --bg-navy: #ede1cb;
+      --bg-card: #fffdf8;
+      --bg-panel: #fcf7ed;
+      --gold-primary: #92400e;
+      --gold-light: #78350f;
+      --gold-dark: #b45309;
+      --cyan-sky: #0369a1;
+      --emerald-peace: #15803d;
+      --rose-warm: #be123c;
+      --text-main: #1e293b;
+      --text-muted: #334155;
+      --border-glass: #991b1b;
+      --shadow-elevated: 6px 8px 0px rgba(153, 27, 27, 0.22);
+      --font-body: 'Patrick Hand', 'Be Vietnam Pro', cursive;
+      --font-heading: 'Dancing Script', 'Playfair Display', cursive;
+      background-image: radial-gradient(rgba(120, 53, 15, 0.15) 1px, transparent 1px);
+      background-size: 22px 22px;
+    }
+    body.style-handdrawn .slide-inner { border: 3px dashed #991b1b; }
+    body.style-handdrawn .senior-panel { border: 2px solid #92400e; }
+    body.style-handdrawn .state-old-lg { color: #be123c; }
+    body.style-handdrawn .state-new-lg { color: #15803d; }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      width: 100%;
+      height: 100%;
+      background-color: var(--bg-deep);
+      color: var(--text-main);
+      font-family: var(--font-body);
+      overflow: hidden;
+      transition: background-color 0.35s ease, color 0.35s ease;
+    }
+
+    body.mode-scroll, html.mode-scroll,
+    body.workspace-tree, html.workspace-tree,
+    body.workspace-skill, html.workspace-skill {
+      height: auto !important;
+      overflow-y: auto !important;
+      overflow-x: hidden !important;
+    }
+
+    #cosmosCanvas {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    /* TOPBAR HUD */
+    .hud-topbar {
+      position: fixed;
+      top: var(--eco-bar-h); left: 0; right: 0;
+      height: var(--topbar-h);
+      background: rgba(4, 8, 20, 0.96);
+      backdrop-filter: blur(22px);
+      border-bottom: 2px solid var(--border-glass);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 10px;
+      z-index: 1100;
+      gap: 6px;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .hud-topbar::-webkit-scrollbar { display: none; }
+
+    .workspace-tabs {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      background: rgba(14, 28, 58, 0.95);
+      padding: 3px;
+      border-radius: 999px;
+      border: 1.5px solid rgba(245, 196, 81, 0.55);
+      flex-shrink: 0;
+    }
+    .ws-tab-btn {
+      background: transparent;
+      border: none;
+      color: #cbd5e1;
+      padding: 5px 12px;
+      border-radius: 999px;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 0.74rem;
+      font-weight: 800;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .ws-tab-btn.active {
+      background: linear-gradient(135deg, #c22026, #f59e0b);
+      color: #ffffff;
+      box-shadow: 0 0 14px rgba(245, 158, 11, 0.5);
+    }
+
+    .hud-group {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      flex-shrink: 0;
+    }
+
+    .slide-select-dropdown, .style-select-dropdown {
+      background: rgba(14, 29, 62, 0.96);
+      color: #ffe9ad;
+      border: 1px solid rgba(245, 196, 81, 0.45);
+      padding: 5px 8px;
+      border-radius: 999px;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      cursor: pointer;
+      outline: none;
+    }
+    .slide-select-dropdown { max-width: 195px; }
+    .style-select-dropdown { border-color: rgba(56, 189, 248, 0.55); color: #38bdf8; max-width: 155px; }
+
+    .pill-switcher {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      background: rgba(12, 27, 58, 0.95);
+      padding: 3px;
+      border-radius: 999px;
+      border: 1px solid rgba(56, 189, 248, 0.42);
+    }
+    .pill-btn {
+      background: transparent;
+      border: none;
+      color: #cbd5e1;
+      padding: 5px 8px;
+      border-radius: 999px;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 0.71rem;
+      font-weight: 700;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.2s;
+    }
+    .pill-btn.active {
+      background: linear-gradient(135deg, #38bdf8, #0284c7);
+      color: #fff;
+    }
+    .pill-btn.gold-active.active {
+      background: linear-gradient(135deg, #f5c451, #c48a10);
+      color: #050a17;
+      font-weight: 800;
+    }
+
+    .speed-slider-pill {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      background: rgba(12, 27, 58, 0.95);
+      padding: 4px 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(52, 211, 153, 0.45);
+      color: #fff;
+      font-size: 0.71rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .speed-step-btn {
+      background: rgba(255, 255, 255, 0.14);
+      border: none;
+      color: #ffe9ad;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      font-weight: 800;
+      cursor: pointer;
+    }
+    .top-speed-range {
+      width: 52px;
+      accent-color: #34d399;
+      cursor: pointer;
+    }
+    .speed-val-badge {
+      color: #34d399;
+      font-weight: 800;
+      min-width: 32px;
+      text-align: center;
+    }
+
+    .btn-hud-action {
+      background: rgba(245, 196, 81, 0.16);
+      border: 1px solid rgba(245, 196, 81, 0.45);
+      color: #ffe9ad;
+      padding: 5px 10px;
+      border-radius: 999px;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 0.71rem;
+      font-weight: 800;
+      cursor: pointer;
+      white-space: nowrap;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: all 0.2s;
+    }
+    .btn-hud-action:hover, .btn-hud-action.active { background: #f5c451; color: #050a17; }
+    .btn-hud-action.primary-speak {
+      background: linear-gradient(135deg, #10b981, #059669);
+      color: #fff;
+      border-color: rgba(255,255,255,0.4);
+      box-shadow: 0 0 14px rgba(16, 185, 129, 0.45);
+    }
+    .btn-hud-action.primary-speak.speaking {
+      background: linear-gradient(135deg, #f59e0b, #dc2626);
+    }
+    .btn-hud-action.crimson-ancestry {
+      background: linear-gradient(135deg, #c22026, #f59e0b);
+      color: #fff;
+      border-color: #ffe9ad;
+    }
+
+    .hide-count-badge {
+      display: inline-block;
+      min-width: 16px;
+      padding: 0 5px;
+      border-radius: 999px;
+      background: #fb7185;
+      color: #1a0509;
+      font-size: 0.67rem;
+      text-align: center;
+    }
+    .hide-count-badge.zero { background: rgba(255,255,255,0.22); color: #fff; }
+
+    .deck-progress {
+      position: fixed;
+      left: 0;
+      top: calc(var(--eco-bar-h) + var(--topbar-h));
+      z-index: 1105;
+      height: 4px;
+      width: 0;
+      z-index: 1001;
+      background: linear-gradient(90deg, #c22026, #f5c451, #38bdf8);
+      box-shadow: 0 0 10px #f5c451;
+      transition: width 0.45s ease;
+    }
+
+    .voice-toast {
+      position: fixed;
+      top: calc(var(--eco-bar-h) + var(--topbar-h) + 8px);
+      right: 18px;
+      background: rgba(6, 19, 45, 0.96);
+      border: 2px solid #f5c451;
+      color: #ffe9ad;
+      padding: 8px 15px;
+      border-radius: 14px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      z-index: 3000;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.85);
+      opacity: 0;
+      transform: translateY(-10px);
+      pointer-events: none;
+      transition: all 0.25s ease;
+    }
+    .voice-toast.show { opacity: 1; transform: translateY(0); }
+
+    /* VIEWPORT */
+    .deck-viewport {
+      position: relative;
+      width: 100vw;
+      height: calc(100vh - var(--eco-bar-h) - var(--topbar-h) - var(--bottomdock-h));
+      margin-top: calc(var(--eco-bar-h) + var(--topbar-h));
+      z-index: 10;
+      overflow: hidden;
+    }
+    body.mode-scroll .deck-viewport {
+      height: auto !important;
+      overflow: visible !important;
+      margin-bottom: 78px;
+    }
+
+    .slides-track {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: transform;
+    }
+    body.mode-horizontal .slides-track { flex-direction: row; }
+    body.mode-vertical .slides-track { flex-direction: column; }
+    body.mode-scroll .slides-track {
+      display: block !important;
+      height: auto !important;
+      transform: none !important;
+      padding-bottom: 76px;
+    }
+
+    .slide {
+      flex: 0 0 100%;
+      width: 100vw;
+      min-width: 100vw;
+      height: calc(100vh - var(--eco-bar-h) - var(--topbar-h) - var(--bottomdock-h));
+      padding: 5px 0.6vw;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    body.mode-scroll .slide {
+      height: auto !important;
+      min-height: 85vh;
+      padding: 14px 1vw;
+      margin-bottom: 16px;
+    }
+    body.mode-scroll .slide.is-hidden { display: none !important; }
+
+    .slide-inner {
+      width: 98.8vw;
+      height: 100%;
+      background: var(--bg-card);
+      backdrop-filter: blur(22px);
+      border: 2px solid var(--border-glass);
+      border-radius: var(--card-radius);
+      padding: 0.9vh 1.2vw 1.1vh;
+      box-shadow: var(--shadow-elevated);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .slide-inner::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #c22026, var(--gold-primary), var(--cyan-sky), var(--gold-primary), #c22026);
+    }
+    .slide-inner.narrating-glow {
+      border-color: var(--gold-primary);
+      box-shadow: 0 0 42px rgba(245, 196, 81, 0.42), var(--shadow-elevated);
+    }
+
+    .slide-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.7vh;
+      padding-bottom: 0.5vh;
+      border-bottom: 1px solid rgba(148, 163, 184, 0.18);
+      gap: 10px;
+      flex-shrink: 0;
+    }
+    .slide-title-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+    }
+    .slide-num-pill {
+      background: linear-gradient(135deg, #c22026, #f59e0b);
+      color: #fff;
+      font-weight: 900;
+      font-size: 0.76rem;
+      padding: 4px 10px;
+      border-radius: 999px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .slide-title {
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: clamp(1.1rem, 2.4vh, 1.8rem);
+      font-weight: 900;
+      color: var(--gold-light);
+      line-height: 1.18;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .slide-header-actions {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-shrink: 0;
+    }
+
+    .header-hide-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(251, 113, 133, 0.14);
+      border: 1px solid rgba(251, 113, 133, 0.5);
+      color: #ffe4e8;
+      font-size: 0.72rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .header-hide-label input { accent-color: #fb7185; width: 14px; height: 14px; cursor: pointer; }
+
+    .btn-slide-voice {
+      background: rgba(52, 211, 153, 0.18);
+      border: 1.5px solid rgba(52, 211, 153, 0.65);
+      color: var(--emerald-peace);
+      padding: 5px 12px;
+      border-radius: 999px;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 800;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .btn-slide-voice:hover { background: var(--emerald-peace); color: #050a17; }
+
+    .senior-stage {
+      flex: 1;
+      min-height: 0;
+      display: grid;
+      grid-template-columns: 1.32fr 0.98fr;
+      gap: 1vw;
+      align-items: stretch;
+      transition: grid-template-columns 0.35s ease;
+    }
+    body.stage-wide-16x9 .senior-stage {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto;
+      overflow-y: auto;
+      gap: 10px;
+    }
+    body.stage-wide-16x9 .flip-cards-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .senior-panel {
+      background: var(--bg-panel);
+      border: 1px solid rgba(148, 163, 184, 0.22);
+      border-radius: 16px;
+      padding: 10px 12px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 0;
+      overflow-y: auto;
+      scrollbar-width: thin;
+      position: relative;
+      gap: 8px;
+    }
+    .senior-panel.visual-panel-16x9 {
+      padding: 10px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      background: radial-gradient(circle at 50% 50%, #0d1e3d 0%, #030816 100%);
+    }
+
+    /* GIANT ART FRAME 16:9 */
+    .giant-art-frame {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      max-height: calc(100vh - var(--topbar-h) - var(--bottomdock-h) - 135px);
+      margin: 0 auto;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 2px solid var(--border-glass);
+      background: radial-gradient(circle at 50% 45%, #0e2247 0%, #020713 100%);
+      transition: transform 0.22s ease-out, box-shadow 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 12px 38px rgba(0, 0, 0, 0.75), 0 0 25px rgba(245, 196, 81, 0.18);
+    }
+    body.style-handdrawn .giant-art-frame {
+      background: radial-gradient(circle at 50% 45%, #fffdf8 0%, #ede1cb 100%);
+    }
+
+    .fx-living-overlay-canvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 3;
+    }
+
+    .giant-art-frame .visual-svg-stage {
+      transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+      transform-origin: 50% 50%;
+    }
+    .giant-art-frame.zoom-focus-0 .visual-svg-stage { transform: scale(1.85); transform-origin: 18% 22%; }
+    .giant-art-frame.zoom-focus-1 .visual-svg-stage { transform: scale(1.85); transform-origin: 82% 22%; }
+    .giant-art-frame.zoom-focus-2 .visual-svg-stage { transform: scale(1.85); transform-origin: 18% 78%; }
+    .giant-art-frame.zoom-focus-3 .visual-svg-stage { transform: scale(1.85); transform-origin: 82% 78%; }
+    .hotspot-pin-4d.active-pin {
+      background: #38bdf8;
+      color: #050a17;
+      transform: scale(1.22);
+      box-shadow: 0 0 16px rgba(56, 189, 248, 0.95);
+    }
+
+    .giant-art-frame.lens-active { cursor: crosshair; }
+    .magnifier-lens-4d {
+      position: absolute;
+      width: 210px;
+      height: 210px;
+      border-radius: 50%;
+      border: 3px solid #f5c451;
+      box-shadow: 0 0 32px rgba(245, 196, 81, 0.85), inset 0 0 18px rgba(56, 189, 248, 0.5);
+      pointer-events: none;
+      z-index: 10;
+      display: none;
+      overflow: hidden;
+      background-color: #050a17;
+      transform: translate(-50%, -50%);
+    }
+    .magnifier-lens-4d .mag-zoom-inner {
+      position: absolute;
+      left: 0;
+      top: 0;
+      transform-origin: 0 0;
+      pointer-events: none;
+    }
+    .magnifier-lens-4d .mag-zoom-inner svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+    .giant-art-frame.lens-active .magnifier-lens-4d { display: block; }
+
+    .hotspot-layer-4d {
+      position: absolute;
+      inset: 0;
+      z-index: 4;
+      pointer-events: none;
+    }
+    .hotspot-pin-4d {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: rgba(245, 196, 81, 0.92);
+      color: #050a17;
+      font-weight: 900;
+      font-size: 0.78rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      pointer-events: auto;
+      box-shadow: 0 0 0 0 rgba(245, 196, 81, 0.8);
+      animation: hotspotPulse 2.2s infinite;
+      border: 2px solid #fff;
+      transition: transform 0.2s;
+    }
+    .hotspot-pin-4d:hover {
+      transform: scale(1.25);
+      background: #34d399;
+    }
+    @keyframes hotspotPulse {
+      0% { box-shadow: 0 0 0 0 rgba(245, 196, 81, 0.85); }
+      70% { box-shadow: 0 0 0 14px rgba(245, 196, 81, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(245, 196, 81, 0); }
+    }
+
+    .visual-svg-stage {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    .visual-svg-stage svg {
+      width: 100%;
+      height: 100%;
+      max-height: 100%;
+      display: block;
+    }
+
+    /* KEYFRAME ANIMATIONS CHO 4D LIVING STAGE */
+    .anim-float { animation: float4D 4.2s ease-in-out infinite; }
+    .anim-pulse { animation: pulse4D 2.8s ease-in-out infinite; transform-origin: center; }
+    .anim-spin { animation: spin4D 22s linear infinite; transform-origin: center; }
+    .anim-spin-rev { animation: spinRev4D 26s linear infinite; transform-origin: center; }
+    .anim-dash { stroke-dasharray: 12 8; animation: dashFlow 1.8s linear infinite; }
+
+    @keyframes float4D {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-8px); }
+    }
+    @keyframes pulse4D {
+      0%, 100% { transform: scale(0.97); opacity: 0.85; }
+      50% { transform: scale(1.03); opacity: 1; }
+    }
+    @keyframes spin4D { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+    @keyframes spinRev4D { from { transform: rotate(360deg); } to { transform: rotate(0deg); } }
+    @keyframes dashFlow { to { stroke-dashoffset: -40; } }
+
+    .photo-tools {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      z-index: 12;
+      opacity: 0.88;
+      transition: opacity 0.25s;
+    }
+    .giant-art-frame:hover .photo-tools { opacity: 1; }
+    .photo-tools button {
+      background: rgba(4, 8, 20, 0.88);
+      color: #ffe9ad;
+      border: 1px solid rgba(245, 196, 81, 0.65);
+      border-radius: 999px;
+      padding: 4px 9px;
+      font-size: 0.69rem;
+      font-weight: 800;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .photo-tools button:hover, .photo-tools button.active {
+      background: #f5c451;
+      color: #050a17;
+    }
+
+    /* BỘ 4 THẺ BÀI LẬT 3D */
+    .right-panel-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+      margin-bottom: 0.6vh;
+    }
+    .slide-tag {
+      font-size: 0.72rem;
+      font-weight: 900;
+      letter-spacing: 0.6px;
+      color: var(--gold-primary);
+      text-transform: uppercase;
+      background: rgba(245, 196, 81, 0.12);
+      border: 1px solid rgba(245, 196, 81, 0.35);
+      padding: 3px 9px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .btn-flip-all {
+      background: rgba(56, 189, 248, 0.16);
+      border: 1px solid rgba(56, 189, 248, 0.55);
+      color: var(--cyan-sky);
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 800;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.2s;
+    }
+    .btn-flip-all:hover { background: var(--cyan-sky); color: #050a17; }
+
+    .flip-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.65vw;
+      margin-bottom: 0.7vh;
+      flex: 1;
+    }
+    .flip-card-3d {
+      cursor: pointer;
+      user-select: none;
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
+    }
+    .flip-card-inner {
+      width: 100%;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      animation: flipBounceIn 0.42s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    @keyframes flipBounceIn {
+      0% { transform: perspective(800px) rotateY(75deg) scale(0.96); opacity: 0.5; }
+      100% { transform: perspective(800px) rotateY(0deg) scale(1); opacity: 1; }
+    }
+
+    .flip-face {
+      position: relative;
+      width: 100%;
+      flex: 1;
+      border-radius: 13px;
+      padding: 10px 12px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 5px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
+      word-break: break-word;
+    }
+    .flip-front {
+      background: linear-gradient(145deg, rgba(194, 32, 38, 0.24), rgba(15, 23, 42, 0.96));
+      border: 1.5px solid rgba(251, 113, 133, 0.55);
+    }
+    body.style-handdrawn .flip-front {
+      background: #fff1f2;
+      border: 2px dashed #be123c;
+    }
+
+    .flip-back {
+      display: none;
+      background: linear-gradient(145deg, rgba(16, 185, 129, 0.28), rgba(12, 32, 54, 0.96));
+      border: 2px solid var(--emerald-peace);
+      box-shadow: 0 0 22px rgba(52, 211, 153, 0.28);
+    }
+    .flip-card-3d.flipped .flip-front { display: none; }
+    .flip-card-3d.flipped .flip-back { display: flex; }
+    body.style-handdrawn .flip-back {
+      background: #f0fdf4;
+      border: 2px solid #15803d;
+    }
+
+    .flip-badge {
+      display: flex;
+      width: 100%;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      font-size: clamp(0.66rem, 1.25vh, 0.8rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding: 3px 9px;
+      border-radius: 999px;
+      margin-bottom: 4px;
+    }
+    .flip-front .flip-badge { background: rgba(251, 113, 133, 0.2); color: #fda4af; }
+    .flip-back .flip-badge { background: rgba(52, 211, 153, 0.24); color: #6ee7b7; }
+    body.style-handdrawn .flip-front .flip-badge { color: #be123c; }
+    body.style-handdrawn .flip-back .flip-badge { color: #15803d; }
+
+    .flip-title {
+      font-size: clamp(0.84rem, 1.65vh, 1.08rem);
+      font-weight: 800;
+      color: var(--gold-light);
+      line-height: 1.25;
+      margin-bottom: 2px;
+    }
+    .flip-desc {
+      font-size: clamp(0.76rem, 1.48vh, 0.96rem);
+      line-height: 1.38;
+      color: var(--text-muted);
+    }
+
+    .transform-row-large {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      background: rgba(148, 163, 184, 0.1);
+      border: 2px solid rgba(245, 196, 81, 0.45);
+      padding: 7px 12px;
+      border-radius: 13px;
+      margin-top: 3px;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+    .transform-row-large:hover {
+      border-color: var(--emerald-peace);
+      box-shadow: 0 0 18px rgba(52, 211, 153, 0.25);
+    }
+    .state-old-lg {
+      color: #fecdd3;
+      font-weight: 700;
+      font-size: clamp(0.8rem, 1.65vh, 1.12rem);
+      flex: 1;
+    }
+    .verb-bridge-lg {
+      background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark));
+      color: #050a17;
+      font-weight: 900;
+      font-size: clamp(0.68rem, 1.4vh, 0.92rem);
+      padding: 4px 10px;
+      border-radius: 999px;
+      text-transform: uppercase;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .state-new-lg {
+      color: var(--emerald-peace);
+      font-weight: 800;
+      font-size: clamp(0.8rem, 1.65vh, 1.12rem);
+      flex: 1;
+      text-align: right;
+    }
+
+    .widget-box-4d {
+      margin-top: 5px;
+      padding: 7px 10px;
+      border-radius: 11px;
+      background: rgba(4, 12, 28, 0.65);
+      border: 1px solid rgba(56, 189, 248, 0.4);
+    }
+    body.style-handdrawn .widget-box-4d {
+      background: rgba(255, 255, 255, 0.75);
+      border-color: #92400e;
+    }
+
+    .interactive-btn-lg {
+      background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark));
+      color: #050a17;
+      border: none;
+      padding: 7px 15px;
+      border-radius: 999px;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-weight: 800;
+      font-size: clamp(0.8rem, 1.6vh, 1.06rem);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 4px 14px rgba(245, 196, 81, 0.35);
+      transition: transform 0.2s;
+    }
+    .interactive-btn-lg:hover { transform: translateY(-2px); }
+
+    /* WORKSPACE: CÂY GIA PHẢ & XƯỞNG DI SẢN */
+    .studio-workspace {
+      display: none;
+      margin-top: calc(var(--eco-bar-h) + var(--topbar-h));
+      padding: 20px 2vw 86px;
+      max-width: 1680px;
+      margin-left: auto;
+      margin-right: auto;
+      position: relative;
+      z-index: 20;
+    }
+    body.workspace-tree #treeWorkspace { display: block; }
+    body.workspace-skill #skillWorkspace { display: block; }
+    body.workspace-tree #deckViewport,
+    body.workspace-skill #deckViewport { display: none !important; }
+
+    .studio-banner {
+      background: linear-gradient(135deg, rgba(15, 29, 62, 0.96), rgba(30, 20, 56, 0.95));
+      border: 2px solid var(--gold-primary);
+      border-radius: 20px;
+      padding: 18px 22px;
+      margin-bottom: 18px;
+      box-shadow: 0 18px 45px rgba(0,0,0,0.65);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .tree-search-bar {
+      width: 100%;
+      background: #040e24;
+      border: 2px solid var(--gold-primary);
+      border-radius: 12px;
+      padding: 10px 14px;
+      color: #fff;
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+      outline: none;
+    }
+    .tree-container-box {
+      background: rgba(9, 18, 40, 0.92);
+      border: 1px solid rgba(245, 196, 81, 0.35);
+      border-radius: 16px;
+      padding: 20px;
+      overflow-x: auto;
+    }
+
+    .gen-section {
+      margin-bottom: 24px;
+      border-left: 4px solid var(--gold-primary);
+      padding-left: 14px;
+    }
+    .gen-title {
+      font-size: 1.15rem;
+      font-weight: 900;
+      color: var(--gold-light);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .member-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 10px;
+    }
+    .member-card {
+      background: rgba(14, 28, 56, 0.85);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      border-radius: 10px;
+      padding: 10px 12px;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+    .member-card:hover {
+      border-color: var(--gold-primary);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.5);
+    }
+    .member-card.highlight {
+      border-color: #34d399;
+      background: rgba(16, 185, 129, 0.18);
+    }
+    .member-name { font-weight: 900; color: #ffe9ad; font-size: 0.92rem; }
+    .member-detail { font-size: 0.78rem; color: #cbd5e1; margin-top: 3px; line-height: 1.35; }
+    .member-ky { font-size: 0.74rem; color: #fb7185; font-weight: 700; margin-top: 2px; }
+
+    /* FOOTER HUD */
+    .bottom-studio-dock {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      height: var(--bottomdock-h);
+      background: rgba(4, 8, 20, 0.96);
+      backdrop-filter: blur(20px);
+      border-top: 2px solid var(--border-glass);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 14px;
+      gap: 10px;
+      z-index: 1000;
+    }
+    .dock-nav-cluster {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+    .nav-action-btn {
+      background: rgba(245, 196, 81, 0.18);
+      border: 1px solid rgba(245, 196, 81, 0.48);
+      color: #ffe9ad;
+      padding: 6px 13px;
+      border-radius: 999px;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 0.76rem;
+      font-weight: 800;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .nav-action-btn:hover { background: #f5c451; color: #050a17; }
+
+    .dots-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .slide-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.28);
+      cursor: pointer;
+      transition: all 0.25s;
+    }
+    .slide-dot.active {
+      width: 22px;
+      background: #f5c451;
+      box-shadow: 0 0 10px #f5c451;
+    }
+    .slide-dot.is-hidden { display: none; }
+
+    .dock-teleprompter-stage {
+      flex: 1;
+      height: 40px;
+      background: rgba(12, 27, 58, 0.92);
+      border: 1.5px solid rgba(245, 196, 81, 0.42);
+      border-radius: 999px;
+      padding: 0 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      overflow: hidden;
+    }
+    .dock-teleprompter-stage.active-speaking {
+      border-color: #34d399;
+      box-shadow: 0 0 18px rgba(52, 211, 153, 0.35);
+    }
+    .voice-wave-bars {
+      display: flex;
+      align-items: center;
+      gap: 3px;
+      height: 18px;
+      flex-shrink: 0;
+      opacity: 0.35;
+    }
+    .dock-teleprompter-stage.active-speaking .voice-wave-bars { opacity: 1; }
+    .voice-wave-bars span {
+      width: 4px;
+      height: 8px;
+      background: #34d399;
+      border-radius: 99px;
+    }
+    .dock-teleprompter-stage.active-speaking .voice-wave-bars span {
+      animation: waveBounce 0.75s infinite ease-in-out;
+    }
+    .voice-wave-bars span:nth-child(2) { animation-delay: 0.15s; height: 14px; }
+    .voice-wave-bars span:nth-child(3) { animation-delay: 0.3s; height: 18px; background: #f5c451; }
+    .voice-wave-bars span:nth-child(4) { animation-delay: 0.45s; height: 10px; }
+    @keyframes waveBounce { 0%, 100% { transform: scaleY(0.4); } 50% { transform: scaleY(1.15); } }
+
+    .teleprompter-text {
+      flex: 1;
+      font-size: clamp(0.82rem, 0.98vw, 0.98rem);
+      font-weight: 700;
+      color: #ffe9ad;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .dock-hide-check {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 11px;
+      border-radius: 999px;
+      border: 1px solid rgba(251, 113, 133, 0.55);
+      background: rgba(251, 113, 133, 0.14);
+      color: #ffe4e8;
+      font-size: 0.74rem;
+      font-weight: 800;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .dock-hide-check input { width: 15px; height: 15px; accent-color: #fb7185; cursor: pointer; }
+
+    /* MODALS */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(2, 6, 23, 0.92);
+      backdrop-filter: blur(16px);
+      z-index: 2500;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 18px;
+    }
+    .modal-backdrop.open { display: flex; }
+    .modal-card {
+      width: 100%;
+      max-width: 860px;
+      max-height: 88vh;
+      overflow-y: auto;
+      background: #081530;
+      border: 2px solid #f5c451;
+      border-radius: 24px;
+      padding: 22px 26px;
+      box-shadow: 0 25px 70px rgba(0,0,0,0.95);
+      color: #fff;
+    }
+
+    .hide-list {
+      max-height: 52vh;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-top: 10px;
+    }
+    .hide-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 9px 14px;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.14);
+      cursor: pointer;
+      font-size: 0.92rem;
+      font-weight: 700;
+    }
+    .hide-row.is-hidden { opacity: 0.58; border-style: dashed; border-color: #fb7185; }
+    .hide-row.is-hidden .hide-row-title { text-decoration: line-through; }
+
+    .table-ky-gio {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+      font-size: 0.85rem;
+    }
+    .table-ky-gio th, .table-ky-gio td {
+      border: 1px solid rgba(245, 196, 81, 0.3);
+      padding: 8px 10px;
+      text-align: left;
+    }
+    .table-ky-gio th {
+      background: rgba(245, 196, 81, 0.2);
+      color: #ffe9ad;
+      font-weight: 800;
+    }
+    .table-ky-gio tr:nth-child(even) {
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .code-box-pre {
+      background: #030816;
+      border: 1px solid rgba(56, 189, 248, 0.45);
+      border-radius: 12px;
+      padding: 14px;
+      font-family: Consolas, monospace;
+      font-size: 0.82rem;
+      color: #38bdf8;
+      overflow-x: auto;
+      white-space: pre-wrap;
+      line-height: 1.5;
+      margin: 10px 0;
+    }
+
+    @media (max-width: 1150px) {
+      .senior-stage { grid-template-columns: 1fr; }
+      .flip-cards-grid { grid-template-columns: 1fr 1fr; }
+      .dots-wrapper { display: none; }
+    }
+  </style>
+</head>
+<body class="mode-horizontal style-cinematic workspace-deck">
+<!-- =========================================================================
+     UNIVERSAL ECOSYSTEM TOPBAR (THANH ĐIỀU HƯỚNG HỆ SINH THÁI TOÀN CẦU)
+     Tự động hiển thị trên Trang Chủ và tất cả 6 Trang Con
+     ========================================================================= -->
+<div id="universalEcosystemBar" class="fixed top-0 left-0 right-0 z-[1200] h-[44px] w-full bg-slate-950/95 backdrop-blur-md border-b-2 border-amber-500/50 shadow-2xl transition-all duration-300 flex items-center">
+  <div class="w-full mx-auto px-3 py-1 flex items-center justify-between gap-2 text-[11px]">
+    
+    <!-- BRAND / LOGO -->
+    <a href="https://happyrun09.github.io/" class="flex items-center gap-2 group flex-shrink-0 text-slate-100 hover:text-amber-300 transition">
+      <div class="w-7 h-7 rounded-full bg-gradient-to-tr from-amber-600 via-yellow-500 to-amber-300 flex items-center justify-center font-black text-slate-950 shadow-md group-hover:scale-110 transition">
+        🌟
+      </div>
+      <div class="flex flex-col">
+        <span class="font-black text-amber-300 text-xs sm:text-sm tracking-wide flex items-center gap-1">
+          HỆ SINH THÁI HAPPY RUN 108
+          <span class="hidden md:inline px-1.5 py-0.2 rounded bg-amber-500/20 text-amber-300 border border-amber-500/40 text-[10px]">6 CỔNG</span>
+        </span>
+        <span class="text-[10px] text-slate-400 hidden sm:inline">Kỷ Luật Tự Thân • Trí Tuệ Nguyên Bản • Tộc Phả & Giáo Dục</span>
+      </div>
+    </a>
+
+    <!-- LINKS STRIP (HORIZONTAL SCROLL ON MOBILE) -->
+    <nav class="flex items-center gap-1.5 overflow-x-auto py-1 scrollbar-none max-w-full">
+      
+      <!-- 0. TRANG CHỦ -->
+      <a href="https://happyrun09.github.io/" data-eco="home" class="eco-nav-link flex-shrink-0 px-2.5 py-1 rounded-lg font-bold flex items-center gap-1 text-slate-200 hover:text-white hover:bg-slate-800/80 border border-slate-700/60 transition">
+        <span>🏠</span><span>Trang Chủ</span>
+      </a>
+
+      <!-- 1. HỌ LÊ SÉC -->
+      <a href="https://happyrun09.github.io/ho-le-cong-hoa-sec/" data-eco="ho-le-sec" class="eco-nav-link flex-shrink-0 px-2.5 py-1 rounded-lg font-bold flex items-center gap-1 text-amber-300 hover:text-amber-200 bg-red-950/60 hover:bg-red-900/60 border border-red-500/60 transition">
+        <span>🏛️</span><span>Họ Lê CH Séc (27/11)</span>
+      </a>
+
+      <!-- 2. GIA PHẢ 4D -->
+      <a href="https://happyrun09.github.io/gia-pho-ho-le/" data-eco="gia-pho-4d" class="eco-nav-link flex-shrink-0 px-2.5 py-1 rounded-lg font-bold flex items-center gap-1 text-amber-300 hover:text-amber-200 bg-amber-950/50 hover:bg-amber-900/60 border border-amber-500/60 transition">
+        <span>🌳</span><span>Gia Phả 4D</span>
+      </a>
+
+      <!-- 3. GIA PHẢ LÊ VĂN -->
+      <a href="https://happyrun09.github.io/gia-pho-ho-le-van/" data-eco="gia-pho-le-van" class="eco-nav-link flex-shrink-0 px-2.5 py-1 rounded-lg font-bold flex items-center gap-1 text-slate-200 hover:text-white hover:bg-slate-800/80 border border-slate-700/60 transition">
+        <span>📜</span><span>Gia Phả Lê Văn</span>
+      </a>
+
+      <!-- 4. GIÁO ÁN TUẦN 10 -->
+      <a href="https://happyrun09.github.io/ke-hoach-tuan-10/" data-eco="giao-an-4b1" class="eco-nav-link flex-shrink-0 px-2.5 py-1 rounded-lg font-bold flex items-center gap-1 text-emerald-300 hover:text-emerald-200 bg-emerald-950/50 hover:bg-emerald-900/60 border border-emerald-500/60 transition">
+        <span>📖</span><span>Giáo Án Tuần 10 (4B1)</span>
+      </a>
+
+      <!-- 5. HỆ THỐNG AI -->
+      <a href="https://happyrun09.github.io/he-thong-ai/" data-eco="he-thong-ai" class="eco-nav-link flex-shrink-0 px-2.5 py-1 rounded-lg font-bold flex items-center gap-1 text-cyan-300 hover:text-cyan-200 bg-blue-950/50 hover:bg-blue-900/60 border border-blue-500/60 transition">
+        <span>🤖</span><span>Hệ Thống AI 3.0</span>
+      </a>
+
+      <!-- 6. BÀI GIẢNG V07 -->
+      <a href="https://happyrun09.github.io/1112_LPN_Happy_Run_Day_Do_Doi_Dech_De_Doi_Do_V07.html" data-eco="bai-giang-v07" class="eco-nav-link flex-shrink-0 px-2.5 py-1 rounded-lg font-bold flex items-center gap-1 text-purple-300 hover:text-purple-200 bg-purple-950/50 hover:bg-purple-900/60 border border-purple-500/60 transition">
+        <span>🏃</span><span>Bài Giảng V07</span>
+      </a>
+
+      <!-- NÚT MỞ MODAL 6 CỔNG -->
+      <button type="button" onclick="openEcosystemModal()" class="flex-shrink-0 px-2.5 py-1 rounded-lg font-extrabold bg-gradient-to-r from-amber-500 to-yellow-400 text-slate-950 hover:brightness-110 shadow-md flex items-center gap-1 transition">
+        <span>⚡</span><span>Mở Sơ Đồ Hệ Thống</span>
+      </button>
+
+    </nav>
+  </div>
+</div>
+
+<!-- MODAL SƠ ĐỒ TOÀN CẢNH HỆ SINH THÁI (ECOSYSTEM MODAL) -->
+<div id="ecoModalBackdrop" class="fixed inset-0 z-[100000] bg-slate-950/80 backdrop-blur-md hidden items-center justify-center p-3 sm:p-6" onclick="closeEcosystemModal()">
+  <div class="relative w-full max-w-4xl bg-slate-900 border-2 border-amber-400/80 rounded-3xl p-5 sm:p-8 shadow-2xl max-h-[92vh] overflow-y-auto" onclick="event.stopPropagation()">
+    
+    <!-- MODAL HEADER -->
+    <div class="flex items-center justify-between pb-4 border-b border-slate-800 gap-3">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-amber-500 to-yellow-300 flex items-center justify-center text-xl text-slate-950 font-black shadow-lg">
+          🌟
+        </div>
+        <div>
+          <h3 class="text-base sm:text-xl font-black text-amber-300">SƠ ĐỒ HỆ SINH THÁI HAPPY RUN 108</h3>
+          <p class="text-xs text-slate-400">Trang chủ trung tâm kết nối trực tiếp 6 Cổng chuyên đề trực tuyến</p>
+        </div>
+      </div>
+      <button type="button" onclick="closeEcosystemModal()" class="w-9 h-9 rounded-full bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white flex items-center justify-center font-bold text-lg transition">
+        ✕
+      </button>
+    </div>
+
+    <!-- 6 CARDS GRID -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5 mt-5">
+      
+      <!-- CARD 0: TRANG CHỦ -->
+      <a href="https://happyrun09.github.io/" class="group p-4 rounded-2xl bg-slate-950/80 border border-slate-700 hover:border-amber-400 hover:bg-slate-800/80 transition flex flex-col justify-between shadow-lg">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-2xl">🏠</span>
+            <span class="px-2 py-0.5 rounded text-[10px] font-black bg-blue-500/20 text-blue-300 border border-blue-500/40">TRUNG TÂM</span>
+          </div>
+          <h4 class="font-extrabold text-sm text-slate-100 group-hover:text-amber-300 transition">Trang Chủ Happy Run 108</h4>
+          <p class="text-xs text-slate-400 mt-1">Hệ điều hành rèn luyện Thân - Tâm - Trí, Buồng lái 4h30, 35 Lớp học & Bảng vàng 108.</p>
+        </div>
+        <div class="mt-3 pt-2 border-t border-slate-800/80 flex items-center justify-between text-xs font-bold text-amber-400">
+          <span>Vào Trang Chủ</span><span>→</span>
+        </div>
+      </a>
+
+      <!-- CARD 1: HỌ LÊ SÉC -->
+      <a href="https://happyrun09.github.io/ho-le-cong-hoa-sec/" class="group p-4 rounded-2xl bg-slate-950/80 border border-red-500/50 hover:border-red-400 hover:bg-red-950/30 transition flex flex-col justify-between shadow-lg">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-2xl">🏛️</span>
+            <span class="px-2 py-0.5 rounded text-[10px] font-black bg-red-500/20 text-red-300 border border-red-500/40">27/11/2026</span>
+          </div>
+          <h4 class="font-extrabold text-sm text-amber-200 group-hover:text-amber-300 transition">Cổng Họ Lê CH Séc</h4>
+          <p class="text-xs text-slate-400 mt-1">Đại Lễ Gặp Mặt 27/11/2026 tại Praha, 3 bức ảnh tư liệu gốc, đăng ký tham dự & dâng hương từ đường.</p>
+        </div>
+        <div class="mt-3 pt-2 border-t border-slate-800/80 flex items-center justify-between text-xs font-bold text-red-400">
+          <span>Khám Phá Cổng Séc</span><span>→</span>
+        </div>
+      </a>
+
+      <!-- CARD 2: GIA PHẢ 4D -->
+      <a href="https://happyrun09.github.io/gia-pho-ho-le/" class="group p-4 rounded-2xl bg-slate-950/80 border border-amber-500/50 hover:border-amber-400 hover:bg-amber-950/30 transition flex flex-col justify-between shadow-lg">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-2xl">🌳</span>
+            <span class="px-2 py-0.5 rounded text-[10px] font-black bg-amber-500/20 text-amber-300 border border-amber-500/40">12 TRẠM</span>
+          </div>
+          <h4 class="font-extrabold text-sm text-amber-200 group-hover:text-amber-300 transition">Gia Phả Họ Lê 4D</h4>
+          <p class="text-xs text-slate-400 mt-1">12 Trạm Tộc Phả khởi nguồn Gio Linh ➔ Cam Lộ (1978), 165+ nhân đinh, lật thẻ 3D & âm thanh cổ cầm.</p>
+        </div>
+        <div class="mt-3 pt-2 border-t border-slate-800/80 flex items-center justify-between text-xs font-bold text-amber-400">
+          <span>Khám Phá Tộc Phả 4D</span><span>→</span>
+        </div>
+      </a>
+
+      <!-- CARD 3: GIA PHẢ LÊ VĂN -->
+      <a href="https://happyrun09.github.io/gia-pho-ho-le-van/" class="group p-4 rounded-2xl bg-slate-950/80 border border-slate-700 hover:border-amber-400 hover:bg-slate-800/80 transition flex flex-col justify-between shadow-lg">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-2xl">📜</span>
+            <span class="px-2 py-0.5 rounded text-[10px] font-black bg-amber-500/20 text-amber-300 border border-amber-500/40">8 THẾ HỆ</span>
+          </div>
+          <h4 class="font-extrabold text-sm text-slate-100 group-hover:text-amber-300 transition">Gia Phả Họ Lê Văn</h4>
+          <p class="text-xs text-slate-400 mt-1">Tộc phổ chi phái Phường An, Cam Lộ, tra cứu danh xưng, ngày kỵ âm lịch và gia huấn tiên tổ.</p>
+        </div>
+        <div class="mt-3 pt-2 border-t border-slate-800/80 flex items-center justify-between text-xs font-bold text-amber-400">
+          <span>Xem Phả Ký Lê Văn</span><span>→</span>
+        </div>
+      </a>
+
+      <!-- CARD 4: GIÁO ÁN TUẦN 10 -->
+      <a href="https://happyrun09.github.io/ke-hoach-tuan-10/" class="group p-4 rounded-2xl bg-slate-950/80 border border-emerald-500/50 hover:border-emerald-400 hover:bg-emerald-950/30 transition flex flex-col justify-between shadow-lg">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-2xl">📖</span>
+            <span class="px-2 py-0.5 rounded text-[10px] font-black bg-emerald-500/20 text-emerald-300 border border-emerald-500/40">15 TIẾT GDPT</span>
+          </div>
+          <h4 class="font-extrabold text-sm text-emerald-200 group-hover:text-emerald-300 transition">Giáo Án Tuần 10 (Lớp 4B1)</h4>
+          <p class="text-xs text-slate-400 mt-1">Kế hoạch bài dạy chuẩn GDPT 2018, Đạo đức, Khoa học, Lịch sử - Địa lý, tích hợp Trợ lý AI sư phạm.</p>
+        </div>
+        <div class="mt-3 pt-2 border-t border-slate-800/80 flex items-center justify-between text-xs font-bold text-emerald-400">
+          <span>Mở Giáo Án Sư Phạm</span><span>→</span>
+        </div>
+      </a>
+
+      <!-- CARD 5: HỆ THỐNG AI -->
+      <a href="https://happyrun09.github.io/he-thong-ai/" class="group p-4 rounded-2xl bg-slate-950/80 border border-blue-500/50 hover:border-blue-400 hover:bg-blue-950/30 transition flex flex-col justify-between shadow-lg">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-2xl">🤖</span>
+            <span class="px-2 py-0.5 rounded text-[10px] font-black bg-blue-500/20 text-blue-300 border border-blue-500/40">MASTER XAI</span>
+          </div>
+          <h4 class="font-extrabold text-sm text-cyan-200 group-hover:text-cyan-300 transition">Hệ Thống AI 3.0</h4>
+          <p class="text-xs text-slate-400 mt-1">Bộ công cụ Master Command xAI, kịch bản tự động hóa, sáng tạo nội dung và quản trị tổ chức.</p>
+        </div>
+        <div class="mt-3 pt-2 border-t border-slate-800/80 flex items-center justify-between text-xs font-bold text-cyan-400">
+          <span>Vào Buồng Lái AI</span><span>→</span>
+        </div>
+      </a>
+
+      <!-- CARD 6: BÀI GIẢNG V07 -->
+      <a href="https://happyrun09.github.io/1112_LPN_Happy_Run_Day_Do_Doi_Dech_De_Doi_Do_V07.html" class="group p-4 rounded-2xl bg-slate-950/80 border border-purple-500/50 hover:border-purple-400 hover:bg-purple-950/30 transition flex flex-col justify-between shadow-lg">
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-2xl">🏃</span>
+            <span class="px-2 py-0.5 rounded text-[10px] font-black bg-purple-500/20 text-purple-300 border border-purple-500/40">TRIẾT LÝ V07</span>
+          </div>
+          <h4 class="font-extrabold text-sm text-purple-200 group-hover:text-purple-300 transition">Bài Giảng V07: ĐÂY ĐO ĐỜI</h4>
+          <p class="text-xs text-slate-400 mt-1">Triết lý sống tự chủ, nội lực phi thường: “Đây Đo Đời, Đếch Để Đời Đo”, chuyển hóa tâm thế vững chãi.</p>
+        </div>
+        <div class="mt-3 pt-2 border-t border-slate-800/80 flex items-center justify-between text-xs font-bold text-purple-400">
+          <span>Xem Bài Giảng V07</span><span>→</span>
+        </div>
+      </a>
+
+    </div>
+
+    <!-- MODAL FOOTER -->
+    <div class="mt-6 pt-4 border-t border-slate-800 flex flex-wrap items-center justify-between gap-3 text-xs text-slate-400">
+      <span>Tác quyền & Sáng lập: <strong>Lê Phúc Nhật</strong> • Tặng cộng đồng vì sự chuyển hóa toàn diện</span>
+      <button type="button" onclick="closeEcosystemModal()" class="px-4 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold transition">
+        ✕ Đóng Sơ Đồ
+      </button>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  function openEcosystemModal() {
+    const m = document.getElementById('ecoModalBackdrop');
+    if (m) {
+      m.classList.remove('hidden');
+      m.classList.add('flex');
+    }
+  }
+  function closeEcosystemModal() {
+    const m = document.getElementById('ecoModalBackdrop');
+    if (m) {
+      m.classList.add('hidden');
+      m.classList.remove('flex');
+    }
+  }
+  // Auto highlight active nav link based on current location
+  (function highlightActiveEcosystemLink() {
+    const path = window.location.pathname.toLowerCase();
+    const links = document.querySelectorAll('.eco-nav-link');
+    links.forEach(link => {
+      const href = link.getAttribute('href').toLowerCase();
+      let isActive = false;
+      if (href.endsWith('ho-le-cong-hoa-sec/') && path.includes('ho-le-cong-hoa-sec')) isActive = true;
+      else if (href.endsWith('gia-pho-ho-le/') && path.includes('gia-pho-ho-le') && !path.includes('gia-pho-ho-le-van')) isActive = true;
+      else if (href.endsWith('gia-pho-ho-le-van/') && path.includes('gia-pho-ho-le-van')) isActive = true;
+      else if (href.endsWith('ke-hoach-tuan-10/') && path.includes('ke-hoach-tuan-10')) isActive = true;
+      else if (href.endsWith('he-thong-ai/') && path.includes('he-thong-ai')) isActive = true;
+      else if (href.includes('1112_lpn_happy_run') && path.includes('1112_lpn_happy_run')) isActive = true;
+      else if ((path === '/' || path.endsWith('/index.html') || path === '') && link.dataset.eco === 'home' && !path.includes('gia-pho') && !path.includes('ho-le') && !path.includes('ke-hoach') && !path.includes('he-thong')) isActive = true;
+
+      if (isActive) {
+        link.classList.add('ring-2', 'ring-amber-400', 'bg-amber-500/30', 'text-amber-300', 'font-black');
+        link.insertAdjacentHTML('beforeend', '<span class="ml-1 text-[10px] px-1 py-0.2 rounded bg-amber-400 text-slate-950 font-black">ĐANG XEM</span>');
+      }
+    });
+  })();
+</script>
+
+  <canvas id="cosmosCanvas"></canvas>
+  <div class="voice-toast" id="voiceToast">🌿 GIA PHỔ HỌ LÊ VĂN • NGUỒN CỘI TRI ÂN</div>
+  <div class="deck-progress" id="deckProgress"></div>
+
+  <!-- TẦNG 1: TOP HUD CONTROLS -->
+  <header class="hud-topbar">
+    <div class="workspace-tabs" role="tablist">
+      <button class="ws-tab-btn active" id="tabBtnDeck" onclick="switchWorkspace('deck')">
+        🎬 Trình Chiếu 4D Gia Phổ (<span id="totalSlidesBadge">12</span>)
+      </button>
+      <button class="ws-tab-btn" id="tabBtnTree" onclick="switchWorkspace('tree')">
+        🌳 Cây Phả Hệ Tương Tác &amp; Tra Cứu
+      </button>
+      <button class="ws-tab-btn" id="tabBtnSkill" onclick="switchWorkspace('skill')">
+        📜 Đóng Gói Di Sản &amp; GitHub
+      </button>
+    </div>
+
+    <div class="hud-group">
+      <select class="slide-select-dropdown" id="slideJumpSelect" onchange="goToSlide(parseInt(this.value, 10), true)" aria-label="Chọn nhanh trang gia phả"></select>
+
+      <select class="style-select-dropdown" id="artStyleSelect" onchange="setVisualArtStyle(this.value)" aria-label="Chọn 5 phong cách nghệ thuật">
+        <option value="cinematic">🎬 Điện Ảnh Hoàng Gia</option>
+        <option value="realistic">📸 Cổ Kính Trang Nghiêm</option>
+        <option value="infographic">📊 Sơ Đồ Phả Hệ</option>
+        <option value="painting">🎨 Tranh Thủy Mặc</option>
+        <option value="handdrawn">✍️ Nét Chép Tay Gia Truyền</option>
+      </select>
+    </div>
+
+    <div class="pill-switcher" role="group" aria-label="Chế độ chuyển trang">
+      <button class="pill-btn active" id="btnModeHorizontal" onclick="setDeckMode('horizontal')">↔ Ngang</button>
+      <button class="pill-btn" id="btnModeVertical" onclick="setDeckMode('vertical')">↕ Dọc</button>
+      <button class="pill-btn" id="btnModeScroll" onclick="setDeckMode('scroll')">☰ Cuộn</button>
+    </div>
+
+    <div class="pill-switcher" role="group" aria-label="Chọn giọng đọc Nam hoặc Nữ">
+      <button class="pill-btn gold-active active" id="btnVoiceMale" onclick="setVoiceGender('male', true)">👨 Nam Trầm</button>
+      <button class="pill-btn gold-active" id="btnVoiceFemale" onclick="setVoiceGender('female', true)">👩 Nữ Dịu</button>
+    </div>
+
+    <div class="speed-slider-pill" title="Đổi tốc độ đọc tức thì (Mid-Sentence Resume)">
+      <button class="speed-step-btn" onclick="stepSpeechSpeed(-0.1)">-</button>
+      <input type="range" class="top-speed-range" id="topSpeedSlider" min="0.5" max="1.8" step="0.05" value="1.0" oninput="onTopSpeedInput(this.value)" onchange="onTopSpeedCommit(this.value)" />
+      <button class="speed-step-btn" onclick="stepSpeechSpeed(0.1)">+</button>
+      <span class="speed-val-badge" id="topSpeedVal">1.00x</span>
+    </div>
+
+    <div class="speed-slider-pill" title="Nhạc Thiền 432Hz &amp; Chuông Tri Ân">
+      <button class="pill-btn" id="btnMusicToggle" onclick="toggleMusic()">🎵 Nhạc 432Hz</button>
+      <input type="range" id="musicVolSlider" min="0" max="100" value="35" style="width:46px; accent-color:#f5c451;" oninput="setMusicVol(this.value)" aria-label="Âm lượng nhạc thiền" />
+      <button class="pill-btn active" id="btnSfxToggle" onclick="toggleSfx()">🔔 SFX</button>
+    </div>
+
+    <div class="hud-group">
+      <button class="btn-hud-action primary-speak" id="btnMasterSpeak" onclick="toggleAutoLecture()">
+        <span id="speakIcon">🎙️</span>
+        <span id="speakLabel">BẤM NÚT NÓI</span>
+      </button>
+      <button class="btn-hud-action" id="btnToggleWide16x9" onclick="toggleWide16x9Stage()" title="Phóng rộng khung 16:9 cực đại hoặc chia cột Thẻ Lật">
+        📺 Cực Đại 16:9
+      </button>
+      <button class="btn-hud-action" onclick="flipAllCardsOnCurrentSlide()" title="Lật toàn bộ 4 thẻ bài (Phím R)">
+        🔄 Lật Thẻ
+      </button>
+      <button class="btn-hud-action crimson-ancestry" onclick="openKyGioModal()" title="Xem lịch các ngày kỵ giỗ âm lịch &amp; bài khấn gia tiên">
+        🌺 Lịch Kỵ Giỗ
+      </button>
+      <button class="btn-hud-action" onclick="openHideModal()" title="Quản lý Ẩn/Hiện từng trang (Phím H)">
+        👁 Ẩn Trang <span class="hide-count-badge zero" id="hideCountBadge">0</span>
+      </button>
+      <button class="btn-hud-action" onclick="exportStandaloneHtml4D()" title="Tải trọn bộ bài giảng gia phả thành 1 file HTML 4D độc lập">
+        📥 Tải HTML 4D
+      </button>
+      <button class="btn-hud-action" onclick="toggleFullScreen()" title="Phóng toàn màn hình">
+        ⛶
+      </button>
+    </div>
+  </header>
+
+  <!-- TẦNG 2A: KHUNG TRÌNH CHIẾU GIA PHẢ 4D (16:9 VIEWPORT) -->
+  <main class="deck-viewport" id="deckViewport">
+    <div class="slides-track" id="slidesTrack"></div>
+  </main>
+
+  <!-- TẦNG 2B: CÂY GIA PHẢ TƯƠNG TÁC & TRA CỨU HỌ LÊ VĂN -->
+  <section class="studio-workspace" id="treeWorkspace" aria-label="Cây Gia Phả Tương Tác Họ Lê Văn">
+    <div class="studio-banner">
+      <div>
+        <span class="slide-tag">🌳 BẢN ĐỒ GIA TỘC TRỰC QUAN • HỌ LÊ VĂN (GIO LINH ➔ CAM LỘ, QUẢNG TRỊ)</span>
+        <h2 style="font-size:1.62rem; font-weight:900; color:#ffe9ad; margin-top:4px;">
+          Cây Phả Hệ Tương Tác &amp; Tra Cứu Tông Chi Họ Lê Văn
+        </h2>
+        <p style="color:#cbd5e1; font-size:0.9rem; margin-top:4px;">
+          Ghi nhận từ Thủy tổ tiền nhân, Tằng tổ khảo, Cụ Lê Văn Điền đến các phân nhánh Cận, Thuyết, Tặng và các thế hệ hậu duệ đương đại đời thứ 6 và thứ 7.
+        </p>
+      </div>
+      <div style="display:flex; gap:10px; flex-wrap:wrap;">
+        <button class="interactive-btn-lg" onclick="switchWorkspace('deck')">
+          🎬 Trở Về Trình Chiếu 4D
+        </button>
+        <button class="interactive-btn-lg" style="background:linear-gradient(135deg,#c22026,#f59e0b); color:#fff;" onclick="openKyGioModal()">
+          🌺 Bảng Tra Cứu Ngày Kỵ Giỗ
+        </button>
+      </div>
+    </div>
+
+    <input type="text" class="tree-search-bar" id="treeSearchInput" placeholder="🔍 Nhập tên thành viên gia tộc để tra cứu nhanh (Ví dụ: Nhật, Mạnh, Tùy, Điền, Tân, Duật, Sửu, Đan, Viên...)..." oninput="filterGenealogyTree(this.value)" />
+
+    <div class="tree-container-box" id="treeRenderBox">
+      <!-- Cây phả hệ được render tự động từ dữ liệu chuẩn -->
+    </div>
+  </section>
+
+  <!-- TẦNG 2C: ĐÓNG GÓI DI SẢN & GITHUB PAGES -->
+  <section class="studio-workspace" id="skillWorkspace" aria-label="Đóng gói Di sản và Xuất bản">
+    <div class="studio-banner">
+      <div>
+        <span class="slide-tag">📜 BẢO TỒN DI SẢN GIA TỘC • XUẤT BẢN TRỰC TUYẾN</span>
+        <h2 style="font-size:1.6rem; font-weight:900; color:#ffe9ad; margin-top:4px;">
+          Đóng Gói Gia Phổ HTML 4D &amp; Xuất Bản Lên Mạng Toàn Cầu
+        </h2>
+        <p style="color:#cbd5e1; font-size:0.88rem; margin-top:4px;">
+          Lưu trữ file độc lập không phụ thuộc internet, hoặc xuất bản lên GitHub Pages để con cháu họ Lê Văn muôn phương có thể mở xem trực tiếp trên điện thoại.
+        </p>
+      </div>
+      <button class="interactive-btn-lg" onclick="switchWorkspace('deck')">
+        🎬 Quay Lại Màn Hình Trình Chiếu 4D
+      </button>
+    </div>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px;">
+      <div class="senior-panel" style="background:#09142b; border:1px solid #f5c451;">
+        <span class="slide-tag">🌐 WEBSITE GIA TỘC LIVE TRỰC TIẾP</span>
+        <h3 style="font-size:1.2rem; color:#ffe9ad; font-weight:800; margin-top:6px;">
+          Đường dẫn trực tiếp gia phả trên GitHub Pages
+        </h3>
+        <div style="background:rgba(52,211,153,0.12); border:1px solid #34d399; color:#34d399; padding:10px 14px; border-radius:10px; font-weight:800; font-size:0.95rem; margin:10px 0;">
+          <a href="https://happyrun09.github.io/gia-pho-ho-le-van/" target="_blank" rel="noopener" style="color:#34d399; text-decoration:none;">
+            👉 https://happyrun09.github.io/gia-pho-ho-le-van/
+          </a>
+        </div>
+        <p style="font-size:0.84rem; color:#cbd5e1; line-height:1.5;">
+          Trang web tương thích 100% mọi trình duyệt (Safari, Chrome, Cốc Cốc, Edge), hỗ trợ điện thoại thông minh, máy tính bảng và màn hình TV lớn trong các dịp Chạp họ, Lễ cúng gia tộc ngày 12 tháng Giêng.
+        </p>
+        <div style="display:flex; gap:10px; margin-top:14px; flex-wrap:wrap;">
+          <button class="interactive-btn-lg" onclick="exportStandaloneHtml4D()">
+            📥 B1. Tải File HTML 4D Độc Lập
+          </button>
+          <button class="interactive-btn-lg" style="background:linear-gradient(135deg,#38bdf8,#0284c7); color:#fff;" onclick="exportGenealogyJson()">
+            📦 B2. Xuất Dữ Liệu Phả Hệ JSON
+          </button>
+        </div>
+      </div>
+
+      <div class="senior-panel" style="background:#09142b; border:1px solid #f5c451;">
+        <span class="slide-tag">🏛️ DI HUẤN GIA PHONG HỌ LÊ VĂN</span>
+        <h3 style="font-size:1.2rem; color:#ffe9ad; font-weight:800; margin-top:6px;">
+          Lời Răn Dạy Của Tiền Nhân
+        </h3>
+        <pre class="code-box-pre" style="color:#ffe9ad; font-size:0.86rem; line-height:1.6;">
+"Cây có gốc mới nở cành xanh ngọn,
+Nước có nguồn mới biển rộng sông sâu.
+Người ta nguồn gốc từ đâu?
+Gốc từ Tiên Tổ đời sau muôn truyền.
+
+Họ Lê Văn đất Cam Lộ - Gio Linh,
+Trải bao biến cố trung trinh một lòng.
+Kính tiên tổ, hiếu mẹ cha,
+Đoàn kết huynh đệ, thuận hòa dâu con.
+Hiểu sâu - Sống tỉnh - Hành đúng muôn đời!"</pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- TẦNG 3: FOOTER TELEPROMPTER & ĐIỀU HƯỚNG -->
+  <footer class="bottom-studio-dock" aria-label="Thanh Phụ đề và Điều hướng">
+    <div class="dock-nav-cluster">
+      <button class="nav-action-btn" onclick="prevSlide()" id="btnPrevNav">◀ Trang Trước</button>
+      <div class="dots-wrapper" id="dotsContainer"></div>
+    </div>
+
+    <div class="dock-teleprompter-stage" id="teleprompterBar">
+      <div class="voice-wave-bars">
+        <span></span><span></span><span></span><span></span>
+      </div>
+      <div class="teleprompter-text" id="teleprompterText">
+        🌿 GIA PHỔ HỌ LÊ VĂN • NGUỒN CỘI TRI ÂN
+      </div>
+      <button class="pill-btn" id="btnStopInline" style="background:rgba(251,113,133,0.25); color:#fecdd3; display:none;" onclick="stopAutoLecture()">⏹ Dừng</button>
+    </div>
+
+    <div class="dock-nav-cluster">
+      <label class="dock-hide-check" title="Phím tắt: H">
+        <input type="checkbox" id="chkShowCurrent" checked onchange="toggleShowSlide(currentSlide, this.checked)" />
+        ✓ Hiển thị trang này
+      </label>
+      <button class="nav-action-btn" onclick="nextSlide()" id="btnNextNav">Trang Tiếp ▶</button>
+    </div>
+  </footer>
+
+  <!-- MODAL QUẢN LÝ ẨN / HIỆN TỪNG TRANG -->
+  <div class="modal-backdrop" id="hideModal" onclick="closeHideModal()">
+    <div class="modal-card" onclick="event.stopPropagation()">
+      <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid rgba(255,255,255,0.15); padding-bottom:10px; margin-bottom:12px;">
+        <div>
+          <span class="slide-tag">🗂️ QUẢN LÝ TRANG GIA PHẢ TRÌNH CHIẾU</span>
+          <h3 style="font-size:1.35rem; color:#ffe9ad;">Chọn các trang hiển thị khi thuyết trình gia tộc</h3>
+          <div id="hideSummaryText" style="font-size:0.84rem; color:#cbd5e1; margin-top:4px;"></div>
+        </div>
+        <button class="btn-hud-action" onclick="closeHideModal()">✕ Đóng</button>
+      </div>
+      <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:10px;">
+        <button class="btn-hud-action" onclick="showAllSlides()">👁 Hiện tất cả các trang</button>
+        <button class="btn-hud-action" onclick="hideAllExceptCurrent()">🎯 Chỉ giữ lại trang đang xem</button>
+        <button class="btn-hud-action" onclick="invertHiddenSlides()">🔄 Đảo lựa chọn Ẩn/Hiện</button>
+      </div>
+      <div class="hide-list" id="hideListContainer"></div>
+    </div>
+  </div>
+
+  <!-- MODAL TRA CỨU NGÀY KỴ GIỖ ÂM LỊCH CÁC CỤ -->
+  <div class="modal-backdrop" id="kyGioModal" onclick="closeKyGioModal()">
+    <div class="modal-card" onclick="event.stopPropagation()">
+      <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid rgba(255,255,255,0.15); padding-bottom:10px; margin-bottom:12px;">
+        <div>
+          <span class="slide-tag">🌺 TƯỞNG NIỆM TIỀN NHÂN HỌ LÊ VĂN</span>
+          <h3 style="font-size:1.35rem; color:#ffe9ad;">Niên Biểu Các Ngày Kỵ Giỗ Âm Lịch Trong Năm</h3>
+          <p style="font-size:0.84rem; color:#cbd5e1; margin-top:3px;">
+            Con cháu nội ngoại tra cứu để tề tựu phụng dưỡng, thắp nén tâm hương tưởng niệm công đức sinh thành.
+          </p>
+        </div>
+        <button class="btn-hud-action" onclick="closeKyGioModal()">✕ Đóng</button>
+      </div>
+
+      <table class="table-ky-gio">
+        <thead>
+          <tr>
+            <th>Thế Hệ</th>
+            <th>Vị Tiền Nhân</th>
+            <th>Ngày Kỵ Âm Lịch</th>
+            <th>Ghi Chú Phụng Thờ</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Đời thứ 2</td>
+            <td><strong>Cụ Lê Văn Điền</strong></td>
+            <td><span style="color:#f5c451; font-weight:800;">26 tháng Giêng</span></td>
+            <td>Chính chủ khởi lập đại chi; vợ chánh Võ Thị Thiên, vợ kế Bùi Thị Hựu</td>
+          </tr>
+          <tr>
+            <td>Đời thứ 2</td>
+            <td>Cụ Lê Văn Thiên</td>
+            <td>22 tháng 3</td>
+            <td>Con cụ Lê Văn Điền</td>
+          </tr>
+          <tr>
+            <td>Đời thứ 3</td>
+            <td><strong>Hiển Tổ Khảo Lê Văn Nguyên</strong></td>
+            <td><span style="color:#f5c451; font-weight:800;">06 tháng 8</span></td>
+            <td>Hiển Tổ Khảo trung tâm truyền thừa đại chi</td>
+          </tr>
+          <tr>
+            <td>Đời thứ 3</td>
+            <td><strong>Hiển Tổ Tỷ Đinh Thị Trung</strong></td>
+            <td><span style="color:#f5c451; font-weight:800;">15 tháng 9</span></td>
+            <td>Hiển Tổ Tỷ; sinh hạ 8 người con đức độ</td>
+          </tr>
+          <tr>
+            <td>Đời thứ 3</td>
+            <td>Cụ Lê Văn Khiêm</td>
+            <td>17 tháng 8</td>
+            <td>Con Cụ Lê Văn Nguyên</td>
+          </tr>
+          <tr>
+            <td>Đời thứ 3</td>
+            <td>Cụ Lê Văn Chuyên</td>
+            <td>29 tháng 9</td>
+            <td>Con Cụ Lê Văn Nguyên</td>
+          </tr>
+          <tr>
+            <td>Đời thứ 4</td>
+            <td><strong>Cụ Lê Văn Cận</strong> (Bính Tuất)</td>
+            <td><span style="color:#f5c451; font-weight:800;">08 tháng 10</span></td>
+            <td>Trụ cột đại phái; vợ chánh Lê Thị Cư (kỵ 18-10)</td>
+          </tr>
+          <tr>
+            <td>Đời thứ 4</td>
+            <td>Cụ bà Lê Thị Cư</td>
+            <td>18 tháng 10</td>
+            <td>Vợ chánh cụ Lê Văn Cận</td>
+          </tr>
+          <tr>
+            <td>Đời thứ 4</td>
+            <td><strong>Cụ Lê Văn Thuyết</strong> (Canh Dần)</td>
+            <td><span style="color:#f5c451; font-weight:800;">10 tháng 4</span></td>
+            <td>Trụ cột đại phái; vợ chánh Lê Thị Cần (kỵ 11-03)</td>
+          </tr>
+          <tr>
+            <td>Đời thứ 4</td>
+            <td>Cụ bà Lê Thị Cần</td>
+            <td>11 tháng 3</td>
+            <td>Vợ chánh cụ Lê Văn Thuyết</td>
+          </tr>
+          <tr>
+            <td>Đời thứ 4</td>
+            <td><strong>Cụ Lê Văn Tặng</strong></td>
+            <td><span style="color:#f5c451; font-weight:800;">30 tháng 11</span></td>
+            <td>Trụ cột đại phái; vợ chánh Hoàng Thị Cửu (kỵ 10-08)</td>
+          </tr>
+          <tr>
+            <td>Đời thứ 4</td>
+            <td>Cụ bà Hoàng Thị Cửu</td>
+            <td>10 tháng 8</td>
+            <td>Vợ chánh cụ Lê Văn Tặng</td>
+          </tr>
+          <tr>
+            <td>Đời thứ 5</td>
+            <td>Cụ Lê Văn Hàm (Tân Hợi)</td>
+            <td>04 tháng 8</td>
+            <td>Con Cụ Lê Văn Cận</td>
+          </tr>
+          <tr>
+            <td>Đời thứ 5</td>
+            <td>Cụ Lê Văn Tốn (Canh Thân)</td>
+            <td>04 tháng 12</td>
+            <td>Con Cụ Lê Văn Cận (hy sinh thời chiến)</td>
+          </tr>
+          <tr>
+            <td>Toàn Tộc</td>
+            <td><strong>LỄ CÚNG HỌ TRUYỀN THỐNG</strong></td>
+            <td><span style="color:#34d399; font-weight:900;">12 tháng Giêng</span></td>
+            <td>Hội ngộ toàn thể con cháu nội ngoại họ Lê Văn hàng năm</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div style="margin-top:14px; text-align:center;">
+        <button class="interactive-btn-lg" onclick="playTibetanBowl432()">
+          🔔 Thỉnh Chuông Bát Nguyện Cầu Gia Đạo Bình An
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // =========================================================================
+    // 1. DỮ LIỆU CHUẨN 12 TRANG GIA PHỔ HỌ LÊ VĂN
+    // =========================================================================
+    const MASTER_GIA_PHO_SLIDES = [
+      {
+        id: 1,
+        tag: "🏛️ KHỞI NGUỒN TIỀN NHÂN",
+        title: "01. KHỞI NGUỒN TỪ GIO LINH ĐẾN ĐẤT CÙA MAI LỘC",
+        flipCards: [
+          {
+            frontTitle: "NƠI CHÔN NHAU CẮT RỐN",
+            frontText: "Nguyên tiên Thủy tổ sinh tại Huyện Gio Linh, Tổng An Bình, Phường Long Sơn, tỉnh Quảng Trị.",
+            backTitle: "ĐẤT DỪNG CHÂN PHƯỜNG AN",
+            backText: "Sau biến thiên lịch sử, Tổ tỷ dời cư về định cư tại Phường An, Tổng Mai Lộc, Huyện Cam Lộ."
+          },
+          {
+            frontTitle: "CHÍ TRAI TÒNG QUÂN",
+            frontText: "Tổ khảo tòng quân bảo vệ giang sơn xã tắc, xông pha nơi chiến trận.",
+            backTitle: "ĐỨC DÀY NUÔI DẠY CON",
+            backText: "Tổ tỷ tần tảo gánh vác nuôi 5 người con khôn lớn, gây dựng cơ nghiệp dòng họ Lê Văn."
+          },
+          {
+            frontTitle: "TÔN MỘ TRUNG SƠN PHƯỜNG",
+            frontText: "Thủy tổ táng tại Long Sơn, qua năm tháng chiến tranh tôn mộ thất lạc.",
+            backTitle: "GỐC RỄ ĐÂM SÂU ĐẤT CÙA",
+            backText: "Mảnh đất bazan màu mỡ Xứ Cùa trở thành chiếc nôi ấp ủ các thế hệ con cháu họ Lê Văn."
+          },
+          {
+            frontTitle: "GHI CHÉP GIA PHẢ MẬU NGỌ",
+            frontText: "Bản phả hệ được trang trọng phụng lập ngày 15 tháng 9 năm Mậu Ngọ (1978).",
+            backTitle: "TRUYỀN THỪA BÁCH NIÊN",
+            backText: "Con cháu hôm nay tiếp bước số hóa gia phả, giữ trọn ngọn lửa đạo hiếu lưu truyền mãi mai sau."
+          }
+        ],
+        bullets: [
+          "🔹 Khởi nguồn: <strong>Gio Linh huyện, An Bình tổng, Long Sơn phường</strong> ➔ Định cư: <strong>Cam Lộ huyện, Mai Lộc tổng, Phường An phường</strong>.",
+          "🔹 Thời điểm xác lập gia phả gốc: <strong>Ngày 15 tháng 9 năm Mậu Ngọ (1978)</strong>, khẳng định dòng máu kiên trung, bất khuất của họ Lê Văn."
+        ],
+        stateOld: "🍂 Tiền nhân vượt muôn vàn gian khó thời loạn lạc",
+        bridgeVerb: "KHAI CƠ THÀNH",
+        stateNew: "🌿 Mảnh đất trù phú Phường An đâm chồi nảy lộc",
+        visualTheme: "origin_map",
+        widgetType: "none",
+        script: "Kính thưa toàn thể con cháu nội ngoại họ Lê Văn. Dòng tộc chúng ta khởi nguồn từ huyện Gio Linh, tổng An Bình, phường Long Sơn. Trải qua thăng trầm lịch sử, Tổ khảo tòng quân, Tổ tỷ cùng năm người con đã di cư về phường Phường An, tổng Mai Lộc, huyện Cam Lộ để khai hoang lập nghiệp, mở đầu cho sự phát triển rực rỡ của gia tộc hôm nay."
+      },
+      {
+        id: 2,
+        tag: "🌱 ĐỜI THỨ NHẤT",
+        title: "02. TẰNG TỔ KHẢO & NĂM HẠT MẦM ĐẦU TIÊN",
+        flipCards: [
+          {
+            frontTitle: "TẰNG TỔ KHẢO TÒNG QUÂN",
+            frontText: "Mang chí lớn ra trận, cống hiến trọn đời vì sự bình yên của non sông đất nước.",
+            backTitle: "TRUYỀN THỐNG DŨNG KHÍ",
+            backText: "Khí phách hiên ngang, tinh thần trách nhiệm với quê hương được trao truyền cho con cháu muôn đời."
+          },
+          {
+            frontTitle: "NĂM NGƯỜI CON ĐẦU TIÊN",
+            frontText: "Sanh hạ 5 người con: Lê Văn Điền, Lê Văn Hiền (vô tự), Lê Văn Hậu, Lê Thị Lai, Lê Văn Lập.",
+            backTitle: "NĂM CÀNH LỘC GIA PHONG",
+            backText: "Từng người con là một mắt xích gắn kết tình máu mủ ruột rà, cùng nhau vượt qua đói nghèo."
+          },
+          {
+            frontTitle: "CỤ LÊ VĂN ĐIỀN NỐI NGHIỆP",
+            frontText: "Là người con trưởng gánh vác hương hỏa, làm rạng danh dòng dõi họ Lê Văn.",
+            backTitle: "ĐẠI CHI NHÁNH RA ĐỜI",
+            backText: "Từ Cụ Điền, toàn bộ các chi phái rực rỡ sau này đã được hình thành vững chãi."
+          },
+          {
+            frontTitle: "GIAN LAO BUỔI KHỞI ĐẦU",
+            frontText: "Rừng thiêng nước độc, công cụ thô sơ nơi núi rừng Cam Lộ thuở sơ khai.",
+            backTitle: "Ý CHÍ KIÊN CƯỜNG ĐẤT QUẢNG",
+            backText: "Bàn tay chai sần của Tiên tổ đã biến sỏi đá thành ruộng vườn trĩu hạt cho đàn con."
+          }
+        ],
+        bullets: [
+          "🔹 Đời thứ nhất: <strong>Tằng tổ khảo</strong> (tòng quân) &amp; <strong>Tằng tổ tỷ</strong> sinh hạ 5 người con (4 nam, 1 nữ).",
+          "🔹 <strong>Cụ Lê Văn Điền</strong> là người kế thừa chính thống, mở ra đại chi phái rực rỡ nhất trong dòng tộc họ Lê Văn."
+        ],
+        stateOld: "🌾 Một gia đình nhỏ kiên cường giữa núi rừng sơ khai",
+        bridgeVerb: "VƯƠN LÊN THÀNH",
+        stateNew: "🌳 Cây đại thụ gia tộc năm nhánh đơm hoa kết trái",
+        visualTheme: "five_branches",
+        widgetType: "none",
+        script: "Ở đời thứ nhất, Tằng tổ khảo tòng quân cứu nước, Tằng tổ tỷ một tay nuôi dạy năm người con: Lê Văn Điền, Lê Văn Hiền, Lê Văn Hậu, Lê Thị Lai và Lê Văn Lập. Chính bàn tay lao động cần cù và đức hy sinh vô bờ bến ấy đã gieo mầm cho cây đại thụ gia tộc hôm nay."
+      },
+      {
+        id: 3,
+        tag: "📜 ĐỜI THỨ HAI • KỴ 26 THÁNG GIÊNG",
+        title: "03. ĐẠI CHI CỤ LÊ VĂN ĐIỀN (KỴ 26 THÁNG GIÊNG)",
+        flipCards: [
+          {
+            frontTitle: "CHÍNH CHỦ LÊ VĂN ĐIỀN",
+            frontText: "Bậc tiền bối đức cao vọng trọng, đặt nền móng quy củ cho toàn bộ gia tộc họ Lê Văn.",
+            backTitle: "NGÀY KỴ 26 THÁNG GIÊNG",
+            backText: "Con cháu đời đời ghi nhớ ngày 26 tháng Giêng âm lịch làm ngày lễ giỗ tưởng niệm Cụ."
+          },
+          {
+            frontTitle: "ĐỨC HẠNH HAI CỤ BÀ",
+            frontText: "Vợ chánh Võ Thị Thiên (người thôn Bảng Sơn, vô tự); Vợ kế Bùi Thị Hựu (người thôn Trà Liên).",
+            backTitle: "GẮN KẾT THÔNG GIA DANH GIA",
+            backText: "Sự hòa thuận, hiền thục của hai cụ bà là tấm gương sáng cho dâu con noi theo."
+          },
+          {
+            frontTitle: "BẢY NGƯỜI CON ĐỜI THỨ HAI",
+            frontText: "Sanh hạ: Lê Hữu Vị, Lê Văn Vy, Lê Văn Chung, Lê Văn Nguyên, Lê Thị Uyên, Lê Văn Lưu, Lê Văn Thiên.",
+            backTitle: "TỎA ĐI BỐN PHƯƠNG TRỜI",
+            backText: "Các người con tiếp tục mở mang ruộng đất, tham gia việc làng xóm, giữ gìn nề nếp gia phong."
+          },
+          {
+            frontTitle: "NHÁNH CỤ NGUYÊN TRUYỀN THỪA",
+            frontText: "Cụ Lê Văn Nguyên (kỵ 06-8) được trao giữ trọng trách nối dõi tông đường trung tâm.",
+            backTitle: "NGỌN ĐÈN HƯƠNG HỎA BẤT DIỆT",
+            backText: "Duy trì mạch nguồn tâm linh, phụng thờ tổ tiên trang nghiêm qua bao thế hệ."
+          }
+        ],
+        bullets: [
+          "🔹 Chính chủ: <strong>Cụ Lê Văn Điền</strong> (Kỵ ngày <strong>26 tháng Giêng</strong> âm lịch).",
+          "🔹 Phối ngẫu: Vợ chánh <strong>Võ Thị Thiên</strong> (Bảng Sơn) &amp; Vợ kế <strong>Bùi Thị Hựu</strong> (Trà Liên), sinh hạ 7 người con."
+        ],
+        stateOld: "🕯️ Ngọn đèn hương hỏa thời sơ khởi",
+        bridgeVerb: "LAN TỎA THÀNH",
+        stateNew: "🌟 Bảy chi nhánh rạng danh, trường tồn cùng non nước",
+        visualTheme: "altar_lantern",
+        widgetType: "none",
+        script: "Đời thứ hai ghi dấu công đức của Cụ Lê Văn Điền, kỵ ngày 26 tháng Giêng. Cụ cùng cụ bà Võ Thị Thiên người Bảng Sơn và cụ bà Bùi Thị Hựu người Trà Liên đã sinh hạ bảy người con, trong đó Cụ Lê Văn Nguyên là mắt xích trung tâm trao truyền mạch sống cho các thế hệ tiếp nối."
+      },
+      {
+        id: 4,
+        tag: "👑 ĐỜI THỨ BA • TỔ KHẢO TRUYỀN THỪA",
+        title: "04. HIỂN TỔ KHẢO LÊ VĂN NGUYÊN & CỤ BÀ ĐINH THỊ TRUNG",
+        flipCards: [
+          {
+            frontTitle: "HIỂN TỔ KHẢO LÊ VĂN NGUYÊN",
+            frontText: "Kỵ ngày 06 tháng 8 âm lịch. Người con ưu tú định hình cấu trúc các chi phái hiện đại.",
+            backTitle: "BẬC ĐỨC TRỌNG ANH MINH",
+            backText: "Dẫn dắt các con học hành, rèn đức, giữ trọn chữ Tín và lòng nhân từ với xóm làng."
+          },
+          {
+            frontTitle: "HIỂN TỔ TỶ ĐINH THỊ TRUNG",
+            frontText: "Kỵ ngày 15 tháng 9 âm lịch. Người mẹ tảo tần, hiền thục nức tiếng một vùng.",
+            backTitle: "CỘI NGUỒN PHÚC ĐỨC",
+            backText: "Phúc đức tại mẫu: Nuôi dưỡng 8 người con khôn lớn, giỏi giang, thành đạt."
+          },
+          {
+            frontTitle: "TÁM NGƯỜI CON ĐỜI THỨ BA",
+            frontText: "Lê Thị Yến, Lê Thị Dàn, Lê Hữu Vị, Lê Văn Khiêm, Lê Văn Cận, Lê Văn Thuyết, Lê Văn Tăng, Lê Văn Chuyên.",
+            backTitle: "BA TRỤ CỘT ĐẠI PHÁI RA ĐỜI",
+            backText: "Ba vị trụ cột CẬN - THUYẾT - TẶNG chính thức hình thành ba đại phái rực rỡ nhất."
+          },
+          {
+            frontTitle: "NGÀY KỴ ÂM DƯƠNG HỢP NHẤT",
+            frontText: "Cụ ông kỵ ngày 06-8, Cụ bà kỵ ngày 15-9. Con cháu tề tựu hai dịp lễ lớn mùa thu.",
+            backTitle: "NGHĨA TÌNH PHU THÊ SON SẮT",
+            backText: "Bài học yêu thương, gắn bó thủy chung được khắc sâu vào nếp nhà con cháu họ Lê Văn."
+          }
+        ],
+        bullets: [
+          "🔹 Hiển Tổ Khảo: <strong>Lê Văn Nguyên</strong> (Kỵ ngày <strong>06 tháng 8</strong> âm lịch).",
+          "🔹 Hiển Tổ Tỷ: <strong>Đinh Thị Trung</strong> (Kỵ ngày <strong>15 tháng 9</strong> âm lịch). Sinh hạ 8 người con đức hạnh vẹn toàn.",
+          "🔹 Đây là cái nôi sản sinh ra 3 vị trụ cột đời thứ 4: <strong>Cụ Cận, Cụ Thuyết và Cụ Tặng</strong>."
+        ],
+        stateOld: "🌱 Mầm cây non tiếp nhận linh khí đất trời",
+        bridgeVerb: "HƯNG THỊNH THÀNH",
+        stateNew: "🏛️ Ba trụ cột vững vàng CẬN – THUYẾT – TẶNG",
+        visualTheme: "sun_moon_altar",
+        widgetType: "none",
+        script: "Đời thứ ba chứng kiến sự kết hợp hoàn hảo giữa Hiển Tổ Khảo Lê Văn Nguyên, kỵ ngày mùng 6 tháng 8, và Hiển Tổ Tỷ Đinh Thị Trung, kỵ ngày 15 tháng 9. Tám người con do hai cụ sinh thành đã tạo nên ba đại phái trụ cột đời thứ tư: Cụ Cận, Cụ Thuyết và Cụ Tặng."
+      },
+      {
+        id: 5,
+        tag: "🏛️ ĐỜI THỨ TƯ • NHÁNH TRƯỞNG",
+        title: "05. CHI HỆ CỤ LÊ VĂN CẬN (SINH BÍNH TUẤT, KỴ 08-10)",
+        flipCards: [
+          {
+            frontTitle: "CHÍNH CHỦ LÊ VĂN CẬN",
+            frontText: "Sinh năm Bính Tuất, Kỵ ngày 08-10 âm lịch. Vị tộc trưởng uy nghiêm, mẫu mực của chi họ.",
+            backTitle: "TRỤ CỘT CỦA NHÁNH ĐƯƠNG ĐẠI",
+            backText: "Là gốc rễ trực tiếp sinh ra các cụ Hàm, Tạ, Tốn, Tùy - cội nguồn của thế hệ hôm nay."
+          },
+          {
+            frontTitle: "CỤ BÀ LÊ THỊ CƯ",
+            frontText: "Sinh năm Đinh Hợi, Kỵ ngày 18-10 âm lịch. Người mẹ hiền từ, hết lòng vì sự hưng thịnh của dòng tộc.",
+            backTitle: "ĐỨC HY SINH TRẦM LẶNG",
+            backText: "Cùng chồng vun vén gia đình vượt qua những năm tháng đất nước biến động."
+          },
+          {
+            frontTitle: "CHÍN NGƯỜI CON ĐỜI THỨ TƯ",
+            frontText: "Lê Văn Hàm, Lê Văn Hộ, Lê Văn Tạ, Lê Văn Tốn, Lê Văn Tùy, Lê Thị Dã, Lê Thị Ý (Thêm)...",
+            backTitle: "CHÍN NGÔI SAO PHÚC LỘC",
+            backText: "Các con cháu tỏa đi khắp làng quê Phường An, Mai Lộc, Cư Hoan, Định Sơn."
+          },
+          {
+            frontTitle: "TRUYỀN THỐNG ĐOÀN KẾT",
+            frontText: "Dù đi đâu, làm gì, các nhánh con cháu của Cụ Cận luôn hướng về nhà thờ họ tổ.",
+            backTitle: "BẢN SẮC BẤT DIỆT HỌ LÊ VĂN",
+            backText: "Tôn ti trật tự, kính trên nhường dưới, đùm bọc lẫn nhau trong hoạn nạn."
+          }
+        ],
+        bullets: [
+          "🔹 Chính chủ: <strong>Cụ Lê Văn Cận</strong> (Sinh năm Bính Tuất, Kỵ ngày <strong>08 tháng 10</strong> âm lịch).",
+          "🔹 Vợ chánh: <strong>Cụ bà Lê Thị Cư</strong> (Sinh năm Đinh Hợi, Kỵ ngày <strong>18 tháng 10</strong> âm lịch).",
+          "🔹 Sinh hạ 9 người con, trong đó có 4 cụ rạng danh: <strong>Hàm, Tạ, Tốn, Tùy</strong>."
+        ],
+        stateOld: "🏡 Nếp nhà xưa vững vàng vượt qua giông bão",
+        bridgeVerb: "PHÁT TRIỂN THÀNH",
+        stateNew: "👑 Cội nguồn trực tiếp sinh ra thế hệ hôm nay",
+        visualTheme: "nine_stars_temple",
+        widgetType: "none",
+        script: "Cụ Lê Văn Cận, sinh năm Bính Tuất, kỵ ngày mùng 8 tháng 10, cùng cụ bà Lê Thị Cư sinh năm Đinh Hợi, kỵ ngày 18 tháng 10, là trụ cột đời thứ tư của nhánh trưởng. Chín người con của hai cụ, đặc biệt là các cụ Hàm, Tạ, Tốn và Tùy, chính là cội rễ trực tiếp của thế hệ chúng ta ngày nay."
+      },
+      {
+        id: 6,
+        tag: "🌿 ĐỜI THỨ TƯ • CÁC NHÁNH ĐỒNG HÀNG",
+        title: "06. CHI HỆ CỤ LÊ VĂN THUYẾT & CỤ LÊ VĂN TẶNG",
+        flipCards: [
+          {
+            frontTitle: "CỤ LÊ VĂN THUYẾT (CANH DẦN)",
+            frontText: "Kỵ ngày 10-04. Cụ bà Lê Thị Cần (Canh Dần, Kỵ 11-03). Sanh hạ 13 người con đông đúc.",
+            backTitle: "ĐẠI GIA ĐÌNH ĐÔNG CON NHIỀU CHÁU",
+            backText: "Các con: Thận, Khanh, Nghị (Đinh Tỵ), Đán, Duy, Tròn (Tân Dậu), Dung, Tránh, Nghi, Ưu, Sử..."
+          },
+          {
+            frontTitle: "CỤ LÊ VĂN TẶNG (KỴ 30-11)",
+            frontText: "Cụ bà Hoàng Thị Cửu (Kỵ 10-08). Sanh hạ 7 người con: Tuy (Bính Thìn), Đào, Hồng, Táo, Châu, Duy...",
+            backTitle: "Ý CHÍ VƯỢN XA KHAI PHÁ",
+            backText: "Mở đường cho hậu duệ lập nghiệp tại nhiều vùng đất mới, tiêu biểu là nhánh Đắk Lắk."
+          },
+          {
+            frontTitle: "BẢN THẢO GIA PHẢ GỐC 1978",
+            frontText: "Ghi nhận đầy đủ thông tin ngày sinh, ngày kỵ, nơi cư trú và thông gia các vùng phụ cận.",
+            backTitle: "BẰNG CHỨNG LỊCH SỬ VÔ GIÁ",
+            backText: "Giúp các thế hệ sau này đi muôn phương vẫn tìm về đúng cội nguồn tổ tông."
+          },
+          {
+            frontTitle: "GẮN KẾT ANH EM MỘT NHÀ",
+            frontText: "Con cháu của ba cụ Cận - Thuyết - Tặng coi nhau như anh em ruột thịt, chung lưng đấu cật.",
+            backTitle: "MỘT CỘI TỎA TRĂM CÀNH",
+            backText: "Họ Lê Văn trở thành dòng họ danh giá, được kính trọng tại địa phương Cam Lộ."
+          }
+        ],
+        bullets: [
+          "🔹 Chi <strong>Cụ Lê Văn Thuyết</strong>: Sinh hạ 13 người con; nhánh <strong>Cụ Lê Văn Nghị</strong> (Đinh Tỵ) phát triển mạnh mẽ.",
+          "🔹 Chi <strong>Cụ Lê Văn Tặng</strong>: Sinh hạ 7 người con; nhánh <strong>Cụ Lê Văn Tuy</strong> &amp; <strong>Cụ Lê Văn Duy</strong> vươn xa lập nghiệp tại Đắk Lắk."
+        ],
+        stateOld: "🌱 Các cành cây vươn rộng che chở xóm làng",
+        bridgeVerb: "HỘI TỤ THÀNH",
+        stateNew: "🤝 Tình anh em ba nhánh phái keo sơn bền chặt",
+        visualTheme: "brotherhood_bridge",
+        widgetType: "none",
+        script: "Cùng thế hệ đời thứ tư, cụ Lê Văn Thuyết sinh hạ 13 người con và cụ Lê Văn Tặng sinh hạ 7 người con. Từ sự đùm bọc của ba cụ Cận, Thuyết, Tặng, các chi phái họ Lê Văn đã tỏa đi khắp các miền quê Quảng Trị và vươn xa đến tận Tây Nguyên, tạo nên sức sống mãnh liệt cho gia tộc."
+      },
+      {
+        id: 7,
+        tag: "🕯️ ĐỜI THỨ NĂM • CHI HÀM & TẠ",
+        title: "07. CHI CỤ LÊ VĂN HÀM & CỤ LÊ VĂN TẠ",
+        flipCards: [
+          {
+            frontTitle: "CỤ LÊ VĂN HÀM (TÂN HỢI)",
+            frontText: "Kỵ ngày 04-08. Vợ chánh Nguyễn Thị Đô, vợ kế Nguyễn Thị Bản, thứ thất Nguyễn Thị Thành.",
+            backTitle: "CỤ LÊ VĂN TÂN (HÒA) NỐI DÕI",
+            backText: "Cụ Tân (Hòa) sinh năm Bính Thân, vợ là bà Nguyễn Thị Quyệt, sinh ra các anh Hân, Tâm, chị Xão, Ngôn."
+          },
+          {
+            frontTitle: "HẬU DUỆ NHÁNH ÔNG HÂN & TÂM",
+            frontText: "Lê Văn Hân (vợ Nguyễn Thị An) ➔ Thùy Trang, Thùy Trinh, Lê Văn Tú. Lê Văn Tâm (vợ Trần Thị Châu) ➔ Thanh Nhàn, Lê Văn Khánh.",
+            backTitle: "MẦM XANH NỞ RỘ ĐỜI 6 & 7",
+            backText: "Thế hệ trẻ chăm ngoan, học giỏi, tiếp nối truyền thống cần cù, hiếu học của tổ tiên."
+          },
+          {
+            frontTitle: "CỤ LÊ VĂN TẠ (MẬU NGỌ)",
+            frontText: "Vợ chánh Nguyễn Thị Em (trong thôn). Sanh hạ 6 người con: Cân, Duật, Tầm, Tả, Tách...",
+            backTitle: "CỤ LÊ VĂN DUẬT (TÂN TỴ)",
+            backText: "Cụ Duật lấy bà Nguyễn Thị Hòa (Cư Hoan, kỵ 23-7), sinh ra các con: Lê Thị Giải, An, Lê Văn Cư (Hiệp), Lê Thị Lạc."
+          },
+          {
+            frontTitle: "GẮN BÓ ĐẤT CÙA MAI LỘC",
+            frontText: "Các gia đình nhánh cụ Hàm và cụ Tạ sinh sống chan hòa, giữ gìn phong tục ngàn đời.",
+            backTitle: "NGHĨA TÌNH HỌ TỘC SÂU ĐẬM",
+            backText: "Mỗi dịp giỗ tết, khói hương nghi ngút ấm lòng tiên tổ nơi cõi vĩnh hằng."
+          }
+        ],
+        bullets: [
+          "🔹 Chi <strong>Cụ Lê Văn Hàm</strong> (Tân Hợi, Kỵ 04-08): Sinh ra <strong>Cụ Lê Văn Tân (Hòa)</strong> (Bính Thân), cội nguồn nhánh anh Lê Văn Hân &amp; Lê Văn Tâm.",
+          "🔹 Chi <strong>Cụ Lê Văn Tạ</strong> (Mậu Ngọ): Sinh ra <strong>Cụ Lê Văn Duật</strong> (Tân Tỵ), cội nguồn nhánh Lê Văn Cư (Hiệp)."
+        ],
+        stateOld: "🍂 Nhọc nhằn mưa nắng ruộng đồng Xứ Cùa",
+        bridgeVerb: "KẾ TIẾP THÀNH",
+        stateNew: "🌿 Những nếp nhà rộn vang tiếng cười con cháu đời 6, 7",
+        visualTheme: "ancestral_flame",
+        widgetType: "none",
+        script: "Ở đời thứ năm, cụ Lê Văn Hàm sinh ra cụ Lê Văn Tân (tức Hòa), người gầy dựng nên nhánh của các anh Lê Văn Hân và Lê Văn Tâm. Cùng lúc đó, cụ Lê Văn Tạ sinh ra cụ Lê Văn Duật, người trao truyền cho nhánh anh Lê Văn Cư. Tình cảm dòng tộc keo sơn gắn bó nơi đất Cùa luôn là điểm tựa tinh thần vững chắc."
+      },
+      {
+        id: 8,
+        tag: "⚔️ ĐỜI THỨ NĂM • CHI TỐN CAN TRƯỜNG",
+        title: "08. CHI CỤ LÊ VĂN TỐN & BẢN LĨNH THÉP VƯỢT GIAN LAO",
+        flipCards: [
+          {
+            frontTitle: "CỤ LÊ VĂN TỐN (CANH THÂN)",
+            frontText: "Kỵ ngày 04-12. Thất lạc trong chiến tranh khốc liệt. Vợ chánh Hoàng Thị Huyền (Cư Hoan, kỵ 22-01).",
+            backTitle: "KHÍ PHÁCH HIÊN NGANG BẤT KHUẤT",
+            backText: "Sự hy sinh của Cụ là tấm gương sáng ngời về lòng quả cảm và đức kiên trung vì non sông."
+          },
+          {
+            frontTitle: "13 NGƯỜI CON TRƯỞNG THÀNH",
+            frontText: "Dù chịu nhiều mất mát, bà Cụ Huyền đã nuôi dạy đàn con vượt qua đói nghèo và bom đạn.",
+            backTitle: "SỨC SỐNG DIỆU KỲ HỌ LÊ VĂN",
+            backText: "Các con: Tỵ, Hoằng, Thược, Khung, Quy, Truật, Thỉu, Oanh, Tạc, Uyên, Sửu, Ất..."
+          },
+          {
+            frontTitle: "BA CÂY TÙNG BÁCH: THỈU – SỬU – ẤT",
+            frontText: "Lê Văn Thỉu (Giáp Ngọ), Lê Văn Sửu (1963), Lê Văn Ất (Ất Tỵ 1965) dựng xây rực rỡ các gia đình.",
+            backTitle: "HẬU DUỆ TÀI NĂNG ĐỜI 6 & 7",
+            backText: "Lê Văn Sỹ, Đăng (con: Khải Nam, Nguyên Khôi), Quý (con: Khắc Cường, Khắc Việt)..."
+          },
+          {
+            frontTitle: "TẦNG BÌNH LƯU TÂM THỨC",
+            frontText: "Từ tầng đối lưu giông bão của chiến tranh, các thế hệ con cháu đã vươn lên tầng bình lưu nắng ấm.",
+            backTitle: "HOA NỞ TRÊN ĐẤT KHÓ",
+            backText: "Biến đau thương thành sức mạnh, dựng xây tương lai tươi sáng cho dòng tộc."
+          }
+        ],
+        bullets: [
+          "🔹 Chính chủ: <strong>Cụ Lê Văn Tốn</strong> (Canh Thân, Kỵ <strong>04 tháng 12</strong> âm lịch) — Người chiến sĩ anh dũng thời chiến.",
+          "🔹 Ba trụ cột tiếp nối: <strong>Lê Văn Thỉu (Giáp Ngọ)</strong>, <strong>Lê Văn Sửu (1963)</strong> và <strong>Lê Văn Ất (1965)</strong> sản sinh ra thế hệ cháu chắt tài năng đời thứ 7."
+        ],
+        stateOld: "⛈️ Vượt qua bão đạn chiến tranh và mất mát",
+        bridgeVerb: "VƯỢT LÊN THÀNH",
+        stateNew: "✈️ Tự tại lướt êm trên tầng bình lưu trí tuệ và bình an",
+        visualTheme: "heroic_iron",
+        widgetType: "none",
+        script: "Chi hệ của Cụ Lê Văn Tốn là bản hùng ca về sự kiên cường của họ Lê Văn. Dù chiến tranh chia cắt, cụ bà Hoàng Thị Huyền cùng các con Lê Văn Thỉu, Lê Văn Sửu, Lê Văn Ất đã vượt qua muôn vàn gian khổ, nuôi dạy các thế hệ cháu chắt Lê Văn Sỹ, Lê Văn Đăng, Lê Văn Quý trưởng thành rạng rỡ."
+      },
+      {
+        id: 9,
+        tag: "💎 ĐỜI THỨ NĂM • ĐẠI PHÚC TỘC CỤ TÙY",
+        title: "09. CHI CỤ LÊ VĂN TÙY & SỰ HƯNG THỊNH BẬC NHẤT",
+        flipCards: [
+          {
+            frontTitle: "CỤ LÊ VĂN TÙY (GIÁP TÝ)",
+            frontText: "Sinh ngày 01-3 Giáp Tý. Vợ chánh Nguyễn Thị Thẽn (sinh 1922, trong thôn); vợ Đào Thị Bẹ, vợ Trần Thị Bạch.",
+            backTitle: "ĐẠI PHÚC TỘC ĐÔNG CON NHIỀU CHÁU",
+            backText: "Cội nguồn phúc đức sinh ra 11 người con vợ chánh cùng các con vợ thứ, nức tiếng nhân đức."
+          },
+          {
+            frontTitle: "CÁC CÂY CAO BÓNG CẢ ĐỜI THỨ 5",
+            frontText: "Lê Văn Tảng (Mậu Tý), Lê Văn Hùng (Canh Dần), Lê Văn Bạo (Quý Tỵ), Lê Văn Mạnh (Ất Mùi 1954), Lê Văn Duận (1961), Lê Văn Kiếm...",
+            backTitle: "TỪNG NHÁNH TỎA SÁNG RỰC RỠ",
+            backText: "Mỗi người con là một trụ cột vững chắc, cần cù lao động, gây dựng gia đình ấm no, hạnh phúc."
+          },
+          {
+            frontTitle: "CỘI RỄ NHÁNH LÊ PHÚC NHẬT",
+            frontText: "Cụ Lê Văn Mạnh (con cụ Tùy) sinh ra Lê Phúc Nhật (1982) và Lê Văn Anh (1984).",
+            backTitle: "NGỌN ĐUỐC TRÍ TUỆ ĐƯƠNG ĐẠI",
+            backText: "Đưa tinh thần tự cường và công nghệ mới phụng sự gia tộc và cộng đồng xã hội."
+          },
+          {
+            frontTitle: "TÌNH YÊU THƯƠNG 85 NĂM HARVARD",
+            frontText: "Hạnh phúc không nằm ở tiền tài hư danh mà ở sự hòa thuận, gắn bó mật thiết giữa các thế hệ.",
+            backTitle: "GIA ĐẠO BÌNH AN TRƯỜNG THỌ",
+            backText: "Con cháu sum vầy, tôn sư trọng đạo, yêu thương nhau như chân với tay."
+          }
+        ],
+        bullets: [
+          "🔹 Chính chủ: <strong>Cụ Lê Văn Tùy</strong> (Sinh ngày 01-3 Giáp Tý) &amp; <strong>Cụ bà Nguyễn Thị Thẽn</strong> (Sinh 1922).",
+          "🔹 Sinh ra các vị trụ cột: <strong>Lê Văn Tảng, Lê Văn Hùng, Lê Văn Mạnh, Lê Văn Duận, Lê Văn Kiếm...</strong>",
+          "🔹 Đây chính là chiếc nôi trực tiếp sinh thành ra <strong>Cụ Lê Văn Mạnh</strong> ➔ <strong>Lê Phúc Nhật</strong>."
+        ],
+        stateOld: "🏡 Nếp nhà đơn sơ chan chứa tình mẫu tử, phụ tử",
+        bridgeVerb: "HƯNG THỊNH THÀNH",
+        stateNew: "💎 Gia tộc đại phúc: Con cháu đông đúc, tài đức vẹn toàn",
+        visualTheme: "grand_family",
+        widgetType: "none",
+        script: "Chi hệ của Cụ Lê Văn Tùy và cụ bà Nguyễn Thị Thẽn là biểu tượng của phúc đức sâu dày với mười một người con. Từ cụ Tảng, cụ Hùng, cụ Mạnh, cụ Duận đến cụ Kiếm, mỗi nhánh đều phát triển vượt bậc. Chính từ nơi đây, Cụ Lê Văn Mạnh đã sinh thành và dưỡng dục nên người con ưu tú Lê Phúc Nhật."
+      },
+      {
+        id: 10,
+        tag: "🌟 ĐỜI THỨ SÁU & THỨ BẢY",
+        title: "10. NHÁNH CỤ LÊ VĂN MẠNH ➔ LÊ PHÚC NHẬT & MẦM XANH",
+        flipCards: [
+          {
+            frontTitle: "CỤ LÊ VĂN MẠNH (ẤT MÙI 1954)",
+            frontText: "Sinh ngày 22-12-1954. Cụ bà Mai Thị Cúc (Mậu Tuất, 12-07-1958, thôn Định Sơn).",
+            backTitle: "CÔNG SINH THÀNH DƯỠNG DỤC BIỂN TRỜI",
+            backText: "Cần lao cả một đời, nuôi dạy ba người con Lê Văn Nhật, Lê Văn Anh, Lê Thị Nga nên người."
+          },
+          {
+            frontTitle: "LÊ PHÚC NHẬT (NHÂM TUẤT 1982)",
+            frontText: "Sinh ngày 19-5 Nhâm Tuất (CCCD ghi 27-07-1982). Vợ chánh: Bà Võ Thị Niềm (Giáp Tý 1984).",
+            backTitle: "TIÊN PHONG TRÍ TUỆ THỰC CHIẾN",
+            backText: "Chủ tịch HTX Keo Sơn, ứng dụng công nghệ AI, lan tỏa triết lý Hiểu Sâu • Sống Tỉnh • Hành Đúng."
+          },
+          {
+            frontTitle: "LÊ VĂN ANH (GIÁP TÝ 1984)",
+            frontText: "Sinh ngày 18-7-1984 (CCCD ghi 19-05-1985). Vợ chánh: Bà Nguyễn Thị Linh (Bảng Sơn).",
+            backTitle: "VỮNG BƯỚC NỐI NGHIỆP GIA ĐÌNH",
+            backText: "Sinh hạ hai người con ngoan: Lê Gia Bảo (2012) và Lê Thị Yến Nhi (Quý Tỵ)."
+          },
+          {
+            frontTitle: "THẾ HỆ ĐỜI THỨ 7 MĂNG NON",
+            frontText: "Con của Lê Phúc Nhật & Võ Thị Niềm: Lê Thị Viên (2006, kỵ 5/7), Lê Thị Đan (2009), Lê Thị Nhân (2017).",
+            backTitle: "TƯƠNG LAI RỰC RỠ MAI SAU",
+            backText: "Các cháu được giáo dục toàn diện Thân – Tâm – Trí, kế thừa xứng đáng truyền thống tổ tiên."
+          }
+        ],
+        bullets: [
+          "🔹 Đời thứ 5: <strong>Cụ Lê Văn Mạnh</strong> (1954) &amp; <strong>Cụ bà Mai Thị Cúc</strong> (1958, Định Sơn).",
+          "🔹 Đời thứ 6: <strong>Lê Phúc Nhật</strong> (1982) &amp; <strong>Võ Thị Niềm</strong> (1984) | <strong>Lê Văn Anh</strong> (1984) &amp; <strong>Nguyễn Thị Linh</strong>.",
+          "🔹 Đời thứ 7: <strong>Lê Thị Đan</strong> (2009), <strong>Lê Thị Nhân</strong> (2017), <strong>Lê Gia Bảo</strong> (2012), <strong>Lê Thị Yến Nhi</strong>..."
+        ],
+        stateOld: "🌾 Kế thừa truyền thống gia phong từ đất Cùa",
+        bridgeVerb: "VƯƠN CAO THÀNH",
+        stateNew: "🚀 Kỷ nguyên mới: Trí tuệ AI thực chiến & Giữ trọn Đạo hiếu",
+        visualTheme: "next_gen_torch",
+        widgetType: "none",
+        script: "Ở đời thứ sáu, Cụ Lê Văn Mạnh và cụ bà Mai Thị Cúc đã sinh thành nên Lê Phúc Nhật và Lê Văn Anh. Kết hợp tinh hoa truyền thống với tri thức thời đại mới, Lê Phúc Nhật cùng vợ Võ Thị Niềm và các con Lê Thị Đan, Lê Thị Nhân đang cùng gia tộc viết tiếp những trang sử rực rỡ nhất."
+      },
+      {
+        id: 11,
+        tag: "🌳 TOÀN CẢNH PHẢ HỆ",
+        title: "11. BÁCH NIÊN HỘI TỤ • TỨ HẢI GIAI HUYNH ĐỆ",
+        flipCards: [
+          {
+            frontTitle: "NHÁNH CỤ TẢNG & CỤ HÙNG",
+            frontText: "Cụ Tảng: anh Hiển, Hách, Vinh. Cụ Hùng: anh Linh (con: Thảo, Thủy, Thúy, Phương Thanh), anh Chủng (con: Đức, Dũng).",
+            backTitle: "ĐỜI SỐNG ẤM NO TIẾN BỘ",
+            backText: "Các thế hệ con cháu luôn sát cánh bên nhau trong mọi công việc làng xã và dòng họ."
+          },
+          {
+            frontTitle: "NHÁNH CỤ DUẬN & CỤ TÂN",
+            frontText: "Cụ Duận: anh Phong (Tuệ Lâm, Nhật Khang), anh Phú (Hoài Mỹ, Hoài Nhơn, Nghĩa). Cụ Tân: anh Hân, anh Tâm.",
+            backTitle: "THẾ HỆ TRẺ NĂNG ĐỘNG",
+            backText: "Lập nghiệp thành công tại các thành phố lớn như Đà Nẵng, Quảng Trị, phương Nam."
+          },
+          {
+            frontTitle: "NHÁNH ĐẮK LẮK & PHƯƠNG XA",
+            frontText: "Con cháu cụ Duy (Tịnh, Định, Lịch, Long) tại Ban Mê Thuột, Krông Ana, Thanh Hóa, Hà Tĩnh.",
+            backTitle: "CÂY MỘT GỐC NỞ TRĂM NGÀNH",
+            backText: "Dù cách trở địa lý ngàn trùng, tấm lòng luôn hướng về ngày Chạp họ và ngày Kỵ tổ tiên."
+          },
+          {
+            frontTitle: "CÔNG THỨC TRƯỜNG TỒN",
+            frontText: "LẤY ĐẠO HIẾU LÀM GỐC + ĐOÀN KẾT LÀM THÂN + TRÍ TUỆ LÀM CÀNH LÁ.",
+            backTitle: "HỌ LÊ VĂN MÃI MÃI TRƯỜNG TỒN",
+            backText: "Con cháu đời đời ghi lòng tạc dạ, không ngừng phấn đấu vươn lên thành người tử tế, hữu ích."
+          }
+        ],
+        bullets: [
+          "🔹 Tổng thể: Từ 1 gia đình di cư thuở sơ khai, nay họ Lê Văn đã có hàng trăm con cháu nội ngoại sum vầy khắp đất nước.",
+          "🔹 Dù ở <strong>Quảng Trị, Đà Nẵng, Đắk Lắk, TP.HCM hay Hải ngoại</strong>, tất cả đều chung một dòng máu kiên cường, nhân ái."
+        ],
+        stateOld: "🌱 Những nhịp cầu cách xa về địa lý",
+        bridgeVerb: "HỘI TỤ THÀNH",
+        stateNew: "🌳 Đại gia đình họ Lê Văn đoàn kết keo sơn một cội",
+        visualTheme: "full_tree_network",
+        widgetType: "none",
+        script: "Bách niên hội tụ, tứ hải giai huynh đệ! Từ các nhánh của cụ Tảng, cụ Hùng, cụ Duận, cụ Tân, cụ Tốn đến nhánh cụ Duy nơi vùng đất Đắk Lắk, tất cả đều chung một cội rễ thiêng liêng. Dù đi muôn phương, ngọn lửa cội nguồn họ Lê Văn vẫn rực sáng trong trái tim mỗi người con dòng họ."
+      },
+      {
+        id: 12,
+        tag: "🌺 ĐẠO NGHĨA GIA PHONG",
+        title: "12. LỄ CÚNG HỌ 12 THÁNG GIÊNG & KHẮC GHI DI HUẤN",
+        flipCards: [
+          {
+            frontTitle: "LỄ CÚNG HỌ 12 THÁNG GIÊNG",
+            frontText: "Ngày hội ngộ thiêng liêng hàng năm của toàn thể con cháu nội ngoại họ Lê Văn.",
+            backTitle: "NƠI NGUỒN CỘI TRỞ VỀ",
+            backText: "Dâng nén tâm hương, kính báo tiền nhân về thành quả học tập, công tác và đạo đức của đàn con."
+          },
+          {
+            frontTitle: "KHUYẾN HỌC & TƯƠNG TRỢ",
+            frontText: "Truyền thống nâng đỡ thế hệ măng non vượt khó học giỏi, lập nghiệp thành tài.",
+            backTitle: "BẢO TỒN VĂN HÓA GIA TỘC",
+            backText: "Giúp thế hệ sau hiểu rõ nguồn cội, không bao giờ quên ơn sinh thành dưỡng dục."
+          },
+          {
+            frontTitle: "HIỂU SÂU • SỐNG TỈNH • HÀNH ĐÚNG",
+            frontText: "Kim chỉ nam cho lối sống của người làm chủ cuộc đời: Trí tuệ sáng suốt, tâm an lạc, hành động chuẩn mực.",
+            backTitle: "ĐÂY ĐO ĐỜI, ĐẾCH ĐỂ ĐỜI ĐO",
+            backText: "Tự thiết lập chuẩn mực giá trị sống từ bên trong, không chạy theo phán xét hư danh ngoại cảnh."
+          },
+          {
+            frontTitle: "DI SẢN BẤT TỬ CHO MAI SAU",
+            frontText: "Những ngôi nhà gỗ, ruộng vườn vật chất có thể đổi thay theo thời gian.",
+            backTitle: "ĐỨC HẠNH LƯU TRUYỀN NGÀN NĂM",
+            backText: "Chỉ có đạo hiếu, trí tuệ và sự tử tế mới chảy mãi qua muôn vạn thế hệ mai sau."
+          }
+        ],
+        bullets: [
+          "🔹 <strong>Lễ cúng họ truyền thống:</strong> Ngày <strong>12 tháng Giêng</strong> âm lịch hàng năm tại nhà thờ họ.",
+          "🔹 Thông điệp cốt lõi: <strong>UỐNG NƯỚC NHỚ NGUỒN • HIỂU SÂU – SỐNG TỈNH – HÀNH ĐÚNG • ĐÂY ĐO ĐỜI, ĐẾCH ĐỂ ĐỜI ĐO!</strong>"
+        ],
+        stateOld: "🙏 Thắp nén tâm hương hướng về tiên tổ",
+        bridgeVerb: "KHẮC GHI THÀNH",
+        stateNew: "👑 Tự hào dòng dõi họ Lê Văn: Phúc đức trường tồn vạn thuở!",
+        visualTheme: "eternal_heritage",
+        widgetType: "none",
+        script: "Vào ngày 12 tháng Giêng âm lịch hàng năm, ngày lễ cúng họ truyền thống, con cháu họ Lê Văn lại tề tựu bên mái nhà thờ họ trang nghiêm. Khắc ghi di huấn Uống nước nhớ nguồn và triết lý Hiểu Sâu, Sống Tỉnh, Hành Đúng, chúng ta nguyện cùng nhau đoàn kết, sống đời tử tế, xứng đáng với công đức trời biển của Tiên Tổ ngàn đời!"
+      }
+    ];
+
+    let SLIDES_DATA = JSON.parse(JSON.stringify(MASTER_GIA_PHO_SLIDES));
+    let currentSlide = 0;
+    let currentMode = "horizontal";
+    let currentWorkspace = "deck";
+    let isWide16x9Stage = false;
+    let hiddenSlides = new Set();
+
+    // =========================================================================
+    // 2. SVG MINH HỌA ĐỒ HỌA 4D SỐNG ĐỘNG CHO TỪNG TRANG GIA PHỔ
+    // =========================================================================
+    function buildGiaPhoVisualSvg(slide, idx) {
+      const theme = slide.visualTheme || "default";
+
+      if (theme === "origin_map") {
+        return `<svg viewBox="0 0 960 540" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="gradMap" cx="50%" cy="50%" r="55%">
+              <stop offset="0%" stop-color="#f5c451" stop-opacity="0.32"/>
+              <stop offset="100%" stop-color="#050a17" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <rect width="960" height="540" fill="url(#gradMap)"/>
+          <g class="anim-float">
+            <!-- Bản đồ trừu tượng Gio Linh đến Cam Lộ -->
+            <path d="M180,360 Q340,240 520,310 T780,180" fill="none" stroke="#38bdf8" stroke-width="4" class="anim-dash"/>
+            
+            <!-- Điểm Gio Linh -->
+            <circle cx="210" cy="350" r="48" fill="#1e3a5f" stroke="#fb7185" stroke-width="3" class="anim-pulse"/>
+            <text x="210" y="345" text-anchor="middle" fill="#fff" font-size="16" font-weight="900">GIO LINH</text>
+            <text x="210" y="368" text-anchor="middle" fill="#fda4af" font-size="12" font-weight="700">Long Sơn Phường</text>
+
+            <!-- Chiếc thuyền / dấu chân di cư vượt sông Bến Hải -->
+            <polygon points="460,265 490,295 440,295" fill="#f5c451" class="anim-pulse"/>
+            <text x="465" y="252" text-anchor="middle" fill="#ffe9ad" font-size="13" font-weight="800">Tổ tỷ dời cư</text>
+
+            <!-- Điểm Cam Lộ / Mai Lộc / Phường An -->
+            <circle cx="740" cy="190" r="58" fill="#064e3b" stroke="#34d399" stroke-width="4" class="anim-pulse"/>
+            <text x="740" y="184" text-anchor="middle" fill="#ffe9ad" font-size="17" font-weight="900">CAM LỘ</text>
+            <text x="740" y="206" text-anchor="middle" fill="#6ee7b7" font-size="13" font-weight="800">Phường An, Đất Cùa</text>
+          </g>
+
+          <circle cx="480" cy="90" r="38" fill="#c22026" stroke="#ffe9ad" stroke-width="3" class="anim-pulse"/>
+          <text x="480" y="85" text-anchor="middle" fill="#ffe9ad" font-size="15" font-weight="900">THỦY TỔ</text>
+          <text x="480" y="102" text-anchor="middle" fill="#fff" font-size="11">TÒNG QUÂN</text>
+
+          <text x="480" y="490" text-anchor="middle" fill="#ffe9ad" font-size="18" font-weight="900">
+            QUẢNG TRỊ: NƠI CHÔN NHAU CẮT RỐN ➔ CHIẾC NÔI BAZAN XỨ CÙA
+          </text>
+        </svg>`;
+      }
+
+      if (theme === "five_branches") {
+        return `<svg viewBox="0 0 960 540" xmlns="http://www.w3.org/2000/svg">
+          <g class="anim-float">
+            <!-- Gốc cây Tằng tổ -->
+            <rect x="440" y="380" width="80" height="90" rx="10" fill="#78350f" stroke="#f5c451" stroke-width="3"/>
+            <text x="480" y="425" text-anchor="middle" fill="#ffe9ad" font-size="14" font-weight="900">TẰNG TỔ</text>
+            <text x="480" y="445" text-anchor="middle" fill="#fff" font-size="11">ĐỜI THỨ 1</text>
+
+            <!-- 5 Nhánh vươn lên -->
+            <path d="M440,380 C360,300 200,280 150,210" fill="none" stroke="#f5c451" stroke-width="4"/>
+            <path d="M460,380 C400,290 320,240 310,180" fill="none" stroke="#f5c451" stroke-width="4"/>
+            <path d="M480,380 C480,270 480,220 480,150" fill="none" stroke="#34d399" stroke-width="6"/>
+            <path d="M500,380 C560,290 640,240 650,180" fill="none" stroke="#f5c451" stroke-width="4"/>
+            <path d="M520,380 C600,300 760,280 810,210" fill="none" stroke="#f5c451" stroke-width="4"/>
+
+            <!-- 5 quả/chồi -->
+            <circle cx="150" cy="200" r="38" fill="#1e293b" stroke="#38bdf8" stroke-width="2.5" class="anim-pulse"/>
+            <text x="150" y="205" text-anchor="middle" fill="#fff" font-size="13" font-weight="800">Lê Văn Lập</text>
+
+            <circle cx="310" cy="170" r="38" fill="#1e293b" stroke="#38bdf8" stroke-width="2.5" class="anim-pulse"/>
+            <text x="310" y="175" text-anchor="middle" fill="#fff" font-size="13" font-weight="800">Lê Thị Lai</text>
+
+            <!-- Cụ Điền là trung tâm rực rỡ nhất -->
+            <circle cx="480" cy="140" r="54" fill="#c22026" stroke="#ffe9ad" stroke-width="4" class="anim-pulse"/>
+            <text x="480" y="136" text-anchor="middle" fill="#ffe9ad" font-size="16" font-weight="900">LÊ VĂN ĐIỀN</text>
+            <text x="480" y="156" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">ĐẠI CHI TRƯỞNG</text>
+
+            <circle cx="650" cy="170" r="38" fill="#1e293b" stroke="#38bdf8" stroke-width="2.5" class="anim-pulse"/>
+            <text x="650" y="175" text-anchor="middle" fill="#fff" font-size="13" font-weight="800">Lê Văn Hậu</text>
+
+            <circle cx="810" cy="200" r="38" fill="#1e293b" stroke="#38bdf8" stroke-width="2.5" class="anim-pulse"/>
+            <text x="810" y="196" text-anchor="middle" fill="#fff" font-size="13" font-weight="800">Lê Văn Hiền</text>
+            <text x="810" y="214" text-anchor="middle" fill="#94a3b8" font-size="10">(Vô tự)</text>
+          </g>
+          <text x="480" y="500" text-anchor="middle" fill="#34d399" font-size="17" font-weight="800">
+            NĂM CÀNH LỘC KHỞI THỦY • CỤ LÊ VĂN ĐIỀN KẾ TỤC HƯƠNG HỎA
+          </text>
+        </svg>`;
+      }
+
+      if (theme === "altar_lantern" || idx === 2) {
+        return `<svg viewBox="0 0 960 540" xmlns="http://www.w3.org/2000/svg">
+          <g class="anim-spin" style="transform-origin:480px 240px;">
+            <circle cx="480" cy="240" r="185" fill="none" stroke="#f5c451" stroke-width="2" stroke-dasharray="10 14" opacity="0.6"/>
+          </g>
+          <g class="anim-float">
+            <!-- Bát hương & Cuốn thư gia phả ngày kỵ 26 tháng Giêng -->
+            <rect x="290" y="120" width="380" height="230" rx="20" fill="#091b3d" stroke="#f5c451" stroke-width="3.5"/>
+            <text x="480" y="165" text-anchor="middle" fill="#ffe9ad" font-size="22" font-weight="900">CỤ LÊ VĂN ĐIỀN</text>
+            <text x="480" y="195" text-anchor="middle" fill="#34d399" font-size="15" font-weight="800">KỴ NGÀY 26 THÁNG GIÊNG</text>
+            <line x1="330" y1="210" x2="630" y2="210" stroke="#f5c451" stroke-width="1.5" opacity="0.5"/>
+            <text x="480" y="240" text-anchor="middle" fill="#cbd5e1" font-size="14">Vợ chánh: Võ Thị Thiên (Bảng Sơn)</text>
+            <text x="480" y="265" text-anchor="middle" fill="#cbd5e1" font-size="14">Vợ kế: Bùi Thị Hựu (Trà Liên)</text>
+            <text x="480" y="305" text-anchor="middle" fill="#ffe9ad" font-size="16" font-weight="800">SINH HẠ 7 NGƯỜI CON (ĐỜI THỨ 2)</text>
+          </g>
+          <!-- 7 đốm sáng đại diện 7 người con -->
+          <g class="anim-pulse">
+            <circle cx="160" cy="240" r="14" fill="#38bdf8"/>
+            <circle cx="210" cy="380" r="14" fill="#38bdf8"/>
+            <circle cx="340" cy="440" r="14" fill="#38bdf8"/>
+            <circle cx="480" cy="460" r="18" fill="#f5c451"/>
+            <circle cx="620" cy="440" r="14" fill="#38bdf8"/>
+            <circle cx="750" cy="380" r="14" fill="#38bdf8"/>
+            <circle cx="800" cy="240" r="14" fill="#38bdf8"/>
+          </g>
+          <text x="480" y="495" text-anchor="middle" fill="#ffe9ad" font-size="16" font-weight="800">
+            NHÁNH TRUNG TÂM: LÊ VĂN NGUYÊN (KỴ 06-8) NỐI DÕI
+          </text>
+        </svg>`;
+      }
+
+      if (theme === "sun_moon_altar" || idx === 3) {
+        return `<svg viewBox="0 0 960 540" xmlns="http://www.w3.org/2000/svg">
+          <g class="anim-float">
+            <!-- Mặt trời: Cụ Nguyên (Dương) -->
+            <circle cx="290" cy="210" r="95" fill="rgba(194,32,38,0.35)" stroke="#fb7185" stroke-width="4" class="anim-pulse"/>
+            <text x="290" y="195" text-anchor="middle" fill="#ffe9ad" font-size="18" font-weight="900">LÊ VĂN NGUYÊN</text>
+            <text x="290" y="222" text-anchor="middle" fill="#fff" font-size="14" font-weight="800">HIỂN TỔ KHẢO</text>
+            <text x="290" y="246" text-anchor="middle" fill="#fecdd3" font-size="14">Kỵ: 06 tháng 8</text>
+
+            <!-- Vầng trăng: Cụ bà Trung (Âm) -->
+            <circle cx="670" cy="210" r="95" fill="rgba(56,189,248,0.25)" stroke="#38bdf8" stroke-width="4" class="anim-pulse"/>
+            <text x="670" y="195" text-anchor="middle" fill="#ffe9ad" font-size="18" font-weight="900">ĐINH THỊ TRUNG</text>
+            <text x="670" y="222" text-anchor="middle" fill="#fff" font-size="14" font-weight="800">HIỂN TỔ TỶ</text>
+            <text x="670" y="246" text-anchor="middle" fill="#bae6fd" font-size="14">Kỵ: 15 tháng 9</text>
+
+            <!-- Cầu nối âm dương hòa hợp -->
+            <path d="M385,210 Q480,160 575,210" fill="none" stroke="#f5c451" stroke-width="5" class="anim-dash"/>
+            <circle cx="480" cy="180" r="28" fill="#f5c451" stroke="#050a17" stroke-width="2"/>
+            <text x="480" y="186" text-anchor="middle" fill="#050a17" font-size="13" font-weight="900">HÒA HỢP</text>
+          </g>
+
+          <!-- 8 quả phúc đức đời 3 -->
+          <g class="anim-float">
+            <rect x="180" y="380" width="600" height="72" rx="16" fill="#0c1f44" stroke="#f5c451" stroke-width="2.5"/>
+            <text x="480" y="410" text-anchor="middle" fill="#ffe9ad" font-size="16" font-weight="900">
+              8 NGƯỜI CON: YẾN • DÀN • KHIÊM • CẬN • THUYẾT • TẶNG • CHUYÊN
+            </text>
+            <text x="480" y="434" text-anchor="middle" fill="#34d399" font-size="14" font-weight="800">
+              SINH RA BA TRỤ CỘT ĐẠI PHÁI: CỤ CẬN • CỤ THUYẾT • CỤ TẶNG
+            </text>
+          </g>
+        </svg>`;
+      }
+
+      if (theme === "nine_stars_temple" || idx === 4) {
+        return `<svg viewBox="0 0 960 540" xmlns="http://www.w3.org/2000/svg">
+          <g class="anim-float">
+            <!-- Mái đình đại phái Cụ Cận -->
+            <polygon points="480,70 180,180 780,180" fill="#78350f" stroke="#f5c451" stroke-width="4"/>
+            <rect x="230" y="180" width="500" height="190" fill="#0f2752" stroke="#f5c451" stroke-width="3"/>
+            <text x="480" y="225" text-anchor="middle" fill="#ffe9ad" font-size="24" font-weight="900">ĐẠI PHÁI CỤ LÊ VĂN CẬN</text>
+            <text x="480" y="255" text-anchor="middle" fill="#fcd34d" font-size="15" font-weight="800">Sinh Bính Tuất • Kỵ 08-10 | Vợ: Lê Thị Cư (Đinh Hợi, Kỵ 18-10)</text>
+
+            <rect x="260" y="275" width="440" height="75" rx="12" fill="#081630" stroke="#38bdf8" stroke-width="2"/>
+            <text x="480" y="304" text-anchor="middle" fill="#6ee7b7" font-size="15" font-weight="900">
+              BỐN VỊ TRỤ CỘT: CỤ HÀM • CỤ TẠ • CỤ TỐN • CỤ TÙY
+            </text>
+            <text x="480" y="330" text-anchor="middle" fill="#cbd5e1" font-size="13">
+              Cội rễ trực tiếp sinh thành thế hệ con cháu họ Lê Văn đương đại
+            </text>
+          </g>
+          <text x="480" y="490" text-anchor="middle" fill="#f5c451" font-size="17" font-weight="800">
+            CHÍN NGÔI SAO PHÚC ĐỨC • GỐC RỄ BẢN LĨNH &amp; TRÍ TUỆ
+          </text>
+        </svg>`;
+      }
+
+      if (theme === "grand_family" || idx === 8) {
+        return `<svg viewBox="0 0 960 540" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="480" cy="220" r="195" fill="none" stroke="#f5c451" stroke-width="3" stroke-dasharray="12 10" class="anim-spin" style="transform-origin:480px 220px;"/>
+          <g class="anim-float">
+            <circle cx="480" cy="220" r="92" fill="#78350f" stroke="#ffe9ad" stroke-width="4" class="anim-pulse"/>
+            <text x="480" y="210" text-anchor="middle" fill="#ffe9ad" font-size="18" font-weight="900">CỤ LÊ VĂN TÙY</text>
+            <text x="480" y="235" text-anchor="middle" fill="#fff" font-size="14" font-weight="700">Sinh 01-3 Giáp Tý</text>
+            <text x="480" y="255" text-anchor="middle" fill="#34d399" font-size="12" font-weight="800">Bà Nguyễn Thị Thẽn (1922)</text>
+
+            <!-- Các vệ tinh con cụ Tùy -->
+            <rect x="90" y="110" width="160" height="52" rx="10" fill="#091b3d" stroke="#38bdf8" stroke-width="2"/>
+            <text x="170" y="142" text-anchor="middle" fill="#fff" font-size="14" font-weight="800">Lê Văn Tảng</text>
+
+            <rect x="710" y="110" width="160" height="52" rx="10" fill="#091b3d" stroke="#38bdf8" stroke-width="2"/>
+            <text x="790" y="142" text-anchor="middle" fill="#fff" font-size="14" font-weight="800">Lê Văn Hùng</text>
+
+            <rect x="90" y="320" width="160" height="52" rx="10" fill="#091b3d" stroke="#34d399" stroke-width="2.5"/>
+            <text x="170" y="352" text-anchor="middle" fill="#ffe9ad" font-size="14" font-weight="900">Lê Văn Mạnh (1954)</text>
+
+            <rect x="710" y="320" width="160" height="52" rx="10" fill="#091b3d" stroke="#38bdf8" stroke-width="2"/>
+            <text x="790" y="352" text-anchor="middle" fill="#fff" font-size="14" font-weight="800">Lê Văn Duận (1961)</text>
+          </g>
+          <text x="480" y="490" text-anchor="middle" fill="#ffe9ad" font-size="18" font-weight="900">
+            ĐẠI PHÚC TỘC ĐÔNG CON NHIỀU CHÁU • GỐC RỄ SINH THÀNH CỤ MẠNH &amp; ANH NHẬT
+          </text>
+        </svg>`;
+      }
+
+      if (theme === "next_gen_torch" || idx === 9) {
+        return `<svg viewBox="0 0 960 540" xmlns="http://www.w3.org/2000/svg">
+          <g class="anim-float">
+            <!-- Thế hệ 5: Cụ Mạnh -->
+            <rect x="80" y="170" width="220" height="130" rx="16" fill="#0c1f44" stroke="#f5c451" stroke-width="3"/>
+            <text x="190" y="210" text-anchor="middle" fill="#ffe9ad" font-size="17" font-weight="900">LÊ VĂN MẠNH</text>
+            <text x="190" y="235" text-anchor="middle" fill="#fff" font-size="13">Sinh 1954 (Ất Mùi)</text>
+            <text x="190" y="260" text-anchor="middle" fill="#cbd5e1" font-size="13">Bà Mai Thị Cúc (1958)</text>
+
+            <!-- Cầu nối thế hệ -->
+            <line x1="300" y1="235" x2="380" y2="235" stroke="#f5c451" stroke-width="4" class="anim-dash"/>
+
+            <!-- Thế hệ 6: Lê Phúc Nhật -->
+            <rect x="380" y="145" width="250" height="175" rx="18" fill="#064e3b" stroke="#34d399" stroke-width="4" class="anim-pulse"/>
+            <text x="505" y="185" text-anchor="middle" fill="#ffe9ad" font-size="19" font-weight="900">LÊ PHÚC NHẬT</text>
+            <text x="505" y="210" text-anchor="middle" fill="#fff" font-size="14">Sinh 1982 (Nhâm Tuất)</text>
+            <text x="505" y="235" text-anchor="middle" fill="#6ee7b7" font-size="13" font-weight="800">Vợ: Võ Thị Niềm (1984)</text>
+            <text x="505" y="265" text-anchor="middle" fill="#ffe9ad" font-size="13">HTX Keo Sơn • AI Thực Chiến</text>
+            <text x="505" y="290" text-anchor="middle" fill="#fff" font-size="11">Hiểu Sâu • Sống Tỉnh • Hành Đúng</text>
+
+            <!-- Cầu nối đến thế hệ 7 -->
+            <line x1="630" y1="235" x2="710" y2="235" stroke="#34d399" stroke-width="4" class="anim-dash"/>
+
+            <!-- Thế hệ 7: Mầm non -->
+            <rect x="710" y="160" width="210" height="150" rx="16" fill="#0c1f44" stroke="#38bdf8" stroke-width="3"/>
+            <text x="815" y="195" text-anchor="middle" fill="#ffe9ad" font-size="16" font-weight="900">THẾ HỆ ĐỜI THỨ 7</text>
+            <text x="815" y="222" text-anchor="middle" fill="#fff" font-size="13">Lê Thị Viên (2006)</text>
+            <text x="815" y="246" text-anchor="middle" fill="#fff" font-size="13">Lê Thị Đan (2009)</text>
+            <text x="815" y="270" text-anchor="middle" fill="#fff" font-size="13">Lê Thị Nhân (2017)</text>
+          </g>
+          <text x="480" y="490" text-anchor="middle" fill="#ffe9ad" font-size="18" font-weight="900">
+            NGỌN ĐUỐC TRÍ TUỆ &amp; ĐẠO HIẾU: TIẾP BƯỚC VỮNG VÀNG VÀO TƯƠNG LAI
+          </text>
+        </svg>`;
+      }
+
+      // Default visual
+      return `<svg viewBox="0 0 960 540" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="rg_def_${idx}" cx="50%" cy="50%" r="55%">
+            <stop offset="0%" stop-color="#f5c451" stop-opacity="0.3"/>
+            <stop offset="100%" stop-color="#050a17" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <rect width="960" height="540" fill="url(#rg_def_${idx})"/>
+        <g class="anim-spin" style="transform-origin:480px 240px;">
+          <circle cx="480" cy="240" r="185" fill="none" stroke="#f5c451" stroke-width="2.5" stroke-dasharray="14 10" opacity="0.75"/>
+          <circle cx="480" cy="240" r="145" fill="none" stroke="#38bdf8" stroke-width="2" opacity="0.6"/>
+        </g>
+        <g class="anim-float">
+          <circle cx="480" cy="240" r="95" fill="#0c1f44" stroke="#ffe9ad" stroke-width="4" class="anim-pulse"/>
+          <text x="480" y="232" text-anchor="middle" fill="#ffe9ad" font-size="19" font-weight="900">GIA PHỔ HỌ LÊ VĂN</text>
+          <text x="480" y="260" text-anchor="middle" fill="#34d399" font-size="14" font-weight="800">TRƯỜNG TỒN VẠN THUỞ</text>
+        </g>
+        <text x="480" y="490" text-anchor="middle" fill="#ffe9ad" font-size="17" font-weight="800">
+          UỐNG NƯỚC NHỚ NGUỒN • ĐẠO HIẾU LƯU TRUYỀN MUÔN THẾ HỆ
+        </text>
+      </svg>`;
+    }
+
+    // =========================================================================
+    // 3. RENDER SLIDES & CONTROLS
+    // =========================================================================
+    function renderAllSlides() {
+      const track = document.getElementById("slidesTrack");
+      const jumpSelect = document.getElementById("slideJumpSelect");
+      const dotsContainer = document.getElementById("dotsContainer");
+      const totalBadge = document.getElementById("totalSlidesBadge");
+      if (!track || !jumpSelect || !dotsContainer) return;
+
+      totalBadge.textContent = String(SLIDES_DATA.length);
+      track.innerHTML = "";
+      jumpSelect.innerHTML = "";
+      dotsContainer.innerHTML = "";
+
+      SLIDES_DATA.forEach((slide, idx) => {
+        const isHidden = hiddenSlides.has(idx);
+        const sec = document.createElement("section");
+        sec.className = "slide" + (idx === currentSlide ? " active-slide" : "") + (isHidden ? " is-hidden" : "");
+
+        const flipCardsHtml = slide.flipCards.map((c, cIdx) => `
+          <div class="flip-card-3d" id="flipCard_${idx}_${cIdx}" onclick="onFlipCardClick(this)">
+            <div class="flip-card-inner">
+              <div class="flip-face flip-front">
+                <div>
+                  <div class="flip-badge"><span>📜 TIỀN NHÂN ${cIdx + 1}</span><span>⇄ LẬT</span></div>
+                  <div class="flip-title">${c.frontTitle}</div>
+                  <div class="flip-desc">${c.frontText}</div>
+                </div>
+              </div>
+              <div class="flip-face flip-back">
+                <div>
+                  <div class="flip-badge"><span>🌟 KẾ THỪA ${cIdx + 1}</span><span>✓ DI HUẤN</span></div>
+                  <div class="flip-title">${c.backTitle}</div>
+                  <div class="flip-desc">${c.backText}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        `).join("");
+
+        const bulletsHtml = (slide.bullets || []).map(b => `<div class="bullet-item-4d" style="font-size:0.86rem; line-height:1.45; color:#cbd5e1; background:rgba(255,255,255,0.04); border-left:4px solid #f5c451; padding:6px 10px; border-radius:0 10px 10px 0; margin-bottom:5px;">${b}</div>`).join("");
+
+        sec.innerHTML = `
+          <div class="slide-inner">
+            <div class="slide-header">
+              <div class="slide-title-wrap">
+                <span class="slide-num-pill">TRANG ${String(idx + 1).padStart(2, "0")} / ${String(SLIDES_DATA.length).padStart(2, "0")}</span>
+                <h1 class="slide-title">${slide.title}</h1>
+              </div>
+              <div class="slide-header-actions">
+                <button class="btn-hud-action" onclick="toggleMagnifierForSlide(${idx})" id="btnLens_${idx}" title="Bật/Tắt Kính Lúp 4D">
+                  🔍 Kính Lúp 4D
+                </button>
+                <label class="header-hide-label">
+                  <input type="checkbox" ${!isHidden ? "checked" : ""} onchange="toggleShowSlide(${idx}, this.checked)" />
+                  ✓ Hiển thị trang
+                </label>
+                <button class="btn-slide-voice" onclick="speakSingleSlide(${idx})">🔊 Thuyết Minh Trang Này</button>
+              </div>
+            </div>
+
+            <div class="senior-stage">
+              <div class="senior-panel visual-panel-16x9">
+                <div class="giant-art-frame" id="artFrame_${idx}">
+                  <div class="visual-svg-stage" onclick="onPdfStageClickRipple(event, ${idx})">
+                    ${buildGiaPhoVisualSvg(slide, idx)}
+                    <canvas class="fx-living-overlay-canvas" id="fxCanvas_${idx}"></canvas>
+                  </div>
+                  <div class="magnifier-lens-4d" id="magLens_${idx}"></div>
+                  <div class="hotspot-layer-4d">
+                    <div class="hotspot-pin-4d" style="left:22%; top:26%;" onclick="event.stopPropagation(); toggleZoomQuadrant(${idx}, 0)" title="Góc Tây Bắc">1</div>
+                    <div class="hotspot-pin-4d" style="left:78%; top:26%;" onclick="event.stopPropagation(); toggleZoomQuadrant(${idx}, 1)" title="Góc Đông Bắc">2</div>
+                    <div class="hotspot-pin-4d" style="left:22%; top:74%;" onclick="event.stopPropagation(); toggleZoomQuadrant(${idx}, 2)" title="Góc Tây Nam">3</div>
+                    <div class="hotspot-pin-4d" style="left:78%; top:74%;" onclick="event.stopPropagation(); toggleZoomQuadrant(${idx}, 3)" title="Góc Đông Nam">4</div>
+                  </div>
+                  <div class="photo-tools">
+                    <button onclick="toggleMagnifierForSlide(${idx})">🔍 Soi 2.2x</button>
+                    <button onclick="resetZoomQuadrant(${idx})">🖼️ Toàn Cảnh</button>
+                    <button onclick="playTibetanBowl432()">🔔 Dâng Hương</button>
+                  </div>
+                </div>
+
+                <div class="transform-row-large" style="width:100%;" onclick="flipAllCardsForSlide(${idx})">
+                  <span class="state-old-lg">${slide.stateOld}</span>
+                  <span class="verb-bridge-lg">${slide.bridgeVerb || "KẾ THỪA THÀNH"}</span>
+                  <span class="state-new-lg">${slide.stateNew}</span>
+                </div>
+              </div>
+
+              <div class="senior-panel">
+                <div style="display:flex; flex-direction:column; height:100%; justify-content:space-between; gap:8px;">
+                  <div class="right-panel-header">
+                    <span class="slide-tag">🎴 BỘ 4 THẺ BÀI LẬT 3D • TIỀN NHÂN &amp; KẾ THỪA</span>
+                    <button class="btn-flip-all" onclick="flipAllCardsForSlide(${idx})">🔄 Lật 4 Thẻ (R)</button>
+                  </div>
+                  <div class="flip-cards-grid" id="flipGrid_${idx}">
+                    ${flipCardsHtml}
+                  </div>
+                  <div style="margin-top:2px;">
+                    ${bulletsHtml}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        `;
+        track.appendChild(sec);
+
+        const opt = document.createElement("option");
+        opt.value = String(idx);
+        opt.textContent = (isHidden ? "🙈 [ẨN] " : "") + slide.title;
+        jumpSelect.appendChild(opt);
+
+        const dot = document.createElement("div");
+        dot.className = "slide-dot" + (idx === currentSlide ? " active" : "") + (isHidden ? " is-hidden" : "");
+        dot.title = slide.title;
+        dot.onclick = () => goToSlide(idx, true);
+        dotsContainer.appendChild(dot);
+      });
+
+      initLivingOverlayCanvases();
+      bindMagnifierEventsForAllSlides();
+      updateSlidePosition();
+      renderInteractiveFamilyTree();
+    }
+
+    // =========================================================================
+    // 4. CANVAS LIVING OVERLAY (GOLDEN DUST & RIPPLE PARTICLES)
+    // =========================================================================
+    let overlayAnimControllers = [];
+    let activeZoomQuadrantBySlide = {};
+
+    function initLivingOverlayCanvases() {
+      overlayAnimControllers = [];
+      SLIDES_DATA.forEach((_, idx) => {
+        const cv = document.getElementById("fxCanvas_" + idx);
+        if (!cv) return;
+        cv.width = 960;
+        cv.height = 540;
+        const ctx = cv.getContext("2d");
+        const nodes = [];
+        for (let i = 0; i < 28; i++) {
+          nodes.push({
+            x: Math.random() * 960,
+            y: Math.random() * 540,
+            vx: (Math.random() - 0.5) * 0.8,
+            vy: (Math.random() - 0.5) * 0.8,
+            r: Math.random() * 2.8 + 1.2,
+            alpha: Math.random() * 0.55 + 0.25
+          });
+        }
+        overlayAnimControllers.push({ idx, cv, ctx, nodes, ripples: [], scanX: 0 });
+      });
+    }
+
+    function animateLivingOverlaysLoop() {
+      overlayAnimControllers.forEach(ctrl => {
+        if (currentMode !== "scroll" && ctrl.idx !== currentSlide) return;
+        const { ctx, cv, nodes, ripples } = ctrl;
+        const w = cv.width;
+        const h = cv.height;
+        ctx.clearRect(0, 0, w, h);
+
+        // Hào quang vàng hoàng gia quét nhẹ
+        ctrl.scanX = (ctrl.scanX + 2) % (w + 280);
+        const grad = ctx.createLinearGradient(ctrl.scanX - 250, 0, ctrl.scanX, h * 0.4);
+        grad.addColorStop(0, "rgba(245, 196, 81, 0)");
+        grad.addColorStop(0.5, "rgba(245, 196, 81, 0.08)");
+        grad.addColorStop(1, "rgba(245, 196, 81, 0)");
+        ctx.fillStyle = grad;
+        ctx.fillRect(0, 0, w, h);
+
+        // Hạt bụi vàng tổ tiên lơ lửng
+        for (let i = 0; i < nodes.length; i++) {
+          const p = nodes[i];
+          p.x += p.vx;
+          p.y += p.vy;
+          if (p.x < 0 || p.x > w) p.vx = -p.vx;
+          if (p.y < 0 || p.y > h) p.vy = -p.vy;
+
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(245, 196, 81, ${p.alpha})`;
+          ctx.fill();
+
+          for (let j = i + 1; j < nodes.length; j++) {
+            const q = nodes[j];
+            const dx = p.x - q.x;
+            const dy = p.y - q.y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+            if (dist < 110) {
+              ctx.beginPath();
+              ctx.moveTo(p.x, p.y);
+              ctx.lineTo(q.x, q.y);
+              ctx.strokeStyle = `rgba(245, 196, 81, ${(1 - dist / 110) * 0.18})`;
+              ctx.lineWidth = 1;
+              ctx.stroke();
+            }
+          }
+        }
+
+        // Sóng nước tâm linh lan tỏa khi chạm
+        for (let r = ripples.length - 1; r >= 0; r--) {
+          const rp = ripples[r];
+          rp.radius += 3.5;
+          rp.alpha -= 0.022;
+          if (rp.alpha <= 0) {
+            ripples.splice(r, 1);
+          } else {
+            ctx.beginPath();
+            ctx.arc(rp.x, rp.y, rp.radius, 0, Math.PI * 2);
+            ctx.strokeStyle = `rgba(52, 211, 153, ${rp.alpha})`;
+            ctx.lineWidth = 3;
+            ctx.stroke();
+          }
+        }
+      });
+      requestAnimationFrame(animateLivingOverlaysLoop);
+    }
+
+    function onPdfStageClickRipple(ev, slideIdx) {
+      const ctrl = overlayAnimControllers.find(c => c.idx === slideIdx);
+      if (!ctrl) return;
+      const rect = ctrl.cv.getBoundingClientRect();
+      const x = ((ev.clientX - rect.left) / Math.max(1, rect.width)) * ctrl.cv.width;
+      const y = ((ev.clientY - rect.top) / Math.max(1, rect.height)) * ctrl.cv.height;
+      ctrl.ripples.push({ x, y, radius: 8, alpha: 0.95 });
+      ctrl.ripples.push({ x, y, radius: 22, alpha: 0.65 });
+      sfxChime();
+    }
+
+    const MAG_ZOOM_LEVEL = 2.2;
+    const MAG_LENS_RADIUS = 105; // half of 210px
+
+    function buildMagnifierClone(slideIdx) {
+      const frame = document.getElementById("artFrame_" + slideIdx);
+      const lens = document.getElementById("magLens_" + slideIdx);
+      if (!frame || !lens) return;
+      const srcSvg = frame.querySelector(".visual-svg-stage svg");
+      if (!srcSvg) return;
+      lens.innerHTML = "";
+      const inner = document.createElement("div");
+      inner.className = "mag-zoom-inner";
+      const cloneSvg = srcSvg.cloneNode(true);
+      cloneSvg.removeAttribute("id");
+      inner.appendChild(cloneSvg);
+      lens.appendChild(inner);
+    }
+
+    function updateMagnifierAt(slideIdx, clientX, clientY) {
+      const frame = document.getElementById("artFrame_" + slideIdx);
+      const lens = document.getElementById("magLens_" + slideIdx);
+      if (!frame || !lens || !frame.classList.contains("lens-active")) return;
+      const rect = frame.getBoundingClientRect();
+      if (rect.width <= 0 || rect.height <= 0) return;
+
+      const x = Math.max(0, Math.min(rect.width, clientX - rect.left));
+      const y = Math.max(0, Math.min(rect.height, clientY - rect.top));
+
+      lens.style.left = x + "px";
+      lens.style.top = y + "px";
+
+      let inner = lens.querySelector(".mag-zoom-inner");
+      if (!inner) {
+        buildMagnifierClone(slideIdx);
+        inner = lens.querySelector(".mag-zoom-inner");
+      }
+      if (inner) {
+        inner.style.width = rect.width + "px";
+        inner.style.height = rect.height + "px";
+        const tx = MAG_LENS_RADIUS - x * MAG_ZOOM_LEVEL;
+        const ty = MAG_LENS_RADIUS - y * MAG_ZOOM_LEVEL;
+        inner.style.transform = `translate(${tx}px, ${ty}px) scale(${MAG_ZOOM_LEVEL})`;
+      }
+    }
+
+    function bindMagnifierEventsForAllSlides() {
+      SLIDES_DATA.forEach((_, idx) => {
+        const frame = document.getElementById("artFrame_" + idx);
+        if (!frame || frame.dataset.magBound) return;
+        frame.dataset.magBound = "1";
+
+        frame.addEventListener("mousemove", (e) => {
+          if (frame.classList.contains("lens-active")) {
+            updateMagnifierAt(idx, e.clientX, e.clientY);
+          }
+        });
+        frame.addEventListener("mouseenter", (e) => {
+          if (frame.classList.contains("lens-active")) {
+            updateMagnifierAt(idx, e.clientX, e.clientY);
+          }
+        });
+        frame.addEventListener("touchmove", (e) => {
+          if (frame.classList.contains("lens-active") && e.touches && e.touches[0]) {
+            e.preventDefault();
+            updateMagnifierAt(idx, e.touches[0].clientX, e.touches[0].clientY);
+          }
+        }, { passive: false });
+      });
+    }
+
+    function toggleMagnifierForSlide(slideIdx) {
+      const frame = document.getElementById("artFrame_" + slideIdx);
+      const btn = document.getElementById("btnLens_" + slideIdx);
+      const toolBtn = frame ? frame.querySelector(".photo-tools button:first-child") : null;
+      if (!frame) return;
+      const isNowOn = !frame.classList.contains("lens-active");
+      frame.classList.toggle("lens-active", isNowOn);
+      if (btn) btn.classList.toggle("active", isNowOn);
+      if (toolBtn) toolBtn.classList.toggle("active", isNowOn);
+      if (isNowOn) {
+        buildMagnifierClone(slideIdx);
+        const rect = frame.getBoundingClientRect();
+        updateMagnifierAt(slideIdx, rect.left + rect.width / 2, rect.top + rect.height / 2);
+      }
+      sfxChime();
+      showVoiceToast(isNowOn ? "🔍 Đã bật Kính Lúp 4D (2.2x) — Rê chuột lên ảnh để soi chi tiết!" : "🔍 Đã tắt Kính Lúp 4D");
+    }
+
+    function toggleZoomQuadrant(slideIdx, qIdx) {
+      const frame = document.getElementById("artFrame_" + slideIdx);
+      if (!frame) return;
+      const cls = "zoom-focus-" + qIdx;
+      const already = frame.classList.contains(cls);
+      frame.classList.remove("zoom-focus-0", "zoom-focus-1", "zoom-focus-2", "zoom-focus-3");
+      frame.querySelectorAll(".hotspot-pin-4d").forEach((pin, i) => {
+        pin.classList.toggle("active-pin", !already && i === qIdx);
+      });
+      if (!already) {
+        frame.classList.add(cls);
+        activeZoomQuadrantBySlide[slideIdx] = qIdx;
+        const labels = ["Góc Tây Bắc", "Góc Đông Bắc", "Góc Tây Nam", "Góc Đông Nam"];
+        showVoiceToast(`🔎 Đã phóng to 1.85x khu vực ${labels[qIdx] || (qIdx + 1)}`);
+      } else {
+        delete activeZoomQuadrantBySlide[slideIdx];
+        showVoiceToast("🖼️ Đã thu về chế độ Toàn Cảnh");
+      }
+      sfxChime();
+    }
+
+    function resetZoomQuadrant(slideIdx) {
+      const frame = document.getElementById("artFrame_" + slideIdx);
+      if (!frame) return;
+      frame.classList.remove("zoom-focus-0", "zoom-focus-1", "zoom-focus-2", "zoom-focus-3");
+      frame.querySelectorAll(".hotspot-pin-4d").forEach(pin => pin.classList.remove("active-pin"));
+      if (frame.classList.contains("lens-active")) {
+        toggleMagnifierForSlide(slideIdx);
+      }
+      delete activeZoomQuadrantBySlide[slideIdx];
+      sfxChime();
+      showVoiceToast("🖼️ Đã khôi phục góc nhìn Toàn Cảnh");
+    }
+
+    function toggleWide16x9Stage() {
+      isWide16x9Stage = !isWide16x9Stage;
+      document.body.classList.toggle("stage-wide-16x9", isWide16x9Stage);
+      const btn = document.getElementById("btnToggleWide16x9");
+      if (btn) btn.classList.toggle("active", isWide16x9Stage);
+      showVoiceToast(isWide16x9Stage ? "📺 Khung Hình 16:9 Cực Đại" : "🎬 Chế Độ Cân Đối 16:9 + 4 Thẻ Lật");
+    }
+
+    function onFlipCardClick(cardEl) {
+      if (!cardEl) return;
+      cardEl.classList.toggle("flipped");
+      sfxChime();
+    }
+
+    function flipAllCardsForSlide(slideIdx) {
+      const grid = document.getElementById("flipGrid_" + slideIdx);
+      if (!grid) return;
+      const cards = grid.querySelectorAll(".flip-card-3d");
+      const anyUnflipped = Array.from(cards).some(c => !c.classList.contains("flipped"));
+      cards.forEach(c => c.classList.toggle("flipped", anyUnflipped));
+      sfxChime();
+    }
+
+    function flipAllCardsOnCurrentSlide() {
+      flipAllCardsForSlide(currentSlide);
+    }
+
+    // =========================================================================
+    // 5. CÂY GIA PHẢ TƯƠNG TÁC (INTERACTIVE FAMILY TREE TAB)
+    // =========================================================================
+    const GENEALOGY_DATA = [
+      {
+        gen: "KHỞI THỦY",
+        title: "Khởi Nguyên Thủy Tổ & Tằng Tổ Khảo (Gio Linh ➔ Cam Lộ)",
+        members: [
+          { name: "Thủy Tổ Khảo", role: "Tòng quân cứu nước", detail: "Sinh quán Gio Linh, tôn mộ tại Long Sơn / Trung Sơn", ky: "Khảo tòng quân" },
+          { name: "Thủy Tổ Tỷ", role: "Di cư định cư", detail: "Nuôi 5 người con tại Phường An, Mai Lộc, Cam Lộ", ky: "Di cư định cư" },
+          { name: "Tằng Tổ Khảo", role: "Đời thứ 1", detail: "Tòng quân xông pha nơi chiến trường", ky: "Kỵ nhật bất tường" },
+          { name: "Tằng Tổ Tỷ", role: "Đời thứ 1", detail: "Dưỡng dục 5 người con: Điền, Hiền, Hậu, Lai, Lập", ky: "Phụng thờ tại Phường An" }
+        ]
+      },
+      {
+        gen: "ĐỜI THỨ NHẤT",
+        title: "Năm Nhánh Mầm Đầu Tiên",
+        members: [
+          { name: "Cụ Lê Văn Điền", role: "Trưởng nam đời 1", detail: "Kế tục đại chi họ Lê Văn; Vợ: Võ Thị Thiên & Bùi Thị Hựu", ky: "Kỵ 26 tháng Giêng" },
+          { name: "Cụ Lê Văn Hiền", role: "Thứ nam đời 1", detail: "Chi thứ (Vô tự)", ky: "Hậu duệ phụng tự" },
+          { name: "Cụ Lê Văn Hậu", role: "Thứ nam đời 1", detail: "Góp công mở mang điền trang nơi Phường An", ky: "Phụng thờ tổ đường" },
+          { name: "Cụ Lê Thị Lai", role: "Trưởng nữ đời 1", detail: "Nữ lưu đức hạnh dòng tộc", ky: "Xuất giá tòng phu" },
+          { name: "Cụ Lê Văn Lập", role: "Thứ nam đời 1", detail: "Cần lao kiến tạo nếp nhà gia phong", ky: "Phụng thờ tổ đường" }
+        ]
+      },
+      {
+        gen: "ĐỜI THỨ HAI",
+        title: "Chi Hệ Cụ Lê Văn Điền (Kỵ 26-01)",
+        members: [
+          { name: "Cụ Lê Văn Nguyên", role: "Hiển Tổ Khảo đời 2", detail: "Mắt xích truyền thừa trung tâm; Vợ: Đinh Thị Trung", ky: "Kỵ 06 tháng 8" },
+          { name: "Cụ Lê Văn Vy", role: "Con Cụ Điền", detail: "Đời thứ 2", ky: "Phụng thờ gia tiên" },
+          { name: "Cụ Lê Văn Chung", role: "Con Cụ Điền", detail: "Đời thứ 2", ky: "Phụng thờ gia tiên" },
+          { name: "Cụ Lê Văn Lưu", role: "Con Cụ Điền", detail: "Đời thứ 2", ky: "Phụng thờ gia tiên" },
+          { name: "Cụ Lê Văn Thiên", role: "Con Cụ Điền", detail: "Đời thứ 2", ky: "Kỵ 22 tháng 3" },
+          { name: "Cụ Lê Thị Uyên", role: "Con gái Cụ Điền", detail: "Đời thứ 2", ky: "Xuất giá" }
+        ]
+      },
+      {
+        gen: "ĐỜI THỨ BA",
+        title: "Chi Hệ Cụ Lê Văn Nguyên & Cụ Bà Đinh Thị Trung",
+        members: [
+          { name: "Cụ Lê Văn Cận", role: "Trụ cột đại phái (Đời 3)", detail: "Sinh Bính Tuất; Vợ: Lê Thị Cư (Đinh Hợi, kỵ 18-10)", ky: "Kỵ 08 tháng 10" },
+          { name: "Cụ Lê Văn Thuyết", role: "Trụ cột đại phái (Đời 3)", detail: "Sinh Canh Dần; Vợ: Lê Thị Cần (Canh Dần, kỵ 11-03)", ky: "Kỵ 10 tháng 4" },
+          { name: "Cụ Lê Văn Tặng", role: "Trụ cột đại phái (Đời 3)", detail: "Vợ: Hoàng Thị Cửu (kỵ 10-08)", ky: "Kỵ 30 tháng 11" },
+          { name: "Cụ Lê Văn Khiêm", role: "Con Cụ Nguyên", detail: "Đời thứ 3", ky: "Kỵ 17 tháng 8" },
+          { name: "Cụ Lê Văn Chuyên", role: "Con Cụ Nguyên", detail: "Đời thứ 3", ky: "Kỵ 29 tháng 9" },
+          { name: "Cụ Lê Thị Yến", role: "Con Cụ Nguyên", detail: "Lấy chồng Hội viên Trần Văn Cự (Mai Đàn)", ky: "Kỵ 17 tháng 10" },
+          { name: "Cụ Lê Thị Dàn", role: "Con Cụ Nguyên", detail: "Lấy chồng Nguyễn Văn Thanh (trong thôn)", ky: "Kỵ 06 tháng 6" }
+        ]
+      },
+      {
+        gen: "ĐỜI THỨ TƯ",
+        title: "Bốn Nhánh Đại Trụ (Con Cụ Lê Văn Cận)",
+        members: [
+          { name: "Cụ Lê Văn Hàm", role: "Con cụ Cận (Đời 4)", detail: "Sinh Tân Hợi; Vợ chánh: Nguyễn Thị Đô, kế: Nguyễn Thị Bản", ky: "Kỵ 04 tháng 8" },
+          { name: "Cụ Lê Văn Tạ", role: "Con cụ Cận (Đời 4)", detail: "Sinh Mậu Ngọ; Vợ: Nguyễn Thị Em (trong thôn)", ky: "Phụng thờ tổ đường" },
+          { name: "Cụ Lê Văn Tốn", role: "Con cụ Cận (Đời 4)", detail: "Sinh Canh Thân; Chiến tranh thất lạc; Vợ: Hoàng Thị Huyền", ky: "Kỵ 04 tháng 12" },
+          { name: "Cụ Lê Văn Tùy", role: "Con cụ Cận (Đời 4)", detail: "Sinh 01-3 Giáp Tý; Vợ chánh: Nguyễn Thị Thẽn (sinh 1922)", ky: "Phúc tộc đông con" },
+          { name: "Cụ Lê Văn Hộ", role: "Con cụ Cận (Đời 4)", detail: "Đời thứ 4", ky: "Kỵ 04 tháng 5" },
+          { name: "Cụ Lê Thị Dã", role: "Con cụ Cận (Đời 4)", detail: "Đời thứ 4", ky: "Kỵ 11 tháng 3" },
+          { name: "Cụ Lê Thị Ý (Thêm)", role: "Con cụ Cận (Đời 4)", detail: "Sinh Mậu Thìn; Lấy chồng Nguyễn Văn Noãn (Mai Lộc)", ky: "Xuất giá" }
+        ]
+      },
+      {
+        gen: "ĐỜI THỨ NĂM",
+        title: "Thế Hệ Khai Cơ Vững Chắc",
+        members: [
+          { name: "Cụ Lê Văn Mạnh", role: "Con Cụ Tùy (Đời 5)", detail: "Sinh 22-12-1954 (Ất Mùi); Vợ: Mai Thị Cúc (1958, Định Sơn)", ky: "Thân sinh Lê Phúc Nhật" },
+          { name: "Cụ Lê Văn Tảng", role: "Con Cụ Tùy (Đời 5)", detail: "Sinh Mậu Tý; Vợ: Nguyễn Thị Chua", ky: "Nhánh Tảng" },
+          { name: "Cụ Lê Văn Hùng", role: "Con Cụ Tùy (Đời 5)", detail: "Sinh Canh Dần; Vợ: Nguyễn Thị Lịch", ky: "Nhánh Hùng" },
+          { name: "Cụ Lê Văn Duận", role: "Con Cụ Tùy (Đời 5)", detail: "Sinh 1961 (Tân Sửu); Vợ: Nguyễn Thị Lịch (1961, Định Sơn)", ky: "Nhánh Duận" },
+          { name: "Cụ Lê Văn Kiếm", role: "Con Cụ Tùy (Đời 5)", detail: "Vợ: Cao Thị Lan", ky: "Nhánh Kiếm" },
+          { name: "Cụ Lê Văn Tân (Hòa)", role: "Con Cụ Hàm (Đời 5)", detail: "Sinh Bính Thân; Vợ: Nguyễn Thị Quyệt", ky: "Nhánh Hàm" },
+          { name: "Cụ Lê Văn Duật", role: "Con Cụ Tạ (Đời 5)", detail: "Sinh Tân Tỵ; Vợ: Nguyễn Thị Hòa (Cư Hoan, kỵ 23-7)", ky: "Nhánh Tạ" },
+          { name: "Cụ Lê Văn Thỉu", role: "Con Cụ Tốn (Đời 5)", detail: "Sinh Giáp Ngọ; Vợ: Nguyễn Thị Duyên", ky: "Nhánh Tốn" },
+          { name: "Cụ Lê Văn Sửu", role: "Con Cụ Tốn (Đời 5)", detail: "Sinh 11-11-1963; Vợ: Nguyễn Thị Căn (1965)", ky: "Nhánh Tốn" },
+          { name: "Cụ Lê Văn Ất", role: "Con Cụ Tốn (Đời 5)", detail: "Sinh 01-11-1965; Vợ: Nguyễn Thị Hoa (1968)", ky: "Nhánh Tốn" },
+          { name: "Cụ Lê Văn Nghị", role: "Con Cụ Thuyết (Đời 5)", detail: "Sinh Đinh Tỵ; Vợ: Lâm Thị Kiễng, Hoàng Thị Xem", ky: "Nhánh Thuyết" },
+          { name: "Cụ Lê Văn Duy", role: "Con Cụ Tặng (Đời 5)", detail: "Sinh Canh Ngọ; Cư trú TP. Ban Mê Thuột, Đắk Lắk", ky: "Nhánh Tặng" }
+        ]
+      },
+      {
+        gen: "ĐỜI THỨ SÁU & THỨ BẢY",
+        title: "Hậu Duệ Đương Đại & Thế Hệ Tương Lai",
+        members: [
+          { name: "Lê Phúc Nhật", role: "Đời thứ 6 (Trưởng nam)", detail: "Sinh 19-5 Nhâm Tuất (27-07-1982); Vợ: Võ Thị Niềm (1984)", ky: "Chủ tịch HTX Keo Sơn" },
+          { name: "Lê Văn Anh", role: "Đời thứ 6 (Thứ nam)", detail: "Sinh 18-7-1984 (Giáp Tý); Vợ: Nguyễn Thị Linh", ky: "Con Cụ Mạnh" },
+          { name: "Lê Thị Nga", role: "Đời thứ 6", detail: "Sinh 24-12-1987 (Bính Dần)", ky: "Con gái Cụ Mạnh" },
+          { name: "Lê Thị Đan", role: "Đời thứ 7", detail: "Sinh ngày 24-05-2009; Con gái Lê Phúc Nhật & Võ Thị Niềm", ky: "Thế hệ mầm non" },
+          { name: "Lê Thị Nhân", role: "Đời thứ 7", detail: "Sinh ngày 01-03-2017; Con gái Lê Phúc Nhật & Võ Thị Niềm", ky: "Thế hệ mầm non" },
+          { name: "Lê Thị Viên", role: "Đời thứ 7", detail: "Sinh năm 2006 (Bính Tuất)", ky: "Kỵ 05 tháng 7" },
+          { name: "Lê Gia Bảo", role: "Đời thứ 7", detail: "Sinh ngày 12-02-2012; Con trai Lê Văn Anh & Nguyễn Thị Linh", ky: "Thế hệ mầm non" },
+          { name: "Lê Thị Yến Nhi", role: "Đời thứ 7", detail: "Sinh ngày 09-08 Quý Tỵ; Con gái Lê Văn Anh & Nguyễn Thị Linh", ky: "Thế hệ mầm non" },
+          { name: "Lê Văn Phong", role: "Đời thứ 6 (Nhánh Duận)", detail: "Sinh 01-10 Canh Ngọ; Vợ: Lê Thị Phương Thảo (Đà Nẵng)", ky: "Con Cụ Duận" },
+          { name: "Lê Tuệ Lâm", role: "Đời thứ 7", detail: "Sinh 10-10-2020; Con gái Lê Văn Phong", ky: "Thế hệ mầm non" },
+          { name: "Lê Nhật Khang", role: "Đời thứ 7", detail: "Sinh 16-6 nhuận Ất Tỵ (09-08-2025); Con trai Lê Văn Phong", ky: "Thế hệ mầm non" },
+          { name: "Lê Văn Phú", role: "Đời thứ 6 (Nhánh Duận)", detail: "Sinh 04-10-1994; Vợ: Nguyễn Thị Mỹ Hạnh", ky: "Con Cụ Duận" },
+          { name: "Lê Văn Hân", role: "Đời thứ 6 (Nhánh Tân)", detail: "Sinh 10-10-1979; Vợ: Nguyễn Thị An (1984)", ky: "Con Cụ Tân" },
+          { name: "Lê Văn Tâm", role: "Đời thứ 6 (Nhánh Tân)", detail: "Sinh 11-10-1981; Vợ: Trần Thị Châu (1985)", ky: "Con Cụ Tân" },
+          { name: "Lê Văn Cư (Hiệp)", role: "Đời thứ 6 (Nhánh Duật)", detail: "Sinh 01-01-1977 (Bính Thìn)", ky: "Con Cụ Duật" },
+          { name: "Lê Văn Sỹ", role: "Đời thứ 6 (Nhánh Thỉu)", detail: "Sinh 24-04-1979; Vợ: Nguyễn Thị Bắc", ky: "Con Cụ Thỉu" },
+          { name: "Lê Văn Đăng", role: "Đời thứ 6 (Nhánh Sửu)", detail: "Sinh 1994; Vợ: Nguyễn Thị Thuần", ky: "Con Cụ Sửu" },
+          { name: "Lê Văn Quý", role: "Đời thứ 6 (Nhánh Ất)", detail: "Sinh 02-09-1993; Vợ: Ngô Thị Lợi", ky: "Con Cụ Ất" }
+        ]
+      }
+    ];
+
+    function renderInteractiveFamilyTree(filterText = "") {
+      const box = document.getElementById("treeRenderBox");
+      if (!box) return;
+      box.innerHTML = "";
+
+      const query = filterText.trim().toLowerCase();
+
+      GENEALOGY_DATA.forEach(section => {
+        const filteredMembers = section.members.filter(m =>
+          !query || m.name.toLowerCase().includes(query) || m.role.toLowerCase().includes(query) || m.detail.toLowerCase().includes(query)
+        );
+
+        if (filteredMembers.length === 0) return;
+
+        const secDiv = document.createElement("div");
+        secDiv.className = "gen-section";
+        secDiv.innerHTML = `
+          <div class="gen-title">
+            <span>🌿</span> <span>${section.gen}: ${section.title}</span>
+          </div>
+          <div class="member-grid">
+            ${filteredMembers.map(m => `
+              <div class="member-card ${query && m.name.toLowerCase().includes(query) ? 'highlight' : ''}" onclick="showMemberDetail('${m.name}')">
+                <div class="member-name">${m.name}</div>
+                <div class="member-detail"><strong>Vai trò:</strong> ${m.role}</div>
+                <div class="member-detail">${m.detail}</div>
+                <div class="member-ky">🕊️ ${m.ky}</div>
+              </div>
+            `).join("")}
+          </div>
+        `;
+        box.appendChild(secDiv);
+      });
+
+      if (box.children.length === 0) {
+        box.innerHTML = `<div style="text-align:center; padding:30px; color:#cbd5e1; font-size:1rem;">Không tìm thấy thành viên gia tộc phù hợp với từ khóa "${filterText}".</div>`;
+      }
+    }
+
+    function filterGenealogyTree(val) {
+      renderInteractiveFamilyTree(val);
+    }
+
+    function showMemberDetail(name) {
+      showVoiceToast(`🌿 Thành viên: ${name} (Họ Lê Văn)`);
+      sfxChime();
+    }
+
+    // =========================================================================
+    // 6. ĐIỀU HƯỚNG SLIDE, ĐỔI CHẾ ĐỘ, ĐỔI STYLE
+    // =========================================================================
+    function switchWorkspace(ws) {
+      currentWorkspace = ws;
+      document.body.classList.remove("workspace-deck", "workspace-tree", "workspace-skill");
+      document.documentElement.classList.remove("workspace-deck", "workspace-tree", "workspace-skill");
+      document.body.classList.add("workspace-" + ws);
+      document.documentElement.classList.add("workspace-" + ws);
+
+      document.getElementById("tabBtnDeck").classList.toggle("active", ws === "deck");
+      document.getElementById("tabBtnTree").classList.toggle("active", ws === "tree");
+      document.getElementById("tabBtnSkill").classList.toggle("active", ws === "skill");
+
+      if (ws === "deck") {
+        updateSlidePosition();
+      }
+    }
+
+    function setVisualArtStyle(styleKey) {
+      document.body.classList.remove(
+        "style-cinematic", "style-realistic", "style-infographic", "style-painting", "style-handdrawn"
+      );
+      document.body.classList.add("style-" + styleKey);
+      sfxChime();
+      renderAllSlides();
+    }
+
+    function setDeckMode(mode) {
+      currentMode = mode;
+      document.documentElement.classList.remove("mode-horizontal", "mode-vertical", "mode-scroll");
+      document.body.classList.remove("mode-horizontal", "mode-vertical", "mode-scroll");
+      document.documentElement.classList.add("mode-" + mode);
+      document.body.classList.add("mode-" + mode);
+
+      document.getElementById("btnModeHorizontal").classList.toggle("active", mode === "horizontal");
+      document.getElementById("btnModeVertical").classList.toggle("active", mode === "vertical");
+      document.getElementById("btnModeScroll").classList.toggle("active", mode === "scroll");
+
+      if (currentWorkspace !== "deck") switchWorkspace("deck");
+      updateSlidePosition();
+    }
+
+    function visibleCount() {
+      return Math.max(1, SLIDES_DATA.length - hiddenSlides.size);
+    }
+
+    function findVisibleSlide(fromIdx, dir) {
+      for (let i = fromIdx + dir; i >= 0 && i < SLIDES_DATA.length; i += dir) {
+        if (!hiddenSlides.has(i)) return i;
+      }
+      return -1;
+    }
+
+    function updateSlidePosition() {
+      const track = document.getElementById("slidesTrack");
+      const jumpSelect = document.getElementById("slideJumpSelect");
+      const dotsContainer = document.getElementById("dotsContainer");
+      if (!track) return;
+
+      if (jumpSelect) jumpSelect.value = String(currentSlide);
+
+      document.querySelectorAll(".slide").forEach((s, idx) => {
+        s.classList.toggle("active-slide", idx === currentSlide);
+        s.classList.toggle("is-hidden", hiddenSlides.has(idx));
+      });
+
+      if (dotsContainer) {
+        dotsContainer.querySelectorAll(".slide-dot").forEach((d, idx) => {
+          d.classList.toggle("active", idx === currentSlide);
+          d.classList.toggle("is-hidden", hiddenSlides.has(idx));
+        });
+      }
+
+      const chkBottom = document.getElementById("chkShowCurrent");
+      if (chkBottom) chkBottom.checked = !hiddenSlides.has(currentSlide);
+
+      const badge = document.getElementById("hideCountBadge");
+      if (badge) {
+        badge.textContent = String(hiddenSlides.size);
+        badge.classList.toggle("zero", hiddenSlides.size === 0);
+      }
+
+      const bar = document.getElementById("deckProgress");
+      if (bar) {
+        let n = 0;
+        for (let i = 0; i <= currentSlide; i++) if (!hiddenSlides.has(i)) n++;
+        bar.style.width = ((Math.max(1, n) / visibleCount()) * 100).toFixed(1) + "%";
+      }
+
+      const tele = document.getElementById("teleprompterText");
+      if (tele && !isAutoLecturing && SLIDES_DATA[currentSlide]) {
+        tele.textContent = "🎙️ " + SLIDES_DATA[currentSlide].script;
+      }
+
+      if (currentMode === "scroll") {
+        track.style.transform = "none";
+        return;
+      }
+      if (currentMode === "horizontal") {
+        track.style.transform = `translate3d(-${currentSlide * 100}vw, 0, 0)`;
+      } else {
+        track.style.transform = `translate3d(0, -${currentSlide * 100}%, 0)`;
+      }
+    }
+
+    function goToSlide(index, manualTrigger) {
+      if (index < 0) index = 0;
+      if (index >= SLIDES_DATA.length) index = SLIDES_DATA.length - 1;
+      if (hiddenSlides.has(index) && index !== currentSlide) {
+        let nextVis = findVisibleSlide(index, index > currentSlide ? 1 : -1);
+        if (nextVis === -1) nextVis = findVisibleSlide(index, index > currentSlide ? -1 : 1);
+        if (nextVis === -1) return;
+        index = nextVis;
+      }
+      const changed = currentSlide !== index;
+      currentSlide = index;
+      if (changed) sfxWhoosh();
+      updateSlidePosition();
+
+      if (currentMode === "scroll") {
+        const slides = document.querySelectorAll(".slide");
+        if (slides[currentSlide]) slides[currentSlide].scrollIntoView({ behavior: "smooth" });
+      }
+      if (manualTrigger && isAutoLecturing) {
+        playSlideNarration(currentSlide, true, 0);
+      }
+    }
+
+    function nextSlide() {
+      const target = findVisibleSlide(currentSlide, 1);
+      if (target !== -1) goToSlide(target, true);
+    }
+
+    function prevSlide() {
+      const target = findVisibleSlide(currentSlide, -1);
+      if (target !== -1) goToSlide(target, true);
+    }
+
+    function toggleShowSlide(idx, shouldShow) {
+      const shouldHide = !shouldShow;
+      if (shouldHide && !hiddenSlides.has(idx) && visibleCount() <= 1) {
+        showVoiceToast("⚠️ Cần giữ lại ít nhất 1 trang!");
+        renderAllSlides();
+        return;
+      }
+      if (shouldHide) hiddenSlides.add(idx);
+      else hiddenSlides.delete(idx);
+
+      if (shouldHide && idx === currentSlide) {
+        let nextVis = findVisibleSlide(currentSlide, 1);
+        if (nextVis === -1) nextVis = findVisibleSlide(currentSlide, -1);
+        if (nextVis !== -1) currentSlide = nextVis;
+      }
+      renderAllSlides();
+    }
+
+    function openHideModal() {
+      renderHideModalList();
+      document.getElementById("hideModal").classList.add("open");
+    }
+    function closeHideModal() {
+      document.getElementById("hideModal").classList.remove("open");
+    }
+    function renderHideModalList() {
+      const list = document.getElementById("hideListContainer");
+      const summary = document.getElementById("hideSummaryText");
+      if (!list) return;
+      list.innerHTML = "";
+      SLIDES_DATA.forEach((s, idx) => {
+        const isHidden = hiddenSlides.has(idx);
+        const row = document.createElement("label");
+        row.className = "hide-row" + (isHidden ? " is-hidden" : "");
+        row.innerHTML = `
+          <input type="checkbox" ${!isHidden ? "checked" : ""} onchange="toggleShowSlide(${idx}, this.checked)" style="width:18px; height:18px; accent-color:#34d399;" />
+          <span class="hide-row-title" style="flex:1;">${s.title}</span>
+          <span style="font-size:0.76rem; color:${isHidden ? '#fb7185' : '#34d399'};">${isHidden ? '🙈 ĐÃ ẨN' : '✔ HIỂN THỊ'}</span>
+        `;
+        list.appendChild(row);
+      });
+      if (summary) {
+        summary.textContent = `Hiển thị ${visibleCount()} / ${SLIDES_DATA.length} trang gia phả.`;
+      }
+    }
+    function showAllSlides() {
+      hiddenSlides.clear();
+      renderAllSlides();
+      renderHideModalList();
+    }
+    function hideAllExceptCurrent() {
+      hiddenSlides.clear();
+      SLIDES_DATA.forEach((_, idx) => {
+        if (idx !== currentSlide) hiddenSlides.add(idx);
+      });
+      renderAllSlides();
+      renderHideModalList();
+    }
+    function invertHiddenSlides() {
+      const nextSet = new Set();
+      SLIDES_DATA.forEach((_, idx) => {
+        if (!hiddenSlides.has(idx)) nextSet.add(idx);
+      });
+      if (nextSet.size >= SLIDES_DATA.length) return;
+      hiddenSlides = nextSet;
+      if (hiddenSlides.has(currentSlide)) {
+        const firstVis = findVisibleSlide(-1, 1);
+        if (firstVis !== -1) currentSlide = firstVis;
+      }
+      renderAllSlides();
+      renderHideModalList();
+    }
+
+    function openKyGioModal() {
+      sfxChime();
+      document.getElementById("kyGioModal").classList.add("open");
+    }
+    function closeKyGioModal() {
+      document.getElementById("kyGioModal").classList.remove("open");
+    }
+
+    function toggleFullScreen() {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().catch(() => {});
+      } else {
+        document.exitFullscreen().catch(() => {});
+      }
+    }
+
+    // =========================================================================
+    // 7. HỆ THỐNG GIỌNG ĐỌC AI DUAL-ENGINE & MID-SENTENCE RESUME
+    // =========================================================================
+    let isAutoLecturing = false;
+    let voiceGender = "male";
+    let speechRate = 1.0;
+    let speechSessionId = 0;
+    let currentUtterance = null;
+    let currentCharOffset = 0;
+    let currentFullSpokenText = "";
+    let speechStartedAtMs = 0;
+    let baseOffsetAtStart = 0;
+    let activeTimers = [];
+
+    function toSpokenVietnameseText(raw) {
+      if (!raw) return "";
+      return raw
+        .replace(/==>|->|➔|⇒/g, " phát triển thành ")
+        .replace(/4D/g, "bốn đê")
+        .replace(/CCCD/gi, "căn cước công dân")
+        .replace(/HTX/gi, "Hợp tác xã")
+        .replace(/AI/gi, "Ây Ai")
+        .replace(/[\u{1F300}-\u{1FAFF}\u{2600}-\u{27BF}]/gu, "");
+    }
+
+    function cancelSpeechSession() {
+      speechSessionId++;
+      activeTimers.forEach(t => clearTimeout(t));
+      activeTimers = [];
+      if (currentUtterance) {
+        currentUtterance.onend = null;
+        currentUtterance.onerror = null;
+        currentUtterance = null;
+      }
+      if ("speechSynthesis" in window) {
+        window.speechSynthesis.cancel();
+      }
+      return speechSessionId;
+    }
+
+    function selectSystemVoice(gender) {
+      if (!("speechSynthesis" in window)) return null;
+      const voices = window.speechSynthesis.getVoices() || [];
+      const viVoices = voices.filter(v => v.lang && v.lang.toLowerCase().includes("vi"));
+      if (gender === "female") {
+        return viVoices.find(v => /hoaimy|linh|female|nữ|nu|google/i.test(v.name) && !/\ban\b/i.test(v.name)) || viVoices[0] || null;
+      }
+      return viVoices.find(v => /namminh|\ban\b|male|nam/i.test(v.name)) || viVoices[0] || null;
+    }
+
+    function playSlideNarration(slideIdx, autoAdvance, startCharIndex) {
+      const mySession = cancelSpeechSession();
+      if (!isAutoLecturing || !SLIDES_DATA[slideIdx]) return;
+
+      const rawScript = SLIDES_DATA[slideIdx].script || SLIDES_DATA[slideIdx].title;
+      currentFullSpokenText = toSpokenVietnameseText(rawScript);
+      baseOffsetAtStart = Math.max(0, Math.min(startCharIndex || 0, currentFullSpokenText.length - 1));
+      currentCharOffset = baseOffsetAtStart;
+
+      const remainingText = currentFullSpokenText.slice(baseOffsetAtStart).trim();
+      document.getElementById("teleprompterText").textContent = "🎙️ " + (remainingText || rawScript);
+
+      document.querySelectorAll(".slide-inner").forEach((el, idx) => {
+        el.classList.toggle("narrating-glow", idx === slideIdx);
+      });
+
+      if (!("speechSynthesis" in window) || !remainingText) return;
+
+      const utter = new SpeechSynthesisUtterance(remainingText);
+      utter.lang = "vi-VN";
+      utter.rate = speechRate;
+      const matchedVoice = selectSystemVoice(voiceGender);
+      if (matchedVoice) utter.voice = matchedVoice;
+      utter.pitch = voiceGender === "female" ? 1.2 : 0.88;
+
+      speechStartedAtMs = performance.now();
+
+      utter.onboundary = (ev) => {
+        if (mySession !== speechSessionId) return;
+        if (typeof ev.charIndex === "number") {
+          currentCharOffset = baseOffsetAtStart + ev.charIndex;
+        }
+      };
+
+      utter.onend = () => {
+        if (mySession !== speechSessionId || !isAutoLecturing) return;
+        const nextVis = findVisibleSlide(slideIdx, 1);
+        if (autoAdvance && nextVis !== -1) {
+          const tid = setTimeout(() => {
+            if (mySession !== speechSessionId || !isAutoLecturing) return;
+            goToSlide(nextVis, false);
+            playSlideNarration(nextVis, true, 0);
+          }, 650);
+          activeTimers.push(tid);
+        } else {
+          stopAutoLecture();
+        }
+      };
+
+      currentUtterance = utter;
+      window.speechSynthesis.speak(utter);
+    }
+
+    function resumeMidSentenceOnVoiceOrSpeedChange() {
+      if (!isAutoLecturing) return;
+      playSlideNarration(currentSlide, true, currentCharOffset);
+    }
+
+    function setVoiceGender(gender, userClicked) {
+      voiceGender = gender;
+      document.getElementById("btnVoiceMale").classList.toggle("active", gender === "male");
+      document.getElementById("btnVoiceFemale").classList.toggle("active", gender === "female");
+      showVoiceToast(gender === "male" ? `👨 Giọng Nam Trầm (${speechRate.toFixed(2)}x)` : `👩 Giọng Nữ Dịu (${speechRate.toFixed(2)}x)`);
+      if (isAutoLecturing) {
+        resumeMidSentenceOnVoiceOrSpeedChange();
+      } else if (userClicked) {
+        sfxChime();
+      }
+    }
+
+    function onTopSpeedInput(val) {
+      speechRate = Math.max(0.5, Math.min(1.8, parseFloat(val)));
+      document.getElementById("topSpeedVal").textContent = speechRate.toFixed(2) + "x";
+    }
+
+    function onTopSpeedCommit(val) {
+      onTopSpeedInput(val);
+      showVoiceToast(`⚡ Tốc độ đọc: ${speechRate.toFixed(2)}x`);
+      if (isAutoLecturing) {
+        resumeMidSentenceOnVoiceOrSpeedChange();
+      }
+    }
+
+    function stepSpeechSpeed(delta) {
+      const nextVal = Math.round((speechRate + delta) * 100) / 100;
+      document.getElementById("topSpeedSlider").value = String(Math.max(0.5, Math.min(1.8, nextVal)));
+      onTopSpeedCommit(nextVal);
+    }
+
+    function toggleAutoLecture() {
+      if (isAutoLecturing) stopAutoLecture();
+      else startAutoLecture();
+    }
+
+    function startAutoLecture() {
+      if (currentWorkspace !== "deck") switchWorkspace("deck");
+      isAutoLecturing = true;
+      document.getElementById("btnMasterSpeak").classList.add("speaking");
+      document.getElementById("speakIcon").textContent = "⏹";
+      document.getElementById("speakLabel").textContent = "ĐANG ĐỌC (DỪNG)";
+      document.getElementById("teleprompterBar").classList.add("active-speaking");
+      document.getElementById("btnStopInline").style.display = "inline-block";
+      playSlideNarration(currentSlide, true, 0);
+    }
+
+    function speakSingleSlide(idx) {
+      if (currentWorkspace !== "deck") switchWorkspace("deck");
+      if (currentSlide !== idx) goToSlide(idx, false);
+      isAutoLecturing = true;
+      document.getElementById("btnMasterSpeak").classList.add("speaking");
+      document.getElementById("speakIcon").textContent = "⏹";
+      document.getElementById("speakLabel").textContent = "ĐANG ĐỌC (DỪNG)";
+      document.getElementById("teleprompterBar").classList.add("active-speaking");
+      document.getElementById("btnStopInline").style.display = "inline-block";
+      playSlideNarration(idx, false, 0);
+    }
+
+    function stopAutoLecture() {
+      isAutoLecturing = false;
+      cancelSpeechSession();
+      document.getElementById("btnMasterSpeak").classList.remove("speaking");
+      document.getElementById("speakIcon").textContent = "🎙️";
+      document.getElementById("speakLabel").textContent = "BẤM NÚT NÓI";
+      document.getElementById("teleprompterBar").classList.remove("active-speaking");
+      document.getElementById("btnStopInline").style.display = "none";
+      document.querySelectorAll(".slide-inner").forEach(el => el.classList.remove("narrating-glow"));
+    }
+
+    // =========================================================================
+    // 8. ÂM THANH NHẠC THIỀN 432HZ & CHUÔNG BÁT TÂY TẠNG
+    // =========================================================================
+    let AC = null;
+    let musicGain = null;
+    let musicOn = false;
+    let musicTimer = null;
+    let sfxOn = true;
+    let musicVolPct = 35;
+
+    function ensureAudioCtx() {
+      if (!AC) {
+        AC = new (window.AudioContext || window.webkitAudioContext)();
+        musicGain = AC.createGain();
+        musicGain.connect(AC.destination);
+        updateMusicGainLevel();
+      }
+      if (AC.state === "suspended") AC.resume();
+    }
+
+    function updateMusicGainLevel() {
+      if (!musicGain || !AC) return;
+      musicGain.gain.setTargetAtTime((musicVolPct / 100) * 0.22, AC.currentTime, 0.3);
+    }
+
+    function playAmbientChord(freqs, dur) {
+      if (!AC) return;
+      const now = AC.currentTime;
+      freqs.forEach(f => {
+        const osc = AC.createOscillator();
+        const g = AC.createGain();
+        osc.type = "sine";
+        osc.frequency.value = f;
+        g.gain.setValueAtTime(0, now);
+        g.gain.linearRampToValueAtTime(0.3, now + dur * 0.3);
+        g.gain.exponentialRampToValueAtTime(0.001, now + dur);
+        osc.connect(g);
+        g.connect(musicGain);
+        osc.start(now);
+        osc.stop(now + dur + 0.1);
+      });
+    }
+
+    function toggleMusic() {
+      ensureAudioCtx();
+      musicOn = !musicOn;
+      document.getElementById("btnMusicToggle").classList.toggle("active", musicOn);
+      if (musicOn) {
+        const chords = [
+          [216, 288, 432],
+          [162, 216, 324],
+          [216, 270, 432],
+          [180, 240, 360]
+        ];
+        let cIdx = 0;
+        playAmbientChord(chords[0], 7.0);
+        musicTimer = setInterval(() => {
+          if (!musicOn) return;
+          cIdx = (cIdx + 1) % chords.length;
+          playAmbientChord(chords[cIdx], 7.0);
+        }, 7000);
+        showVoiceToast("🎵 Đã bật Nhạc Thiền 432Hz");
+      } else {
+        clearInterval(musicTimer);
+        showVoiceToast("🔇 Đã tắt nhạc nền");
+      }
+    }
+
+    function setMusicVol(val) {
+      musicVolPct = parseFloat(val);
+      updateMusicGainLevel();
+    }
+
+    function toggleSfx() {
+      sfxOn = !sfxOn;
+      document.getElementById("btnSfxToggle").classList.toggle("active", sfxOn);
+      showVoiceToast(sfxOn ? "🔔 Đã bật SFX" : "🔕 Đã tắt SFX");
+    }
+
+    function sfxChime() {
+      if (!sfxOn) return;
+      try {
+        ensureAudioCtx();
+        [528, 792].forEach((freq, i) => {
+          const t = AC.currentTime + i * 0.08;
+          const o = AC.createOscillator();
+          const g = AC.createGain();
+          o.type = "sine";
+          o.frequency.value = freq;
+          g.gain.setValueAtTime(0, t);
+          g.gain.linearRampToValueAtTime(0.12, t + 0.02);
+          g.gain.exponentialRampToValueAtTime(0.001, t + 0.6);
+          o.connect(g);
+          g.connect(AC.destination);
+          o.start(t);
+          o.stop(t + 0.65);
+        });
+      } catch (e) {}
+    }
+
+    function sfxWhoosh() {
+      if (!sfxOn) return;
+      try {
+        ensureAudioCtx();
+        const t = AC.currentTime;
+        const o = AC.createOscillator();
+        const g = AC.createGain();
+        o.type = "sine";
+        o.frequency.setValueAtTime(260, t);
+        o.frequency.exponentialRampToValueAtTime(480, t + 0.15);
+        g.gain.setValueAtTime(0.06, t);
+        g.gain.exponentialRampToValueAtTime(0.001, t + 0.17);
+        o.connect(g);
+        g.connect(AC.destination);
+        o.start(t);
+        o.stop(t + 0.18);
+      } catch (e) {}
+    }
+
+    function playTibetanBowl432() {
+      try {
+        ensureAudioCtx();
+        const t = AC.currentTime;
+        [432, 864, 1296].forEach((freq, idx) => {
+          const o = AC.createOscillator();
+          const g = AC.createGain();
+          o.type = "sine";
+          o.frequency.value = freq;
+          g.gain.setValueAtTime(0, t);
+          g.gain.linearRampToValueAtTime(idx === 0 ? 0.25 : 0.08, t + 0.06);
+          g.gain.exponentialRampToValueAtTime(0.0006, t + 3.8);
+          o.connect(g);
+          g.connect(AC.destination);
+          o.start(t);
+          o.stop(t + 4.0);
+        });
+        showVoiceToast("🔔 Dâng Nén Tâm Hương • Chuông Thiền 432Hz");
+      } catch (e) {}
+    }
+
+    function exportStandaloneHtml4D() {
+      const fullDoc = "<!DOCTYPE html>\n" + document.documentElement.outerHTML;
+      const blob = new Blob([fullDoc], { type: "text/html;charset=utf-8" });
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = `gia-pho-ho-le-van-16x9-html4d-${new Date().toISOString().slice(0, 10)}.html`;
+      a.click();
+      showVoiceToast("📥 Đã xuất trọn bộ Gia Phổ Họ Lê Văn HTML 4D!");
+    }
+
+    function exportGenealogyJson() {
+      const blob = new Blob([JSON.stringify({ slides: SLIDES_DATA, tree: GENEALOGY_DATA }, null, 2)], { type: "application/json;charset=utf-8" });
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = "gia_pho_ho_le_van_data.json";
+      a.click();
+      showVoiceToast("📦 Đã xuất dữ liệu Gia Phổ Họ Lê Văn JSON!");
+    }
+
+    let toastTimeout = null;
+    function showVoiceToast(msg) {
+      const el = document.getElementById("voiceToast");
+      if (!el) return;
+      el.textContent = msg;
+      el.classList.add("show");
+      clearTimeout(toastTimeout);
+      toastTimeout = setTimeout(() => el.classList.remove("show"), 2400);
+    }
+
+    // =========================================================================
+    // 9. PHÍM TẮT & TƯƠNG TÁC CHUỘT
+    // =========================================================================
+    window.addEventListener("keydown", (e) => {
+      const tag = (e.target && e.target.tagName) || "";
+      if (["INPUT", "TEXTAREA", "SELECT"].includes(tag)) return;
+      if (e.key === "Escape") {
+        closeHideModal();
+        closeKyGioModal();
+        if (typeof closeEcosystemModal === 'function') closeEcosystemModal();
+        return;
+      }
+      if (currentWorkspace !== "deck") return;
+      if (["ArrowRight", "ArrowDown", "PageDown", " "].includes(e.key)) {
+        if (currentMode !== "scroll") { e.preventDefault(); nextSlide(); }
+      } else if (["ArrowLeft", "ArrowUp", "PageUp"].includes(e.key)) {
+        if (currentMode !== "scroll") { e.preventDefault(); prevSlide(); }
+      } else if (e.key === "h" || e.key === "H") {
+        e.preventDefault();
+        toggleShowSlide(currentSlide, hiddenSlides.has(currentSlide));
+      } else if (e.key === "r" || e.key === "R") {
+        e.preventDefault();
+        flipAllCardsOnCurrentSlide();
+      } else if (e.key === "w" || e.key === "W") {
+        e.preventDefault();
+        toggleWide16x9Stage();
+      }
+    });
+
+    let wheelLock = false;
+    window.addEventListener("wheel", (e) => {
+      if (currentWorkspace !== "deck" || currentMode === "scroll") return;
+      if (document.getElementById("hideModal").classList.contains("open")) return;
+      if (document.getElementById("kyGioModal").classList.contains("open")) return;
+      if (Math.abs(e.deltaY) < 22 || wheelLock) return;
+      wheelLock = true;
+      if (e.deltaY > 0) nextSlide();
+      else prevSlide();
+      setTimeout(() => { wheelLock = false; }, 600);
+    }, { passive: true });
+
+    // BACKGROUND COSMOS CANVAS
+    const cosmosCanvas = document.getElementById("cosmosCanvas");
+    const cCtx = cosmosCanvas.getContext("2d");
+    const stars = [];
+
+    function resizeCosmos() {
+      cosmosCanvas.width = window.innerWidth;
+      cosmosCanvas.height = window.innerHeight;
+    }
+    window.addEventListener("resize", resizeCosmos);
+    resizeCosmos();
+
+    for (let i = 0; i < 90; i++) {
+      stars.push({
+        x: Math.random() * cosmosCanvas.width,
+        y: Math.random() * cosmosCanvas.height,
+        r: Math.random() * 1.6 + 0.4,
+        a: Math.random(),
+        s: Math.random() * 0.012 + 0.003
+      });
+    }
+
+    function animateStars() {
+      cCtx.clearRect(0, 0, cosmosCanvas.width, cosmosCanvas.height);
+      stars.forEach(st => {
+        st.a += st.s;
+        if (st.a > 1 || st.a < 0.2) st.s = -st.s;
+        cCtx.beginPath();
+        cCtx.arc(st.x, st.y, st.r, 0, Math.PI * 2);
+        cCtx.fillStyle = `rgba(255, 233, 173, ${st.a * 0.6})`;
+        cCtx.fill();
+      });
+      requestAnimationFrame(animateStars);
+    }
+    animateStars();
+
+    // KHỞI ĐỘNG ỨNG DỤNG
+    (function initGiaPhoApp() {
+      renderAllSlides();
+      animateLivingOverlaysLoop();
+    })();
+  </script>
+</body>
+</html>

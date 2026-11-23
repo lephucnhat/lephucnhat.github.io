@@ -1,0 +1,388 @@
+{
+  "brand": {
+    "name": "Nhà Hàng Chay Liên Hoa",
+    "shortName": "Liên Hoa Chay",
+    "tagline": "Ăn an lành - Sống hạnh phúc",
+    "heroBadge": "Ăn An Lành – Sống Hạnh Phúc",
+    "heroTitle": "Liên Hoa Chay – Ăn An Lành, Sống Hạnh Phúc",
+    "heroSubtitle": "Chốn dừng chân an lành tại Hải Dương, nơi hội tụ 100% nguyên liệu rau nấm tự nhiên, nước dùng ninh 8 tiếng thanh ngọt và không gian thiền ấm cúng cho gia đình, tri kỷ.",
+    "logo": "./assets/images/logo.jpg",
+    "heroImage": "./assets/images/space/space-01.jpg",
+    "source_status": "verified_from_local_or_web",
+    "contact": {
+      "phone": "0933.286.133",
+      "phoneRaw": "0933286133",
+      "phoneSecondary": "090.418.4986",
+      "phoneSecondaryRaw": "0904184986",
+      "contactPerson": "Ms. Thạo",
+      "zaloUrl": "https://zalo.me/0904184986",
+      "email": "lienhoachayhd@gmail.com",
+      "fanpageUrl": "https://www.facebook.com/profile.php?id=61559156548781",
+      "facebookPersonalUrl": "https://www.facebook.com/thaonguyen.825687",
+      "tiktokUrl": "https://vt.tiktok.com/ZSgCF9HYp/",
+      "qrZalo": "./assets/images/qr-zalo.png",
+      "qrPhone": "./assets/images/qr-phone.png",
+      "address": "Lô 94.7 Đường Trường Chinh (Đối diện đường Hoàng Quốc Việt), Phường Tứ Minh, Thành phố Hải Dương",
+      "hours": "Giờ đón khách: 11:00 – 13:30 & 18:00 – 20:30",
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Lô+94.7+Đường+Trường+Chinh+Tứ+Minh+Hải+Dương",
+      "ratingScore": "4.8",
+      "ratingCount": "350+",
+      "source_status": "verified_from_local_or_web"
+    }
+  },
+  "story": {
+    "eyebrow": "Câu Chuyện Liên Hoa",
+    "title": "Khởi Nguồn Từ Tâm Nguyện Gieo Hạt Thiện Lành",
+    "quote": "“Mỗi bữa ăn thuần chay là một hạt giống thiện lành gieo vào tâm hồn.”",
+    "paragraphs": [
+      "Giữa nhịp sống hối hả trên đại lộ Trường Chinh, Liên Hoa Chay được hình thành như một khoảng lặng dịu dàng để thực khách tạm gác lại âu lo, trở về với bữa cơm thanh đạm mà tròn đầy dinh dưỡng.",
+      "Chúng tôi giữ nguyên sự khắt khe ngay từ khâu chọn lựa: 100% rau củ quả tươi sạch thu hoạch trong ngày kết hợp hơn 8 loại nấm quý, tuyệt đối không dùng hóa chất điều vị hay phụ gia độc hại. Nước dùng lẩu và canh được ninh suốt 8 tiếng từ củ sen, ngô ngọt, mía lau và củ cải trắng để giữ trọn vị ngọt thanh khiết từ đất mẹ.",
+      "Dưới ánh đèn lồng ấm áp và tiếng nhạc thiền dịu nhẹ, Liên Hoa Chay mong muốn mỗi lần bạn ghé thăm — dù là bữa trưa vội, buổi sum vầy cuối tuần hay dịp Rằm, mùng Một — đều là một khoảnh khắc thân tâm an lạc."
+    ],
+    "pillars": [
+      {
+        "icon": "🌱",
+        "title": "Nguyên Liệu Tươi Sạch",
+        "desc": "100% rau củ quả tươi mỗi ngày và nấm quý tự nhiên, không chất bảo quản, không điều vị nhân tạo."
+      },
+      {
+        "icon": "🍲",
+        "title": "Chế Biến Tận Tâm",
+        "desc": "Nước dùng củ quả ninh 8 giờ giữ vị ngọt thanh tự nhiên, cân bằng dưỡng chất cho mọi lứa tuổi."
+      },
+      {
+        "icon": "🪷",
+        "title": "Không Gian An Lạc",
+        "desc": "Phòng ăn rộng rãi, phòng riêng ấm cúng, bãi đỗ ô tô thuận tiện ngay mặt đường Trường Chinh."
+      }
+    ],
+    "images": [
+      "./assets/images/space/space-02.jpg",
+      "./assets/images/space/space-04.jpg"
+    ],
+    "source_status": "verified_from_local_or_web"
+  },
+  "categories": [
+    { "id": "all", "name": "Tất cả" },
+    { "id": "buffet", "name": "Buffet & Mâm Cỗ" },
+    { "id": "signature", "name": "Khai vị & Ký danh" },
+    { "id": "hotpot", "name": "Lẩu chay sum vầy" },
+    { "id": "rice", "name": "Cơm & Bún/Mì" },
+    { "id": "main", "name": "Món chính & Canh" },
+    { "id": "drink", "name": "Thức uống & Tráng miệng" }
+  ],
+  "menu": [
+    {
+      "id": "buffet-hang-ngay",
+      "category": "buffet",
+      "name": "Suất Buffet Chay Liên Hoa Hàng Ngày",
+      "price": 119000,
+      "badge": "Bán chạy",
+      "image": "./assets/images/buffet/buffet-01.jpg",
+      "desc": "Đại tiệc hơn 35 món chay thanh tịnh phục vụ cả tuần, kèm quầy chè và tráng miệng miễn phí.",
+      "healthNote": "Giàu chất xơ, vitamin từ rau củ và đạm thực vật dễ tiêu hóa.",
+      "source_status": "verified_from_local_or_web"
+    },
+    {
+      "id": "tau-hu-lien-hoa",
+      "category": "signature",
+      "name": "Tàu Hũ Liên Hoa Sốt Nấm Tuyết",
+      "price": 65000,
+      "badge": "Món ký danh",
+      "image": "./assets/images/food/food-01.jpg",
+      "desc": "Đậu hũ non mềm mịn tạo hình hoa sen thanh tao, rưới sốt nấm tuyết sánh nhẹ thơm dịu.",
+      "healthNote": "Đạm thực vật lành mạnh, nấm tuyết giúp thanh nhiệt và dưỡng ẩm.",
+      "source_status": "verified_from_local_or_web"
+    },
+    {
+      "id": "com-cuon-ngu-sac",
+      "category": "signature",
+      "name": "Cơm Cuộn Ngũ Sắc & Sushi Chay",
+      "price": 75000,
+      "badge": "Thực dưỡng",
+      "image": "./assets/images/food/food-02.jpg",
+      "desc": "Cuộn thủ công từ rau củ ngũ sắc giòn ngọt tự nhiên, dùng kèm sốt mè rang béo bùi.",
+      "healthNote": "Ngũ sắc rau củ bổ sung vitamin và chất chống oxy hóa tự nhiên.",
+      "source_status": "verified_from_local_or_web"
+    },
+    {
+      "id": "cha-gio-nam",
+      "category": "signature",
+      "name": "Chả Giò Nấm Liên Hoa Giòn Rụm",
+      "price": 60000,
+      "badge": "",
+      "image": "./assets/images/food/food-03.jpg",
+      "desc": "Chả giò nhân nấm hương và khoai môn dẻo bùi, chiên vàng giòn rụm, chấm sốt mè rang.",
+      "healthNote": "Khoai môn cung cấp tinh bột chậm và vị bùi tự nhiên.",
+      "source_status": "verified_from_local_or_web"
+    },
+    {
+      "id": "goi-ngo-sen",
+      "category": "signature",
+      "name": "Gỏi Ngó Sen Hoa Chuối Phù Trúc",
+      "price": 69000,
+      "badge": "Thanh mát",
+      "image": "./assets/images/food/food-04.jpg",
+      "desc": "Ngó sen giòn mát trộn cùng hoa chuối, phù trúc và nước sốt chua ngọt thanh dịu.",
+      "healthNote": "Ngó sen thanh nhiệt, hoa chuối giàu chất xơ tốt cho tiêu hóa.",
+      "source_status": "verified_from_local_or_web"
+    },
+    {
+      "id": "lau-nam-lien-hoa",
+      "category": "hotpot",
+      "name": "Lẩu Nấm Liên Hoa Thập Cẩm Quý",
+      "price": 249000,
+      "badge": "Best Seller",
+      "image": "./assets/images/food/food-05.jpg",
+      "desc": "Nồi lẩu cho 3–4 người với nước dùng ninh 8 tiếng từ củ sen, ngô ngọt, mía lau cùng nhiều loại nấm quý.",
+      "healthNote": "Các loại nấm tự nhiên giúp tăng cường đề kháng, nước dùng thanh nhẹ.",
+      "source_status": "verified_from_local_or_web"
+    },
+    {
+      "id": "lau-thai-chay",
+      "category": "hotpot",
+      "name": "Lẩu Thái Chay Chua Cay Bách Thảo",
+      "price": 229000,
+      "badge": "Ấm bụng",
+      "image": "./assets/images/food/food-06.jpg",
+      "desc": "Hương vị chua cay hài hòa từ sả, lá chanh Thái, đậu hũ ky và đĩa rau nấm bách thảo tươi xanh.",
+      "healthNote": "Sả và thảo mộc giúp làm ấm cơ thể và kích thích vị giác.",
+      "source_status": "verified_from_local_or_web"
+    },
+    {
+      "id": "com-hat-sen-la-sen",
+      "category": "rice",
+      "name": "Cơm Hạt Sen Gói Lá Sen Tươi",
+      "price": 85000,
+      "badge": "Thực dưỡng",
+      "image": "./assets/images/food/food-07.jpg",
+      "desc": "Cơm hấp thơm ngát hương lá sen tươi cùng hạt sen bùi béo, nấm đông cô và rau củ.",
+      "healthNote": "Hạt sen giúp an thần, ngủ ngon; lá sen hỗ trợ thanh lọc nhẹ nhàng.",
+      "source_status": "verified_from_local_or_web"
+    },
+    {
+      "id": "com-chien-trai-thom",
+      "category": "rice",
+      "name": "Cơm Chiên Trái Thơm Hạt Điều",
+      "price": 79000,
+      "badge": "",
+      "image": "./assets/images/food/food-08.jpg",
+      "desc": "Hạt cơm tơi vàng chiên cùng dứa tươi chua ngọt dịu và hạt điều rang giòn bùi.",
+      "healthNote": "Hạt điều giàu chất béo tốt; dứa hỗ trợ tiêu hóa tự nhiên.",
+      "source_status": "verified_from_local_or_web"
+    },
+    {
+      "id": "mi-xao-gion-nam",
+      "category": "rice",
+      "name": "Mì Xào Giòn Nấm Hoàng Kim",
+      "price": 75000,
+      "badge": "",
+      "image": "./assets/images/food/food-09.jpg",
+      "desc": "Sợi mì chiên giòn tan rưới sốt nấm sệt đậm đà cùng cải xanh và cà rốt tươi.",
+      "healthNote": "Bổ sung năng lượng lành mạnh từ ngũ cốc và rau nấm.",
+      "source_status": "verified_from_local_or_web"
+    },
+    {
+      "id": "nam-dui-ga-kho-tieu",
+      "category": "main",
+      "name": "Nấm Đùi Gà Kho Tiêu Xanh Nồi Đất",
+      "price": 75000,
+      "badge": "Đưa cơm",
+      "image": "./assets/images/food/food-10.jpg",
+      "desc": "Nấm đùi gà săn chắc kho tộ trong nồi đất cùng tiêu xanh cay nồng nhẹ, ăn kèm cơm trắng rất bắt vị.",
+      "healthNote": "Giàu đạm thực vật, ít chất béo bão hòa.",
+      "source_status": "verified_from_local_or_web"
+    },
+    {
+      "id": "dau-hu-non-sot-dong-co",
+      "category": "main",
+      "name": "Đậu Hũ Non Sốt Nấm Đông Cô",
+      "price": 68000,
+      "badge": "",
+      "image": "./assets/images/food/food-11.jpg",
+      "desc": "Đậu hũ non mềm mượt hòa quyện nước sốt nấm đông cô thơm lừng, phù hợp cho cả người lớn tuổi và trẻ nhỏ.",
+      "healthNote": "Mềm dễ tiêu, giàu protein thực vật.",
+      "source_status": "verified_from_local_or_web"
+    },
+    {
+      "id": "ca-tim-nuong-mo-hanh",
+      "category": "main",
+      "name": "Cà Tím Nướng Mỡ Hành Boa-rô & Đậu Phộng",
+      "price": 55000,
+      "badge": "Dân dã",
+      "image": "./assets/images/food/food-12.jpg",
+      "desc": "Cà tím nướng mềm ngọt phủ mỡ hành boa-rô thơm nức và đậu phộng rang giã dập.",
+      "healthNote": "Cà tím giàu chất chống oxy hóa tự nhiên, ít calo.",
+      "source_status": "verified_from_local_or_web"
+    },
+    {
+      "id": "canh-duong-sinh-nam-sen",
+      "category": "main",
+      "name": "Canh Dưỡng Sinh Củ Sen & Nấm Tươi",
+      "price": 65000,
+      "badge": "Thực dưỡng",
+      "image": "./assets/images/food/food-13.jpg",
+      "desc": "Nước canh trong vắt, ngọt thanh từ củ sen, táo đỏ và nấm tươi giúp bồi bổ khí huyết.",
+      "healthNote": "Thanh nhiệt, nhẹ bụng, phù hợp bữa cơm gia đình.",
+      "source_status": "placeholder_editable"
+    },
+    {
+      "id": "tra-man-thao-moc",
+      "category": "drink",
+      "name": "Trà Mận Thảo Mộc Liên Hoa",
+      "price": 39000,
+      "badge": "Món mới",
+      "image": "./assets/images/drinks/traman-01.jpg",
+      "desc": "Thức uống giải nhiệt chua ngọt thanh mát từ mận tự nhiên kết hợp hương trà nhẹ dịu.",
+      "healthNote": "Giải nhiệt, giàu vitamin C tự nhiên.",
+      "source_status": "verified_from_local_or_web"
+    },
+    {
+      "id": "che-duong-nhan",
+      "category": "drink",
+      "name": "Chè Dưỡng Nhan Tuyết Yến Hạt Sen",
+      "price": 35000,
+      "badge": "Thanh mát",
+      "image": "./assets/images/drinks/drink-01.jpg",
+      "desc": "Tuyết yến, hạt sen, táo đỏ và kỷ tử hầm vừa độ, vị ngọt thanh nhẹ nhàng dễ chịu.",
+      "healthNote": "Tuyết yến, táo đỏ và kỷ tử giúp dưỡng nhan, bồi bổ nhẹ nhàng.",
+      "source_status": "verified_from_local_or_web"
+    },
+    {
+      "id": "tra-hoa-cuc-mat-ong",
+      "category": "drink",
+      "name": "Ấm Trà Hoa Cúc Mật Ong Thảo Mộc (2–4 Người)",
+      "price": 45000,
+      "badge": "Thư giãn",
+      "image": "./assets/images/drinks/drink-02.jpg",
+      "desc": "Ấm trà hoa cúc vàng ấm áp thoảng hương thảo mộc, thích hợp nhâm nhi chuyện trò sau bữa ăn.",
+      "healthNote": "Hoa cúc giúp thư giãn tinh thần, làm dịu cổ họng.",
+      "source_status": "verified_from_local_or_web"
+    }
+  ],
+  "cateringSets": [
+    {
+      "id": "set-500",
+      "name": "Mâm Cỗ Chay An Lạc",
+      "price": 500000,
+      "guests": "4 – 6 người",
+      "image": "./assets/images/setco/set-500.000.jpg",
+      "desc": "Phù hợp bữa cơm sum vầy gia đình hoặc cúng gia tiên gọn gàng, thanh tịnh (6–7 món chọn lọc).",
+      "source_status": "verified_from_local_or_web"
+    },
+    {
+      "id": "set-600",
+      "name": "Mâm Cỗ Chay Viên Mãn",
+      "price": 600000,
+      "guests": "6 người",
+      "image": "./assets/images/setco/set-600.000.jpg",
+      "desc": "Thực đơn hài hòa giữa khai vị, món kho, xào, canh dưỡng sinh và tráng miệng.",
+      "source_status": "verified_from_local_or_web"
+    },
+    {
+      "id": "set-650",
+      "name": "Mâm Cỗ Chay Cúng Rằm Truyền Thống",
+      "price": 650000,
+      "guests": "6 – 8 người",
+      "image": "./assets/images/setco/set-650.000.jpg",
+      "desc": "Mâm cỗ 8 món bày biện trang nghiêm, chuẩn vị truyền thống cho ngày Rằm, mùng Một, giỗ chạp.",
+      "source_status": "verified_from_local_or_web"
+    },
+    {
+      "id": "set-800",
+      "name": "Mâm Cỗ Chay Hưng Thịnh",
+      "price": 800000,
+      "guests": "8 – 10 người",
+      "image": "./assets/images/setco/set-800.000.jpg",
+      "desc": "Đầy đặn món ký danh đặc sắc cùng lẩu nấm hoặc canh bát bảo, phù hợp tiếp khách và tân gia.",
+      "source_status": "verified_from_local_or_web"
+    },
+    {
+      "id": "set-1000",
+      "name": "Mâm Cỗ Chay Đại Cát (Thượng Hạng)",
+      "price": 1000000,
+      "guests": "10 người",
+      "image": "./assets/images/setco/set-1.000.000.jpg",
+      "desc": "Mâm tiệc chay cao cấp nhất của Liên Hoa, hội tụ các món đặc sản nấm quý và trình bày nghệ thuật.",
+      "source_status": "verified_from_local_or_web"
+    }
+  ],
+  "gallery": [
+    { "src": "./assets/images/space/space-01.jpg", "title": "Không gian phòng ăn ấm áp tại Liên Hoa Chay", "category": "Không gian" },
+    { "src": "./assets/images/space/space-03.jpg", "title": "Góc bàn gỗ mộc mạc và ánh đèn lồng dịu mắt", "category": "Không gian" },
+    { "src": "./assets/images/space/space-05.jpg", "title": "Khu vực tiếp khách & dùng bữa gia đình rộng rãi", "category": "Không gian" },
+    { "src": "./assets/images/space/space-06.jpg", "title": "Khoảng lặng bình yên giữa lòng TP. Hải Dương", "category": "Không gian" },
+    { "src": "./assets/images/buffet/buffet-02.jpg", "title": "Quầy Buffet chay 35+ món tươi ngon mỗi ngày", "category": "Buffet" },
+    { "src": "./assets/images/buffet/buffet-03.jpg", "title": "Các món chay chế biến nóng hổi trong ngày", "category": "Buffet" },
+    { "src": "./assets/images/buffet/buffet-05.jpg", "title": "Thực khách thưởng thức Buffet chay thanh tịnh", "category": "Buffet" },
+    { "src": "./assets/images/setco/set-700.000.jpg", "title": "Mâm cỗ chay bày biện trang nghiêm giao tận nơi", "category": "Mâm cỗ" },
+    { "src": "./assets/images/drinks/traman-02.jpg", "title": "Trà mận thảo mộc thanh mát tại quán", "category": "Thức uống" }
+  ],
+  "testimonials": [
+    {
+      "name": "Cô Minh Tâm",
+      "role": "Phật tử Chùa Đống Cao",
+      "quote": "Tàu hũ Liên Hoa béo mịn, nước lẩu ngọt thanh tự nhiên. Không gian yên tĩnh, rất hợp đi lễ chùa xong ghé ăn.",
+      "rating": 5,
+      "source_status": "verified_from_local_or_web"
+    },
+    {
+      "name": "Anh Tuấn Vũ",
+      "role": "Phường Tứ Minh, TP. Hải Dương",
+      "quote": "Buffet 35+ món, món nào cũng tươi và đậm vị, nhân viên nhiệt tình. Bãi xe rộng, dễ đỗ ô tô.",
+      "rating": 5,
+      "source_status": "verified_from_local_or_web"
+    },
+    {
+      "name": "Gia đình chị Mai Lan",
+      "role": "TP. Hải Dương",
+      "quote": "Đặt mâm cỗ chay cúng Rằm cho cả nhà, trình bày trang nghiêm, ai cũng khen ngon.",
+      "rating": 5,
+      "source_status": "verified_from_local_or_web"
+    }
+  ],
+  "articles": [
+    {
+      "id": "triet-ly-an-chay",
+      "tag": "Dưỡng Sinh Thân Tâm",
+      "title": "Ăn Chay Đúng Cách: Khi Bữa Cơm Là Một Lời Chúc Bình An",
+      "excerpt": "Ăn chay không chỉ là kiêng thịt cá, mà là nghệ thuật lựa chọn thực phẩm thuần khiết để cơ thể nhẹ nhàng và tâm trí sáng suốt hơn mỗi ngày.",
+      "readTime": "3 phút đọc",
+      "image": "./assets/images/space/space-07.jpg",
+      "content": [
+        "Nhiều người khi mới bắt đầu ăn chay thường lo ngại thiếu chất hoặc dễ đói. Bí quyết của ẩm thực chay dưỡng sinh nằm ở sự đa dạng tự nhiên: kết hợp đạm thực vật từ đậu phụ, phù trúc, các loại hạt cùng chất khoáng và vitamin từ rau củ, nấm tươi theo mùa.",
+        "Tại Liên Hoa Chay, chúng tôi hạn chế tối đa đồ giả mặn công nghiệp hay gia vị hóa học. Thay vào đó, vị ngọt được chắt lọc từ củ sen, mía lau, ngô ngọt và nấm hương giúp thực khách ăn no nhẹ mà không nặng bụng.",
+        "Khi ta ăn chậm lại, cảm nhận hương thơm của lá sen, vị bùi của hạt sen hay độ giòn của ngó sen, bữa ăn trở thành một khoảnh khắc chánh niệm quý giá giữa bộn bề cuộc sống."
+      ],
+      "source_status": "placeholder_editable"
+    },
+    {
+      "id": "bi-mat-noi-nuoc-dung",
+      "tag": "Nghệ Thuật Bếp Chay",
+      "title": "Hành Trình 8 Tiếng Ninh Nước Dùng Từ Củ Quả Tự Nhiên",
+      "excerpt": "Không cần bột ngọt hay hạt nêm hóa học, nồi lẩu nấm Liên Hoa vẫn có vị ngọt sâu và thanh tao nhờ công thức ninh rau củ chậm rãi.",
+      "readTime": "2 phút đọc",
+      "image": "./assets/images/food/food-05.jpg",
+      "content": [
+        "Linh hồn của một nồi lẩu chay ngon nằm ở nồi nước dùng. Từ sáng sớm, gian bếp Liên Hoa đã sơ chế củ cải trắng, củ sen, ngô ngọt, mía lau, cà rốt và nấm hương khô để ninh lửa nhỏ liên tục suốt 8 tiếng.",
+        "Quá trình ninh chậm giúp các enzyme và đường tự nhiên trong củ quả tiết ra từ từ, tạo nên độ ngọt hậu êm dịu nơi cổ họng mà không gây cảm giác khát nước sau khi ăn.",
+        "Kết hợp cùng đĩa nấm tươi thập cẩm và rau xanh theo mùa, đây luôn là lựa chọn được các gia đình nhiều thế hệ yêu thích nhất mỗi dịp cuối tuần."
+      ],
+      "source_status": "verified_from_local_or_web"
+    },
+    {
+      "id": "mam-co-chay-ngay-ram",
+      "tag": "Văn Hóa Việt",
+      "title": "Ý Nghĩa Mâm Cỗ Chay Trang Nghiêm Dịp Rằm & Giỗ Chạp",
+      "excerpt": "Một mâm cỗ chay thanh khiết dâng lên gia tiên không chỉ thể hiện lòng thành kính mà còn gửi gắm ước nguyện bình an cho cả gia đình.",
+      "readTime": "3 phút đọc",
+      "image": "./assets/images/setco/set-650.000.jpg",
+      "content": [
+        "Trong nếp sống văn hóa người Việt, ngày Rằm, mùng Một hay dịp giỗ chạp, tân gia luôn là lúc con cháu hướng về cội nguồn. Xu hướng chọn mâm cỗ chay ngày càng được nhiều gia đình trân trọng bởi sự thanh tịnh, nhẹ nhàng và giàu ý nghĩa thiện lành.",
+        "Tại Liên Hoa Chay, các set cỗ từ 500.000đ đến 1.000.000đ được thiết kế cân đối đầy đủ khai vị, món chính, xào, canh và tráng miệng, đóng gói cẩn thận và giao tận nơi đúng giờ cúng lễ.",
+        "Gia chủ chỉ cần đặt trước qua Zalo hoặc Hotline 0904 184 986, đội ngũ bếp sẽ chuẩn bị chu toàn để gia đình có thêm thời gian sum vầy trọn vẹn."
+      ],
+      "source_status": "verified_from_local_or_web"
+    }
+  ]
+}

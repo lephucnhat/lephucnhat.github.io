@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CheckCCRQT • EUDR Quảng Trị v0.4.0 — Hệ thống Giám sát Rừng Đa cảm biến</title>
+  <meta name="description" content="Hệ thống GIS Command Center giám sát rừng chứng chỉ FSC/PEFC, thẩm định EUDR (Regulation EU 2023/1115) và VNTLAS bằng đa cảm biến Sentinel-2 + Sentinel-1 SAR RTC của Chi cục Kiểm lâm tỉnh Quảng Trị." />
+  <link rel="icon" type="image/png" href="./assets/logo_kiemlam.png" />
+  <link rel="manifest" href="./manifest.webmanifest" />
+  <meta name="theme-color" content="#06110C" />
+
+  <!-- Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Leaflet, Turf, Chart.js, QRCode, SheetJS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
+  <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/@turf/turf@6.5.0/turf.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+
+  <!-- Modular Styles & Scripts (relative ./ paths for GitHub Pages) -->
+  <link rel="stylesheet" href="./css/style.css" />
+  <script defer src="./js/eudr-validator.js"></script>
+  <script defer src="./js/knowledge-base.js"></script>
+  <script defer src="./js/map-composer.js"></script>
+  <script defer src="./js/app.js"></script>
+</head>
+<body>
+  <!-- Sticky Glass Header -->
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a href="#overview" class="brand">
+        <img src="./assets/logo_kiemlam.png" alt="Logo Kiểm lâm Việt Nam" />
+        <div>
+          <div class="brand-title">CheckCCRQT • EUDR Quảng Trị <span class="badge-ver">v0.4.0</span></div>
+          <div class="brand-sub">Phòng Sử dụng &amp; Phát triển rừng — Chi cục Kiểm lâm tỉnh Quảng Trị</div>
+        </div>
+      </a>
+
+      <nav class="nav-links" aria-label="Điều hướng chính">
+        <a href="#overview">Tổng quan</a>
+        <a href="#validator">Kiểm tra Lô rừng</a>
+        <a href="#architecture">Kiến trúc v0.4.0</a>
+        <a href="#science">Cơ sở Khoa học</a>
+        <a href="./bao-cao-sang-kien-4d.html" style="color:var(--gold); font-weight:800;">📑 Báo Cáo Sáng Kiến 4D</a>
+        <a href="#ai" id="navAiLink">Hỏi AI EUDR</a>
+      </nav>
+
+      <div class="nav-actions">
+        <span id="sensorStatusBadge" class="sensor-pill">S2 L2A · Trực tuyến</span>
+        <button id="themeToggle" class="theme-toggle" type="button" title="Chuyển giao diện Tối / Sáng (In ấn)" aria-label="Chuyển giao diện Tối Sáng">
+          <svg class="svg-ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+        </button>
+        <a href="./downloads/CheckCCRQT_v0.3.1.zip" download class="btn btn-primary btn-sm">
+          <svg class="svg-ico" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Plugin QGIS
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Dashboard -->
+    <section id="overview" class="hero">
+      <div class="container">
+        <div class="hero-card">
+          <div class="hero-grid">
+            <div>
+              <div class="hero-kicker">
+                <svg class="svg-ico" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                GIS COMMAND CENTER • REGULATION (EU) 2023/1115 &amp; VNTLAS
+              </div>
+              <h1>Thẩm định EUDR &amp; Giám sát Rừng <span>Đa cảm biến Quảng Trị</span></h1>
+              <p class="hero-desc">
+                Nền tảng kiểm tra không gian, chuẩn hóa GeoJSON <strong>IETF RFC 7946</strong> nộp cổng <strong>EU TRACES NT</strong>,
+                chuyển đổi hệ quy chiếu <strong>VN-2000 (7 tham số Helmert)</strong> và vận hành xuyên mây 12/12 tháng
+                kết hợp quang học Sentinel-2A/2B/2C với Radar <strong>Sentinel-1 SAR RTC</strong>.
+              </p>
+              <div class="hero-cta">
+                <a href="#validator" class="btn btn-emerald">
+                  <svg class="svg-ico" viewBox="0 0 24 24"><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"/><line x1="9" y1="3" x2="9" y2="18"/><line x1="15" y1="6" x2="15" y2="21"/></svg>
+                  Kiểm tra Lô rừng Ngay
+                </a>
+                <a href="./bao-cao-sang-kien-4d.html" class="btn btn-outline" style="border-color:#F5C451; color:#FFE9AD;" title="Xem Báo Cáo Mô Tả Sáng Kiến 4D Tương Tác Cấp Tỉnh/Bộ">
+                  <svg class="svg-ico" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                  Báo Cáo Sáng Kiến 4D
+                </a>
+                <button id="btnDownloadSample" type="button" class="btn btn-outline" style="color:#F1F5F9;border-color:#2EE59D;">
+                  <svg class="svg-ico" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><polyline points="9 15 12 18 15 15"/></svg>
+                  Tải Mẫu GeoJSON Chuẩn
+                </button>
+              </div>
+            </div>
+
+            <div class="kpi-grid">
+              <div class="kpi-box">
+                <div class="kpi-val mono">31/12/2020</div>
+                <div class="kpi-label">Mốc pháp lý EUDR<br/>Bản đồ nền EC JRC GFC2020</div>
+              </div>
+              <div class="kpi-box">
+                <div class="kpi-val mono radar">10 m</div>
+                <div class="kpi-label">Độ phân giải GFC2020<br/>&amp; Sentinel-2 / Sentinel-1 RTC</div>
+              </div>
+              <div class="kpi-box">
+                <div class="kpi-val mono amber">4,0 ha</div>
+                <div class="kpi-label">Ngưỡng Điều 9 EUDR<br/>Điểm (≤ 4 ha) / Đa giác (&gt; 4 ha)</div>
+              </div>
+              <div class="kpi-box">
+                <div class="kpi-val">24/7 Xuyên mây</div>
+                <div class="kpi-label">Quang học Sentinel-2<br/>+ Radar SAR RTC (RVI)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Phân khu 1: Công cụ Kiểm tra & Chuẩn hóa Hồ sơ Lô rừng EUDR -->
+    <section id="validator">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Phân khu 1 • Client-Side EUDR &amp; IETF RFC 7946 Validator</div>
+            <h2 class="section-title">Công cụ Kiểm tra &amp; Chuẩn hóa Hồ sơ Lô rừng EUDR</h2>
+          </div>
+          <div style="font-size:0.8rem;color:var(--text-muted);">Hỗ trợ kéo thả <code class="mono">.geojson/.json/.kml</code>, dán chuỗi tọa độ hoặc nạp mẫu Cam Lộ</div>
+        </div>
+
+        <div class="workbench-toolbar">
+          <div class="toolbar-group">
+            <button id="btnLoadSample" type="button" class="btn btn-primary btn-sm">
+              <svg class="svg-ico" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+              Nạp mẫu lô Keo lai Cam Lộ (Quảng Trị)
+            </button>
+            <div id="dropzone" class="dropzone" tabindex="0">
+              <svg class="svg-ico" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+              Kéo thả tệp <strong>.geojson / .json / .kml</strong>
+              <input id="fileInput" type="file" accept=".geojson,.json,.kml" hidden />
+            </div>
+            <button id="btnTogglePaste" type="button" class="btn btn-outline btn-sm">Dán tọa độ / GeoJSON</button>
+          </div>
+
+          <div class="toolbar-group">
+            <label class="switch-label">
+              <input id="chkPointUnder4Ha" type="checkbox" />
+              Rút gọn lô ≤ 4 ha thành Điểm (Điều 9)
+            </label>
+            <button id="btnExportEudrGeoJson" type="button" class="btn btn-emerald btn-sm" title="Xuất tệp GeoJSON RFC 7946 chuẩn nộp cổng EU TRACES NT">
+              <svg class="svg-ico" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              GeoJSON TRACES NT
+            </button>
+            <button id="btnExportMultiSheetExcel" type="button" class="btn btn-primary btn-sm" title="Xuất sổ bộ Excel 3-Sheet tự động tính công thức COUNTIF/SUMIF/SUM theo mẫu kiểm lâm">
+              <svg class="svg-ico" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="16" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+              Xuất Excel 3-Sheet (.xlsx)
+            </button>
+            <button id="btnExportWordDoc" type="button" class="btn btn-outline btn-sm" title="Xuất Báo cáo Thẩm định Rừng chứng chỉ &amp; EUDR định dạng văn bản Word">
+              <svg class="svg-ico" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+              Xuất Báo cáo Word (.doc)
+            </button>
+            <button id="btnExportMapComposer" type="button" class="btn btn-outline btn-sm" title="Tạo bản đồ kỹ thuật khung đôi 2 dòng kẻ chuẩn CAD/GIS A4 kèm bảng tọa độ đỉnh VN-2000 &amp; WGS-84">
+              <svg class="svg-ico" viewBox="0 0 24 24"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>
+              Bản đồ Khung 02 Dòng kẻ (A4)
+            </button>
+            <button id="btnExportCsv" type="button" class="btn btn-outline btn-sm">Xuất CSV</button>
+            <button id="btnPrintPdf" type="button" class="btn btn-outline btn-sm">In / PDF</button>
+          </div>
+
+          <div class="org-input-bar">
+            <label for="executingUnitInput" style="font-weight:700;color:var(--text-muted);">Đơn vị thực hiện (<code class="mono">ExecutingUnit</code>):</label>
+            <input id="executingUnitInput" type="text" value="Phòng Sử dụng và Phát triển rừng — Chi cục Kiểm lâm tỉnh Quảng Trị" />
+          </div>
+        </div>
+
+        <!-- Paste Coordinates Panel -->
+        <div id="pastePanel" class="paste-panel">
+          <div style="font-size:0.82rem;font-weight:700;margin-bottom:6px;">Dán chuỗi GeoJSON hoặc danh sách cặp tọa độ WGS-84 (mỗi dòng 1 đỉnh: <code class="mono">16.8180, 106.9420</code>)</div>
+          <textarea id="pasteTextarea" placeholder='16.8180, 106.9420&#10;16.8180, 106.9445&#10;16.8202, 106.9445&#10;16.8202, 106.9420'></textarea>
+          <div style="display:flex;justify-content:flex-end;gap:8px;margin-top:8px;">
+            <button id="btnRunPaste" type="button" class="btn btn-primary btn-sm">Phân tích tọa độ đã dán</button>
+          </div>
+        </div>
+
+        <!-- Telemetry Strip -->
+        <div class="stat-strip">
+          <div class="stat-chip"><div id="statTotal" class="num mono">0</div><div class="lbl">Tổng lô thẩm định</div></div>
+          <div class="stat-chip"><div id="statArea" class="num mono c-ok">0 ha</div><div class="lbl">Tổng diện tích trắc địa</div></div>
+          <div class="stat-chip"><div id="statViol" class="num mono c-err">0</div><div class="lbl">Cảnh báo Đỏ (EUDR)</div></div>
+          <div class="stat-chip"><div id="statTopo" class="num mono c-warn">0</div><div class="lbl">Lỗi RFC 7946 / Mã lô</div></div>
+          <div class="stat-chip"><div id="statLarge" class="num mono c-radar">0</div><div class="lbl">Lô &gt; 4 ha (Bắt buộc Polygon)</div></div>
+        </div>
+
+        <div class="workbench-grid">
+          <div class="card" style="padding:12px;">
+            <div class="map-controls-bar">
+              <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+                <label>Độ mờ lớp rừng: <input id="opacityRange" type="range" min="0" max="100" value="28" /> <span id="opacityVal" class="mono">28%</span></label>
+                <label style="cursor:pointer;"><input id="chkShowLabels" type="checkbox" checked /> Nhãn Mã lô</label>
+              </div>
+              <div style="display:flex;gap:6px;flex-wrap:wrap;">
+                <button id="btnMyGps" type="button" class="btn btn-primary btn-sm">GPS Thực địa</button>
+                <button id="btnZoomExtent" type="button" class="btn btn-outline btn-sm">Toàn vùng</button>
+              </div>
+            </div>
+            <div id="map" aria-label="Bản đồ xem trước ranh giới lô rừng Quảng Trị"></div>
+          </div>
+
+          <div class="card chart-panel">
+            <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;">
+              <div>
+                <strong style="font-size:0.92rem;">Chuỗi thời gian Đa cảm biến (S2 + S1 SAR)</strong>
+                <div style="font-size:0.74rem;color:var(--text-muted);">Quang học NDVI/NBR/NDMI &amp; Radar RVI xuyên mây mùa mưa</div>
+              </div>
+              <div class="index-tabs">
+                <button class="index-btn active" type="button" data-index="NDVI">NDVI</button>
+                <button class="index-btn" type="button" data-index="NBR">NBR</button>
+                <button class="index-btn" type="button" data-index="NDMI">NDMI</button>
+                <button class="index-btn" type="button" data-index="RVI">RVI (SAR)</button>
+              </div>
+            </div>
+            <div class="chart-wrap"><canvas id="tsChart"></canvas></div>
+            <div id="lotDetailBox" class="lot-detail-box">Chọn một lô trên bản đồ hoặc bảng bên dưới để xem chi tiết thẩm định.</div>
+          </div>
+        </div>
+
+        <!-- Live VN-2000 <-> WGS-84 Converter -->
+        <div class="card converter-card">
+          <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;">
+            <div>
+              <div class="section-kicker" style="margin:0;">Trắc địa thực chiến • QĐ 05/2007/QĐ-BTNMT (7 tham số Helmert)</div>
+              <h3 style="margin:2px 0 0;font-size:1.02rem;">Bộ Chuyển đổi Tọa độ Sống VN-2000 ↔ WGS-84</h3>
+            </div>
+            <div style="display:flex;gap:6px;flex-wrap:wrap;">
+              <button id="btnVnToWgs" type="button" class="btn btn-primary btn-sm">VN-2000 → WGS-84</button>
+              <button id="btnWgsToVn" type="button" class="btn btn-emerald btn-sm">WGS-84 → VN-2000</button>
+              <button id="btnCopyCoord" type="button" class="btn btn-outline btn-sm">Sao chép tọa độ</button>
+              <button id="btnFlyToCoord" type="button" class="btn btn-outline btn-sm">Bay tới bản đồ</button>
+            </div>
+          </div>
+          <div class="converter-grid">
+            <div class="field-group">
+              <label for="convMeridian">Kinh tuyến trục (Múi 3°)</label>
+              <select id="convMeridian">
+                <option value="106.0" selected>Quảng Trị Mới — 106°00'</option>
+                <option value="106.25">Quảng Trị Cũ — 106°15'</option>
+                <option value="106.0">Quảng Bình Cũ — 106°00'</option>
+              </select>
+            </div>
+            <div class="field-group"><label for="convVnX">X VN-2000 (m)</label><input id="convVnX" type="number" step="0.01" value="601320.00" /></div>
+            <div class="field-group"><label for="convVnY">Y VN-2000 (m)</label><input id="convVnY" type="number" step="0.01" value="1859700.00" /></div>
+            <div class="field-group"><label for="convWgsLat">Vĩ độ WGS-84</label><input id="convWgsLat" type="number" step="0.000001" value="16.817000" /></div>
+            <div class="field-group"><label for="convWgsLon">Kinh độ WGS-84</label><input id="convWgsLon" type="number" step="0.000001" value="106.948000" /></div>
+          </div>
+          <div id="convOutput" class="converter-result">Sẵn sàng tính chuyển tọa độ VN-2000 ↔ WGS-84.</div>
+        </div>
+
+        <!-- Table Search & Filter -->
+        <div class="table-filter-bar">
+          <input id="lotSearchInput" type="search" placeholder="Tìm nhanh theo Mã lô, Chủ hộ, Tiểu khu, Loại rừng FRMS..." aria-label="Tìm nhanh lô rừng" />
+          <div class="filter-pills">
+            <button class="filter-pill table-filter-pill active" type="button" data-filter="all">Tất cả</button>
+            <button class="filter-pill table-filter-pill" type="button" data-filter="violation">Cảnh báo Đỏ (EUDR)</button>
+            <button class="filter-pill table-filter-pill" type="button" data-filter="issue">Lỗi RFC 7946 / Mã lô</button>
+            <button class="filter-pill table-filter-pill" type="button" data-filter="large">Lô &gt; 4 ha</button>
+          </div>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Mã lô</th>
+                <th>Chủ hộ &amp; Loại rừng FRMS</th>
+                <th>DT (ha)</th>
+                <th>Chu vi (m)</th>
+                <th>Phân tách FRMS v0.4</th>
+                <th>Kiểm tra RFC 7946</th>
+                <th>Nghĩa vụ Điều 9 EUDR</th>
+                <th>Tâm WGS-84 (6 số lẻ)</th>
+              </tr>
+            </thead>
+            <tbody id="lotsTableBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Phân khu 2: Bảng điều khiển Kiến trúc Đa cảm biến v0.4.0 -->
+    <section id="architecture">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Phân khu 2 • Kiến trúc Vận hành Thực tế (Đã kích hoạt)</div>
+            <h2 class="section-title">Bảng điều khiển Kiến trúc Đa cảm biến v0.4.0</h2>
+          </div>
+          <span class="pill pill-ok">PRODUCTION ACTIVE · 12/12 THÁNG</span>
+        </div>
+
+        <div class="card">
+          <!-- 4-Step Pipeline Flow -->
+          <div class="pipeline-flow">
+            <div class="flow-step">
+              <span class="flow-num">BƯỚC 01</span>
+              <h4>STAC API v1.0 / COG</h4>
+              <p>Truy vấn trực tiếp cửa sổ Sentinel-2 L2A &amp; Sentinel-1 RTC qua GDAL <code class="mono">/vsicurl/</code> không tải toàn cảnh.</p>
+            </div>
+            <div class="flow-step">
+              <span class="flow-num">BƯỚC 02</span>
+              <h4>RTC &amp; Cloud Score+</h4>
+              <p>Khử nhiễu địa hình sườn dốc bằng RTC, lọc mây ti mỏng bằng Cloud Score+ / Fmask và tính RVI tuyến tính.</p>
+            </div>
+            <div class="flow-step">
+              <span class="flow-num">BƯỚC 03</span>
+              <h4>Chồng lớp FRMS Quảng Trị</h4>
+              <p>Đối chiếu cơ sở dữ liệu diễn biến rừng TT 33/2018 &amp; QĐ 406/QĐ-CCKL tách bạch Rừng tự nhiên và Rừng trồng.</p>
+            </div>
+            <div class="flow-step">
+              <span class="flow-num">BƯỚC 04</span>
+              <h4>Xuất Hồ sơ DDS / TRACES NT</h4>
+              <p>Chuẩn hóa IETF RFC 7946 (EPSG:4326, 6 chữ số thập phân, CCW) và báo cáo kiểm toán đa định dạng.</p>
+            </div>
+          </div>
+
+          <!-- Interactive Seasonal Switch Simulator -->
+          <div class="season-sim">
+            <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;">
+              <div>
+                <strong style="font-size:0.92rem;">Mô phỏng Chuyển mạch Cảm biến Tự động theo Mùa Quảng Trị</strong>
+                <div style="font-size:0.76rem;color:var(--text-muted);">Chuyển đổi trực quan giữa mùa khô và mùa mưa bão miền Trung</div>
+              </div>
+              <div class="season-toggle" role="group" aria-label="Chọn mùa mô phỏng">
+                <button id="btnSeasonDry" type="button" class="season-btn active-dry">Mùa Khô (Tháng 2 – Tháng 8)</button>
+                <button id="btnSeasonRainy" type="button" class="season-btn">Mùa Mưa Bão (Tháng 9 – Tháng 1)</button>
+              </div>
+            </div>
+            <div id="seasonDetail"></div>
+          </div>
+
+          <!-- 3-Tier FRMS Cross-Check -->
+          <div class="frms-trio">
+            <div class="frms-card" style="border-left:3px solid var(--red);">
+              <h4 style="color:var(--red);">Cảnh báo Đỏ — Rủi ro EUDR (DEFORESTATION_ALERT)</h4>
+              <p>Suy giảm sinh khối trên diện tích <em>Rừng tự nhiên</em> sau mốc 31/12/2020 (đối chiếu GFC2020 10 m &amp; FRMS).</p>
+            </div>
+            <div class="frms-card" style="border-left:3px solid var(--amber);">
+              <h4 style="color:var(--amber);">Ghi nhận Vàng — Hợp pháp VNTLAS (LEGAL_PLANTATION_CYCLE)</h4>
+              <p>Khai thác và trồng lại theo chu kỳ trên diện tích <em>Rừng trồng (Keo lai)</em> thuộc đất quy hoạch lâm nghiệp.</p>
+            </div>
+            <div class="frms-card" style="border-left:3px solid var(--emerald);">
+              <h4 style="color:var(--emerald);">Đạt chuẩn Xanh — EUDR Compliant (COMPLIANT_STABLE)</h4>
+              <p>Lô rừng ổn định độ che phủ, đầy đủ tọa độ định vị địa lý RFC 7946 và hồ sơ nguồn gốc hợp pháp.</p>
+            </div>
+          </div>
+
+          <!-- Interactive RVI Calculator -->
+          <div style="padding:14px;border-radius:12px;background:var(--bg-input);border:1px dashed var(--border);">
+            <div style="font-weight:700;font-size:0.84rem;color:var(--emerald);">Kiểm chứng Công thức Radar RVI = (4 · σ⁰_VH) / (σ⁰_VV + σ⁰_VH) &amp; Phân tách FRMS</div>
+            <div class="rvi-lab-grid">
+              <div class="field-group"><label for="labVvDb">Tán xạ VV (dB)</label><input id="labVvDb" type="number" step="0.1" value="-8.2" /></div>
+              <div class="field-group"><label for="labVhDb">Tán xạ VH (dB)</label><input id="labVhDb" type="number" step="0.1" value="-14.5" /></div>
+              <div class="field-group"><label for="labRviBase">RVI Baseline</label><input id="labRviBase" type="number" step="0.01" value="0.72" /></div>
+              <div class="field-group">
+                <label for="labLoaiRung">Trạng thái FRMS</label>
+                <select id="labLoaiRung">
+                  <option value="Rừng tự nhiên">Rừng tự nhiên</option>
+                  <option value="Rừng trồng (Keo lai)">Rừng trồng (Keo lai)</option>
+                </select>
+              </div>
+            </div>
+            <div id="rviLabOutput" class="rvi-lab-out">Đang tính toán RVI...</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Phân khu 3: Nền tảng Học thuật & Pháp lý (08 Nguồn Chuẩn) -->
+    <section id="science">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Phân khu 3 • Nền tảng Học thuật &amp; Pháp lý Chuẩn Kiểm toán EUDR</div>
+            <h2 class="section-title">08 Nguồn Trích dẫn Khoa học – Pháp lý &amp; Kiến trúc v0.4.0</h2>
+          </div>
+          <div class="filter-pills">
+            <button class="filter-pill cite-filter-btn active" type="button" data-cat="all">Tất cả (08)</button>
+            <button class="filter-pill cite-filter-btn" type="button" data-cat="science">Khoa học &amp; Viễn thám (04)</button>
+            <button class="filter-pill cite-filter-btn" type="button" data-cat="legal">Pháp lý &amp; Chuẩn dữ liệu (04)</button>
+          </div>
+        </div>
+
+        <div id="citationsGrid" class="sci-grid"></div>
+      </div>
+    </section>
+
+    <!-- Install Plugin, QR & Technical Info -->
+    <section id="install">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Triển khai QGIS Desktop &amp; Mã QR Báo cáo</div>
+            <h2 class="section-title">Cài đặt Plugin CheckCCRQT &amp; Mã QR Chia sẻ</h2>
+          </div>
+        </div>
+
+        <div class="card install-grid">
+          <div>
+            <h3 style="margin-top:0;">Cài đặt nhanh trên QGIS (3.28 LTR → 3.44+)</h3>
+            <ol style="padding-left:20px;color:var(--text-muted);font-size:0.86rem;">
+              <li>Tải gói cài đặt sạch <code class="mono">CheckCCRQT_v0.3.1.zip</code> và dữ liệu mẫu <code class="mono">data/sample-cam-lo.geojson</code>.</li>
+              <li>Mở QGIS Desktop → <strong>Plugins → Manage and Install Plugins → Install from ZIP</strong>.</li>
+              <li>Đối với luồng Radar xuyên mây v0.4.0, sử dụng mô-đun Python <code class="mono">scripts/eudr_v04_radar_pipeline.py</code>.</li>
+            </ol>
+            <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;">
+              <a href="./downloads/CheckCCRQT_v0.3.1.zip" download class="btn btn-primary btn-sm">Tải CheckCCRQT_v0.3.1.zip</a>
+              <a href="./data/sample-cam-lo.geojson" download class="btn btn-outline btn-sm">Tải sample-cam-lo.geojson</a>
+              <a href="mailto:sdptrklqt@gmail.com" class="btn btn-outline btn-sm">Liên hệ: sdptrklqt@gmail.com</a>
+            </div>
+          </div>
+          <div class="qr-box">
+            <div style="font-weight:700;font-size:0.86rem;">Mã QR Truy cập Cổng CheckCCRQT</div>
+            <div id="qrcode"></div>
+            <div class="qr-input-row">
+              <input id="qrUrlInput" type="url" aria-label="URL tạo mã QR" />
+              <button id="btnGenQr" type="button" class="btn btn-outline btn-sm">Tạo lại</button>
+            </div>
+            <button id="btnDownloadQr" type="button" class="btn btn-emerald btn-sm">Tải ảnh QR (.png)</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container" style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+      <div>© 2026 <strong>Phòng Sử dụng và Phát triển rừng — Chi cục Kiểm lâm tỉnh Quảng Trị</strong> (Sở Nông nghiệp và Môi trường tỉnh Quảng Trị).</div>
+      <div class="mono">CheckCCRQT v0.4.0 · GPL-3.0 · EPSG:4326 / VN-2000 · sdptrklqt@gmail.com</div>
+    </div>
+  </footer>
+
+  <!-- Phân khu 4: Trợ lý AI EUDR Drawer -->
+  <button id="aiFab" class="ai-fab" type="button" aria-label="Mở Trợ lý AI EUDR">
+    <svg class="svg-ico" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+    Hỏi AI EUDR
+  </button>
+
+  <aside id="aiDrawer" class="ai-drawer" aria-label="Trợ lý AI EUDR CheckCCRQT">
+    <div class="ai-header">
+      <div>
+        <div class="ai-header-title">Trợ lý AI EUDR • CheckCCRQT v0.4.0</div>
+        <div id="aiModeBadge" class="ai-header-sub">Local Knowledge Engine (0 giây · Offline Ready)</div>
+      </div>
+      <div style="display:flex;gap:6px;">
+        <button id="aiSettingsBtn" class="ai-icon-btn" type="button" title="Cấu hình Endpoint Proxy quản trị">Proxy</button>
+        <button id="aiCloseBtn" class="ai-icon-btn" type="button" title="Đóng">✕</button>
+      </div>
+    </div>
+
+    <div id="aiSettingsPanel" class="ai-settings">
+      <div style="font-weight:700;color:var(--emerald);">Cấu hình Endpoint Proxy Quản trị (Tùy chọn — Không lưu API Key trên trình duyệt công khai)</div>
+      <input id="aiProxyInput" type="url" placeholder="https://your-backend-proxy.example/api/eudr-chat (để trống = Local Engine)" autocomplete="off" />
+      <div style="display:flex;gap:6px;justify-content:flex-end;">
+        <button id="aiClearProxyBtn" class="btn btn-outline btn-sm" type="button">Xóa</button>
+        <button id="aiSaveProxyBtn" class="btn btn-primary btn-sm" type="button">Lưu Proxy</button>
+      </div>
+    </div>
+
+    <div id="aiQuickChips" class="ai-quick-chips"></div>
+    <div id="aiMessages" class="ai-messages"></div>
+
+    <form id="aiForm" class="ai-input-row">
+      <input id="aiInput" type="text" placeholder="Hỏi về Điều 9 (4 ha), Điều 2(4), Radar RVI, VN-2000..." autocomplete="off" />
+      <button type="submit" class="btn btn-primary btn-sm">Gửi</button>
+    </form>
+  </aside>
+</body>
+</html>

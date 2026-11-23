@@ -1,0 +1,523 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="2400" height="3420" viewBox="0 0 2400 3420" id="royalDaoSvg">
+  <defs>
+    <linearGradient id="crimsonGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6b0909"/>
+      <stop offset="50%" stop-color="#8b0000"/>
+      <stop offset="100%" stop-color="#5c0606"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#c59b27"/>
+      <stop offset="50%" stop-color="#ffd700"/>
+      <stop offset="100%" stop-color="#b8860b"/>
+    </linearGradient>
+    <linearGradient id="navyGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#082e6b"/>
+      <stop offset="50%" stop-color="#0d47a1"/>
+      <stop offset="100%" stop-color="#082e6b"/>
+    </linearGradient>
+    <filter id="cardShadow" x="-2%" y="-2%" width="104%" height="104%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#3e2723" flood-opacity="0.14"/>
+    </filter>
+  </defs>
+  <rect x="0" y="0" width="2400" height="3420" fill="#f4efe6"/>
+  <rect x="16" y="14" width="2368" height="3392" rx="20" fill="none" stroke="#b8860b" stroke-width="3" stroke-dasharray="12,4"/>
+  <rect x="24" y="22" width="2352" height="3376" rx="16" fill="none" stroke="#8b0000" stroke-width="1.5"/>
+  <g class="interactive-node" data-node-id="header-overview">
+    <rect x="40" y="32" width="2320" height="150" rx="16" fill="url(#crimsonGrad)" stroke="#d4af37" stroke-width="4" filter="url(#cardShadow)"/>
+    <circle cx="135" cy="107" r="54" fill="#5c0606" stroke="#ffd700" stroke-width="2.5"/>
+    <circle cx="135" cy="107" r="44" fill="none" stroke="#ffd700" stroke-width="1" stroke-dasharray="4,3"/>
+    <text x="135" y="122" font-family="Noto Serif, Playfair Display, DejaVu Sans, serif" font-size="44" font-weight="bold" fill="#ffd700" text-anchor="middle">陶</text>
+    <text x="135" y="152" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" font-weight="bold" fill="#ffe4b5" text-anchor="middle">ĐÀO TỘC ẤN</text>
+    <circle cx="2265" cy="107" r="54" fill="#5c0606" stroke="#ffd700" stroke-width="2.5"/>
+    <circle cx="2265" cy="107" r="44" fill="none" stroke="#ffd700" stroke-width="1" stroke-dasharray="4,3"/>
+    <text x="2265" y="122" font-family="Noto Serif, Playfair Display, DejaVu Sans, serif" font-size="44" font-weight="bold" fill="#ffb7c5" text-anchor="middle">桃</text>
+    <text x="2265" y="152" font-family="DejaVu Sans, Arial, sans-serif" font-size="10" font-weight="bold" fill="#ffe4b5" text-anchor="middle">HOA ĐÀO HUY HIỆU</text>
+    <text x="1200" y="80" font-family="Noto Serif, Playfair Display, DejaVu Sans, serif" font-size="35" font-weight="bold" fill="#ffd700" text-anchor="middle">ĐẠI PHẢ ĐỒ TÔNG TỘC ĐÀO &amp; NỀN VĂN HIẾN VIỆT NAM</text>
+    <text x="1200" y="118" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" font-weight="bold" fill="#ffffff" text-anchor="middle">GỐC KHỞI NGUYÊN (THẬP BÁT DIỆP) — NHÀ NƯỚC VĂN LANG (2.622 NĂM • 189 DUỆ VƯƠNG) — ĐẾN THỜI TRƯNG NỮ VƯƠNG (65 THÀNH)</text>
+    <text x="1200" y="148" font-family="DejaVu Sans, Arial, sans-serif" font-size="16" font-weight="normal" fill="#ffe4b5" text-anchor="middle">Biểu tượng: Hoa Đào (桃)  |  Ký hiệu Tông tộc: Chữ Đào (陶)  |  Sử liệu Ngọc Phả, Thần Tích Quốc Gia, Minh Văn Kim Sử &amp; Hệ Thống Văn Hiến Đào Tộc (donghodao.vn)</text>
+    <text x="1200" y="170" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="bold" fill="#ffd700" text-anchor="middle">★ Bản Chuẩn Hóa Học Thuật Quốc Bảo: Tích hợp Dịch Học Hà Đồ - Lạc Thư • Hệ Quy Chiếu La Bàn Mặt Trời Cổ Xoay 90° • Thần Phả 36 Làng Đào Xá &amp; Cổ Loa ★</text>
+  </g>
+  <rect x="40" y="198" width="2320" height="270" rx="12" fill="#fffaf0" stroke="#b8860b" stroke-width="2.5" filter="url(#cardShadow)"/>
+  <text x="1200" y="228" font-family="Noto Serif, DejaVu Sans, serif" font-size="20" font-weight="bold" fill="#8b0000" text-anchor="middle">NỀN VĂN HIẾN ĐÀO TỘC ĐẾN QUỐC HIỆU &amp; THẦN HIỆU THÀNH HOÀNG HẬU KỲ</text>
+  <g class="interactive-node" data-node-id="pillar-1">
+    <rect x="65" y="244" width="735" height="206" rx="8" fill="#ffffff" stroke="#d2b48c" stroke-width="1.5"/>
+    <text x="432" y="269" font-family="DejaVu Sans, Arial, sans-serif" font-size="16" font-weight="bold" fill="#8b0000" text-anchor="middle">1. BA TẦNG KIẾN TẠO NỀN VĂN HIẾN</text>
+    <text x="82" y="295" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="normal" fill="#1a1a1a">• Tầng Khởi Lập (Đời I): Đệ Nhất Thủy Tổ Đào Ngột (vị Cao Sơn thứ 1 - Đào Tướng Quân),</text>
+    <text x="92" y="315" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="normal" fill="#1a1a1a">sinh từ Mẫu Âu Cơ tính thị tại Hạ Hòa, xuống Thanh Ba (Chí Tiên - Phú Thọ) lập tục sơ khai.</text>
+    <text x="82" y="341" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="bold" fill="#1a1a1a">• Tầng Định Hình Lễ Chế (Đời III): Đệ Tam Đào Trường (Trung Hoa Tể Quốc 中華宰國 — dùng chữ &apos;Hoa&apos; (華)</text>
+    <text x="92" y="361" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="bold" fill="#1a1a1a">kiêng húy Hoa Đào (桃)) &amp; lập Trang Tông Chất bên sông Châu Giang, phụng tự Tổ (Sùng Tự).</text>
+    <text x="82" y="387" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="normal" fill="#1a1a1a">• Tầng Hun Đúc &amp; Bảo Tồn: Kiến tạo Minh văn sơ kỳ bởi Đức Đệ Thập khởi nguyên</text>
+    <text x="92" y="407" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="normal" fill="#1a1a1a">Kinh Dịch &amp; hậu duệ khắc dấu Tổ Tông vào Kim sử (Trống đồng Đào Xá, Ngọc Lũ; Thạp đồng Đào Thịnh).</text>
+    <text x="82" y="432" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="bold" fill="#8b0000">→ Xác lập trục Văn hiến liên tục: Tục lệ sơ khai → Lễ chế Tông Miếu → Minh văn &amp; Kim sử Đông Sơn.</text>
+  </g>
+  <g class="interactive-node" data-node-id="pillar-2">
+    <rect x="820" y="244" width="760" height="206" rx="8" fill="#ffffff" stroke="#d2b48c" stroke-width="1.5"/>
+    <text x="1200" y="269" font-family="DejaVu Sans, Arial, sans-serif" font-size="16" font-weight="bold" fill="#8b0000" text-anchor="middle">2. QUỐC HIỆU, THẦN HIỆU THÀNH HOÀNG &amp; THẬP BÁT DIỆP</text>
+    <text x="830" y="295" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="normal" fill="#1a1a1a">• Thập Bát Diệp (十八葉): 18 vị Thủy Tổ khởi nguyên (1 vị Đời I + 2 vị Đời II + 15 vị Đời III).</text>
+    <text x="830" y="318" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="normal" fill="#1a1a1a">• Tam Vị Cao Sơn (hạ lưu hướng về tổ) / Tam Vị Tản Viên (miền núi nhìn xuống): Đào Ngột, Đào Bột, Đào Nghiêu.</text>
+    <text x="838" y="344" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="bold" fill="#1a1a1a">- Quý Minh (ngài Đào Nghiêu): Quý chỉ con út, Minh - biểu tượng sáng suốt như ánh mặt trời và ánh trăng đêm.</text>
+    <text x="838" y="368" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="bold" fill="#1a1a1a">- Kinh Dương Vương (Thái phó Đào Công Bột)  |  Tôn hiệu Quý Minh Đại Vương: Ngài Đào Nghiêu.</text>
+    <text x="838" y="392" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="bold" fill="#1a1a1a">- Lạc Long Quân (suy tôn năm 1032 làm quốc hiệu chung 10 vị Chi Long) &amp; Thần hiệu Thành hoàng Linh Lang.</text>
+    <text x="830" y="420" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="normal" fill="#1a1a1a">• Sùng tự: CHI LONG đồng TÂM (Tông) phụng Tổ (5 người con ngài Đào Bột + 5 người con đầu ngài Đào Nghiêu).</text>
+    <text x="830" y="439" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="bold" fill="#0d47a1">→ Kết tinh thành hệ thống Thần tích Thành hoàng bảo hộ khắp châu thổ Bắc Bộ &amp; 36 làng Đào Xá.</text>
+  </g>
+  <g class="interactive-node" data-node-id="pillar-3">
+    <rect x="1600" y="244" width="735" height="206" rx="8" fill="#ffffff" stroke="#d2b48c" stroke-width="1.5"/>
+    <text x="1967" y="269" font-family="DejaVu Sans, Arial, sans-serif" font-size="16" font-weight="bold" fill="#8b0000" text-anchor="middle">3. HƯỚNG THỜI CỔ ĐẠI &amp; LẤY MẶT TRỜI LÀM THAM CHIẾU</text>
+    <text x="1618" y="295" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="normal" fill="#1a1a1a">• Định hướng theo Mặt Trời (thời thượng cổ): Chưa dùng la bàn từ trường,</text>
+    <text x="1628" y="315" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="normal" fill="#1a1a1a">nên Phương cổ xoay 90° thuận chiều kim đồng hồ = Hướng la bàn ngày nay:</text>
+    <text x="1628" y="339" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="bold" fill="#004d40">  - Phương Đông (cổ) → Hướng Nam (nay)   |   Phương Nam (cổ) → Hướng Tây (nay)</text>
+    <text x="1628" y="361" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="bold" fill="#004d40">  - Phương Tây (cổ) → Hướng Bắc (nay)    |   Phương Bắc (cổ) → Hướng Đông (nay)</text>
+    <text x="1618" y="388" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="normal" fill="#1a1a1a">• Hệ thống di tích thờ Đường Nghiêu (Đào Nghiêu): Lan tỏa từ trung du đất Tổ xuống dọc theo các triền sông</text>
+    <text x="1628" y="408" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="normal" fill="#1a1a1a">lớn tiến thẳng ra biển Đông, lên bắc tới Sơn Tây, Hà Nam, Giang Tô, xuống nam tới di tích tại Hà Tĩnh.</text>
+    <text x="1618" y="434" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="bold" fill="#1b5e20">→ Chìa khóa giải mã chính xác vị trí địa lý của 7 Hành Cung Văn Lang ứng với 8 quẻ Lạc Thư.</text>
+  </g>
+  <rect x="40" y="485" width="2320" height="1370" rx="14" fill="#fdfbf7" stroke="#8b0000" stroke-width="3" filter="url(#cardShadow)"/>
+  <rect x="40" y="485" width="2320" height="44" rx="10" fill="url(#crimsonGrad)" stroke="#8b0000" stroke-width="1"/>
+  <text x="1200" y="514" font-family="Noto Serif, DejaVu Sans, serif" font-size="20" font-weight="bold" fill="#ffd700" text-anchor="middle">PHẦN I: CỘI NGUỒN VĂN HIẾN (THẬP BÁT DIỆP) — HAI GIAI ĐOẠN TRUNG CUNG &amp; BƯỚC NGOẶT TRANG TÔNG CHẤT</text>
+  <g class="interactive-node" data-node-id="mau-au-co">
+    <rect x="820" y="540" width="760" height="62" rx="10" fill="#f3e5f5" stroke="#6a1b9a" stroke-width="2"/>
+    <text x="1200" y="565" font-family="DejaVu Sans, Arial, sans-serif" font-size="16" font-weight="bold" fill="#4a148c" text-anchor="middle">THỜI ĐỒ ĐÁ — CHẾ ĐỘ MẪU HỆ: MẪU ÂU CƠ TÍNH THỊ</text>
+    <text x="1200" y="588" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="normal" fill="#333333" text-anchor="middle">Khởi nguyên tính thị mẫu hệ tại vùng đất Tổ Hạ Hòa, sinh ra Đệ Nhất Thủy Tổ Đào Ngột</text>
+  </g>
+  <line x1="1200" y1="602" x2="1200" y2="653" stroke="#6a1b9a" stroke-width="3.5"/>
+  <polygon points="1200,665 1192,651 1208,651" fill="#6a1b9a"/>
+  <text x="1216" y="638.5" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="bold" fill="#6a1b9a">Chấm dứt mẫu hệ • Xác lập phụ hệ</text>
+  <g class="interactive-node" data-node-id="dao-ngot">
+    <rect x="650" y="665" width="1100" height="105" rx="12" fill="#fff3cd" stroke="#b22222" stroke-width="3.5" filter="url(#cardShadow)"/>
+    <text x="1200" y="693" font-family="Noto Serif, DejaVu Sans, serif" font-size="18" font-weight="bold" fill="#8b0000" text-anchor="middle">ĐỜI THỨ I: ĐỆ NHẤT THỦY TỔ ĐÀO NGỘT (THÁI CỰC NHẤT NGUYÊN • VỊ CAO SƠN THỨ NHẤT)</text>
+    <text x="1200" y="719" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="bold" fill="#1a1a1a" text-anchor="middle">Thần hiệu: Đào Tướng Quân Cao Sơn Đại Vương • Sinh từ Hạ Hòa, xuôi xuống Thanh Ba (Chí Tiên – Phú Thọ) dựng nghiệp</text>
+    <text x="1200" y="745" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="normal" fill="#444444" text-anchor="middle">Đặt ra tục lệ sơ khai đầu tiên • Thái Cực sinh Lưỡng Nghi: Hào Dương (ngài Đào Bột) &amp; Hào Âm (ngài Đào Nghiêu)</text>
+  </g>
+  <line x1="1200" y1="770" x2="1200" y2="808" stroke="#b22222" stroke-width="3.5"/>
+  <line x1="630" y1="808" x2="1770" y2="808" stroke="#b22222" stroke-width="3.5"/>
+  <line x1="630" y1="808" x2="630" y2="843" stroke="#b22222" stroke-width="3.5"/>
+  <polygon points="630,855 622,841 638,841" fill="#b22222"/>
+  <text x="616" y="836.5" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="bold" fill="#b22222" text-anchor="end">Hào Dương (Con trưởng)</text>
+  <line x1="1770" y1="808" x2="1770" y2="843" stroke="#b22222" stroke-width="3.5"/>
+  <polygon points="1770,855 1762,841 1778,841" fill="#b22222"/>
+  <text x="1784" y="836.5" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="bold" fill="#b22222" text-anchor="start">Hào Âm (Con thứ)</text>
+  <g class="interactive-node" data-node-id="dao-bot">
+    <rect x="140" y="855" width="980" height="105" rx="12" fill="#e8f5e9" stroke="#2e7d32" stroke-width="3" filter="url(#cardShadow)"/>
+    <text x="630" y="883" font-family="Noto Serif, DejaVu Sans, serif" font-size="17" font-weight="bold" fill="#1b5e20" text-anchor="middle">ĐỜI THỨ II (CON LỚN): NGÀI ĐÀO CÔNG BỘT — QUỐC HIỆU KINH DƯƠNG VƯƠNG</text>
+    <text x="630" y="909" font-family="DejaVu Sans, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#1a1a1a" text-anchor="middle">Xuôi miền duyên hải hạ lưu An Lão (Hải Phòng) dựng nghiệp • Lưu dấu thần tích Thái Phó tại Bình Đà (Hà Nội)</text>
+    <text x="630" y="935" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="bold" fill="#2e7d32" text-anchor="middle">Vị Cao Sơn thứ 2 (Hào Dương) • Sinh 5 người con (Ngũ Long) phân phong Ngũ Phương – Tứ Hướng</text>
+  </g>
+  <g class="interactive-node" data-node-id="dao-nghieu">
+    <rect x="1280" y="855" width="980" height="105" rx="12" fill="#e3f2fd" stroke="#1565c0" stroke-width="3" filter="url(#cardShadow)"/>
+    <text x="1770" y="883" font-family="Noto Serif, DejaVu Sans, serif" font-size="17" font-weight="bold" fill="#0d47a1" text-anchor="middle">ĐỜI THỨ II (CON THỨ): NGÀI ĐÀO NGHIÊU (ĐƯỜNG NGHIÊU) — QUÝ MINH ĐẠI VƯƠNG</text>
+    <text x="1770" y="909" font-family="DejaVu Sans, Arial, sans-serif" font-size="14.5" font-weight="normal" fill="#1a1a1a" text-anchor="middle">Xuôi vùng ngã ba sông Phượng Lâu (Việt Trì), Sơn Vi - Phùng Nguyên • Hệ thống di tích thờ tiến thẳng ra biển Đông</text>
+    <text x="1770" y="935" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="bold" fill="#1565c0" text-anchor="middle">Vị Cao Sơn thứ 3 (Hào Âm) • Sinh 10 người con (Đệ Lục → Đệ Thập Ngũ): 5 con đầu hợp Chi Long, 5 con sau thiên di Bắc</text>
+  </g>
+  <line x1="630" y1="960" x2="630" y2="1028" stroke="#2e7d32" stroke-width="3.5"/>
+  <polygon points="630,1040 622,1026 638,1026" fill="#2e7d32"/>
+  <text x="644" y="1005" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="bold" fill="#2e7d32">Sinh 5 vị Ngũ Long</text>
+  <line x1="1570" y1="960" x2="1570" y2="1028" stroke="#1565c0" stroke-width="3.5"/>
+  <polygon points="1570,1040 1562,1026 1578,1026" fill="#1565c0"/>
+  <text x="1556" y="1005" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="bold" fill="#1565c0" text-anchor="end">5 con đầu (Ngũ Công)</text>
+  <line x1="2075" y1="960" x2="2075" y2="1028" stroke="#1565c0" stroke-width="3.5"/>
+  <polygon points="2075,1040 2067,1026 2083,1026" fill="#1565c0"/>
+  <text x="2089" y="1005" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="bold" fill="#1565c0">5 con sau</text>
+  <rect x="70" y="1040" width="1785" height="220" rx="12" fill="#fff8e1" stroke="#d4af37" stroke-width="3" filter="url(#cardShadow)"/>
+  <text x="962" y="1067" font-family="Noto Serif, DejaVu Sans, serif" font-size="16" font-weight="bold" fill="#8b0000" text-anchor="middle">THẬP VỊ CHI LONG (10 VỊ HỢP NHẤT THEO HÀ ĐỒ — QUỐC HIỆU LẠC LONG QUÂN 1032 • THẦN HIỆU THÀNH HOÀNG LINH LANG)</text>
+  <g class="interactive-node" data-node-id="chi-long-1">
+    <rect x="85" y="1082" width="168" height="165" rx="8" fill="#e8f5e9" stroke="#2e7d32" stroke-width="2"/>
+    <text x="169" y="1103" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="bold" fill="#2e7d32" text-anchor="middle">Đệ Nhất</text>
+    <text x="169" y="1123" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="bold" fill="#1a1a1a" text-anchor="middle">Đào Cư</text>
+    <text x="169" y="1141" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="bold" fill="#333333" text-anchor="middle">Đông Long Thái Sư</text>
+    <line x1="95" y1="1152" x2="243" y2="1152" stroke="#2e7d32" stroke-width="0.8" stroke-opacity="0.5"/>
+    <text x="169" y="1172" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="normal" fill="#1a1a1a" text-anchor="middle">• Trấn phương Đông (cổ)</text>
+    <text x="169" y="1197" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="normal" fill="#1a1a1a" text-anchor="middle">• Mở nguồn Chặng 6</text>
+    <text x="169" y="1222" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="bold" fill="#2e7d32" text-anchor="middle">★ Hành cung Tứ Kỳ</text>
+  </g>
+  <g class="interactive-node" data-node-id="chi-long-2">
+    <rect x="261" y="1082" width="168" height="165" rx="8" fill="#e8f5e9" stroke="#2e7d32" stroke-width="2"/>
+    <text x="345" y="1103" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="bold" fill="#2e7d32" text-anchor="middle">Đệ Nhị</text>
+    <text x="345" y="1123" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="bold" fill="#1a1a1a" text-anchor="middle">Đào Hồng</text>
+    <text x="345" y="1141" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="bold" fill="#333333" text-anchor="middle">Tây Long Thái Phó</text>
+    <line x1="271" y1="1152" x2="419" y2="1152" stroke="#2e7d32" stroke-width="0.8" stroke-opacity="0.5"/>
+    <text x="345" y="1172" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="normal" fill="#1a1a1a" text-anchor="middle">• Trấn phương Tây (cổ)</text>
+    <text x="345" y="1197" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="normal" fill="#1a1a1a" text-anchor="middle">• Mở nguồn Chặng 7</text>
+    <text x="345" y="1222" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="bold" fill="#2e7d32" text-anchor="middle">★ Hành cung Phú Lương</text>
+  </g>
+  <g class="interactive-node" data-node-id="chi-long-3">
+    <rect x="437" y="1082" width="168" height="165" rx="8" fill="#ffebee" stroke="#b22222" stroke-width="2"/>
+    <text x="521" y="1103" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="bold" fill="#b22222" text-anchor="middle">Đệ Tam</text>
+    <text x="521" y="1123" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="bold" fill="#1a1a1a" text-anchor="middle">Đào Trường</text>
+    <text x="521" y="1141" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="bold" fill="#333333" text-anchor="middle">Nam Long Trưởng Lệnh</text>
+    <line x1="447" y1="1152" x2="595" y2="1152" stroke="#b22222" stroke-width="0.8" stroke-opacity="0.5"/>
+    <text x="521" y="1172" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="normal" fill="#1a1a1a" text-anchor="middle">• Hiệu: Trung Hoa Tể Quốc</text>
+    <text x="521" y="1197" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="normal" fill="#1a1a1a" text-anchor="middle">• Lập Trang Tông Chất</text>
+    <text x="521" y="1222" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="bold" fill="#b22222" text-anchor="middle">★ Mở đầu Chặng 1 Phủ Lý</text>
+  </g>
+  <g class="interactive-node" data-node-id="chi-long-4">
+    <rect x="613" y="1082" width="168" height="165" rx="8" fill="#e8f5e9" stroke="#2e7d32" stroke-width="2"/>
+    <text x="697" y="1103" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="bold" fill="#2e7d32" text-anchor="middle">Đệ Tứ</text>
+    <text x="697" y="1123" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="bold" fill="#1a1a1a" text-anchor="middle">Đào Thạch Khanh</text>
+    <text x="697" y="1141" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="bold" fill="#333333" text-anchor="middle">Bắc Long Thái Bảo</text>
+    <line x1="623" y1="1152" x2="771" y2="1152" stroke="#2e7d32" stroke-width="0.8" stroke-opacity="0.5"/>
+    <text x="697" y="1172" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="normal" fill="#1a1a1a" text-anchor="middle">• Trấn phương Bắc (cổ)</text>
+    <text x="697" y="1197" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="normal" fill="#1a1a1a" text-anchor="middle">• Mở nguồn Chặng 5</text>
+    <text x="697" y="1222" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="bold" fill="#2e7d32" text-anchor="middle">★ Hành cung Thuận Thành</text>
+  </g>
+  <g class="interactive-node" data-node-id="chi-long-5">
+    <rect x="789" y="1082" width="168" height="165" rx="8" fill="#fff3cd" stroke="#b8860b" stroke-width="2"/>
+    <text x="873" y="1103" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="bold" fill="#b8860b" text-anchor="middle">Đệ Ngũ</text>
+    <text x="873" y="1123" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="bold" fill="#1a1a1a" text-anchor="middle">Đào Quý Lân</text>
+    <text x="873" y="1141" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="bold" fill="#333333" text-anchor="middle">Thiếu Long (Đài Rồng)</text>
+    <line x1="799" y1="1152" x2="947" y2="1152" stroke="#b8860b" stroke-width="0.8" stroke-opacity="0.5"/>
+    <text x="873" y="1172" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="normal" fill="#1a1a1a" text-anchor="middle">• Nắm Trung Cung An Lão</text>
+    <text x="873" y="1197" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="normal" fill="#1a1a1a" text-anchor="middle">• Mở nguồn Chặng 2</text>
+    <text x="873" y="1222" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="bold" fill="#b8860b" text-anchor="middle">★ Hành cung Thủy Đường</text>
+  </g>
+  <g class="interactive-node" data-node-id="chi-long-6">
+    <rect x="965" y="1082" width="168" height="165" rx="8" fill="#e3f2fd" stroke="#1565c0" stroke-width="2"/>
+    <text x="1049" y="1103" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="bold" fill="#1565c0" text-anchor="middle">Đệ Lục</text>
+    <text x="1049" y="1123" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="bold" fill="#1a1a1a" text-anchor="middle">Đệ Nhất Công</text>
+    <text x="1049" y="1141" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="bold" fill="#333333" text-anchor="middle">Chủ tể Hải Dương quận</text>
+    <line x1="975" y1="1152" x2="1123" y2="1152" stroke="#1565c0" stroke-width="0.8" stroke-opacity="0.5"/>
+    <text x="1049" y="1172" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="normal" fill="#1a1a1a" text-anchor="middle">• Con đầu Ngài Đào Nghiêu</text>
+    <text x="1049" y="1197" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="normal" fill="#1a1a1a" text-anchor="middle">• Từ Tràng An tiến Nam</text>
+    <text x="1049" y="1222" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="bold" fill="#1565c0" text-anchor="middle">★ Khai canh tới Hồ Tôn</text>
+  </g>
+  <g class="interactive-node" data-node-id="chi-long-7">
+    <rect x="1141" y="1082" width="168" height="165" rx="8" fill="#e3f2fd" stroke="#1565c0" stroke-width="2"/>
+    <text x="1225" y="1103" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="bold" fill="#1565c0" text-anchor="middle">Đệ Thất</text>
+    <text x="1225" y="1123" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="bold" fill="#1a1a1a" text-anchor="middle">Đệ Nhị Công</text>
+    <text x="1225" y="1141" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="bold" fill="#333333" text-anchor="middle">Chủ tể Sơn Tây đạo</text>
+    <line x1="1151" y1="1152" x2="1299" y2="1152" stroke="#1565c0" stroke-width="0.8" stroke-opacity="0.5"/>
+    <text x="1225" y="1172" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="normal" fill="#1a1a1a" text-anchor="middle">• Khai mở vùng xứ Đoài</text>
+    <text x="1225" y="1197" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="normal" fill="#1a1a1a" text-anchor="middle">• Mở nguồn Chặng 4</text>
+    <text x="1225" y="1222" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="bold" fill="#1565c0" text-anchor="middle">★ Hành cung Hoài Đức</text>
+  </g>
+  <g class="interactive-node" data-node-id="chi-long-8">
+    <rect x="1317" y="1082" width="168" height="165" rx="8" fill="#e3f2fd" stroke="#1565c0" stroke-width="2"/>
+    <text x="1401" y="1103" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="bold" fill="#1565c0" text-anchor="middle">Đệ Bát</text>
+    <text x="1401" y="1123" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="bold" fill="#1a1a1a" text-anchor="middle">Đệ Tam Công</text>
+    <text x="1401" y="1141" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="bold" fill="#333333" text-anchor="middle">Thành Tông Chất (3 sông)</text>
+    <line x1="1327" y1="1152" x2="1475" y2="1152" stroke="#1565c0" stroke-width="0.8" stroke-opacity="0.5"/>
+    <text x="1401" y="1172" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="normal" fill="#1a1a1a" text-anchor="middle">• Lưu vực Nhuệ - Tô Lịch</text>
+    <text x="1401" y="1197" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="normal" fill="#1a1a1a" text-anchor="middle">• Mở nguồn Chặng 3</text>
+    <text x="1401" y="1222" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="bold" fill="#1565c0" text-anchor="middle">★ Hành cung Thanh Liệt</text>
+  </g>
+  <g class="interactive-node" data-node-id="chi-long-9">
+    <rect x="1493" y="1082" width="168" height="165" rx="8" fill="#e3f2fd" stroke="#1565c0" stroke-width="2"/>
+    <text x="1577" y="1103" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="bold" fill="#1565c0" text-anchor="middle">Đệ Cửu</text>
+    <text x="1577" y="1123" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="bold" fill="#1a1a1a" text-anchor="middle">Đệ Tứ Quý Công</text>
+    <text x="1577" y="1141" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="bold" fill="#333333" text-anchor="middle">Thành cung Kinh Bắc</text>
+    <line x1="1503" y1="1152" x2="1651" y2="1152" stroke="#1565c0" stroke-width="0.8" stroke-opacity="0.5"/>
+    <text x="1577" y="1172" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="normal" fill="#1a1a1a" text-anchor="middle">• Trấn giữ vùng Kinh Bắc</text>
+    <text x="1577" y="1197" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="normal" fill="#1a1a1a" text-anchor="middle">• Cùng 5 vị út thiên di</text>
+    <text x="1577" y="1222" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="bold" fill="#1565c0" text-anchor="middle">★ Mở cõi ven biển Bắc</text>
+  </g>
+  <g class="interactive-node" data-node-id="chi-long-10">
+    <rect x="1669" y="1082" width="168" height="165" rx="8" fill="#f3e5f5" stroke="#6a1b9a" stroke-width="2"/>
+    <text x="1753" y="1103" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="bold" fill="#6a1b9a" text-anchor="middle">Đệ Thập</text>
+    <text x="1753" y="1123" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="bold" fill="#1a1a1a" text-anchor="middle">Đệ Ngũ Công</text>
+    <text x="1753" y="1141" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="bold" fill="#333333" text-anchor="middle">Thành Nam Trực • Cải Chi</text>
+    <line x1="1679" y1="1152" x2="1827" y2="1152" stroke="#6a1b9a" stroke-width="0.8" stroke-opacity="0.5"/>
+    <text x="1753" y="1172" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="normal" fill="#1a1a1a" text-anchor="middle">• Ẩn mình Trung Cung Tây Hồ</text>
+    <text x="1753" y="1197" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="normal" fill="#1a1a1a" text-anchor="middle">• Ra Lạc Thư &amp; Bát Cổ</text>
+    <text x="1753" y="1222" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="bold" fill="#6a1b9a" text-anchor="middle">★ Khởi nguyên Kinh Dịch</text>
+  </g>
+  <g class="interactive-node" data-node-id="nam-vi-sau">
+    <rect x="1880" y="1040" width="450" height="220" rx="12" fill="#eceff1" stroke="#455a64" stroke-width="2.5" filter="url(#cardShadow)"/>
+    <text x="2105" y="1068" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="bold" fill="#263238" text-anchor="middle">5 VỊ SAU NHÁNH ĐÀO NGHIÊU</text>
+    <text x="2105" y="1094" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="bold" fill="#1a1a1a" text-anchor="middle">Đệ Thập Nhất • Đệ Thập Nhị • Đệ Thập Tam</text>
+    <text x="2105" y="1114" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="bold" fill="#1a1a1a" text-anchor="middle">Đệ Thập Tứ • Đệ Thập Ngũ (Đều có hậu duệ)</text>
+    <text x="2105" y="1142" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="normal" fill="#0d47a1" text-anchor="middle">• Cùng hậu duệ Đức Đệ Cửu thiên di khai canh</text>
+    <text x="2105" y="1162" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="normal" fill="#0d47a1" text-anchor="middle">lên phương Bắc theo đường ven biển tới</text>
+    <text x="2105" y="1182" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="bold" fill="#0d47a1" text-anchor="middle">Sơn Tây, Hà Nam, Giang Tô (ven sông Giang Tô).</text>
+    <text x="2105" y="1214" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="normal" fill="#1b5e20" text-anchor="middle">• Riêng Đức Đệ Lục: Từ Tràng An hậu duệ tịnh tiến</text>
+    <text x="2105" y="1234" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="bold" fill="#1b5e20" text-anchor="middle">khai canh phương Nam tới Hồ Tôn (Biển Hồ).</text>
+  </g>
+  <line x1="520" y1="1260" x2="520" y2="1333" stroke="#2e7d32" stroke-width="3.5"/>
+  <polygon points="520,1345 512,1331 528,1331" fill="#2e7d32"/>
+  <text x="534" y="1307.5" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="bold" fill="#2e7d32">Phân phong Ngũ Phương</text>
+  <line x1="1550" y1="1260" x2="1550" y2="1333" stroke="#6a1b9a" stroke-width="3.5"/>
+  <polygon points="1550,1345 1542,1331 1558,1331" fill="#6a1b9a"/>
+  <text x="1564" y="1307.5" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="bold" fill="#6a1b9a">Hợp nhất Hà Đồ → Lạc Thư</text>
+  <g class="interactive-node" data-node-id="trung-cung-1">
+    <rect x="70" y="1345" width="920" height="290" rx="12" fill="#e8f5e9" stroke="#2e7d32" stroke-width="3" filter="url(#cardShadow)"/>
+    <text x="530" y="1375" font-family="DejaVu Sans, Arial, sans-serif" font-size="16" font-weight="bold" fill="#1b5e20" text-anchor="middle">TRUNG CUNG GIAI ĐOẠN 1 TẠI AN LÃO (NGŨ PHƯƠNG – TỨ HƯỚNG)</text>
+    <text x="90" y="1405" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="normal" fill="#1a1a1a">• Đặt tại vùng mở cõi hạ lưu An Lão (Hải Phòng) của ngài Đào Công Bột (Kinh Dương Vương).</text>
+    <text x="90" y="1432" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="bold" fill="#8b0000">• Thiếu Long Đệ Ngũ Đào Quý Lân nắm Trung Cung, giữ chức vụ gắn liền với</text>
+    <text x="102" y="1452" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="bold" fill="#8b0000">Đài Rồng ở bên cạnh giúp việc điều phối cho cha Đào Bột.</text>
+    <text x="90" y="1480" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="normal" fill="#1a1a1a">• Bốn anh lớn trấn giữ bốn phương xung quanh (Lưỡng nghi sinh Tứ tượng):</text>
+    <text x="102" y="1504" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="normal" fill="#1a1a1a">- Đông Long Thái Sư (Đệ Nhất Đào Cư)   |   Tây Long Thái Phó (Đệ Nhị Đào Hồng)</text>
+    <text x="102" y="1526" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="normal" fill="#1a1a1a">- Nam Long Trưởng Lệnh (Đệ Tam Đào Trường — cai quản thủy binh / thủy thần)</text>
+    <text x="102" y="1548" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="normal" fill="#1a1a1a">- Bắc Long Thái Bảo (Đệ Tứ Đào Thạch Khanh)</text>
+    <text x="90" y="1578" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="bold" fill="#1b5e20">• Dấu ấn giai đoạn: Định hình kỷ cương Ngũ Phương, Tứ Tượng &amp; vai trò trung tâm</text>
+    <text x="102" y="1598" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="bold" fill="#1b5e20">điều phối bên cạnh bậc khai sáng miền duyên hải.</text>
+  </g>
+  <line x1="990" y1="1490" x2="1138" y2="1490" stroke="#b22222" stroke-width="4"/>
+  <polygon points="1150,1490 1136,1482 1136,1498" fill="#b22222"/>
+  <text x="1070" y="1452" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="bold" fill="#b22222" text-anchor="middle">Ngài Đào Bột hóa</text>
+  <text x="1070" y="1476" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="bold" fill="#b22222" text-anchor="middle">Dịch chuyển</text>
+  <text x="1070" y="1515" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="bold" fill="#b22222" text-anchor="middle">lên Tây Hồ</text>
+  <g class="interactive-node" data-node-id="trung-cung-2">
+    <rect x="1150" y="1345" width="1180" height="290" rx="12" fill="#f3e5f5" stroke="#6a1b9a" stroke-width="3" filter="url(#cardShadow)"/>
+    <text x="1740" y="1375" font-family="DejaVu Sans, Arial, sans-serif" font-size="16" font-weight="bold" fill="#4a148c" text-anchor="middle">TRUNG CUNG GIAI ĐOẠN 2 TẠI TÂY HỒ (HÀ ĐỒ → CẢI CHI LONG RA LẠC THƯ &amp; BÁT CỔ)</text>
+    <text x="1170" y="1405" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="normal" fill="#1a1a1a">• Dấu ấn ra Hà Đồ (Tiên Thiên Bát Quái): Hợp nhất 5 con Đào Bột + 5 con đầu Đào Nghiêu = 10 vị Chi Long.</text>
+    <text x="1170" y="1431" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="bold" fill="#4a148c">• Dấu ấn Cải Chi Long ra Lạc Thư (Hậu Thiên Bát Quái): Ngài Đệ Thập cải Chi Long, giao 8 nhiệm vụ</text>
+    <text x="1182" y="1451" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="normal" fill="#1a1a1a">chuyên môn. Trung Cung không nhận tin mà do Đệ Thập ẩn mình trung lập chuyên hun đúc, liên lạc.</text>
+    <text x="1170" y="1478" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="bold" fill="#8b0000">• Dấu ấn Bát Cổ (古 = 十 Thập + 口 Khẩu — 10 vị Chi Long thống nhất hiệu lệnh truyền đạt đồng bộ toàn vùng - Xã Tắc (Lạc Thư)):</text>
+    <text x="1182" y="1503" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="normal" fill="#1a1a1a">1. Trạng nguyên cổ đường (狀元古堂 - Phụ trách về nề nếp, truyền thống giữ gìn gia đạo)   |   5. Thượng Tể cổ trạch (上宰古宅 - Quản lý, bảo quản, phân phối lương thực)</text>
+    <text x="1182" y="1525" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="normal" fill="#1a1a1a">2. Tiều Ẩn cổ bích (樵隱古壁 - Phụ trách tài nguyên, trú ẩn an toàn và dựng tường rào bảo vệ - Vành đai xã tắc) | 6. Bào Sơn cổ thành (泡山古城 - Phụ trách chế tác công cụ, binh khí)</text>
+    <text x="1182" y="1547" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="normal" fill="#1a1a1a">3. Dược Lĩnh cổ viên (藥嶺古園 - Truyền dạy kinh nghiệm nhận biết cây thuốc, cây ăn)   |   7. Vân Tiên cổ động (雲仙古洞 - Xem lịch tính toán thời tiết, nghi lễ và lưu giữ ký ức)</text>
+    <text x="1182" y="1569" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="normal" fill="#1a1a1a">4. Nhạn Loan cổ độ (雁鸞古渡 - Lo việc giao thông đường thủy)   |   8. Tinh Phi cổ tháp (精妃古塔 - Quản lý giống cây trồng, vật nuôi, giống vào vụ)</text>
+    <text x="1170" y="1596" font-family="DejaVu Sans, Arial, sans-serif" font-size="13.5" font-weight="bold" fill="#1b5e20">• Nguồn mạch Văn hiến: Nguyên dòng Đức Đệ Thập hun đúc đồng nhất toàn tộc, sáng tạo Minh văn, Kinh Dịch, hậu duệ bổ sung Kim sử.</text>
+    <text x="1170" y="1618" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" font-style="italic" fill="#4a148c">* Chú giải sử học: 8 thiết chế Xã Tắc cổ sơ thời Lạc Thư, về sau hậu thế vùng Chí Linh (Hải Dương) kế thừa danh xưng lưu truyền thành &quot;Chí Linh Bát Cổ&quot;.</text>
+  </g>
+  <line x1="1200" y1="1635" x2="1200" y2="1708" stroke="#b22222" stroke-width="4"/>
+  <polygon points="1200,1720 1192,1706 1208,1706" fill="#b22222"/>
+  <text x="1216" y="1682.5" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="bold" fill="#b22222">Ngài Đào Cư, Đào Hồng, Đào Quý Lân hóa → Hội tụ quyền trưởng về Đệ Tam Đào Trường</text>
+  <g class="interactive-node" data-node-id="trang-tong-chat">
+    <rect x="180" y="1720" width="2040" height="125" rx="12" fill="#ffebee" stroke="#b22222" stroke-width="3.5" filter="url(#cardShadow)"/>
+    <text x="1200" y="1748" font-family="Noto Serif, DejaVu Sans, serif" font-size="18" font-weight="bold" fill="#8b0000" text-anchor="middle">BƯỚC NGOẶT BẢN LỀ TẠI TRANG TÔNG CHẤT (BÊN BỜ SÔNG CHÂU GIANG — SƠN NAM / HÀ NAM)</text>
+    <text x="1200" y="1775" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="bold" fill="#1a1a1a" text-anchor="middle">Ngài Đệ Tam Đào Trường (Tự Thổ Lệnh • Hiệu: Trung Hoa Tể Quốc 中華宰國 — dùng chữ Hoa thay Hoa Đào để kiêng húy) &amp; Đức Đệ Thập đồng hành</text>
+    <text x="1200" y="1801" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="bold" fill="#b22222" text-anchor="middle">• Thống lĩnh tối cao 50 thủy bộ  • Hoàn thiện thiết chế Trưởng Lệnh  • Hoàn thiện Sùng Tự Tổ Tông (thờ tổ dòng nam lấy ông làm gốc)</text>
+    <text x="1200" y="1827" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="normal" fill="#333333" text-anchor="middle">Sau khi hoàn thiện toàn bộ thiết chế tại Trang Tông Chất, ngài Đệ Tam Đào Trường truyền quyền cho con trưởng mở đầu Chặng 1 Nhà nước Văn Lang.</text>
+  </g>
+  <line x1="1200" y1="1845" x2="1200" y2="1928" stroke="#b22222" stroke-width="4"/>
+  <polygon points="1200,1940 1192,1926 1208,1926" fill="#b22222"/>
+  <text x="1216" y="1898" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="bold" fill="#b22222">Truyền quyền từ cha Đệ Tam Đào Trường → Đại Tổ Chặng 1 (Duệ Vương Vị thứ 1)</text>
+  <rect x="40" y="1940" width="2320" height="780" rx="14" fill="#f8fafc" stroke="#0d47a1" stroke-width="3" filter="url(#cardShadow)"/>
+  <rect x="40" y="1940" width="2320" height="52" rx="10" fill="url(#navyGrad)" stroke="#0d47a1" stroke-width="1"/>
+  <text x="1200" y="1965" font-family="Noto Serif, DejaVu Sans, serif" font-size="19" font-weight="bold" fill="#ffd700" text-anchor="middle">PHẦN II: NHÀ NƯỚC VĂN LANG (2.622 NĂM: 2879 TCN – 258 TCN) — 7 CHẶNG LUÂN CHUYỂN QUYỀN TRƯỞNG LỆNH (189 DUỆ VƯƠNG)</text>
+  <text x="1200" y="1984" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#e3f2fd" text-anchor="middle">Quy luật Lạc Thư Cửu Cung: 7 Chặng × 27 Duệ Vương = 189 Vị (Quỹ đạo: Số 3 Chấn → Số 8 Cấn → Số 4 Tốn → Số 9 Ly → Số 7 Đoài → Số 1 Khảm → Số 2 Khôn; Trung Cung Số 5 ẩn mật &amp; Số 6 Càn khai mở)</text>
+  <g class="interactive-node" data-node-id="chang-1">
+    <rect x="70" y="2015" width="510" height="290" rx="10" fill="#e8f5e9" stroke="#2e7d32" stroke-width="2.5" filter="url(#cardShadow)"/>
+    <rect x="70" y="2015" width="510" height="38" rx="8" fill="#2e7d32" stroke="#2e7d32" stroke-width="1"/>
+    <text x="325" y="2040" font-family="DejaVu Sans, Arial, sans-serif" font-size="16" font-weight="bold" fill="#ffffff" text-anchor="middle">CHẶNG 1 (Vị 1 – 27)</text>
+    <text x="325" y="2076" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="bold" fill="#1a1a1a" text-anchor="middle">Hậu duệ Đệ Tam Đào Trường</text>
+    <text x="325" y="2099" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="bold" fill="#2e7d32" text-anchor="middle">Số 3 Lạc Thư • Quẻ Chấn (Mộc)</text>
+    <text x="325" y="2121" font-family="DejaVu Sans, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#333333" text-anchor="middle">Đông (cổ) → Hướng Nam (nay)</text>
+    <text x="325" y="2144" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="bold" fill="#8b0000" text-anchor="middle">Hành cung Phủ Lý (sông Châu Giang)</text>
+    <rect x="84" y="2159" width="482" height="62" rx="6" fill="#ffffff" stroke="#2e7d32" stroke-width="1.2"/>
+    <text x="94" y="2178" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#2e7d32">Đại Tổ (Vị mở đầu chặng): Duệ Vương Vị thứ 1 (Trưởng nam Đệ Tam Đào Trường)</text>
+    <text x="94" y="2197" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="normal" fill="#333333">• Khai mở kỷ nguyên Văn Lang tại Trang Tông Chất - Châu Giang</text>
+    <line x1="94" y1="2209" x2="556" y2="2209" stroke="#2e7d32" stroke-width="0.8" stroke-dasharray="3,3" stroke-opacity="0.6"/>
+    <rect x="84" y="2229" width="482" height="64" rx="6" fill="#ffffff" stroke="#2e7d32" stroke-width="1.2"/>
+    <text x="94" y="2248" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#8b0000">Thế Tổ (Vị chốt cuối): Duệ Vương Vị thứ 27 (Thế Tổ Chặng 1)</text>
+    <text x="94" y="2267" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="normal" fill="#333333">• Lập đàn Tế lễ Tổ tiên chuyển giao quyền sang Hành cung Thủy Đường</text>
+    <line x1="94" y1="2281" x2="556" y2="2281" stroke="#8b0000" stroke-width="0.8" stroke-dasharray="3,3" stroke-opacity="0.6"/>
+  </g>
+  <g class="interactive-node" data-node-id="chang-2">
+    <rect x="653" y="2015" width="510" height="290" rx="10" fill="#fff8e1" stroke="#f57f17" stroke-width="2.5" filter="url(#cardShadow)"/>
+    <rect x="653" y="2015" width="510" height="38" rx="8" fill="#f57f17" stroke="#f57f17" stroke-width="1"/>
+    <text x="908" y="2040" font-family="DejaVu Sans, Arial, sans-serif" font-size="16" font-weight="bold" fill="#ffffff" text-anchor="middle">CHẶNG 2 (Vị 28 – 54)</text>
+    <text x="908" y="2076" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="bold" fill="#1a1a1a" text-anchor="middle">Hậu duệ Đệ Ngũ Đào Quý Lân</text>
+    <text x="908" y="2099" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="bold" fill="#f57f17" text-anchor="middle">Số 8 Lạc Thư • Quẻ Cấn (Thổ)</text>
+    <text x="908" y="2121" font-family="DejaVu Sans, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#333333" text-anchor="middle">Đông Bắc (cổ) → Đông Nam (nay)</text>
+    <text x="908" y="2144" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="bold" fill="#8b0000" text-anchor="middle">Hành cung Thủy Đường (Hải Phòng)</text>
+    <rect x="667" y="2159" width="482" height="62" rx="6" fill="#ffffff" stroke="#f57f17" stroke-width="1.2"/>
+    <text x="677" y="2178" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#f57f17">Đại Tổ (Vị mở đầu chặng): Duệ Vương Vị thứ 28 (Trưởng chi Đệ Ngũ Đào Quý Lân)</text>
+    <text x="677" y="2197" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="normal" fill="#333333">• Kế thừa Trung Cung Đài Rồng, trấn trị miền duyên hải Đông Nam</text>
+    <line x1="677" y1="2209" x2="1139" y2="2209" stroke="#f57f17" stroke-width="0.8" stroke-dasharray="3,3" stroke-opacity="0.6"/>
+    <rect x="667" y="2229" width="482" height="64" rx="6" fill="#ffffff" stroke="#f57f17" stroke-width="1.2"/>
+    <text x="677" y="2248" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#8b0000">Thế Tổ (Vị chốt cuối): Duệ Vương Vị thứ 54 (Thế Tổ Chặng 2)</text>
+    <text x="677" y="2267" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="normal" fill="#333333">• Lập đàn Tế lễ Tổ tiên chuyển giao quyền sang Hành cung Thanh Liệt</text>
+    <line x1="677" y1="2281" x2="1139" y2="2281" stroke="#8b0000" stroke-width="0.8" stroke-dasharray="3,3" stroke-opacity="0.6"/>
+  </g>
+  <g class="interactive-node" data-node-id="chang-3">
+    <rect x="1236" y="2015" width="510" height="290" rx="10" fill="#e0f2f1" stroke="#00695c" stroke-width="2.5" filter="url(#cardShadow)"/>
+    <rect x="1236" y="2015" width="510" height="38" rx="8" fill="#00695c" stroke="#00695c" stroke-width="1"/>
+    <text x="1491" y="2040" font-family="DejaVu Sans, Arial, sans-serif" font-size="16" font-weight="bold" fill="#ffffff" text-anchor="middle">CHẶNG 3 (Vị 55 – 81)</text>
+    <text x="1491" y="2076" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="bold" fill="#1a1a1a" text-anchor="middle">Hậu duệ Đức Đệ Bát (Đệ Tam Công)</text>
+    <text x="1491" y="2099" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="bold" fill="#00695c" text-anchor="middle">Số 4 Lạc Thư • Quẻ Tốn (Mộc)</text>
+    <text x="1491" y="2121" font-family="DejaVu Sans, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#333333" text-anchor="middle">Đông Nam (cổ) → Tây Nam (nay)</text>
+    <text x="1491" y="2144" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="bold" fill="#8b0000" text-anchor="middle">Hành cung Thanh Liệt (Hà Nội)</text>
+    <rect x="1250" y="2159" width="482" height="62" rx="6" fill="#ffffff" stroke="#00695c" stroke-width="1.2"/>
+    <text x="1260" y="2178" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#00695c">Đại Tổ (Vị mở đầu chặng): Duệ Vương Vị thứ 55 (Trưởng chi Đức Đệ Bát)</text>
+    <text x="1260" y="2197" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="normal" fill="#333333">• Hoằng dương văn hiến ngã ba sông Tô Lịch - Nhuệ Giang</text>
+    <line x1="1260" y1="2209" x2="1722" y2="2209" stroke="#00695c" stroke-width="0.8" stroke-dasharray="3,3" stroke-opacity="0.6"/>
+    <rect x="1250" y="2229" width="482" height="64" rx="6" fill="#ffffff" stroke="#00695c" stroke-width="1.2"/>
+    <text x="1260" y="2248" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#8b0000">Thế Tổ (Vị chốt cuối): Duệ Vương Vị thứ 81 (Thế Tổ Chặng 3)</text>
+    <text x="1260" y="2267" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="normal" fill="#333333">• Lập đàn Tế lễ Tổ tiên chuyển giao quyền sang Hành cung Hoài Đức</text>
+    <line x1="1260" y1="2281" x2="1722" y2="2281" stroke="#8b0000" stroke-width="0.8" stroke-dasharray="3,3" stroke-opacity="0.6"/>
+  </g>
+  <g class="interactive-node" data-node-id="chang-4">
+    <rect x="1819" y="2015" width="510" height="290" rx="10" fill="#ffebee" stroke="#c62828" stroke-width="2.5" filter="url(#cardShadow)"/>
+    <rect x="1819" y="2015" width="510" height="38" rx="8" fill="#c62828" stroke="#c62828" stroke-width="1"/>
+    <text x="2074" y="2040" font-family="DejaVu Sans, Arial, sans-serif" font-size="16" font-weight="bold" fill="#ffffff" text-anchor="middle">CHẶNG 4 (Vị 82 – 108)</text>
+    <text x="2074" y="2076" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="bold" fill="#1a1a1a" text-anchor="middle">Hậu duệ Đức Đệ Thất (Đệ Nhị Công)</text>
+    <text x="2074" y="2099" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="bold" fill="#c62828" text-anchor="middle">Số 9 Lạc Thư • Quẻ Ly (Hỏa)</text>
+    <text x="2074" y="2121" font-family="DejaVu Sans, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#333333" text-anchor="middle">Nam (cổ) → Hướng Tây (nay)</text>
+    <text x="2074" y="2144" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="bold" fill="#8b0000" text-anchor="middle">Hành cung Hoài Đức (Sơn Tây đạo)</text>
+    <rect x="1833" y="2159" width="482" height="62" rx="6" fill="#ffffff" stroke="#c62828" stroke-width="1.2"/>
+    <text x="1843" y="2178" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#c62828">Đại Tổ (Vị mở đầu chặng): Duệ Vương Vị thứ 82 (Trưởng chi Đức Đệ Thất)</text>
+    <text x="1843" y="2197" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="normal" fill="#333333">• Trấn giữ cửa ngõ xứ Đoài - Sơn Tây đạo, rực sáng văn trị Quẻ Ly</text>
+    <line x1="1843" y1="2209" x2="2305" y2="2209" stroke="#c62828" stroke-width="0.8" stroke-dasharray="3,3" stroke-opacity="0.6"/>
+    <rect x="1833" y="2229" width="482" height="64" rx="6" fill="#ffffff" stroke="#c62828" stroke-width="1.2"/>
+    <text x="1843" y="2248" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#8b0000">Thế Tổ (Vị chốt cuối): Duệ Vương Vị thứ 108 (Thế Tổ Chặng 4)</text>
+    <text x="1843" y="2267" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="normal" fill="#333333">• Tế lễ Tổ tiên chứng giám, chuyển giao đại vận sang Chặng 5 Thuận Thành</text>
+    <line x1="1843" y1="2281" x2="2305" y2="2281" stroke="#8b0000" stroke-width="0.8" stroke-dasharray="3,3" stroke-opacity="0.6"/>
+  </g>
+  <g class="interactive-node" data-node-id="chang-5">
+    <rect x="70" y="2400" width="510" height="290" rx="10" fill="#eceff1" stroke="#455a64" stroke-width="2.5" filter="url(#cardShadow)"/>
+    <rect x="70" y="2400" width="510" height="38" rx="8" fill="#455a64" stroke="#455a64" stroke-width="1"/>
+    <text x="325" y="2425" font-family="DejaVu Sans, Arial, sans-serif" font-size="16" font-weight="bold" fill="#ffffff" text-anchor="middle">CHẶNG 5 (Vị 109 – 135)</text>
+    <text x="325" y="2461" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="bold" fill="#1a1a1a" text-anchor="middle">Hậu duệ Đệ Tứ Đào Thạch Khanh</text>
+    <text x="325" y="2484" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="bold" fill="#455a64" text-anchor="middle">Số 7 Lạc Thư • Quẻ Đoài (Kim)</text>
+    <text x="325" y="2506" font-family="DejaVu Sans, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#333333" text-anchor="middle">Tây (cổ) → Hướng Bắc (nay)</text>
+    <text x="325" y="2529" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="bold" fill="#8b0000" text-anchor="middle">Hành cung Thuận Thành (Kinh Bắc)</text>
+    <rect x="84" y="2544" width="482" height="62" rx="6" fill="#ffffff" stroke="#455a64" stroke-width="1.2"/>
+    <text x="94" y="2563" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#455a64">Đại Tổ (Vị mở đầu chặng): Duệ Vương Vị thứ 109 (Trưởng chi Đệ Tứ Đào Thạch Khanh)</text>
+    <text x="94" y="2582" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="normal" fill="#333333">• Hưng thịnh kỹ nghệ đúc đồng Kim sử tại trung tâm Luy Lâu - Thuận Thành</text>
+    <line x1="94" y1="2594" x2="556" y2="2594" stroke="#455a64" stroke-width="0.8" stroke-dasharray="3,3" stroke-opacity="0.6"/>
+    <rect x="84" y="2614" width="482" height="64" rx="6" fill="#ffffff" stroke="#455a64" stroke-width="1.2"/>
+    <text x="94" y="2633" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#8b0000">Thế Tổ (Vị chốt cuối): Duệ Vương Vị thứ 135 (Thế Tổ Chặng 5)</text>
+    <text x="94" y="2652" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="normal" fill="#333333">• Lập đàn Tế lễ Tổ tiên chuyển giao quyền sang Hành cung Tứ Kỳ</text>
+    <line x1="94" y1="2666" x2="556" y2="2666" stroke="#8b0000" stroke-width="0.8" stroke-dasharray="3,3" stroke-opacity="0.6"/>
+  </g>
+  <g class="interactive-node" data-node-id="chang-6">
+    <rect x="653" y="2400" width="510" height="290" rx="10" fill="#e3f2fd" stroke="#1565c0" stroke-width="2.5" filter="url(#cardShadow)"/>
+    <rect x="653" y="2400" width="510" height="38" rx="8" fill="#1565c0" stroke="#1565c0" stroke-width="1"/>
+    <text x="908" y="2425" font-family="DejaVu Sans, Arial, sans-serif" font-size="16" font-weight="bold" fill="#ffffff" text-anchor="middle">CHẶNG 6 (Vị 136 – 162)</text>
+    <text x="908" y="2461" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="bold" fill="#1a1a1a" text-anchor="middle">Hậu duệ Đệ Nhất Đào Cư</text>
+    <text x="908" y="2484" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="bold" fill="#1565c0" text-anchor="middle">Số 1 Lạc Thư • Quẻ Khảm (Thủy)</text>
+    <text x="908" y="2506" font-family="DejaVu Sans, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#333333" text-anchor="middle">Bắc (cổ) → Hướng Đông (nay)</text>
+    <text x="908" y="2529" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="bold" fill="#8b0000" text-anchor="middle">Hành cung Tứ Kỳ (Hải Dương)</text>
+    <rect x="667" y="2544" width="482" height="62" rx="6" fill="#ffffff" stroke="#1565c0" stroke-width="1.2"/>
+    <text x="677" y="2563" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#1565c0">Đại Tổ (Vị mở đầu chặng): Duệ Vương Vị thứ 136 (Trưởng chi Đệ Nhất Đào Cư)</text>
+    <text x="677" y="2582" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="normal" fill="#333333">• Thống quản hệ thống thủy đạo miền Đông và đồng bằng Hải Dương</text>
+    <line x1="677" y1="2594" x2="1139" y2="2594" stroke="#1565c0" stroke-width="0.8" stroke-dasharray="3,3" stroke-opacity="0.6"/>
+    <rect x="667" y="2614" width="482" height="64" rx="6" fill="#ffffff" stroke="#1565c0" stroke-width="1.2"/>
+    <text x="677" y="2633" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#8b0000">Thế Tổ (Vị chốt cuối): Duệ Vương Vị thứ 162 (Thế Tổ Chặng 6)</text>
+    <text x="677" y="2652" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="normal" fill="#333333">• Lập đàn Tế lễ Tổ tiên chuyển giao quyền sang Hành cung Phú Lương</text>
+    <line x1="677" y1="2666" x2="1139" y2="2666" stroke="#8b0000" stroke-width="0.8" stroke-dasharray="3,3" stroke-opacity="0.6"/>
+  </g>
+  <g class="interactive-node" data-node-id="chang-7">
+    <rect x="1236" y="2400" width="510" height="290" rx="10" fill="#fbe9e7" stroke="#d84315" stroke-width="2.5" filter="url(#cardShadow)"/>
+    <rect x="1236" y="2400" width="510" height="38" rx="8" fill="#d84315" stroke="#d84315" stroke-width="1"/>
+    <text x="1491" y="2425" font-family="DejaVu Sans, Arial, sans-serif" font-size="16" font-weight="bold" fill="#ffffff" text-anchor="middle">CHẶNG 7 (Vị 163 – 189)</text>
+    <text x="1491" y="2461" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="bold" fill="#1a1a1a" text-anchor="middle">Hậu duệ Đệ Nhị Đào Hồng</text>
+    <text x="1491" y="2484" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="bold" fill="#d84315" text-anchor="middle">Số 2 Lạc Thư • Quẻ Khôn (Thổ)</text>
+    <text x="1491" y="2506" font-family="DejaVu Sans, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#333333" text-anchor="middle">Tây Nam (cổ) → Tây Bắc (nay)</text>
+    <text x="1491" y="2529" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="bold" fill="#8b0000" text-anchor="middle">Hành cung Phú Lương (Thái Nguyên)</text>
+    <rect x="1250" y="2544" width="482" height="62" rx="6" fill="#ffffff" stroke="#d84315" stroke-width="1.2"/>
+    <text x="1260" y="2563" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#d84315">Đại Tổ (Vị mở đầu chặng): Duệ Vương Vị thứ 163 (Trưởng chi Đệ Nhị Đào Hồng)</text>
+    <text x="1260" y="2582" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="normal" fill="#333333">• Quy tụ đại tộc vùng trung du - thượng du Tây Bắc, giữ vững bờ cõi</text>
+    <line x1="1260" y1="2594" x2="1722" y2="2594" stroke="#d84315" stroke-width="0.8" stroke-dasharray="3,3" stroke-opacity="0.6"/>
+    <rect x="1250" y="2614" width="482" height="64" rx="6" fill="#ffffff" stroke="#d84315" stroke-width="1.2"/>
+    <text x="1260" y="2633" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#8b0000">Thế Tổ (Vị chốt cuối): Duệ Vương Vị thứ 189 (Thế Tổ Chặng 7 - Hùng Duệ Vương)</text>
+    <text x="1260" y="2652" font-family="DejaVu Sans, Arial, sans-serif" font-size="11.5" font-weight="normal" fill="#333333">• Truyền ngôi chuyển giao quốc thống cho con rể là Thạc Công (Thục Vương)</text>
+    <line x1="1260" y1="2666" x2="1722" y2="2666" stroke="#8b0000" stroke-width="0.8" stroke-dasharray="3,3" stroke-opacity="0.6"/>
+  </g>
+  <line x1="580" y1="2160" x2="641" y2="2160" stroke="#b22222" stroke-width="3"/>
+  <polygon points="653,2160 639,2152 639,2168" fill="#b22222"/>
+  <text x="616.5" y="2148" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="bold" fill="#b22222" text-anchor="middle">Tế lễ</text>
+  <text x="616.5" y="2180" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="bold" fill="#b22222" text-anchor="middle">chuyển giao</text>
+  <line x1="1163" y1="2160" x2="1224" y2="2160" stroke="#b22222" stroke-width="3"/>
+  <polygon points="1236,2160 1222,2152 1222,2168" fill="#b22222"/>
+  <text x="1199.5" y="2148" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="bold" fill="#b22222" text-anchor="middle">Tế lễ</text>
+  <text x="1199.5" y="2180" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="bold" fill="#b22222" text-anchor="middle">chuyển giao</text>
+  <line x1="1746" y1="2160" x2="1807" y2="2160" stroke="#b22222" stroke-width="3"/>
+  <polygon points="1819,2160 1805,2152 1805,2168" fill="#b22222"/>
+  <text x="1782.5" y="2148" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="bold" fill="#b22222" text-anchor="middle">Tế lễ</text>
+  <text x="1782.5" y="2180" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="bold" fill="#b22222" text-anchor="middle">chuyển giao</text>
+  <line x1="580" y1="2545" x2="641" y2="2545" stroke="#b22222" stroke-width="3"/>
+  <polygon points="653,2545 639,2537 639,2553" fill="#b22222"/>
+  <text x="616.5" y="2533" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="bold" fill="#b22222" text-anchor="middle">Tế lễ</text>
+  <text x="616.5" y="2565" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="bold" fill="#b22222" text-anchor="middle">chuyển giao</text>
+  <line x1="1163" y1="2545" x2="1224" y2="2545" stroke="#b22222" stroke-width="3"/>
+  <polygon points="1236,2545 1222,2537 1222,2553" fill="#b22222"/>
+  <text x="1199.5" y="2533" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="bold" fill="#b22222" text-anchor="middle">Tế lễ</text>
+  <text x="1199.5" y="2565" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="bold" fill="#b22222" text-anchor="middle">chuyển giao</text>
+  <line x1="1746" y1="2545" x2="1807" y2="2545" stroke="#b22222" stroke-width="3"/>
+  <polygon points="1819,2545 1805,2537 1805,2553" fill="#b22222"/>
+  <text x="1782.5" y="2533" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="bold" fill="#b22222" text-anchor="middle">Vị 189</text>
+  <text x="1782.5" y="2565" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="bold" fill="#b22222" text-anchor="middle">chuyển giao</text>
+  <polyline points="2074,2305 2074,2352.5 325,2352.5 325,2400" fill="none" stroke="#b22222" stroke-width="3.5"/>
+  <polygon points="325,2400 317,2386 333,2386" fill="#b22222"/>
+  <rect x="650" y="2324" width="1100" height="32" rx="16" fill="#fff3cd" stroke="#b22222" stroke-width="1.5"/>
+  <text x="1200" y="2345" font-family="DejaVu Sans, Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#b22222" text-anchor="middle">Tế lễ Tổ tiên chứng giám, khai mở vận &amp; gia trì quốc vận: Thế Tổ Vị 108 (Chặng 4) → Đại Tổ Vị 109 (Chặng 5)</text>
+  <g class="interactive-node" data-node-id="cuong-vuc-van-lang">
+    <rect x="1819" y="2400" width="510" height="290" rx="10" fill="#fff3cd" stroke="#b22222" stroke-width="3" filter="url(#cardShadow)"/>
+    <rect x="1819" y="2400" width="510" height="38" rx="8" fill="#8b0000" stroke="#8b0000" stroke-width="1"/>
+    <text x="2074" y="2425" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="bold" fill="#ffd700" text-anchor="middle">CƯƠNG VỰC VĂN LANG &amp; KHAI CANH</text>
+    <text x="1837" y="2460" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="bold" fill="#8b0000">• Tứ cận nước Văn Lang (&gt; 2.622 năm):</text>
+    <text x="1845" y="2482" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="normal" fill="#1a1a1a">- Nam: Giáp Hồ Tôn (Biển Hồ) [Hậu duệ Đức Đệ Lục khai canh]</text>
+    <text x="1845" y="2503" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="normal" fill="#1a1a1a">- Bắc: Tới Sơn Tây, Hà Nam, Giang Tô [Đệ Cửu &amp; 5 vị sau]</text>
+    <text x="1845" y="2524" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="normal" fill="#1a1a1a">- Tây: Giáp Ba Thục</text>
+    <text x="1845" y="2545" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="normal" fill="#1a1a1a">- Đông: Mặt biển từ Nam Kinh → Cà Mau</text>
+    <text x="1837" y="2575" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="bold" fill="#0d47a1">• Dấu ấn Đường Nghiêu &amp; 36 Làng Đào Xá:</text>
+    <text x="1845" y="2596" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="normal" fill="#0d47a1">Hệ thống di tích thờ Đường Nghiêu tiến thẳng ra biển Đông.</text>
+    <text x="1837" y="2626" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="bold" fill="#b22222">• Kết thúc Chặng 7 (Duệ Vương Vị thứ 189):</text>
+    <text x="1845" y="2647" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#1a1a1a">Chuyển giao quốc thống sang con rể là Thạc Công</text>
+    <text x="1845" y="2667" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#1a1a1a">(Thục Phán An Dương Vương - mở ra nước Âu Lạc).</text>
+  </g>
+  <line x1="1200" y1="2720" x2="1200" y2="2798" stroke="#b22222" stroke-width="4"/>
+  <polygon points="1200,2810 1192,2796 1208,2796" fill="#b22222"/>
+  <text x="1216" y="2768" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="bold" fill="#b22222">Chuyển giao từ Vị 189 (Thế Tổ Chặng 7) sang Kỷ nguyên Thạc Công (con rể vị Duệ Vương thứ 189), lên ngôi Thục Vương</text>
+  <rect x="40" y="2810" width="2320" height="360" rx="14" fill="#fffaf0" stroke="#8b0000" stroke-width="3" filter="url(#cardShadow)"/>
+  <rect x="40" y="2810" width="2320" height="46" rx="10" fill="url(#crimsonGrad)" stroke="#8b0000" stroke-width="1"/>
+  <text x="1200" y="2840" font-family="Noto Serif, DejaVu Sans, serif" font-size="19" font-weight="bold" fill="#ffd700" text-anchor="middle">PHẦN III: BA THỜI KỲ BẢN LỀ TIÊU BIỂU BẬC NHẤT (TỪ THỤC VƯƠNG ÂU LẠC ĐẾN THỜI TRƯNG NỮ VƯƠNG)</text>
+  <g class="interactive-node" data-node-id="thoi-thuc-vuong">
+    <rect x="70" y="2876" width="680" height="270" rx="12" fill="#fff3cd" stroke="#b22222" stroke-width="2.5" filter="url(#cardShadow)"/>
+    <rect x="70" y="2876" width="680" height="40" rx="10" fill="#b22222" stroke="#b22222" stroke-width="1"/>
+    <text x="410" y="2902" font-family="DejaVu Sans, Arial, sans-serif" font-size="16" font-weight="bold" fill="#ffffff" text-anchor="middle">1. THỜI THỤC VƯƠNG (NƯỚC ÂU LẠC — KINH ĐÔ CỔ LOA)</text>
+    <text x="88" y="2942" font-family="DejaVu Sans, Arial, sans-serif" font-size="13.5" font-weight="bold" fill="#1a1a1a">• Tiếp nhận trực tiếp từ Vị 189 (Chặng 7) sang con rể Thạc Công tức Thục Vương.</text>
+    <text x="88" y="2972" font-family="DejaVu Sans, Arial, sans-serif" font-size="13.5" font-weight="bold" fill="#8b0000">• Tướng quân Đào Nhị (em vợ Thục Vương - Tổng quản Quốc khố Quân lương):</text>
+    <text x="100" y="2994" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="normal" fill="#1a1a1a">Trực tiếp chỉ huy xây dựng thành Cổ Loa (Loa Thành) &amp; điều phối quân lương.</text>
+    <text x="88" y="3024" font-family="DejaVu Sans, Arial, sans-serif" font-size="13.5" font-weight="bold" fill="#8b0000">• Ba cha con Quan Nội Hầu Đào Nồi (con cụ Đào Hoằng - Hương Canh), Đào Đống, Đào Vực:</text>
+    <text x="100" y="3046" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="normal" fill="#1a1a1a">Đỗ đầu thi võ tuyển tướng, thống lĩnh quân đội Âu Lạc, trung liệt tuẫn tiết giữ thành.</text>
+    <text x="88" y="3076" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="normal" fill="#1a1a1a">• Củng cố khối liên minh Âu Việt – Lạc Việt, giữ vững độc lập bờ cõi.</text>
+    <text x="88" y="3126" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#b22222">★ Di tích thờ tự: Đền thờ Quan Nội Hầu (Cổ Loa), Miếu Vĩnh Thanh, Đình Ngọc Chi (Đông Anh, Hà Nội).</text>
+  </g>
+  <line x1="750" y1="3011" x2="848" y2="3011" stroke="#b22222" stroke-width="3.5"/>
+  <polygon points="860,3011 846,3003 846,3019" fill="#b22222"/>
+  <text x="805" y="2999" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="bold" fill="#b22222" text-anchor="middle">Tiếp nối</text>
+  <g class="interactive-node" data-node-id="nha-trieu">
+    <rect x="860" y="2876" width="680" height="270" rx="12" fill="#e8f5e9" stroke="#2e7d32" stroke-width="2.5" filter="url(#cardShadow)"/>
+    <rect x="860" y="2876" width="680" height="40" rx="10" fill="#2e7d32" stroke="#2e7d32" stroke-width="1"/>
+    <text x="1200" y="2902" font-family="DejaVu Sans, Arial, sans-serif" font-size="16" font-weight="bold" fill="#ffffff" text-anchor="middle">2. NHÀ TRIỆU (VƯƠNG TRIỀU NAM VIỆT TỰ CHỦ)</text>
+    <text x="878" y="2945" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" font-weight="bold" fill="#1b5e20">• Thánh Mẫu Đào Thị Hoan (Thân mẫu của Triệu Vũ Đế - Triệu Đà):</text>
+    <text x="890" y="2970" font-family="DejaVu Sans, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#1a1a1a">Phối ngẫu cùng ông Triệu Đức Công (quận Linh Sơn, Chân Định), ứng mộng</text>
+    <text x="890" y="2993" font-family="DejaVu Sans, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#1a1a1a">Thiên sứ trao râu rồng sinh ra Triệu Vũ Đế, mở ra vương triều Nam Việt hùng mạnh.</text>
+    <text x="878" y="3030" font-family="DejaVu Sans, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#1a1a1a">• Khẳng định sợi dây huyết thống trực tiếp của Đào tộc gắn liền với</text>
+    <text x="890" y="3053" font-family="DejaVu Sans, Arial, sans-serif" font-size="13.5" font-weight="normal" fill="#1a1a1a">ngôi vị khai sáng vương triều buổi đầu tự chủ phương Nam.</text>
+    <text x="878" y="3085" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="normal" fill="#1a1a1a">• Kế thừa và bảo tồn không gian văn hóa Bách Việt – Lĩnh Nam.</text>
+    <text x="878" y="3126" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#1b5e20">★ Thần tích &amp; Di tích: Lưu giữ tại xã Thượng Gia, tổng Đồng Sâm, huyện Trực Định (Thái Bình).</text>
+  </g>
+  <line x1="1540" y1="3011" x2="1638" y2="3011" stroke="#b22222" stroke-width="3.5"/>
+  <polygon points="1650,3011 1636,3003 1636,3019" fill="#b22222"/>
+  <text x="1595" y="2999" font-family="DejaVu Sans, Arial, sans-serif" font-size="15" font-weight="bold" fill="#b22222" text-anchor="middle">Tiếp nối</text>
+  <g class="interactive-node" data-node-id="thoi-trung-vuong">
+    <rect x="1650" y="2876" width="680" height="270" rx="12" fill="#e3f2fd" stroke="#1565c0" stroke-width="2.5" filter="url(#cardShadow)"/>
+    <rect x="1650" y="2876" width="680" height="40" rx="10" fill="#1565c0" stroke="#1565c0" stroke-width="1"/>
+    <text x="1990" y="2902" font-family="DejaVu Sans, Arial, sans-serif" font-size="16" font-weight="bold" fill="#ffffff" text-anchor="middle">3. THỜI TRƯNG NỮ VƯƠNG (65 THÀNH CÕI LĨNH NAM)</text>
+    <text x="1668" y="2942" font-family="DejaVu Sans, Arial, sans-serif" font-size="13.5" font-weight="bold" fill="#1a1a1a">• Khôi phục trọn vẹn nền độc lập và cương vực 65 thành cõi Lĩnh Nam (năm 40 – 43 CN).</text>
+    <text x="1668" y="2972" font-family="DejaVu Sans, Arial, sans-serif" font-size="13.5" font-weight="bold" fill="#0d47a1">• Đại Nguyên Soái Đào Kỳ (Đào Tam Lang — Tước phong Bắc Bình Vương):</text>
+    <text x="1680" y="2994" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="normal" fill="#1a1a1a">Cùng phu nhân Nữ tướng Phương Dung thống lĩnh ba quân đánh đuổi Tô Định (Đông Hán).</text>
+    <text x="1668" y="3024" font-family="DejaVu Sans, Arial, sans-serif" font-size="13.5" font-weight="bold" fill="#0d47a1">• Hổ Nha Tướng Đào Chiêu Hiển (Đào Hiển) &amp; Tướng quân Đào Đô Thống:</text>
+    <text x="1680" y="3046" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="normal" fill="#1a1a1a">Hai anh ruột của ngài Đào Kỳ, danh tướng dũng lược trấn giữ biên ải &amp; thành Cổ Loa.</text>
+    <text x="1668" y="3076" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="normal" fill="#1a1a1a">• Ba anh em họ Đào anh dũng chiến đấu hy sinh bảo vệ non sông trước quân Mã Viện.</text>
+    <text x="1668" y="3126" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#0d47a1">★ Di tích thờ tự: Đền Hội Phụ (Mai Lâm, Đông Anh, Hà Nội) &amp; Miếu Ba Vua (Liên Khê, Thủy Nguyên, Hải Phòng).</text>
+  </g>
+  <g class="interactive-node" data-node-id="colophon-footer">
+    <rect x="40" y="3190" width="2320" height="190" rx="14" fill="#fff8e1" stroke="#b8860b" stroke-width="2.5" filter="url(#cardShadow)"/>
+    <rect x="40" y="3190" width="2320" height="36" rx="8" fill="#7a0c0c"/>
+    <text x="1200" y="3214" font-family="Noto Serif, DejaVu Sans, serif" font-size="16" font-weight="bold" fill="#ffd700" text-anchor="middle">CHÚ GIẢI MÀU SẮC PHẢ HỆ • HỆ THỐNG KIM SỬ &amp; NGUỒN SỬ LIỆU THẦN TÍCH ĐỐI CHIẾU</text>
+    <rect x="68" y="3242" width="22" height="22" rx="4" fill="#fff3cd" stroke="#b22222" stroke-width="2"/>
+    <text x="98" y="3258" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="bold" fill="#8b0000">Thái Cực / Trưởng Lệnh / Trung Cung</text>
+    <rect x="370" y="3242" width="22" height="22" rx="4" fill="#e8f5e9" stroke="#2e7d32" stroke-width="2"/>
+    <text x="400" y="3258" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="bold" fill="#1b5e20">Hào Dương: Nhánh Ngài Đào Bột (Ngũ Long)</text>
+    <rect x="720" y="3242" width="22" height="22" rx="4" fill="#e3f2fd" stroke="#1565c0" stroke-width="2"/>
+    <text x="750" y="3258" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="bold" fill="#0d47a1">Hào Âm: Nhánh Ngài Đào Nghiêu (Ngũ Công)</text>
+    <rect x="1080" y="3242" width="22" height="22" rx="4" fill="#f3e5f5" stroke="#6a1b9a" stroke-width="2"/>
+    <text x="1110" y="3258" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="bold" fill="#4a148c">Đức Đệ Thập: Cải Chi Lạc Thư &amp; Minh Văn Kinh Dịch</text>
+    <text x="68" y="3292" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="normal" fill="#1a1a1a">• <tspan font-weight="bold" fill="#8b0000">Nguồn Sử Liệu &amp; Kim Sử Bảo Chứng:</tspan> (1) Minh văn Trống đồng Đào Xá, Trống đồng Ngọc Lũ, Thạp đồng Đào Thịnh; (2) Ngọc phả &amp; Truyền thuyết 36 làng Đào Xá, vùng đất Tổ Hạ Hòa - Thanh Ba - Phượng Lâu (Phú Thọ);</text>
+    <text x="68" y="3316" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="normal" fill="#1a1a1a">  (3) Thần tích Thái Phó Đào Công Bột &amp; Ngũ Vị Tôn Ông (An Lão - Hải Phòng, Bình Đà - Hà Nội, lưu vực sông Châu - Hà Nam); (4) Cụm Thần phả Cổ Loa (Đền Quan Nội Hầu Đào Nồi, Tướng quân Đào Nhị - Đông Anh);</text>
+    <text x="68" y="3340" font-family="DejaVu Sans, Arial, sans-serif" font-size="13" font-weight="normal" fill="#1a1a1a">  (5) Thần tích Thánh Mẫu Đào Thị Hoan (Thượng Gia, Đồng Sâm, Thái Bình); (6) Ngọc phả Tam vị Đại Vương họ Đào thời Trưng Vương: Bắc Bình Vương Đào Kỳ, Đào Chiêu Hiển, Đào Đô Thống (Đông Anh &amp; Thủy Nguyên).</text>
+    <text x="68" y="3364" font-family="DejaVu Sans, Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#5c0606">• Ấn hành Số Hóa Quốc Bảo: Hội Đồng Gia Tộc Họ Đào Việt Nam (donghodao.vn) — Kiến trúc Phả Hệ Số Tương Tác 4K Hoàng Gia Việt Nam.</text>
+    <rect x="2140" y="3240" width="190" height="122" rx="8" fill="#8b0000" stroke="#ffd700" stroke-width="2.5"/>
+    <rect x="2146" y="3246" width="178" height="110" rx="4" fill="none" stroke="#ffd700" stroke-width="1"/>
+    <text x="2235" y="3278" font-family="Noto Serif, DejaVu Sans, serif" font-size="22" font-weight="bold" fill="#ffd700" text-anchor="middle">陶族國寶</text>
+    <text x="2235" y="3304" font-family="DejaVu Sans, Arial, sans-serif" font-size="12" font-weight="bold" fill="#ffffff" text-anchor="middle">ĐÀO TỘC VĂN HIẾN</text>
+    <text x="2235" y="3326" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="normal" fill="#ffe4b5" text-anchor="middle">THẬP BÁT DIỆP • VĂN LANG</text>
+    <text x="2235" y="3345" font-family="DejaVu Sans, Arial, sans-serif" font-size="11" font-weight="bold" fill="#ffd700" text-anchor="middle">donghodao.vn</text>
+  </g>
+</svg>

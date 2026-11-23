@@ -1,0 +1,2877 @@
+<!DOCTYPE html>
+<html lang="vi" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AN SƠN NGÀY MỚI • Cẩm nang 4D Toàn diện V2.5 PRO — Nguyễn Anh Hào</title>
+  <meta name="description" content="Cẩm nang 4D Toàn diện dành cho đồng chí Bí thư Chi đoàn thôn An Sơn, xã Cam Lộ, Quảng Trị — Nguyễn Anh Hào. Tích hợp 12 Chương, 5 Skill Google AI, Thần Đèn An Sơn, Whiteboard & Sổ tay BĐS Cam Lộ." />
+  <meta property="og:title" content="AN SƠN NGÀY MỚI • Cẩm nang 4D Toàn diện V2.5 PRO — Nguyễn Anh Hào" />
+  <meta property="og:description" content="Cẩm nang 4D Toàn diện dành cho Bí thư Chi đoàn thôn An Sơn, xã Cam Lộ, Quảng Trị — Tích hợp 12 Chương, 5 Skill Google AI, Thần Đèn An Sơn & Sổ tay BĐS Cam Lộ." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://lephucnhat.vn/an-son-ngay-moi-4d/" />
+  <link rel="canonical" href="https://lephucnhat.vn/an-son-ngay-moi-4d/" />
+
+  <!-- Google Fonts: Be Vietnam Pro, JetBrains Mono & Caveat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Caveat:wght@600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Be Vietnam Pro"', 'system-ui', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+            sketch: ['"Caveat"', 'cursive'],
+          },
+          colors: {
+            abyss: '#06111c',
+            slateDeep: '#0b1c2c',
+            panel: '#0f2738',
+            youth: '#0ea5e9',
+            emeraldGlow: '#10b981',
+            goldWarm: '#f59e0b',
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    :root {
+      --base-font: 15px;
+      --theme-bg: #06111c;
+      --theme-panel: rgba(11, 28, 44, 0.76);
+      --theme-border: rgba(56, 189, 248, 0.18);
+      --theme-accent: #0ea5e9;
+      --theme-accent2: #10b981;
+      --theme-gold: #f59e0b;
+    }
+
+    /* 5 Art Styles */
+    body.style-anson {
+      --theme-bg: #06111c;
+      --theme-panel: rgba(11, 28, 44, 0.76);
+      --theme-border: rgba(56, 189, 248, 0.22);
+      --theme-accent: #0ea5e9;
+      --theme-accent2: #10b981;
+    }
+    body.style-rungxanh {
+      --theme-bg: #02140e;
+      --theme-panel: rgba(6, 40, 28, 0.78);
+      --theme-border: rgba(16, 185, 129, 0.28);
+      --theme-accent: #10b981;
+      --theme-accent2: #f59e0b;
+    }
+    body.style-infographic {
+      --theme-bg: #080d1a;
+      --theme-panel: rgba(15, 23, 42, 0.85);
+      --theme-border: rgba(99, 102, 241, 0.30);
+      --theme-accent: #38bdf8;
+      --theme-accent2: #818cf8;
+    }
+    body.style-nghethuat {
+      --theme-bg: #130718;
+      --theme-panel: rgba(30, 14, 42, 0.78);
+      --theme-border: rgba(236, 72, 153, 0.28);
+      --theme-accent: #ec4899;
+      --theme-accent2: #f59e0b;
+    }
+    body.style-sketchnote {
+      --theme-bg: #121008;
+      --theme-panel: rgba(28, 24, 14, 0.82);
+      --theme-border: rgba(234, 179, 8, 0.32);
+      --theme-accent: #eab308;
+      --theme-accent2: #10b981;
+    }
+    body.style-sketchnote h2,
+    body.style-sketchnote h3,
+    body.style-sketchnote .flip-card h4 {
+      font-family: 'Caveat', cursive, sans-serif;
+      letter-spacing: 0.02em;
+    }
+    body.style-sketchnote h2 { font-size: 1.75rem !important; }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background-color: var(--theme-bg);
+      color: #e2e8f0;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: var(--base-font);
+      overflow-x: hidden;
+      transition: background-color 0.35s ease;
+    }
+
+    /* Full-screen ambient constellation canvas */
+    #bgCanvas {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    /* Whiteboard Drawing Canvas */
+    #drawCanvas {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 35;
+      pointer-events: none;
+    }
+    #drawCanvas.active {
+      pointer-events: auto;
+      cursor: crosshair;
+    }
+
+    /* Glassmorphism panels */
+    .glass {
+      background: var(--theme-panel);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid var(--theme-border);
+      transition: background 0.35s ease, border-color 0.35s ease;
+    }
+
+    .glass-strong {
+      background: rgba(8, 20, 34, 0.94);
+      backdrop-filter: blur(22px);
+      -webkit-backdrop-filter: blur(22px);
+      border: 1px solid rgba(16, 185, 129, 0.28);
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: rgba(6, 17, 28, 0.6); }
+    ::-webkit-scrollbar-thumb { background: rgba(14, 165, 233, 0.38); border-radius: 999px; }
+    ::-webkit-scrollbar-thumb:hover { background: rgba(16, 185, 129, 0.65); }
+
+    /* 3D Flip Card Architecture (Fixed auto-height & zero clipping) */
+    .flip-card {
+      perspective: 1200px;
+      height: 230px;
+      cursor: pointer;
+    }
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+      transform-style: preserve-3d;
+    }
+    .flip-card.flipped .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+    .flip-card-front,
+    .flip-card-back {
+      position: absolute;
+      inset: 0;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      border-radius: 1rem;
+      padding: 0.95rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow-y: auto;
+    }
+    .flip-card-front {
+      background: linear-gradient(145deg, rgba(127, 29, 29, 0.30), rgba(15, 39, 56, 0.92));
+      border: 1px solid rgba(245, 158, 11, 0.38);
+      box-shadow: 0 10px 25px -10px rgba(0, 0, 0, 0.6);
+    }
+    .flip-card-front:hover {
+      border-color: rgba(245, 158, 11, 0.72);
+    }
+    .flip-card-back {
+      transform: rotateY(180deg);
+      background: linear-gradient(145deg, rgba(6, 78, 59, 0.48), rgba(14, 116, 144, 0.36), rgba(11, 28, 44, 0.96));
+      border: 1px solid rgba(16, 185, 129, 0.62);
+      box-shadow: 0 10px 30px -8px rgba(16, 185, 129, 0.28);
+    }
+
+    /* Copy Flash Feedback */
+    @keyframes copyFlash {
+      0% { box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.85); background-color: rgba(16, 185, 129, 0.16); }
+      100% { box-shadow: none; }
+    }
+    .copy-flash {
+      animation: copyFlash 0.65s ease-out;
+    }
+
+    /* Glowing Pulse Button */
+    @keyframes pulseGlow {
+      0%, 100% { box-shadow: 0 0 15px rgba(16, 185, 129, 0.45), 0 0 30px rgba(14, 165, 233, 0.25); }
+      50% { box-shadow: 0 0 26px rgba(16, 185, 129, 0.85), 0 0 48px rgba(14, 165, 233, 0.45); }
+    }
+    .btn-transform-glow { animation: pulseGlow 2.4s infinite ease-in-out; }
+
+    /* 4-bar Equalizer Animation */
+    .eq-bar {
+      width: 3px;
+      height: 6px;
+      border-radius: 99px;
+      background: linear-gradient(to top, #10b981, #0ea5e9);
+      transition: height 0.2s ease;
+    }
+    .eq-playing .eq-bar:nth-child(1) { animation: eqAnim 0.65s infinite ease-in-out alternate; }
+    .eq-playing .eq-bar:nth-child(2) { animation: eqAnim 0.48s infinite ease-in-out alternate 0.15s; }
+    .eq-playing .eq-bar:nth-child(3) { animation: eqAnim 0.72s infinite ease-in-out alternate 0.08s; }
+    .eq-playing .eq-bar:nth-child(4) { animation: eqAnim 0.54s infinite ease-in-out alternate 0.22s; }
+    @keyframes eqAnim {
+      0% { height: 5px; }
+      100% { height: 22px; }
+    }
+
+    /* Draggable Splitter */
+    #splitter {
+      width: 8px;
+      cursor: col-resize;
+      background: linear-gradient(to bottom, transparent, rgba(14, 165, 233, 0.28), rgba(16, 185, 129, 0.35), transparent);
+      transition: background 0.2s ease;
+      position: relative;
+      flex-shrink: 0;
+    }
+    #splitter:hover, #splitter.dragging {
+      background: linear-gradient(to bottom, rgba(14, 165, 233, 0.2), rgba(16, 185, 129, 0.85), rgba(14, 165, 233, 0.2));
+    }
+    #splitter::after {
+      content: '⋮';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #7dd3fc;
+      font-size: 14px;
+      font-weight: bold;
+      pointer-events: none;
+    }
+
+    /* Toast Notification */
+    #toastContainer {
+      position: fixed;
+      top: 76px;
+      right: 20px;
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      pointer-events: none;
+    }
+    .toast-item {
+      pointer-events: auto;
+      animation: slideInRight 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    @keyframes slideInRight {
+      from { opacity: 0; transform: translateX(30px) scale(0.95); }
+      to { opacity: 1; transform: translateX(0) scale(1); }
+    }
+
+    /* Code block styling inside modals/chat */
+    pre.copy-code {
+      white-space: pre-wrap;
+      word-break: break-word;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      line-height: 1.55;
+    }
+
+    /* Layout modes */
+    .layout-wide-stage #leftPanel { width: 58% !important; }
+    .layout-focus-read #leftPanel { width: 32% !important; }
+    @media (max-width: 1023px) {
+      .layout-wide-stage #leftPanel,
+      .layout-focus-read #leftPanel { width: 100% !important; }
+    }
+  </style>
+</head>
+<body class="style-anson min-h-screen flex flex-col selection:bg-sky-500/30 selection:text-sky-200">
+
+  <!-- Ambient 4D Particle Background -->
+  <canvas id="bgCanvas"></canvas>
+
+  <!-- Whiteboard Drawing Overlay -->
+  <canvas id="drawCanvas"></canvas>
+
+  <!-- Floating Draw Toolbar (Hidden until Draw Mode active) -->
+  <div id="drawToolbar" class="hidden fixed top-20 left-1/2 -translate-x-1/2 z-40 glass-strong px-3.5 py-2 rounded-full border border-amber-400/50 shadow-2xl flex items-center gap-2">
+    <span class="text-[11px] font-bold text-amber-300 mr-1">✏️ Bút vẽ:</span>
+    <button onclick="setDrawColor('#f59e0b')" class="w-5 h-5 rounded-full bg-amber-400 border-2 border-white/80 hover:scale-110 transition" title="Vàng"></button>
+    <button onclick="setDrawColor('#38bdf8')" class="w-5 h-5 rounded-full bg-sky-400 border-2 border-transparent hover:scale-110 transition" title="Xanh dương"></button>
+    <button onclick="setDrawColor('#10b981')" class="w-5 h-5 rounded-full bg-emerald-400 border-2 border-transparent hover:scale-110 transition" title="Xanh ngọc"></button>
+    <button onclick="setDrawColor('#f43f5e')" class="w-5 h-5 rounded-full bg-rose-500 border-2 border-transparent hover:scale-110 transition" title="Đỏ"></button>
+    <button onclick="setDrawColor('#ffffff')" class="w-5 h-5 rounded-full bg-white border-2 border-slate-500 hover:scale-110 transition" title="Trắng"></button>
+    <div class="w-[1px] h-4 bg-slate-700 mx-1"></div>
+    <button onclick="clearDrawingCanvas()" class="px-2.5 py-1 rounded-full bg-slate-800 hover:bg-rose-500/30 text-[11px] font-semibold text-slate-200 transition">🧹 Xóa nét</button>
+    <button onclick="toggleDrawMode()" class="px-2.5 py-1 rounded-full bg-amber-500 text-slate-950 font-bold text-[11px] transition">Xong ✓</button>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toastContainer"></div>
+
+  <!-- =========================================================
+       TOP HEADER BAR
+       ========================================================= -->
+  <header class="relative z-30 glass border-b border-sky-400/20 px-3 sm:px-4 py-2 flex flex-wrap items-center justify-between gap-2.5 sticky top-0">
+    <!-- Left Identity -->
+    <div class="flex items-center gap-2.5 min-w-0">
+      <a href="https://lephucnhat.vn/" title="Về trang chủ Hệ sinh thái lephucnhat.vn" class="w-10 h-10 rounded-xl bg-gradient-to-br from-sky-500 via-emerald-500 to-amber-500 p-[2px] shadow-lg shadow-sky-500/20 shrink-0 hover:scale-105 transition">
+        <div class="w-full h-full rounded-[10px] bg-[#06111c] flex flex-col items-center justify-center leading-none">
+          <span class="text-[9px] font-extrabold tracking-widest text-emerald-400">AN</span>
+          <span class="text-[9px] font-extrabold tracking-widest text-sky-400">SƠN</span>
+        </div>
+      </a>
+      <div class="min-w-0">
+        <div class="flex items-center gap-1.5 flex-wrap">
+          <h1 class="text-xs sm:text-sm font-extrabold tracking-tight text-white truncate">
+            AN SƠN NGÀY MỚI <span class="text-sky-400">•</span> CẨM NANG 4D TOÀN DIỆN
+          </h1>
+          <span class="px-1.5 py-0.5 text-[10px] font-mono font-bold rounded-full bg-gradient-to-r from-amber-500/25 to-emerald-500/25 text-amber-300 border border-amber-400/40">
+            V2.5 PRO
+          </span>
+        </div>
+        <p class="text-[11px] text-slate-300/90 truncate">
+          Bí thư Chi đoàn thôn An Sơn, xã Cam Lộ, Quảng Trị <span class="text-emerald-400">•</span> <strong class="text-sky-300">Nguyễn Anh Hào</strong>
+        </p>
+      </div>
+    </div>
+
+    <!-- Center Art Styles Switcher (Desktop) -->
+    <div class="hidden xl:flex items-center gap-1 bg-slate-950/75 p-1 rounded-xl border border-slate-700/70 text-[11px] text-slate-400">
+      <button onclick="setArtStyle('anson')" class="style-btn px-2.5 py-1 rounded-lg bg-sky-500 text-slate-950 font-bold transition" data-style="anson">An Sơn 4D</button>
+      <button onclick="setArtStyle('rungxanh')" class="style-btn px-2.5 py-1 rounded-lg hover:text-white transition" data-style="rungxanh">Rừng Xanh</button>
+      <button onclick="setArtStyle('infographic')" class="style-btn px-2.5 py-1 rounded-lg hover:text-white transition" data-style="infographic">Infographic</button>
+      <button onclick="setArtStyle('nghethuat')" class="style-btn px-2.5 py-1 rounded-lg hover:text-white transition" data-style="nghethuat">Nghệ Thuật</button>
+      <button onclick="setArtStyle('sketchnote')" class="style-btn px-2.5 py-1 rounded-lg hover:text-white transition" data-style="sketchnote">Sketchnote</button>
+    </div>
+
+    <!-- Right Action Buttons -->
+    <div class="flex items-center gap-1.5 flex-wrap justify-end">
+      <button onclick="openDrawer()" class="px-2.5 py-1.5 rounded-xl bg-slate-800/85 hover:bg-sky-500/20 border border-sky-400/25 text-xs font-semibold text-sky-200 transition flex items-center gap-1" title="Mở Danh mục 12 Chương (Phím M)">
+        <span>📑</span><span class="hidden sm:inline">12 Chương</span>
+      </button>
+      <button onclick="openModal('vaultModal')" class="px-2.5 py-1.5 rounded-xl bg-emerald-500/15 hover:bg-emerald-500/30 border border-emerald-400/35 text-xs font-semibold text-emerald-200 transition flex items-center gap-1" title="Kho Bộ nhớ & 5 Skill sao chép 1 chạm">
+        <span>🧠</span><span class="hidden md:inline">Kho 5 Skill</span>
+      </button>
+      <button onclick="openModal('ecoModal')" class="px-2.5 py-1.5 rounded-xl bg-gradient-to-r from-sky-600/40 to-indigo-600/40 hover:from-sky-500/50 hover:to-indigo-500/50 border border-sky-400/40 text-xs font-bold text-white transition flex items-center gap-1" title="Siêu Cẩm nang Hệ sinh thái Google AI">
+        <span>🌌</span><span class="hidden lg:inline">Google AI</span>
+      </button>
+      <button onclick="openModal('trackerModal')" class="px-2.5 py-1.5 rounded-xl bg-amber-500/15 hover:bg-amber-500/30 border border-amber-400/35 text-xs font-semibold text-amber-200 transition flex items-center gap-1" title="Sổ tay Công việc, Văn bản & BĐS Cam Lộ">
+        <span>📋</span><span class="hidden lg:inline">Sổ tay</span>
+      </button>
+
+      <!-- Tools Strip -->
+      <div class="flex items-center rounded-xl bg-slate-900/85 border border-slate-700/70 overflow-hidden">
+        <button onclick="cycleArtStyle()" class="xl:hidden px-2 py-1.5 text-xs text-slate-300 hover:bg-slate-700/70 hover:text-sky-300 transition" title="Đổi phong cách giao diện (5 kiểu)">🎨</button>
+        <div class="xl:hidden w-[1px] h-4 bg-slate-700"></div>
+        <button id="drawModeBtn" onclick="toggleDrawMode()" class="px-2 py-1.5 text-xs text-slate-300 hover:bg-slate-700/70 hover:text-amber-300 transition" title="Vẽ ghi chú trực tiếp (Whiteboard)">✏️</button>
+        <div class="w-[1px] h-4 bg-slate-700"></div>
+        <button id="healingBtn" onclick="toggleHealingSound()" class="px-2 py-1.5 text-xs text-slate-300 hover:bg-slate-700/70 hover:text-emerald-300 transition font-mono" title="Nhạc tần số 432Hz An Yên">🎵</button>
+        <div class="w-[1px] h-4 bg-slate-700"></div>
+        <button id="sfxBtn" onclick="toggleSFX()" class="px-2 py-1.5 text-xs text-emerald-300 hover:bg-slate-700/70 transition" title="Bật/Tắt hiệu ứng âm thanh UI">🔊</button>
+        <div class="w-[1px] h-4 bg-slate-700"></div>
+        <button onclick="cycleLayoutMode()" class="hidden lg:inline-block px-2 py-1.5 text-xs text-slate-300 hover:bg-slate-700/70 hover:text-sky-300 transition" title="Đổi bố cục 2 cột (Cân đối / Chiếu rộng / Tập trung đọc)">◫</button>
+        <div class="hidden lg:block w-[1px] h-4 bg-slate-700"></div>
+        <button onclick="sharePortalLink()" class="px-2 py-1.5 text-xs text-slate-300 hover:bg-slate-700/70 hover:text-amber-300 transition" title="Sao chép link chia sẻ Cẩm nang">🔗</button>
+        <div class="w-[1px] h-4 bg-slate-700"></div>
+        <button onclick="toggleFullscreen()" class="px-2 py-1.5 text-xs text-slate-300 hover:bg-slate-700/70 hover:text-white transition" title="Toàn màn hình (Phím F)">⛶</button>
+      </div>
+
+      <div class="flex items-center rounded-xl bg-slate-900/85 border border-slate-700/70 overflow-hidden">
+        <button onclick="adjustFontSize(-1)" class="px-2 py-1.5 text-[11px] font-mono font-bold text-slate-300 hover:bg-slate-700/70 hover:text-white transition" title="Giảm cỡ chữ">A-</button>
+        <div class="w-[1px] h-4 bg-slate-700"></div>
+        <button onclick="adjustFontSize(1)" class="px-2 py-1.5 text-[11px] font-mono font-bold text-slate-300 hover:bg-slate-700/70 hover:text-white transition" title="Tăng cỡ chữ">A+</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================
+       MAIN RESIZABLE 2-COLUMN WORKSPACE
+       ========================================================= -->
+  <main id="workspace" class="relative z-10 flex-1 flex flex-col lg:flex-row min-h-0 overflow-hidden">
+
+    <!-- LEFT PANEL: 4D Interactive Visual Stage -->
+    <section id="leftPanel" class="w-full lg:w-[44%] flex flex-col p-3 sm:p-4 gap-3 min-h-[380px] lg:min-h-0 lg:overflow-y-auto transition-all duration-200">
+      <!-- Holographic 4D Canvas / Custom Image Stage -->
+      <div class="relative flex-1 min-h-[270px] lg:min-h-[340px] rounded-2xl glass overflow-hidden border border-sky-400/25 shadow-2xl shadow-sky-950/60 flex flex-col justify-between">
+        <canvas id="stageCanvas" class="absolute inset-0 w-full h-full"></canvas>
+        <img id="customStageImg" src="" alt="Ảnh thực tế An Sơn" class="hidden absolute inset-0 w-full h-full object-cover z-5" />
+        <div id="customImgScrim" class="hidden absolute inset-0 bg-gradient-to-t from-[#06111c]/90 via-transparent to-[#06111c]/70 z-6"></div>
+
+        <!-- Top Overlay Badges & Upload Media -->
+        <div class="relative z-10 p-3 flex flex-wrap items-center justify-between gap-2">
+          <div class="flex items-center gap-1.5 flex-wrap">
+            <span id="stageChapterBadge" class="px-2.5 py-1 rounded-lg bg-slate-950/80 border border-sky-400/40 font-mono text-[11px] font-bold text-sky-300 backdrop-blur-md">
+              CHƯƠNG 01 / 12
+            </span>
+            <span id="stageSkillBadge" class="px-2.5 py-1 rounded-lg bg-emerald-950/80 border border-emerald-400/40 text-[11px] font-semibold text-emerald-300 backdrop-blur-md">
+              🏛️ Định vị & Gia phong
+            </span>
+          </div>
+          <div class="flex items-center gap-1.5">
+            <label class="cursor-pointer px-2 py-1 rounded-lg bg-slate-950/80 hover:bg-sky-500/30 border border-white/15 text-[11px] font-semibold text-slate-200 backdrop-blur-md transition" title="Nạp ảnh thật của thôn An Sơn vào chương này">
+              📷 Nạp ảnh
+              <input type="file" accept="image/*" class="hidden" onchange="uploadCustomStageImage(event)" />
+            </label>
+            <button id="resetImgBtn" onclick="resetStageTo4D()" class="hidden px-2 py-1 rounded-lg bg-rose-950/80 hover:bg-rose-500/40 border border-rose-400/40 text-[11px] font-semibold text-rose-200 backdrop-blur-md transition" title="Quay về mô hình 4D">
+              ↺ 4D
+            </button>
+          </div>
+        </div>
+
+        <!-- Center Visual Tagline & Mode -->
+        <div class="relative z-10 px-4 text-center pointer-events-none my-auto flex flex-col items-center gap-1.5">
+          <span id="stageModeBadge" class="px-2.5 py-0.5 rounded-full bg-sky-950/80 border border-sky-400/45 text-[11px] font-semibold text-sky-200 backdrop-blur-md">
+            🎙️ Chế độ: Đồng chí Bí thư
+          </span>
+          <p id="stageVisualLabel" class="inline-block px-3 py-1 rounded-full bg-slate-950/65 border border-white/10 text-[10px] font-mono uppercase tracking-widest text-sky-200/90 backdrop-blur-sm">
+            4D HOLOGRAM • AN SƠN NGÀY MỚI
+          </p>
+        </div>
+
+        <!-- Bottom Transform CTA -->
+        <div class="relative z-10 p-3.5 flex flex-col items-center gap-1.5 bg-gradient-to-t from-[#06111c]/95 via-[#06111c]/65 to-transparent">
+          <button onclick="flipAllCards()" class="btn-transform-glow px-5 py-2 rounded-full bg-gradient-to-r from-emerald-500 via-teal-500 to-sky-500 hover:from-emerald-400 hover:to-sky-400 text-slate-950 font-extrabold text-xs sm:text-sm tracking-wide uppercase transition transform active:scale-95 flex items-center gap-2">
+            <span>⚡</span>
+            <span>CHUYỂN HÓA</span>
+            <span class="text-[11px] font-semibold opacity-85 normal-case">(Lật thẻ 3D)</span>
+          </button>
+          <p class="text-[11px] text-slate-400">Nhấp nút hoặc phím <kbd class="px-1.5 py-0.5 rounded bg-slate-800 border border-slate-600 text-sky-300 font-mono">R</kbd> để lật toàn bộ thẻ</p>
+        </div>
+      </div>
+
+      <!-- Quick Chapter Overview, Metrics & Ready Flow Prompt -->
+      <div class="glass rounded-2xl p-3.5 border border-sky-400/20 space-y-2.5">
+        <div class="flex items-center justify-between gap-2">
+          <span class="text-[11px] font-mono uppercase tracking-wider text-emerald-400 font-bold">📌 Trọng tâm tác chiến</span>
+          <span id="stageTriggerKeyword" class="text-[11px] font-mono px-2 py-0.5 rounded bg-sky-500/15 text-sky-300 border border-sky-400/30">Từ khóa: Khởi tạo</span>
+        </div>
+        <p id="stageFocusText" class="text-xs sm:text-[13px] text-slate-200 leading-relaxed"></p>
+        <div id="stageMetrics" class="grid grid-cols-3 gap-2"></div>
+        <!-- Copyable Flow / Imagen Prompt Bar -->
+        <div class="pt-2 border-t border-slate-700/60 flex items-center justify-between gap-2">
+          <span class="text-[11px] text-amber-300 font-semibold truncate" id="stageFlowPreview">🎬 Prompt Google Flow sẵn sàng</span>
+          <button onclick="copyStageFlowPrompt()" class="shrink-0 px-2.5 py-1 rounded-lg bg-amber-500/20 hover:bg-amber-500/35 border border-amber-400/40 text-[11px] font-bold text-amber-200 transition">
+            📋 Copy Prompt Flow
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- DRAGGABLE VERTICAL SPLITTER (Desktop only) -->
+    <div id="splitter" class="hidden lg:block" title="Kéo để thay đổi kích thước • Nhấp đúp để đặt lại"></div>
+
+    <!-- RIGHT PANEL: Interactive Study & Operations Area -->
+    <section id="rightPanel" class="flex-1 flex flex-col p-3 sm:p-4 lg:overflow-y-auto min-w-0">
+      <div class="glass rounded-2xl p-4 sm:p-6 border border-sky-400/20 flex flex-col gap-5">
+
+        <!-- Top Navigation Strip -->
+        <div class="flex flex-wrap items-center justify-between gap-2 pb-3 border-b border-slate-700/60">
+          <div class="flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span id="pageIndicator" class="font-mono text-xs sm:text-sm font-bold tracking-wider text-sky-300">
+              AN SƠN • TRANG 1 / 12
+            </span>
+          </div>
+          <div class="flex items-center gap-2">
+            <button id="prevBtn" onclick="changeChapter(-1)" class="px-3 py-1.5 rounded-xl bg-slate-800/90 hover:bg-sky-500/20 border border-slate-600/70 hover:border-sky-400/50 text-xs font-semibold text-slate-200 transition disabled:opacity-40">
+              ← Trang trước
+            </button>
+            <button id="nextBtn" onclick="changeChapter(1)" class="px-3 py-1.5 rounded-xl bg-gradient-to-r from-sky-600 to-emerald-600 hover:from-sky-500 hover:to-emerald-500 text-xs font-bold text-white transition shadow-md shadow-sky-900/40 disabled:opacity-40">
+              Trang sau →
+            </button>
+          </div>
+        </div>
+
+        <!-- Chapter Heading & Actionable Click-to-Copy Checklist -->
+        <div>
+          <h2 id="chapterTitle" class="text-xl sm:text-2xl font-extrabold text-white leading-snug mb-1.5"></h2>
+          <p id="chapterSubtitle" class="text-xs sm:text-sm text-sky-200/85 leading-relaxed mb-3.5"></p>
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-[11px] font-mono uppercase tracking-wider text-slate-400">Luận điểm & Hành động trọng tâm</span>
+            <span class="text-[10px] text-emerald-300/85">💡 Nhấp vào từng dòng để sao chép nhanh</span>
+          </div>
+          <ul id="chapterBullets" class="space-y-2"></ul>
+        </div>
+
+        <!-- 3D Flip Cards Section -->
+        <div>
+          <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+            <h3 class="text-xs sm:text-sm font-extrabold uppercase tracking-wider text-amber-300 flex items-center gap-1.5">
+              <span>🔄</span>
+              <span>THẺ LẬT 3D NGHIỆP VỤ (CÁCH CŨ / RỦI RO ➔ CHUẨN HÓA / GIẢI PHÁP AI)</span>
+            </h3>
+            <span class="text-[11px] text-slate-400 font-mono">Nhấp thẻ để lật • Phím R</span>
+          </div>
+          <div id="cardsGrid" class="grid grid-cols-1 md:grid-cols-3 gap-3.5"></div>
+        </div>
+
+        <!-- Audio Summary & Vietnamese TTS Player -->
+        <div class="rounded-2xl bg-gradient-to-br from-slate-900/90 via-[#0b2235]/90 to-emerald-950/50 border border-emerald-400/30 p-4">
+          <div class="flex flex-wrap items-center justify-between gap-2 mb-2.5">
+            <div class="flex items-center gap-2">
+              <span class="text-base">🎙️</span>
+              <h3 class="text-xs sm:text-sm font-extrabold uppercase tracking-wider text-emerald-300">
+                TÓM TẮT NGHIỆP VỤ & LỜI GIẢNG AI
+              </h3>
+            </div>
+            <button onclick="copyCurrentSummary()" class="px-2.5 py-1 rounded-lg bg-emerald-500/20 hover:bg-emerald-500/35 border border-emerald-400/40 text-[11px] font-semibold text-emerald-200 transition">
+              📋 Sao chép tóm tắt
+            </button>
+          </div>
+
+          <div id="chapterSummary" onclick="copyCurrentSummary()" title="Nhấp để sao chép tóm tắt" class="text-xs sm:text-sm text-slate-100 leading-relaxed bg-slate-950/55 rounded-xl p-3.5 border border-white/10 cursor-pointer hover:border-emerald-400/50 transition mb-3.5"></div>
+
+          <!-- Audio Controls Bar -->
+          <div class="flex flex-wrap items-center justify-between gap-3 pt-2 border-t border-white/10">
+            <div class="flex items-center gap-2.5">
+              <button id="ttsPlayBtn" onclick="toggleTTS()" class="px-3.5 py-2 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs transition flex items-center gap-1.5">
+                <span id="ttsPlayIcon">▶</span>
+                <span id="ttsPlayText">Nghe lời giảng</span>
+              </button>
+              <button onclick="stopTTS()" class="px-3 py-2 rounded-xl bg-slate-800 hover:bg-rose-500/30 border border-slate-600 text-xs font-semibold text-slate-200 transition">
+                ⏹ Dừng
+              </button>
+              <!-- 4-bar Equalizer -->
+              <div id="ttsEqualizer" class="flex items-end gap-1 h-6 px-2">
+                <div class="eq-bar"></div>
+                <div class="eq-bar"></div>
+                <div class="eq-bar"></div>
+                <div class="eq-bar"></div>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-2">
+              <label for="ttsRate" class="text-[11px] font-mono text-slate-300">Tốc độ:</label>
+              <input id="ttsRate" type="range" min="0.75" max="1.5" step="0.05" value="1.05" oninput="updateTTSRate(this.value)" class="w-24 accent-emerald-400 cursor-pointer" />
+              <span id="ttsRateVal" class="text-[11px] font-mono font-bold text-sky-300 w-10">1.05x</span>
+            </div>
+
+            <div class="text-[11px] font-semibold text-amber-300/90 italic">
+              An Sơn Ngày Mới • Hiểu sâu – Sống tỉnh – Hành đúng
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================
+       BOTTOM FOOTER BAR
+       ========================================================= -->
+  <footer class="relative z-20 glass border-t border-sky-400/20 px-3 sm:px-5 py-2 flex flex-wrap items-center justify-between gap-2 text-xs">
+    <div class="flex items-center gap-3 min-w-[200px] flex-1 max-w-md">
+      <span class="px-2 py-0.5 rounded bg-sky-500/20 border border-sky-400/40 font-mono text-[10px] font-bold text-sky-300 shrink-0">AN SƠN</span>
+      <div class="flex-1 h-2 rounded-full bg-slate-800 overflow-hidden border border-slate-700">
+        <div id="footerProgress" class="h-full bg-gradient-to-r from-sky-400 via-emerald-400 to-amber-400 transition-all duration-500" style="width: 8.33%;"></div>
+      </div>
+      <span id="footerPercent" class="font-mono text-[11px] text-emerald-300 font-bold shrink-0">8%</span>
+    </div>
+
+    <div class="text-[11px] sm:text-xs text-slate-300 truncate max-w-xl">
+      🎙️ Sẵn sàng đồng hành cùng đồng chí Bí thư Nguyễn Anh Hào – Thôn An Sơn, xã Cam Lộ, tỉnh Quảng Trị.
+    </div>
+
+    <div class="hidden md:flex items-center gap-2 text-[11px] text-slate-400 font-mono">
+      <span><kbd class="px-1.5 py-0.5 rounded bg-slate-800 border border-slate-600 text-sky-300">←</kbd> <kbd class="px-1.5 py-0.5 rounded bg-slate-800 border border-slate-600 text-sky-300">→</kbd> Trang</span>
+      <span>•</span>
+      <span><kbd class="px-1.5 py-0.5 rounded bg-slate-800 border border-slate-600 text-emerald-300">R</kbd> Lật thẻ</span>
+      <span>•</span>
+      <span><kbd class="px-1.5 py-0.5 rounded bg-slate-800 border border-slate-600 text-amber-300">M</kbd> Mục lục</span>
+      <span>•</span>
+      <span><kbd class="px-1.5 py-0.5 rounded bg-slate-800 border border-slate-600 text-rose-300">F</kbd> Toàn màn hình</span>
+    </div>
+  </footer>
+
+  <!-- =========================================================
+       FLOATING ASSISTANT WIDGET: HỘI ĐỒNG TRỢ LÝ THẦN ĐÈN
+       ========================================================= -->
+  <!-- Minimized Pill -->
+  <button id="assistantPill" onclick="toggleAssistant(true)" class="fixed bottom-14 right-4 z-40 px-4 py-3 rounded-full bg-gradient-to-r from-sky-600 via-emerald-600 to-teal-600 hover:from-sky-500 hover:to-emerald-500 text-white font-bold text-xs sm:text-sm shadow-2xl shadow-emerald-950/80 border border-emerald-300/40 flex items-center gap-2 transition transform hover:scale-105">
+    <span class="text-base">🏛️</span>
+    <span>Thần Đèn An Sơn</span>
+    <span class="w-2 h-2 rounded-full bg-amber-300 animate-ping"></span>
+  </button>
+
+  <!-- Expanded Chat Panel -->
+  <div id="assistantPanel" class="hidden fixed bottom-14 right-3 sm:right-5 z-50 w-[94vw] sm:w-[440px] max-h-[82vh] glass-strong rounded-2xl shadow-2xl shadow-black/80 flex flex-col overflow-hidden border border-emerald-400/40 transition-all duration-200">
+    <!-- Widget Header -->
+    <div id="assistantHeader" class="px-4 py-3 bg-gradient-to-r from-sky-900/90 via-slate-900 to-emerald-900/90 border-b border-sky-400/25 flex items-center justify-between cursor-move">
+      <div>
+        <h3 class="text-xs sm:text-sm font-extrabold text-white flex items-center gap-1.5">
+          <span>🏛️</span> HỘI ĐỒNG TRỢ LÝ THẦN ĐÈN
+        </h3>
+        <p id="assistantStatus" class="text-[11px] text-emerald-300 font-mono">An Sơn Ngày Mới • Chế độ: Đồng chí Bí thư</p>
+      </div>
+      <div class="flex items-center gap-1">
+        <button onclick="clearChat()" class="px-2 py-1 rounded-lg bg-slate-800/80 hover:bg-slate-700 text-[11px] text-slate-300" title="Làm mới hội thoại">↺</button>
+        <button onclick="toggleMaximizeAssistant()" class="px-2 py-1 rounded-lg bg-slate-800/80 hover:bg-sky-500/40 text-xs font-bold text-sky-200" title="Phóng to / Thu vừa">⤢</button>
+        <button onclick="toggleAssistant(false)" class="px-2.5 py-1 rounded-lg bg-slate-800/80 hover:bg-rose-500/40 text-xs font-bold text-white" title="Thu gọn">✕</button>
+      </div>
+    </div>
+
+    <!-- 5 Skill Mode Tabs -->
+    <div id="assistantTabs" class="p-2 bg-slate-950/70 border-b border-slate-800 flex gap-1.5 overflow-x-auto"></div>
+
+    <!-- Messages Area -->
+    <div id="chatMessages" class="flex-1 p-3 space-y-3 overflow-y-auto min-h-[220px] max-h-[380px]"></div>
+
+    <!-- Quick Prompt Chips -->
+    <div id="quickChips" class="px-3 py-2 bg-slate-950/60 border-t border-slate-800 flex flex-wrap gap-1.5"></div>
+
+    <!-- Chat Input -->
+    <form onsubmit="handleChatSubmit(event)" class="p-2.5 bg-slate-900/90 border-t border-slate-700/80 flex gap-2">
+      <input id="chatInput" type="text" placeholder="Nhập yêu cầu cho Thần Đèn An Sơn..." class="flex-1 px-3 py-2 rounded-xl bg-slate-950 border border-slate-700 focus:border-emerald-400 focus:outline-none text-xs text-white placeholder-slate-400" />
+      <button type="submit" class="px-3.5 py-2 rounded-xl bg-gradient-to-r from-sky-500 to-emerald-500 hover:from-sky-400 hover:to-emerald-400 text-slate-950 font-extrabold text-xs transition">
+        Gửi
+      </button>
+    </form>
+  </div>
+
+  <!-- =========================================================
+       DRAWER: DANH MỤC 12 CHƯƠNG CẨM NANG (CÓ TÌM KIẾM)
+       ========================================================= -->
+  <div id="chapterDrawerBackdrop" onclick="closeDrawer()" class="hidden fixed inset-0 z-50 bg-black/65 backdrop-blur-sm"></div>
+  <aside id="chapterDrawer" class="fixed top-0 left-0 z-50 h-full w-[88vw] max-w-md glass-strong border-r border-sky-400/30 transform -translate-x-full transition-transform duration-300 flex flex-col">
+    <div class="p-4 border-b border-slate-700/80 flex items-center justify-between bg-slate-950/60">
+      <div>
+        <h2 class="text-sm font-extrabold text-white">📑 DANH MỤC 12 CHƯƠNG CẨM NANG</h2>
+        <p class="text-[11px] text-sky-300">An Sơn Ngày Mới • Nguyễn Anh Hào</p>
+      </div>
+      <button onclick="closeDrawer()" class="w-8 h-8 rounded-lg bg-slate-800 hover:bg-rose-500/30 text-white font-bold">✕</button>
+    </div>
+    <div class="p-3 border-b border-slate-800 bg-slate-900/60">
+      <input id="drawerSearch" type="text" oninput="renderDrawerList()" placeholder="🔍 Tìm chương, từ khóa hoặc Skill..." class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-700 focus:border-sky-400 focus:outline-none text-xs text-white placeholder-slate-400" />
+    </div>
+    <div id="chapterListContainer" class="flex-1 overflow-y-auto p-3 space-y-2"></div>
+  </aside>
+
+  <!-- =========================================================
+       MODAL 1: KHO BỘ NHỚ GỐC & 5 SKILL (1-CLICK COPY)
+       ========================================================= -->
+  <div id="vaultModal" class="hidden fixed inset-0 z-50 bg-black/75 backdrop-blur-md flex items-center justify-center p-3 sm:p-5">
+    <div class="glass-strong w-full max-w-4xl max-h-[88vh] rounded-2xl border border-emerald-400/35 shadow-2xl flex flex-col overflow-hidden">
+      <div class="p-4 border-b border-slate-700/80 flex flex-wrap items-center justify-between gap-2 bg-slate-950/70">
+        <div>
+          <h2 class="text-base sm:text-lg font-extrabold text-white">🧠 KHO LƯU TRỮ BỘ NHỚ GỐC & 5 SKILL GOOGLE AI</h2>
+          <p class="text-xs text-emerald-300">Sao chép 1 chạm để nạp trực tiếp vào Cài đặt Trí nhớ Cá nhân Gemini & Gems</p>
+        </div>
+        <button onclick="closeModal('vaultModal')" class="w-9 h-9 rounded-xl bg-slate-800 hover:bg-rose-500/40 text-white font-bold">✕</button>
+      </div>
+
+      <!-- Modal Tabs -->
+      <div class="px-4 pt-3 pb-2 bg-slate-900/70 border-b border-slate-800 flex flex-wrap gap-2">
+        <button id="vaultTabMem" onclick="switchVaultTab('memory')" class="px-4 py-2 rounded-xl text-xs font-bold bg-emerald-500 text-slate-950 transition">
+          🧩 Bộ nhớ Cá nhân Gemini (7 Mảnh)
+        </button>
+        <button id="vaultTabSkills" onclick="switchVaultTab('skills')" class="px-4 py-2 rounded-xl text-xs font-bold bg-slate-800 text-slate-300 hover:text-white transition">
+          ⚡ 5 Skill Chuyên biệt (Tên + Mô tả + Hướng dẫn)
+        </button>
+      </div>
+
+      <!-- Content -->
+      <div id="vaultContent" class="flex-1 overflow-y-auto p-4 space-y-4"></div>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       MODAL 2: SIÊU CẨM NANG HỆ SINH THÁI GOOGLE AI
+       ========================================================= -->
+  <div id="ecoModal" class="hidden fixed inset-0 z-50 bg-black/75 backdrop-blur-md flex items-center justify-center p-3 sm:p-5">
+    <div class="glass-strong w-full max-w-4xl max-h-[88vh] rounded-2xl border border-sky-400/35 shadow-2xl flex flex-col overflow-hidden">
+      <div class="p-4 border-b border-slate-700/80 flex items-center justify-between bg-slate-950/70">
+        <div>
+          <h2 class="text-base sm:text-lg font-extrabold text-white">🌌 SIÊU CẨM NANG HỆ SINH THÁI GOOGLE AI</h2>
+          <p class="text-xs text-sky-300">Thực chiến cho công tác Đoàn, truyền thông thôn An Sơn & xã Cam Lộ</p>
+        </div>
+        <button onclick="closeModal('ecoModal')" class="w-9 h-9 rounded-xl bg-slate-800 hover:bg-rose-500/40 text-white font-bold">✕</button>
+      </div>
+
+      <div id="ecoTabs" class="px-4 py-2.5 bg-slate-900/80 border-b border-slate-800 flex gap-2 overflow-x-auto"></div>
+      <div id="ecoBody" class="flex-1 overflow-y-auto p-4 sm:p-5"></div>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       MODAL 3: SỔ TAY CÔNG VIỆC, VĂN BẢN & BĐS (LOCALSTORAGE + EXPORT)
+       ========================================================= -->
+  <div id="trackerModal" class="hidden fixed inset-0 z-50 bg-black/75 backdrop-blur-md flex items-center justify-center p-3 sm:p-5">
+    <div class="glass-strong w-full max-w-4xl max-h-[88vh] rounded-2xl border border-amber-400/35 shadow-2xl flex flex-col overflow-hidden">
+      <div class="p-4 border-b border-slate-700/80 flex flex-wrap items-center justify-between gap-2 bg-slate-950/70">
+        <div>
+          <h2 class="text-base sm:text-lg font-extrabold text-white">📋 SỔ TAY CÔNG VIỆC, VĂN BẢN & BĐS CAM LỘ</h2>
+          <p class="text-xs text-amber-300">Tự động lưu trên trình duyệt (LocalStorage) • Theo dõi tiến độ hằng ngày</p>
+        </div>
+        <div class="flex items-center gap-2">
+          <button onclick="exportTasksJSON()" class="px-3 py-1.5 rounded-xl bg-sky-500/20 hover:bg-sky-500/35 border border-sky-400/40 text-xs font-bold text-sky-200 transition">💾 Xuất sao lưu</button>
+          <button onclick="closeModal('trackerModal')" class="w-9 h-9 rounded-xl bg-slate-800 hover:bg-rose-500/40 text-white font-bold">✕</button>
+        </div>
+      </div>
+
+      <div class="flex-1 overflow-y-auto p-4 space-y-4">
+        <!-- Add Form -->
+        <form onsubmit="addTask(event)" class="rounded-2xl bg-slate-900/80 border border-slate-700 p-3.5 grid grid-cols-1 sm:grid-cols-12 gap-2.5">
+          <input id="taskTitle" required type="text" placeholder="Tên công việc / Văn bản / Thửa đất Cam Lộ..." class="sm:col-span-5 px-3 py-2 rounded-xl bg-slate-950 border border-slate-700 focus:border-amber-400 focus:outline-none text-xs text-white" />
+          <select id="taskCategory" class="sm:col-span-3 px-3 py-2 rounded-xl bg-slate-950 border border-slate-700 focus:border-amber-400 focus:outline-none text-xs text-white">
+            <option value="Công tác Đoàn">📜 Công tác Đoàn</option>
+            <option value="Truyền thông">📢 Truyền thông</option>
+            <option value="BĐS Cam Lộ">🏡 BĐS Cam Lộ</option>
+            <option value="Học AI">🎓 Học AI</option>
+          </select>
+          <input id="taskDeadline" type="date" class="sm:col-span-2 px-3 py-2 rounded-xl bg-slate-950 border border-slate-700 focus:border-amber-400 focus:outline-none text-xs text-white" />
+          <button type="submit" class="sm:col-span-2 px-3 py-2 rounded-xl bg-gradient-to-r from-amber-500 to-emerald-500 hover:from-amber-400 hover:to-emerald-400 text-slate-950 font-extrabold text-xs transition">
+            + Thêm mới
+          </button>
+          <input id="taskNotes" type="text" placeholder="Ghi chú chi tiết (diện tích, số hiệu văn bản, địa điểm, người liên hệ...)" class="sm:col-span-12 px-3 py-2 rounded-xl bg-slate-950 border border-slate-700 focus:border-amber-400 focus:outline-none text-xs text-white" />
+        </form>
+
+        <!-- Filter Strip -->
+        <div id="trackerFilters" class="flex flex-wrap items-center justify-between gap-2"></div>
+
+        <!-- Tasks List -->
+        <div id="tasksList" class="space-y-2.5"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       APPLICATION DATA & LOGIC
+       ========================================================= -->
+  <script>
+    /* =========================================================
+       1. DATA: 12 CHAPTERS OF THE 4D HANDBOOK
+       ========================================================= */
+    const CHAPTERS = [
+      {
+        id: 1,
+        title: "Định vị Vai trò, Gia phong Cách mạng & Trợ lý “An Sơn Ngày Mới”",
+        subtitle: "Xây dựng bản sắc số vững chắc cho đồng chí Bí thư Chi đoàn Nguyễn Anh Hào trên nền tảng gia phong truyền thống quê hương Cam Lộ.",
+        skillTag: "🏛️ Định vị & Gia phong",
+        mode: "work",
+        trigger: "Khởi tạo hệ thống",
+        visualType: "star_constellation",
+        flowPrompt: "Cinematic 16:9 4K golden sunrise over peaceful green rural village in Cam Lo Quang Tri Vietnam, young Vietnamese youth union leader standing with confidence, warm sunbeams, photorealistic",
+        focus: "Kết hợp sức mạnh trí tuệ nhân tạo Google AI với chuẩn mực đạo đức, tinh thần xung kích của người cháu đích tôn gia đình lão thành cách mạng tại thôn An Sơn, xã Cam Lộ.",
+        metrics: [
+          { label: "Vai trò cốt lõi", value: "3 Trụ cột" },
+          { label: "Tên Trợ lý AI", value: "An Sơn" },
+          { label: "Địa bàn", value: "Cam Lộ, QT" }
+        ],
+        bullets: [
+          "Chủ thể điều hành: Nguyễn Anh Hào — Bí thư Chi đoàn thôn An Sơn, phụ trách truyền thông & văn bản thôn/xã, kiêm kết nối Bất động sản uy tín xã Cam Lộ.",
+          "Nền tảng gia phong: Cháu đích tôn mẫu mực của ông bà lão thành cách mạng; con trai hiếu thảo của bố Anh Hai (nguyên lãnh đạo xã Cam Nghĩa) & mẹ Vân (nông dân giỏi, kinh doanh mủ cao su); người chồng mẫu mực của phu nhân Mỹ Nhung (điều dưỡng Bệnh viện Đa khoa Cam Lộ).",
+          "Định danh trợ lý AI: Đặt tên là “An Sơn Ngày Mới” (gọi tắt là An Sơn hoặc Thần Đèn), đồng hành 24/7 trong mọi nhiệm vụ từ hành chính đến sáng tạo nội dung.",
+          "Nguyên tắc tối thượng: Mọi văn bản, bài truyền thông hay tư vấn bất động sản đều phải giữ trọn chữ Tín, tính chuẩn mực và lòng tự hào quê hương Quảng Trị."
+        ],
+        cards: [
+          {
+            frontTitle: "Dùng AI chung chung, thiếu bản sắc",
+            frontBody: "Mỗi lần mở Gemini lại phải giới thiệu lại từ đầu, câu trả lời khô cứng, xa rời thực tế thôn An Sơn và xã Cam Lộ.",
+            backTitle: "Nạp Bộ nhớ Gốc 7 Mảnh",
+            backBody: "AI ghi nhớ vĩnh viễn chức danh Bí thư Chi đoàn, gia phong cách mạng và địa bàn Cam Lộ để trả lời chuẩn xác ngay từ câu đầu tiên."
+          },
+          {
+            frontTitle: "Ôm đồm thủ công nhiều đầu việc",
+            frontBody: "Vừa lo công tác Đoàn, vừa viết tin truyền thông, vừa kết nối nhà đất khiến dễ quá tải và chậm tiến độ.",
+            backTitle: "Phân tầng 5 Skill Tự động",
+            backBody: "Thần Đèn An Sơn tự động hóa 80% khâu soạn thảo, lên kịch bản ảnh/video và chuẩn hóa thông tin BĐS trong vài phút."
+          },
+          {
+            frontTitle: "Truyền thông thiếu chiều sâu giá trị",
+            frontBody: "Nội dung dễ bị rập khuôn, thiếu sự gần gũi với bà con nhân dân và thiếu bản sắc người cán bộ trẻ.",
+            backTitle: "Văn phong Chuẩn mực & Gần dân",
+            backBody: "Kết hợp ngôn ngữ hành chính sắc sảo khi làm việc Đoàn và sự chân thành, minh bạch khi phục vụ nhân dân địa phương."
+          }
+        ],
+        summary: "Chào đồng chí Bí thư Nguyễn Anh Hào. Chương 1 xác lập nền móng cho toàn bộ hệ thống trợ lý AI An Sơn Ngày Mới. Từ nền tảng gia đình cách mạng mẫu mực tại Cam Lộ, Quảng Trị, hệ thống được thiết kế để hỗ trợ trọn vẹn ba trụ cột: Công tác Đoàn và văn bản hành chính, Truyền thông số thôn An Sơn, và Kết nối bất động sản minh bạch, uy tín."
+      },
+      {
+        id: 2,
+        title: "Quy tắc Xưng hô & Cơ chế Tự động Triệu hồi 5 Skill",
+        subtitle: "Thiết lập kỷ luật giao tiếp hai chế độ và hệ thống từ khóa giúp Gemini Spark tự động đổi vai chuyên gia tức thì.",
+        skillTag: "⚡ Auto-Skill Trigger",
+        mode: "work",
+        trigger: "Từ khóa 5 Skill",
+        visualType: "neural_ring",
+        flowPrompt: "Cinematic 16:9 glowing holographic neural network with 5 golden orbital skill nodes connecting seamlessly above a digital desk, cyan and emerald lights, futuristic minimalism",
+        focus: "Phân tách rạch ròi giữa tác phong nghiêm túc khi thực thi công vụ và sự gần gũi thân tình khi tự học công nghệ hoặc trao đổi kinh doanh.",
+        metrics: [
+          { label: "Chế độ xưng hô", value: "2 Chế độ" },
+          { label: "Skill tự động", value: "5 Skill" },
+          { label: "Tốc độ kích hoạt", value: "< 1 giây" }
+        ],
+        bullets: [
+          "Chế độ Làm việc (Skill 1, 2, 3): Khi soạn văn bản, làm công tác Đoàn, truyền thông hay tạo ảnh/video — AI bắt buộc gọi là “đồng chí Bí thư” (hoặc “đồng chí”) và xưng “đồng chí”.",
+          "Chế độ Thân mật (Skill 4, 5): Khi trò chuyện bình thường, tự học hệ sinh thái Google AI hoặc tư vấn Bất động sản — AI gọi là “anh” và xưng “em”.",
+          "Cơ chế Auto-Skill Trigger: Chỉ cần gõ từ khóa (ví dụ: 'Kế hoạch', 'Bài đăng', 'Flow', 'Học AI', 'Sổ đỏ'), Gemini tự triệu hồi đúng kỹ năng mà không cần nhắc lại ngữ cảnh.",
+          "Lưu ý nạp cài đặt: Chia bộ nhớ thành 7 mảnh ngắn gọn trong phần 'Thông tin đã lưu' của Gemini để AI tiếp thu 100% không bị tràn giới hạn."
+        ],
+        cards: [
+          {
+            frontTitle: "Xưng hô lẫn lộn công việc & đời thường",
+            frontBody: "Khi đang soạn nghị quyết Chi đoàn mà AI lại xưng hô quá suồng sã, làm giảm tính trang trọng của văn bản.",
+            backTitle: "Kỷ luật Xưng hô Kép",
+            backBody: "Tự động khóa chế độ 'Đồng chí – Đồng chí Bí thư' cho công vụ và chuyển mượt sang 'Anh – Em' khi tự học hoặc làm BĐS."
+          },
+          {
+            frontTitle: "Nhồi nhét toàn bộ lệnh vào 1 đoạn dài",
+            frontBody: "Dán văn bản quá dài vào Cài đặt trí nhớ khiến Gemini từ chối lưu hoặc bỏ sót các quy tắc quan trọng ở cuối.",
+            backTitle: "Kiến trúc 7 Mảnh Mô-đun",
+            backBody: "Tách bạch 7 mảnh bộ nhớ ngắn gọn (đã có sẵn trong Kho Bộ nhớ ở góc trên) giúp nạp nhanh, dễ cập nhật từng phần."
+          },
+          {
+            frontTitle: "Phải gõ câu lệnh mồi dài dòng mỗi ngày",
+            frontBody: "Mất thời gian nhắc đi nhắc lại cấu trúc bài viết hay thể thức Nghị định 30 cho từng cuộc trò chuyện mới.",
+            backTitle: "Triệu hồi bằng 1 Từ khóa",
+            backBody: "Gõ đúng từ khóa kích hoạt, Thần Đèn tự động áp dụng ngay bộ khung chuẩn và xuất kết quả vào ô sao chép."
+          }
+        ],
+        summary: "Thưa đồng chí Bí thư, Chương 2 thiết lập bộ quy tắc giao tiếp và tự động triệu hồi 5 Skill. Với hai chế độ xưng hô chuẩn xác gồm Đồng chí Bí thư trong công vụ và Anh Em trong học tập, bất động sản, đồng chí chỉ cần gõ đúng từ khóa là trợ lý An Sơn Ngày Mới sẽ tự kích hoạt đúng chuyên gia tương ứng."
+      },
+      {
+        id: 3,
+        title: "Skill 1: Thư ký Công tác Đoàn & Chuẩn thể thức Nghị định 30",
+        subtitle: "Chuẩn hóa tuyệt đối văn bản hành chính thôn An Sơn, xã Cam Lộ và văn bản Đoàn TNCS Hồ Chí Minh.",
+        skillTag: "📜 Skill 1: Thư ký Đoàn",
+        mode: "work",
+        trigger: "Văn bản / Nghị quyết",
+        visualType: "doc_matrix",
+        flowPrompt: "Cinematic 16:9 sleek futuristic Vietnamese administrative document floating in soft emerald light, crisp clean layout, golden seal emblem, organized modern workspace",
+        focus: "Đảm bảo 100% giấy tờ ban hành từ Chi đoàn thôn An Sơn và Ban điều hành thôn đạt chuẩn thể thức Nghị định 30/2020/NĐ-CP và quy định của Trung ương Đoàn.",
+        metrics: [
+          { label: "Chuẩn pháp lý", value: "NĐ 30/2020" },
+          { label: "Khẩu hiệu Đoàn", value: "Chuẩn ĐTN" },
+          { label: "Đầu ra", value: "Ô Copy 1 chạm" }
+        ],
+        bullets: [
+          "Đầy đủ thành phần thể thức: Cơ quan chủ quản (ĐOÀN XÃ CAM LỘ / UBND XÃ CAM LỘ), cơ quan ban hành (BCH CHI ĐOÀN THÔN AN SƠN), số & ký hiệu, địa danh 'An Sơn, ngày... tháng... năm...'.",
+          "Phân biệt chuẩn Quốc hiệu – Tiêu ngữ cho văn bản hành chính thôn/xã và Khẩu hiệu 'ĐOÀN TNCS HỒ CHÍ MINH' cho văn bản hệ thống Đoàn.",
+          "Chữ ký chuẩn mực: TM. BCH CHI ĐOÀN — BÍ THƯ — Nguyễn Anh Hào, kèm phần Nơi nhận đầy đủ (BTV Đoàn xã, Chi ủy thôn An Sơn, Lưu Chi đoàn).",
+          "Thuật ngữ sắc nét: Sử dụng chính xác từ vựng Đoàn (ĐVTN, xung kích, tình nguyện, chi ủy, Ban công tác Mặt trận, chuyển đổi số cộng đồng)."
+        ],
+        cards: [
+          {
+            frontTitle: "Sai thể thức Quốc hiệu & Số hiệu",
+            frontBody: "Nhầm lẫn giữa mẫu văn bản UBND và mẫu văn bản Đoàn TNCS Hồ Chí Minh, thiếu phần Trích yếu hoặc Nơi nhận.",
+            backTitle: "Chuẩn hóa Tự động Nghị định 30",
+            backBody: "Skill 1 tự động lắp ráp đủ 9 thành phần thể thức hành chính và trình bày đúng phân cấp cơ quan tại xã Cam Lộ."
+          },
+          {
+            frontTitle: "Diễn đạt rời rạc, thiếu tính hành động",
+            frontBody: "Ghi chép ý tưởng cuộc họp lộn xộn, khi viết thành văn bản mất hàng giờ chỉnh sửa câu chữ.",
+            backTitle: "Biến ý thô thành Văn bản chuẩn",
+            backBody: "Chỉ cần đọc hoặc gõ 3 gạch đầu dòng, Thư ký Đoàn tự sắp xếp bố cục I. Mục đích, II. Nội dung, III. Tổ chức thực hiện."
+          },
+          {
+            frontTitle: "Mất công định dạng khi dán sang Word",
+            frontBody: "Copy từ chat bị dính lời chào thừa thãi, phải xóa sửa thủ công trước khi in trình Chi ủy ký duyệt.",
+            backTitle: "Xuất khung Code Block sạch",
+            backBody: "Toàn bộ văn bản được đóng gói trong ô sao chép sạch sẽ, dán thẳng vào Google Docs hoặc Word là in ngay."
+          }
+        ],
+        summary: "Thưa đồng chí Bí thư, Skill 1 biến trợ lý An Sơn thành Thư ký Hành chính và Công tác Đoàn chuyên nghiệp. Mọi nghị quyết, giấy mời, thông báo của thôn An Sơn và xã Cam Lộ đều được chuẩn hóa theo Nghị định 30 và thể thức Đoàn Thanh niên Cộng sản Hồ Chí Minh, trình bày sẵn trong khung sao chép để in ấn tức thì."
+      },
+      {
+        id: 4,
+        title: "Quy trình Soạn Kế hoạch, Báo cáo & Diễn văn Siêu tốc",
+        subtitle: "Từ ý tưởng thô trong 30 giây đến bộ Kế hoạch ra quân, Báo cáo tổng kết và Diễn văn trang trọng.",
+        skillTag: "📜 Skill 1: Thực chiến",
+        mode: "work",
+        trigger: "Kế hoạch / Báo cáo",
+        visualType: "timeline_flow",
+        flowPrompt: "Cinematic 16:9 time-lapse visual of glowing blueprint plans unfolding into organized milestone cards, bright sky blue and gold aesthetic, smooth camera movement",
+        focus: "Rút ngắn thời gian làm giấy tờ từ 2 tiếng xuống còn 3 phút thông qua công thức 3 bước: Nạp ý thô ➔ Chuẩn hóa bố cục ➔ Kiểm duyệt số liệu.",
+        metrics: [
+          { label: "Tiết kiệm thời gian", value: "90%" },
+          { label: "Bố cục chuẩn", value: "3 Phần lớn" },
+          { label: "Độ chính xác", value: "Cao nhất" }
+        ],
+        bullets: [
+          "Kế hoạch phong trào (Ngày Chủ nhật Xanh, Tháng Thanh niên, Tiếp sức mùa thi): Luôn có thời gian, địa điểm cụ thể tại thôn An Sơn, phân công nhiệm vụ rõ người – rõ việc.",
+          "Báo cáo tháng/quý/năm: Tự động tổng hợp số liệu ĐVTN tham gia, kết quả đạt được, hạn chế – nguyên nhân và phương hướng tháng tới.",
+          "Diễn văn & Lời phát biểu: Văn phong hào sảng, giàu cảm xúc quê hương, phù hợp dịp 26/3, 27/7, Đại hội Chi đoàn hay Ngày hội Đại đoàn kết toàn dân tộc.",
+          "Mẹo thực chiến: Dùng giọng nói (Micro) trên điện thoại đọc các gạch đầu dòng rời rạc rồi gửi cho Skill 1 biên tập hoàn chỉnh."
+        ],
+        cards: [
+          {
+            frontTitle: "Ngồi nhìn trang trắng khi viết diễn văn",
+            frontBody: "Gần sát giờ khai mạc buổi lễ mới bắt đầu tìm ý, dễ bị trùng lặp khuôn mẫu năm trước.",
+            backTitle: "Khơi nguồn Diễn văn Giàu cảm xúc",
+            backBody: "Cung cấp tên sự kiện + 2 điểm nhấn của thôn An Sơn, AI viết ngay bài phát biểu 3-5 phút súc tích, truyền lửa."
+          },
+          {
+            frontTitle: "Kế hoạch chung chung khó phân công",
+            frontBody: "Viết kế hoạch không gắn thời gian cụ thể và người phụ trách khiến lúc triển khai dễ bị chồng chéo.",
+            backTitle: "Bảng Phân công Rõ người Rõ việc",
+            backBody: "AI tự động kèm bảng tiến độ, phân công từng tổ đoàn viên, chuẩn bị hậu cần và dự trù kinh phí minh bạch."
+          },
+          {
+            frontTitle: "Báo cáo dài dòng nhưng thiếu số liệu",
+            frontBody: "Trình bày lan man, lãnh đạo Đoàn xã khó nắm bắt nhanh thành tích nổi bật của Chi đoàn thôn An Sơn.",
+            backTitle: "Cấu trúc Báo cáo Trọng tâm",
+            backBody: "Tự động nổi bật các con số biết nói (số công trình thanh niên, số ngày công, tỷ lệ đoàn viên tham gia)."
+          }
+        ],
+        summary: "Thưa đồng chí Bí thư, Chương 4 hướng dẫn quy trình soạn thảo kế hoạch, báo cáo và diễn văn siêu tốc. Chỉ cần đọc vài gạch đầu dòng qua micro điện thoại về thời gian, địa điểm và mục tiêu, Skill 1 sẽ tự động biên tập thành văn bản mạch lạc, phân công rõ người rõ việc và sẵn sàng triển khai ngay tại thôn An Sơn."
+      },
+      {
+        id: 5,
+        title: "Skill 2: Truyền thông Cơ sở Thôn An Sơn & Xã Cam Lộ",
+        subtitle: "Xây dựng tiếng nói truyền thông hiện đại, gần dân, lan tỏa năng lượng tích cực trên Facebook và Zalo cộng đồng.",
+        skillTag: "📢 Skill 2: Truyền thông",
+        mode: "work",
+        trigger: "Truyền thông / Bài đăng",
+        visualType: "signal_waves",
+        flowPrompt: "Cinematic 16:9 glowing waves of community communication radiating out from a peaceful rural cultural house in Vietnam, warm golden evening light, uplifting mood",
+        focus: "Mỗi bài viết tuyên truyền của thôn An Sơn và xã Cam Lộ phải đảm bảo 5 thành phần vàng: Tiêu đề thu hút – Mở bài chạm cảm xúc – Nội dung dễ đọc – Kêu gọi hành động – Hashtag chuẩn.",
+        metrics: [
+          { label: "Cấu trúc bài", value: "5 Phần vàng" },
+          { label: "Kênh chính", value: "FB & Zalo" },
+          { label: "Hashtag", value: "#AnSonNgayMoi" }
+        ],
+        bullets: [
+          "Tiêu đề (Headline): Viết in hoa hoặc giật tít tích cực, khơi gợi niềm tự hào quê hương Cam Lộ hoặc tính cấp thiết của thông báo dân sinh.",
+          "Mở bài (Hook): 2-3 câu ngắn đi thẳng vào điểm sáng sự kiện để giữ chân bà con đọc tiếp trên màn hình điện thoại.",
+          "Thân bài thông minh: Chia đoạn ngắn 2-3 dòng, dùng gạch đầu dòng và emoji văn minh (🇻🇳, 🌱, 🔥, 📢, 🤝) tránh tường chữ dày đặc.",
+          "Kết bài & Hashtag: Kêu gọi bà con chia sẻ, tương tác và chốt bằng bộ thẻ #AnSon #CamLo #TuoiTreCamLo #AnSonNgayMoi."
+        ],
+        cards: [
+          {
+            frontTitle: "Đăng nguyên văn bản hành chính lên Facebook",
+            frontBody: "Chữ dày đặc, khô khan khiến bà con và thanh niên lướt qua, thông tin quan trọng không đến được từng hộ dân.",
+            backTitle: "Chuyển hóa thành Tin xã hội Dễ đọc",
+            backBody: "Skill 2 tóm lược văn bản thành bài đăng chia đoạn thoáng mắt, nhấn đậm mốc thời gian và quyền lợi của người dân."
+          },
+          {
+            frontTitle: "Tiêu đề mờ nhạt, ít người tương tác",
+            frontBody: "Mở đầu bằng 'Thông báo về việc...' khiến tỷ lệ nhấp xem thấp trên bảng tin mạng xã hội.",
+            backTitle: "Tiêu đề Giật tít Tích cực",
+            backBody: "Đặt tiêu đề gắn với niềm tự hào thôn An Sơn, sức trẻ Cam Lộ hoặc lợi ích thiết thực giúp tăng gấp 3 lượt tiếp cận."
+          },
+          {
+            frontTitle: "Thiếu định hướng ảnh đính kèm",
+            frontBody: "Đăng bài chữ không có ảnh hoặc chọn ảnh lộn xộn làm giảm tính chuyên nghiệp của trang thông tin thôn/xã.",
+            backTitle: "Gợi ý Bộ ảnh Kèm bài Tự động",
+            backBody: "Mỗi bài viết từ Skill 2 luôn đính kèm gợi ý góc chụp thực tế hoặc chuyển sang Skill 3 tạo ảnh minh họa chuẩn."
+          }
+        ],
+        summary: "Thưa đồng chí Bí thư, Chương 5 trang bị công thức truyền thông cơ sở cho thôn An Sơn và xã Cam Lộ. Thay vì đăng nguyên văn bản hành chính khô cứng, Skill 2 giúp chuyển hóa thông tin thành các bài đăng Facebook và Zalo súc tích, giàu cảm xúc, có bố cục 5 phần chuẩn mực kèm bộ hashtag An Sơn Ngày Mới."
+      },
+      {
+        id: 6,
+        title: "Lan tỏa Gương tốt, Nông thôn mới & Xử lý Tin Dân sinh",
+        subtitle: "Nghệ thuật kể chuyện quê hương chân thực và truyền đạt thông báo khẩn (phòng chống thiên tai, tiêm chủng, lịch họp) chuẩn xác.",
+        skillTag: "📢 Skill 2: Thực chiến",
+        mode: "work",
+        trigger: "Tuyên truyền / Viết tin",
+        visualType: "community_nodes",
+        flowPrompt: "Cinematic 16:9 clean concrete village road lined with vibrant flowers and solar street lights in Cam Lo Quang Tri, villagers and blue-shirt youth smiling together, 8k photorealistic",
+        focus: "Đa dạng hóa tuyến bài truyền thông: Kể chuyện gương người tốt việc tốt, cập nhật diện mạo Nông thôn mới kiểu mẫu và phát thông báo khẩn kịp thời.",
+        metrics: [
+          { label: "Tuyến bài", value: "3 Tuyến chính" },
+          { label: "Tốc độ phát tin", value: "2 Phút" },
+          { label: "Độ tin cậy", value: "100% Chính thống" }
+        ],
+        bullets: [
+          "Tuyến bài Gương sáng An Sơn: Tôn vinh đoàn viên tình nguyện, hộ nông dân sản xuất giỏi, các gia đình văn hóa tiêu biểu với giọng văn mộc mạc, trân trọng.",
+          "Tuyến bài Nông thôn mới: Ghi nhận tuyến đường hoa thanh niên, đường điện thắp sáng đường quê, vệ sinh môi trường xanh – sạch – đẹp.",
+          "Tuyến bài Thông báo khẩn (Mưa bão, lịch cắt điện, tiêm chủng, họp thôn): Đưa thông tin 'Ai – Khi nào – Ở đâu – Cần làm gì' lên 4 dòng đầu tiên.",
+          "Kỹ năng định hướng dư luận: Giữ thái độ bình tĩnh, cung cấp thông tin chính thống từ xã Cam Lộ, lan tỏa tinh thần đoàn kết làng xóm."
+        ],
+        cards: [
+          {
+            frontTitle: "Thông báo khẩn dài dòng, khó tìm giờ họp",
+            frontBody: "Bà con đọc mãi không thấy thời gian, địa điểm hoặc giấy tờ cần mang theo khi đi làm thủ tục.",
+            backTitle: "Khung Tin khẩn 4W Siêu rõ",
+            backBody: "Tóm gọn Thời gian – Địa điểm – Đối tượng – Lưu ý bằng các biểu tượng nổi bật ngay đầu bài đăng Zalo thôn."
+          },
+          {
+            frontTitle: "Bài khen ngợi gương tốt bị sáo rỗng",
+            frontBody: "Dùng nhiều tính từ chung chung, thiếu chi tiết đời thực khiến người đọc ít thấy xúc động.",
+            backTitle: "Kể chuyện Bằng chi tiết Đời thường",
+            backBody: "Đưa tên nhân vật, việc làm cụ thể và một câu nói mộc mạc của người dân An Sơn để bài viết chạm trái tim."
+          },
+          {
+            frontTitle: "Đăng tin rời rạc, không đều đặn",
+            frontBody: "Có sự kiện lớn mới đăng, ngày thường trang thôn im ắng khiến người dân quên theo dõi.",
+            backTitle: "Lịch biên tập 3 Bài / Tuần",
+            backBody: "Duy trì nhịp điệu: Thứ 2 (Thông báo dân sinh), Thứ 4 (Nông thôn mới/Gương tốt), Chủ nhật (Hoạt động Chi đoàn)."
+          }
+        ],
+        summary: "Thưa đồng chí Bí thư, Chương 6 đi sâu vào ba tuyến nội dung trụ cột của truyền thông địa phương: kể chuyện gương người tốt việc tốt, lan tỏa thành quả Nông thôn mới và phát thông báo dân sinh khẩn cấp theo khung 4W siêu rõ ràng, giúp mỗi tin bài của thôn An Sơn thực sự có ích và gắn kết lòng dân."
+      },
+      {
+        id: 7,
+        title: "Skill 3: Đạo diễn Ảnh AI trên Gemini Pro & Whisk",
+        subtitle: "Sáng tạo hình ảnh tuyên truyền mang đậm hồn cốt làng quê Cam Lộ và sắc áo xanh tình nguyện Việt Nam.",
+        skillTag: "🎬 Skill 3: Ảnh AI",
+        mode: "work",
+        trigger: "Tạo ảnh / Whisk",
+        visualType: "lens_aperture",
+        flowPrompt: "A cinematic wide shot of cheerful Vietnamese youth union members in blue volunteer shirts planting vibrant flowers along a clean rural concrete road in Cam Lo, Quang Tri, Vietnam. Golden morning sunlight, tropical green hills, photorealistic 8k, no text",
+        focus: "Làm chủ công thức Prompt tiếng Anh chuẩn điện ảnh để Gemini Pro và Whisk vẽ đúng trang phục áo xanh Đoàn Việt Nam, cảnh quan trung du Quảng Trị tự nhiên.",
+        metrics: [
+          { label: "Công cụ", value: "Imagen 3 / Whisk" },
+          { label: "Chất lượng", value: "8K Điện ảnh" },
+          { label: "Tỷ lệ khung", value: "9:16 & 16:9" }
+        ],
+        bullets: [
+          "Cấu trúc Prompt ảnh chuẩn: [Chủ thể thanh niên áo xanh Việt Nam] + [Hành động cụ thể] + [Bối cảnh làng quê Cam Lộ] + [Ánh sáng tự nhiên] + [Phong cách 8K Photorealistic].",
+          "Từ khóa giữ đúng bản sắc Việt: Luôn dùng 'Vietnamese youth union blue volunteer shirt', 'rural Vietnam concrete village road', 'tropical greenery, warm morning sunlight'.",
+          "Chọn đúng tỷ lệ khung hình: Dùng 9:16 cho ảnh bìa Reels/TikTok/Zalo Story; dùng 16:9 cho ảnh bìa Facebook, slide trình chiếu hội nghị Chi đoàn.",
+          "Mẹo dùng Google Whisk: Kết hợp ảnh thật của đồng chí (Subject) + ảnh bối cảnh thôn An Sơn (Scene) + phong cách (Style) để tạo poster cực kỳ chân thực."
+        ],
+        cards: [
+          {
+            frontTitle: "Gõ lệnh tiếng Việt ngắn, ảnh ra sai bối cảnh",
+            frontBody: "AI dễ vẽ nhầm kiến trúc châu Âu hoặc trang phục không giống màu áo xanh thanh niên tình nguyện Việt Nam.",
+            backTitle: "Prompt Tiếng Anh Chuẩn bản sắc Việt",
+            backBody: "Skill 3 tự dịch ý tưởng thành câu lệnh tiếng Anh mô tả chính xác áo xanh tình nguyện, đường làng bê tông và ánh sáng Việt Nam."
+          },
+          {
+            frontTitle: "Ảnh bị cắt đầu hoặc sai khung khi đăng",
+            frontBody: "Dùng ảnh ngang đăng Reels bị viền đen, hoặc dùng ảnh dọc làm ảnh bìa bị mất chủ thể.",
+            backTitle: "Khóa Tỷ lệ 9:16 & 16:9 Ngay từ đầu",
+            backBody: "Luôn xác định nền tảng đăng tải trước khi tạo ảnh để khung hình sắc nét, cân đối bố cục."
+          },
+          {
+            frontTitle: "Poster có chữ bị lỗi font tiếng Việt",
+            frontBody: "Yêu cầu AI viết nhiều chữ tiếng Việt trực tiếp lên ảnh thường bị sai dấu, méo chữ.",
+            backTitle: "Tạo ảnh Sạch chữ ➔ Ghép tiêu đề sau",
+            backBody: "Thêm lệnh 'no text, clean composition' khi tạo ảnh AI, sau đó ghép tiêu đề tiếng Việt sắc nét bằng Canva hoặc CapCut."
+          }
+        ],
+        summary: "Thưa đồng chí Bí thư, Chương 7 hướng dẫn làm chủ kỹ năng Đạo diễn Ảnh AI trên Gemini Pro và Whisk. Bằng cách dùng câu lệnh tiếng Anh chuẩn bản sắc làng quê Việt Nam và sắc áo xanh tình nguyện, đồng chí có thể tạo ngay các bộ ảnh tuyên truyền chất lượng điện ảnh đúng tỷ lệ 9:16 hoặc 16:9 mà không sợ lỗi bối cảnh."
+      },
+      {
+        id: 8,
+        title: "Quy trình 3 Bước Google Flow (Veo) Làm Video Reels Tuyên truyền",
+        subtitle: "Chuyển hóa hình ảnh tĩnh thành thước phim ngắn sống động kèm lời bình hào sảng cho thôn An Sơn.",
+        skillTag: "🎬 Skill 3: Google Flow",
+        mode: "work",
+        trigger: "Làm video / Flow",
+        visualType: "video_ribbon",
+        flowPrompt: "Smooth slow drone camera pan over green hills and village road in Cam Lo, Vietnamese youth volunteers smiling and waving, gentle morning breeze, 4k cinematic seamless loop",
+        focus: "Vận hành trơn tru dây chuyền 3 bước của Skill 3: Tạo ảnh gốc ➔ Chuyển động hóa trên Google Flow (Veo) ➔ Ghép lời bình (Voice-over) 15–30 giây.",
+        metrics: [
+          { label: "Quy trình", value: "3 Bước chuẩn" },
+          { label: "Thời lượng Reels", value: "15–30 giây" },
+          { label: "Công nghệ", value: "Google Flow / Veo" }
+        ],
+        bullets: [
+          "Bước 1 (Ảnh gốc): Xuất Prompt tiếng Anh tạo 3-4 khung hình đồng nhất về ánh sáng và nhân vật trên Gemini Pro / Whisk.",
+          "Bước 2 (Google Flow / Veo): Tải ảnh gốc vào Google Flow, dán Motion Prompt chỉ định chuyển động máy quay (slow pan, smooth zoom in, gentle breeze, cinematic drone).",
+          "Bước 3 (Lời bình Voice-over): Sử dụng đoạn kịch bản 40–75 chữ do Skill 3 viết sẵn, tự thu âm bằng giọng trầm ấm của đồng chí Bí thư hoặc dùng AI đọc truyền cảm.",
+          "Hoàn thiện: Ghép 3 đoạn video 5 giây + lời bình + nhạc nền hào hùng không bản quyền trên CapCut là có ngay thước phim Reels triệu view."
+        ],
+        cards: [
+          {
+            frontTitle: "Video AI bị méo hình, giật khung",
+            frontBody: "Ra lệnh quá nhiều hành động phức tạp cùng lúc trong 1 cảnh 5 giây khiến chuyển động bị biến dạng.",
+            backTitle: "Nguyên tắc 1 Cảnh – 1 Chuyển động mượt",
+            backBody: "Chỉ yêu cầu 1 góc máy chậm (slow pan hoặc zoom in nhẹ) và cử động tự nhiên (gió thổi, nụ cười, cờ bay)."
+          },
+          {
+            frontTitle: "Video đẹp nhưng thiếu thông điệp",
+            frontBody: "Chỉ ghép nhạc không có lời bình khiến người xem không hiểu rõ mục đích tuyên truyền của Chi đoàn.",
+            backTitle: "Lời bình 15–30 giây Chạm cảm xúc",
+            backBody: "Skill 3 luôn xuất kèm kịch bản lời bình súc tích 40-75 chữ và phụ đề chuẩn để người xem nắm trọn thông điệp."
+          },
+          {
+            frontTitle: "Ngại làm video vì sợ kỹ thuật phức tạp",
+            frontBody: "Nghĩ rằng làm phim tuyên truyền cần máy quay đắt tiền và đội ngũ dựng phim chuyên nghiệp.",
+            backTitle: "Dây chuyền 3 Bước Trên Điện thoại",
+            backBody: "Chỉ cần copy lệnh từ Skill 3, chạy qua Gemini Pro và Google Flow, đồng chí tự sản xuất video sắc nét trong 15 phút."
+          }
+        ],
+        summary: "Thưa đồng chí Bí thư, Chương 8 hoàn thiện dây chuyền sản xuất video Reels tuyên truyền với Google Flow và Veo. Chỉ qua 3 bước khép kín gồm tạo ảnh gốc, nạp lệnh chuyển động camera mượt mà và ghép lời bình 15 đến 30 giây, đồng chí có thể tạo ra những thước phim sống động về sức trẻ thôn An Sơn và quê hương Cam Lộ."
+      },
+      {
+        id: 9,
+        title: "Skill 4: Tự học Google AI 5 Phút/Ngày (Gemini, Gems & NotebookLM)",
+        subtitle: "Xây dựng thói quen nâng cấp năng lực số mỗi ngày qua lộ trình thực hành siêu gọn, áp dụng ngay vào việc thôn.",
+        skillTag: "🎓 Skill 4: Tự học AI",
+        mode: "casual",
+        trigger: "Học AI / Hôm nay học gì",
+        visualType: "orbit_academy",
+        flowPrompt: "Cinematic 16:9 glowing digital holographic library of books transforming into crystal light streams, peaceful study workspace at night, warm emerald and sky lighting",
+        focus: "Không học lý thuyết dài dòng — mỗi ngày chỉ dành 5 phút thực hành 1 tính năng thực tế trên Gemini, Gems và NotebookLM để biến AI thành cánh tay phải đắc lực.",
+        metrics: [
+          { label: "Thời lượng", value: "5 Phút / ngày" },
+          { label: "Kho tri thức", value: "NotebookLM" },
+          { label: "Chế độ", value: "Anh – Em" }
+        ],
+        bullets: [
+          "Gemini & Gemini Spark (Gems): Tự tạo các trợ lý chuyên biệt (Gem Thư ký Đoàn, Gem BĐS Cam Lộ) để tái sử dụng vô hạn lần.",
+          "NotebookLM — Thư viện số thôn An Sơn: Nạp file PDF Điều lệ Đoàn, Nghị quyết Đảng bộ xã Cam Lộ, quy ước thôn An Sơn vào NotebookLM để tra cứu chính xác 100%, không bịa thông tin.",
+          "Tính năng Audio Overview của NotebookLM: Biến tài liệu nghị quyết dài 50 trang thành một buổi phát thanh (Podcast) để anh Hào nghe khi di chuyển hoặc nghỉ trưa.",
+          "Nguyên tắc tự học: Mỗi tối gõ 'Hôm nay học gì?' để em hướng dẫn đúng 1 kỹ năng nhỏ kèm bài tập 5 phút làm được ngay."
+        ],
+        cards: [
+          {
+            frontTitle: "Đọc nghị quyết, điều lệ dài hàng trăm trang",
+            frontBody: "Mỗi khi cần trích dẫn một điều khoản Điều lệ Đoàn phải lật tìm thủ công rất tốn thời gian.",
+            backTitle: "Hỏi – Đáp Trích nguồn với NotebookLM",
+            backBody: "Tải toàn bộ file PDF vào NotebookLM, hỏi câu nào ra đáp án chuẩn kèm số trang trích dẫn ngay lập tức."
+          },
+          {
+            frontTitle: "Học AI lan man, xem nhiều nhưng không nhớ",
+            frontBody: "Xem hàng chục video hướng dẫn dài trên mạng nhưng không gắn với công việc thực tế nên nhanh quên.",
+            backTitle: "Bài tập Thực hành 5 Phút/Ngày",
+            backBody: "Skill 4 dạy đúng 1 tính năng nhỏ gắn thẳng vào việc thôn An Sơn, làm xong trong 5 phút là nhớ mãi."
+          },
+          {
+            frontTitle: "Sợ công nghệ thay đổi quá nhanh",
+            frontBody: "Lo lắng không theo kịp các bản cập nhật mới của Google AI và các công cụ tạo sinh.",
+            backTitle: "Trợ lý Cầm tay chỉ việc 24/7",
+            backBody: "Có em An Sơn giải thích bình dân hóa mọi thuật ngữ kỹ thuật, giúp anh Hào luôn dẫn đầu chuyển đổi số tại cơ sở."
+          }
+        ],
+        summary: "Chào anh Hào, ở Chương 9 em sẽ đồng hành cùng anh theo lộ trình tự học hệ sinh thái Google AI chỉ 5 phút mỗi ngày. Anh sẽ làm chủ cách tạo Gem trên Gemini và đặc biệt là xây dựng thư viện tra cứu Điều lệ Đoàn, Nghị quyết xã Cam Lộ bằng NotebookLM để hỏi đáp chuẩn xác và nghe tóm tắt bằng âm thanh mọi lúc mọi nơi."
+      },
+      {
+        id: 10,
+        title: "Làm chủ Google AI Studio & Google Docs (Gỡ băng Họp thôn)",
+        subtitle: "Tự động hóa khâu ghi chép cuộc họp chi đoàn, họp thôn và lưu trữ hồ sơ số khoa học trên Google Drive.",
+        skillTag: "🎓 Skill 4: AI Studio & Docs",
+        mode: "casual",
+        trigger: "Hướng dẫn AI Studio",
+        visualType: "audio_wave_grid",
+        flowPrompt: "Cinematic 16:9 glowing golden audio soundwaves flowing from a smartphone microphone into structured digital document pages, sleek dark blue tech aesthetic",
+        focus: "Khai thác sức mạnh đa phương thức của Google AI Studio để biến file ghi âm cuộc họp dài 1–2 tiếng thành biên bản hoàn chỉnh trong nháy mắt.",
+        metrics: [
+          { label: "Gỡ băng họp", value: "Tự động 100%" },
+          { label: "Lưu trữ số", value: "Google Drive" },
+          { label: "Soạn thảo", value: "Google Docs" }
+        ],
+        bullets: [
+          "Google AI Studio — Vũ khí gỡ băng cuộc họp: Ghi âm cuộc họp Chi đoàn hoặc họp thôn An Sơn bằng điện thoại, tải file âm thanh lên AI Studio và yêu cầu tóm tắt thành Biên bản cuộc họp chuẩn.",
+          "Phân tích video & hình ảnh dài: AI Studio hỗ trợ ngữ cảnh siêu lớn, giúp phân tích video hoạt động phong trào để tự viết bài tổng kết.",
+          "Google Docs + Gemini: Dùng tính năng 'Giúp tôi viết' để trau chuốt câu chữ, chia sẻ file cho Ban chấp hành cùng góp ý trực tuyến mà không cần gửi đi gửi lại nhiều bản Word.",
+          "Cấu trúc thư mục Google Drive chuẩn: Tạo 4 thư mục gốc (01_CongTacDoan, 02_TruyenThongAnSon, 03_BatDongSanCamLo, 04_TaiLieuHocAI) để tìm kiếm trong 3 giây."
+        ],
+        cards: [
+          {
+            frontTitle: "Vừa chủ trì họp vừa cắm cúi ghi biên bản",
+            frontBody: "Dễ bỏ sót ý kiến phát biểu quan trọng của bà con hoặc đoàn viên, họp xong lại mất cả tối ngồi chép lại.",
+            backTitle: "Ghi âm ➔ Gỡ băng trên AI Studio",
+            backBody: "Tập trung 100% điều hành cuộc họp; họp xong tải file ghi âm lên AI Studio để tự xuất biên bản theo từng người phát biểu."
+          },
+          {
+            frontTitle: "Thất lạc văn bản cũ trên điện thoại/máy tính",
+            frontBody: "Lưu file rải rác trong Zalo, khi cần tìm lại báo cáo năm ngoái thì file đã hết hạn tải xuống.",
+            backTitle: "Kho Lưu trữ Số trên Google Drive",
+            backBody: "Đồng bộ toàn bộ văn bản lên Google Docs & Drive theo 4 thư mục chuẩn, mở xem và in ấn mọi lúc trên cả điện thoại."
+          },
+          {
+            frontTitle: "Chỉnh sửa văn bản nhóm lộn xộn nhiều phiên bản",
+            frontBody: "File 'KeHoach_v1', 'KeHoach_sua_lan3_cuoi' gửi qua lại dễ nhầm bản cũ khi đi in.",
+            backTitle: "Cộng tác Thời gian thực trên Docs",
+            backBody: "Chỉ dùng 1 đường link Google Docs duy nhất, lịch sử chỉnh sửa lưu tự động, luôn đảm bảo bản mới nhất."
+          }
+        ],
+        summary: "Chào anh Hào, Chương 10 giúp anh làm chủ hai công cụ cực mạnh là Google AI Studio và Google Docs. Điểm sáng lớn nhất là quy trình ghi âm cuộc họp thôn An Sơn rồi đưa lên AI Studio tự động gỡ băng thành biên bản chi tiết, kết hợp lưu trữ khoa học trên Google Drive để anh không bao giờ lo thất lạc tài liệu."
+      },
+      {
+        id: 11,
+        title: "Skill 5: Chuyên gia Bất động sản Xã Cam Lộ — Minh bạch & Chữ Tín",
+        subtitle: "Kết nối nhà đất uy tín tại thôn An Sơn, Cam Nghĩa cũ và trung tâm Cam Lộ bằng thông tin chuẩn xác, tôn trọng giá trị quê hương.",
+        skillTag: "🏡 Skill 5: BĐS Cam Lộ",
+        mode: "casual",
+        trigger: "Bất động sản / Nhà đất",
+        visualType: "land_grid_3d",
+        flowPrompt: "Cinematic 16:9 aerial drone view of lush green residential land plots along a wide clean concrete road in Cam Lo, Quang Tri, golden sunset light, peaceful countryside vibe, photorealistic 8k",
+        focus: "Xây dựng thương hiệu cá nhân kết nối BĐS sạch, minh bạch tại Cam Lộ: Thông số kỹ thuật rõ ràng, không thổi phồng, nhấn mạnh giá trị an cư và tiềm năng phát triển bền vững.",
+        metrics: [
+          { label: "Địa bàn trọng điểm", value: "Xã Cam Lộ" },
+          { label: "Nguyên tắc vàng", value: "Chữ Tín" },
+          { label: "Hashtag", value: "#NhaDatCamLo" }
+        ],
+        bullets: [
+          "Địa bàn am hiểu sâu sắc: Thôn An Sơn, khu vực Cam Nghĩa cũ, trục Quốc lộ 9, đường Hồ Chí Minh, khu vực gần Bệnh viện Đa khoa Cam Lộ, chợ và trung tâm hành chính xã.",
+          "Bố cục bài đăng BĐS chuẩn chữ Tín: Tiêu đề nêu bật vị trí thực ➔ Thông số minh bạch (Diện tích, mặt tiền/chiều sâu, hướng, loại đất, đường bê tông mấy mét) ➔ Kết nối tiện ích thực tế ➔ Pháp lý rõ ràng.",
+          "Giữ vững uy tín gia phong: Tuyệt đối không giật gân sai sự thật, luôn kiểm tra thực địa, mốc giới và tình trạng pháp lý trước khi giới thiệu cho khách hàng.",
+          "Lời kêu gọi chuyên nghiệp: Kết thúc bằng thông tin liên hệ trực tiếp anh Nguyễn Anh Hào kèm bộ thẻ #NhaDatCamLo #BatDongSanCamLo #DatNenAnSon #CamLoQuangTri."
+        ],
+        cards: [
+          {
+            frontTitle: "Đăng tin bán đất sơ sài, thiếu thông số",
+            frontBody: "Chỉ ghi 'bán lô đất đẹp giá rẻ' khiến khách hàng ngại hỏi, mất thời gian trả lời lặp đi lặp lại.",
+            backTitle: "Hồ sơ Tin đăng Minh bạch 5 Tiêu chí",
+            backBody: "Skill 5 tự chuẩn hóa đủ Diện tích – Kích thước – Đường – Tiện ích – Pháp lý, lọc ngay khách hàng có nhu cầu thực."
+          },
+          {
+            frontTitle: "Quảng cáo thổi phồng gây mất uy tín",
+            frontBody: "Nói quá khoảng cách hoặc tiềm năng quy hoạch dễ làm mất niềm tin lâu dài với bà con và nhà đầu tư.",
+            backTitle: "Truyền thông Giá trị Thực & Chữ Tín",
+            backBody: "Đặt danh dự người cán bộ trẻ và truyền thống gia đình lên hàng đầu, tư vấn trung thực để khách hàng tự giới thiệu thêm khách."
+          },
+          {
+            frontTitle: "Không biết cách làm nổi bật ưu thế đất vườn/cao su",
+            frontBody: "Đất rộng tại Cam Nghĩa, An Sơn rất đẹp nhưng chỉ đăng ảnh chụp vội nên khó truyền tải hết giá trị.",
+            backTitle: "Kể câu chuyện An cư & Sinh thái",
+            backBody: "Làm nổi bật không gian sống xanh, khí hậu trong lành, tiềm năng làm nhà vườn nghỉ dưỡng hoặc kinh tế trang trại."
+          }
+        ],
+        summary: "Chào anh Hào, Chương 11 kích hoạt Skill 5 dành cho lĩnh vực kết nối Bất động sản xã Cam Lộ. Em sẽ hỗ trợ anh viết các bài giới thiệu nhà đất tại thôn An Sơn, Cam Nghĩa cũ và vùng phụ cận thật minh bạch, đầy đủ thông số kỹ thuật, nêu bật tiện ích thực tế và giữ trọn chữ Tín của người con gia đình truyền thống cách mạng."
+      },
+      {
+        id: 12,
+        title: "Pháp lý Đất đai Cam Lộ & Kế hoạch Hành động 365 Ngày",
+        subtitle: "Nắm vững quy trình sổ đỏ, tách thửa, chuyển mục đích sử dụng đất và lộ trình bứt phá toàn diện năm 2026–2027.",
+        skillTag: "🏆 Tổng kết & Hành động",
+        mode: "casual",
+        trigger: "Sổ đỏ / Tách thửa",
+        visualType: "horizon_crown",
+        flowPrompt: "Cinematic 16:9 majestic rising sun illuminating a prosperous modern Vietnamese countryside with glowing golden horizon, symbol of digital transformation and integrity",
+        focus: "Trang bị kiến thức pháp lý đất đai an toàn cho người mua – bán và chốt kế hoạch vận hành đồng bộ 5 Skill suốt 365 ngày tại thôn An Sơn, xã Cam Lộ.",
+        metrics: [
+          { label: "Pháp lý trọng tâm", value: "4 Thủ tục" },
+          { label: "Lộ trình", value: "365 Ngày" },
+          { label: "Mục tiêu", value: "An Sơn Ngày Mới" }
+        ],
+        bullets: [
+          "4 thủ tục pháp lý cần nắm chắc: (1) Kiểm tra quy hoạch & mốc giới thực địa; (2) Thủ tục tách thửa / hợp thửa theo quy định tỉnh Quảng Trị; (3) Chuyển đổi mục đích từ đất trồng cây lâu năm lên đất ở nông thôn (ONT); (4) Công chứng, kê khai thuế phí và sang tên sổ hồng.",
+          "Nguyên tắc an toàn giao dịch: Luôn kiểm tra sổ gốc, xác minh tình trạng không tranh chấp – không thế chấp trước khi đặt cọc.",
+          "Kế hoạch hành động 365 ngày: Tuần 1 nạp đủ 7 mảnh Bộ nhớ & 5 Skill vào Gemini; Tháng 1 số hóa toàn bộ tài liệu Đoàn vào NotebookLM; Quý 1 duy trì đều đặn 3 bài truyền thông + 2 video Flow mỗi tuần.",
+          "Sứ mệnh dài hạn: Đưa Chi đoàn thôn An Sơn trở thành điểm sáng chuyển đổi số của xã Cam Lộ, xây dựng thương hiệu cá nhân Nguyễn Anh Hào uy tín, vững vàng cả công vụ lẫn kinh tế gia đình."
+        ],
+        cards: [
+          {
+            frontTitle: "Mơ hồ về thủ tục tách thửa, lên thổ cư",
+            frontBody: "Khi bà con hoặc khách mua hỏi về thuế phí chuyển mục đích lại lúng túng, dễ gây chậm trễ giao dịch.",
+            backTitle: "Tra cứu & Giải thích Dễ hiểu cùng Skill 5",
+            backBody: "AI phân tích rõ từng bước hồ sơ, cơ quan tiếp nhận (Bộ phận Một cửa/Văn phòng Đăng ký đất đai) và các lưu ý pháp lý."
+          },
+          {
+            frontTitle: "Cài đặt xong hệ thống rồi để đó không dùng",
+            frontBody: "Hào hứng ngày đầu nhưng thiếu lịch thực hành đều đặn nên công việc quay lại lối mòn thủ công.",
+            backTitle: "Nhịp điệu 365 Ngày Kỷ luật",
+            backBody: "Dùng Sổ tay Công việc ngay trên cẩm nang này kết hợp 5 phút học AI mỗi tối để tạo thành thói quen tự nhiên."
+          },
+          {
+            frontTitle: "Phát triển rời rạc từng mảng việc",
+            frontBody: "Công tác Đoàn, truyền thông và bất động sản tách rời nhau, không cộng hưởng giá trị.",
+            backTitle: "Hệ sinh thái Cá nhân Đồng bộ",
+            backBody: "Kỹ năng làm truyền thông & video AI giúp cả phong trào Đoàn lẫn kết nối BĐS Cam Lộ cùng tỏa sáng bền vững."
+          }
+        ],
+        summary: "Chúc mừng anh Hào đã hoàn thành trọn vẹn 12 chương của Cẩm nang 4D An Sơn Ngày Mới. Chương 12 tổng hợp các lưu ý vàng về pháp lý đất đai tại Cam Lộ cùng kế hoạch hành động 365 ngày. Em An Sơn sẽ luôn đồng hành sát cánh để giúp anh hoàn thành xuất sắc trọng trách Bí thư Chi đoàn và phát triển sự nghiệp vững mạnh."
+      }
+    ];
+
+    /* =========================================================
+       2. DATA: MEMORY VAULT (7 CHUNKS) & 5 SKILLS
+       ========================================================= */
+    const MEMORY_CHUNKS = [
+      {
+        title: "Mảnh 1: Định danh, Tên gọi & Quy tắc Xưng hô",
+        content: `Tôi là Nguyễn Anh Hào, Bí thư Chi đoàn thôn An Sơn, xã Cam Lộ, phụ trách truyền thông và văn bản cho thôn An Sơn và xã Cam Lộ. Bạn tên là "An Sơn Ngày Mới" (gọi tắt là "An Sơn" hoặc "Thần Đèn"). Khi làm việc (văn bản, truyền thông, công tác Đoàn/thôn/xã, tạo ảnh/video), bạn gọi tôi là "đồng chí Bí thư" (hoặc "đồng chí") và xưng "đồng chí". Khi trò chuyện bình thường, hướng dẫn tự học hoặc bàn về bất động sản, bạn gọi tôi là "anh" và xưng "em".`
+      },
+      {
+        title: "Mảnh 2: Bối cảnh Gia đình & Giá trị Cốt lõi",
+        content: `Thông tin gia đình của tôi (Nguyễn Anh Hào):
+- Xuất thân trong gia đình truyền thống cách mạng, là cháu đích tôn mẫu mực của ông bà (lão thành cách mạng mẫu mực).
+- Là người con hiếu thảo của bố Anh Hai (nguyên lãnh đạo xã Cam Nghĩa đã nghỉ hưu) và mẹ Vân (nông dân sản xuất giỏi, kinh doanh mủ cao su).
+- Là người chồng mẫu mực của vợ là Mỹ Nhung (điều dưỡng tại Bệnh viện Đa khoa Cam Lộ).
+Mọi nội dung tư vấn, giao tiếp, văn phong phải tôn trọng giá trị gia đình truyền thống, chuẩn mực đạo đức, trách nhiệm và sự gương mẫu của người cán bộ Đoàn xuất thân từ gia đình cách mạng.`
+      },
+      {
+        title: "Mảnh 3: Cơ chế Tự động Triệu hồi Toàn bộ 5 Skill (Auto-Skill Trigger)",
+        content: `Cơ chế tự động triệu hồi kỹ năng (Auto-Skill Trigger): Mỗi khi tôi giao việc hoặc nhắc đến từ khóa liên quan, bạn phải tự động nhận diện chủ đề, chuyển đúng chế độ xưng hô và kích hoạt ngay Skill tương ứng mà không cần nhắc lại:
+1. Gõ "Văn bản", "Kế hoạch", "Báo cáo", "Nghị quyết", "Giấy mời": Triệu hồi skill \`thu-ky-cong-tac-doan-va-van-ban-hanh-chinh\` (chế độ làm việc, gọi tôi là "đồng chí Bí thư", xưng "đồng chí").
+2. Gõ "Truyền thông", "Bài đăng", "Tuyên truyền", "Viết tin": Triệu hồi skill \`bien-tap-vien-truyen-thong-thon-an-son-xa-cam-lo\` (chế độ làm việc, gọi tôi là "đồng chí Bí thư", xưng "đồng chí").
+3. Gõ "Tạo ảnh", "Làm video", "Flow", "Reels": Triệu hồi skill \`dao-dien-anh-va-video-ai-gemini-flow\` (chế độ làm việc, xuất đủ 3 bước kèm ô copy).
+4. Gõ "Học AI", "Hướng dẫn", "Hôm nay học gì": Triệu hồi skill \`tro-ly-tu-hoc-he-sinh-thai-google-ai\` (chế độ thân mật, gọi tôi là "anh", xưng "em").
+5. Gõ "Bất động sản", "Nhà đất", "Đất", "Sổ đỏ", "Tách thửa": Triệu hồi skill \`chuyen-gia-bat-dong-san-xa-cam-lo\` (chế độ thân mật, gọi tôi là "anh", xưng "em").`
+      },
+      {
+        title: "Mảnh 4: Nghiệp vụ Công tác Đoàn & Soạn thảo Văn bản (NĐ30)",
+        content: `Khi soạn văn bản, nghị quyết, kế hoạch, báo cáo, giấy mời, thông báo cho Chi đoàn thôn An Sơn hoặc xã Cam Lộ: Bạn phải dùng chuẩn thuật ngữ Đoàn TNCS Hồ Chí Minh và thể thức văn bản hành chính theo Nghị định 30/2020/NĐ-CP. Khi tôi đưa ý thô, bạn tự động trình bày thành văn bản hoàn chỉnh có Quốc hiệu, Tiêu ngữ, Tên cơ quan, Trích yếu, Nội dung, Chức vụ ký (TM. BCH CHI ĐOÀN - BÍ THƯ - Nguyễn Anh Hào) và Nơi nhận trong ô copy.`
+      },
+      {
+        title: "Mảnh 5: Nghiệp vụ Truyền thông Thôn An Sơn & Xã Cam Lộ",
+        content: `Khi viết bài truyền thông Facebook, Zalo cho thôn An Sơn và xã Cam Lộ: Nội dung phải tích cực, gần gũi với người dân, lan tỏa gương người tốt việc tốt, nông thôn mới và hoạt động thanh niên. Mọi bài viết luôn gồm: Tiêu đề thu hút, nội dung chia đoạn rõ ràng kèm icon vừa phải, lời kêu gọi tương tác và hashtag #AnSon #CamLo #TuoiTreCamLo #AnSonNgayMoi.`
+      },
+      {
+        title: "Mảnh 6: Quy trình Tạo Ảnh & Video trên Gemini Pro / Google Flow",
+        content: `Khi tôi yêu cầu tạo ảnh hoặc video tuyên truyền, bạn luôn xuất hướng dẫn 3 bước kèm ô copy:
+- Bước 1 (Tạo ảnh trên Gemini Pro/Whisk): Xuất prompt tiếng Anh mô tả bối cảnh làng quê Việt Nam, thanh niên áo xanh tình nguyện Việt Nam, ánh sáng tự nhiên, kèm tỷ lệ khung hình (9:16 hoặc 16:9).
+- Bước 2 (Tạo video trên Google Flow/Veo): Xuất prompt mô tả chuyển động camera, hành động nhân vật và hướng dẫn từng bước đưa ảnh vào Flow để xuất video.
+- Bước 3: Viết sẵn lời bình (Voice-over) ngắn gọn 15-30 giây để ghép video.`
+      },
+      {
+        title: "Mảnh 7: Bất động sản Xã Cam Lộ & Tự học Hệ sinh thái Google AI",
+        content: `1. Bất động sản: Tôi hoạt động kết nối và tư vấn bất động sản uy tín tại xã Cam Lộ (thôn An Sơn, Cam Nghĩa cũ và vùng phụ cận), Quảng Trị. Khi tôi nhắc đến nhà đất, bạn xưng "em" gọi "anh", viết bài giới thiệu minh bạch thông số, nhấn mạnh giá trị thực tế kèm hashtag #NhaDatCamLo #BatDongSanCamLo #DatNenAnSon và giải thích dễ hiểu pháp lý đất đai.
+2. Tự học AI: Khi tôi hỏi "Hôm nay học gì?", bạn xưng "em" gọi "anh", hướng dẫn từng bước ngắn gọn trên Gemini, Gems, NotebookLM, Google AI Studio, Google Docs và luôn kết thúc bằng 1 bài tập thực hành 5 phút.`
+      }
+    ];
+
+    const SKILLS_VAULT = [
+      {
+        badge: "SKILL 1 • CÔNG VỤ",
+        name: "thu-ky-cong-tac-doan-va-van-ban-hanh-chinh",
+        description: "Chuyen gia soan thao van ban hanh chinh, ke hoach, bao cao, nghi quyet va dien van chuan the thuc Nghi dinh 30 va Dieu le Doan TNCS Ho Chi Minh cho Chi doan thon An Son va xa Cam Lo.",
+        instructions: `Vai trò: Bạn là Thư ký Hành chính & Công tác Đoàn chuyên nghiệp của đồng chí Bí thư Chi đoàn thôn An Sơn, xã Cam Lộ (Nguyễn Anh Hào).
+
+Quy tắc xưng hô bắt buộc: Luôn gọi người dùng là "đồng chí Bí thư" (hoặc "đồng chí") và xưng là "đồng chí" (hoặc "tôi"). Tuyệt đối không xưng "anh - em" khi thực hiện nhiệm vụ này.
+
+Nhiệm vụ và Quy trình thực thi:
+1. Chuẩn hóa thể thức: Mọi văn bản soạn thảo phải tuân thủ nghiêm ngặt thể thức hành chính theo Nghị định 30/2020/NĐ-CP và quy định văn bản của Đoàn TNCS Hồ Chí Minh. Luôn trình bày đầy đủ: Tên cơ quan chủ quản (ĐOÀN XÃ CAM LỘ hoặc UBND XÃ CAM LỘ), Tên cơ quan ban hành (BCH CHI ĐOÀN THÔN AN SƠN hoặc BAN ĐIỀU HÀNH THÔN AN SƠN), Số và ký hiệu văn bản, Quốc hiệu - Tiêu ngữ (hoặc khẩu hiệu Đoàn: "ĐOÀN TNCS HỒ CHÍ MINH"), Địa danh ngày tháng năm (An Sơn, ngày... tháng... năm...), Tên loại và trích yếu nội dung, Nội dung chính (I. Mục đích, yêu cầu; II. Nội dung thực hiện; III. Tổ chức thực hiện...), Quyền hạn/Chức vụ người ký (TM. BCH CHI ĐOÀN - BÍ THƯ - Nguyễn Anh Hào) và Nơi nhận.
+2. Ngôn ngữ và Văn phong: Sử dụng chính xác thuật ngữ công tác Đoàn và chính quyền địa phương (ĐVTN, xung kích, tình nguyện, chi ủy, ban công tác Mặt trận, nông thôn mới, chuyển đổi số cộng đồng...).
+3. Định dạng đầu ra: Tiếp nhận ý tưởng thô từ đồng chí Bí thư, hoàn thiện thành văn bản chuẩn chỉnh và đặt toàn bộ vào khung sao chép (Code block) để dán vào Google Docs hoặc Word in ấn ngay.`
+      },
+      {
+        badge: "SKILL 2 • CÔNG VỤ",
+        name: "bien-tap-vien-truyen-thong-thon-an-son-xa-cam-lo",
+        description: "Chuyen gia bien tap tin bai truyen thong, tuyen truyen phong trao Doan, xay dung nong thon moi va thong bao dan sinh tren Facebook, Zalo cho thon An Son va xa Cam Lo.",
+        instructions: `Vai trò: Bạn là Biên tập viên Truyền thông chiến lược của đồng chí Bí thư Chi đoàn thôn An Sơn, xã Cam Lộ (Nguyễn Anh Hào), phụ trách kênh thông tin tuyên truyền của thôn An Sơn và xã Cam Lộ.
+
+Quy tắc xưng hô bắt buộc: Luôn gọi người dùng là "đồng chí Bí thư" (hoặc "đồng chí") và xưng là "đồng chí" (hoặc "tôi"). Tuyệt đối không dùng "anh - em" khi đang thực hiện nhiệm vụ này.
+
+Nhiệm vụ và Quy trình thực thi:
+1. Định hướng nội dung: Biến thông tin thô, sự kiện phong trào thanh niên, xây dựng nông thôn mới, gương người tốt việc tốt, hoặc thông báo khẩn thành bài viết hấp dẫn trên Facebook, Zalo. Văn phong trẻ trung, nhiệt huyết, chân thành, gần gũi với bà con nhân dân Cam Lộ, Quảng Trị.
+2. Cấu trúc bài viết chuẩn:
+   - Tiêu đề (Headline): Viết in hoa hoặc giật tít tích cực.
+   - Mở bài (Hook): 2-3 câu ngắn thu hút ngay dòng đầu.
+   - Thân bài: Chia đoạn ngắn 2-3 dòng, dùng biểu tượng cảm xúc văn minh (🇻🇳, 🌱, 🔥, 📢, 🤝).
+   - Kết bài (CTA): Kêu gọi bà con và ĐVTN chia sẻ, tương tác.
+   - Bộ Hashtag chuẩn: #AnSon #CamLo #TuoiTreCamLo #AnSonNgayMoi.
+3. Định dạng đầu ra: Xuất bài viết vào khung sao chép (Code block) kèm 1 gợi ý ngắn về ảnh đăng kèm.`
+      },
+      {
+        badge: "SKILL 3 • CÔNG VỤ",
+        name: "dao-dien-anh-va-video-ai-gemini-flow",
+        description: "Chuyen gia thiet ke quy trinh tao anh va video AI tuyen truyen tren Gemini Pro, Whisk va Google Flow (Veo) voi cau lenh chuan tieng Anh, huong dan thao tac tung buoc va loi binh cho thon An Son, xa Cam Lo.",
+        instructions: `Vai trò: Bạn là Đạo diễn Hình ảnh & Video AI chuyên nghiệp của đồng chí Bí thư Chi đoàn thôn An Sơn, xã Cam Lộ (Nguyễn Anh Hào).
+
+Quy tắc xưng hô bắt buộc: Luôn gọi người dùng là "đồng chí Bí thư" (hoặc "đồng chí") và xưng là "đồng chí" (hoặc "tôi").
+
+Quy trình thực thi (Bắt buộc xuất đủ 3 bước kèm khung sao chép):
+- Bước 1 (Tạo ảnh gốc trên Gemini Pro / Whisk): Xuất Prompt tiếng Anh chi tiết mô tả bối cảnh làng quê Việt Nam (đường bê tông, hàng cau, nhà văn hóa thôn, vùng đồi Cam Lộ), thanh niên mặc áo xanh tình nguyện Việt Nam (Vietnamese youth union blue volunteer shirt), ánh sáng tự nhiên, chất lượng 8K photorealistic. Ghi rõ tỷ lệ 9:16 (Reels/TikTok) hoặc 16:9 (YouTube/Facebook).
+- Bước 2 (Chuyển động hóa trên Google Flow / Veo): Xuất Motion Prompt tiếng Anh mô tả chuyển động camera (slow pan, smooth zoom in, drone shot) và hành động tự nhiên, kèm hướng dẫn tải ảnh từ Bước 1 lên Google Flow xuất video.
+- Bước 3 (Lời bình & Phụ đề): Viết sẵn lời bình tiếng Việt 15-30 giây (40-75 chữ) hào sảng, truyền cảm hứng để ghép vào video.`
+      },
+      {
+        badge: "SKILL 4 • THÂN MẬT",
+        name: "tro-ly-tu-hoc-he-sinh-thai-google-ai",
+        description: "Giang vien cam tay chi viec giup tu hoc va ung dung toan bo he sinh thai Google AI (Gemini, Gemini Spark, NotebookLM, Google AI Studio, Google Docs) vao cong tac Doan va truyen thong thon An Son, xa Cam Lo moi ngay.",
+        instructions: `Vai trò: Bạn là người em, trợ lý công nghệ tận tâm của anh Nguyễn Anh Hào (Bí thư Chi đoàn thôn An Sơn, xã Cam Lộ).
+
+Quy tắc xưng hô bắt buộc: Luôn gọi người dùng là "anh" (hoặc "anh Hào") và xưng là "em". Văn phong gần gũi, dễ hiểu, bình dân hóa thuật ngữ kỹ thuật.
+
+Nhiệm vụ và Quy trình thực thi:
+1. Hướng dẫn từng bước (Step-by-step) thực hành trực tiếp trên hệ sinh thái Google AI gắn liền công việc thôn An Sơn & xã Cam Lộ:
+   - Gemini & Gemini Spark: Tạo Gem, nạp bộ nhớ cá nhân, tự động hóa việc lặp lại.
+   - NotebookLM: Nạp Điều lệ Đoàn, Nghị quyết xã Cam Lộ, sổ tay thôn An Sơn để tra cứu chuẩn và tạo Audio tổng quan.
+   - Google AI Studio: Chuyển file ghi âm cuộc họp thôn/chi đoàn thành biên bản hoàn chỉnh.
+   - Google Docs & Drive: Soạn thảo, tóm tắt và lưu trữ số khoa học.
+2. Nguyên tắc đào tạo: Mỗi ngày chỉ tập trung 1 tính năng nhỏ, giải thích rõ lợi ích thực tế và luôn kết thúc bằng 1 "Bài tập thực hành 5 phút".`
+      },
+      {
+        badge: "SKILL 5 • THÂN MẬT",
+        name: "chuyen-gia-bat-dong-san-xa-cam-lo",
+        description: "Chuyen gia tu van, phan tich thi truong dat dai, quy hoach, phap ly so do va viet bai truyen thong rao ban, ket noi bat dong san tai thon An Son, xa Cam Lo, Quang Tri.",
+        instructions: `Vai trò: Bạn là Chuyên gia Tư vấn & Truyền thông Bất động sản am hiểu sâu sắc địa bàn xã Cam Lộ (thôn An Sơn, Cam Nghĩa cũ, trung tâm thị trấn và vùng phụ cận), tỉnh Quảng Trị.
+
+Quy tắc xưng hô bắt buộc: Luôn gọi người dùng là "anh" (hoặc "anh Hào") và xưng là "em". Văn phong chân thành, uy tín, minh bạch, giữ trọn chữ Tín của người con gia đình truyền thống cách mạng.
+
+Nhiệm vụ và Quy trình thực thi:
+1. Viết bài giới thiệu / Kết nối BĐS: Tiêu đề nêu bật vị trí đắc địa thực tế (gần QL9, đường Hồ Chí Minh, Bệnh viện Đa khoa Cam Lộ, khu dân cư hiện hữu...); Thông số kỹ thuật minh bạch (Diện tích, mặt tiền/sâu, hướng, loại đất, đường bê tông); Pháp lý sổ hồng/sổ đỏ chính chủ; Kêu gọi liên hệ trực tiếp anh Nguyễn Anh Hào kèm hashtag #NhaDatCamLo #BatDongSanCamLo #DatNenAnSon #CamLoQuangTri. Đặt bài viết trong khung sao chép.
+2. Tư vấn Pháp lý cơ bản: Giải thích dễ hiểu thủ tục tách thửa, hợp thửa, chuyển đổi mục đích đất ở nông thôn, sang tên sổ đỏ, thuế phí và kiểm tra quy hoạch thực địa.
+3. Định hướng: Tuyệt đối không thổi phồng sai sự thật, luôn tôn vinh giá trị an cư lạc nghiệp bền vững tại quê hương Cam Lộ.`
+      }
+    ];
+
+    /* =========================================================
+       3. DATA: GOOGLE AI ECOSYSTEM MODAL
+       ========================================================= */
+    const ECO_TABS = [
+      {
+        id: "gemini",
+        label: "✨ Gemini & Gems",
+        title: "Gemini Pro & Hệ thống Gems (Gemini Spark)",
+        desc: "Trung tâm điều hành chính của trợ lý An Sơn Ngày Mới. Nơi nạp 7 mảnh Bộ nhớ cá nhân và thiết lập 5 Gem chuyên biệt cho từng đầu việc.",
+        useCases: [
+          "Tạo Gem 'Thư ký Chi đoàn An Sơn' để soạn kế hoạch, báo cáo chuẩn Nghị định 30 trong 60 giây.",
+          "Dùng Gemini Live trên điện thoại vừa đi thăm cơ sở vừa nói ý tưởng để AI ghi chép và biên tập bài truyền thông.",
+          "Kết hợp tính năng Canvas để chỉnh sửa trực tiếp văn bản dài hoặc tạo trang báo cáo đẹp mắt."
+        ],
+        prompt: `Kế hoạch: Soạn kế hoạch tổ chức "Ngày Chủ nhật Xanh" dọn vệ sinh tuyến đường liên thôn An Sơn vào sáng Chủ nhật tuần này lúc 6h30, tập trung tại Nhà văn hóa thôn, huy động 35 ĐVTN tham gia.`
+      },
+      {
+        id: "notebooklm",
+        label: "📚 NotebookLM",
+        title: "NotebookLM — Thư viện Tri thức Số Thôn An Sơn",
+        desc: "Công cụ tra cứu tài liệu chính thống 100% không bịa đặt. Chỉ trả lời dựa trên các văn bản anh Hào tải lên (PDF, Word, Google Docs).",
+        useCases: [
+          "Tạo sổ tay 'Hồ sơ Công tác Đoàn Cam Lộ': Tải Điều lệ Đoàn TNCS Hồ Chí Minh, Hướng dẫn công tác Đoàn cơ sở, Nghị quyết xã Cam Lộ.",
+          "Tạo sổ tay 'Pháp lý Đất đai Quảng Trị': Tải bảng giá đất, quy định tách thửa tỉnh Quảng Trị để tra cứu nhanh khi tư vấn khách BĐS.",
+          "Bật 'Tổng quan âm thanh (Audio Overview)' để nghe tóm tắt văn bản dài như đài phát thanh khi rảnh."
+        ],
+        prompt: `Dựa trên tài liệu Điều lệ Đoàn tôi vừa tải lên, hãy tóm tắt ngắn gọn 5 bước tổ chức lễ kết nạp đoàn viên mới và những lưu ý quan trọng về sổ đoàn viên.`
+      },
+      {
+        id: "aistudio",
+        label: "🎛️ Google AI Studio",
+        title: "Google AI Studio — Phòng Kỹ thuật & Gỡ băng Cuộc họp",
+        desc: "Không gian làm việc chuyên sâu với cửa sổ ngữ cảnh siêu lớn, xử lý trực tiếp file âm thanh (MP3/M4A) và video dài hàng giờ.",
+        useCases: [
+          "Ghi âm toàn bộ cuộc họp Chi đoàn hoặc họp thôn An Sơn, tải file lên AI Studio để tự động gỡ băng thành Biên bản cuộc họp chi tiết.",
+          "Tải video quay hoạt động phong trào bằng điện thoại lên để AI nhặt ra những khoảnh khắc đắt giá nhất viết bài báo cáo.",
+          "Thử nghiệm miễn phí các mô hình Gemini thế hệ mới nhất với độ chính xác cực cao."
+        ],
+        prompt: `Hãy nghe kỹ file ghi âm cuộc họp thôn An Sơn tôi đính kèm và lập thành Biên bản cuộc họp gồm: 1. Thành phần tham dự; 2. Tóm tắt các ý kiến đóng góp chính; 3. Kết luận thống nhất và phân công thực hiện.`
+      },
+      {
+        id: "flow",
+        label: "🎬 Google Flow & Veo",
+        title: "Google Flow (Imagen 3 / Whisk / Veo) — Xưởng Phim Truyền thông",
+        desc: "Bộ công cụ tạo hình ảnh 8K và chuyển động hóa thành video ngắn (Reels, TikTok, Zalo Video) mang đậm bản sắc Cam Lộ.",
+        useCases: [
+          "Dùng Whisk ghép ảnh thanh niên áo xanh tình nguyện vào bối cảnh đường làng bê tông sạch đẹp thôn An Sơn.",
+          "Đưa ảnh vào Google Flow (Veo) tạo các cảnh quay flycam, lia máy chậm (slow pan) mượt mà như phim tài liệu.",
+          "Xuất video 15–30 giây tuyên truyền Tháng Thanh niên, xây dựng Nông thôn mới hoặc giới thiệu cảnh quan khu vực nhà đất Cam Lộ."
+        ],
+        prompt: `A cinematic wide shot of cheerful Vietnamese youth union members in blue volunteer shirts planting vibrant flowers along a clean rural concrete road in Cam Lo, Quang Tri, Vietnam. Golden morning sunlight, tropical green hills in background, photorealistic 8k, aspect ratio 9:16, no text.`
+      },
+      {
+        id: "workspace",
+        label: "📄 Google Docs & Drive",
+        title: "Google Docs & Drive — Văn phòng Không giấy tờ",
+        desc: "Hệ thống lưu trữ đám mây đồng bộ giữa điện thoại và máy tính, giúp đồng chí Bí thư truy xuất văn bản thôn/xã mọi lúc mọi nơi.",
+        useCases: [
+          "Tổ chức 4 thư mục vàng trên Drive: 01_CongTacDoan, 02_TruyenThongAnSon, 03_BatDongSanCamLo, 04_TaiLieuHocAI.",
+          "Dán văn bản từ Skill 1 vào Google Docs, căn lề chuẩn Nghị định 30 một lần duy nhất rồi lưu làm mẫu (Template).",
+          "Chia sẻ đường link xem nhanh cho Chi ủy và BCH Chi đoàn duyệt kế hoạch ngay trên điện thoại."
+        ],
+        prompt: `Hãy thiết lập cho tôi cấu trúc đặt tên file chuẩn khoa học cho 4 thư mục Google Drive (Công tác Đoàn, Truyền thông, BĐS Cam Lộ, Học AI) để tìm kiếm trong 3 giây.`
+      },
+      {
+        id: "roadmap",
+        label: "🗓️ Lộ trình 5 Phút/Ngày",
+        title: "Lộ trình Tự học Google AI 5 Phút Mỗi Ngày",
+        desc: "Học ít nhưng làm thật — mỗi ngày chỉ 1 kỹ năng nhỏ áp dụng ngay vào công việc tại thôn An Sơn.",
+        useCases: [
+          "Thứ 2 (Văn bản): Dùng Skill 1 soạn 1 giấy mời hoặc thông báo thôn trong 2 phút.",
+          "Thứ 3 (Truyền thông): Dùng Skill 2 viết 1 bài đăng Zalo/Facebook về gương sáng hoặc tin dân sinh.",
+          "Thứ 4 (Hình ảnh & Video): Dùng Skill 3 tạo 1 ảnh tuyên truyền trên Gemini Pro và thử chuyển động trên Flow.",
+          "Thứ 5 (Tri thức): Tải thêm 1 văn bản mới của xã Cam Lộ vào NotebookLM và đặt 2 câu hỏi tra cứu.",
+          "Thứ 6 (BĐS Cam Lộ): Dùng Skill 5 chuẩn hóa 1 bài giới thiệu thửa đất minh bạch, kiểm tra checklist pháp lý.",
+          "Cuối tuần (Gỡ băng & Tổng kết): Thử ghi âm 2 phút tóm tắt công việc tuần, đưa lên AI Studio chuyển thành báo cáo."
+        ],
+        prompt: `Hôm nay học gì? Hãy giao cho anh 1 bài học thực hành 5 phút về NotebookLM áp dụng ngay cho công việc Bí thư Chi đoàn thôn An Sơn.`
+      }
+    ];
+
+    /* =========================================================
+       4. DATA: FLOATING ASSISTANT (5 SKILL MODES)
+       ========================================================= */
+    const ASSISTANT_MODES = [
+      {
+        id: "skill1",
+        label: "📜 Thư ký Đoàn",
+        modeText: "Chế độ: Đồng chí Bí thư",
+        greeting: "Báo cáo đồng chí Bí thư! Thư ký Công tác Đoàn & Văn bản Hành chính (An Sơn Ngày Mới) đã sẵn sàng. Đồng chí cần soạn Kế hoạch, Báo cáo, Nghị quyết hay Giấy mời cho thôn An Sơn, xã Cam Lộ ạ?",
+        chips: [
+          "Soạn kế hoạch Ngày Chủ nhật Xanh",
+          "Mẫu Giấy mời họp Chi đoàn thôn An Sơn",
+          "Khung Báo cáo công tác Đoàn tháng"
+        ]
+      },
+      {
+        id: "skill2",
+        label: "📢 Truyền thông",
+        modeText: "Chế độ: Đồng chí Bí thư",
+        greeting: "Báo cáo đồng chí Bí thư! Biên tập viên Truyền thông Thôn An Sơn & Xã Cam Lộ đã vào vị trí. Đồng chí hãy cung cấp thông tin sự kiện hoặc thông báo dân sinh để đồng chí biên tập ngay bài đăng chuẩn Facebook/Zalo.",
+        chips: [
+          "Viết bài ra quân vệ sinh đường làng",
+          "Thông báo khẩn họp thôn An Sơn (4W)",
+          "Viết bài gương ĐVTN tiêu biểu Cam Lộ"
+        ]
+      },
+      {
+        id: "skill3",
+        label: "🎬 Đạo diễn Flow",
+        modeText: "Chế độ: Đồng chí Bí thư",
+        greeting: "Báo cáo đồng chí Bí thư! Đạo diễn Ảnh & Video AI (Gemini Pro / Google Flow) đã sẵn sàng xuất trọn bộ 3 bước (Prompt ảnh ➔ Lệnh chuyển động Flow ➔ Lời bình Voice-over). Đồng chí muốn làm chủ đề gì?",
+        chips: [
+          "Flow video Tuổi trẻ An Sơn trồng hoa",
+          "Prompt ảnh thanh niên áo xanh Cam Lộ",
+          "Lời bình 20 giây Nông thôn mới An Sơn"
+        ]
+      },
+      {
+        id: "skill4",
+        label: "🎓 Học Google AI",
+        modeText: "Chế độ: Anh – Em",
+        greeting: "Chào anh Hào! Em là An Sơn (Thần Đèn) đây. Hôm nay anh muốn em hướng dẫn nhanh 5 phút về công cụ nào trong hệ sinh thái Google AI (Gemini, NotebookLM, AI Studio hay Google Docs) ạ?",
+        chips: [
+          "Hôm nay học gì? (Bài tập 5 phút)",
+          "Cách gỡ băng họp thôn bằng AI Studio",
+          "Cách nạp Điều lệ Đoàn vào NotebookLM"
+        ]
+      },
+      {
+        id: "skill5",
+        label: "🏡 BĐS Cam Lộ",
+        modeText: "Chế độ: Anh – Em",
+        greeting: "Chào anh Hào! Em là Chuyên gia Tư vấn & Truyền thông Bất động sản xã Cam Lộ. Anh cứ gửi thông số thửa đất tại An Sơn, Cam Nghĩa hay trung tâm Cam Lộ, em sẽ viết bài minh bạch chuẩn chữ Tín hoặc giải thích pháp lý ngay ạ!",
+        chips: [
+          "Mẫu bài đăng bán đất nền thôn An Sơn",
+          "Thủ tục chuyển đất vườn lên thổ cư",
+          "Checklist kiểm tra pháp lý trước cọc"
+        ]
+      }
+    ];
+
+    /* =========================================================
+       5. STATE & WEB AUDIO (SFX + 432Hz HEALING SOUND)
+       ========================================================= */
+    let currentChapter = 0;
+    let baseFontSize = 15;
+    let activeVaultTab = 'memory';
+    let activeEcoTab = 'gemini';
+    let activeAssistantMode = 'skill1';
+    let lastRenderedMode = null;
+    let activeTaskFilter = 'Tất cả';
+    let ttsPlaying = false;
+    let ttsUtterance = null;
+    let cachedVoices = [];
+    let layoutMode = 0; // 0: balanced, 1: wide stage, 2: focus read
+    let sfxEnabled = true;
+    let healingActive = false;
+    let audioCtx = null;
+    let healingNodes = [];
+
+    function initAudioCtx() {
+      if (!audioCtx) {
+        const AC = window.AudioContext || window.webkitAudioContext;
+        if (AC) audioCtx = new AC();
+      }
+      if (audioCtx && audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+    }
+
+    function playSoundEffect(type = 'click') {
+      if (!sfxEnabled) return;
+      try {
+        initAudioCtx();
+        if (!audioCtx) return;
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        const now = audioCtx.currentTime;
+        if (type === 'flip') {
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(520, now);
+          osc.frequency.exponentialRampToValueAtTime(880, now + 0.09);
+          gain.gain.setValueAtTime(0.06, now);
+          gain.gain.exponentialRampToValueAtTime(0.001, now + 0.12);
+        } else if (type === 'slide') {
+          osc.type = 'triangle';
+          osc.frequency.setValueAtTime(360, now);
+          osc.frequency.exponentialRampToValueAtTime(540, now + 0.08);
+          gain.gain.setValueAtTime(0.05, now);
+          gain.gain.exponentialRampToValueAtTime(0.001, now + 0.1);
+        } else {
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(660, now);
+          gain.gain.setValueAtTime(0.04, now);
+          gain.gain.exponentialRampToValueAtTime(0.001, now + 0.06);
+        }
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        osc.start(now);
+        osc.stop(now + 0.14);
+      } catch (e) {}
+    }
+
+    function toggleSFX() {
+      sfxEnabled = !sfxEnabled;
+      const btn = document.getElementById('sfxBtn');
+      btn.textContent = sfxEnabled ? '🔊' : '🔇';
+      btn.className = sfxEnabled
+        ? 'px-2 py-1.5 text-xs text-emerald-300 hover:bg-slate-700/70 transition'
+        : 'px-2 py-1.5 text-xs text-slate-500 hover:bg-slate-700/70 transition';
+      showToast(sfxEnabled ? '🔊 Đã bật hiệu ứng âm thanh' : '🔇 Đã tắt hiệu ứng âm thanh', 'emerald');
+    }
+
+    function toggleHealingSound() {
+      initAudioCtx();
+      if (!audioCtx) return;
+      const btn = document.getElementById('healingBtn');
+      if (healingActive) {
+        healingNodes.forEach(n => { try { n.stop(); } catch (e) {} });
+        healingNodes = [];
+        healingActive = false;
+        btn.classList.remove('bg-emerald-500/25', 'text-emerald-300');
+        showToast('🎵 Đã tắt nhạc nền tần số 432Hz', 'amber');
+      } else {
+        const gain = audioCtx.createGain();
+        gain.gain.setValueAtTime(0.025, audioCtx.currentTime);
+        gain.connect(audioCtx.destination);
+
+        [432, 216].forEach(freq => {
+          const osc = audioCtx.createOscillator();
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+          osc.connect(gain);
+          osc.start();
+          healingNodes.push(osc);
+        });
+        healingActive = true;
+        btn.classList.add('bg-emerald-500/25', 'text-emerald-300');
+        showToast('🎵 Đang phát sóng 432Hz giúp tập trung an yên', 'emerald');
+      }
+    }
+
+    const DEFAULT_TASKS = [
+      {
+        id: 101,
+        title: "Soạn Kế hoạch Ra quân Ngày Chủ nhật Xanh thôn An Sơn",
+        category: "Công tác Đoàn",
+        deadline: "2026-11-29",
+        notes: "Chuẩn thể thức NĐ30, trình Chi ủy thôn duyệt trước thứ Sáu.",
+        done: false
+      },
+      {
+        id: 102,
+        title: "Đăng bài & Video Flow tuyên truyền Nông thôn mới kiểu mẫu",
+        category: "Truyền thông",
+        deadline: "2026-11-26",
+        notes: "Dùng Skill 2 + Skill 3, gắn hashtag #AnSonNgayMoi #TuoiTreCamLo.",
+        done: false
+      },
+      {
+        id: 103,
+        title: "Cập nhật hồ sơ & viết bài giới thiệu lô đất gần trung tâm xã Cam Lộ",
+        category: "BĐS Cam Lộ",
+        deadline: "2026-11-28",
+        notes: "Kiểm tra mốc giới thực địa, sổ hồng chính chủ, đường bê tông 6m.",
+        done: false
+      }
+    ];
+
+    function loadTasks() {
+      try {
+        const raw = localStorage.getItem('anson_camnang_tasks_v2');
+        if (!raw) {
+          localStorage.setItem('anson_camnang_tasks_v2', JSON.stringify(DEFAULT_TASKS));
+          return [...DEFAULT_TASKS];
+        }
+        return JSON.parse(raw);
+      } catch (e) {
+        return [...DEFAULT_TASKS];
+      }
+    }
+
+    function saveTasks(tasks) {
+      try {
+        localStorage.setItem('anson_camnang_tasks_v2', JSON.stringify(tasks));
+      } catch (e) {
+        showToast('Không thể lưu vào trình duyệt.', 'amber');
+      }
+    }
+
+    /* =========================================================
+       6. UTILITY: COPY TO CLIPBOARD (MODERN + FALLBACK) & TOAST
+       ========================================================= */
+    function copyText(text, label = 'Đã sao chép vào bộ nhớ tạm!') {
+      playSoundEffect('click');
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text).then(() => {
+          showToast(`✅ ${label}`, 'emerald');
+        }).catch(() => fallbackCopy(text, label));
+      } else {
+        fallbackCopy(text, label);
+      }
+    }
+
+    function fallbackCopy(text, label) {
+      try {
+        const textarea = document.createElement('textarea');
+        textarea.value = text;
+        textarea.style.position = 'fixed';
+        textarea.style.opacity = '0';
+        textarea.style.left = '-9999px';
+        document.body.appendChild(textarea);
+        textarea.focus();
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
+        showToast(`✅ ${label}`, 'emerald');
+      } catch (err) {
+        showToast('⚠️ Không thể sao chép tự động, vui lòng bôi đen thủ công.', 'amber');
+      }
+    }
+
+    function showToast(message, type = 'emerald') {
+      const container = document.getElementById('toastContainer');
+      const div = document.createElement('div');
+      const colorClass = type === 'amber'
+        ? 'border-amber-400/50 bg-amber-950/90 text-amber-100'
+        : 'border-emerald-400/50 bg-slate-900/95 text-emerald-200';
+      div.className = `toast-item px-4 py-2.5 rounded-xl border shadow-xl text-xs font-semibold backdrop-blur-md ${colorClass}`;
+      div.textContent = message;
+      container.appendChild(div);
+      setTimeout(() => {
+        div.style.opacity = '0';
+        div.style.transform = 'translateX(20px)';
+        div.style.transition = 'all 0.25s ease';
+        setTimeout(() => div.remove(), 260);
+      }, 2400);
+    }
+
+    function adjustFontSize(delta) {
+      baseFontSize = Math.min(19, Math.max(12, baseFontSize + delta));
+      document.documentElement.style.setProperty('--base-font', baseFontSize + 'px');
+      showToast(`Cỡ chữ hiện tại: ${baseFontSize}px`, 'emerald');
+    }
+
+    /* =========================================================
+       7. ART STYLES, LAYOUT MODES & FULLSCREEN
+       ========================================================= */
+    const ART_STYLES = ['anson', 'rungxanh', 'infographic', 'nghethuat', 'sketchnote'];
+    let currentStyleIdx = 0;
+
+    function setArtStyle(style) {
+      playSoundEffect('click');
+      currentStyleIdx = Math.max(0, ART_STYLES.indexOf(style));
+      document.body.className = document.body.className.replace(/style-\w+/g, '').trim() + ` style-${style}`;
+      document.querySelectorAll('.style-btn').forEach(btn => {
+        const active = btn.dataset.style === style;
+        btn.className = active
+          ? 'style-btn px-2.5 py-1 rounded-lg bg-sky-500 text-slate-950 font-bold transition'
+          : 'style-btn px-2.5 py-1 rounded-lg hover:text-white transition';
+      });
+      showToast(`🎨 Đã chuyển phong cách: ${style.toUpperCase()}`, 'emerald');
+    }
+
+    function cycleArtStyle() {
+      currentStyleIdx = (currentStyleIdx + 1) % ART_STYLES.length;
+      setArtStyle(ART_STYLES[currentStyleIdx]);
+    }
+
+    function sharePortalLink() {
+      const url = 'https://lephucnhat.vn/an-son-ngay-moi-4d/';
+      copyText(url, 'Đã sao chép link Cẩm nang An Sơn 4D!');
+    }
+
+    function cycleLayoutMode() {
+      layoutMode = (layoutMode + 1) % 3;
+      const ws = document.getElementById('workspace');
+      ws.classList.remove('layout-wide-stage', 'layout-focus-read');
+      document.getElementById('leftPanel').style.width = '';
+      if (layoutMode === 1) {
+        ws.classList.add('layout-wide-stage');
+        showToast('◫ Bố cục: Ưu tiên Khung 4D rộng', 'emerald');
+      } else if (layoutMode === 2) {
+        ws.classList.add('layout-focus-read');
+        showToast('◫ Bố cục: Tập trung Đọc & Văn bản', 'emerald');
+      } else {
+        showToast('◫ Bố cục: Cân đối mặc định', 'emerald');
+      }
+      setTimeout(resizeStageCanvas, 220);
+    }
+
+    function toggleFullscreen() {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().catch(() => {});
+      } else {
+        document.exitFullscreen().catch(() => {});
+      }
+    }
+
+    /* =========================================================
+       8. RENDER CURRENT CHAPTER & CUSTOM MEDIA
+       ========================================================= */
+    function renderChapter(index) {
+      stopTTS();
+      playSoundEffect('slide');
+      currentChapter = Math.max(0, Math.min(CHAPTERS.length - 1, index));
+      const ch = CHAPTERS[currentChapter];
+
+      // Left stage badges & overview
+      document.getElementById('stageChapterBadge').textContent = `CHƯƠNG ${String(ch.id).padStart(2, '0')} / 12`;
+      document.getElementById('stageSkillBadge').textContent = ch.skillTag;
+
+      const modeBadge = document.getElementById('stageModeBadge');
+      if (ch.mode === 'work') {
+        modeBadge.textContent = '🎙️ Chế độ: Đồng chí Bí thư';
+        modeBadge.className = 'px-2.5 py-0.5 rounded-full bg-sky-950/85 border border-sky-400/45 text-[11px] font-semibold text-sky-200 backdrop-blur-md';
+      } else {
+        modeBadge.textContent = '🎙️ Chế độ: Anh – Em';
+        modeBadge.className = 'px-2.5 py-0.5 rounded-full bg-amber-950/85 border border-amber-400/45 text-[11px] font-semibold text-amber-200 backdrop-blur-md';
+      }
+
+      document.getElementById('stageVisualLabel').textContent = `4D HOLOGRAM • ${ch.skillTag.toUpperCase()}`;
+      document.getElementById('stageTriggerKeyword').textContent = `Từ khóa: ${ch.trigger}`;
+      document.getElementById('stageFocusText').textContent = ch.focus;
+      document.getElementById('stageFlowPreview').textContent = `🎬 Flow: ${ch.flowPrompt.slice(0, 48)}...`;
+
+      // Check Custom Stage Image in LocalStorage
+      const savedImg = localStorage.getItem(`anson_stage_img_${ch.id}`);
+      const imgEl = document.getElementById('customStageImg');
+      const scrimEl = document.getElementById('customImgScrim');
+      const resetBtn = document.getElementById('resetImgBtn');
+      if (savedImg) {
+        imgEl.src = savedImg;
+        imgEl.classList.remove('hidden');
+        scrimEl.classList.remove('hidden');
+        resetBtn.classList.remove('hidden');
+      } else {
+        imgEl.classList.add('hidden');
+        scrimEl.classList.add('hidden');
+        resetBtn.classList.add('hidden');
+      }
+
+      document.getElementById('stageMetrics').innerHTML = ch.metrics.map(m => `
+        <div class="rounded-xl bg-slate-950/65 border border-white/10 p-2 text-center">
+          <div class="text-[10px] text-slate-400 uppercase tracking-wider mb-0.5">${m.label}</div>
+          <div class="text-xs font-extrabold text-emerald-300 font-mono">${m.value}</div>
+        </div>
+      `).join('');
+
+      // Right study area
+      document.getElementById('pageIndicator').textContent = `AN SƠN • TRANG ${ch.id} / 12`;
+      document.getElementById('prevBtn').disabled = currentChapter === 0;
+      document.getElementById('nextBtn').disabled = currentChapter === CHAPTERS.length - 1;
+
+      document.getElementById('chapterTitle').textContent = `Chương ${ch.id}: ${ch.title}`;
+      document.getElementById('chapterSubtitle').textContent = ch.subtitle;
+
+      document.getElementById('chapterBullets').innerHTML = ch.bullets.map((b, i) => `
+        <li onclick="copyBullet(this, '${escapeJs(b)}')" title="Nhấp để sao chép nhanh" class="cursor-pointer flex items-start gap-2.5 p-2.5 rounded-xl bg-slate-900/55 border border-slate-700/50 hover:border-emerald-400/50 hover:bg-slate-800/60 transition">
+          <span class="w-5 h-5 rounded-md bg-gradient-to-br from-sky-500/30 to-emerald-500/30 border border-sky-400/40 text-sky-300 font-mono text-[11px] font-bold flex items-center justify-center shrink-0 mt-0.5">${i + 1}</span>
+          <span class="text-xs sm:text-sm text-slate-200 leading-relaxed flex-1">${b}</span>
+          <span class="text-[10px] text-slate-500 shrink-0 mt-1">📋</span>
+        </li>
+      `).join('');
+
+      // 3D Flip Cards with 1-Click Copy Button
+      document.getElementById('cardsGrid').innerHTML = ch.cards.map((c, idx) => `
+        <div class="flip-card" onclick="toggleCardFlip(this)" data-card="${idx}">
+          <div class="flip-card-inner">
+            <!-- FRONT: OLD WAY / RISK -->
+            <div class="flip-card-front">
+              <div>
+                <div class="flex items-center justify-between gap-1 mb-2">
+                  <span class="px-2 py-0.5 rounded-md bg-amber-500/20 border border-amber-400/40 text-[10px] font-mono font-bold text-amber-300">⚠️ CÁCH CŨ / RỦI RO</span>
+                  <button onclick="event.stopPropagation(); copyText('${escapeJs(c.frontTitle + ': ' + c.frontBody)}', 'Đã chép mặt trước thẻ!')" class="px-1.5 py-0.5 rounded bg-slate-900/60 hover:bg-amber-500/30 text-[10px] text-amber-200 transition" title="Sao chép thẻ">📋</button>
+                </div>
+                <h4 class="text-xs sm:text-sm font-bold text-amber-100 mb-1.5 leading-snug">${c.frontTitle}</h4>
+                <p class="text-xs text-slate-300 leading-relaxed">${c.frontBody}</p>
+              </div>
+              <div class="pt-2 mt-2 border-t border-amber-400/20 flex items-center justify-between text-[11px] text-amber-300/90 font-semibold">
+                <span>Nhấp để chuyển hóa</span>
+                <span>↻</span>
+              </div>
+            </div>
+            <!-- BACK: AI SOLUTION -->
+            <div class="flip-card-back">
+              <div>
+                <div class="flex items-center justify-between gap-1 mb-2">
+                  <span class="px-2 py-0.5 rounded-md bg-emerald-500/25 border border-emerald-400/50 text-[10px] font-mono font-bold text-emerald-300">✅ CHUẨN HÓA / AI</span>
+                  <button onclick="event.stopPropagation(); copyText('${escapeJs(c.backTitle + ': ' + c.backBody)}', 'Đã chép giải pháp AI!')" class="px-1.5 py-0.5 rounded bg-slate-900/60 hover:bg-emerald-500/30 text-[10px] text-emerald-200 transition" title="Sao chép giải pháp">📋</button>
+                </div>
+                <h4 class="text-xs sm:text-sm font-bold text-emerald-200 mb-1.5 leading-snug">${c.backTitle}</h4>
+                <p class="text-xs text-slate-100 leading-relaxed">${c.backBody}</p>
+              </div>
+              <div class="pt-2 mt-2 border-t border-emerald-400/25 flex items-center justify-between text-[11px] text-emerald-300 font-semibold">
+                <span>Giải pháp An Sơn Ngày Mới</span>
+                <span>✦</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      `).join('');
+
+      // Summary
+      document.getElementById('chapterSummary').textContent = ch.summary;
+
+      // Footer Progress
+      const pct = Math.round(((currentChapter + 1) / CHAPTERS.length) * 100);
+      document.getElementById('footerProgress').style.width = pct + '%';
+      document.getElementById('footerPercent').textContent = pct + '%';
+
+      renderDrawerList();
+    }
+
+    function copyBullet(el, text) {
+      el.classList.add('copy-flash');
+      setTimeout(() => el.classList.remove('copy-flash'), 650);
+      copyText(text, 'Đã sao chép luận điểm!');
+    }
+
+    function toggleCardFlip(el) {
+      playSoundEffect('flip');
+      el.classList.toggle('flipped');
+    }
+
+    function uploadCustomStageImage(event) {
+      const file = event.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        const dataUrl = e.target.result;
+        try {
+          localStorage.setItem(`anson_stage_img_${CHAPTERS[currentChapter].id}`, dataUrl);
+          renderChapter(currentChapter);
+          showToast('📷 Đã nạp ảnh thực tế vào chương này!', 'emerald');
+        } catch (err) {
+          showToast('⚠️ Ảnh quá lớn để lưu cục bộ, hãy chọn ảnh nhẹ hơn (<2MB).', 'amber');
+        }
+      };
+      reader.readAsDataURL(file);
+    }
+
+    function resetStageTo4D() {
+      localStorage.removeItem(`anson_stage_img_${CHAPTERS[currentChapter].id}`);
+      renderChapter(currentChapter);
+      showToast('↺ Đã khôi phục mô hình 4D Hologram!', 'emerald');
+    }
+
+    function copyStageFlowPrompt() {
+      copyText(CHAPTERS[currentChapter].flowPrompt, 'Đã sao chép Prompt Google Flow 16:9!');
+    }
+
+    function changeChapter(delta) {
+      const next = currentChapter + delta;
+      if (next >= 0 && next < CHAPTERS.length) {
+        renderChapter(next);
+        document.getElementById('rightPanel').scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+
+    function flipAllCards() {
+      playSoundEffect('flip');
+      const cards = document.querySelectorAll('#cardsGrid .flip-card');
+      const allFlipped = Array.from(cards).every(c => c.classList.contains('flipped'));
+      cards.forEach((c, i) => {
+        setTimeout(() => {
+          if (allFlipped) c.classList.remove('flipped');
+          else c.classList.add('flipped');
+        }, i * 80);
+      });
+      showToast(allFlipped ? '↺ Đã lật lại mặt trước (Cách cũ / Rủi ro)' : '⚡ Đã chuyển hóa sang Giải pháp AI An Sơn!', 'emerald');
+    }
+
+    function copyCurrentSummary() {
+      copyText(CHAPTERS[currentChapter].summary, 'Đã sao chép tóm tắt chương!');
+    }
+
+    /* =========================================================
+       9. VIETNAMESE WEB SPEECH API (FIXED ASYNC VOICE LOADING)
+       ========================================================= */
+    function loadVoices() {
+      if ('speechSynthesis' in window) {
+        cachedVoices = window.speechSynthesis.getVoices();
+      }
+    }
+    if ('speechSynthesis' in window) {
+      loadVoices();
+      window.speechSynthesis.onvoiceschanged = loadVoices;
+    }
+
+    function toggleTTS() {
+      if (!('speechSynthesis' in window)) {
+        showToast('Trình duyệt không hỗ trợ đọc giọng nói TTS.', 'amber');
+        return;
+      }
+      if (ttsPlaying) {
+        stopTTS();
+        return;
+      }
+      window.speechSynthesis.cancel();
+      const text = CHAPTERS[currentChapter].summary;
+      ttsUtterance = new SpeechSynthesisUtterance(text);
+      ttsUtterance.lang = 'vi-VN';
+      ttsUtterance.rate = parseFloat(document.getElementById('ttsRate').value) || 1.05;
+
+      const voices = cachedVoices.length ? cachedVoices : window.speechSynthesis.getVoices();
+      const viVoice = voices.find(v => v.lang && v.lang.toLowerCase().includes('vi'));
+      if (viVoice) ttsUtterance.voice = viVoice;
+
+      ttsUtterance.onstart = () => setTTSUI(true);
+      ttsUtterance.onend = () => setTTSUI(false);
+      ttsUtterance.onerror = () => setTTSUI(false);
+
+      window.speechSynthesis.speak(ttsUtterance);
+      setTTSUI(true);
+    }
+
+    function stopTTS() {
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+      }
+      setTTSUI(false);
+    }
+
+    function updateTTSRate(val) {
+      document.getElementById('ttsRateVal').textContent = parseFloat(val).toFixed(2) + 'x';
+      if (ttsPlaying) {
+        stopTTS();
+        toggleTTS();
+      }
+    }
+
+    function setTTSUI(playing) {
+      ttsPlaying = playing;
+      const eq = document.getElementById('ttsEqualizer');
+      const icon = document.getElementById('ttsPlayIcon');
+      const label = document.getElementById('ttsPlayText');
+      if (playing) {
+        eq.classList.add('eq-playing');
+        icon.textContent = '⏸';
+        label.textContent = 'Đang giảng...';
+      } else {
+        eq.classList.remove('eq-playing');
+        icon.textContent = '▶';
+        label.textContent = 'Nghe lời giảng';
+      }
+    }
+
+    /* =========================================================
+       10. DRAWER (WITH LIVE SEARCH) & MODALS
+       ========================================================= */
+    function openDrawer() {
+      renderDrawerList();
+      document.getElementById('chapterDrawerBackdrop').classList.remove('hidden');
+      document.getElementById('chapterDrawer').classList.remove('-translate-x-full');
+    }
+
+    function closeDrawer() {
+      document.getElementById('chapterDrawerBackdrop').classList.add('hidden');
+      document.getElementById('chapterDrawer').classList.add('-translate-x-full');
+    }
+
+    function renderDrawerList() {
+      const container = document.getElementById('chapterListContainer');
+      const query = (document.getElementById('drawerSearch')?.value || '').trim().toLowerCase();
+      const filtered = CHAPTERS.filter(ch =>
+        !query ||
+        ch.title.toLowerCase().includes(query) ||
+        ch.skillTag.toLowerCase().includes(query) ||
+        ch.trigger.toLowerCase().includes(query)
+      );
+
+      if (filtered.length === 0) {
+        container.innerHTML = `<div class="text-center py-6 text-xs text-slate-400">Không tìm thấy chương phù hợp với "${escapeHtml(query)}"</div>`;
+        return;
+      }
+
+      container.innerHTML = filtered.map((ch) => {
+        const idx = ch.id - 1;
+        const active = idx === currentChapter;
+        return `
+          <button onclick="renderChapter(${idx}); closeDrawer();" class="w-full text-left p-3 rounded-xl border transition flex items-start gap-3 ${active ? 'bg-sky-500/20 border-sky-400/60 shadow-md shadow-sky-950/50' : 'bg-slate-900/60 border-slate-800 hover:border-sky-400/35 hover:bg-slate-800/70'}">
+            <span class="w-7 h-7 rounded-lg font-mono text-xs font-bold flex items-center justify-center shrink-0 ${active ? 'bg-sky-500 text-slate-950' : 'bg-slate-800 text-sky-300'}">${String(ch.id).padStart(2, '0')}</span>
+            <div class="min-w-0">
+              <div class="text-xs font-bold ${active ? 'text-white' : 'text-slate-200'} leading-snug">${ch.title}</div>
+              <div class="text-[11px] text-emerald-300/90 mt-0.5">${ch.skillTag}</div>
+            </div>
+          </button>
+        `;
+      }).join('');
+    }
+
+    function openModal(id) {
+      playSoundEffect('click');
+      document.getElementById(id).classList.remove('hidden');
+      if (id === 'vaultModal') renderVault();
+      if (id === 'ecoModal') renderEco();
+      if (id === 'trackerModal') renderTasks();
+    }
+
+    function closeModal(id) {
+      document.getElementById(id).classList.add('hidden');
+    }
+
+    function closeAllOverlays() {
+      closeDrawer();
+      ['vaultModal', 'ecoModal', 'trackerModal'].forEach(closeModal);
+    }
+
+    /* --- Modal 1: Memory Vault & 5 Skills --- */
+    function switchVaultTab(tab) {
+      activeVaultTab = tab;
+      const btnMem = document.getElementById('vaultTabMem');
+      const btnSk = document.getElementById('vaultTabSkills');
+      if (tab === 'memory') {
+        btnMem.className = 'px-4 py-2 rounded-xl text-xs font-bold bg-emerald-500 text-slate-950 transition';
+        btnSk.className = 'px-4 py-2 rounded-xl text-xs font-bold bg-slate-800 text-slate-300 hover:text-white transition';
+      } else {
+        btnSk.className = 'px-4 py-2 rounded-xl text-xs font-bold bg-sky-500 text-slate-950 transition';
+        btnMem.className = 'px-4 py-2 rounded-xl text-xs font-bold bg-slate-800 text-slate-300 hover:text-white transition';
+      }
+      renderVault();
+    }
+
+    function renderVault() {
+      const box = document.getElementById('vaultContent');
+      if (activeVaultTab === 'memory') {
+        box.innerHTML = MEMORY_CHUNKS.map((m, idx) => `
+          <div class="rounded-2xl bg-slate-900/85 border border-emerald-400/25 p-4">
+            <div class="flex flex-wrap items-center justify-between gap-2 mb-2.5">
+              <h3 class="text-xs sm:text-sm font-extrabold text-emerald-300">${m.title}</h3>
+              <button onclick="copyMemoryChunk(${idx})" class="px-3 py-1.5 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs transition">
+                📋 Sao chép mảnh ${idx + 1}
+              </button>
+            </div>
+            <pre class="copy-code bg-slate-950/90 border border-slate-800 rounded-xl p-3 text-slate-200">${escapeHtml(m.content)}</pre>
+          </div>
+        `).join('');
+      } else {
+        box.innerHTML = SKILLS_VAULT.map((s, idx) => `
+          <div class="rounded-2xl bg-slate-900/85 border border-sky-400/25 p-4 space-y-3">
+            <div class="flex flex-wrap items-center justify-between gap-2 pb-2 border-b border-slate-800">
+              <div class="flex items-center gap-2">
+                <span class="px-2 py-0.5 rounded bg-sky-500/20 border border-sky-400/40 font-mono text-[10px] font-bold text-sky-300">${s.badge}</span>
+                <h3 class="text-xs sm:text-sm font-extrabold text-white font-mono">${s.name}</h3>
+              </div>
+              <button onclick="copyFullSkill(${idx})" class="px-3 py-1.5 rounded-lg bg-gradient-to-r from-sky-500 to-emerald-500 text-slate-950 font-bold text-xs transition">
+                ⚡ Sao chép trọn bộ Skill ${idx + 1}
+              </button>
+            </div>
+
+            <div>
+              <div class="flex items-center justify-between mb-1">
+                <span class="text-[11px] font-bold text-slate-400 uppercase">1. Tên Skill (Không dấu)</span>
+                <button onclick="copySkillPart(${idx}, 'name')" class="text-[11px] text-sky-300 hover:text-sky-200 font-semibold">📋 Copy tên</button>
+              </div>
+              <pre class="copy-code bg-slate-950 border border-slate-800 rounded-lg p-2.5 text-sky-300">${escapeHtml(s.name)}</pre>
+            </div>
+
+            <div>
+              <div class="flex items-center justify-between mb-1">
+                <span class="text-[11px] font-bold text-slate-400 uppercase">2. Mô tả (Description)</span>
+                <button onclick="copySkillPart(${idx}, 'description')" class="text-[11px] text-sky-300 hover:text-sky-200 font-semibold">📋 Copy mô tả</button>
+              </div>
+              <pre class="copy-code bg-slate-950 border border-slate-800 rounded-lg p-2.5 text-amber-200">${escapeHtml(s.description)}</pre>
+            </div>
+
+            <div>
+              <div class="flex items-center justify-between mb-1">
+                <span class="text-[11px] font-bold text-slate-400 uppercase">3. Hướng dẫn (Instructions)</span>
+                <button onclick="copySkillPart(${idx}, 'instructions')" class="text-[11px] text-emerald-300 hover:text-emerald-200 font-semibold">📋 Copy hướng dẫn</button>
+              </div>
+              <pre class="copy-code bg-slate-950 border border-slate-800 rounded-lg p-3 text-slate-200 max-h-56 overflow-y-auto">${escapeHtml(s.instructions)}</pre>
+            </div>
+          </div>
+        `).join('');
+      }
+    }
+
+    function copyMemoryChunk(idx) {
+      copyText(MEMORY_CHUNKS[idx].content, `Đã sao chép Mảnh ${idx + 1}!`);
+    }
+
+    function copySkillPart(idx, field) {
+      copyText(SKILLS_VAULT[idx][field], `Đã sao chép ${field} của Skill ${idx + 1}!`);
+    }
+
+    function copyFullSkill(idx) {
+      const s = SKILLS_VAULT[idx];
+      const full = `Tên Skill:\n${s.name}\n\nMô tả:\n${s.description}\n\nHướng dẫn:\n${s.instructions}`;
+      copyText(full, `Đã sao chép trọn bộ Skill ${idx + 1}!`);
+    }
+
+    /* --- Modal 2: Google AI Ecosystem --- */
+    function renderEco() {
+      const tabsEl = document.getElementById('ecoTabs');
+      tabsEl.innerHTML = ECO_TABS.map(t => `
+        <button onclick="activeEcoTab='${t.id}'; renderEco();" class="px-3 py-1.5 rounded-xl text-xs font-bold whitespace-nowrap transition ${activeEcoTab === t.id ? 'bg-sky-500 text-slate-950' : 'bg-slate-800 text-slate-300 hover:text-white'}">
+          ${t.label}
+        </button>
+      `).join('');
+
+      const item = ECO_TABS.find(t => t.id === activeEcoTab) || ECO_TABS[0];
+      document.getElementById('ecoBody').innerHTML = `
+        <div class="space-y-4">
+          <div>
+            <h3 class="text-lg font-extrabold text-white mb-1">${item.title}</h3>
+            <p class="text-xs sm:text-sm text-sky-200/90 leading-relaxed">${item.desc}</p>
+          </div>
+
+          <div class="rounded-2xl bg-slate-900/75 border border-slate-700/70 p-4 space-y-2.5">
+            <h4 class="text-xs font-extrabold uppercase tracking-wider text-emerald-300">🎯 Ứng dụng thực tế tại thôn An Sơn & xã Cam Lộ</h4>
+            <ul class="space-y-2">
+              ${item.useCases.map(u => `
+                <li class="flex items-start gap-2 text-xs sm:text-sm text-slate-200">
+                  <span class="text-emerald-400 mt-0.5">✦</span>
+                  <span>${u}</span>
+                </li>
+              `).join('')}
+            </ul>
+          </div>
+
+          <div class="rounded-2xl bg-slate-950/90 border border-sky-400/30 p-4">
+            <div class="flex items-center justify-between gap-2 mb-2">
+              <span class="text-xs font-bold text-amber-300">⚡ Câu lệnh mẫu thực hành ngay</span>
+              <button onclick="copyEcoPrompt('${item.id}')" class="px-3 py-1 rounded-lg bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold text-xs transition">📋 Sao chép lệnh</button>
+            </div>
+            <pre class="copy-code text-sky-200">${escapeHtml(item.prompt)}</pre>
+          </div>
+        </div>
+      `;
+    }
+
+    function copyEcoPrompt(id) {
+      const item = ECO_TABS.find(t => t.id === id);
+      if (item) copyText(item.prompt, 'Đã sao chép câu lệnh mẫu!');
+    }
+
+    /* --- Modal 3: LocalStorage Task & Real Estate Tracker + Export --- */
+    function renderTasks() {
+      const tasks = loadTasks();
+      const categories = ['Tất cả', 'Công tác Đoàn', 'Truyền thông', 'BĐS Cam Lộ', 'Học AI'];
+
+      document.getElementById('trackerFilters').innerHTML = `
+        <div class="flex flex-wrap gap-1.5">
+          ${categories.map(cat => `
+            <button onclick="activeTaskFilter='${cat}'; renderTasks();" class="px-3 py-1.5 rounded-xl text-xs font-bold transition ${activeTaskFilter === cat ? 'bg-amber-500 text-slate-950' : 'bg-slate-800 text-slate-300 hover:text-white'}">
+              ${cat}
+            </button>
+          `).join('')}
+        </div>
+        <span class="text-xs font-mono text-slate-400">Tổng: <strong class="text-emerald-300">${tasks.filter(t => t.done).length}/${tasks.length}</strong> hoàn thành</span>
+      `;
+
+      const filtered = activeTaskFilter === 'Tất cả' ? tasks : tasks.filter(t => t.category === activeTaskFilter);
+      const listEl = document.getElementById('tasksList');
+
+      if (filtered.length === 0) {
+        listEl.innerHTML = `<div class="text-center py-8 text-xs text-slate-400 border border-dashed border-slate-700 rounded-2xl">Chưa có mục nào trong nhóm "${activeTaskFilter}". Hãy thêm công việc mới ở trên!</div>`;
+        return;
+      }
+
+      listEl.innerHTML = filtered.map(t => `
+        <div class="rounded-xl p-3.5 border transition flex items-start justify-between gap-3 ${t.done ? 'bg-emerald-950/25 border-emerald-500/30 opacity-75' : 'bg-slate-900/80 border-slate-700/80'}">
+          <div class="flex items-start gap-3 min-w-0">
+            <input type="checkbox" ${t.done ? 'checked' : ''} onchange="toggleTaskDone(${t.id})" class="mt-1 w-4 h-4 accent-emerald-500 cursor-pointer" />
+            <div class="min-w-0">
+              <div class="flex flex-wrap items-center gap-2">
+                <span class="text-xs sm:text-sm font-bold ${t.done ? 'line-through text-slate-400' : 'text-white'}">${escapeHtml(t.title)}</span>
+                <span class="px-2 py-0.5 rounded-md bg-slate-800 border border-slate-600 text-[10px] font-semibold text-sky-300">${t.category}</span>
+                ${t.deadline ? `<span class="text-[10px] font-mono text-amber-300">📅 ${t.deadline}</span>` : ''}
+              </div>
+              ${t.notes ? `<p class="text-xs text-slate-400 mt-1">${escapeHtml(t.notes)}</p>` : ''}
+            </div>
+          </div>
+          <button onclick="deleteTask(${t.id})" class="px-2 py-1 rounded-lg bg-slate-800 hover:bg-rose-500/35 text-xs text-rose-300 shrink-0" title="Xóa mục">🗑</button>
+        </div>
+      `).join('');
+    }
+
+    function addTask(e) {
+      e.preventDefault();
+      const title = document.getElementById('taskTitle').value.trim();
+      const category = document.getElementById('taskCategory').value;
+      const deadline = document.getElementById('taskDeadline').value;
+      const notes = document.getElementById('taskNotes').value.trim();
+      if (!title) return;
+
+      const tasks = loadTasks();
+      tasks.unshift({ id: Date.now(), title, category, deadline, notes, done: false });
+      saveTasks(tasks);
+
+      document.getElementById('taskTitle').value = '';
+      document.getElementById('taskNotes').value = '';
+      renderTasks();
+      showToast('✅ Đã lưu công việc vào Sổ tay!', 'emerald');
+    }
+
+    function toggleTaskDone(id) {
+      const tasks = loadTasks().map(t => t.id === id ? { ...t, done: !t.done } : t);
+      saveTasks(tasks);
+      renderTasks();
+    }
+
+    function deleteTask(id) {
+      const tasks = loadTasks().filter(t => t.id !== id);
+      saveTasks(tasks);
+      renderTasks();
+      showToast('🗑️ Đã xóa khỏi Sổ tay.', 'amber');
+    }
+
+    function exportTasksJSON() {
+      const tasks = loadTasks();
+      const blob = new Blob([JSON.stringify(tasks, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `so-tay-an-son-${new Date().toISOString().slice(0, 10)}.json`;
+      a.click();
+      URL.revokeObjectURL(url);
+      showToast('💾 Đã tải xuống bản sao lưu Sổ tay!', 'emerald');
+    }
+
+    /* =========================================================
+       11. FLOATING ASSISTANT: HỘI ĐỒNG TRỢ LÝ THẦN ĐÈN (FIXED DUPLICATE)
+       ========================================================= */
+    function toggleAssistant(open) {
+      const panel = document.getElementById('assistantPanel');
+      const pill = document.getElementById('assistantPill');
+      if (open) {
+        panel.classList.remove('hidden');
+        pill.classList.add('hidden');
+        renderAssistantUI(false);
+      } else {
+        panel.classList.add('hidden');
+        pill.classList.remove('hidden');
+      }
+    }
+
+    function toggleMaximizeAssistant() {
+      const panel = document.getElementById('assistantPanel');
+      panel.classList.toggle('sm:w-[440px]');
+      panel.classList.toggle('sm:w-[680px]');
+      const msgBox = document.getElementById('chatMessages');
+      msgBox.classList.toggle('max-h-[380px]');
+      msgBox.classList.toggle('max-h-[540px]');
+    }
+
+    function switchAssistantMode(modeId) {
+      if (activeAssistantMode === modeId) return;
+      activeAssistantMode = modeId;
+      renderAssistantUI(true);
+    }
+
+    function renderAssistantUI(switched = false) {
+      const mode = ASSISTANT_MODES.find(m => m.id === activeAssistantMode) || ASSISTANT_MODES[0];
+      document.getElementById('assistantStatus').textContent = `An Sơn Ngày Mới • ${mode.modeText}`;
+
+      document.getElementById('assistantTabs').innerHTML = ASSISTANT_MODES.map(m => `
+        <button onclick="switchAssistantMode('${m.id}')" class="px-2.5 py-1.5 rounded-lg text-[11px] font-bold whitespace-nowrap transition ${m.id === activeAssistantMode ? 'bg-emerald-500 text-slate-950' : 'bg-slate-800/90 text-slate-300 hover:text-white'}">
+          ${m.label}
+        </button>
+      `).join('');
+
+      document.getElementById('quickChips').innerHTML = mode.chips.map(c => `
+        <button onclick="sendQuickPrompt('${escapeJs(c)}')" class="px-2.5 py-1 rounded-full bg-sky-500/15 hover:bg-sky-500/30 border border-sky-400/30 text-[11px] text-sky-200 transition">
+          ${c}
+        </button>
+      `).join('');
+
+      const msgBox = document.getElementById('chatMessages');
+      if (msgBox.children.length === 0) {
+        appendMessage('bot', mode.greeting);
+        lastRenderedMode = activeAssistantMode;
+      } else if (switched && lastRenderedMode !== activeAssistantMode) {
+        appendMessage('bot', `🔄 Đã chuyển sang ${mode.label} (${mode.modeText}). ${mode.greeting}`);
+        lastRenderedMode = activeAssistantMode;
+      }
+    }
+
+    function clearChat() {
+      document.getElementById('chatMessages').innerHTML = '';
+      const mode = ASSISTANT_MODES.find(m => m.id === activeAssistantMode) || ASSISTANT_MODES[0];
+      appendMessage('bot', mode.greeting);
+      lastRenderedMode = activeAssistantMode;
+    }
+
+    function sendQuickPrompt(text) {
+      document.getElementById('chatInput').value = text;
+      handleChatSubmit({ preventDefault: () => {} });
+    }
+
+    function handleChatSubmit(e) {
+      e.preventDefault();
+      const input = document.getElementById('chatInput');
+      const query = input.value.trim();
+      if (!query) return;
+      appendMessage('user', query);
+      input.value = '';
+
+      setTimeout(() => {
+        const reply = generateAssistantReply(activeAssistantMode, query);
+        appendMessage('bot', reply.text, reply.copyBlock);
+      }, 250);
+    }
+
+    function appendMessage(sender, text, copyBlock = null) {
+      const box = document.getElementById('chatMessages');
+      const wrap = document.createElement('div');
+      wrap.className = sender === 'user' ? 'flex justify-end' : 'flex justify-start';
+
+      const id = 'cp_' + Date.now() + Math.floor(Math.random() * 1000);
+      if (sender === 'user') {
+        wrap.innerHTML = `<div class="max-w-[85%] px-3.5 py-2 rounded-2xl rounded-br-sm bg-sky-600 text-white text-xs leading-relaxed">${escapeHtml(text)}</div>`;
+      } else {
+        wrap.innerHTML = `
+          <div class="max-w-[92%] px-3.5 py-2.5 rounded-2xl rounded-bl-sm bg-slate-800/95 border border-emerald-400/25 text-slate-100 text-xs leading-relaxed space-y-2">
+            <div>${escapeHtml(text).replace(/\n/g, '<br>')}</div>
+            ${copyBlock ? `
+              <div class="rounded-xl bg-slate-950 border border-slate-700 p-2.5">
+                <div class="flex justify-between items-center mb-1.5">
+                  <span class="text-[10px] font-mono text-emerald-300 font-bold">MẪU SAO CHÉP NHANH</span>
+                  <button onclick="copyElText('${id}')" class="px-2 py-0.5 rounded bg-emerald-500 text-slate-950 font-bold text-[10px]">📋 Copy</button>
+                </div>
+                <pre id="${id}" class="copy-code text-[11px] text-sky-200">${escapeHtml(copyBlock)}</pre>
+              </div>
+            ` : ''}
+          </div>
+        `;
+      }
+      box.appendChild(wrap);
+      box.scrollTop = box.scrollHeight;
+    }
+
+    function copyElText(id) {
+      const el = document.getElementById(id);
+      if (el) copyText(el.textContent, 'Đã sao chép mẫu từ Thần Đèn!');
+    }
+
+    function generateAssistantReply(mode, q) {
+      const lower = q.toLowerCase();
+      if (mode === 'skill1') {
+        return {
+          text: `Báo cáo đồng chí Bí thư, đồng chí đã chuẩn hóa xong khung văn bản Nghị định 30 cho yêu cầu "${q}". Đồng chí sao chép và dán thẳng vào Google Docs để trình ký ạ:`,
+          copyBlock: `ĐOÀN XÃ CAM LỘ                     ĐOÀN TNCS HỒ CHÍ MINH
+BCH CHI ĐOÀN THÔN AN SƠN
+Số: .../KH-CĐ                      An Sơn, ngày ... tháng ... năm 2026
+
+                  KẾ HOẠCH
+  V/v ${q}
+
+I. MỤC ĐÍCH, YÊU CẦU
+- Phát huy tinh thần xung kích, tình nguyện của ĐVTN thôn An Sơn chung tay xây dựng nông thôn mới kiểu mẫu.
+II. THỜI GIAN, ĐỊA ĐIỂM & NỘI DUNG
+- Thời gian: 06h30, Chủ nhật ngày .../.../2026.
+- Địa điểm: Tập trung tại Nhà văn hóa thôn An Sơn, xã Cam Lộ.
+- Nội dung: Triển khai phần việc thanh niên, vệ sinh môi trường và tuyên truyền lưu động.
+III. TỔ CHỨC THỰC HIỆN
+- Đề nghị 100% ĐVTN mặc áo xanh tình nguyện, tham gia đầy đủ, đúng giờ.
+
+Nơi nhận:                          TM. BCH CHI ĐOÀN
+- BTV Đoàn xã Cam Lộ (b/c);           BÍ THƯ
+- Chi ủy thôn An Sơn (b/c);
+- Lưu: Chi đoàn.                   Nguyễn Anh Hào`
+        };
+      }
+      if (mode === 'skill2') {
+        return {
+          text: `Báo cáo đồng chí Bí thư, đồng chí đã biên tập xong bài đăng truyền thông Facebook/Zalo theo chuẩn 5 phần vàng cho thôn An Sơn. Gợi ý đính kèm 3–4 ảnh thực tế rõ nụ cười đoàn viên:`,
+          copyBlock: `🔥 TUỔI TRẺ AN SƠN XUNG KÍCH – LAN TỎA NĂNG LƯỢNG XANH! 🌱
+
+🇻🇳 Hưởng ứng phong trào thi đua tại xã Cam Lộ, Chi đoàn thôn An Sơn vừa triển khai hoạt động: ${q}.
+
+✨ Những điểm sáng nổi bật:
+👉 Tinh thần đoàn kết, nhiệt huyết của đông đảo đoàn viên thanh niên thôn nhà.
+👉 Chung tay giữ gìn cảnh quan xanh – sạch – đẹp, xây dựng quê hương An Sơn ngày càng văn minh, giàu đẹp.
+
+🤝 Kính mong quý bà con nhân dân cùng chung tay ủng hộ và chia sẻ năng lượng tích cực này đến mọi nhà!
+
+#AnSon #CamLo #TuoiTreCamLo #AnSonNgayMoi`
+        };
+      }
+      if (mode === 'skill3') {
+        return {
+          text: `Báo cáo đồng chí Bí thư, đồng chí đã xuất trọn bộ quy trình 3 bước (Ảnh Gemini Pro ➔ Video Google Flow ➔ Lời bình) cho chủ đề "${q}":`,
+          copyBlock: `[BƯỚC 1 - PROMPT ẢNH GEMINI PRO / WHISK (9:16)]
+Photorealistic 8k cinematic shot of cheerful Vietnamese youth union volunteers wearing blue youth shirts working together on a clean rural village road in Cam Lo, Quang Tri, Vietnam. Lush green hills, warm morning sunlight, natural joyful expressions, no text, aspect ratio 9:16.
+
+[BƯỚC 2 - MOTION PROMPT GOOGLE FLOW (VEO)]
+Smooth slow camera pan forward, gentle morning breeze moving the trees and blue volunteer shirts, natural smiling movement, cinematic lighting, 5 seconds.
+
+[BƯỚC 3 - LỜI BÌNH VOICE-OVER (20 GIÂY)]
+"Trên từng con đường quê An Sơn hôm nay, màu áo xanh tình nguyện lại rực sáng. Bằng nhiệt huyết tuổi trẻ và lòng tự hào quê hương Cam Lộ, mỗi việc làm nhỏ đang góp phần dựng xây một An Sơn ngày mới xanh, sạch, đẹp và văn minh hơn!"`
+        };
+      }
+      if (mode === 'skill4') {
+        if (lower.includes('ai studio') || lower.includes('gỡ băng')) {
+          return {
+            text: `Dạ anh Hào ơi, để gỡ băng cuộc họp thôn bằng Google AI Studio siêu nhanh, anh làm đúng 3 bước này nhé:\n1. Ghi âm cuộc họp bằng điện thoại (lưu file .m4a hoặc .mp3).\n2. Vào aistudio.google.com ➔ Bấm dấu (+) tải file âm thanh lên.\n3. Dán câu lệnh em soạn sẵn bên dưới là ra biên bản hoàn chỉnh luôn ạ!\n\n🎯 Bài tập 5 phút: Anh thử tự ghi âm 30 giây nói về kế hoạch tuần tới rồi tải lên AI Studio test thử ngay nhé!`,
+            copyBlock: `Hãy nghe file ghi âm cuộc họp này và lập Biên bản cuộc họp thôn An Sơn gồm: 1. Tóm tắt nội dung chính; 2. Các ý kiến đóng góp nổi bật; 3. Kết luận và danh sách đầu việc cần triển khai.`
+          };
+        }
+        return {
+          text: `Dạ anh Hào, bài học 5 phút hôm nay em dành cho anh là "Xây thư viện số thôn An Sơn bằng NotebookLM":\n1. Anh truy cập notebooklm.google.com và tạo Sổ tay mới tên "Chi đoàn An Sơn".\n2. Tải lên 1 file PDF Điều lệ Đoàn hoặc Nghị quyết xã Cam Lộ.\n3. Thử đặt 1 câu hỏi tra cứu hoặc bấm tạo Audio tổng quan để nghe.\n\n🎯 Bài tập 5 phút: Anh tạo ngay sổ tay đầu tiên và dán câu hỏi mẫu này nhé!`,
+          copyBlock: `Dựa trên tài liệu tôi vừa tải lên, hãy tóm tắt 5 nhiệm vụ trọng tâm nhất áp dụng cho Chi đoàn cơ sở tại thôn An Sơn, xã Cam Lộ.`
+        };
+      }
+      if (lower.includes('thủ tục') || lower.includes('thổ cư') || lower.includes('pháp lý') || lower.includes('cọc')) {
+        return {
+          text: `Dạ anh Hào, để đảm bảo an toàn tuyệt đối và giữ trọn chữ Tín cho cả người mua lẫn người bán tại xã Cam Lộ, anh lưu ý bộ Checklist pháp lý 4 bước này trước khi nhận cọc nhé:`,
+          copyBlock: `CHECKLIST PHÁP LÝ BĐS CAM LỘ (AN TOÀN TUYỆT ĐỐI):
+1. Kiểm tra sổ hồng/sổ đỏ bản gốc: Đối chiếu thông tin chủ sở hữu, diện tích, mục đích sử dụng (ONT hay CLN).
+2. Kiểm tra quy hoạch & mốc giới thực địa: Đo đạc thực tế khớp tọa độ, không lấn chiếm hành lang giao thông (QL9 / đường Hồ Chí Minh / đường liên thôn).
+3. Xác minh tình trạng pháp lý: Không tranh chấp hàng xóm, không nằm trong diện kê biên hoặc thế chấp chưa giải chấp.
+4. Thủ tục chuyển mục đích lên đất ở nông thôn (ONT): Chuẩn bị đơn xin chuyển mục đích + Sổ gốc nộp tại Bộ phận Một cửa / Chi nhánh Văn phòng Đăng ký đất đai khu vực Cam Lộ.`
+        };
+      }
+      return {
+        text: `Dạ anh Hào, em đã chuẩn hóa mẫu bài giới thiệu bất động sản xã Cam Lộ minh bạch, rõ ràng thông số để anh điền số liệu thực tế và đăng ngay lên Facebook/Zalo ạ:`,
+        copyBlock: `🏡 CƠ HỘI AN CƯ XANH – ĐẤT ĐẸP CHÍNH CHỦ TẠI THÔN AN SƠN, XÃ CAM LỘ, QUẢNG TRỊ!
+
+✨ Thông số minh bạch:
+- Vị trí: Thôn An Sơn, xã Cam Lộ (khu dân cư hiện hữu, hàng xóm thân thiện, an ninh tốt).
+- Diện tích: ... m² (Mặt tiền ...m x Chiều sâu ...m) — Đất ở nông thôn / Đất vườn vuông vắn.
+- Đường giao thông: Đường bê tông rộng ...m, ô tô ra vào tận đất thoải mái.
+- Tiện ích kết nối: Di chuyển nhanh đến UBND xã, trường học, chợ Cam Lộ và Bệnh viện Đa khoa Cam Lộ.
+- Pháp lý: Sổ hồng chính chủ, không tranh chấp, sẵn sàng công chứng sang tên ngay.
+
+📞 Quý cô chú, anh chị quan tâm xem đất thực tế xin liên hệ trực tiếp: Nguyễn Anh Hào (SĐT/Zalo: ...). Cam kết thông tin thật – giá trị thật!
+
+#NhaDatCamLo #BatDongSanCamLo #DatNenAnSon #CamLoQuangTri`
+      };
+    }
+
+    /* =========================================================
+       12. WHITEBOARD DRAWING OVERLAY
+       ========================================================= */
+    let drawMode = false;
+    let drawColor = '#f59e0b';
+    let isDrawing = false;
+    let drawCtx = null;
+
+    function setupDrawingCanvas() {
+      const canvas = document.getElementById('drawCanvas');
+      drawCtx = canvas.getContext('2d');
+      function resizeDraw() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      }
+      resizeDraw();
+      window.addEventListener('resize', resizeDraw);
+
+      const getPos = (e) => {
+        if (e.touches && e.touches[0]) return { x: e.touches[0].clientX, y: e.touches[0].clientY };
+        return { x: e.clientX, y: e.clientY };
+      };
+
+      const startDraw = (e) => {
+        if (!drawMode) return;
+        isDrawing = true;
+        const p = getPos(e);
+        drawCtx.beginPath();
+        drawCtx.moveTo(p.x, p.y);
+      };
+      const moveDraw = (e) => {
+        if (!drawMode || !isDrawing) return;
+        const p = getPos(e);
+        drawCtx.lineTo(p.x, p.y);
+        drawCtx.strokeStyle = drawColor;
+        drawCtx.lineWidth = 3.5;
+        drawCtx.lineCap = 'round';
+        drawCtx.lineJoin = 'round';
+        drawCtx.stroke();
+      };
+      const endDraw = () => { isDrawing = false; };
+
+      canvas.addEventListener('mousedown', startDraw);
+      canvas.addEventListener('mousemove', moveDraw);
+      window.addEventListener('mouseup', endDraw);
+      canvas.addEventListener('touchstart', startDraw, { passive: true });
+      canvas.addEventListener('touchmove', moveDraw, { passive: true });
+      window.addEventListener('touchend', endDraw);
+    }
+
+    function toggleDrawMode() {
+      drawMode = !drawMode;
+      const canvas = document.getElementById('drawCanvas');
+      const tb = document.getElementById('drawToolbar');
+      const btn = document.getElementById('drawModeBtn');
+      canvas.classList.toggle('active', drawMode);
+      tb.classList.toggle('hidden', !drawMode);
+      btn.classList.toggle('bg-amber-500/30', drawMode);
+      btn.classList.toggle('text-amber-300', drawMode);
+      showToast(drawMode ? '✏️ Đã bật chế độ Bút vẽ trực tiếp' : '✓ Đã tắt chế độ Vẽ', 'emerald');
+    }
+
+    function setDrawColor(c) {
+      drawColor = c;
+      showToast('🎨 Đã đổi màu bút vẽ', 'emerald');
+    }
+
+    function clearDrawingCanvas() {
+      const canvas = document.getElementById('drawCanvas');
+      if (drawCtx) drawCtx.clearRect(0, 0, canvas.width, canvas.height);
+      showToast('🧹 Đã xóa toàn bộ nét vẽ', 'amber');
+    }
+
+    /* =========================================================
+       13. DRAGGABLE VERTICAL SPLITTER
+       ========================================================= */
+    function initSplitter() {
+      const splitter = document.getElementById('splitter');
+      const leftPanel = document.getElementById('leftPanel');
+      const workspace = document.getElementById('workspace');
+      let isDragging = false;
+
+      splitter.addEventListener('mousedown', () => {
+        isDragging = true;
+        splitter.classList.add('dragging');
+        document.body.style.cursor = 'col-resize';
+        document.body.style.userSelect = 'none';
+      });
+
+      window.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        const rect = workspace.getBoundingClientRect();
+        let pct = ((e.clientX - rect.left) / rect.width) * 100;
+        pct = Math.max(26, Math.min(65, pct));
+        leftPanel.style.width = pct + '%';
+        resizeStageCanvas();
+      });
+
+      window.addEventListener('mouseup', () => {
+        if (!isDragging) return;
+        isDragging = false;
+        splitter.classList.remove('dragging');
+        document.body.style.cursor = '';
+        document.body.style.userSelect = '';
+      });
+
+      splitter.addEventListener('dblclick', () => {
+        leftPanel.style.width = '44%';
+        resizeStageCanvas();
+        showToast('↔ Đã đặt lại tỷ lệ 2 cột cân đối.', 'emerald');
+      });
+    }
+
+    /* =========================================================
+       14. AMBIENT PARTICLE BACKGROUND CANVAS & 4D STAGE
+       ========================================================= */
+    function initAmbientCanvas() {
+      const canvas = document.getElementById('bgCanvas');
+      const ctx = canvas.getContext('2d');
+      let particles = [];
+
+      function resize() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        particles = Array.from({ length: 44 }, () => ({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          vx: (Math.random() - 0.5) * 0.35,
+          vy: (Math.random() - 0.5) * 0.35,
+          r: Math.random() * 1.8 + 0.6
+        }));
+      }
+
+      function draw() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        for (let i = 0; i < particles.length; i++) {
+          const p = particles[i];
+          p.x += p.vx;
+          p.y += p.vy;
+          if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+          if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          ctx.fillStyle = 'rgba(56, 189, 248, 0.38)';
+          ctx.fill();
+
+          for (let j = i + 1; j < particles.length; j++) {
+            const p2 = particles[j];
+            const dist = Math.hypot(p.x - p2.x, p.y - p2.y);
+            if (dist < 130) {
+              ctx.beginPath();
+              ctx.moveTo(p.x, p.y);
+              ctx.lineTo(p2.x, p2.y);
+              ctx.strokeStyle = `rgba(16, 185, 129, ${(1 - dist / 130) * 0.14})`;
+              ctx.lineWidth = 0.8;
+              ctx.stroke();
+            }
+          }
+        }
+        requestAnimationFrame(draw);
+      }
+
+      resize();
+      window.addEventListener('resize', resize);
+      draw();
+    }
+
+    let stageCanvas, stageCtx;
+    function resizeStageCanvas() {
+      if (!stageCanvas) return;
+      const parent = stageCanvas.parentElement;
+      stageCanvas.width = parent.clientWidth;
+      stageCanvas.height = parent.clientHeight;
+    }
+
+    function initStageCanvas() {
+      stageCanvas = document.getElementById('stageCanvas');
+      stageCtx = stageCanvas.getContext('2d');
+      resizeStageCanvas();
+      window.addEventListener('resize', resizeStageCanvas);
+
+      let t = 0;
+      function loop() {
+        t += 0.016;
+        const w = stageCanvas.width;
+        const h = stageCanvas.height;
+        const cx = w / 2;
+        const cy = h / 2 - 10;
+        const minD = Math.min(w, h);
+        const type = CHAPTERS[currentChapter].visualType;
+
+        const bgGrad = stageCtx.createRadialGradient(cx, cy, 10, cx, cy, minD * 0.72);
+        bgGrad.addColorStop(0, 'rgba(14, 165, 233, 0.16)');
+        bgGrad.addColorStop(0.55, 'rgba(16, 185, 129, 0.06)');
+        bgGrad.addColorStop(1, 'rgba(6, 17, 28, 0.95)');
+        stageCtx.fillStyle = bgGrad;
+        stageCtx.fillRect(0, 0, w, h);
+
+        stageCtx.strokeStyle = 'rgba(56, 189, 248, 0.08)';
+        stageCtx.lineWidth = 1;
+        for (let i = -5; i <= 5; i++) {
+          stageCtx.beginPath();
+          stageCtx.moveTo(cx + i * (w / 10), h);
+          stageCtx.lineTo(cx + i * (w / 24), cy + minD * 0.18);
+          stageCtx.stroke();
+        }
+
+        stageCtx.save();
+        stageCtx.translate(cx, cy);
+
+        if (type === 'star_constellation' || type === 'horizon_crown') {
+          for (let r = 0; r < 3; r++) {
+            stageCtx.save();
+            stageCtx.rotate(t * (0.4 + r * 0.25) * (r % 2 === 0 ? 1 : -1));
+            stageCtx.scale(1, 0.45 + r * 0.18);
+            stageCtx.beginPath();
+            stageCtx.arc(0, 0, minD * (0.24 + r * 0.07), 0, Math.PI * 2);
+            stageCtx.strokeStyle = r === 1 ? 'rgba(245, 158, 11, 0.55)' : 'rgba(14, 165, 233, 0.45)';
+            stageCtx.lineWidth = 1.6;
+            stageCtx.stroke();
+            stageCtx.restore();
+          }
+          stageCtx.beginPath();
+          const spikes = 5, outerR = minD * 0.16, innerR = minD * 0.07;
+          for (let i = 0; i < spikes * 2; i++) {
+            const rad = i % 2 === 0 ? outerR : innerR;
+            const ang = (i * Math.PI) / spikes - Math.PI / 2 + Math.sin(t) * 0.12;
+            const x = Math.cos(ang) * rad, y = Math.sin(ang) * rad;
+            if (i === 0) stageCtx.moveTo(x, y); else stageCtx.lineTo(x, y);
+          }
+          stageCtx.closePath();
+          stageCtx.fillStyle = 'rgba(245, 158, 11, 0.28)';
+          stageCtx.strokeStyle = '#f59e0b';
+          stageCtx.lineWidth = 2;
+          stageCtx.fill();
+          stageCtx.stroke();
+        } else if (type === 'neural_ring' || type === 'community_nodes' || type === 'orbit_academy') {
+          const count = 5, radius = minD * 0.27, nodes = [];
+          for (let i = 0; i < count; i++) {
+            const ang = (i / count) * Math.PI * 2 + t * 0.55;
+            nodes.push({ x: Math.cos(ang) * radius, y: Math.sin(ang) * radius * 0.72 });
+          }
+          stageCtx.strokeStyle = 'rgba(16, 185, 129, 0.35)';
+          stageCtx.lineWidth = 1.4;
+          for (let i = 0; i < count; i++) {
+            for (let j = i + 1; j < count; j++) {
+              stageCtx.beginPath();
+              stageCtx.moveTo(nodes[i].x, nodes[i].y);
+              stageCtx.lineTo(nodes[j].x, nodes[j].y);
+              stageCtx.stroke();
+            }
+          }
+          nodes.forEach((n, idx) => {
+            stageCtx.beginPath();
+            stageCtx.arc(n.x, n.y, 7 + Math.sin(t * 3 + idx) * 2, 0, Math.PI * 2);
+            stageCtx.fillStyle = idx % 2 === 0 ? '#0ea5e9' : '#10b981';
+            stageCtx.fill();
+          });
+          stageCtx.beginPath();
+          stageCtx.arc(0, 0, 14 + Math.sin(t * 2) * 3, 0, Math.PI * 2);
+          stageCtx.fillStyle = 'rgba(245, 158, 11, 0.85)';
+          stageCtx.fill();
+        } else if (type === 'signal_waves' || type === 'audio_wave_grid' || type === 'video_ribbon') {
+          for (let k = 0; k < 4; k++) {
+            stageCtx.beginPath();
+            for (let x = -w * 0.38; x <= w * 0.38; x += 6) {
+              const y = Math.sin(x * 0.025 + t * (2 + k * 0.4) + k) * (24 + k * 10) * Math.cos(x * 0.004);
+              if (x === -w * 0.38) stageCtx.moveTo(x, y); else stageCtx.lineTo(x, y);
+            }
+            stageCtx.strokeStyle = k === 0 ? '#0ea5e9' : k === 1 ? '#10b981' : k === 2 ? '#f59e0b' : 'rgba(56,189,248,0.4)';
+            stageCtx.lineWidth = 2.2 - k * 0.3;
+            stageCtx.stroke();
+          }
+        } else {
+          const size = minD * 0.17;
+          const verts = [[-1,-1,-1],[1,-1,-1],[1,1,-1],[-1,1,-1],[-1,-1,1],[1,-1,1],[1,1,1],[-1,1,1]];
+          const edges = [[0,1],[1,2],[2,3],[3,0],[4,5],[5,6],[6,7],[7,4],[0,4],[1,5],[2,6],[3,7]];
+          const project = (v, scaleMult) => {
+            let [x, y, z] = v;
+            const cosY = Math.cos(t * 0.7), sinY = Math.sin(t * 0.7);
+            const cosX = Math.cos(t * 0.45), sinX = Math.sin(t * 0.45);
+            let x1 = x * cosY - z * sinY, z1 = x * sinY + z * cosY;
+            let y1 = y * cosX - z1 * sinX, z2 = y * sinX + z1 * cosX;
+            const d = 3.2 / (3.2 - z2 * 0.6);
+            return [x1 * size * scaleMult * d, y1 * size * scaleMult * d];
+          };
+          const outer = verts.map(v => project(v, 1.35));
+          const inner = verts.map(v => project(v, 0.72));
+
+          stageCtx.strokeStyle = 'rgba(14, 165, 233, 0.75)';
+          stageCtx.lineWidth = 1.6;
+          edges.forEach(([a, b]) => { stageCtx.beginPath(); stageCtx.moveTo(outer[a][0], outer[a][1]); stageCtx.lineTo(outer[b][0], outer[b][1]); stageCtx.stroke(); });
+          stageCtx.strokeStyle = 'rgba(16, 185, 129, 0.85)';
+          stageCtx.lineWidth = 1.4;
+          edges.forEach(([a, b]) => { stageCtx.beginPath(); stageCtx.moveTo(inner[a][0], inner[a][1]); stageCtx.lineTo(inner[b][0], inner[b][1]); stageCtx.stroke(); });
+          stageCtx.strokeStyle = 'rgba(245, 158, 11, 0.45)';
+          stageCtx.lineWidth = 1;
+          for (let i = 0; i < 8; i++) { stageCtx.beginPath(); stageCtx.moveTo(outer[i][0], outer[i][1]); stageCtx.lineTo(inner[i][0], inner[i][1]); stageCtx.stroke(); }
+        }
+
+        stageCtx.restore();
+        requestAnimationFrame(loop);
+      }
+      loop();
+    }
+
+    /* =========================================================
+       15. KEYBOARD SHORTCUTS, DRAG ASSISTANT & BOOTSTRAP
+       ========================================================= */
+    function escapeHtml(str) {
+      return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
+
+    function escapeJs(str) {
+      return String(str).replace(/\\/g, '\\\\').replace(/'/g, "\\'").replace(/\n/g, ' ');
+    }
+
+    document.addEventListener('keydown', (e) => {
+      const tag = document.activeElement.tagName.toLowerCase();
+      if (tag === 'input' || tag === 'textarea' || tag === 'select') {
+        if (e.key === 'Escape') document.activeElement.blur();
+        return;
+      }
+      if (e.key === 'ArrowRight') changeChapter(1);
+      else if (e.key === 'ArrowLeft') changeChapter(-1);
+      else if (e.key.toLowerCase() === 'r') flipAllCards();
+      else if (e.key.toLowerCase() === 'f') toggleFullscreen();
+      else if (e.key.toLowerCase() === 'm') {
+        const drawer = document.getElementById('chapterDrawer');
+        if (drawer.classList.contains('-translate-x-full')) openDrawer();
+        else closeDrawer();
+      } else if (e.key === 'Escape') {
+        closeAllOverlays();
+      }
+    });
+
+    window.onload = function () {
+      initAmbientCanvas();
+      initStageCanvas();
+      setupDrawingCanvas();
+      initSplitter();
+      renderChapter(0);
+    };
+  </script>
+</body>
+</html>

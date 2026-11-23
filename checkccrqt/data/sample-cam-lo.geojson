@@ -1,0 +1,206 @@
+{
+  "type": "FeatureCollection",
+  "name": "QuangTri_CamLo_KeoLai_EUDR_Sample_v040",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "QT-CL-001",
+      "properties": {
+        "id_lo": "QT-CL-001",
+        "chu_ho": "Nguyễn Văn Minh (HTX Cam Nghĩa)",
+        "tieu_khu": "751A",
+        "khoanh": "2",
+        "lo": "14",
+        "loai_rung": "Rừng trồng (Keo lai)",
+        "loai_cay": "Keo lai (Acacia hybrid)",
+        "nam_trong": 2021,
+        "tmf_status": "Tuân thủ",
+        "tmf_year": null,
+        "tmf_ha": 0.0,
+        "tmf_driver": "Rừng trồng ổn định trên đất quy hoạch lâm nghiệp",
+        "harvest_status": "Chưa khai thác",
+        "harvest_date": null,
+        "scenario": "Đạt chuẩn Xanh — Lô Keo lai Cam Nghĩa ≤ 4 ha ổn định tán"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[106.942000,16.818000],[106.943800,16.818000],[106.943800,16.819600],[106.942000,16.819600],[106.942000,16.818000]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "QT-CL-002",
+      "properties": {
+        "id_lo": "QT-CL-002",
+        "chu_ho": "Trần Thị Lan (Nhóm hộ Cam Tuyền)",
+        "tieu_khu": "751A",
+        "khoanh": "3",
+        "lo": "08",
+        "loai_rung": "Rừng trồng (Keo lai)",
+        "loai_cay": "Keo lai (Luân canh trồng lại)",
+        "nam_trong": 2020,
+        "tmf_status": "Tuân thủ",
+        "tmf_year": null,
+        "tmf_ha": 0.0,
+        "tmf_driver": "Khai thác rừng trồng keo luân canh và trồng lại mới hợp pháp VNTLAS",
+        "harvest_status": "Đã khai thác trắng (Phục hồi tái sinh)",
+        "harvest_date": "2025-05-14",
+        "scenario": "Ghi nhận Vàng VNTLAS — Khai thác luân canh keo & tái sinh"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[106.945500,16.818200],[106.947200,16.818200],[106.947200,16.819700],[106.945500,16.819700],[106.945500,16.818200]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "QT-VL-003",
+      "properties": {
+        "id_lo": "QT-VL-003",
+        "chu_ho": "Lê Văn Hùng (HTX Vĩnh Hà)",
+        "tieu_khu": "582",
+        "khoanh": "4",
+        "lo": "21",
+        "loai_rung": "Rừng trồng (Keo lai)",
+        "loai_cay": "Keo lai",
+        "nam_trong": 2019,
+        "tmf_status": "Cảnh báo",
+        "tmf_year": null,
+        "tmf_ha": 0.0,
+        "tmf_driver": "Biến động tán rừng đang diễn ra (JRC TMF Class 50 / RADD)",
+        "harvest_status": "Khai thác một phần",
+        "harvest_date": "2026-03-22",
+        "scenario": "Cảnh báo biến động lớp 50 — Đối chiếu FRMS"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[106.949500,16.818000],[106.951400,16.818000],[106.951400,16.819700],[106.949500,16.819700],[106.949500,16.818000]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "QT-VL-004",
+      "properties": {
+        "id_lo": "QT-VL-004",
+        "chu_ho": "Hồ Văn Dũng (Khu vực giáp ranh Vĩnh Ô)",
+        "tieu_khu": "574",
+        "khoanh": "1",
+        "lo": "05",
+        "loai_rung": "Rừng tự nhiên suy thoái",
+        "loai_cay": "Rừng tự nhiên → Đất trồng mới",
+        "nam_trong": 2022,
+        "tmf_status": "Vi phạm",
+        "tmf_year": 2022,
+        "tmf_ha": 0.68,
+        "tmf_driver": "Suy giảm sinh khối trên diện tích Rừng tự nhiên sau mốc 31/12/2020",
+        "harvest_status": "Đã khai thác trắng",
+        "harvest_date": "2025-07-09",
+        "scenario": "Cảnh báo Đỏ EUDR — Mất rừng tự nhiên sau 31/12/2020"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[106.953500,16.818200],[106.955100,16.818200],[106.955100,16.819600],[106.953500,16.819600],[106.953500,16.818200]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "QT-GL-005",
+      "properties": {
+        "id_lo": "QT-GL-005",
+        "chu_ho": "Phạm Văn Tám (Lô dải hẹp khe suối)",
+        "tieu_khu": "596",
+        "khoanh": "5",
+        "lo": "19",
+        "loai_rung": "Rừng tự nhiên ven suối",
+        "loai_cay": "Keo lai xen lấn",
+        "nam_trong": 2021,
+        "tmf_status": "Vi phạm",
+        "tmf_year": 2023,
+        "tmf_ha": 0.14,
+        "tmf_driver": "Lô dải hẹp <30m giao cắt pixel mất rừng tự nhiên",
+        "harvest_status": "Khai thác một phần",
+        "harvest_date": "2025-09-18",
+        "scenario": "Lô dải hẹp <30m — Kiểm tra giao cắt hình học"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[106.942000,16.815200],[106.945600,16.815200],[106.945600,16.815380],[106.942000,16.815380],[106.942000,16.815200]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "QT-CL-006",
+      "properties": {
+        "id_lo": "QT-CL-006",
+        "chu_ho": "Công ty TNHH MTV Lâm nghiệp Đường 9",
+        "tieu_khu": "752",
+        "khoanh": "1",
+        "lo": "02",
+        "loai_rung": "Rừng trồng (Keo lai gỗ lớn FSC)",
+        "loai_cay": "Keo lai gỗ lớn (FSC)",
+        "nam_trong": 2018,
+        "tmf_status": "Tuân thủ",
+        "tmf_year": null,
+        "tmf_ha": 0.0,
+        "tmf_driver": "Lô diện tích > 4,0 ha — Bắt buộc đa giác khép kín theo Điều 9 EUDR",
+        "harvest_status": "Chưa khai thác",
+        "harvest_date": null,
+        "scenario": "Đạt chuẩn Xanh — Lô lớn > 4 ha (bắt buộc Polygon Điều 9)"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[106.946800,16.813400],[106.949600,16.813400],[106.949600,16.815400],[106.946800,16.815400],[106.946800,16.813400]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "QT-VL-007-A",
+      "properties": {
+        "id_lo": "QT-VL-007",
+        "chu_ho": "Võ Văn Sơn (Kê khai trùng mã — Bản ghi 1)",
+        "tieu_khu": "583",
+        "khoanh": "2",
+        "lo": "11",
+        "loai_rung": "Rừng trồng (Keo lai)",
+        "loai_cay": "Keo lai",
+        "nam_trong": 2021,
+        "tmf_status": "Tuân thủ",
+        "tmf_year": null,
+        "tmf_ha": 0.0,
+        "tmf_driver": "Phát hiện trùng mã lô DUPLICATE_ID & chồng lấn ranh giới",
+        "harvest_status": "Chưa khai thác",
+        "harvest_date": null,
+        "scenario": "Lỗi dữ liệu — Trùng mã lô DUPLICATE_ID (bản ghi 1)"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[106.951000,16.814000],[106.952500,16.814000],[106.952500,16.815300],[106.951000,16.815300],[106.951000,16.814000]]]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "QT-VL-007-B",
+      "properties": {
+        "id_lo": "QT-VL-007",
+        "chu_ho": "Võ Văn Sơn / HTX B (Trùng mã & Chồng lấn)",
+        "tieu_khu": "583",
+        "khoanh": "2",
+        "lo": "11",
+        "loai_rung": "Rừng trồng (Keo lai)",
+        "loai_cay": "Keo lai",
+        "nam_trong": 2021,
+        "tmf_status": "Cảnh báo",
+        "tmf_year": null,
+        "tmf_ha": 0.0,
+        "tmf_driver": "Trùng mã lô DUPLICATE_ID + Chồng lấn OVERLAP với lô kề",
+        "harvest_status": "Chưa khai thác",
+        "harvest_date": null,
+        "scenario": "Lỗi dữ liệu — Trùng mã DUPLICATE_ID + Chồng lấn OVERLAP"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[106.952000,16.814400],[106.953400,16.814400],[106.953400,16.815600],[106.952000,16.815600],[106.952000,16.814400]]]
+      }
+    }
+  ]
+}

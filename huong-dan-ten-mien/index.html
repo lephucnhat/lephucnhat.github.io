@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hướng Dẫn Tự Mua Tên Miền lienhoachay.vn | Nhà Hàng Chay Liên Hoa</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #15803d;
+            --primary-dark: #166534;
+            --primary-light: #dcfce7;
+            --accent: #ca8a04;
+            --accent-light: #fef08a;
+            --danger: #dc2626;
+            --danger-bg: #fef2f2;
+            --dark: #1e293b;
+            --gray: #64748b;
+            --light: #f8fafc;
+            --white: #ffffff;
+            --border: #e2e8f0;
+            --radius: 16px;
+            --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #f1f5f9;
+            color: var(--dark);
+            line-height: 1.65;
+            padding: 24px 16px 60px;
+        }
+
+        .container {
+            max-width: 860px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #14532d 0%, #166534 60%, #15803d 100%);
+            color: var(--white);
+            padding: 40px 32px;
+            border-radius: var(--radius);
+            box-shadow: 0 20px 25px -5px rgba(22, 101, 52, 0.25);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 24px;
+        }
+
+        .header::before {
+            content: "🪷";
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            font-size: 140px;
+            opacity: 0.12;
+            pointer-events: none;
+        }
+
+        .badge-recipient {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(255, 255, 255, 0.18);
+            backdrop-filter: blur(8px);
+            padding: 6px 16px;
+            border-radius: 999px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            letter-spacing: 0.3px;
+        }
+
+        .header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 12px;
+        }
+
+        .header p {
+            font-size: 16px;
+            opacity: 0.92;
+            max-width: 650px;
+            margin: 0 auto 20px;
+        }
+
+        .domain-tag {
+            display: inline-block;
+            background: #fef08a;
+            color: #854d0e;
+            padding: 8px 20px;
+            border-radius: 12px;
+            font-size: 20px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        /* Top Action Bar */
+        .action-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--white);
+            padding: 16px 24px;
+            border-radius: 12px;
+            margin-bottom: 24px;
+            border: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .action-bar .info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--primary-dark);
+        }
+
+        .btn-print {
+            background: #f1f5f9;
+            color: var(--dark);
+            border: 1px solid var(--border);
+            padding: 8px 18px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.2s;
+        }
+
+        .btn-print:hover {
+            background: #e2e8f0;
+        }
+
+        /* Price Box */
+        .price-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 28px;
+            margin-bottom: 24px;
+            box-shadow: var(--shadow);
+            border: 2px solid #86efac;
+            position: relative;
+        }
+
+        .price-card-badge {
+            position: absolute;
+            top: -12px;
+            left: 28px;
+            background: var(--primary);
+            color: var(--white);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 14px;
+            border-radius: 999px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .price-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 14px;
+            font-size: 15px;
+        }
+
+        .price-table th {
+            background: #f8fafc;
+            color: var(--gray);
+            font-weight: 600;
+            text-align: left;
+            padding: 12px 14px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .price-table td {
+            padding: 14px;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .price-table tr:last-child td {
+            border-bottom: none;
+            background: #f0fdf4;
+            font-weight: 700;
+            color: var(--primary-dark);
+            font-size: 16px;
+        }
+
+        .highlight-price {
+            font-size: 20px;
+            color: var(--primary-dark);
+            font-weight: 800;
+        }
+
+        /* Step Card */
+        .step-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 28px 24px;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .step-num {
+            flex-shrink: 0;
+            width: 44px;
+            height: 44px;
+            background: var(--primary);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: 800;
+            box-shadow: 0 4px 10px rgba(21, 128, 61, 0.3);
+        }
+
+        .step-content {
+            flex: 1;
+        }
+
+        .step-content h3 {
+            font-size: 19px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+
+        .step-content p, .step-content li {
+            font-size: 15px;
+            color: #334155;
+            margin-bottom: 8px;
+        }
+
+        .step-content ul, .step-content ol {
+            padding-left: 20px;
+            margin-top: 8px;
+            margin-bottom: 12px;
+        }
+
+        /* Direct link button */
+        .btn-action {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--primary);
+            color: var(--white) !important;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 15px;
+            margin: 10px 0 6px;
+            box-shadow: 0 4px 12px rgba(21, 128, 61, 0.25);
+            transition: all 0.2s;
+        }
+
+        .btn-action:hover {
+            background: var(--primary-dark);
+            transform: translateY(-1px);
+        }
+
+        /* Warning Callout */
+        .warning-box {
+            background: #fffbeb;
+            border-left: 5px solid #f59e0b;
+            padding: 16px 18px;
+            border-radius: 0 10px 10px 0;
+            margin: 14px 0;
+            font-size: 14.5px;
+            color: #92400e;
+        }
+
+        .warning-box strong {
+            color: #78350f;
+            display: block;
+            margin-bottom: 4px;
+            font-size: 15px;
+        }
+
+        /* Danger Callout */
+        .danger-box {
+            background: var(--danger-bg);
+            border-left: 5px solid var(--danger);
+            padding: 16px 18px;
+            border-radius: 0 10px 10px 0;
+            margin: 14px 0;
+            font-size: 14.5px;
+            color: #991b1b;
+        }
+
+        .danger-box strong {
+            color: #7f1d1d;
+            display: block;
+            margin-bottom: 4px;
+            font-size: 15px;
+        }
+
+        /* Info Box */
+        .info-box {
+            background: #eff6ff;
+            border-left: 5px solid #3b82f6;
+            padding: 16px 18px;
+            border-radius: 0 10px 10px 0;
+            margin: 14px 0;
+            font-size: 14.5px;
+            color: #1e40af;
+        }
+
+        /* Checklist */
+        .prep-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 12px;
+            margin: 12px 0;
+        }
+
+        .prep-item {
+            background: #f8fafc;
+            border: 1px solid var(--border);
+            padding: 12px 16px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14.5px;
+            font-weight: 500;
+        }
+
+        .prep-item span {
+            font-size: 20px;
+        }
+
+        /* Support Box */
+        .support-card {
+            background: linear-gradient(135deg, #f0fdf4 0%, #e0f2fe 100%);
+            border: 1px solid #bbf7d0;
+            border-radius: var(--radius);
+            padding: 24px;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .support-card h4 {
+            font-size: 18px;
+            color: var(--primary-dark);
+            margin-bottom: 8px;
+        }
+
+        .support-card p {
+            font-size: 14.5px;
+            color: var(--gray);
+            margin-bottom: 12px;
+        }
+
+        .contact-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--white);
+            padding: 8px 18px;
+            border-radius: 999px;
+            font-weight: 700;
+            color: var(--dark);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+        }
+
+        @media (max-width: 640px) {
+            body { padding: 12px 10px 40px; }
+            .header { padding: 28px 16px; }
+            .header h1 { font-size: 24px; }
+            .domain-tag { font-size: 17px; padding: 6px 14px; }
+            .step-card { flex-direction: column; padding: 20px 16px; gap: 14px; }
+            .price-card { padding: 20px 14px; }
+            .price-table { font-size: 13.5px; }
+            .price-table th, .price-table td { padding: 10px 8px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Header -->
+    <div class="header">
+        <div class="badge-recipient">🪷 Dành riêng cho Ms. Thạo • Nhà Hàng Chay Liên Hoa</div>
+        <h1>Hướng Dẫn Tự Mua Tên Miền Chính Chủ</h1>
+        <p>Để đảm bảo tên miền thuộc quyền sở hữu pháp lý 100% của Ms. Thạo (Chay Liên Hoa Hải Dương), chị hãy dành khoảng 3–5 phút làm theo các bước đơn giản dưới đây trên hệ thống Tenten.vn.</p>
+        <div>
+            <span class="domain-tag">👉 Tên miền cần mua: lienhoachay.vn</span>
+        </div>
+    </div>
+
+    <!-- Thanh công cụ nhanh -->
+    <div class="action-bar">
+        <div class="info">
+            <span>⏱️ Thời gian thực hiện: Khoảng 3 - 5 phút</span>
+        </div>
+        <button class="btn-print" onclick="window.print()">🖨️ In hoặc Lưu file PDF</button>
+    </div>
+
+    <!-- Bảng dự toán chi phí 3 năm -->
+    <div class="price-card">
+        <div class="price-card-badge">Bảng giá niêm yết chính xác trên Tenten.vn</div>
+        <h3 style="font-size: 19px; color: var(--dark); margin-bottom: 6px;">Chi Phí Đăng Ký Gói 3 Năm (Khuyên Dùng)</h3>
+        <p style="font-size: 14px; color: var(--gray);">Đăng ký 3 năm giúp nhà hàng yên tâm hoạt động lâu dài, không lo quên hạn bị đối thủ mua mất tên miền, đồng thời được hưởng giá ưu đãi năm đầu.</p>
+        
+        <table class="price-table">
+            <thead>
+                <tr>
+                    <th>Hạng mục</th>
+                    <th>Giá gốc</th>
+                    <th>Ưu đãi</th>
+                    <th>VAT</th>
+                    <th>Thành tiền</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Năm 1</strong> (Phí đăng ký mới + duy trì)</td>
+                    <td>650.000 đ</td>
+                    <td style="color: var(--primary); font-weight: 600;">-100.000 đ</td>
+                    <td>8.000 đ</td>
+                    <td>558.000 đ</td>
+                </tr>
+                <tr>
+                    <td><strong>Năm 2</strong> (Phí duy trì thường niên)</td>
+                    <td>450.000 đ</td>
+                    <td>0 đ</td>
+                    <td>8.000 đ</td>
+                    <td>458.000 đ</td>
+                </tr>
+                <tr>
+                    <td><strong>Năm 3</strong> (Phí duy trì thường niên)</td>
+                    <td>450.000 đ</td>
+                    <td>0 đ</td>
+                    <td>8.000 đ</td>
+                    <td>458.000 đ</td>
+                </tr>
+                <tr>
+                    <td colspan="4"><strong>TỔNG THANH TOÁN CHO 3 NĂM (ĐÃ GỒM VAT):</strong></td>
+                    <td><span class="highlight-price">1.474.000 đ</span></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div style="margin-top: 14px; font-size: 13.5px; color: #475569;">
+            <em>* Nếu chị chọn mua thử <strong>1 năm</strong>: Tổng thanh toán chỉ là <strong>558.000 đ</strong> (đã gồm VAT).</em>
+        </div>
+    </div>
+
+    <!-- Chuẩn bị trước khi mua -->
+    <div class="step-card" style="border-left: 5px solid #3b82f6;">
+        <div class="step-num" style="background: #3b82f6;">0</div>
+        <div class="step-content">
+            <h3>Chuẩn Bị Trước Khi Bắt Đầu (Rất Nhanh)</h3>
+            <p>Tên miền quốc gia <code>.vn</code> được quản lý bởi Bộ TT&TT (Trung tâm VNNIC), yêu cầu đăng ký chính chủ. Chị Thạo cần chuẩn bị sẵn:</p>
+            <div class="prep-grid">
+                <div class="prep-item"><span>🆔</span> Ảnh 2 mặt Căn cước công dân (CCCD)</div>
+                <div class="prep-item"><span>📧</span> 01 Email cá nhân thường dùng nhất</div>
+                <div class="prep-item"><span>📱</span> Số điện thoại chính chủ để nhận mã OTP</div>
+                <div class="prep-item"><span>🏦</span> Ứng dụng ngân hàng (để quét mã QR chuyển khoản)</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bước 1 -->
+    <div class="step-card">
+        <div class="step-num">1</div>
+        <div class="step-content">
+            <h3>Truy Cập Và Chọn Tên Miền</h3>
+            <p>Chị bấm trực tiếp vào đường link mua nhanh bên dưới:</p>
+            <a href="https://tenten.vn/vi?keyword=lienhoachay.vn" target="_blank" class="btn-action">
+                👉 Bấm vào đây để mở trang Tenten.vn
+            </a>
+            <ol>
+                <li>Nếu chưa có sẵn tên miền trong giỏ, chị gõ vào ô tìm kiếm: <strong><code>lienhoachay.vn</code></strong> rồi bấm <strong>Kiểm tra</strong>.</li>
+                <li>Bấm nút <strong>"Chọn"</strong> hoặc <strong>"Thêm vào giỏ hàng"</strong> bên cạnh tên miền <code>lienhoachay.vn</code>.</li>
+                <li>Bấm vào biểu tượng <strong>Giỏ hàng</strong> (ở góc trên bên phải) để tiến hành thanh toán.</li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- Bước 2 -->
+    <div class="step-card">
+        <div class="step-num">2</div>
+        <div class="step-content">
+            <h3>Chọn Thời Hạn & Bỏ Dịch Vụ Phụ (Quan Trọng)</h3>
+            <p>Trong trang Giỏ hàng, chị kiểm tra 2 điểm quan trọng sau:</p>
+            <ul>
+                <li><strong>Thời hạn:</strong> Ở dòng <code>lienhoachay.vn</code>, chị bấm chọn số năm là <strong>3 năm</strong> (hoặc <strong>1 năm</strong> tùy theo ý định của chị).</li>
+            </ul>
+
+            <div class="danger-box">
+                <strong>⚠️ LƯU Ý BỎ DỊCH VỤ PHỤ (TIẾT KIỆM TIỀN):</strong>
+                Tenten sẽ mặc định tích chọn sẵn ô dịch vụ bảo mật <strong>DNSSEC</strong> (39.000 đ/năm, 3 năm là hơn 120.000 đ). Chị Thạo hãy <strong>BỎ DẤU TÍCH Ở Ô DNSSEC</strong> vì hệ thống website của quán đã có lớp bảo mật đám mây riêng, không cần mua thêm khoản này.
+            </div>
+
+            <p>Sau khi bỏ tick DNSSEC, số tiền hiển thị chuẩn xác sẽ là <strong>1.474.000 đ</strong> (cho 3 năm) hoặc <strong>558.000 đ</strong> (cho 1 năm).</p>
+        </div>
+    </div>
+
+    <!-- Bước 3 -->
+    <div class="step-card">
+        <div class="step-num">3</div>
+        <div class="step-content">
+            <h3>Điền Thông Tin Chủ Sở Hữu (Ms. Thạo)</h3>
+            <ol>
+                <li>Bấm <strong>"Tiếp tục thanh toán"</strong>. Nếu chưa có tài khoản Tenten, chị chọn <strong>"Đăng ký tài khoản mới"</strong>.</li>
+                <li>Chọn loại hình: <strong>Cá nhân</strong>.</li>
+                <li>Điền chính xác các thông tin trùng khớp với Căn cước công dân:
+                    <ul>
+                        <li>Họ và tên: <em>(Tên đầy đủ của chị Thạo)</em></li>
+                        <li>Số CCCD, ngày cấp, nơi cấp.</li>
+                        <li>Ngày tháng năm sinh, Giới tính.</li>
+                        <li>Địa chỉ thường trú (theo CCCD).</li>
+                        <li>Email & Số điện thoại (Tenten sẽ gửi mật khẩu quản trị vào email này).</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- Bước 4 -->
+    <div class="step-card">
+        <div class="step-num">4</div>
+        <div class="step-content">
+            <h3>Thanh Toán Đơn Hàng</h3>
+            <ol>
+                <li>Chọn hình thức thanh toán: <strong>Chuyển khoản Ngân hàng (Quét mã QR)</strong> hoặc <strong>VNPAY</strong>.</li>
+                <li>Mở ứng dụng ngân hàng trên điện thoại, quét mã QR hiển thị trên màn hình. Nội dung chuyển khoản sẽ được tự động điền sẵn.</li>
+                <li>Sau khi chuyển khoản thành công, hệ thống Tenten sẽ tự động kích hoạt đơn hàng trong vòng 1–2 phút.</li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- Bước 5 -->
+    <div class="step-card">
+        <div class="step-num">5</div>
+        <div class="step-content">
+            <h3>Xác Thực Danh Tính Điện Tử (eKYC)</h3>
+            <p>Ngay sau khi thanh toán, theo luật tên miền <code>.vn</code> của VNNIC, Tenten sẽ gửi 1 thông báo/email hướng dẫn xác thực:</p>
+            <ul>
+                <li>Chị bấm vào link xác thực trên điện thoại.</li>
+                <li>Chụp ảnh mặt trước và mặt sau của thẻ CCCD.</li>
+                <li>Quay khuôn mặt theo hướng dẫn trên màn hình điện thoại (khoảng 10 giây).</li>
+            </ul>
+            <div class="info-box">
+                ℹ️ <strong>Mẹo nhỏ:</strong> Thao tác này hoàn toàn tự động giống như khi chị mở tài khoản ngân hàng trên điện thoại.
+            </div>
+        </div>
+    </div>
+
+    <!-- Bước 6 -->
+    <div class="step-card" style="border-left: 5px solid var(--primary);">
+        <div class="step-num" style="background: var(--primary);">6</div>
+        <div class="step-content">
+            <h3>Gửi Thông Tin Cho Kỹ Thuật Kết Nối Website</h3>
+            <p>Sau khi mua thành công, chị Thạo chỉ cần gửi thông tin tài khoản vừa tạo trên Tenten (hoặc chụp màn hình trang quản trị tên miền) gửi qua Zalo cho <strong>anh Lê Phúc Nhật</strong>:</p>
+            <ul>
+                <li><strong>Tên đăng nhập (ID Tenten / Mã khách hàng)</strong></li>
+                <li><strong>Mật khẩu đăng nhập Tenten</strong> (để kỹ thuật trỏ bản ghi DNS của tên miền về máy chủ website Nhà Hàng Chay Liên Hoa)</li>
+            </ul>
+            <p style="color: var(--primary-dark); font-weight: 600;">👉 Đội ngũ kỹ thuật sẽ hoàn tất cài đặt chứng chỉ bảo mật SSL (https://), kết nối giao diện thực đơn và tối ưu tìm kiếm Google trong vòng 30 phút!</p>
+        </div>
+    </div>
+
+    <!-- Hỗ trợ -->
+    <div class="support-card">
+        <h4>Cần Hỗ Trợ Trong Quá Trình Mua?</h4>
+        <p>Nếu gặp bất kỳ vướng mắc nào ở bất cứ bước nào, chị hãy nhắn tin hoặc gọi ngay cho anh Nhật để được hướng dẫn trực tiếp:</p>
+        <div class="contact-pill">
+            <span>👨‍💻 Phụ trách kỹ thuật: Lê Phúc Nhật</span>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

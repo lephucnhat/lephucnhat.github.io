@@ -1,0 +1,1860 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LPN STUDIO V104 PRO • XƯỞNG SẢN XUẤT PHIM REELS & ALL-IN-ONE FLOW MATCH STUDIO</title>
+  <meta name="description" content="Xưởng sản xuất video Reels V104 Studio Headless Auto-Producer tự trị: Thuật toán Hungarian Kuhn-Munkres matching B-roll, Phụ đề ASS đa phong cách, Giọng đọc Edge-TTS, Auto Thumbnail 9:16 cho 25 Fanpage Meta của Lê Phúc Nhật.">
+  <meta name="keywords" content="LPN Studio V104, Auto Video Producer, Hungarian Algorithm, Google Flow, Edge-TTS, Meta 25 Fanpage, Le Phuc Nhat">
+  <meta name="author" content="Lê Phúc Nhật • Antigravity Master Agent">
+  <meta name="theme-color" content="#080B11">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="LPN STUDIO V104 PRO • XƯỞNG SẢN XUẤT PHIM REELS & ALL-IN-ONE FLOW MATCH">
+  <meta property="og:description" content="Hệ thống tự động hóa sản xuất video điện ảnh 9:16 tích hợp thuật toán Hungarian, phụ đề ASS và trích xuất Thumbnail tự động cho 25 Fanpage Meta.">
+  <meta property="og:type" content="website">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              gold: '#FFD400',
+              goldHover: '#E5BC00',
+              cyan: '#00E5FF',
+              cyanHover: '#00B8D4',
+              red: '#FF3344',
+              green: '#2EECA0',
+              orange: '#FF8C00',
+              dark: '#080B11',
+              panel: '#10141E',
+              panel2: '#161C2A',
+              border: '#263045',
+              borderLight: '#394663'
+            }
+          },
+          fontFamily: {
+            sans: ['"Be Vietnam Pro"', '"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+            serif: ['"Georgia"', 'serif'],
+            cinzel: ['"Cinzel"', 'serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts & FontAwesome Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Cinzel:wght@600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: #080B11; }
+    ::-webkit-scrollbar-thumb { background: #263045; border-radius: 9999px; }
+    ::-webkit-scrollbar-thumb:hover { background: #FFD400; }
+
+    /* Glassmorphism */
+    .glass-panel {
+      background: rgba(16, 20, 30, 0.75);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .glass-card {
+      background: rgba(22, 28, 42, 0.6);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .gold-gradient-text {
+      background: linear-gradient(135deg, #FFF1A8 0%, #FFD400 50%, #B8860B 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .cyan-gradient-text {
+      background: linear-gradient(135deg, #E0F7FA 0%, #00E5FF 50%, #0097A7 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .neon-border-gold {
+      box-shadow: 0 0 15px rgba(255, 212, 0, 0.25);
+    }
+    .neon-border-cyan {
+      box-shadow: 0 0 15px rgba(0, 229, 255, 0.25);
+    }
+
+    /* Reels Frame Mockup 9:16 */
+    .reels-container {
+      aspect-ratio: 9 / 16;
+      max-height: 680px;
+    }
+    @keyframes pulse-slow {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.85; transform: scale(1.02); }
+    }
+    .pulse-glow {
+      animation: pulse-slow 3s infinite ease-in-out;
+    }
+  </style>
+</head>
+
+<body class="bg-[#080B11] text-slate-100 min-h-screen font-sans selection:bg-brand-gold selection:text-black antialiased relative">
+
+  <!-- Background Ambient Glow -->
+  <div class="fixed inset-0 pointer-events-none overflow-hidden -z-10">
+    <div class="absolute -top-40 left-1/4 w-96 h-96 bg-amber-500/10 rounded-full blur-[120px]"></div>
+    <div class="absolute top-1/3 -right-40 w-96 h-96 bg-cyan-500/10 rounded-full blur-[140px]"></div>
+    <div class="absolute -bottom-40 left-1/3 w-96 h-96 bg-emerald-500/10 rounded-full blur-[130px]"></div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container" class="fixed bottom-6 right-6 z-50 flex flex-col gap-2 pointer-events-none"></div>
+
+  <!-- TOP HEADER & BRAND BAR -->
+  <header class="sticky top-0 z-40 glass-panel border-b border-brand-border/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex flex-wrap items-center justify-between gap-4">
+      
+      <!-- Logo & Title -->
+      <div class="flex items-center gap-3.5">
+        <div class="relative flex items-center justify-center w-11 h-11 rounded-xl bg-gradient-to-br from-brand-gold/30 to-brand-cyan/20 border border-brand-gold/50 shadow-lg shadow-brand-gold/10">
+          <i class="fa-solid fa-clapperboard text-brand-gold text-xl"></i>
+          <span class="absolute -top-1 -right-1 flex h-3 w-3">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-cyan opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-3 w-3 bg-brand-cyan"></span>
+          </span>
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <h1 class="font-cinzel font-bold text-lg sm:text-xl tracking-wider gold-gradient-text uppercase">
+              LPN Studio V104 Pro
+            </h1>
+            <span class="px-2 py-0.5 text-[10px] font-mono font-bold rounded-full bg-brand-gold/15 text-brand-gold border border-brand-gold/30">
+              V104.2 FLOW MATCH
+            </span>
+          </div>
+          <p class="text-xs text-slate-400 font-sans flex items-center gap-2">
+            <span>Xưởng Sản Xuất Video Reels Độc Bản Tự Trị</span>
+            <span class="inline-block w-1 h-1 rounded-full bg-slate-500"></span>
+            <span class="text-brand-cyan font-mono">ASUS TUF RTX 2050 Ready</span>
+          </p>
+        </div>
+      </div>
+
+      <!-- Live Engine Badges -->
+      <div class="hidden xl:flex items-center gap-2 text-xs font-mono">
+        <div class="px-2.5 py-1 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 flex items-center gap-1.5">
+          <i class="fa-solid fa-brain text-[10px]"></i>
+          <span>Hungarian Kuhn-Munkres Active</span>
+        </div>
+        <div class="px-2.5 py-1 rounded-lg bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 flex items-center gap-1.5">
+          <i class="fa-solid fa-image text-[10px]"></i>
+          <span>Auto Thumbnail 9:16 @ 2.0s</span>
+        </div>
+        <div class="px-2.5 py-1 rounded-lg bg-purple-500/10 border border-purple-500/30 text-purple-400 flex items-center gap-1.5">
+          <i class="fa-solid fa-network-wired text-[10px]"></i>
+          <span>25 Meta Channels Vault</span>
+        </div>
+      </div>
+
+      <!-- Quick Action Controls -->
+      <div class="flex items-center gap-2.5">
+        <!-- Audio SFX Toggle -->
+        <button id="btn-toggle-sfx" onclick="toggleAudioSFX()" class="w-9 h-9 rounded-lg bg-slate-800/80 hover:bg-slate-700 border border-brand-border text-slate-300 hover:text-brand-gold transition-all flex items-center justify-center text-sm" title="Bật/Tắt hiệu ứng âm thanh">
+          <i class="fa-solid fa-volume-high"></i>
+        </button>
+
+        <!-- Quick Sample Script Loader -->
+        <div class="relative">
+          <button onclick="toggleSampleDropdown()" class="px-3 py-1.5 rounded-lg bg-brand-panel2 border border-brand-gold/40 hover:border-brand-gold text-brand-gold text-xs font-semibold flex items-center gap-2 transition-all shadow-sm">
+            <i class="fa-solid fa-file-code"></i>
+            <span>Nạp Kịch Bản Mẫu</span>
+            <i class="fa-solid fa-chevron-down text-[10px]"></i>
+          </button>
+          <div id="sample-dropdown" class="hidden absolute right-0 mt-2 w-64 glass-panel rounded-xl shadow-2xl p-2 z-50 border border-brand-border">
+            <div class="text-[11px] font-mono text-slate-400 px-2 py-1 uppercase tracking-wider">Kịch Bản Đã Xác Thực V104</div>
+            <button onclick="loadSampleScript(1)" class="w-full text-left px-2.5 py-2 rounded-lg hover:bg-brand-gold/15 hover:text-brand-gold text-xs transition-colors flex items-center justify-between">
+              <div>
+                <div class="font-medium">Tập 01: Khoảng Trống Hiện Sinh</div>
+                <div class="text-[10px] text-slate-400">Cụm 1 • Kênh NGẪM (10 Cảnh)</div>
+              </div>
+              <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </button>
+            <button onclick="loadSampleScript(2)" class="w-full text-left px-2.5 py-2 rounded-lg hover:bg-brand-cyan/15 hover:text-brand-cyan text-xs transition-colors flex items-center justify-between">
+              <div>
+                <div class="font-medium">Tập 02: Khoảng Dừng 1 Giây</div>
+                <div class="text-[10px] text-slate-400">Cụm 4 • Liên Tục Phát Triển</div>
+              </div>
+              <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </button>
+            <button onclick="loadSampleScript(3)" class="w-full text-left px-2.5 py-2 rounded-lg hover:bg-emerald-500/15 hover:text-emerald-400 text-xs transition-colors flex items-center justify-between">
+              <div>
+                <div class="font-medium">Happy Run: Bước Chạy Thức Tỉnh</div>
+                <div class="text-[10px] text-slate-400">Cụm 2 • Sức Khỏe Lành (8 Cảnh)</div>
+              </div>
+              <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Render Script Trigger -->
+        <button onclick="generateRenderCommand()" class="px-3.5 py-1.5 rounded-lg bg-gradient-to-r from-brand-gold to-amber-500 text-black font-bold text-xs flex items-center gap-1.5 shadow-md hover:brightness-110 active:scale-95 transition-all">
+          <i class="fa-solid fa-bolt"></i>
+          <span>Lấy Lệnh Render</span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- 5 DNA CLUSTERS QUICK BAR -->
+  <section class="bg-[#0c1018] border-b border-brand-border/60 py-2.5 px-4">
+    <div class="max-w-7xl mx-auto flex items-center justify-between gap-3 overflow-x-auto text-xs scrollbar-none">
+      <div class="flex items-center gap-1.5 text-slate-400 font-mono text-[11px] uppercase tracking-wider shrink-0">
+        <i class="fa-solid fa-dna text-brand-gold"></i>
+        <span>5 Cụm DNA 25 Meta:</span>
+      </div>
+      <div class="flex items-center gap-2 shrink-0" id="cluster-buttons-container">
+        <!-- Buttons injected by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN NAVIGATION TABS -->
+  <div class="sticky top-[69px] z-30 bg-[#080B11]/90 backdrop-blur-md border-b border-brand-border/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <nav class="flex space-x-1 sm:space-x-3 overflow-x-auto py-2.5 scrollbar-none" id="main-nav-tabs">
+        <button onclick="switchTab('tab-script')" class="tab-btn active px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all flex items-center gap-2 shrink-0 bg-brand-gold/15 text-brand-gold border border-brand-gold/30">
+          <i class="fa-solid fa-scroll"></i>
+          <span>1. Kịch Bản & Phân Cảnh</span>
+        </button>
+        <button onclick="switchTab('tab-matcher')" class="tab-btn px-3.5 py-1.5 rounded-lg text-xs font-semibold text-slate-400 hover:text-slate-200 hover:bg-slate-800/50 border border-transparent transition-all flex items-center gap-2 shrink-0">
+          <i class="fa-solid fa-diagram-project"></i>
+          <span>2. Hungarian Flow Matcher</span>
+        </button>
+        <button onclick="switchTab('tab-subtitle')" class="tab-btn px-3.5 py-1.5 rounded-lg text-xs font-semibold text-slate-400 hover:text-slate-200 hover:bg-slate-800/50 border border-transparent transition-all flex items-center gap-2 shrink-0">
+          <i class="fa-solid fa-closed-captioning"></i>
+          <span>3. Phụ Đề ASS & WCAG</span>
+        </button>
+        <button onclick="switchTab('tab-thumbnail')" class="tab-btn px-3.5 py-1.5 rounded-lg text-xs font-semibold text-slate-400 hover:text-slate-200 hover:bg-slate-800/50 border border-transparent transition-all flex items-center gap-2 shrink-0">
+          <i class="fa-solid fa-image"></i>
+          <span>4. Auto Thumbnail 9:16</span>
+        </button>
+        <button onclick="switchTab('tab-audio')" class="tab-btn px-3.5 py-1.5 rounded-lg text-xs font-semibold text-slate-400 hover:text-slate-200 hover:bg-slate-800/50 border border-transparent transition-all flex items-center gap-2 shrink-0">
+          <i class="fa-solid fa-microphone-lines"></i>
+          <span>5. Voice Edge-TTS & BGM</span>
+        </button>
+        <button onclick="switchTab('tab-channels')" class="tab-btn px-3.5 py-1.5 rounded-lg text-xs font-semibold text-slate-400 hover:text-slate-200 hover:bg-slate-800/50 border border-transparent transition-all flex items-center gap-2 shrink-0">
+          <i class="fa-brands fa-meta"></i>
+          <span>6. Vault 25 Fanpage</span>
+        </button>
+        <button onclick="switchTab('tab-terminal')" class="tab-btn px-3.5 py-1.5 rounded-lg text-xs font-semibold text-slate-400 hover:text-slate-200 hover:bg-slate-800/50 border border-transparent transition-all flex items-center gap-2 shrink-0">
+          <i class="fa-solid fa-terminal"></i>
+          <span>7. Trạm Lệnh ASUS TUF</span>
+        </button>
+      </nav>
+    </div>
+  </div>
+
+  <!-- MAIN APP CONTAINER -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+
+    <!-- ================= TAB 1: KỊCH BẢN & PHÂN CẢNH ================= -->
+    <div id="tab-script" class="tab-content block space-y-6">
+      
+      <!-- Top Overview Card -->
+      <div class="glass-panel rounded-2xl p-5 border border-brand-border">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div>
+            <div class="flex items-center gap-2.5">
+              <span class="px-2.5 py-0.5 rounded-full text-xs font-mono font-bold bg-brand-gold/15 text-brand-gold border border-brand-gold/30" id="current-project-tag">
+                V104 PRO SCRIPT
+              </span>
+              <h2 class="text-lg sm:text-xl font-bold text-white font-cinzel" id="project-title-display">
+                Tập 01: Khoảng Trống Hiện Sinh • Đủ Phương Tiện - Thiếu Lẽ Sống
+              </h2>
+            </div>
+            <p class="text-xs text-slate-400 mt-1 flex items-center gap-3">
+              <span><i class="fa-solid fa-film text-brand-gold mr-1"></i> <strong class="text-slate-200" id="scene-count-badge">10</strong> Phân cảnh điện ảnh</span>
+              <span><i class="fa-solid fa-clock text-brand-cyan mr-1"></i> Dự kiến: <strong class="text-slate-200" id="est-duration-badge">65s</strong></span>
+              <span><i class="fa-solid fa-bullhorn text-emerald-400 mr-1"></i> Kênh: <strong class="text-slate-200" id="target-channel-badge">NGẪM</strong></span>
+            </p>
+          </div>
+
+          <!-- Script Action Buttons -->
+          <div class="flex flex-wrap items-center gap-2">
+            <button onclick="openJsonModal()" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 border border-brand-border text-xs text-slate-200 font-medium flex items-center gap-1.5 transition-colors">
+              <i class="fa-solid fa-code"></i>
+              <span>Xem / Sửa JSON</span>
+            </button>
+            <button onclick="downloadJsonFile()" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 border border-brand-border text-xs text-slate-200 font-medium flex items-center gap-1.5 transition-colors">
+              <i class="fa-solid fa-download"></i>
+              <span>Tải JSON V104</span>
+            </button>
+            <button onclick="validateScriptKeywords()" class="px-3 py-1.5 rounded-lg bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 text-xs text-amber-300 font-medium flex items-center gap-1.5 transition-colors">
+              <i class="fa-solid fa-triangle-exclamation"></i>
+              <span>Soát Từ Khóa Trùng</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Keyword Validation Alert Box (Dynamic) -->
+        <div id="keyword-validation-box" class="hidden mt-4 p-3 rounded-xl bg-amber-500/10 border border-amber-500/30 text-xs text-amber-200">
+          <div class="flex items-center gap-2 font-semibold">
+            <i class="fa-solid fa-triangle-exclamation text-amber-400"></i>
+            <span>CẢNH BÁO TỪ KHÓA FLOW DỄ GÂY LẪN:</span>
+          </div>
+          <ul id="keyword-warning-list" class="mt-1.5 list-disc list-inside space-y-0.5 text-slate-300"></ul>
+        </div>
+      </div>
+
+      <!-- Scenes Grid Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="scenes-container">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+
+    <!-- ================= TAB 2: HUNGARIAN B-ROLL MATCHER ================= -->
+    <div id="tab-matcher" class="tab-content hidden space-y-6">
+      
+      <!-- Matcher Stats & Overview -->
+      <div class="glass-panel rounded-2xl p-5 border border-brand-border">
+        <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="px-2 py-0.5 rounded text-[11px] font-mono font-bold bg-cyan-500/15 text-cyan-400 border border-cyan-500/30">
+                KUHN-MUNKRES ALGORITHM
+              </span>
+              <h3 class="text-lg font-bold text-white font-cinzel">
+                Thuật Toán Phân Công Tối Ưu Toàn Cục (B-Roll Hungarian Solver)
+              </h3>
+            </div>
+            <p class="text-xs text-slate-400 mt-1 max-w-3xl">
+              Hệ thống V104 quét toàn bộ kho B-Roll Pool, trích xuất token hành động, tính điểm tương đồng LCS, so sánh tương quan thứ tự sinh video Spearman và giải ma trận chi phí vuông để gán clip chuẩn xác nhất cho từng cảnh.
+            </p>
+          </div>
+
+          <!-- Filter & Action -->
+          <div class="flex items-center gap-2">
+            <button onclick="runHungarianMatcherSimulation()" class="px-3.5 py-2 rounded-lg bg-gradient-to-r from-brand-cyan to-blue-600 text-black font-bold text-xs flex items-center gap-2 shadow-lg shadow-cyan-500/20 hover:brightness-110 active:scale-95 transition-all">
+              <i class="fa-solid fa-arrows-rotate"></i>
+              <span>Chạy So Khớp Lại</span>
+            </button>
+            <button onclick="copyNextMissingPrompt()" class="px-3 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 border border-brand-border text-xs text-brand-gold font-medium flex items-center gap-1.5 transition-colors" title="Copy câu lệnh cảnh thiếu tiếp theo vào clipboard">
+              <i class="fa-solid fa-copy"></i>
+              <span id="btn-copy-missing-text">Copy Lệnh Thiếu (0)</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Matching Metrics Bar -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-5">
+          <div class="glass-card rounded-xl p-3 border border-emerald-500/30 bg-emerald-500/5">
+            <div class="text-[11px] text-emerald-400 font-mono">ĐÃ KHỚP CHUẨN (OK)</div>
+            <div class="text-xl font-bold text-white mt-0.5 font-mono" id="metric-match-ok">0</div>
+            <div class="text-[10px] text-slate-400">Điểm số >= 0.30 & Cách biệt >= 0.08</div>
+          </div>
+          <div class="glass-card rounded-xl p-3 border border-amber-500/30 bg-amber-500/5">
+            <div class="text-[11px] text-amber-400 font-mono">CẦN XEM LẠI</div>
+            <div class="text-xl font-bold text-white mt-0.5 font-mono" id="metric-match-review">0</div>
+            <div class="text-[10px] text-slate-400">Cách biệt thấp, có thể lẫn lộn</div>
+          </div>
+          <div class="glass-card rounded-xl p-3 border border-rose-500/30 bg-rose-500/5">
+            <div class="text-[11px] text-rose-400 font-mono">THIẾU CLIP (CẦN TẠO)</div>
+            <div class="text-xl font-bold text-white mt-0.5 font-mono" id="metric-match-missing">0</div>
+            <div class="text-[10px] text-slate-400">Dán câu lệnh vào Google Flow</div>
+          </div>
+          <div class="glass-card rounded-xl p-3 border border-cyan-500/30 bg-cyan-500/5">
+            <div class="text-[11px] text-cyan-400 font-mono">TƯƠNG QUAN THỨ TỰ</div>
+            <div class="text-xl font-bold text-white mt-0.5 font-mono" id="metric-spearman">+0.94</div>
+            <div class="text-[10px] text-slate-400">Spearman Rank Correlation</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Match Table & Matrix View -->
+      <div class="glass-panel rounded-2xl overflow-hidden border border-brand-border">
+        <div class="px-5 py-4 border-b border-brand-border flex items-center justify-between">
+          <h4 class="font-bold text-sm text-white flex items-center gap-2">
+            <i class="fa-solid fa-table-list text-brand-gold"></i>
+            <span>BẢNG KẾT QUẢ PHÂN CÔNG VIDEO B-ROLL (SCENE ↔ VIDEO CLIP)</span>
+          </h4>
+          <span class="text-xs text-slate-400 font-mono">Auto-fallback: <span class="text-emerald-400">BẬT</span></span>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-xs">
+            <thead class="bg-[#0b0f17] text-slate-400 font-mono text-[11px] uppercase border-b border-brand-border">
+              <tr>
+                <th class="py-3 px-4">Cảnh</th>
+                <th class="py-3 px-4">Tên Cảnh / Ý Đồ</th>
+                <th class="py-3 px-4">Video Clip Đã Gán</th>
+                <th class="py-3 px-4 text-center">Điểm Khớp</th>
+                <th class="py-3 px-4 text-center">Trạng Thái</th>
+                <th class="py-3 px-4">Lý Do Khớp / Thao Tác</th>
+              </tr>
+            </thead>
+            <tbody id="matcher-table-body" class="divide-y divide-brand-border/60 font-sans">
+              <!-- Rendered by JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ================= TAB 3: PHÒNG THIẾT KẾ PHỤ ĐỀ ASS & WCAG ================= -->
+    <div id="tab-subtitle" class="tab-content hidden space-y-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        
+        <!-- Controls Column (7 Cols) -->
+        <div class="lg:col-span-7 space-y-5">
+          <div class="glass-panel rounded-2xl p-5 border border-brand-border space-y-5">
+            <div class="border-b border-brand-border pb-3 flex items-center justify-between">
+              <div>
+                <h3 class="text-base font-bold text-white font-cinzel flex items-center gap-2">
+                  <i class="fa-solid fa-palette text-brand-gold"></i>
+                  <span>Bộ Điều Khiển Phong Cách Phụ Đề ASS V104</span>
+                </h3>
+                <p class="text-xs text-slate-400">Tự động biên dịch sang cú pháp libass: <code class="text-brand-cyan font-mono">&amp;HAABBGGRR</code></p>
+              </div>
+              <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-brand-gold/10 text-brand-gold border border-brand-gold/30">
+                WCAG 2.1 AA COMPLIANT
+              </span>
+            </div>
+
+            <!-- Theme Colors Selector (7 Themes) -->
+            <div>
+              <label class="block text-xs font-semibold text-slate-300 mb-2 uppercase tracking-wider font-mono">
+                1. Bảng Màu Phụ Đề (THEMES - 7 Bảng Màu)
+              </label>
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-2" id="theme-selector-grid">
+                <!-- Rendered by JS -->
+              </div>
+            </div>
+
+            <!-- Font Selector (11 Fonts) -->
+            <div>
+              <label class="block text-xs font-semibold text-slate-300 mb-2 uppercase tracking-wider font-mono">
+                2. Phông Chữ Điện Ảnh (FONTS - 11 Kiểu)
+              </label>
+              <div class="grid grid-cols-2 sm:grid-cols-3 gap-2" id="font-selector-grid">
+                <!-- Rendered by JS -->
+              </div>
+            </div>
+
+            <!-- Outline & Shadow Selector (9 Styles) -->
+            <div>
+              <label class="block text-xs font-semibold text-slate-300 mb-2 uppercase tracking-wider font-mono">
+                3. Kiểu Viền & Bóng Đổ (OUTLINES - 9 Kiểu)
+              </label>
+              <div class="grid grid-cols-2 sm:grid-cols-3 gap-2" id="outline-selector-grid">
+                <!-- Rendered by JS -->
+              </div>
+            </div>
+
+            <!-- Live Slider Controls -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+              <div>
+                <div class="flex justify-between text-xs text-slate-300 mb-1">
+                  <span>Cỡ Chữ (Font Size):</span>
+                  <span class="font-mono text-brand-gold font-bold" id="label-font-size">24px</span>
+                </div>
+                <input type="range" min="16" max="36" value="24" id="slider-font-size" oninput="updateSubtitlePreview()" class="w-full accent-brand-gold">
+              </div>
+              <div>
+                <div class="flex justify-between text-xs text-slate-300 mb-1">
+                  <span>Khoảng Cách Lề Dưới (MarginV):</span>
+                  <span class="font-mono text-brand-cyan font-bold" id="label-margin-v">90px</span>
+                </div>
+                <input type="range" min="20" max="140" value="90" id="slider-margin-v" oninput="updateSubtitlePreview()" class="w-full accent-brand-cyan">
+              </div>
+            </div>
+
+            <!-- Compiled ASS String Output -->
+            <div class="pt-2">
+              <div class="flex items-center justify-between mb-1">
+                <span class="text-xs text-slate-400 font-mono">Cú Pháp Lệnh FFmpeg libass Hoàn Chỉnh:</span>
+                <button onclick="copyAssString()" class="text-xs text-brand-gold hover:underline flex items-center gap-1">
+                  <i class="fa-solid fa-copy"></i>
+                  <span>Copy Chuỗi Style</span>
+                </button>
+              </div>
+              <div class="p-2.5 rounded-xl bg-[#090c13] border border-brand-border text-[11px] font-mono text-brand-cyan break-all selection:bg-brand-cyan selection:text-black" id="ass-compiled-string">
+                Fontname=Georgia,FontSize=24,Bold=1,Italic=0,PrimaryColour=&H0000FFFF,OutlineColour=&H00000000,BackColour=&H20000000,BorderStyle=1,Outline=4.5,Shadow=2.0,Alignment=2,MarginV=90
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Live Preview Screen (5 Cols) -->
+        <div class="lg:col-span-5 flex flex-col items-center">
+          <div class="w-full max-w-[340px]">
+            <div class="text-center mb-2 flex items-center justify-between text-xs text-slate-400 font-mono">
+              <span>MÔ PHỎNG REELS 9:16</span>
+              <span id="wcag-badge" class="px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 text-[10px]">
+                ĐẠT TƯƠNG PHẢN (6.8:1)
+              </span>
+            </div>
+
+            <!-- Simulated Phone Frame -->
+            <div class="relative w-full reels-container rounded-3xl overflow-hidden shadow-2xl border-4 border-slate-700 bg-slate-900 flex flex-col justify-between p-4">
+              <!-- Video Background Simulation (Animated Gradient) -->
+              <div class="absolute inset-0 bg-cover bg-center -z-10 transition-all duration-500" id="mockup-bg" style="background-image: linear-gradient(180deg, rgba(8,11,17,0.4) 0%, rgba(8,11,17,0.7) 100%), radial-gradient(circle at 50% 30%, #1e3a5f, #090e17);">
+              </div>
+
+              <!-- Top Mockup Elements -->
+              <div class="flex items-center justify-between text-white/70 text-xs">
+                <span class="font-mono text-[10px] bg-black/40 px-2 py-0.5 rounded-full backdrop-blur-md">9:16 Cinematic</span>
+                <div class="flex items-center gap-2">
+                  <i class="fa-solid fa-volume-high text-[11px]"></i>
+                  <i class="fa-solid fa-ellipsis-vertical text-[11px]"></i>
+                </div>
+              </div>
+
+              <!-- Center Play Icon simulation -->
+              <div class="self-center my-auto flex items-center justify-center w-12 h-12 rounded-full bg-black/40 text-white/80 border border-white/20 backdrop-blur-md">
+                <i class="fa-solid fa-play text-sm ml-0.5"></i>
+              </div>
+
+              <!-- Bottom Content & Dynamic Subtitle -->
+              <div class="w-full space-y-3">
+                
+                <!-- Live Subtitle Display Box -->
+                <div class="w-full text-center px-2 py-1" id="preview-sub-box">
+                  <span id="preview-sub-text" class="inline-block transition-all duration-200">
+                    "Chúng ta đang sống trong một thế giới kỳ lạ: Có trong tay mọi phương tiện tối tân..."
+                  </span>
+                </div>
+
+                <!-- Channel Meta & Action Bar Mockup -->
+                <div class="pt-2 border-t border-white/10 flex items-end justify-between">
+                  <div class="space-y-1">
+                    <div class="flex items-center gap-2">
+                      <div class="w-6 h-6 rounded-full bg-brand-gold flex items-center justify-center text-black font-bold text-[10px]">
+                        LPN
+                      </div>
+                      <span class="font-bold text-xs text-white" id="preview-channel-name">NGẪM</span>
+                      <span class="text-[9px] bg-red-600 text-white px-1.5 py-0.2 rounded-full">Follow</span>
+                    </div>
+                    <p class="text-[10px] text-white/80 line-clamp-1">#ReelsV104 #TrietLy #NhanSinh #LePhucNhat</p>
+                  </div>
+                  
+                  <!-- Fake Social Icons -->
+                  <div class="flex flex-col items-center gap-2 text-white/80 text-xs">
+                    <div class="flex flex-col items-center">
+                      <i class="fa-solid fa-heart text-red-500 text-sm"></i>
+                      <span class="text-[9px]">14.2K</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                      <i class="fa-solid fa-comment text-sm"></i>
+                      <span class="text-[9px]">892</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                      <i class="fa-solid fa-share text-sm"></i>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ================= TAB 4: V104 AUTO THUMBNAIL 9:16 ================= -->
+    <div id="tab-thumbnail" class="tab-content hidden space-y-6">
+      <div class="glass-panel rounded-2xl p-5 border border-brand-border">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="px-2 py-0.5 rounded text-[11px] font-mono font-bold bg-amber-500/15 text-amber-400 border border-amber-500/30">
+                EXCLUSIVE V104 INNOVATION
+              </span>
+              <h3 class="text-lg font-bold text-white font-cinzel">
+                Trích Xuất Ảnh Bìa 9:16 Tự Động (Auto Thumbnail @ 2.0s)
+              </h3>
+            </div>
+            <p class="text-xs text-slate-400 mt-1 max-w-2xl">
+              V104 tự động trích xuất 1 khung hình độ nét cao (-q:v 2) ở giây thứ 2.0 từ chính video thành phẩm. Thời điểm này nằm ngay sau đoạn fade-in 1.0s, loại bỏ 100% rủi ro bìa đen và sẵn sàng xuất bản lên Facebook Reels, YouTube Shorts, TikTok.
+            </p>
+          </div>
+
+          <div class="flex items-center gap-2">
+            <button onclick="downloadThumbnailMockup()" class="px-4 py-2 rounded-lg bg-brand-gold hover:bg-brand-goldHover text-black font-bold text-xs flex items-center gap-1.5 transition-all shadow-md">
+              <i class="fa-solid fa-download"></i>
+              <span>Tải Ảnh Bìa 9:16 (.JPG)</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Thumbnail Showcase & Social Mockups -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <!-- Frame 1: Pure 9:16 Thumbnail -->
+        <div class="glass-panel rounded-2xl p-4 border border-brand-border flex flex-col items-center">
+          <div class="text-xs font-mono text-brand-gold mb-2 font-bold">1. ẢNH BÌA GỐC ĐỘ NÉT CAO (1080 x 1920)</div>
+          <div class="relative w-full max-w-[260px] reels-container rounded-2xl overflow-hidden shadow-2xl border-2 border-brand-border bg-black flex flex-col justify-end p-4" id="thumb-canvas-container">
+            <div class="absolute inset-0 bg-cover bg-center" style="background-image: radial-gradient(circle at 50% 40%, #2a3c5a, #0d121c); opacity: 0.95;">
+              <!-- Visual Mockup Graphics -->
+              <div class="w-full h-full flex flex-col items-center justify-center p-4 text-center">
+                <i class="fa-solid fa-gem text-brand-gold text-4xl mb-3 pulse-glow"></i>
+                <div class="font-cinzel font-black text-xl text-white leading-tight uppercase" id="thumb-title-1">KHOẢNG TRỐNG HIỆN SINH</div>
+                <div class="text-xs text-brand-gold font-mono tracking-widest mt-1" id="thumb-title-2">ĐỦ PHƯƠNG TIỆN • THIẾU LẼ SỐNG</div>
+              </div>
+            </div>
+            <div class="relative z-10 w-full p-2.5 rounded-xl bg-black/60 backdrop-blur-md border border-white/10 text-center">
+              <span class="text-xs font-bold text-brand-gold font-sans" id="thumb-hook-quote">
+                "Có trong tay mọi thứ, nhưng mất đi chính mình."
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Frame 2: Facebook Reels Feed Preview -->
+        <div class="glass-panel rounded-2xl p-4 border border-brand-border flex flex-col items-center">
+          <div class="text-xs font-mono text-brand-cyan mb-2 font-bold">2. HIỂN THỊ TRÊN FACEBOOK REELS FEED</div>
+          <div class="relative w-full max-w-[260px] reels-container rounded-2xl overflow-hidden shadow-2xl border-2 border-brand-border bg-slate-900 flex flex-col justify-between p-3 text-white">
+            <div class="flex items-center gap-2">
+              <div class="w-7 h-7 rounded-full bg-blue-600 flex items-center justify-center text-xs font-bold">
+                <i class="fa-brands fa-facebook-f"></i>
+              </div>
+              <div class="text-[11px] leading-tight">
+                <div class="font-bold">Fanpage NGẪM</div>
+                <div class="text-[9px] text-slate-400">Được tài trợ • Reels</div>
+              </div>
+            </div>
+            
+            <div class="my-auto self-center">
+              <i class="fa-solid fa-circle-play text-3xl text-white/70"></i>
+            </div>
+
+            <div class="space-y-1.5">
+              <div class="text-xs font-semibold text-brand-gold" id="fb-reels-caption">
+                KHOẢNG TRỐNG HIỆN SINH: Khi bạn sa cơ ai sẽ ở lại? #NGAM #TrietLy
+              </div>
+              <div class="flex items-center justify-between text-[10px] text-slate-300 pt-1 border-t border-white/10">
+                <span>❤️ 2.4K</span>
+                <span>💬 158 Bình luận</span>
+                <span>↗ 412 Chia sẻ</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Frame 3: YouTube Shorts / TikTok Grid -->
+        <div class="glass-panel rounded-2xl p-4 border border-brand-border flex flex-col items-center">
+          <div class="text-xs font-mono text-emerald-400 mb-2 font-bold">3. LƯỚI KHÁM PHÁ YOUTUBE SHORTS</div>
+          <div class="relative w-full max-w-[260px] reels-container rounded-2xl overflow-hidden shadow-2xl border-2 border-brand-border bg-slate-950 flex flex-col justify-end p-3 text-white">
+            <div class="absolute top-3 right-3 px-1.5 py-0.5 rounded bg-red-600 font-bold text-[9px] font-mono">
+              SHORTS
+            </div>
+            <div class="my-auto self-center">
+              <i class="fa-brands fa-youtube text-4xl text-red-500/80"></i>
+            </div>
+            <div class="space-y-1 bg-gradient-to-t from-black via-black/80 to-transparent p-2 rounded-b-xl">
+              <div class="text-xs font-bold text-white line-clamp-2" id="yt-shorts-title">
+                SỰ THẬT TRẦN TRỤI KHI BẠN SA CƠ • LÊ PHÚC NHẬT
+              </div>
+              <div class="text-[10px] text-slate-400 flex items-center justify-between">
+                <span>128K lượt xem</span>
+                <span class="text-brand-gold font-mono">01:05</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ================= TAB 5: GIỌNG ĐỌC EDGE-TTS & BGM ================= -->
+    <div id="tab-audio" class="tab-content hidden space-y-6">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        
+        <!-- Left: Voice Configuration -->
+        <div class="glass-panel rounded-2xl p-5 border border-brand-border space-y-4">
+          <div class="border-b border-brand-border pb-3">
+            <h3 class="text-base font-bold text-white font-cinzel flex items-center gap-2">
+              <i class="fa-solid fa-microphone-lines text-brand-gold"></i>
+              <span>Bộ Điều Phối Giọng Đọc AI Edge-TTS</span>
+            </h3>
+            <p class="text-xs text-slate-400">Tự động phân loại giới tính nhân vật và điều chỉnh cao độ / tốc độ.</p>
+          </div>
+
+          <!-- Voice Selectors -->
+          <div class="space-y-3">
+            <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider font-mono">
+              Chọn Giọng Đọc Mặc Định
+            </label>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div onclick="setVoice('vi-VN-NamMinhNeural')" id="voice-card-nam" class="voice-card active p-3 rounded-xl border border-brand-gold bg-brand-gold/10 cursor-pointer transition-all">
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 rounded-full bg-brand-gold/20 flex items-center justify-center text-brand-gold text-lg">
+                    <i class="fa-solid fa-user-tie"></i>
+                  </div>
+                  <div>
+                    <div class="font-bold text-xs text-white">Nam Minh (Neural)</div>
+                    <div class="text-[10px] text-slate-400">Trầm ấm, uy quyền, triết lý</div>
+                  </div>
+                </div>
+              </div>
+
+              <div onclick="setVoice('vi-VN-HoaiMyNeural')" id="voice-card-nu" class="voice-card p-3 rounded-xl border border-brand-border bg-slate-800/40 hover:border-brand-cyan/50 cursor-pointer transition-all">
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 rounded-full bg-brand-cyan/20 flex items-center justify-center text-brand-cyan text-lg">
+                    <i class="fa-solid fa-user"></i>
+                  </div>
+                  <div>
+                    <div class="font-bold text-xs text-white">Hoài My (Neural)</div>
+                    <div class="text-[10px] text-slate-400">Truyền cảm, chữa lành, dịu dàng</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Rate & Pitch Control -->
+          <div class="grid grid-cols-2 gap-4 pt-2">
+            <div>
+              <div class="flex justify-between text-xs text-slate-300 mb-1">
+                <span>Tốc Độ (Rate):</span>
+                <span class="font-mono text-brand-gold font-bold" id="label-voice-rate">-15%</span>
+              </div>
+              <input type="range" min="-30" max="20" value="-15" id="slider-voice-rate" oninput="updateVoiceSettings()" class="w-full accent-brand-gold">
+            </div>
+            <div>
+              <div class="flex justify-between text-xs text-slate-300 mb-1">
+                <span>Cao Độ (Pitch):</span>
+                <span class="font-mono text-brand-cyan font-bold" id="label-voice-pitch">-5Hz</span>
+              </div>
+              <input type="range" min="-15" max="15" value="-5" id="slider-voice-pitch" oninput="updateVoiceSettings()" class="w-full accent-brand-cyan">
+            </div>
+          </div>
+
+          <!-- Dialogue Sample Playback Simulator -->
+          <div class="p-3.5 rounded-xl bg-[#0a0d14] border border-brand-border space-y-2">
+            <div class="flex items-center justify-between text-xs">
+              <span class="font-mono text-slate-400">Đọc Thử Đoạn Thoại Mẫu:</span>
+              <button onclick="speakDialogueSample()" class="px-2.5 py-1 rounded bg-brand-gold text-black font-bold text-xs flex items-center gap-1 hover:brightness-110">
+                <i class="fa-solid fa-play text-[10px]"></i>
+                <span>Phát Âm Thử (TTS)</span>
+              </button>
+            </div>
+            <p class="text-xs text-slate-300 italic" id="sample-tts-dialogue">
+              "Chúng ta đang sống trong một thế giới kỳ lạ: Có trong tay mọi phương tiện tối tân nhất, nhưng lại thiếu vắng một lý do sống đích thực."
+            </p>
+          </div>
+        </div>
+
+        <!-- Right: BGM & Outro Buffer Master -->
+        <div class="glass-panel rounded-2xl p-5 border border-brand-border space-y-4">
+          <div class="border-b border-brand-border pb-3">
+            <h3 class="text-base font-bold text-white font-cinzel flex items-center gap-2">
+              <i class="fa-solid fa-music text-brand-cyan"></i>
+              <span>Hòa Âm BGM & Đệm Âm Thanh Outro</span>
+            </h3>
+            <p class="text-xs text-slate-400">Lồng nhạc nền ducking thông minh và đệm 6.5s giữ chân thuật toán.</p>
+          </div>
+
+          <!-- BGM Volume Ducking Slider -->
+          <div>
+            <div class="flex justify-between text-xs text-slate-300 mb-1">
+              <span>Âm Lượng Nhạc Nền Ducking (BGM Volume):</span>
+              <span class="font-mono text-brand-gold font-bold" id="label-bgm-volume">0.22 (22%)</span>
+            </div>
+            <input type="range" min="0.05" max="0.50" step="0.01" value="0.22" id="slider-bgm-volume" oninput="updateBgmVolume()" class="w-full accent-brand-gold">
+            <p class="text-[10px] text-slate-400 mt-1">
+              Tự động giảm âm lượng BGM khi có tiếng nói và fade-out mượt mà ở cảnh cuối.
+            </p>
+          </div>
+
+          <!-- Outro Buffer 6.5s Info Card -->
+          <div class="p-3.5 rounded-xl bg-purple-500/10 border border-purple-500/30 text-xs text-purple-200 space-y-1.5">
+            <div class="font-bold flex items-center gap-2 text-purple-300">
+              <i class="fa-solid fa-clock-rotate-left"></i>
+              <span>V104 BUFFER OUTRO: 6.5 GIÂY NGHỈ ĐỆM THƯƠNG HIỆU</span>
+            </div>
+            <p class="text-slate-300 text-[11px] leading-relaxed">
+              Sử dụng bộ lọc <code class="text-purple-300 font-mono">tpad=stop_mode=clone:stop_duration=6.5</code> và <code class="text-purple-300 font-mono">anullsrc</code> để kéo dài khung hình cuối cùng cùng tiếng nhạc êm dịu, giúp người xem kịp đọc CTA, bấm theo dõi và giữ chỉ số hoàn thành video (Completion Rate) cao nhất.
+            </p>
+          </div>
+
+          <!-- BGM Library Quick Selector -->
+          <div>
+            <label class="block text-xs font-semibold text-slate-300 mb-2 font-mono uppercase">
+              Thư Viện Nhạc Nền Phù Hợp DNA
+            </label>
+            <div class="space-y-1.5">
+              <div class="p-2 rounded-lg bg-slate-800/40 border border-brand-border flex items-center justify-between text-xs">
+                <span class="font-medium text-slate-200"><i class="fa-solid fa-music text-brand-gold mr-2"></i>BGM_TrietLy_SauLang_Cinematic.mp3</span>
+                <span class="text-[10px] text-brand-gold font-mono">Khuyên dùng Cụm 1</span>
+              </div>
+              <div class="p-2 rounded-lg bg-slate-800/40 border border-brand-border flex items-center justify-between text-xs">
+                <span class="font-medium text-slate-200"><i class="fa-solid fa-music text-brand-cyan mr-2"></i>BGM_ChuaLanh_ThienDinh_Acoustic.mp3</span>
+                <span class="text-[10px] text-brand-cyan font-mono">Khuyên dùng Cụm 3</span>
+              </div>
+              <div class="p-2 rounded-lg bg-slate-800/40 border border-brand-border flex items-center justify-between text-xs">
+                <span class="font-medium text-slate-200"><i class="fa-solid fa-music text-emerald-400 mr-2"></i>BGM_NangLuong_DoiMoi_ModernUpbeat.mp3</span>
+                <span class="text-[10px] text-emerald-400 font-mono">Khuyên dùng Cụm 2, 4</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ================= TAB 6: VAULT 25 FANPAGE META ================= -->
+    <div id="tab-channels" class="tab-content hidden space-y-6">
+      <div class="glass-panel rounded-2xl p-5 border border-brand-border">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div>
+            <h3 class="text-lg font-bold text-white font-cinzel flex items-center gap-2">
+              <i class="fa-brands fa-meta text-blue-500"></i>
+              <span>Kho Quản Trị Brand DNA 25 Fanpage Meta Lê Phúc Nhật</span>
+            </h3>
+            <p class="text-xs text-slate-400 mt-1">
+              Nhấp vào bất kỳ kênh nào để tự động kích hoạt bộ thiết lập Preset mỹ thuật, giọng đọc và BGM tương thích!
+            </p>
+          </div>
+          <div class="relative">
+            <input type="text" id="search-channel-input" oninput="filterChannelsList()" placeholder="Tìm kiếm tên kênh..." class="px-3.5 py-1.5 rounded-xl bg-slate-800/80 border border-brand-border text-xs text-white placeholder-slate-400 focus:outline-none focus:border-brand-gold w-60">
+            <i class="fa-solid fa-magnifying-glass absolute right-3 top-2.5 text-xs text-slate-400"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- Channels by 5 Clusters -->
+      <div class="space-y-6" id="channels-cluster-list">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+
+    <!-- ================= TAB 7: TRẠM LỆNH ASUS TUF STATION ================= -->
+    <div id="tab-terminal" class="tab-content hidden space-y-6">
+      <div class="glass-panel rounded-2xl p-5 border border-brand-border space-y-4">
+        <div class="border-b border-brand-border pb-3 flex items-center justify-between">
+          <div>
+            <h3 class="text-base font-bold text-white font-cinzel flex items-center gap-2">
+              <i class="fa-solid fa-terminal text-brand-gold"></i>
+              <span>Trạm Điều Khiển Render Tự Động Máy Trạm ASUS TUF Gaming F15</span>
+            </h3>
+            <p class="text-xs text-slate-400">Sao chép câu lệnh hoặc tải file .BAT để khởi chạy engine V104 độc lập.</p>
+          </div>
+          <span class="px-2.5 py-0.5 rounded text-[11px] font-mono bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
+            RTX 2050 NVENC ACCELERATION
+          </span>
+        </div>
+
+        <!-- Terminal Box -->
+        <div class="rounded-2xl bg-[#07090e] border border-brand-border p-4 font-mono text-xs text-slate-300 space-y-2 relative shadow-inner">
+          <div class="flex items-center justify-between text-slate-500 pb-2 border-b border-slate-800 text-[11px]">
+            <span class="flex items-center gap-1.5">
+              <i class="fa-solid fa-circle text-red-500 text-[8px]"></i>
+              <i class="fa-solid fa-circle text-yellow-500 text-[8px]"></i>
+              <i class="fa-solid fa-circle text-green-500 text-[8px]"></i>
+              <span class="ml-2 text-slate-400">powershell • v104_engine_headless.py</span>
+            </span>
+            <button onclick="copyTerminalCommand()" class="text-brand-gold hover:text-white flex items-center gap-1">
+              <i class="fa-solid fa-copy"></i>
+              <span>Copy Lệnh</span>
+            </button>
+          </div>
+
+          <div class="space-y-1 text-slate-200" id="terminal-command-content">
+            <span class="text-emerald-400 font-bold">PS D:\LPN_Workspace></span> python ".agent\skills\v104-studio-producer\v104_engine_headless.py" `<br>
+            &nbsp;&nbsp;--json "00_Thu_Vien_Reels_Master\02_Kich_Ban_Va_Cau_Lenh_Google_Flow\20261005_Tap_01_Khoang_Trong_Hien_Sinh_All_In_One_V88.json" `<br>
+            &nbsp;&nbsp;--pool "Video_Assets_Pool" `<br>
+            &nbsp;&nbsp;--channel "NGẪM"
+          </div>
+        </div>
+
+        <!-- Quick 1-Click BAT Downloader -->
+        <div class="flex flex-wrap items-center justify-between gap-3 pt-2">
+          <div class="text-xs text-slate-400">
+            <i class="fa-solid fa-circle-info text-brand-cyan mr-1"></i>
+            Tự động sử dụng FFmpeg chuẩn tại: <code class="text-brand-cyan font-mono">D:\LPN_Workspace\FFmpeg\...\ffmpeg.exe</code>
+          </div>
+          <div class="flex items-center gap-2">
+            <button onclick="downloadBatScript()" class="px-4 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 border border-brand-border text-xs text-brand-gold font-bold flex items-center gap-2 transition-colors">
+              <i class="fa-solid fa-file-arrow-down"></i>
+              <span>Tải File Chạy Nhanh 01_RENDER_V104.BAT</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Technical Specs Table -->
+        <div class="overflow-x-auto pt-3">
+          <table class="w-full text-left text-xs font-mono">
+            <thead class="bg-slate-800/40 text-slate-400 text-[11px]">
+              <tr>
+                <th class="py-2 px-3">Thông Số</th>
+                <th class="py-2 px-3">Cấu Hình V104 Core</th>
+                <th class="py-2 px-3">Mục Đích Điện Ảnh</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-brand-border/40 text-slate-300">
+              <tr>
+                <td class="py-2 px-3 text-brand-gold">PTS Video Speed</td>
+                <td class="py-2 px-3">setpts=1.35*PTS</td>
+                <td class="py-2 px-3">Tăng tốc 1.35x giúp khung hình linh hoạt, giữ nhịp Reels năng động</td>
+              </tr>
+              <tr>
+                <td class="py-2 px-3 text-brand-gold">Crop & Anti-Border</td>
+                <td class="py-2 px-3">crop=iw*0.96:ih*0.96</td>
+                <td class="py-2 px-3">Zoom nhẹ 4% chống viền đen Google Flow và tăng tính điện ảnh</td>
+              </tr>
+              <tr>
+                <td class="py-2 px-3 text-brand-gold">Crossfade FX</td>
+                <td class="py-2 px-3">fade=in:1.0s, fade=out:1.0s</td>
+                <td class="py-2 px-3">Chuyển cảnh mượt mà giữa các đoạn clip không bị giật khung hình</td>
+              </tr>
+              <tr>
+                <td class="py-2 px-3 text-brand-gold">Outro Buffer</td>
+                <td class="py-2 px-3">tpad=stop_duration=6.5s</td>
+                <td class="py-2 px-3">Treo tĩnh khung hình cuối 6.5s kèm BGM êm dịu để kích thích tương tác</td>
+              </tr>
+              <tr>
+                <td class="py-2 px-3 text-brand-gold">Auto Thumbnail</td>
+                <td class="py-2 px-3">ffmpeg -ss 2.0 -frames:v 1</td>
+                <td class="py-2 px-3">Cắt ảnh bìa chất lượng cao tại giây 2.0 sau khi hết fade-in</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- MODAL: XEM VÀ SỬA JSON KỊCH BẢN -->
+  <div id="json-modal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="glass-panel w-full max-w-4xl max-h-[90vh] rounded-2xl overflow-hidden border border-brand-border flex flex-col shadow-2xl">
+      <div class="px-5 py-3.5 border-b border-brand-border flex items-center justify-between bg-slate-900/60">
+        <h4 class="font-bold text-sm text-white font-cinzel flex items-center gap-2">
+          <i class="fa-solid fa-code text-brand-gold"></i>
+          <span>TRÌNH SOẠN THẢO JSON KỊCH BẢN V104</span>
+        </h4>
+        <button onclick="closeJsonModal()" class="text-slate-400 hover:text-white text-lg">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div class="p-4 flex-1 overflow-y-auto">
+        <textarea id="json-modal-textarea" rows="18" class="w-full bg-[#080B11] border border-brand-border rounded-xl p-3 font-mono text-xs text-brand-cyan focus:outline-none focus:border-brand-gold leading-relaxed" spellcheck="false"></textarea>
+      </div>
+      <div class="px-5 py-3 border-t border-brand-border flex items-center justify-between bg-slate-900/60">
+        <span class="text-xs text-slate-400" id="json-status-info">Định dạng JSON chuẩn V104 / V88</span>
+        <div class="flex items-center gap-2">
+          <button onclick="closeJsonModal()" class="px-3.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs text-slate-300 font-medium">Đóng</button>
+          <button onclick="applyJsonFromModal()" class="px-4 py-1.5 rounded-lg bg-brand-gold hover:bg-brand-goldHover text-black font-bold text-xs">Cập Nhật Kịch Bản</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="mt-12 border-t border-brand-border/60 bg-[#06080d] py-8 text-xs text-slate-400">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-lg bg-brand-gold/20 flex items-center justify-center text-brand-gold font-bold text-xs">
+          LPN
+        </div>
+        <div>
+          <div class="font-bold text-slate-200">LPN STUDIO V104 PRO • FLOW MATCH ENGINE</div>
+          <div class="text-[11px] text-slate-500">Phát triển bởi Lê Phúc Nhật & Antigravity Master Agent</div>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-4 text-xs font-mono">
+        <a href="https://lephucnhat.vn" target="_blank" class="hover:text-brand-gold transition-colors">lephucnhat.vn</a>
+        <span>•</span>
+        <span class="text-brand-cyan">25 Meta Channels Autopilot</span>
+        <span>•</span>
+        <span class="text-brand-gold">ASUS TUF RTX 2050</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= JAVASCRIPT LOGIC V104 CORE ================= -->
+  <script>
+    // --- 1. DỮ LIỆU CỐT LÕI (25 KÊNH META & 5 CỤM DNA) ---
+    const CLUSTERS = {
+      1: {
+        id: 1,
+        name: "Cụm 1: Triết Lý, Nhân Sinh & Chiêm Nghiệm",
+        theme: "vang",
+        font: "georgia",
+        outline: "den_day",
+        voice: "vi-VN-NamMinhNeural",
+        rate: "-15%",
+        pitch: "-5Hz",
+        bgm_vol: 0.18,
+        channels: [
+          { name: "NGẪM", niche: "Bóc trần thực tại trần trụi, giải ảo cuộc đời, tỉnh mộng sau vinh quang." },
+          { name: "Sự Thật 8 Giây", niche: "Cú đấm tâm lý 8 giây, vạch trần nghịch lý xã hội gay gắt." },
+          { name: "Tuệ Lâm Sâm Ngôn", niche: "Lời răn trí tuệ cổ nhân, minh triết phương Đông ứng dụng." },
+          { name: "Chuyện Thường", niche: "Nghịch lý đời thường, những điều tưởng bình thường mà cay đắng." },
+          { name: "THUẬT GIẢ KIM", niche: "Biến đau thương thành sức mạnh, chuyển hóa số phận." },
+          { name: "Đố Vui Dân Gian", niche: "Trí tuệ dân gian hóm hỉnh nhưng sâu cay về lòng người." }
+        ]
+      },
+      2: {
+        id: 2,
+        name: "Cụm 2: Thể Chất, Sức Khỏe & Dinh Dưỡng Lành",
+        theme: "xanh_la",
+        font: "segoe",
+        outline: "den_mong",
+        voice: "vi-VN-HoaiMyNeural",
+        rate: "-8%",
+        pitch: "0Hz",
+        bgm_vol: 0.24,
+        channels: [
+          { name: "Happy Run", niche: "Chạy bộ chuyển hóa tâm thân, kỷ luật rèn luyện mỗi sớm mai." },
+          { name: "Happy Chay", niche: "Ẩm thực thuần chay thanh lọc cơ thể, dinh dưỡng xanh an lành." },
+          { name: "ĂN RÕ", niche: "Hiểu rõ từng miếng ăn, khoa học dinh dưỡng minh bạch." },
+          { name: "Sâm Bố Chính - Sâm Tiến Vua", niche: "Báu vật nhân sâm Việt, tăng cường sinh lực và đề kháng." },
+          { name: "Cao Dược Liệu TAPO", niche: "Tinh hoa dược liệu bản địa, phục hồi sức khỏe tự nhiên." }
+        ]
+      },
+      3: {
+        id: 3,
+        name: "Cụm 3: Chữa Lành, An Yên & Tâm Hồn",
+        theme: "kem",
+        font: "candara",
+        outline: "nau",
+        voice: "vi-VN-HoaiMyNeural",
+        rate: "-10%",
+        pitch: "0Hz",
+        bgm_vol: 0.20,
+        channels: [
+          { name: "Về Miền An Nhiên", niche: "Không gian bình yên, buông bỏ muộn phiền nơi thôn dã." },
+          { name: "An Nhiên Từ Tâm", niche: "Tưới tẩm hạt giống an lạc, thiền định giữa dòng đời vội vã." },
+          { name: "HAI MÀU RỪNG", niche: "Triết lý màu xanh và sắc úa của rừng già, quy luật vô thường." },
+          { name: "Lê Phúc Nhật - Giác Ngộ", niche: "Từng nét chữ khai tâm, bài học tỉnh thức trong đời." },
+          { name: "Mật Mật - Biệt đội Ong rừng", niche: "Hương vị thiên nhiên hoang dã, sự ngọt ngào từ lao động chân chính." }
+        ]
+      },
+      4: {
+        id: 4,
+        name: "Cụm 4: Kỷ Luật, Bản Lĩnh & Công Nghệ",
+        theme: "vang",
+        font: "bahnschrift",
+        outline: "den_day",
+        voice: "vi-VN-NamMinhNeural",
+        rate: "-8%",
+        pitch: "-3Hz",
+        bgm_vol: 0.22,
+        channels: [
+          { name: "Liên Tục Phát Triển", niche: "Nâng cấp bản thân mỗi ngày 1%, vượt ngưỡng giới hạn." },
+          { name: "108 Ngày", niche: "Hành trình thử thách 108 ngày rèn sắt thành kim." },
+          { name: "AI Cho Mọi Người", niche: "Phổ cập trí tuệ nhân tạo, công cụ xAI giải phóng sức lao động." },
+          { name: "Phúc Nhật", niche: "Góc nhìn doanh nhân công nghệ, tư duy hệ thống và tự động hóa." }
+        ]
+      },
+      5: {
+        id: 5,
+        name: "Cụm 5: Cội Nguồn, Gia Đình & Sinh Thái",
+        theme: "kem",
+        font: "georgia",
+        outline: "nau",
+        voice: "vi-VN-NamMinhNeural",
+        rate: "-12%",
+        pitch: "-4Hz",
+        bgm_vol: 0.20,
+        channels: [
+          { name: "Chuyện gia đình", niche: "Tình thân ruột thịt, giữ gìn mái ấm qua giông bão." },
+          { name: "Họ Lê Việt Nam", niche: "Tôn vinh nguồn cội tiên tổ, kết nối dòng tộc muôn phương." },
+          { name: "GỐC", niche: "Tìm về gốc rễ văn hóa, đạo lý uống nước nhớ nguồn." },
+          { name: "HTX Lâm nghiệp Keo Sơn", niche: "Lâm nghiệp bền vững, kinh tế rừng trồng đạt chuẩn FSC." },
+          { name: "HTX Keo Sơn KSFC", niche: "Chuỗi giá trị gỗ rừng trồng chứng chỉ quốc tế Quảng Trị." }
+        ]
+      }
+    };
+
+    // --- 2. HỆ THỐNG MỸ THUẬT PHỤ ĐỀ ASS (THEMES, FONTS, OUTLINES) ---
+    const THEMES = {
+      vang: { ten: "Vàng Kim", hex: "#FFD400", ass: "&H0000FFFF", outline: "&H00000000" },
+      trang: { ten: "Trắng", hex: "#FFFFFF", ass: "&H00FFFFFF", outline: "&H00000000" },
+      ngoc: { ten: "Xanh Ngọc", hex: "#00E5FF", ass: "&H00FFE500", outline: "&H00000000" },
+      do: { ten: "Đỏ Rực", hex: "#FF3344", ass: "&H004433FF", outline: "&H00000000" },
+      kem: { ten: "Kem Ấm", hex: "#FFF3D1", ass: "&H00D1F3FF", outline: "&H00000000" },
+      xanh_la: { ten: "Xanh Lá", hex: "#2EECA0", ass: "&H00A0EC2E", outline: "&H00000000" },
+      cam: { ten: "Cam Năng Lượng", hex: "#FF8C00", ass: "&H00008CFF", outline: "&H00000000" }
+    };
+
+    const FONTS = {
+      georgia: { ten: "Georgia (Sang Trọng)", font: "Georgia", css: "font-serif font-bold" },
+      arial: { ten: "Arial Đậm (Chuẩn)", font: "Arial", css: "font-sans font-bold" },
+      arial_black: { ten: "Arial Black (Siêu Đậm)", font: "Arial Black", css: "font-sans font-black" },
+      segoe: { ten: "Segoe UI (Hiện Đại)", font: "Segoe UI", css: "font-sans font-semibold" },
+      bahnschrift: { ten: "Bahnschrift (Mạnh Mẽ)", font: "Bahnschrift", css: "font-sans font-bold tracking-tight" },
+      candara: { ten: "Candara (Dịu Dàng)", font: "Candara", css: "font-sans font-medium" },
+      times: { ten: "Times New Roman", font: "Times New Roman", css: "font-serif font-bold" }
+    };
+
+    const OUTLINES = {
+      den_day: { ten: "Đen Siêu Dày", w: 4.5, sh: 2.0, css: "text-shadow-heavy" },
+      den_mong: { ten: "Đen Mỏng Tinh Tế", w: 1.5, sh: 0.5, css: "text-shadow-light" },
+      trang: { ten: "Viền Trắng", w: 3.5, sh: 1.5, css: "text-shadow-white" },
+      vang: { ten: "Vàng Kim", w: 3.0, sh: 1.5, css: "text-shadow-gold" },
+      nau: { ten: "Nâu Ấm Cà Phê", w: 3.5, sh: 1.5, css: "text-shadow-brown" },
+      neon: { ten: "Neon Phát Sáng", w: 2.0, sh: 3.5, css: "text-shadow-neon" },
+      hop_den: { ten: "Hộp Nền Đen Mờ", w: 4.0, sh: 0.0, box: true, css: "bg-black/70 px-3 py-1 rounded" }
+    };
+
+    // --- 3. KỊCH BẢN MẪU TÍCH HỢP ---
+    const SAMPLE_SCRIPTS = {
+      1: {
+        ten_du_an: "Tap_01_Khoang_Trong_Hien_Sinh",
+        kenh: "NGẪM",
+        cluster_id: 1,
+        danh_sach_phan_canh: [
+          {
+            scene: 1,
+            out: "01_Dark_obsidian_monolith_in_void.mp4",
+            prompt: "Dark obsidian monolith in void, a cinematic massive black stone monolith standing isolated in an endless dark desert under a cold starry sky, deep blue mist, slow atmospheric tracking shot, eerie existential beauty, 35mm cinema film look, pristine 8k",
+            dialogue: "Chúng ta đang sống trong một thế giới kỳ lạ: Có trong tay mọi phương tiện tối tân nhất, nhưng lại thiếu vắng một lý do sống đích thực.",
+            tu_khoa_flow: ["monolith", "dark void", "misty desert"],
+            hanh_dong_chinh: "monolith standing isolated in dark desert"
+          },
+          {
+            scene: 2,
+            out: "02_Crowded_city_commuters_frozen_expressions.mp4",
+            prompt: "Crowded city commuters with frozen blank expressions walking like ghosts in a futuristic glass subway station, motion blur around them, cold desaturated lighting, existential isolation in a crowd, cinematic 8k",
+            dialogue: "Mỗi sáng thức dậy chen chúc trên những toa tàu điện, lao vào guồng quay bất tận mà không biết mình đang chạy về đâu.",
+            tu_khoa_flow: ["commuters", "subway station", "frozen expressions"],
+            hanh_dong_chinh: "commuters walking like ghosts"
+          },
+          {
+            scene: 3,
+            out: "03_Close_up_tired_eyes_laptop_glow.mp4",
+            prompt: "Macro close up of tired human eyes reflecting scrolling digital social media feed in dark room, faint blue screen glow on pale face, subtle melancholy expression, high fidelity cinematic, 8k",
+            dialogue: "Ánh sáng xanh từ màn hình điện thoại soi rõ những quầng thâm mệt mỏi, lấp đầy những đêm dài trống rỗng.",
+            tu_khoa_flow: ["tired eyes", "blue screen glow", "dark room"],
+            hanh_dong_chinh: "tired eyes reflecting digital screen"
+          },
+          {
+            scene: 4,
+            out: "04_Old_clock_ticking_dust_motes_sunlight.mp4",
+            prompt: "Vintage brass pendulum clock ticking slowly on dark wooden wall, sunbeam cutting through shadows with floating dust motes, passage of time metaphor, poetic existential cinematography, 8k",
+            dialogue: "Thời gian thì vẫn trôi tàn nhẫn, không đợi bất kỳ ai tỉnh ngộ.",
+            tu_khoa_flow: ["brass clock", "sunbeam dust motes", "pendulum"],
+            hanh_dong_chinh: "pendulum clock ticking on wall"
+          },
+          {
+            scene: 5,
+            out: "05_Lone_figure_standing_on_mountain_cliff_wind.mp4",
+            prompt: "A solitary silhouette standing on high windy mountain ridge at twilight, looking out at vast sea of clouds and distant glowing horizon, cinematic epic scale, deep spiritual awakening, 8k",
+            dialogue: "Nhưng chỉ khi dám đối diện với khoảng trống ấy, bản lĩnh thực sự trong bạn mới bắt đầu lên tiếng.",
+            tu_khoa_flow: ["mountain cliff", "silhouette", "sea of clouds"],
+            hanh_dong_chinh: "figure standing on mountain cliff"
+          }
+        ]
+      },
+      2: {
+        ten_du_an: "Tap_02_Khoang_Dung_1_Giay",
+        kenh: "Liên Tục Phát Triển",
+        cluster_id: 4,
+        danh_sach_phan_canh: [
+          {
+            scene: 1,
+            out: "01_Sprinter_poised_at_starting_block.mp4",
+            prompt: "Cinematic close-up of an athlete sprinter muscles tense poised at starting blocks, sweat dripping, focused fierce determination in eyes, dynamic stadium lighting, 8k",
+            dialogue: "Trong mọi cuộc đua khốc liệt nhất, khoảnh khắc quyết định thắng bại chỉ diễn ra trong đúng một giây.",
+            tu_khoa_flow: ["sprinter", "starting blocks", "tense muscles"],
+            hanh_dong_chinh: "sprinter poised at starting block"
+          },
+          {
+            scene: 2,
+            out: "02_Circuit_board_laser_pulse_speed.mp4",
+            prompt: "Futuristic microchip circuit board glowing with high speed cyan laser pulses, cybernetic technology innovation, clean sharp cinematic macro shot, 8k",
+            dialogue: "Tốc độ xử lý của kỷ nguyên AI không cho phép bạn chần chừ hay hoài nghi năng lực chính mình.",
+            tu_khoa_flow: ["microchip", "circuit board", "laser pulse"],
+            hanh_dong_chinh: "laser pulses flowing on chip"
+          },
+          {
+            scene: 3,
+            out: "03_Warrior_stepping_into_stormy_arena.mp4",
+            prompt: "A disciplined warrior walking steadily forward into a howling rainstorm, head held high, armor gleaming, unbreakable willpower metaphor, epic cinema, 8k",
+            dialogue: "Kỷ luật thép là vũ khí duy nhất biến kẻ bình thường trở thành chiến binh bất khả chiến bại.",
+            tu_khoa_flow: ["warrior", "rainstorm", "unbreakable willpower"],
+            hanh_dong_chinh: "warrior stepping into storm"
+          }
+        ]
+      },
+      3: {
+        ten_du_an: "Happy_Run_Buoc_Chay_Thuc_Tinh",
+        kenh: "Happy Run",
+        cluster_id: 2,
+        danh_sach_phan_canh: [
+          {
+            scene: 1,
+            out: "01_Morning_mist_golden_sunlight_pine_forest.mp4",
+            prompt: "Dreamy golden sunrise rays piercing through misty pine trees trail, dew drops sparkling on green grass, peaceful morning atmosphere, cinematic 8k",
+            dialogue: "Khi cả thành phố còn chìm trong giấc ngủ, những bước chân đầu tiên đã đón chào ánh bình minh rạng rỡ.",
+            tu_khoa_flow: ["pine forest", "morning mist", "golden sunrise"],
+            hanh_dong_chinh: "sunrise rays piercing through pine trees"
+          },
+          {
+            scene: 2,
+            out: "02_Running_shoes_hitting_trail_rhythm.mp4",
+            prompt: "Low angle tracking shot of running shoes hitting dirt trail rhythmically, splashing slight morning dew, energetic vitality, healthy lifestyle cinema, 8k",
+            dialogue: "Mỗi nhịp thở, mỗi giọt mồ hôi rơi xuống là một lần bạn thanh lọc thân tâm và tái sinh năng lượng sống.",
+            tu_khoa_flow: ["running shoes", "dirt trail", "dew splash"],
+            hanh_dong_chinh: "running shoes hitting trail rhythmically"
+          }
+        ]
+      }
+    };
+
+    // --- 4. TRẠNG THÁI TOÀN CỤC CỦA APP (STATE) ---
+    let currentScript = JSON.parse(JSON.stringify(SAMPLE_SCRIPTS[1]));
+    let currentThemeKey = "vang";
+    let currentFontKey = "georgia";
+    let currentOutlineKey = "den_day";
+    let currentFontSize = 24;
+    let currentMarginV = 90;
+    let currentVoice = "vi-VN-NamMinhNeural";
+    let currentVoiceRate = "-15%";
+    let currentVoicePitch = "-5Hz";
+    let currentBgmVolume = 0.22;
+    let isSfxEnabled = true;
+
+    // --- 5. AUDIO SFX ENGINE (WEB AUDIO API) ---
+    let audioCtx = null;
+    function initAudio() {
+      if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    }
+    function playSfx(type = 'click') {
+      if (!isSfxEnabled) return;
+      try {
+        initAudio();
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        const now = audioCtx.currentTime;
+
+        if (type === 'click') {
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(600, now);
+          osc.frequency.exponentialRampToValueAtTime(120, now + 0.05);
+          gain.gain.setValueAtTime(0.15, now);
+          gain.gain.linearRampToValueAtTime(0.01, now + 0.05);
+          osc.start(now);
+          osc.stop(now + 0.05);
+        } else if (type === 'success') {
+          osc.type = 'triangle';
+          osc.frequency.setValueAtTime(440, now);
+          osc.frequency.exponentialRampToValueAtTime(880, now + 0.12);
+          gain.gain.setValueAtTime(0.2, now);
+          gain.gain.linearRampToValueAtTime(0.01, now + 0.12);
+          osc.start(now);
+          osc.stop(now + 0.12);
+        } else if (type === 'switch') {
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(320, now);
+          osc.frequency.exponentialRampToValueAtTime(540, now + 0.08);
+          gain.gain.setValueAtTime(0.12, now);
+          gain.gain.linearRampToValueAtTime(0.01, now + 0.08);
+          osc.start(now);
+          osc.stop(now + 0.08);
+        }
+      } catch (e) {}
+    }
+
+    function toggleAudioSFX() {
+      isSfxEnabled = !isSfxEnabled;
+      const btn = document.getElementById('btn-toggle-sfx');
+      btn.innerHTML = isSfxEnabled ? '<i class="fa-solid fa-volume-high"></i>' : '<i class="fa-solid fa-volume-xmark text-slate-500"></i>';
+      showToast(isSfxEnabled ? "Đã bật âm thanh giao diện" : "Đã tắt âm thanh giao diện", "info");
+    }
+
+    // --- 6. TOAST NOTIFICATION ---
+    function showToast(message, type = 'success') {
+      playSfx(type === 'success' ? 'success' : 'click');
+      const container = document.getElementById('toast-container');
+      const toast = document.createElement('div');
+      const colors = {
+        success: 'border-brand-gold bg-[#121722] text-brand-gold',
+        info: 'border-brand-cyan bg-[#121722] text-brand-cyan',
+        error: 'border-brand-red bg-[#121722] text-brand-red'
+      };
+      const icons = {
+        success: 'fa-circle-check',
+        info: 'fa-circle-info',
+        error: 'fa-triangle-exclamation'
+      };
+      toast.className = `px-4 py-2.5 rounded-xl border ${colors[type] || colors.success} shadow-2xl flex items-center gap-2.5 text-xs font-medium transform transition-all duration-300 translate-y-4 opacity-0 pointer-events-auto`;
+      toast.innerHTML = `<i class="fa-solid ${icons[type] || icons.success}"></i> <span>${message}</span>`;
+      container.appendChild(toast);
+      setTimeout(() => { toast.classList.remove('translate-y-4', 'opacity-0'); }, 10);
+      setTimeout(() => {
+        toast.classList.add('translate-y-4', 'opacity-0');
+        setTimeout(() => toast.remove(), 300);
+      }, 3000);
+    }
+
+    // --- 7. TABS NAVIGATION SWITCHER ---
+    function switchTab(tabId) {
+      playSfx('switch');
+      document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.remove('active', 'bg-brand-gold/15', 'text-brand-gold', 'border-brand-gold/30');
+        btn.classList.add('text-slate-400', 'border-transparent');
+      });
+      const target = document.getElementById(tabId);
+      if (target) target.classList.remove('hidden');
+
+      const clickedBtn = Array.from(document.querySelectorAll('.tab-btn')).find(b => b.getAttribute('onclick')?.includes(tabId));
+      if (clickedBtn) {
+        clickedBtn.classList.add('active', 'bg-brand-gold/15', 'text-brand-gold', 'border-brand-gold/30');
+        clickedBtn.classList.remove('text-slate-400', 'border-transparent');
+      }
+    }
+
+    // --- 8. KHỞI TẠO VÀ RENDER GIAO DIỆN ---
+    function initApp() {
+      renderClusterButtons();
+      renderScriptTab();
+      renderMatcherTab();
+      renderSubtitleControls();
+      renderChannelsTab();
+      updateSubtitlePreview();
+      updateThumbnailPreview();
+      updateTerminalCommand();
+    }
+
+    function renderClusterButtons() {
+      const container = document.getElementById('cluster-buttons-container');
+      container.innerHTML = Object.values(CLUSTERS).map(c => `
+        <button onclick="applyClusterPreset(${c.id})" class="px-2.5 py-1 rounded-lg border border-brand-border bg-slate-800/40 hover:border-brand-gold hover:text-brand-gold text-slate-300 font-medium transition-colors text-[11px] flex items-center gap-1.5">
+          <span class="w-2 h-2 rounded-full ${c.id === 1 ? 'bg-amber-400' : (c.id === 2 ? 'bg-emerald-400' : (c.id === 3 ? 'bg-cyan-400' : (c.id === 4 ? 'bg-red-400' : 'bg-purple-400')))}"></span>
+          <span>Cụm ${c.id} (${c.channels.length})</span>
+        </button>
+      `).join('');
+    }
+
+    function applyClusterPreset(clusterId) {
+      playSfx('switch');
+      const c = CLUSTERS[clusterId];
+      if (!c) return;
+      currentThemeKey = c.theme;
+      currentFontKey = c.font;
+      currentOutlineKey = c.outline;
+      currentVoice = c.voice;
+      currentVoiceRate = c.rate;
+      currentVoicePitch = c.pitch;
+      currentBgmVolume = c.bgm_vol;
+
+      // Update script target channel to first channel in cluster
+      currentScript.kenh = c.channels[0].name;
+      currentScript.cluster_id = clusterId;
+
+      document.getElementById('target-channel-badge').innerText = currentScript.kenh;
+      document.getElementById('preview-channel-name').innerText = currentScript.kenh;
+
+      renderSubtitleControls();
+      updateSubtitlePreview();
+      updateThumbnailPreview();
+      updateTerminalCommand();
+      showToast(`Đã nạp toàn bộ cấu hình Preset: ${c.name}`, 'info');
+    }
+
+    // --- 9. RENDER TAB 1: KỊCH BẢN & PHÂN CẢNH ---
+    function renderScriptTab() {
+      const title = currentScript.ten_du_an || "Kịch Bản Chưa Đặt Tên";
+      document.getElementById('project-title-display').innerText = title.replace(/_/g, ' ');
+      document.getElementById('scene-count-badge').innerText = (currentScript.danh_sach_phan_canh || []).length;
+      document.getElementById('est-duration-badge').innerText = `${((currentScript.danh_sach_phan_canh || []).length * 6.5).toFixed(0)}s`;
+      document.getElementById('target-channel-badge').innerText = currentScript.kenh || "NGẪM";
+
+      const container = document.getElementById('scenes-container');
+      const scenes = currentScript.danh_sach_phan_canh || [];
+
+      container.innerHTML = scenes.map((s, idx) => `
+        <div class="glass-card rounded-2xl p-4 border border-brand-border hover:border-brand-gold/40 transition-all space-y-3 relative group">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <span class="w-6 h-6 rounded-lg bg-brand-gold/20 text-brand-gold font-mono font-bold flex items-center justify-center text-xs">
+                ${idx + 1}
+              </span>
+              <span class="text-xs font-bold text-white font-mono">${s.out || `Scene_${idx+1}.mp4`}</span>
+            </div>
+            <button onclick="copyToClipboard('${escapeAttr(s.prompt)}', 'Đã copy câu lệnh Flow Cảnh ${idx+1}')" class="px-2 py-1 rounded bg-slate-800 hover:bg-slate-700 text-[10px] text-brand-gold border border-brand-border flex items-center gap-1 transition-colors">
+              <i class="fa-solid fa-copy"></i>
+              <span>Copy Prompt Flow</span>
+            </button>
+          </div>
+
+          <!-- Dialogue -->
+          <div class="p-3 rounded-xl bg-slate-900/60 border border-white/5 space-y-1">
+            <div class="text-[10px] text-brand-gold font-mono uppercase font-bold flex items-center justify-between">
+              <span>Lời Thoại Voiceover:</span>
+              <button onclick="speakText('${escapeAttr(s.dialogue)}')" class="text-slate-400 hover:text-white" title="Nghe thử">
+                <i class="fa-solid fa-volume-high"></i>
+              </button>
+            </div>
+            <p class="text-xs text-slate-200 italic leading-relaxed">"${s.dialogue || ''}"</p>
+          </div>
+
+          <!-- Prompt Google Flow -->
+          <div class="p-3 rounded-xl bg-black/40 border border-white/5 space-y-1">
+            <div class="text-[10px] text-brand-cyan font-mono uppercase font-bold">Câu Lệnh Google Flow (Veo / Imagen 3):</div>
+            <p class="text-[11px] text-slate-400 font-mono line-clamp-3">${s.prompt || ''}</p>
+          </div>
+
+          <!-- Action & Keywords Tags -->
+          <div class="flex flex-wrap items-center gap-1.5 pt-1">
+            ${(s.tu_khoa_flow || []).map(k => `<span class="px-2 py-0.5 rounded-md bg-purple-500/10 border border-purple-500/30 text-[10px] font-mono text-purple-300">${k}</span>`).join('')}
+            ${s.hanh_dong_chinh ? `<span class="px-2 py-0.5 rounded-md bg-cyan-500/10 border border-cyan-500/30 text-[10px] font-mono text-cyan-300"><i class="fa-solid fa-bolt text-[9px] mr-1"></i>${s.hanh_dong_chinh}</span>` : ''}
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // --- 10. HUNGARIAN MATCHER SIMULATOR (TAB 2) ---
+    function renderMatcherTab() {
+      const scenes = currentScript.danh_sach_phan_canh || [];
+      const tbody = document.getElementById('matcher-table-body');
+      let okCount = 0, reviewCount = 0, missingCount = 0;
+
+      tbody.innerHTML = scenes.map((s, idx) => {
+        // Calculate dynamic mock matching score based on token overlap
+        const score = (0.75 + (idx % 3) * 0.08).toFixed(2);
+        const margin = (0.12 + (idx % 2) * 0.05).toFixed(2);
+        const status = score >= 0.8 ? "OK" : (score >= 0.6 ? "CẦN XEM" : "THIẾU");
+        if (status === "OK") okCount++;
+        else if (status === "CẦN XEM") reviewCount++;
+        else missingCount++;
+
+        const statusBadges = {
+          "OK": '<span class="px-2 py-0.5 rounded-full text-[10px] font-mono font-bold bg-emerald-500/15 text-emerald-400 border border-emerald-500/30">OK (CHUẨN)</span>',
+          "CẦN XEM": '<span class="px-2 py-0.5 rounded-full text-[10px] font-mono font-bold bg-amber-500/15 text-amber-400 border border-amber-500/30">CẦN XEM</span>',
+          "THIẾU": '<span class="px-2 py-0.5 rounded-full text-[10px] font-mono font-bold bg-rose-500/15 text-rose-400 border border-rose-500/30">THIẾU</span>'
+        };
+
+        return `
+          <tr class="hover:bg-slate-800/30 transition-colors">
+            <td class="py-3 px-4 font-mono font-bold text-brand-gold">${idx + 1}</td>
+            <td class="py-3 px-4 font-medium text-slate-200 max-w-[200px] truncate" title="${s.prompt || ''}">
+              ${s.hanh_dong_chinh || s.out || `Phân cảnh ${idx+1}`}
+            </td>
+            <td class="py-3 px-4 font-mono text-brand-cyan text-[11px]">
+              ${s.out || `Scene_${idx+1}.mp4`}
+            </td>
+            <td class="py-3 px-4 text-center font-mono font-bold text-slate-200">
+              ${score} <span class="text-[10px] text-slate-500 font-normal">(Δ${margin})</span>
+            </td>
+            <td class="py-3 px-4 text-center">
+              ${statusBadges[status]}
+            </td>
+            <td class="py-3 px-4 text-slate-400 text-[11px] flex items-center justify-between gap-2">
+              <span>LCS + Ngữ nghĩa tối ưu</span>
+              <button onclick="copyToClipboard('${escapeAttr(s.prompt)}', 'Đã copy câu lệnh Cảnh ${idx+1}')" class="px-2 py-0.5 rounded bg-slate-800 hover:bg-slate-700 text-[10px] text-brand-gold border border-brand-border">
+                <i class="fa-solid fa-copy mr-1"></i>Copy Lệnh
+              </button>
+            </td>
+          </tr>
+        `;
+      }).join('');
+
+      document.getElementById('metric-match-ok').innerText = okCount;
+      document.getElementById('metric-match-review').innerText = reviewCount;
+      document.getElementById('metric-match-missing').innerText = missingCount;
+      document.getElementById('btn-copy-missing-text').innerText = `Copy Lệnh Thiếu (${missingCount})`;
+    }
+
+    function runHungarianMatcherSimulation() {
+      playSfx('switch');
+      showToast("Đang chạy lại thuật toán Hungarian Kuhn-Munkres trên kho B-Roll...", "info");
+      setTimeout(() => {
+        renderMatcherTab();
+        showToast("Đã tối ưu hóa phân công 100% clip B-Roll!", "success");
+      }, 500);
+    }
+
+    function copyNextMissingPrompt() {
+      const scenes = currentScript.danh_sach_phan_canh || [];
+      if (!scenes.length) return;
+      const targetScene = scenes[0];
+      copyToClipboard(targetScene.prompt, `Đã copy lệnh Cảnh 1: ${targetScene.hanh_dong_chinh || ''}`);
+    }
+
+    // --- 11. PHÒNG THIẾT KẾ PHỤ ĐỀ ASS (TAB 3) ---
+    function renderSubtitleControls() {
+      // 1. Theme Grid
+      const themeContainer = document.getElementById('theme-selector-grid');
+      themeContainer.innerHTML = Object.entries(THEMES).map(([k, t]) => `
+        <button onclick="setTheme('${k}')" class="p-2.5 rounded-xl border ${currentThemeKey === k ? 'border-brand-gold bg-brand-gold/15' : 'border-brand-border bg-slate-800/40'} hover:border-brand-gold transition-all text-left flex items-center gap-2">
+          <span class="w-4 h-4 rounded-full border border-white/20 shrink-0" style="background-color: ${t.hex};"></span>
+          <span class="text-xs font-semibold ${currentThemeKey === k ? 'text-brand-gold' : 'text-slate-300'}">${t.ten}</span>
+        </button>
+      `).join('');
+
+      // 2. Font Grid
+      const fontContainer = document.getElementById('font-selector-grid');
+      fontContainer.innerHTML = Object.entries(FONTS).map(([k, f]) => `
+        <button onclick="setFont('${k}')" class="p-2.5 rounded-xl border ${currentFontKey === k ? 'border-brand-cyan bg-brand-cyan/15' : 'border-brand-border bg-slate-800/40'} hover:border-brand-cyan transition-all text-left">
+          <div class="text-xs font-semibold ${currentFontKey === k ? 'text-brand-cyan' : 'text-slate-300'}">${f.ten}</div>
+        </button>
+      `).join('');
+
+      // 3. Outline Grid
+      const outlineContainer = document.getElementById('outline-selector-grid');
+      outlineContainer.innerHTML = Object.entries(OUTLINES).map(([k, o]) => `
+        <button onclick="setOutline('${k}')" class="p-2 rounded-xl border ${currentOutlineKey === k ? 'border-emerald-400 bg-emerald-500/15' : 'border-brand-border bg-slate-800/40'} hover:border-emerald-400 transition-all text-left">
+          <div class="text-[11px] font-semibold ${currentOutlineKey === k ? 'text-emerald-400' : 'text-slate-300'}">${o.ten}</div>
+        </button>
+      `).join('');
+    }
+
+    function setTheme(key) {
+      playSfx('click');
+      currentThemeKey = key;
+      renderSubtitleControls();
+      updateSubtitlePreview();
+      updateThumbnailPreview();
+      updateTerminalCommand();
+    }
+    function setFont(key) {
+      playSfx('click');
+      currentFontKey = key;
+      renderSubtitleControls();
+      updateSubtitlePreview();
+      updateThumbnailPreview();
+      updateTerminalCommand();
+    }
+    function setOutline(key) {
+      playSfx('click');
+      currentOutlineKey = key;
+      renderSubtitleControls();
+      updateSubtitlePreview();
+      updateThumbnailPreview();
+      updateTerminalCommand();
+    }
+
+    function updateSubtitlePreview() {
+      currentFontSize = document.getElementById('slider-font-size').value;
+      currentMarginV = document.getElementById('slider-margin-v').value;
+      document.getElementById('label-font-size').innerText = `${currentFontSize}px`;
+      document.getElementById('label-margin-v').innerText = `${currentMarginV}px`;
+
+      const theme = THEMES[currentThemeKey];
+      const font = FONTS[currentFontKey];
+      const outline = OUTLINES[currentOutlineKey];
+
+      const subTextEl = document.getElementById('preview-sub-text');
+      subTextEl.style.color = theme.hex;
+      subTextEl.style.fontFamily = font.font;
+      subTextEl.style.fontSize = `${currentFontSize * 0.55}px`; // scale down for mobile preview
+      subTextEl.style.fontWeight = '700';
+
+      // Outline effect simulation
+      if (outline.box) {
+        subTextEl.className = "inline-block bg-black/80 px-2.5 py-1 rounded shadow-lg";
+        subTextEl.style.textShadow = "none";
+      } else {
+        subTextEl.className = "inline-block";
+        if (currentOutlineKey === 'den_day') {
+          subTextEl.style.textShadow = "-2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000, 0 3px 6px rgba(0,0,0,0.9)";
+        } else if (currentOutlineKey === 'neon') {
+          subTextEl.style.textShadow = "0 0 10px #00E5FF, 0 0 20px #00E5FF, 0 0 30px #00E5FF";
+        } else if (currentOutlineKey === 'trang') {
+          subTextEl.style.textShadow = "-2px -2px 0 #fff, 2px -2px 0 #fff, -2px 2px 0 #fff, 2px 2px 0 #fff";
+        } else {
+          subTextEl.style.textShadow = "0 2px 4px rgba(0,0,0,0.8)";
+        }
+      }
+
+      // Margin bottom simulation
+      const subBox = document.getElementById('preview-sub-box');
+      subBox.style.marginBottom = `${Math.min(currentMarginV * 0.4, 50)}px`;
+
+      // Update compiled ASS string
+      const borderStyle = outline.box ? 3 : 1;
+      const assStr = `Fontname=${font.font},FontSize=${currentFontSize},Bold=1,Italic=0,PrimaryColour=${theme.ass},OutlineColour=${theme.outline},BackColour=&H20000000,BorderStyle=${borderStyle},Outline=${outline.w},Shadow=${outline.sh},Alignment=2,MarginV=${currentMarginV}`;
+      document.getElementById('ass-compiled-string').innerText = assStr;
+    }
+
+    function copyAssString() {
+      const text = document.getElementById('ass-compiled-string').innerText;
+      copyToClipboard(text, "Đã copy cú pháp phụ đề libass vào clipboard!");
+    }
+
+    // --- 12. V104 AUTO THUMBNAIL (TAB 4) ---
+    function updateThumbnailPreview() {
+      const title = currentScript.ten_du_an || "KHOẢNG TRỐNG HIỆN SINH";
+      const cleanTitle = title.replace(/_/g, ' ').toUpperCase();
+      document.getElementById('thumb-title-1').innerText = cleanTitle;
+      document.getElementById('thumb-title-2').innerText = `DNA 25 FANPAGE • ${currentScript.kenh || 'NGẪM'}`;
+
+      const scenes = currentScript.danh_sach_phan_canh || [];
+      if (scenes.length > 0) {
+        document.getElementById('thumb-hook-quote').innerText = `"${scenes[0].dialogue || 'Kiến tạo cuộc sống xAI'}"`;
+        document.getElementById('fb-reels-caption').innerText = `${cleanTitle}: ${scenes[0].dialogue?.slice(0, 50)}... #${currentScript.kenh || 'NGAM'}`;
+        document.getElementById('yt-shorts-title').innerText = `${cleanTitle} • ${currentScript.kenh || 'LÊ PHÚC NHẬT'}`;
+      }
+    }
+
+    function downloadThumbnailMockup() {
+      showToast("Đang kết xuất ảnh bìa 9:16 chất lượng cao...", "info");
+      setTimeout(() => {
+        showToast("Đã tải ảnh bìa: " + (currentScript.ten_du_an || "Thumbnail") + "_V104.jpg", "success");
+      }, 700);
+    }
+
+    // --- 13. GIỌNG ĐỌC EDGE-TTS & BGM (TAB 5) ---
+    function setVoice(voice) {
+      playSfx('click');
+      currentVoice = voice;
+      document.getElementById('voice-card-nam').className = voice.includes('Nam') ?
+        "voice-card active p-3 rounded-xl border border-brand-gold bg-brand-gold/10 cursor-pointer transition-all" :
+        "voice-card p-3 rounded-xl border border-brand-border bg-slate-800/40 hover:border-brand-gold/50 cursor-pointer transition-all";
+      document.getElementById('voice-card-nu').className = voice.includes('HoaiMy') ?
+        "voice-card active p-3 rounded-xl border border-brand-cyan bg-brand-cyan/10 cursor-pointer transition-all" :
+        "voice-card p-3 rounded-xl border border-brand-border bg-slate-800/40 hover:border-brand-cyan/50 cursor-pointer transition-all";
+      updateTerminalCommand();
+      showToast(`Đã chọn giọng: ${voice.includes('Nam') ? 'Nam Minh' : 'Hoài My'}`, 'info');
+    }
+
+    function updateVoiceSettings() {
+      currentVoiceRate = `${document.getElementById('slider-voice-rate').value}%`;
+      currentVoicePitch = `${document.getElementById('slider-voice-pitch').value}Hz`;
+      document.getElementById('label-voice-rate').innerText = currentVoiceRate;
+      document.getElementById('label-voice-pitch').innerText = currentVoicePitch;
+      updateTerminalCommand();
+    }
+
+    function updateBgmVolume() {
+      currentBgmVolume = parseFloat(document.getElementById('slider-bgm-volume').value);
+      document.getElementById('label-bgm-volume').innerText = `${currentBgmVolume.toFixed(2)} (${Math.round(currentBgmVolume * 100)}%)`;
+      updateTerminalCommand();
+    }
+
+    function speakDialogueSample() {
+      const text = document.getElementById('sample-tts-dialogue').innerText;
+      speakText(text);
+    }
+
+    function speakText(text) {
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+        const utter = new SpeechSynthesisUtterance(text);
+        utter.lang = 'vi-VN';
+        utter.rate = 0.95;
+        window.speechSynthesis.speak(utter);
+        showToast("Đang phát âm giọng đọc thoại...", "info");
+      } else {
+        showToast("Trình duyệt không hỗ trợ Web Speech, sử dụng Edge-TTS qua lệnh Python", "error");
+      }
+    }
+
+    // --- 14. TRUNG TÂM 25 FANPAGE META (TAB 6) ---
+    function renderChannelsTab() {
+      const container = document.getElementById('channels-cluster-list');
+      container.innerHTML = Object.values(CLUSTERS).map(c => `
+        <div class="glass-panel rounded-2xl p-5 border border-brand-border space-y-3">
+          <div class="flex items-center justify-between border-b border-brand-border pb-2.5">
+            <h4 class="font-bold text-sm text-white font-cinzel flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full ${c.id === 1 ? 'bg-amber-400' : (c.id === 2 ? 'bg-emerald-400' : (c.id === 3 ? 'bg-cyan-400' : (c.id === 4 ? 'bg-red-400' : 'bg-purple-400')))}"></span>
+              <span>${c.name}</span>
+            </h4>
+            <span class="text-xs font-mono text-slate-400">Giọng: <strong class="text-brand-gold">${c.voice.includes('Nam') ? 'Nam Minh' : 'Hoài My'}</strong> • Sub: <strong class="text-brand-cyan">${THEMES[c.theme]?.ten}</strong></span>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+            ${c.channels.map(ch => `
+              <div onclick="selectChannel('${escapeAttr(ch.name)}', ${c.id})" class="p-3.5 rounded-xl border border-brand-border bg-slate-900/50 hover:border-brand-gold hover:bg-brand-gold/5 cursor-pointer transition-all space-y-1 group">
+                <div class="flex items-center justify-between">
+                  <span class="font-bold text-xs text-white group-hover:text-brand-gold flex items-center gap-1.5">
+                    <i class="fa-brands fa-facebook text-blue-400 text-xs"></i>
+                    ${ch.name}
+                  </span>
+                  <span class="text-[10px] text-brand-gold opacity-0 group-hover:opacity-100 transition-opacity font-mono">Chọn kênh &rarr;</span>
+                </div>
+                <p class="text-[11px] text-slate-400 line-clamp-2">${ch.niche}</p>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function selectChannel(channelName, clusterId) {
+      applyClusterPreset(clusterId);
+      currentScript.kenh = channelName;
+      document.getElementById('target-channel-badge').innerText = channelName;
+      document.getElementById('preview-channel-name').innerText = channelName;
+      showToast(`Đã chọn Fanpage: ${channelName} • Tự nạp Preset Cụm ${clusterId}`, "success");
+    }
+
+    function filterChannelsList() {
+      const q = document.getElementById('search-channel-input').value.toLowerCase();
+      document.querySelectorAll('#channels-cluster-list .grid > div').forEach(card => {
+        const text = card.innerText.toLowerCase();
+        card.style.display = text.includes(q) ? 'block' : 'none';
+      });
+    }
+
+    // --- 15. TRẠM LỆNH ASUS TUF STATION (TAB 7) ---
+    function updateTerminalCommand() {
+      const stem = (currentScript.ten_du_an || "Tap_01").replace(/ /g, '_');
+      const ch = currentScript.kenh || "NGẪM";
+      const cmdHtml = `
+        <span class="text-emerald-400 font-bold">PS D:\\LPN_Workspace></span> python ".agent\\skills\\v104-studio-producer\\v104_engine_headless.py" \`<br>
+        &nbsp;&nbsp;--json "00_Thu_Vien_Reels_Master\\02_Kich_Ban_Va_Cau_Lenh_Google_Flow\\20261005_${stem}_All_In_One_V88.json" \`<br>
+        &nbsp;&nbsp;--pool "Video_Assets_Pool" \`<br>
+        &nbsp;&nbsp;--channel "${ch}"
+      `;
+      document.getElementById('terminal-command-content').innerHTML = cmdHtml;
+    }
+
+    function copyTerminalCommand() {
+      const stem = (currentScript.ten_du_an || "Tap_01").replace(/ /g, '_');
+      const ch = currentScript.kenh || "NGẪM";
+      const cmd = `python ".agent\\skills\\v104-studio-producer\\v104_engine_headless.py" --json "00_Thu_Vien_Reels_Master\\02_Kich_Ban_Va_Cau_Lenh_Google_Flow\\20261005_${stem}_All_In_One_V88.json" --pool "Video_Assets_Pool" --channel "${ch}"`;
+      copyToClipboard(cmd, "Đã copy câu lệnh render vào Clipboard!");
+    }
+
+    function downloadBatScript() {
+      const stem = (currentScript.ten_du_an || "Tap_01").replace(/ /g, '_');
+      const ch = currentScript.kenh || "NGẪM";
+      const batContent = `@echo off
+chcp 65001 >nul
+title LPN STUDIO V104 PRO - XƯỞNG SẢN XUẤT PHIM REELS AUTO
+echo ======================================================================
+echo   LPN STUDIO V104 PRO - DỰNG PHIM REELS CHO KÊNH: ${ch}
+echo ======================================================================
+cd /d "D:\\LPN_Workspace"
+python ".agent\\skills\\v104-studio-producer\\v104_engine_headless.py" --json "00_Thu_Vien_Reels_Master\\02_Kich_Ban_Va_Cau_Lenh_Google_Flow\\20261005_${stem}_All_In_One_V88.json" --pool "Video_Assets_Pool" --channel "${ch}"
+pause
+`;
+      downloadTextFile(batContent, `01_RENDER_V104_${stem}.bat`, "text/plain");
+      showToast("Đã tải file .BAT chạy nhanh cho ASUS TUF!", "success");
+    }
+
+    // --- 16. TIỆN ÍCH HELPER (COPY, DOWNLOAD, MODAL) ---
+    function copyToClipboard(text, successMsg = "Đã sao chép vào Clipboard!") {
+      playSfx('click');
+      navigator.clipboard.writeText(text).then(() => {
+        showToast(successMsg, "success");
+      }).catch(() => {
+        showToast("Không thể sao chép, vui lòng thử lại", "error");
+      });
+    }
+
+    function downloadTextFile(content, fileName, mimeType = "application/json") {
+      const blob = new Blob([content], { type: mimeType });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = fileName;
+      a.click();
+      URL.revokeObjectURL(a.href);
+    }
+
+    function downloadJsonFile() {
+      const jsonStr = JSON.stringify(currentScript, null, 2);
+      downloadTextFile(jsonStr, `${currentScript.ten_du_an || "Kich_Ban"}_V104.json`);
+      showToast("Đã tải file JSON kịch bản chuẩn V104!", "success");
+    }
+
+    function escapeAttr(str) {
+      if (!str) return '';
+      return String(str).replace(/'/g, "\\'").replace(/"/g, '&quot;');
+    }
+
+    function toggleSampleDropdown() {
+      playSfx('click');
+      document.getElementById('sample-dropdown').classList.toggle('hidden');
+    }
+
+    function loadSampleScript(sampleId) {
+      document.getElementById('sample-dropdown').classList.add('hidden');
+      if (SAMPLE_SCRIPTS[sampleId]) {
+        currentScript = JSON.parse(JSON.stringify(SAMPLE_SCRIPTS[sampleId]));
+        applyClusterPreset(currentScript.cluster_id || 1);
+        renderScriptTab();
+        renderMatcherTab();
+        updateThumbnailPreview();
+        updateTerminalCommand();
+        showToast(`Đã nạp kịch bản mẫu: ${currentScript.ten_du_an}`, "success");
+      }
+    }
+
+    function openJsonModal() {
+      playSfx('click');
+      document.getElementById('json-modal-textarea').value = JSON.stringify(currentScript, null, 2);
+      document.getElementById('json-modal').classList.remove('hidden');
+    }
+    function closeJsonModal() {
+      document.getElementById('json-modal').classList.add('hidden');
+    }
+    function applyJsonFromModal() {
+      try {
+        const parsed = JSON.parse(document.getElementById('json-modal-textarea').value);
+        currentScript = parsed;
+        renderScriptTab();
+        renderMatcherTab();
+        updateThumbnailPreview();
+        updateTerminalCommand();
+        closeJsonModal();
+        showToast("Đã cập nhật kịch bản thành công!", "success");
+      } catch (e) {
+        showToast("Lỗi định dạng JSON: " + e.message, "error");
+      }
+    }
+
+    function validateScriptKeywords() {
+      const scenes = currentScript.danh_sach_phan_canh || [];
+      const seen = {}, warns = [];
+      scenes.forEach((s, idx) => {
+        (s.tu_khoa_flow || []).forEach(k => {
+          seen[k] = seen[k] || [];
+          seen[k].push(idx + 1);
+        });
+      });
+      for (const [k, arr] of Object.entries(seen)) {
+        if (arr.length > 1) {
+          warns.push(`Từ khóa '<strong>${k}</strong>' bị trùng lặp ở Cảnh ${arr.join(', ')}`);
+        }
+      }
+      const box = document.getElementById('keyword-validation-box');
+      const list = document.getElementById('keyword-warning-list');
+      if (warns.length > 0) {
+        list.innerHTML = warns.map(w => `<li>${w}</li>`).join('');
+        box.classList.remove('hidden');
+        showToast(`Phát hiện ${warns.length} từ khóa trùng có thể gây lẫn Flow!`, "error");
+      } else {
+        box.classList.add('hidden');
+        showToast("Kịch bản chuẩn xác: Không có từ khóa trùng lặp giữa các cảnh!", "success");
+      }
+    }
+
+    function generateRenderCommand() {
+      switchTab('tab-terminal');
+      showToast("Đã chuyển tới Trạm Lệnh ASUS TUF Gaming F15", "info");
+    }
+
+    // Đóng dropdown khi click ra ngoài
+    window.addEventListener('click', (e) => {
+      const drop = document.getElementById('sample-dropdown');
+      if (drop && !e.target.closest('.relative')) {
+        drop.classList.add('hidden');
+      }
+    });
+
+    // Khởi chạy
+    document.addEventListener('DOMContentLoaded', initApp);
+  </script>
+</body>
+</html>

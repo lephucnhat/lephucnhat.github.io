@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Liên Hoa Chay Hải Dương | Không Gian Thanh Tịnh &amp; Ẩm Thực Thuần Chay</title>
+  <meta name="description" content="Nhà hàng Chay Liên Hoa tại Lô 94.7 Đường Trường Chinh, P. Tứ Minh, TP. Hải Dương. Buffet chay 35+ món hàng ngày, Lẩu nấm dưỡng sinh, Tàu hũ Liên Hoa và Mâm cỗ chay trọn gói. Hotline: 0933.286.133 - 090.418.4986.">
+  <meta name="keywords" content="nhà hàng chay liên hoa, liên hoa chay hải dương, buffet chay hải dương, mâm cỗ chay hải dương, 海阳素食餐厅, 海阳莲花素食, 海阳素食自助餐, 越南海阳素食">
+  <meta property="og:type" content="restaurant.restaurant">
+  <meta property="og:title" content="Liên Hoa Chay Hải Dương | Tâm An Vạn Sự An">
+  <meta property="og:description" content="Thưởng thức đại tiệc Buffet chay thanh đạm mỗi ngày, Tàu hũ Liên Hoa, Lẩu nấm ninh 8 tiếng và Mâm cỗ chay trang nghiêm tại TP. Hải Dương.">
+  <meta property="og:image" content="./assets/images/space/space-01.jpg">
+  <meta property="og:locale" content="vi_VN">
+  <link rel="icon" type="image/jpeg" href="./assets/images/logo.jpg">
+
+  <!-- Google Fonts: Be Vietnam Pro & Montserrat (100% Native Vietnamese Support) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600;1,700&family=Montserrat:ital,wght@0,500;0,600;0,700;0,800;0,900;1,600;1,700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./css/style.css?v=20261120c">
+
+  <!-- Schema.org Local F&B SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Nhà Hàng Chay Liên Hoa",
+    "image": "./assets/images/space/space-01.jpg",
+    "servesCuisine": "Vietnamese Vegetarian & Vegan",
+    "telephone": "+84933286133",
+    "email": "lienhoachayhd@gmail.com",
+    "priceRange": "35.000đ–1.000.000đ",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Lô 94.7 Đường Trường Chinh (Đối diện đường Hoàng Quốc Việt), Phường Tứ Minh",
+      "addressLocality": "Thành phố Hải Dương",
+      "addressCountry": "VN"
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+        "opens": "11:00",
+        "closes": "13:30"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+        "opens": "18:00",
+        "closes": "20:30"
+      }
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "reviewCount": "350"
+    }
+  }
+  </script>
+</head>
+<body>
+  <canvas id="zenParticleCanvas"></canvas>
+
+  <!-- Background Ambient Glow -->
+  <div class="ambient-glow glow-forest"></div>
+  <div class="ambient-glow glow-lotus"></div>
+
+  <!-- Top Zen Mindfulness Bar -->
+  <aside class="top-zen-bar">
+    <div class="zen-bar-container">
+      <div class="zen-live-group">
+        <span class="zen-lotus-icon">🪷</span>
+        <span class="zen-status-text" id="liveOpenStatus">Giờ đón khách: 11:00 – 13:30 &amp; 18:00 – 20:30</span>
+        <span class="zen-dot">•</span>
+        <span class="zen-address-sub" id="topAddress">Lô 94.7 Đường Trường Chinh, Phường Tứ Minh, TP. Hải Dương</span>
+      </div>
+      <div class="zen-hotline-group">
+        <a href="tel:0933286133" id="topPhoneLink" class="top-zen-phone">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+          <span>Hotline: 0933.286.133 (Ms. Thạo) - 090.418.4986</span>
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Sticky Main Header -->
+  <header class="main-header" id="mainHeader">
+    <div class="header-container">
+      <a href="#heroSection" class="brand-logo">
+        <div class="lotus-emblem">
+          <img src="./assets/images/logo.jpg" alt="Logo Liên Hoa Chay" id="headerLogoImg">
+        </div>
+        <div class="brand-text">
+          <span class="brand-name">LIÊN HOA CHAY</span>
+          <span class="brand-sub">Hải Dương • Thanh Lương Tịnh Cảnh</span>
+        </div>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#heroSection" class="nav-item active">Trang Chủ</a>
+        <a href="#spotlightSection" class="nav-item">Món Ký Danh</a>
+        <a href="#menuSection" class="nav-item">Thực Đơn</a>
+        <a href="#cateringSection" class="nav-item">Mâm Cỗ</a>
+        <a href="#spaceSection" class="nav-item">Không Gian</a>
+        <a href="#mindfulSection" class="nav-item">Rút Thẻ An Lạc</a>
+        <a href="#locationSection" class="nav-item">Liên Hệ</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="btn-ai-key" id="btnOpenAiKeyModal" style="display:none;" title="Trạm quản trị Khóa AI (DeepSeek + Gemini)">
+          <span>🔑</span>
+          <span class="bell-text" id="headerAiStatusText">Khóa AI</span>
+        </button>
+
+        <a href="https://www.google.com/maps/search/?api=1&query=Lô+94.7+Đường+Trường+Chinh+Tứ+Minh+Hải+Dương" target="_blank" rel="noopener noreferrer" id="headerMapsLink" class="btn-maps-nav" title="Mở bản đồ Google Maps">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          <span class="btn-nav-text">Chỉ Đường</span>
+        </a>
+
+        <button class="btn-reserve-nav" id="btnOpenReserveModal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+          <span class="btn-nav-text">Đặt Bàn</span>
+        </button>
+
+        <button class="btn-cart-nav" id="btnOpenCartDrawer" title="Xem mâm món ăn đã chọn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="9" cy="21" r="1"></circle>
+            <circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+          </svg>
+          <span class="cart-badge-count" id="cartCountBadge">0</span>
+        </button>
+
+        <div class="lang-switcher" role="group" aria-label="Ngôn ngữ">
+          <button type="button" class="lang-btn active" data-lang="vi">VI</button>
+          <button type="button" class="lang-btn" data-lang="zh-CN">简</button>
+          <button type="button" class="lang-btn" data-lang="zh-TW">繁</button>
+        </div>
+
+        <div class="zen-controls-wrap" id="zenControlsWrap">
+          <button type="button" class="btn-zen-controls" id="btnZenControls" aria-expanded="false" aria-controls="zenControlsPopover" title="Tùy chỉnh âm thanh, phong cách &amp; cỡ chữ">
+            <span>⚙️</span>
+            <span class="controls-text">Tùy chỉnh</span>
+          </button>
+          <div class="zen-controls-popover" id="zenControlsPopover" role="dialog" aria-label="Bảng tùy chỉnh trải nghiệm">
+            <div class="zen-pop-title">Trải Nghiệm Thiền &amp; Hiển Thị</div>
+            <div class="zen-pop-row">
+              <button class="btn-zen-bell" id="btnZenBell" title="Thỉnh chuông an lạc (Âm thanh thư giãn thiền định)">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                  <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                </svg>
+                <span class="bell-text">Thỉnh Chuông</span>
+              </button>
+              <button class="btn-zen-bell" id="btnHealing432" title="Nhạc thiền 432Hz thư giãn">
+                <span>🎵</span>
+                <span class="bell-text">432Hz</span>
+              </button>
+            </div>
+            <div class="zen-pop-row">
+              <select id="artStyleSelect" class="style-select-pill" aria-label="Phong cách nghệ thuật">
+                <option value="default">🎨 Zen Đêm</option>
+                <option value="light">☀️ Ban Mai</option>
+                <option value="cinema">🎬 Điện Ảnh</option>
+                <option value="rose">🌸 Thủy Mặc</option>
+                <option value="sketch">🪵 Thư Pháp</option>
+              </select>
+            </div>
+            <div class="zen-pop-row">
+              <button class="btn-font-toggle" id="btnFontToggle" title="Phóng to chữ dễ đọc (A / A+)" aria-pressed="false">A+ Cỡ chữ</button>
+              <button class="btn-theme-toggle" id="btnThemeToggle" title="Chuyển chế độ Sáng / Tối">
+                <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <button class="btn-hamburger" id="btnHamburger" aria-label="Mở menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- 1. Hero Section -->
+    <section class="hero-section" id="heroSection">
+      <div class="hero-container">
+        <div class="hero-content">
+          <div class="hero-tag-pill">
+            <span class="pill-leaf">🍃 Ăn An Lành – Sống Hạnh Phúc</span>
+            <span class="pill-city">Nhà Hàng Chay Liên Hoa • TP. Hải Dương</span>
+          </div>
+
+          <h1 class="hero-title">
+            Ăn An Lành – Sống Hạnh Phúc <br>
+            <span class="gradient-zen">Nuôi Dưỡng Thân Tâm Bằng Hương Vị Tự Nhiên</span>
+          </h1>
+
+          <p class="hero-desc" id="heroDesc">
+            Chào mừng bạn đến với <strong>Nhà hàng Chay Liên Hoa</strong> tại Lô 94.7 Trường Chinh, TP. Hải Dương. Chốn dừng chân an lành giữa lòng phố thị, nơi bạn thưởng thức đại tiệc Buffet chay thanh đạm mỗi ngày, đĩa Tàu hũ Liên Hoa béo mịn, nồi lẩu nấm nghi ngút khói và gieo mầm bình yên cho tâm hồn.
+          </p>
+
+          <div class="hero-cta-row">
+            <a href="#menuSection" class="btn-zen-primary">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+              <span>Khám Phá Thực Đơn</span>
+            </a>
+
+            <button class="btn-zen-secondary" id="btnHeroReserve">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+              <span>Đặt Bàn / Tiệc Cỗ</span>
+            </button>
+          </div>
+
+          <div class="hero-metrics-grid">
+            <div class="metric-item">
+              <span class="metric-number">4.8 ★</span>
+              <span class="metric-label">350+ Đánh Giá Google</span>
+            </div>
+            <div class="metric-item">
+              <span class="metric-number">100%</span>
+              <span class="metric-label">Rau Nấm Tự Nhiên</span>
+            </div>
+            <div class="metric-item">
+              <span class="metric-number">35+ Món</span>
+              <span class="metric-label">Đại Tiệc Buffet Hàng Ngày</span>
+            </div>
+            <div class="metric-item">
+              <span class="metric-number">0 Hóa Chất</span>
+              <span class="metric-label">Không Chất Điều Vị</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-image-wrapper">
+          <div class="hero-image-card">
+            <img src="./assets/images/space/space-01.jpg" alt="Không gian Nhà hàng Chay Liên Hoa Hải Dương" id="heroMainImg" class="hero-main-img">
+            <canvas class="fx-ripple-canvas" id="heroRippleCanvas"></canvas>
+            <div class="magnifier-lens" id="heroMagLens"></div>
+            <button type="button" class="hero-lens-btn" id="btnHeroLens" title="Bật/tắt kính lúp soi chi tiết 2.2x">🔍 Soi 2.2x</button>
+            <div class="hero-floating-quote">
+              <p class="quote-text">&ldquo;Mỗi bữa ăn thuần chay là một hạt giống thiện lành gieo vào tâm hồn.&rdquo;</p>
+              <span class="quote-sign">— Liên Hoa Chay Hải Dương</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Four Pillars Section -->
+    <section class="pillars-section" id="storySection">
+      <div class="section-container">
+        <div class="pillars-grid">
+          <div class="pillar-card">
+            <div class="pillar-icon">🌱</div>
+            <h3 class="pillar-title">Thanh Thuần Từ Đất Mẹ</h3>
+            <p class="pillar-desc">100% nguyên liệu rau củ quả tươi sạch thu hoạch trong ngày, kết hợp hơn 8 loại nấm quý tự nhiên, không chất bảo quản hay phụ gia độc hại.</p>
+          </div>
+
+          <div class="pillar-card">
+            <div class="pillar-icon">🍲</div>
+            <h3 class="pillar-title">Nước Dùng Ninh 8 Tiếng</h3>
+            <p class="pillar-desc">Nước lẩu và canh hầm lấy vị ngọt thanh khiết hoàn toàn từ củ sen, ngô ngọt, mía lau, củ cải trắng và nấm hương, tạo dư vị êm dịu.</p>
+          </div>
+
+          <div class="pillar-card">
+            <div class="pillar-icon">🎋</div>
+            <h3 class="pillar-title">Không Gian Thiền Ấm Cúng</h3>
+            <p class="pillar-desc">Kiến trúc gỗ ấm áp rộng rãi trên đại lộ Trường Chinh, ánh đèn lồng dịu mắt và tiếng nhạc thiền đưa tâm hồn về miền an lạc.</p>
+          </div>
+
+          <div class="pillar-card">
+            <div class="pillar-icon">🪷</div>
+            <h3 class="pillar-title">Trọn Vẹn Tình Thân Sum Vầy</h3>
+            <p class="pillar-desc">Phục vụ Buffet chay tất cả các ngày trong tuần, cơm gia đình đầm ấm, mâm cỗ cúng gia tiên trang nghiêm ngày Rằm và tiệc sinh nhật chay.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Signature Spotlight Dishes Section -->
+    <section class="spotlight-section" id="spotlightSection">
+      <div class="section-container">
+        <div class="section-header-center">
+          <span class="section-subtitle">TINH HOA ẨM THỰC LIÊN HOA CHAY</span>
+          <h2 class="section-title">Những Món Ăn Làm Xao Xuyến Thực Khách</h2>
+          <p class="section-desc">Mỗi món ăn là một tác phẩm nghệ thuật đượm hương vị đất trời và tâm huyết của người đầu bếp</p>
+        </div>
+
+        <div class="spotlight-grid" id="spotlightGrid"></div>
+      </div>
+    </section>
+
+    <!-- 4. Interactive Menu Section -->
+    <section class="menu-section" id="menuSection">
+      <div class="section-container">
+        <div class="menu-header-flex">
+          <div>
+            <span class="section-subtitle">THỰC ĐƠN THUẦN CHAY ĐA DẠNG</span>
+            <h2 class="section-title">Chọn Món Thanh Lành Cho Bữa Ăn Của Bạn</h2>
+          </div>
+
+          <div class="menu-search-wrapper">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="text" id="menuSearchInput" placeholder="Tìm món (tàu hũ, lẩu nấm, cơm sen, trà mận...)...">
+          </div>
+          <button type="button" class="btn-copy-loc" id="btnPrintMenu" title="In thực đơn giấy">🖨️ In Thực Đơn</button>
+        </div>
+
+        <div class="category-pills-bar">
+          <div class="category-pills-scroll" id="categoryPills"></div>
+        </div>
+
+        <div class="menu-grid" id="menuGrid"></div>
+
+        <div class="menu-empty-state" id="menuEmptyState" style="display:none;">
+          <div class="empty-lotus">🪷</div>
+          <h3>Không tìm thấy món ăn phù hợp</h3>
+          <p>Hãy thử tìm bằng từ khóa khác hoặc bấm nút bên dưới để xem lại toàn bộ thực đơn.</p>
+          <button class="btn-reset-menu" id="btnResetMenu">Xem Toàn Bộ Thực Đơn</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Catering / Mâm Cỗ Chay Section (Real Set Photos 500k - 1.000k) -->
+    <section class="catering-section" id="cateringSection">
+      <div class="section-container">
+        <div class="section-header-center">
+          <span class="section-subtitle">MÂM CỖ CHAY &amp; TIỆC GIA ĐÌNH TRỌN GÓI</span>
+          <h2 class="section-title">Set Cỗ Chay Trang Nghiêm Ngày Rằm &amp; Giỗ Chạp</h2>
+          <p class="section-desc">Hình ảnh thực tế các mâm cỗ chay tại Liên Hoa. Nhận đặt trước &amp; giao nóng tận nơi tại TP. Hải Dương.</p>
+        </div>
+
+        <div class="catering-grid" id="cateringGrid"></div>
+
+        <!-- Interactive Banquet & Buffet Budget Simulator -->
+        <div class="sim-card" id="banquetSimulator">
+          <div class="sim-grid">
+            <div class="sim-controls">
+              <span class="section-subtitle">DỰ TOÁN TIỆC &amp; BUFFET THÔNG MINH</span>
+              <h3 style="margin: 6px 0 14px; font-size: 1.35rem;">Tính Nhanh Chi Phí Theo Số Khách</h3>
+              <div style="margin-bottom: 16px;">
+                <label for="simGuestsRange" style="display:flex; justify-content:space-between; font-weight:600; margin-bottom:8px;">
+                  <span>Số lượng thực khách:</span>
+                  <span id="simGuestsLabel" style="color:var(--gold-light);">8 khách</span>
+                </label>
+                <input type="range" id="simGuestsRange" min="2" max="50" value="8" style="width:100%; accent-color:var(--gold-primary);">
+              </div>
+              <div>
+                <label for="simServiceSelect" style="display:block; font-weight:600; margin-bottom:8px;">Hình thức phục vụ:</label>
+                <select id="simServiceSelect" class="style-select-pill" style="width:100%; padding:10px 14px; font-size:0.95rem;">
+                  <option value="buffet">Buffet Chay Liên Hoa (119.000đ / người)</option>
+                  <option value="alacarte">Gọi Món Gia Đình (~135.000đ / người)</option>
+                  <option value="catering">Set Cỗ Chay Trọn Gói (500k - 1.000k / mâm 6 người)</option>
+                </select>
+              </div>
+            </div>
+            <div class="sim-result-box">
+              <div style="font-size:0.85rem; text-transform:uppercase; letter-spacing:1px; opacity:0.8;">Dự Toán Chi Phí</div>
+              <div class="sim-total-price" id="simTotalAmount">952.000đ</div>
+              <p id="simRecommendText" style="font-size:0.92rem; line-height:1.5; margin: 8px 0 16px; opacity:0.9;">Gợi ý: 8 vé Buffet Chay Trọn Gói, thoải mái thưởng thức hơn 30 món thanh đạm.</p>
+              <button type="button" class="btn-primary-glow" id="btnSimAddToTray" style="width:100%;">➕ Thêm Dự Toán Vào Mâm</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Zen Restaurant Space & Gallery Showcase Section -->
+    <section class="space-section" id="spaceSection">
+      <div class="section-container">
+        <div class="space-showcase-card">
+          <div class="space-image-side">
+            <img src="./assets/images/space/space-02.jpg" alt="Không gian Nhà hàng Chay Liên Hoa Hải Dương" class="space-hero-image">
+            <div class="space-caption-badge">
+              <span>🌿 Không gian thiền ấm áp &amp; bãi đỗ ô tô rộng tại Lô 94.7 Trường Chinh, Hải Dương</span>
+            </div>
+          </div>
+
+          <div class="space-info-side">
+            <span class="section-subtitle">CHỐN AN YÊN CHO TÂM HỒN</span>
+            <h2 class="section-title">Không Gian Tĩnh Lặng Giữa Lòng Đô Thị</h2>
+            <p class="space-text">
+              Bước chân vào <strong>Nhà hàng Chay Liên Hoa</strong>, bạn như gạt bỏ lại mọi ồn ào của phố phường. Ánh đèn lồng ấm áp, bàn ghế gỗ mộc mạc, khu Buffet chay rộng rãi và tiếng nhạc thiền dịu nhẹ mang đến nguồn năng lượng mát lành, an tịnh.
+            </p>
+
+            <div class="space-features-list">
+              <div class="s-feat-item">
+                <span class="s-feat-icon">🏮</span>
+                <div>
+                  <strong>Ánh Sáng Ấm Áp Dịu Mắt</strong>
+                  <p>Ánh sáng êm dịu cùng sắc gỗ trầm tạo cảm giác thư giãn tối đa cho cả gia đình nhiều thế hệ.</p>
+                </div>
+              </div>
+
+              <div class="s-feat-item">
+                <span class="s-feat-icon">🎋</span>
+                <div>
+                  <strong>Khu Buffet Rộng Rãi &amp; Phòng Riêng</strong>
+                  <p>Bàn ghế thoáng rộng, có khu vực riêng tư phù hợp tiếp đối tác, tiệc gia đình, hội họp.</p>
+                </div>
+              </div>
+
+              <div class="s-feat-item">
+                <span class="s-feat-icon">🎶</span>
+                <div>
+                  <strong>Âm Nhạc Thiền Thư Thái</strong>
+                  <p>Những điệu nhạc thiền không lời giúp thực khách thưởng thức bữa ăn trong chánh niệm.</p>
+                </div>
+              </div>
+
+              <div class="s-feat-item">
+                <span class="s-feat-icon">🚗</span>
+                <div>
+                  <strong>Bãi Xe Ô Tô Rộng Rãi An Toàn</strong>
+                  <p>Mặt đường Trường Chinh (đối diện Hoàng Quốc Việt) cực kỳ thuận tiện đỗ ô tô, xe máy miễn phí.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="space-cta-group">
+              <button class="btn-space-reserve" id="btnSpaceReserve">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                <span>Đặt Chỗ Ngày Rằm / Cuối Tuần</span>
+              </button>
+
+              <a href="tel:0933286133" class="btn-space-call">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                <span>Hotline: 0933.286.133</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Unified Media Hub Tabs (Video Thực Tế | Kho 240+ Ảnh) -->
+        <div class="media-hub-tabs" role="tablist" aria-label="Kho tư liệu Liên Hoa Chay">
+          <button type="button" class="media-tab-btn active" data-media-tab="videos" role="tab" aria-selected="true">🎬 17 Video Thực Tế</button>
+          <button type="button" class="media-tab-btn" data-media-tab="photos" role="tab" aria-selected="false">📸 Kho 240+ Ảnh Thực Tế</button>
+        </div>
+
+        <!-- Video Reels Showcase (17 Video thực tế từ D:\Lienhoa) -->
+        <div class="media-subsection" id="mediaTabVideos">
+          <div class="section-header-center" style="margin-top: 24px; margin-bottom: 24px;">
+            <span class="section-subtitle">THƯỚC PHIM THỰC TẾ TẠI QUÁN</span>
+            <h3 class="section-title" style="font-size:1.7rem;">17 Video Không Gian, Buffet &amp; Thiện Nguyện</h3>
+          </div>
+          <div class="video-grid" id="videoShowcaseGrid"></div>
+          <div style="text-align:center; margin-top:22px;">
+            <button type="button" class="btn-zen-secondary" id="btnLoadMoreVideos">🎬 Xem Thêm Video</button>
+          </div>
+        </div>
+
+        <!-- Full Photo Archive (240 Ảnh thực tế từ D:\Lienhoa) -->
+        <div class="media-subsection" id="mediaTabPhotos" style="display:none;">
+          <div class="section-header-center" style="margin-top: 24px; margin-bottom: 20px;">
+            <span class="section-subtitle">KHO ẢNH THỰC TẾ LIÊN HOA CHAY</span>
+            <h3 class="section-title" style="font-size:1.7rem;">Thư Viện 240+ Khoảnh Khắc &amp; Món Ngon</h3>
+          </div>
+          <div class="category-pills-scroll" id="galleryFilterTabs" style="justify-content:center; margin-bottom:20px;"></div>
+          <div class="gallery-strip" id="galleryGrid"></div>
+          <div style="text-align:center; margin-top:22px;">
+            <button type="button" class="btn-zen-secondary" id="btnLoadMoreGallery">Xem Thêm Ảnh</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Interactive Feature: Mindful Quote Drawing (Rút Thẻ Bình An) -->
+    <section class="mindful-section" id="mindfulSection">
+      <div class="section-container">
+        <div class="mindful-card">
+          <div class="mindful-header">
+            <span class="zen-flower-badge">🪷 GÓC CHÁNH NIỆM MỖI NGÀY</span>
+            <h2 class="mindful-title">Rút Một Thẻ Bình An Cho Tâm Hồn</h2>
+            <p class="mindful-sub">Chạm nhẹ vào nút bên dưới để đón nhận thông điệp an lạc và gợi ý món chay hợp tâm trạng từ Liên Hoa Chay</p>
+          </div>
+
+          <div class="mindful-card-display" id="mindfulCardDisplay">
+            <div class="mindful-quote-content">
+              <span class="quote-symbol">&ldquo;</span>
+              <p class="active-quote-text" id="activeQuoteText">Mỗi bữa ăn thuần chay là một hạt giống thiện lành gieo vào tâm hồn.</p>
+              <span class="active-quote-author" id="activeQuoteAuthor">— Thiền Ngữ Liên Hoa</span>
+              <div class="mindful-dish-suggest" id="mindfulDishSuggest"></div>
+            </div>
+          </div>
+
+          <div class="mindful-action-center">
+            <button class="btn-draw-card" id="btnDrawCard">
+              <span class="draw-icon">🪷</span>
+              <span>Rút Thẻ An Lạc Mới</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7B. AI Culinary Sommelier Section (Tích hợp Khóa Dual-AI) -->
+    <section class="ai-consultant-section" id="aiConsultantSection">
+      <div class="section-container">
+        <div class="ai-card">
+          <div class="ai-card-head">
+            <div>
+              <span class="zen-flower-badge">🤖 TRỢ LÝ ẨM THỰC AI LIÊN HOA (DUAL-AI DEEPSEEK &amp; GEMINI)</span>
+              <h2 class="mindful-title">Tư Vấn Thực Đơn &amp; Mâm Cỗ Chay Thông Minh 24/7</h2>
+              <p class="mindful-sub" style="margin-bottom:0;">Hỏi bất kỳ điều gì bằng Tiếng Việt hoặc Tiếng Trung (中文) — AI sẽ phối thực đơn theo đúng ngân sách và số người của bạn.</p>
+            </div>
+          </div>
+
+          <div class="ai-quick-prompts">
+            <button type="button" class="ai-prompt-chip" data-ai-prompt="Gợi ý thực đơn chay cho gia đình 4 người khoảng 350k - 450k tại Liên Hoa Chay">👨‍👩‍👧‍👦 Combo Gia Đình 4 Người</button>
+            <button type="button" class="ai-prompt-chip" data-ai-prompt="Tư vấn Mâm Cỗ Chay cúng Rằm và giỗ chạp cho 6 đến 10 người">🪷 Tư Vấn Mâm Cỗ Cúng Rằm</button>
+            <button type="button" class="ai-prompt-chip" data-ai-prompt="Gợi ý các món chay dưỡng sinh mềm, thanh đạm cho người lớn tuổi">🌿 Món Dưỡng Sinh Người Lớn Tuổi</button>
+            <button type="button" class="ai-prompt-chip" data-ai-prompt="请用中文推荐4人素食养生火锅套餐及价格">🇨🇳 中文推荐4人素食套餐</button>
+          </div>
+
+          <form class="ai-chat-form" id="aiChatForm">
+            <input type="text" id="aiChatInput" placeholder="Nhập câu hỏi cho AI Liên Hoa (VD: Đi 6 người ăn lẩu nấm và gọi món gì ngon?)..." required>
+            <button type="submit" class="btn-zen-primary">✨ Hỏi Trợ Lý AI</button>
+          </form>
+
+          <div class="ai-response-box" id="aiChatResponseBox">
+            <div class="ai-answer-content">
+              <div class="ai-badge-source">⚡ Dual-AI Đã Kết Nối Sẵn Sàng</div>
+              Xin chào quý thực khách! Tôi là <strong>Trợ Lý AI Nhà Hàng Chay Liên Hoa</strong>. Hãy bấm vào một gợi ý phía trên hoặc nhập nhu cầu của bạn (số người, khẩu vị, ngân sách) để tôi thiết kế thực đơn ngay nhé!
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. Reviews & Mindful Blog Section -->
+    <section class="reviews-section" id="reviewsSection">
+      <div class="section-container">
+        <div class="section-header-center">
+          <span class="section-subtitle">TÌNH CẢM TRI ÂN TỪ KHÁCH HÀNG</span>
+          <h2 class="section-title">Trải Nghiệm An Lạc Từ Thực Khách</h2>
+          <div class="rating-badge-pill">
+            <span class="stars-gold">★★★★★</span>
+            <span><strong>4.8 / 5.0</strong> trên Google Maps (Hơn 350+ lượt đánh giá hài lòng)</span>
+          </div>
+        </div>
+
+        <div class="reviews-grid" id="reviewsGrid"></div>
+
+        <!-- Góc Tỉnh Thức (Blog) -->
+        <div class="blog-block">
+          <div class="section-header-center" style="margin-top: 64px;">
+            <span class="section-subtitle">GÓC TỈNH THỨC &amp; VĂN HÓA CHAY</span>
+            <h2 class="section-title">Sống Chậm &amp; Nuôi Dưỡng Thân Tâm</h2>
+          </div>
+          <div class="blog-grid" id="blogGrid"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. Location & Google Maps Section -->
+    <section class="location-section" id="locationSection">
+      <div class="section-container">
+        <div class="location-wrapper-card">
+          <div class="loc-text-col">
+            <span class="section-subtitle">ĐỊA ĐIỂM &amp; CHỈ ĐƯỜNG</span>
+            <h2 class="loc-title">Kính Mời Quý Khách Ghé Thăm</h2>
+            <p class="loc-full-address">
+              📍 <strong>Địa chỉ:</strong> <span id="locAddressText">Lô 94.7 Đường Trường Chinh (Đối diện đường Hoàng Quốc Việt), Phường Tứ Minh, Thành phố Hải Dương</span>
+            </p>
+
+            <div class="loc-info-items">
+              <div class="loc-info-row">
+                <span class="loc-row-icon">⏰</span>
+                <div>
+                  <strong>Giờ Đón Khách:</strong>
+                  <p id="locHoursText">11:00 – 13:30 &amp; 18:00 – 20:30 hàng ngày (Mở cửa cả tuần, ngày Rằm &amp; Mùng 1)</p>
+                </div>
+              </div>
+
+              <div class="loc-info-row">
+                <span class="loc-row-icon">📞</span>
+                <div>
+                  <strong>Hotline Đặt Bàn / Đặt Cỗ:</strong>
+                  <p>
+                    <a href="tel:0933286133" class="phone-highlight">0933.286.133</a> (Ms. Thạo) –
+                    <a href="tel:0904184986" class="phone-highlight">090.418.4986</a>
+                  </p>
+                </div>
+              </div>
+
+              <div class="loc-info-row">
+                <span class="loc-row-icon">✉️</span>
+                <div>
+                  <strong>Email Liên Hệ:</strong>
+                  <p><a href="mailto:lienhoachayhd@gmail.com" class="phone-highlight">lienhoachayhd@gmail.com</a></p>
+                </div>
+              </div>
+            </div>
+
+            <div class="loc-btns-row">
+              <a href="https://www.google.com/maps/search/?api=1&query=Lô+94.7+Đường+Trường+Chinh+Tứ+Minh+Hải+Dương" target="_blank" rel="noopener noreferrer" class="btn-maps-action">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                <span>Chỉ Đường Bằng Google Maps</span>
+              </a>
+
+              <button class="btn-copy-loc" id="btnCopyAddress">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                <span>Sao Chép Địa Chỉ</span>
+              </button>
+
+              <button class="btn-copy-loc" id="btnDriverCard" title="Thẻ chỉ đường tiếng Việt cho tài xế Taxi / Grab">
+                <span>🚕 Thẻ Đưa Tài Xế / 问路卡</span>
+              </button>
+            </div>
+
+            <!-- Mạng xã hội chính thức -->
+            <div class="social-links-row">
+              <a href="https://www.facebook.com/profile.php?id=61559156548781" target="_blank" rel="noopener noreferrer" class="btn-social fb">
+                <span>📘 Fanpage Liên Hoa Chay</span>
+              </a>
+              <a href="https://www.facebook.com/thaonguyen.825687" target="_blank" rel="noopener noreferrer" class="btn-social fb-personal">
+                <span>👤 Facebook Ms. Thạo</span>
+              </a>
+              <a href="https://vt.tiktok.com/ZSgCF9HYp/" target="_blank" rel="noopener noreferrer" class="btn-social tiktok">
+                <span>🎵 TikTok Liên Hoa</span>
+              </a>
+            </div>
+
+            <!-- Mã QR chuẩn theo số Zalo 0904184986 & Hotline 0933286133 (bấm trực tiếp hoặc quét) -->
+            <div class="qr-connect-row">
+              <a href="https://zalo.me/0904184986" target="_blank" rel="noopener noreferrer" class="qr-box">
+                <img src="./assets/images/qr-zalo.png" alt="Mã QR Zalo 0904184986 Liên Hoa Chay" loading="lazy">
+                <div class="qr-meta">
+                  <strong>QR Zalo Đặt Bàn (0904.184.986)</strong>
+                  <span>Quét bằng app Zalo hoặc chạm để mở</span>
+                </div>
+              </a>
+              <a href="tel:0933286133" class="qr-box">
+                <img src="./assets/images/qr-phone.png" alt="Mã QR Gọi Hotline 0933.286.133 Liên Hoa Chay" loading="lazy">
+                <div class="qr-meta">
+                  <strong>QR Gọi Hotline (0933.286.133)</strong>
+                  <span>Quét bằng Camera hoặc chạm để gọi Ms. Thạo</span>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="loc-map-col">
+            <div class="map-frame">
+              <iframe
+                src="https://maps.google.com/maps?q=L%C3%B4%2094.7%20Tr%C6%B0%E1%BB%9Dng%20Chinh%2C%20T%E1%BB%A9%20Minh%2C%20H%E1%BA%A3i%20D%C6%B0%C6%A1ng&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                width="100%"
+                height="100%"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Bản đồ vị trí Nhà hàng Chay Liên Hoa Hải Dương">
+              </iframe>
+              <a href="https://www.google.com/maps/search/?api=1&query=Lô+94.7+Đường+Trường+Chinh+Tứ+Minh+Hải+Dương" target="_blank" rel="noopener noreferrer" class="map-floating-pin">
+                <span>📍 Mở Vị Trí Trực Tiếp Trên Google Maps</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Slide-in Cart / Mâm Món Ăn Drawer -->
+  <div class="cart-drawer-overlay" id="cartDrawerOverlay" aria-hidden="true">
+    <div class="cart-drawer-panel" role="dialog" aria-modal="true" aria-labelledby="cartDrawerTitle">
+      <div class="cart-drawer-header">
+        <div class="drawer-header-title">
+          <span class="zen-lotus-badge">🪷</span>
+          <h3 id="cartDrawerTitle">Mâm Món Ăn Đã Chọn</h3>
+        </div>
+        <button class="cart-drawer-close" id="btnCloseCartDrawer" aria-label="Đóng">&times;</button>
+      </div>
+
+      <div class="cart-drawer-body" id="cartItemsContainer"></div>
+
+      <div class="cart-drawer-footer">
+        <div class="cart-split-line">
+          <label for="cartPeopleInput">Chia bình quân cho (người):</label>
+          <input type="number" id="cartPeopleInput" min="1" max="50" value="4">
+        </div>
+        <div class="cart-total-line">
+          <span>Tổng Tạm Tính:</span>
+          <span class="cart-total-amount" id="cartTotalAmount">0đ</span>
+        </div>
+        <div class="cart-per-line">
+          <span>Bình quân / người:</span>
+          <strong id="cartPerPersonAmount">0đ</strong>
+        </div>
+        <p class="cart-zen-note">🌱 Thực đơn thuần chay tự nhiên, nêm nếm thanh sạch nuôi dưỡng thân tâm.</p>
+
+        <div class="cart-order-actions">
+          <button class="btn-zalo-checkout" id="btnCheckoutZalo">
+            <span class="zalo-tag">Zalo</span>
+            <span>Gửi Thực Đơn Qua Zalo (0904.184.986)</span>
+          </button>
+          <button class="btn-call-checkout" id="btnDrawerToReserve">
+            <span>📅 Điền Phiếu Đặt Bàn Với Mâm Này</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Table Reservation Modal -->
+  <div class="modal-overlay" id="reserveModalOverlay" aria-hidden="true">
+    <div class="reserve-modal-card" role="dialog" aria-modal="true" aria-labelledby="modalReserveTitle">
+      <div class="reserve-head">
+        <div>
+          <span class="zen-flower-tag">🪷 ĐẶT BÀN &amp; MÂM CỖ CHAY</span>
+          <h3 id="modalReserveTitle" class="reserve-title">Đặt Chỗ Trước Tại Liên Hoa Chay</h3>
+        </div>
+        <button class="reserve-close" id="btnCloseReserveModal" aria-label="Đóng">&times;</button>
+      </div>
+
+      <form class="reserve-form" id="reserveForm">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="resName">Họ và Tên (*):</label>
+            <input type="text" id="resName" placeholder="VD: Chị Mai Lan, Anh Tuấn..." required>
+          </div>
+
+          <div class="form-group">
+            <label for="resPhone">Số Điện Thoại (*):</label>
+            <input type="tel" id="resPhone" placeholder="VD: 0904 xxx xxx" required>
+          </div>
+
+          <div class="form-group">
+            <label for="resGuests">Số lượng thực khách (*):</label>
+            <input type="number" id="resGuests" min="1" max="200" value="4" required>
+          </div>
+
+          <div class="form-group">
+            <label for="resType">Loại hình đặt bàn:</label>
+            <select id="resType">
+              <option value="Buffet Chay Hàng Ngày">Buffet Chay Hàng Ngày</option>
+              <option value="Gọi Món Gia Đình">Gọi Món Gia Đình</option>
+              <option value="Mâm Cỗ Chay Cúng Rằm / Giao Tận Nơi">Mâm Cỗ Chay Cúng Rằm / Giao Tận Nơi</option>
+              <option value="Đặt Tiệc / Phòng Riêng">Đặt Tiệc / Phòng Riêng</option>
+            </select>
+          </div>
+
+          <div class="form-group full-col">
+            <label for="resTime">Thời Gian Dự Kiến Đến (*):</label>
+            <input type="datetime-local" id="resTime" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="resNote">Ghi chú khẩu vị / Nhu cầu đặc biệt:</label>
+          <textarea id="resNote" rows="2" placeholder="VD: Cần ghế trẻ em, phòng yên tĩnh, ăn nhạt, giao lúc 9h sáng..."></textarea>
+        </div>
+
+        <div id="reserveTrayPreview" class="reserve-tray-preview" style="display:none;"></div>
+
+        <div class="reserve-footer">
+          <p class="reserve-note">
+            🌿 Nhà hàng giữ bàn trong 20 phút. Nếu thay đổi lịch trình, xin gọi hotline <strong>0933.286.133</strong> (Ms. Thạo) hoặc <strong>090.418.4986</strong>.
+          </p>
+          <button type="submit" class="btn-submit-reserve">
+            💬 Sao Chép Phiếu &amp; Gửi Zalo Nhà Hàng
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Generic Detail Modal (Dish Quick View & Blog Article Reader) -->
+  <div class="modal-overlay" id="detailModalOverlay" aria-hidden="true">
+    <div class="reserve-modal-card" role="dialog" aria-modal="true">
+      <button class="reserve-close" id="btnCloseDetailModal" style="position:absolute;top:16px;right:16px;" aria-label="Đóng">&times;</button>
+      <div id="detailModalBody"></div>
+    </div>
+  </div>
+
+  <!-- AI Key Config Modal -->
+  <div class="modal-overlay" id="aiKeyModalOverlay" aria-hidden="true">
+    <div class="reserve-modal-card" role="dialog" aria-modal="true" aria-labelledby="aiKeyModalTitle">
+      <div class="reserve-head">
+        <div>
+          <span class="zen-flower-tag">🔑 TRẠM KẾT NỐI TRÍ TUỆ NHÂN TẠO</span>
+          <h3 id="aiKeyModalTitle" class="reserve-title">Cấu Hình Khóa AI Liên Hoa Chay</h3>
+        </div>
+        <button class="reserve-close" id="btnCloseAiKeyModal" aria-label="Đóng">&times;</button>
+      </div>
+      <div id="aiModalStatusBanner" class="reserve-tray-preview" style="display:block;margin-bottom:14px;"></div>
+      <div class="form-group" style="margin-bottom:12px;">
+        <label for="aiProviderSelect">Bộ não AI ưu tiên:</label>
+        <select id="aiProviderSelect">
+          <option value="auto">⚡ Tự động (DeepSeek + Gemini + Tri thức nội bộ)</option>
+          <option value="deepseek">🐋 DeepSeek Chat (sk-...)</option>
+          <option value="gemini">✨ Google Gemini Flash (AQ... / AIza...)</option>
+        </select>
+      </div>
+      <div class="form-group" style="margin-bottom:12px;">
+        <label for="inputDeepseekKey">Khóa DeepSeek API (Chỉ lưu cục bộ trên trình duyệt của bạn):</label>
+        <input type="password" id="inputDeepseekKey" placeholder="sk-...">
+      </div>
+      <div class="form-group" style="margin-bottom:16px;">
+        <label for="inputGeminiKey">Khóa Google Gemini API (Chỉ lưu cục bộ trên trình duyệt của bạn):</label>
+        <input type="password" id="inputGeminiKey" placeholder="AQ... hoặc AIza...">
+      </div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:12px;">
+        <button type="button" class="btn-submit-reserve" id="btnSaveAiKeys" style="flex:1;">💾 Lưu Khóa Riêng</button>
+        <button type="button" class="btn-copy-loc" id="btnClearAiKeys">🗑️ Xóa Khóa</button>
+      </div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;font-size:0.78rem;color:var(--text-muted);justify-content:center;">
+        <a href="https://platform.deepseek.com/api_keys" target="_blank" rel="noopener noreferrer" class="maps-link-footer">🔑 Quản lý / Thu hồi khóa DeepSeek</a>
+        <span>•</span>
+        <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener noreferrer" class="maps-link-footer">✨ Quản lý / Thu hồi khóa Gemini</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox-overlay" id="lightboxOverlay" aria-hidden="true">
+    <button class="lb-close" id="lbClose" aria-label="Đóng ảnh">&times;</button>
+    <button class="lb-nav lb-prev" id="lbPrev" aria-label="Ảnh trước">&#8249;</button>
+    <figure class="lb-figure">
+      <img id="lbImg" src="" alt="">
+      <figcaption id="lbCaption"></figcaption>
+    </figure>
+    <button class="lb-nav lb-next" id="lbNext" aria-label="Ảnh tiếp theo">&#8250;</button>
+  </div>
+
+  <!-- Floating Quick Stack -->
+  <div class="fab-stack">
+    <a href="https://zalo.me/0904184986" target="_blank" rel="noopener noreferrer" class="fab-btn fab-zalo" title="Chat Zalo 0904184986">Zalo</a>
+    <a href="tel:0933286133" class="fab-btn fab-call" title="Gọi Hotline 0933.286.133">📞</a>
+  </div>
+
+  <!-- Mobile Bottom Quick Bar -->
+  <nav class="mobile-bottom-bar" aria-label="Thanh tác vụ nhanh">
+    <a href="tel:0933286133"><span>📞</span><span>Gọi</span></a>
+    <a href="#menuSection"><span>🍽️</span><span>Thực đơn</span></a>
+    <button type="button" id="mbReserveBtn"><span>📅</span><span>Đặt bàn</span></button>
+    <button type="button" id="mbCartBtn"><span>🛒</span><span>Mâm (<b id="mbCartCount">0</b>)</span></button>
+  </nav>
+
+  <!-- Toast Container -->
+  <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+
+  <!-- Zen Singing Bowl Audio (Preloaded for 100% instant playback) -->
+  <audio id="zenBellAudio" src="./assets/audio/zen-bell.mp3" preload="auto"></audio>
+
+  <!-- Main Footer -->
+  <footer class="main-footer">
+    <div class="footer-container">
+      <div class="footer-top">
+        <div class="footer-brand-col">
+          <div class="brand-logo">
+            <div class="lotus-emblem">
+              <img src="./assets/images/logo.jpg" alt="Logo Liên Hoa Chay">
+            </div>
+            <div class="brand-text">
+              <span class="brand-name">LIÊN HOA CHAY</span>
+              <span class="brand-sub">Hải Dương • Thanh Lương Tịnh Cảnh</span>
+            </div>
+          </div>
+          <p class="footer-bio">
+            Nơi hội tụ những giá trị thuần khiết của ẩm thực chay dưỡng sinh. Mỗi món ăn là một lời cầu chúc bình an, sức khỏe và niềm hoan hỷ gửi gắm đến quý thực khách và gia đình.
+          </p>
+          <div class="footer-badges-list">
+            <span class="f-pill">🌱 100% Thuần Chay</span>
+            <span class="f-pill">🍄 Nấm Quý Dưỡng Sinh</span>
+            <span class="f-pill">🪷 Tâm An Vạn Sự An</span>
+          </div>
+        </div>
+
+        <div class="footer-links-col">
+          <h4>Thực Đơn Nổi Bật</h4>
+          <ul>
+            <li><a href="#menuSection">Buffet Chay 35+ Món Hàng Ngày</a></li>
+            <li><a href="#menuSection">Tàu Hũ Liên Hoa Sốt Nấm Tuyết</a></li>
+            <li><a href="#menuSection">Lẩu Nấm Liên Hoa Thập Cẩm Quý</a></li>
+            <li><a href="#cateringSection">Mâm Cỗ Chay Cúng Rằm &amp; Gia Tiên</a></li>
+            <li><a href="#menuSection">Trà Mận &amp; Chè Dưỡng Nhan</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-contact-col">
+          <h4>Thông Tin Liên Hệ</h4>
+          <div class="contact-card">
+            <p>📍 <strong>Lô 94.7 Đường Trường Chinh</strong> (Đối diện đường Hoàng Quốc Việt), Phường Tứ Minh, Thành phố Hải Dương</p>
+            <p>⏰ <strong>Giờ đón khách:</strong> 11:00 – 13:30 &amp; 18:00 – 20:30</p>
+            <p>📞 <strong>Hotline:</strong> <a href="tel:0933286133" class="gold-phone">0933.286.133</a> (Ms. Thạo) – <a href="tel:0904184986" class="gold-phone">090.418.4986</a></p>
+            <p>✉️ <strong>Email:</strong> <a href="mailto:lienhoachayhd@gmail.com" class="maps-link-footer">lienhoachayhd@gmail.com</a></p>
+            <p>🌐 <strong>Mạng xã hội:</strong>
+              <a href="https://www.facebook.com/profile.php?id=61559156548781" target="_blank" rel="noopener noreferrer" class="maps-link-footer">Fanpage</a> •
+              <a href="https://www.facebook.com/thaonguyen.825687" target="_blank" rel="noopener noreferrer" class="maps-link-footer">FB Ms. Thạo</a> •
+              <a href="https://vt.tiktok.com/ZSgCF9HYp/" target="_blank" rel="noopener noreferrer" class="maps-link-footer">TikTok</a>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; <span id="yearNow">2026</span> <strong>Nhà hàng Chay Liên Hoa - Hải Dương</strong>. Tất cả bản quyền được bảo lưu.</p>
+        <p class="footer-subtext">Ẩm thực thanh tịnh nuôi dưỡng thân tâm • Đồng hành cùng lối sống xanh tỉnh thức.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./js/site-data.js"></script>
+  <script src="./js/media-data.js"></script>
+  <script src="./js/i18n.js"></script>
+  <script src="./js/main.js?v=20261120c"></script>
+  <script src="./js/ai-assistant.js"></script>
+</body>
+</html>

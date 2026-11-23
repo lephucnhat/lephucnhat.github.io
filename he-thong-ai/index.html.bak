@@ -1,0 +1,2135 @@
+<!DOCTYPE html>
+<html lang="vi" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MASTER COMMAND 3.0 — HỆ ĐIỀU HÀNH TỰ ĐỘNG HÓA AI TOÀN DÂN | LEPHUCNHAT.VN</title>
+  <meta name="description" content="Hệ điều hành tự động hóa AI toàn dân - Lê Phúc Nhật. Tự trị 100% từ video reels, xuất bản 25 fanpage, đa khóa AI đến kiểm soát máy tính từ xa.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', '"Be Vietnam Pro"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+            vietnam: ['"Be Vietnam Pro"', 'sans-serif']
+          },
+          colors: {
+            brand: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              500: '#3b82f6',
+              600: '#2563eb',
+              700: '#1d4ed8',
+              accent: '#06b6d4',
+              gold: '#f59e0b',
+              emerald: '#10b981',
+              rose: '#f43f5e'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Custom Scrollbar & Micro-interactions */
+    ::-webkit-scrollbar { width: 8px; height: 8px; }
+    ::-webkit-scrollbar-track { background: rgba(15, 23, 42, 0.6); }
+    ::-webkit-scrollbar-thumb { background: rgba(100, 116, 139, 0.5); border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: rgba(59, 130, 246, 0.8); }
+
+    .glow-box {
+      box-shadow: 0 0 25px -5px rgba(59, 130, 246, 0.25);
+    }
+    .glow-cyan {
+      box-shadow: 0 0 25px -5px rgba(6, 182, 212, 0.25);
+    }
+    .glow-gold {
+      box-shadow: 0 0 25px -5px rgba(245, 158, 11, 0.25);
+    }
+    .pulse-glow {
+      animation: pulseGlow 3s infinite ease-in-out;
+    }
+    @keyframes pulseGlow {
+      0%, 100% { box-shadow: 0 0 15px rgba(59, 130, 246, 0.2); }
+      50% { box-shadow: 0 0 30px rgba(6, 182, 212, 0.4); }
+    }
+    .flow-line {
+      stroke-dasharray: 8;
+      animation: dash 1.5s linear infinite;
+    }
+    @keyframes dash {
+      to { stroke-dashoffset: -16; }
+    }
+    .badge-gold {
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.2), rgba(217, 119, 6, 0.3));
+      border: 1px solid rgba(245, 158, 11, 0.4);
+    }
+
+    /* ===== HOTFIX 3.1: LIGHT MODE (html:not(.dark)) ===== */
+    html:not(.dark) body { background-color: #f8fafc !important; color: #0f172a; }
+    html:not(.dark) .bg-slate-950,
+    html:not(.dark) .bg-slate-950\/85,
+    html:not(.dark) .bg-slate-950\/90 { background-color: #f8fafc !important; }
+    html:not(.dark) .bg-slate-900,
+    html:not(.dark) .bg-slate-900\/40,
+    html:not(.dark) .bg-slate-900\/60,
+    html:not(.dark) .bg-slate-900\/90 { background-color: #ffffff !important; }
+    html:not(.dark) .bg-slate-800 { background-color: #e2e8f0 !important; }
+    html:not(.dark) .bg-black\/90,
+    html:not(.dark) .bg-black\/80 { background-color: #f1f5f9 !important; border: 1px solid #cbd5e1; }
+    html:not(.dark) .bg-amber-950\/30 { background-color: #fffbeb !important; }
+    html:not(.dark) .bg-cyan-950\/60 { background-color: #ecfeff !important; }
+    html:not(.dark) .bg-emerald-950\/20,
+    html:not(.dark) .bg-emerald-950\/60 { background-color: #ecfdf5 !important; }
+    html:not(.dark) .bg-rose-950\/40,
+    html:not(.dark) .bg-rose-950\/60 { background-color: #fff1f2 !important; }
+    html:not(.dark) .from-blue-900\/60,
+    html:not(.dark) .from-slate-950 {
+      --tw-gradient-from: #dbeafe var(--tw-gradient-from-position) !important;
+      --tw-gradient-to: rgba(248, 250, 252, 0) var(--tw-gradient-to-position) !important;
+      --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
+    }
+    html:not(.dark) .via-slate-900,
+    html:not(.dark) .via-slate-900\/50 { --tw-gradient-stops: var(--tw-gradient-from), #ffffff var(--tw-gradient-via-position), var(--tw-gradient-to) !important; }
+    html:not(.dark) .to-indigo-950\/60,
+    html:not(.dark) .to-slate-950 { --tw-gradient-to: #e0e7ff var(--tw-gradient-to-position) !important; }
+    html:not(.dark) .border-slate-700,
+    html:not(.dark) .border-slate-800,
+    html:not(.dark) .border-slate-800\/80,
+    html:not(.dark) .divide-slate-800\/60 > * + * { border-color: #cbd5e1 !important; }
+    html:not(.dark) .hover\:border-slate-700:hover { border-color: #94a3b8 !important; }
+    html:not(.dark) .text-slate-100,
+    html:not(.dark) .text-slate-200,
+    html:not(.dark) .text-slate-300,
+    html:not(.dark) .text-slate-400,
+    html:not(.dark) .text-white { color: #0f172a !important; }
+    html:not(.dark) .text-slate-500 { color: #475569 !important; }
+    html:not(.dark) .hover\:text-white:hover { color: #0f172a !important; }
+    html:not(.dark) .hover\:bg-slate-700:hover,
+    html:not(.dark) .hover\:bg-slate-800:hover,
+    html:not(.dark) .hover\:bg-slate-800\/40:hover { background-color: #cbd5e1 !important; }
+    html:not(.dark) .text-blue-300, html:not(.dark) .text-blue-400 { color: #1d4ed8 !important; }
+    html:not(.dark) .text-cyan-300, html:not(.dark) .text-cyan-400 { color: #0e7490 !important; }
+    html:not(.dark) .text-emerald-300, html:not(.dark) .text-emerald-400 { color: #047857 !important; }
+    html:not(.dark) .text-amber-300, html:not(.dark) .text-amber-400 { color: #b45309 !important; }
+    html:not(.dark) .text-rose-300, html:not(.dark) .text-rose-400 { color: #be123c !important; }
+    html:not(.dark) .text-purple-300, html:not(.dark) .text-purple-400 { color: #7e22ce !important; }
+    html:not(.dark) .text-indigo-300, html:not(.dark) .text-indigo-400 { color: #4338ca !important; }
+    /* Giữ chữ trắng cho nút/badge nền màu đậm */
+    html:not(.dark) .bg-blue-600, html:not(.dark) .bg-cyan-600, html:not(.dark) .bg-emerald-600,
+    html:not(.dark) .bg-purple-600, html:not(.dark) .bg-rose-600, html:not(.dark) .bg-amber-600,
+    html:not(.dark) .bg-indigo-600, html:not(.dark) .from-blue-600,
+    html:not(.dark) .bg-blue-600 *, html:not(.dark) .bg-cyan-600 *, html:not(.dark) .bg-emerald-600 *,
+    html:not(.dark) .bg-purple-600 *, html:not(.dark) .bg-rose-600 *, html:not(.dark) .bg-amber-600 *,
+    html:not(.dark) .bg-indigo-600 *, html:not(.dark) .from-blue-600 .text-white { color: #ffffff !important; }
+    html:not(.dark) .from-blue-600 .bg-slate-950 { background-color: #ffffff !important; }
+    html:not(.dark) ::-webkit-scrollbar-track { background: #e2e8f0; }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen font-sans selection:bg-blue-600 selection:text-white transition-colors duration-200">
+
+  <!-- ================= TOP NOTIFICATION / SYSTEM TICKER ================= -->
+  <div class="bg-gradient-to-r from-blue-900/60 via-slate-900 to-indigo-950/60 border-b border-blue-500/20 text-xs py-2 px-4">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
+      <div class="flex items-center gap-2">
+        <span class="relative flex h-2.5 w-2.5">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+        </span>
+        <span class="font-bold text-emerald-400">TRẠNG THÁI HỆ THỐNG: HOẠT ĐỘNG 100%</span>
+        <span class="text-slate-400 hidden sm:inline">|</span>
+        <span class="text-slate-300 hidden md:inline">25 Fanpage Meta Business Suite • Dual-AI Router (DeepSeek + Gemini) • Playwright Active</span>
+      </div>
+      <div class="flex items-center gap-4">
+        <span class="text-amber-300 font-mono font-medium">Phiên bản Master: 3.0 Pro</span>
+        <a href="https://lephucnhat.vn" class="text-blue-400 hover:text-blue-300 font-semibold underline underline-offset-4 flex items-center gap-1">
+          Trang chủ lephucnhat.vn &rarr;
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= HEADER & NAVIGATION BAR ================= -->
+  <header class="sticky top-0 z-50 backdrop-blur-xl bg-slate-950/85 border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3">
+      <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-3">
+        <!-- Logo & Branding -->
+        <div class="flex items-center justify-between">
+          <a href="#" class="flex items-center gap-3 group">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-600 via-indigo-600 to-cyan-500 p-0.5 shadow-lg shadow-blue-500/20 group-hover:scale-105 transition">
+              <div class="w-full h-full bg-slate-950 rounded-[10px] flex items-center justify-center font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300 text-lg">
+                MC
+              </div>
+            </div>
+            <div>
+              <div class="font-black text-base tracking-tight text-white flex items-center gap-1.5">
+                MASTER COMMAND 3.0
+                <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-blue-500/20 text-blue-400 border border-blue-500/30">WEB-OS</span>
+              </div>
+              <div class="text-[11px] text-slate-400 font-medium">Hệ Điều Hành Tự Động Hóa AI Toàn Dân • Lê Phúc Nhật</div>
+            </div>
+          </a>
+
+          <!-- Mobile Theme & Toggle Button -->
+          <div class="flex items-center gap-2 lg:hidden">
+            <button id="themeToggleBtnMobile" class="p-2 rounded-lg bg-slate-900 border border-slate-700 text-slate-300 hover:text-white" title="Chuyển Dark/Light Mode">
+              <span id="themeIconMobile">🌙</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- 3 User Modes Pill Switcher (Trọng tâm trải nghiệm) -->
+        <div class="flex items-center justify-center p-1 rounded-xl bg-slate-900/90 border border-slate-800 overflow-x-auto">
+          <button id="modeBtnBeginner" onclick="switchUserMode('beginner')" class="mode-pill px-3 sm:px-4 py-1.5 rounded-lg text-xs font-bold transition flex items-center gap-1.5 whitespace-nowrap bg-blue-600 text-white shadow-md">
+            <span>🌱</span> Người Mới (Zero to Hero)
+          </button>
+          <button id="modeBtnCreator" onclick="switchUserMode('creator')" class="mode-pill px-3 sm:px-4 py-1.5 rounded-lg text-xs font-bold transition flex items-center gap-1.5 whitespace-nowrap text-slate-400 hover:text-white">
+            <span>🎬</span> Nhà Sáng Tạo & Xây Kênh
+          </button>
+          <button id="modeBtnPro" onclick="switchUserMode('pro')" class="mode-pill px-3 sm:px-4 py-1.5 rounded-lg text-xs font-bold transition flex items-center gap-1.5 whitespace-nowrap text-slate-400 hover:text-white">
+            <span>⚡</span> Kiến Trúc Sư Hệ Thống
+          </button>
+        </div>
+
+        <!-- Quick Nav & Theme Toggle Desktop -->
+        <div class="hidden lg:flex items-center gap-3">
+          <a href="#tru-cot" class="text-xs font-semibold text-slate-300 hover:text-blue-400 transition">8 Trụ Cột</a>
+          <a href="#mo-duon" class="text-xs font-semibold text-slate-300 hover:text-blue-400 transition">12 Mô-đun</a>
+          <a href="#ban-do-luong" class="text-xs font-semibold text-slate-300 hover:text-blue-400 transition">Bản Đồ Luồng</a>
+          <a href="#mo-duon-05" class="text-xs font-semibold text-slate-300 hover:text-blue-400 transition">Chẩn Đoán</a>
+          <button id="themeToggleBtn" onclick="toggleTheme()" class="p-2 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 hover:text-white transition" title="Chuyển chế độ Sáng / Tối">
+            <span id="themeIcon">🌙</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= HERO SECTION ================= -->
+  <section class="relative overflow-hidden pt-12 pb-16 border-b border-slate-800/80 bg-gradient-to-b from-slate-950 via-slate-900/50 to-slate-950">
+    <!-- Background Ambient Glow -->
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-blue-600/10 blur-[120px] pointer-events-none rounded-full"></div>
+    <div class="absolute -top-10 right-10 w-96 h-96 bg-cyan-500/10 blur-[100px] pointer-events-none rounded-full"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+      <div class="max-w-3xl mx-auto text-center space-y-6">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-400 text-xs font-semibold">
+          <span class="w-2 h-2 rounded-full bg-blue-400 animate-ping"></span>
+          Kiến Trúc Tự Động Hóa 2 Lớp: Web-OS + Local Agent Thực Chiến
+        </div>
+
+        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white font-vietnam leading-tight">
+          HỆ ĐIỀU HÀNH TỰ ĐỘNG HÓA <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-300 to-indigo-400">AI TOÀN DÂN</span>
+        </h1>
+
+        <p class="text-sm sm:text-base text-slate-300 leading-relaxed font-normal">
+          Biến máy tính cá nhân thành <strong class="text-white">cỗ máy tự trị 100%</strong>: Tự động sản xuất Video Reels hàng loạt, tự xuất bản 25 Fanpage Meta Business Suite, quản trị xoay vòng đa khóa AI (Gemini + DeepSeek), điều khiển từ xa qua điện thoại và giám sát thời gian thực.
+        </p>
+
+        <!-- Dynamic Mode Description Callout -->
+        <div id="modeDescriptionBox" class="p-4 rounded-xl bg-slate-900/90 border border-blue-500/30 text-left max-w-2xl mx-auto transition-all duration-300 shadow-lg">
+          <div class="flex items-start gap-3">
+            <span class="text-2xl" id="modeIconCallout">🌱</span>
+            <div>
+              <h4 class="text-sm font-bold text-white flex items-center gap-2" id="modeTitleCallout">
+                Đang xem chế độ: NGƯỜI MỚI (Zero to Hero)
+              </h4>
+              <p class="text-xs text-slate-300 mt-1" id="modeTextCallout">
+                Dành cho người chưa từng gõ code. Bạn chỉ cần nhập đường dẫn thư mục và chat ID Telegram, hệ thống sẽ tự sinh file cài đặt 1 chạm và video hướng dẫn từng bước.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Action CTAs -->
+        <div class="flex flex-wrap items-center justify-center gap-3 pt-2">
+          <a href="#mo-duon-01" class="px-5 py-3 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-600 text-white font-bold text-sm shadow-lg shadow-blue-500/25 hover:brightness-110 hover:scale-[1.02] transition flex items-center gap-2">
+            <span>⚡</span> Tạo File Cài Đặt 1 Chạm Ngay
+          </a>
+          <a href="#ban-do-luong" class="px-5 py-3 rounded-xl bg-slate-900 border border-slate-700 text-slate-200 font-bold text-sm hover:bg-slate-800 hover:text-white transition flex items-center gap-2">
+            <span>🗺️</span> Bản Đồ Luồng Dữ Liệu
+          </a>
+          <a href="#mo-duon-05" class="px-5 py-3 rounded-xl bg-rose-950/40 border border-rose-600/40 text-rose-300 font-bold text-sm hover:bg-rose-900/40 transition flex items-center gap-2">
+            <span>🩺</span> Bác Sĩ Cứu Hộ Lỗi
+          </a>
+        </div>
+
+        <!-- Live Metrics Bar -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 pt-6 border-t border-slate-800/80">
+          <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800">
+            <div class="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300 font-mono">25 KÊNH</div>
+            <div class="text-[11px] text-slate-400 font-medium">Fanpage Tự Xuất Bản</div>
+          </div>
+          <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800">
+            <div class="text-2xl font-black text-emerald-400 font-mono">100%</div>
+            <div class="text-[11px] text-slate-400 font-medium">Tự Trị Không Cần Hỏi</div>
+          </div>
+          <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800">
+            <div class="text-2xl font-black text-amber-400 font-mono">45-75s</div>
+            <div class="text-[11px] text-slate-400 font-medium">Nhịp Nghỉ Chống Checkpoint</div>
+          </div>
+          <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800">
+            <div class="text-2xl font-black text-purple-400 font-mono">DUAL-AI</div>
+            <div class="text-[11px] text-slate-400 font-medium">DeepSeek R1 + Gemini</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= MAIN CONTENT CONTAINER ================= -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 py-10 space-y-16">
+
+    <!-- ================= SECTION 1: BẢN ĐỒ KIẾN TRÚC 2 LỚP & DÒNG CHẢY DỮ LIỆU (MODULE 03) ================= -->
+    <section id="ban-do-luong" class="scroll-mt-24 space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3">
+        <div>
+          <div class="text-xs font-bold text-blue-400 uppercase tracking-wider">MÔ-ĐUN 03 & KIẾN TRÚC TỔNG THỂ</div>
+          <h2 class="text-2xl sm:text-3xl font-black text-white font-vietnam">Bản Đồ Kiến Trúc Luồng Dữ Liệu Tương Tác</h2>
+          <p class="text-xs sm:text-sm text-slate-400 mt-1">Bấm vào bất kỳ khối nào trên sơ đồ để xem thông số kỹ thuật, mã lệnh PowerShell và cơ chế vận hành.</p>
+        </div>
+        <div class="flex items-center gap-2 text-xs">
+          <span class="inline-block w-3 h-3 rounded-full bg-blue-500 animate-pulse"></span>
+          <span class="text-slate-300 font-mono">Dòng chảy dữ liệu thời gian thực</span>
+        </div>
+      </div>
+
+      <!-- Sơ đồ kiến trúc tương tác -->
+      <div class="p-6 rounded-2xl bg-slate-900/90 border border-slate-800 shadow-xl overflow-hidden relative">
+        <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-4 relative z-10">
+          
+          <!-- Node 1: Remote Mobile -->
+          <div onclick="inspectArchNode('node-mobile')" class="arch-node cursor-pointer p-4 rounded-xl bg-slate-950 border border-blue-500/40 hover:border-blue-400 hover:scale-105 transition-all text-center space-y-2 group">
+            <div class="w-12 h-12 mx-auto rounded-xl bg-blue-500/10 flex items-center justify-center text-2xl group-hover:bg-blue-500/20 transition">📱</div>
+            <div class="font-bold text-xs text-white">1. Điện Thoại</div>
+            <div class="text-[10px] text-blue-400 font-mono">Telegram & Remote</div>
+            <div class="text-[10px] text-slate-400">Giám sát & nhận báo cáo ảnh tức thì</div>
+          </div>
+
+          <!-- Node 2: Local Agent PC -->
+          <div onclick="inspectArchNode('node-pc')" class="arch-node cursor-pointer p-4 rounded-xl bg-slate-950 border border-cyan-500/40 hover:border-cyan-400 hover:scale-105 transition-all text-center space-y-2 group">
+            <div class="w-12 h-12 mx-auto rounded-xl bg-cyan-500/10 flex items-center justify-center text-2xl group-hover:bg-cyan-500/20 transition">💻</div>
+            <div class="font-bold text-xs text-white">2. Local Agent PC</div>
+            <div class="text-[10px] text-cyan-400 font-mono">PowerShell & Task</div>
+            <div class="text-[10px] text-slate-400">Windows Env & Quyền vĩnh viễn Option 3</div>
+          </div>
+
+          <!-- Node 3: Multi-AI Brain -->
+          <div onclick="inspectArchNode('node-ai')" class="arch-node cursor-pointer p-4 rounded-xl bg-slate-950 border border-purple-500/40 hover:border-purple-400 hover:scale-105 transition-all text-center space-y-2 group">
+            <div class="w-12 h-12 mx-auto rounded-xl bg-purple-500/10 flex items-center justify-center text-2xl group-hover:bg-purple-500/20 transition">🧠</div>
+            <div class="font-bold text-xs text-white">3. Dual-AI Router</div>
+            <div class="text-[10px] text-purple-400 font-mono">DeepSeek + Gemini</div>
+            <div class="text-[10px] text-slate-400">Viết hook viral & kiểm tra đa luồng</div>
+          </div>
+
+          <!-- Node 4: Video Studio -->
+          <div onclick="inspectArchNode('node-video')" class="arch-node cursor-pointer p-4 rounded-xl bg-slate-950 border border-amber-500/40 hover:border-amber-400 hover:scale-105 transition-all text-center space-y-2 group">
+            <div class="w-12 h-12 mx-auto rounded-xl bg-amber-500/10 flex items-center justify-center text-2xl group-hover:bg-amber-500/20 transition">🎬</div>
+            <div class="font-bold text-xs text-white">4. Xưởng Reels FFmpeg</div>
+            <div class="text-[10px] text-amber-400 font-mono">Kho B-Roll 9:16</div>
+            <div class="text-[10px] text-slate-400">Render 60fps, caption 50-100 ký tự</div>
+          </div>
+
+          <!-- Node 5: 25 Fanpage Meta -->
+          <div onclick="inspectArchNode('node-fb')" class="arch-node cursor-pointer p-4 rounded-xl bg-slate-950 border border-emerald-500/40 hover:border-emerald-400 hover:scale-105 transition-all text-center space-y-2 group">
+            <div class="w-12 h-12 mx-auto rounded-xl bg-emerald-500/10 flex items-center justify-center text-2xl group-hover:bg-emerald-500/20 transition">🚀</div>
+            <div class="font-bold text-xs text-white">5. Cỗ Máy Playwright</div>
+            <div class="text-[10px] text-emerald-400 font-mono">25 Fanpage Meta</div>
+            <div class="text-[10px] text-slate-400">Đăng thẳng URL, chống popup, nghỉ 45-75s</div>
+          </div>
+
+          <!-- Node 6: Cloud Web-OS -->
+          <div onclick="inspectArchNode('node-web')" class="arch-node cursor-pointer p-4 rounded-xl bg-slate-950 border border-rose-500/40 hover:border-rose-400 hover:scale-105 transition-all text-center space-y-2 group">
+            <div class="w-12 h-12 mx-auto rounded-xl bg-rose-500/10 flex items-center justify-center text-2xl group-hover:bg-rose-500/20 transition">🌐</div>
+            <div class="font-bold text-xs text-white">6. Web Hub lephucnhat</div>
+            <div class="text-[10px] text-rose-400 font-mono">GitHub & CDN</div>
+            <div class="text-[10px] text-slate-400">Hệ điều hành Web-in-Web trực tuyến</div>
+          </div>
+
+        </div>
+
+        <!-- Chi tiết Node được chọn (Interactive Drawer / Inspector) -->
+        <div id="archNodeDetail" class="mt-6 p-4 rounded-xl bg-slate-950/90 border border-blue-500/30 transition-all">
+          <div class="flex items-center justify-between mb-2">
+            <div class="flex items-center gap-2">
+              <span id="detailBadge" class="text-xs font-bold px-2 py-0.5 rounded bg-blue-500/20 text-blue-400">KHỐI ĐƯỢC CHỌN: 2. LOCAL AGENT PC</span>
+              <span id="detailTitle" class="text-sm font-bold text-white">Máy tính cục bộ ASUS TUF F15 (RTX 2050, 16GB RAM)</span>
+            </div>
+            <button onclick="copyDetailCode()" class="text-xs text-blue-400 hover:text-white px-2 py-1 rounded bg-slate-800 border border-slate-700 flex items-center gap-1">
+              <span>📋</span> Copy lệnh khối này
+            </button>
+          </div>
+          <p id="detailDesc" class="text-xs text-slate-300 leading-relaxed">
+            Trung tâm chấp hành lệnh chạy ngầm: Cấp quyền vĩnh viễn Option 3 cho AI Agent, nạp biến môi trường hệ thống Windows User Env, điều khiển FFmpeg và Playwright.
+          </p>
+          <div class="mt-3 p-3 rounded-lg bg-black/80 font-mono text-[11px] text-cyan-300 overflow-x-auto" id="detailCodeBox">
+# Kiểm tra môi trường cục bộ qua PowerShell:
+python --version; git --version; ffmpeg -version
+[System.Environment]::GetEnvironmentVariable("DEEPSEEK_API_KEY", "User")
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SECTION 2: 8 TRỤ CỘT TỰ ĐỘNG HÓA TOÀN DIỆN (BLUEPRINT) ================= -->
+    <section id="tru-cot" class="scroll-mt-24 space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3">
+        <div>
+          <div class="text-xs font-bold text-cyan-400 uppercase tracking-wider">BLUEPRINT CHUẨN HÓA</div>
+          <h2 class="text-2xl sm:text-3xl font-black text-white font-vietnam">8 Trụ Cột Tự Động Hóa Toàn Diện</h2>
+          <p class="text-xs sm:text-sm text-slate-400 mt-1">Từ thiết lập máy tính, quản trị đa AI đến cỗ máy xuất bản 25 Fanpage và trung tâm cứu hộ.</p>
+        </div>
+        <!-- Pillar Quick Filter -->
+        <div class="flex items-center gap-2 overflow-x-auto text-xs">
+          <button onclick="filterPillars('all')" class="pillar-tab px-3 py-1 rounded-lg bg-blue-600 text-white font-semibold">Tất cả (8)</button>
+          <button onclick="filterPillars('core')" class="pillar-tab px-3 py-1 rounded-lg bg-slate-800 text-slate-300 font-semibold hover:text-white">Cốt Lõi Hệ Thống</button>
+          <button onclick="filterPillars('media')" class="pillar-tab px-3 py-1 rounded-lg bg-slate-800 text-slate-300 font-semibold hover:text-white">Xưởng Video & Fanpage</button>
+          <button onclick="filterPillars('ops')" class="pillar-tab px-3 py-1 rounded-lg bg-slate-800 text-slate-300 font-semibold hover:text-white">Vận Hành & Cứu Hộ</button>
+        </div>
+      </div>
+
+      <!-- Danh sách 8 Trụ Cột Chi Tiết (Accordion / Cards) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="pillarContainer">
+
+        <!-- TRỤ CỘT 1 -->
+        <div class="pillar-card p-6 rounded-2xl bg-slate-900/90 border border-slate-800 hover:border-blue-500/50 transition-all space-y-4" data-category="core">
+          <div class="flex items-start justify-between">
+            <div class="flex items-center gap-3">
+              <span class="w-8 h-8 rounded-xl bg-blue-500/20 text-blue-400 font-black flex items-center justify-center font-mono text-sm">01</span>
+              <div>
+                <h3 class="font-bold text-base text-white">Khởi Tạo PC & Cấp Quyền PowerShell</h3>
+                <span class="text-[11px] text-blue-400 font-medium">Windows User Env, Python, FFmpeg, Playwright</span>
+              </div>
+            </div>
+            <button onclick="copySnippet('code-pillar-1')" class="text-xs px-2.5 py-1 rounded bg-slate-800 border border-slate-700 text-slate-300 hover:text-white flex items-center gap-1">📋 Copy</button>
+          </div>
+          <div class="text-xs text-slate-300 space-y-1.5">
+            <p><strong>🎯 Mục tiêu:</strong> Chuẩn bị máy tính trắng thành môi trường tự động hóa hoàn hảo mà không bị chặn bởi chính sách ExecutionPolicy.</p>
+            <p><strong>📥 Điều kiện:</strong> Windows 10/11 64-bit, quyền Administrator ban đầu để chạy script.</p>
+          </div>
+          <div class="p-3 rounded-lg bg-slate-950 font-mono text-[11px] text-blue-300 overflow-x-auto relative" id="code-pillar-1">
+# Cấp quyền thực thi PowerShell & cài đặt thư viện lõi
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
+python -m pip install --upgrade pip
+python -m pip install playwright python-dotenv requests google-genai pyTelegramBotAPI
+python -m playwright install chromium
+[System.Environment]::SetEnvironmentVariable("PATH", $env:PATH + ";D:\LPN_Workspace\FFmpeg\ffmpeg-9.0.2-essentials_build\bin", "User")
+          </div>
+          <div class="p-2.5 rounded-lg bg-amber-950/30 border border-amber-500/30 text-[11px] text-amber-300">
+            <strong>⚠️ Lỗi thường gặp:</strong> <code>Execution_Policies Restricted</code> -> Khắc phục: Chạy PowerShell với <code>Set-ExecutionPolicy RemoteSigned -Scope CurrentUser</code>.
+          </div>
+        </div>
+
+        <!-- TRỤ CỘT 2 -->
+        <div class="pillar-card p-6 rounded-2xl bg-slate-900/90 border border-slate-800 hover:border-cyan-500/50 transition-all space-y-4" data-category="core">
+          <div class="flex items-start justify-between">
+            <div class="flex items-center gap-3">
+              <span class="w-8 h-8 rounded-xl bg-cyan-500/20 text-cyan-400 font-black flex items-center justify-center font-mono text-sm">02</span>
+              <div>
+                <h3 class="font-bold text-base text-white">Agent AI & Quyền Điều Khiển Máy Tính</h3>
+                <span class="text-[11px] text-cyan-400 font-medium">Antigravity Agent, Option 3 vĩnh viễn, Chống tràn ngữ cảnh</span>
+              </div>
+            </div>
+            <button onclick="copySnippet('code-pillar-2')" class="text-xs px-2.5 py-1 rounded bg-slate-800 border border-slate-700 text-slate-300 hover:text-white flex items-center gap-1">📋 Copy</button>
+          </div>
+          <div class="text-xs text-slate-300 space-y-1.5">
+            <p><strong>🎯 Mục tiêu:</strong> Cấp quyền tự chủ 100% cho AI Agent, không bao giờ dừng luồng hỏi quyền người dùng giữa đêm.</p>
+            <p><strong>📥 Điều kiện:</strong> Thiết lập quy tắc trong `GEMINI.md` và chọn Option 3 (Always allow in this workspace).</p>
+          </div>
+          <div class="p-3 rounded-lg bg-slate-950 font-mono text-[11px] text-cyan-300 overflow-x-auto relative" id="code-pillar-2">
+# Cấu trúc GEMINI.md bảo đảm tự trị và chống tràn token:
+- Luôn tạo bản sao lưu .bak trước khi sửa code.
+- Tuyệt đối không dừng luồng để hỏi các câu hỏi hiển nhiên.
+- Duy trì đúng 1 tệp PROJECT_STATE.md để tiếp tục khi phiên làm việc bị ngắt.
+- Tự động khắc phục sự cố (Auto Self-Healing tối đa 3 lần).
+          </div>
+          <div class="p-2.5 rounded-lg bg-amber-950/30 border border-amber-500/30 text-[11px] text-amber-300">
+            <strong>⚠️ Lỗi thường gặp:</strong> Agent dừng hỏi quyền ghi đè tệp -> Khắc phục: Gắn cờ ghi đè tự động trong script và chỉ định quy tắc toàn quyền tại `GEMINI.md`.
+          </div>
+        </div>
+
+        <!-- TRỤ CỘT 3 -->
+        <div class="pillar-card p-6 rounded-2xl bg-slate-900/90 border border-slate-800 hover:border-purple-500/50 transition-all space-y-4" data-category="core">
+          <div class="flex items-start justify-between">
+            <div class="flex items-center gap-3">
+              <span class="w-8 h-8 rounded-xl bg-purple-500/20 text-purple-400 font-black flex items-center justify-center font-mono text-sm">03</span>
+              <div>
+                <h3 class="font-bold text-base text-white">Quản Trị & Xoay Vòng Đa Khóa AI</h3>
+                <span class="text-[11px] text-purple-400 font-medium">Gemini 2.5 Flash, Vertex AI $300, DeepSeek V3/R1</span>
+              </div>
+            </div>
+            <button onclick="copySnippet('code-pillar-3')" class="text-xs px-2.5 py-1 rounded bg-slate-800 border border-slate-700 text-slate-300 hover:text-white flex items-center gap-1">📋 Copy</button>
+          </div>
+          <div class="text-xs text-slate-300 space-y-1.5">
+            <p><strong>🎯 Mục tiêu:</strong> Luôn có khóa AI hoạt động liên tục 24/7, tự chuyển khóa dự phòng khi gặp mã lỗi 401 (sai key) hoặc 402/429 (hết hạn ngạch).</p>
+            <p><strong>📥 Điều kiện:</strong> Nạp khóa qua biến môi trường hoặc file `.env` với cờ `override=True`.</p>
+          </div>
+          <div class="p-3 rounded-lg bg-slate-950 font-mono text-[11px] text-purple-300 overflow-x-auto relative" id="code-pillar-3">
+# Cơ chế DualAIBrain tự động nạp & xoay vòng khóa an toàn
+from dotenv import load_dotenv
+import os, requests
+
+load_dotenv(override=True)
+def get_ai_response(prompt):
+    try:
+        # Ưu tiên 1: DeepSeek API (Chuyên Hook & Caption)
+        ds_key = os.getenv("DEEPSEEK_API_KEY")
+        return call_deepseek(prompt, ds_key)
+    except Exception as e:
+        # Dự phòng 2: Gemini / Vertex AI Cloud
+        gm_key = os.getenv("GEMINI_API_KEY")
+        return call_gemini(prompt, gm_key)
+          </div>
+          <div class="p-2.5 rounded-lg bg-amber-950/30 border border-amber-500/30 text-[11px] text-amber-300">
+            <strong>⚠️ Lỗi thường gặp:</strong> Bị mã lỗi 402 Payment Required ở DeepSeek -> Khắc phục: Router tự chuyển sang Gemini API miễn phí hoặc Vertex Cloud $300.
+          </div>
+        </div>
+
+        <!-- TRỤ CỘT 4 -->
+        <div class="pillar-card p-6 rounded-2xl bg-slate-900/90 border border-slate-800 hover:border-amber-500/50 transition-all space-y-4" data-category="media">
+          <div class="flex items-start justify-between">
+            <div class="flex items-center gap-3">
+              <span class="w-8 h-8 rounded-xl bg-amber-500/20 text-amber-400 font-black flex items-center justify-center font-mono text-sm">04</span>
+              <div>
+                <h3 class="font-bold text-base text-white">Xưởng Sản Xuất Video Reels FFmpeg</h3>
+                <span class="text-[11px] text-amber-400 font-medium">B-Roll 9:16, Caption 50-100 ký tự, 5 Hashtag ngách</span>
+              </div>
+            </div>
+            <button onclick="copySnippet('code-pillar-4')" class="text-xs px-2.5 py-1 rounded bg-slate-800 border border-slate-700 text-slate-300 hover:text-white flex items-center gap-1">📋 Copy</button>
+          </div>
+          <div class="text-xs text-slate-300 space-y-1.5">
+            <p><strong>🎯 Mục tiêu:</strong> Tự động ghép B-roll, gán nhạc nền thiền/thư giãn, render chuẩn dọc 1080x1920 60fps và sinh caption kích thích người xem comment.</p>
+            <p><strong>📥 Quy tắc vàng:</strong> Caption 50-100 ký tự, mở đầu bằng câu hỏi khiêu khích, cấm ký tự «...», 5 hashtag ngách.</p>
+          </div>
+          <div class="p-3 rounded-lg bg-slate-950 font-mono text-[11px] text-amber-300 overflow-x-auto relative" id="code-pillar-4">
+# Lệnh FFmpeg chuẩn hóa Reels tỷ lệ 9:16, âm thanh cân bằng
+ffmpeg -y -i input.mp4 -i audio.mp3 -filter_complex "[0:v]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920[v];[1:a]volume=0.35[a]" -map "[v]" -map "[a]" -c:v libx264 -preset fast -crf 22 -c:a aac -b:a 192k -shortest output_reels.mp4
+          </div>
+          <div class="p-2.5 rounded-lg bg-amber-950/30 border border-amber-500/30 text-[11px] text-amber-300">
+            <strong>⚠️ Lỗi thường gặp:</strong> Caption dài quá 100 ký tự bị Meta ẩn nút Xem thêm -> Khắc phục: Giới hạn cứng trong code `caption = caption[:100]`.
+          </div>
+        </div>
+
+        <!-- TRỤ CỘT 5 -->
+        <div class="pillar-card p-6 rounded-2xl bg-slate-900/90 border border-slate-800 hover:border-emerald-500/50 transition-all space-y-4" data-category="ops">
+          <div class="flex items-start justify-between">
+            <div class="flex items-center gap-3">
+              <span class="w-8 h-8 rounded-xl bg-emerald-500/20 text-emerald-400 font-black flex items-center justify-center font-mono text-sm">05</span>
+              <div>
+                <h3 class="font-bold text-base text-white">Điều Khiển & Giám Sát Từ Xa Điện Thoại</h3>
+                <span class="text-[11px] text-emerald-400 font-medium">Chrome Remote Desktop, Telegram Bot báo cáo & gửi ảnh</span>
+              </div>
+            </div>
+            <button onclick="copySnippet('code-pillar-5')" class="text-xs px-2.5 py-1 rounded bg-slate-800 border border-slate-700 text-slate-300 hover:text-white flex items-center gap-1">📋 Copy</button>
+          </div>
+          <div class="text-xs text-slate-300 space-y-1.5">
+            <p><strong>🎯 Mục tiêu:</strong> Ngồi cà phê hoặc ngủ ban đêm vẫn kiểm soát toàn bộ PC thông qua Bot Telegram và ứng dụng di động.</p>
+            <p><strong>📥 Điều kiện:</strong> Bot Telegram được gán Chat ID cá nhân để nhận ảnh chụp màn hình sau mỗi bài đăng.</p>
+          </div>
+          <div class="p-3 rounded-lg bg-slate-950 font-mono text-[11px] text-emerald-300 overflow-x-auto relative" id="code-pillar-5">
+# Gửi ảnh chụp màn hình bằng chứng bài đăng lên Telegram
+import telebot, os
+bot = telebot.TeleBot(os.getenv("TELEGRAM_BOT_TOKEN"))
+chat_id = os.getenv("TELEGRAM_CHAT_ID")
+def send_proof(image_path, caption):
+    with open(image_path, 'rb') as photo:
+        bot.send_photo(chat_id, photo, caption=f"✅ Đã xuất bản: {caption}")
+          </div>
+          <div class="p-2.5 rounded-lg bg-amber-950/30 border border-amber-500/30 text-[11px] text-amber-300">
+            <strong>⚠️ Lỗi thường gặp:</strong> Telegram báo `chat not found` -> Khắc phục: Phải mở bot trên điện thoại và bấm `/start` trước khi chạy script.
+          </div>
+        </div>
+
+        <!-- TRỤ CỘT 6 -->
+        <div class="pillar-card p-6 rounded-2xl bg-slate-900/90 border border-slate-800 hover:border-blue-500/50 transition-all space-y-4" data-category="media">
+          <div class="flex items-start justify-between">
+            <div class="flex items-center gap-3">
+              <span class="w-8 h-8 rounded-xl bg-blue-500/20 text-blue-400 font-black flex items-center justify-center font-mono text-sm">06</span>
+              <div>
+                <h3 class="font-bold text-base text-white">Cỗ Máy Xuất Bản Playwright 25 Kênh</h3>
+                <span class="text-[11px] text-blue-400 font-medium">Meta Business Suite Reels Composer, Nghỉ 45-75s</span>
+              </div>
+            </div>
+            <button onclick="copySnippet('code-pillar-6')" class="text-xs px-2.5 py-1 rounded bg-slate-800 border border-slate-700 text-slate-300 hover:text-white flex items-center gap-1">📋 Copy</button>
+          </div>
+          <div class="text-xs text-slate-300 space-y-1.5">
+            <p><strong>🎯 Mục tiêu:</strong> Đăng tải tự động lần lượt 25 Fanpage, tự động đóng pop-up chào mừng, nạp file trực tiếp và hậu kiểm bài đăng thật.</p>
+            <p><strong>📥 Kỹ thuật đặc biệt:</strong> Điều hướng thẳng URL Composer có `business_id` và `page_id`, nhịp nghỉ ngẫu nhiên 45-75s tránh bị đánh dấu Spam.</p>
+          </div>
+          <div class="p-3 rounded-lg bg-slate-950 font-mono text-[11px] text-blue-300 overflow-x-auto relative" id="code-pillar-6">
+# Kỹ thuật nạp file video và nhấn xuất bản chuẩn Playwright:
+composer_url = f"https://business.facebook.com/latest/reels_composer?page_id={page_id}"
+page.goto(composer_url, wait_until="domcontentloaded")
+page.keyboard.press("Escape") # Đóng mọi pop-up cản trở
+file_input = page.locator('input[type="file"]')
+file_input.set_input_files(video_file_path)
+page.wait_for_timeout(random.randint(45000, 75000)) # Nhịp nghỉ an toàn
+          </div>
+          <div class="p-2.5 rounded-lg bg-amber-950/30 border border-amber-500/30 text-[11px] text-amber-300">
+            <strong>⚠️ Lỗi thường gặp:</strong> Báo đăng ảo (nút chưa kích hoạt xong) -> Khắc phục: Kiểm tra trạng thái URL Content Manager và chụp ảnh màn hình lưu lại bằng chứng.
+          </div>
+        </div>
+
+        <!-- TRỤ CỘT 7 -->
+        <div class="pillar-card p-6 rounded-2xl bg-slate-900/90 border border-slate-800 hover:border-cyan-500/50 transition-all space-y-4" data-category="ops">
+          <div class="flex items-start justify-between">
+            <div class="flex items-center gap-3">
+              <span class="w-8 h-8 rounded-xl bg-cyan-500/20 text-cyan-400 font-black flex items-center justify-center font-mono text-sm">07</span>
+              <div>
+                <h3 class="font-bold text-base text-white">Đóng Gói Web-in-Web & CI/CD GitHub</h3>
+                <span class="text-[11px] text-cyan-400 font-medium">GitHub Pages, CNAME lephucnhat.vn, Tự động hóa Deploy</span>
+              </div>
+            </div>
+            <button onclick="copySnippet('code-pillar-7')" class="text-xs px-2.5 py-1 rounded bg-slate-800 border border-slate-700 text-slate-300 hover:text-white flex items-center gap-1">📋 Copy</button>
+          </div>
+          <div class="text-xs text-slate-300 space-y-1.5">
+            <p><strong>🎯 Mục tiêu:</strong> Xuất bản trang web và các tiểu hệ thống trực tuyến qua Git mà không cần đụng tay vào giao diện web hosting.</p>
+            <p><strong>📥 Điều kiện:</strong> Token GitHub quyền `repo` và `workflow` được lưu trong `github_config.json`.</p>
+          </div>
+          <div class="p-3 rounded-lg bg-slate-950 font-mono text-[11px] text-cyan-300 overflow-x-auto relative" id="code-pillar-7">
+# Script đồng bộ và xuất bản tự động lên GitHub Pages:
+cd "D:\LPN_Workspace\Web_Hub\sites\happyrun09.github.io"
+git add .
+git commit -m "feat(ai-os): Trien khai Master Command 3.0 he-thong-ai"
+git push origin main
+Write-Output "✅ Website đã live tại: https://lephucnhat.vn/he-thong-ai/"
+          </div>
+          <div class="p-2.5 rounded-lg bg-amber-950/30 border border-amber-500/30 text-[11px] text-amber-300">
+            <strong>⚠️ Lỗi thường gặp:</strong> Mất CNAME dẫn đến rơi tên miền riêng -> Khắc phục: Luôn duy trì file `CNAME` chứa `lephucnhat.vn` trong thư mục gốc repo.
+          </div>
+        </div>
+
+        <!-- TRỤ CỘT 8 -->
+        <div class="pillar-card p-6 rounded-2xl bg-slate-900/90 border border-slate-800 hover:border-rose-500/50 transition-all space-y-4" data-category="ops">
+          <div class="flex items-start justify-between">
+            <div class="flex items-center gap-3">
+              <span class="w-8 h-8 rounded-xl bg-rose-500/20 text-rose-400 font-black flex items-center justify-center font-mono text-sm">08</span>
+              <div>
+                <h3 class="font-bold text-base text-white">Chẩn Đoán, Cứu Hộ & Phục Hồi (.bak)</h3>
+                <span class="text-[11px] text-rose-400 font-medium">Bắt lỗi HTTP 401/402/403, UI Drift Self-Healing</span>
+              </div>
+            </div>
+            <button onclick="copySnippet('code-pillar-8')" class="text-xs px-2.5 py-1 rounded bg-slate-800 border border-slate-700 text-slate-300 hover:text-white flex items-center gap-1">📋 Copy</button>
+          </div>
+          <div class="text-xs text-slate-300 space-y-1.5">
+            <p><strong>🎯 Mục tiêu:</strong> Khi có lỗi, hệ thống tự động lưu bản sao `.bak`, ghi log nguyên nhân và kích hoạt kịch bản tự chữa lành (Self-Healing).</p>
+            <p><strong>📥 Kỹ thuật:</strong> Tự động quay về mã sao lưu gần nhất nếu lần build mới bị lỗi Console hoặc lỗi cú pháp.</p>
+          </div>
+          <div class="p-3 rounded-lg bg-slate-950 font-mono text-[11px] text-rose-300 overflow-x-auto relative" id="code-pillar-8">
+# Kịch bản sao lưu an toàn trước khi chỉnh sửa tệp:
+$sourceFile = "D:\LPN_Workspace\ai_core_brain.py"
+Copy-Item -Path $sourceFile -Destination "$sourceFile.bak" -Force
+Write-Output "✅ Đã tạo bản sao lưu an toàn .bak"
+          </div>
+          <div class="p-2.5 rounded-lg bg-amber-950/30 border border-amber-500/30 text-[11px] text-amber-300">
+            <strong>⚠️ Lỗi thường gặp:</strong> Giao diện Meta thay đổi nút bấm (UI Drift) -> Khắc phục: Sử dụng selector đa tầng và bấm theo tọa độ kết hợp phím tắt.
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= SECTION 3: 12 MÔ-ĐUN TƯƠNG TÁC THÔNG MINH (INTERACTIVE MODULES) ================= -->
+    <section id="mo-duon" class="scroll-mt-24 space-y-8">
+      <div>
+        <div class="text-xs font-bold text-emerald-400 uppercase tracking-wider">CÔNG CỤ THỰC THI TRỰC TIẾP</div>
+        <h2 class="text-2xl sm:text-3xl font-black text-white font-vietnam">12 Mô-Đun Tương Tác Thông Minh</h2>
+        <p class="text-xs sm:text-sm text-slate-400 mt-1">Mọi công cụ đều xử lý logic thực sự trên trình duyệt: Tải file .bat/.ps1 thật, đếm ký tự thật, đọc file JSON thật.</p>
+      </div>
+
+      <!-- Quick Module Selector Grid -->
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2 text-xs font-medium">
+        <a href="#mo-duon-01" class="p-2.5 rounded-xl bg-slate-900 border border-slate-800 hover:border-blue-500 text-slate-300 hover:text-white transition text-center">01. Máy Phát Script</a>
+        <a href="#mo-duon-02" class="p-2.5 rounded-xl bg-slate-900 border border-slate-800 hover:border-cyan-500 text-slate-300 hover:text-white transition text-center">02. Caption & Hook</a>
+        <a href="#mo-duon-04" class="p-2.5 rounded-xl bg-slate-900 border border-slate-800 hover:border-emerald-500 text-slate-300 hover:text-white transition text-center">04. Game Checklist</a>
+        <a href="#mo-duon-05" class="p-2.5 rounded-xl bg-slate-900 border border-slate-800 hover:border-rose-500 text-slate-300 hover:text-white transition text-center">05. Bác Sĩ Cứu Hộ</a>
+        <a href="#mo-duon-06" class="p-2.5 rounded-xl bg-slate-900 border border-slate-800 hover:border-purple-500 text-slate-300 hover:text-white transition text-center">06. Trình Vẽ Luồng</a>
+        <a href="#mo-duon-07" class="p-2.5 rounded-xl bg-slate-900 border border-slate-800 hover:border-amber-500 text-slate-300 hover:text-white transition text-center">07. Thư Viện Mẫu</a>
+        <a href="#mo-duon-08" class="p-2.5 rounded-xl bg-slate-900 border border-slate-800 hover:border-blue-500 text-slate-300 hover:text-white transition text-center">08. Chế Tạo Agent</a>
+        <a href="#mo-duon-09" class="p-2.5 rounded-xl bg-slate-900 border border-slate-800 hover:border-cyan-500 text-slate-300 hover:text-white transition text-center">09. Quản Trị Đa AI</a>
+        <a href="#mo-duon-10" class="p-2.5 rounded-xl bg-slate-900 border border-slate-800 hover:border-emerald-500 text-slate-300 hover:text-white transition text-center">10. Quản Lý Agent</a>
+        <a href="#mo-duon-11" class="p-2.5 rounded-xl bg-slate-900 border border-slate-800 hover:border-amber-500 text-slate-300 hover:text-white transition text-center">11. Bảng 25 Kênh</a>
+        <a href="#mo-duon-12" class="p-2.5 rounded-xl bg-slate-900 border border-slate-800 hover:border-rose-500 text-slate-300 hover:text-white transition text-center">12. Sao Lưu & Phục Hồi</a>
+        <a href="#ban-do-luong" class="p-2.5 rounded-xl bg-slate-900 border border-slate-800 hover:border-blue-500 text-slate-300 hover:text-white transition text-center">03. Bản Đồ Hệ Thống</a>
+      </div>
+
+      <!-- ================= MÔ-ĐUN 01: MÁY PHÁT SIÊU CÂU LỆNH & XUẤT FILE CÀI ĐẶT ================= -->
+      <div id="mo-duon-01" class="p-6 sm:p-8 rounded-2xl bg-slate-900/90 border border-blue-500/30 shadow-xl space-y-6">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800 pb-4">
+          <div>
+            <span class="text-xs font-bold px-2 py-0.5 rounded bg-blue-500/20 text-blue-400">MÔ-ĐUN 01</span>
+            <h3 class="text-xl font-bold text-white mt-1">Máy Phát Siêu Câu Lệnh & Xuất File Cài Đặt (Script Generator)</h3>
+            <p class="text-xs text-slate-400">Tùy biến thông số máy tính của bạn và tải ngay trọn bộ file cài đặt tự động.</p>
+          </div>
+          <span class="text-xs text-emerald-400 font-mono flex items-center gap-1">
+            <span class="w-2 h-2 rounded-full bg-emerald-400"></span> 1 Chạm Sinh File
+          </span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 text-xs">
+          <div class="space-y-1.5">
+            <label class="font-bold text-slate-300">Đường dẫn thư mục làm việc:</label>
+            <input type="text" id="genPath" value="D:\LPN_Workspace" class="w-full px-3 py-2 rounded-lg bg-slate-950 border border-slate-700 text-white font-mono focus:border-blue-500 outline-none">
+          </div>
+          <div class="space-y-1.5">
+            <label class="font-bold text-slate-300">Số lượng Fanpage quản lý:</label>
+            <input type="number" id="genPages" value="25" min="1" max="100" class="w-full px-3 py-2 rounded-lg bg-slate-950 border border-slate-700 text-white font-mono focus:border-blue-500 outline-none">
+          </div>
+          <div class="space-y-1.5">
+            <label class="font-bold text-slate-300">Chủ đề Kênh chính:</label>
+            <select id="genTopic" class="w-full px-3 py-2 rounded-lg bg-slate-950 border border-slate-700 text-white focus:border-blue-500 outline-none">
+              <option value="reels_viral">Video Triết Lý, Thư Giãn, Thiền, Đời Sống</option>
+              <option value="happy_run">Happy Run, Thể Thao, Phát Triển Bản Thân</option>
+              <option value="education">Giáo Dục, Bài Giảng, Khoa Học</option>
+              <option value="forestry">Nông Lâm Nghiệp, Dược Liệu, Hợp Tác Xã</option>
+              <option value="tech_ai">Công Nghệ AI, Lập Trình Tự Động Hóa</option>
+            </select>
+          </div>
+          <div class="space-y-1.5">
+            <label class="font-bold text-slate-300">Telegram Chat ID (Tùy chọn):</label>
+            <input type="text" id="genTelegram" placeholder="Ví dụ: 123456789" class="w-full px-3 py-2 rounded-lg bg-slate-950 border border-slate-700 text-white font-mono focus:border-blue-500 outline-none">
+          </div>
+        </div>
+
+        <!-- Preview Code Box -->
+        <div class="space-y-2">
+          <div class="flex items-center justify-between text-xs">
+            <span class="font-bold text-slate-300">Nội dung Siêu Câu Lệnh Antigravity & File Cài Đặt Sinh Ra:</span>
+            <div class="flex items-center gap-2">
+              <button id="btnRefreshScript" onclick="updateGeneratedScript()" class="text-blue-400 hover:text-white px-2 py-1 rounded bg-slate-800 border border-slate-700">🔄 Làm mới</button>
+              <button id="btnCopyScript" onclick="copyGeneratedScript()" class="text-blue-400 hover:text-white px-2 py-1 rounded bg-slate-800 border border-slate-700">📋 Copy Câu Lệnh</button>
+            </div>
+          </div>
+          <pre id="genOutputBox" class="p-4 rounded-xl bg-black/90 font-mono text-[11px] text-cyan-300 overflow-x-auto border border-slate-800 max-h-56"></pre>
+        </div>
+
+        <!-- Action Download Buttons -->
+        <div class="flex flex-wrap items-center gap-3 pt-2">
+          <button onclick="downloadScript('Setup_Tu_Dong.bat')" class="px-4 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs flex items-center gap-2 shadow-lg shadow-blue-500/20 transition">
+            <span>📥</span> Tải Setup_Tu_Dong.bat
+          </button>
+          <button onclick="downloadScript('Setup_Tu_Dong.ps1')" class="px-4 py-2.5 rounded-xl bg-cyan-600 hover:bg-cyan-500 text-white font-bold text-xs flex items-center gap-2 shadow-lg shadow-cyan-500/20 transition">
+            <span>📥</span> Tải Setup_Tu_Dong.ps1
+          </button>
+          <button onclick="downloadScript('.env.template')" class="px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold text-xs flex items-center gap-2 border border-slate-700 transition">
+            <span>📥</span> Tải .env.template
+          </button>
+          <button onclick="downloadScript('starter_agent.py')" class="px-4 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs flex items-center gap-2 shadow-lg shadow-indigo-500/20 transition">
+            <span>📥</span> Tải starter_agent.py
+          </button>
+        </div>
+      </div>
+
+      <!-- ================= MÔ-ĐUN 02: PHÒNG THÍ NGHIỆM CAPTION & HASHTAG VIRAL ================= -->
+      <div id="mo-duon-02" class="p-6 sm:p-8 rounded-2xl bg-slate-900/90 border border-cyan-500/30 shadow-xl space-y-6">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800 pb-4">
+          <div>
+            <span class="text-xs font-bold px-2 py-0.5 rounded bg-cyan-500/20 text-cyan-400">MÔ-ĐUN 02</span>
+            <h3 class="text-xl font-bold text-white mt-1">Phòng Thí Nghiệm Caption & Hashtag Viral (Viral Hook Simulator)</h3>
+            <p class="text-xs text-slate-400">Kiểm tra trực tiếp độ dài vàng 50–100 ký tự, cảnh báo lỗi dấu ngoặc máy móc và sinh 5 hashtag chuẩn ngách.</p>
+          </div>
+          <div class="flex items-center gap-2">
+            <span id="captionGoldBadge" class="text-xs font-bold px-2.5 py-1 rounded bg-slate-800 text-slate-400 border border-slate-700">CHƯA ĐẠT CHUẨN</span>
+          </div>
+        </div>
+
+        <div class="space-y-4">
+          <div class="space-y-1.5">
+            <div class="flex justify-between items-center text-xs">
+              <label class="font-bold text-slate-300">Nhập thử Caption Video Reels:</label>
+              <div class="font-mono text-xs">
+                Số ký tự: <span id="captionCharCount" class="font-bold text-cyan-400">0</span> / 100
+                <span id="captionFeedback" class="ml-2 text-slate-400"></span>
+              </div>
+            </div>
+            <textarea id="captionInput" oninput="analyzeCaption()" rows="3" class="w-full p-3 rounded-xl bg-slate-950 border border-slate-700 text-white focus:border-cyan-500 outline-none text-sm font-sans" placeholder="Ví dụ: Bạn đã bao giờ cảm thấy bất an giữa những ngày vội vã? Dừng lại một nhịp để thấy lòng mình dịu lại."></textarea>
+          </div>
+
+          <!-- Video Title Duplicate Check -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+            <div class="space-y-1.5">
+              <label class="font-bold text-slate-300">Tiêu đề xuất hiện trên video (để đối soát trùng lặp):</label>
+              <input type="text" id="videoTitleInput" oninput="analyzeCaption()" placeholder="Ví dụ: Lòng Bình Yên Giữa Giông Bão" class="w-full px-3 py-2 rounded-lg bg-slate-950 border border-slate-700 text-white focus:border-cyan-500 outline-none">
+            </div>
+            <div class="space-y-1.5">
+              <label class="font-bold text-slate-300">Chủ đề tạo 5 Hashtag ngách:</label>
+              <div class="flex gap-2">
+                <select id="hashtagTopicSelect" onchange="generateNicheHashtags()" class="w-full px-3 py-2 rounded-lg bg-slate-950 border border-slate-700 text-white focus:border-cyan-500 outline-none">
+                  <option value="thien">Bình An & Thiền</option>
+                  <option value="happyrun">Happy Run & Thể Thao</option>
+                  <option value="trietly">Triết Lý Sống</option>
+                  <option value="lamnghiep">Lâm Nghiệp Bền Vững</option>
+                  <option value="congnghe">Công Nghệ AI</option>
+                </select>
+                <button onclick="generateNicheHashtags()" class="px-3 py-2 rounded-lg bg-cyan-600 hover:bg-cyan-500 text-white font-bold whitespace-nowrap">Tạo Tag</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Analysis Results & Suggestions -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="p-3.5 rounded-xl bg-slate-950 border border-slate-800 space-y-2 text-xs">
+              <div class="font-bold text-slate-300 flex items-center gap-1.5">
+                <span>🔍</span> Kết Quả Kiểm Tra Chuẩn Vàng:
+              </div>
+              <ul class="space-y-1 text-slate-400" id="captionCheckList">
+                <li id="chkLength">⚪ Độ dài chuẩn vàng: 50 – 100 ký tự (Không bị bấm 'Xem thêm')</li>
+                <li id="chkQuotes">⚪ Không chứa ngoặc kép máy móc dạng «...» hoặc [...]</li>
+                <li id="chkQuestion">⚪ Bắt đầu bằng câu hỏi mở khiêu khích trong 30 ký tự đầu</li>
+                <li id="chkDuplicate">⚪ Không lặp lại nguyên văn tiêu đề trên video</li>
+              </ul>
+            </div>
+
+            <div class="p-3.5 rounded-xl bg-slate-950 border border-slate-800 space-y-2 text-xs">
+              <div class="flex items-center justify-between">
+                <div class="font-bold text-slate-300 flex items-center gap-1.5">
+                  <span>🏷️</span> 5 Hashtag Ngách Đã Tối Ưu:
+                </div>
+                <button onclick="copyGeneratedHashtags()" class="text-cyan-400 hover:text-white px-2 py-0.5 rounded bg-slate-800 border border-slate-700">Copy Hashtags</button>
+              </div>
+              <div id="hashtagBox" class="flex flex-wrap gap-1.5 pt-1">
+                <span class="px-2 py-1 rounded bg-cyan-950/60 text-cyan-300 border border-cyan-800 text-[11px]">#BinhAnTuTam</span>
+                <span class="px-2 py-1 rounded bg-cyan-950/60 text-cyan-300 border border-cyan-800 text-[11px]">#SongAnNhien</span>
+                <span class="px-2 py-1 rounded bg-cyan-950/60 text-cyan-300 border border-cyan-800 text-[11px]">#ChuaLanhTamHon</span>
+                <span class="px-2 py-1 rounded bg-cyan-950/60 text-cyan-300 border border-cyan-800 text-[11px]">#TrietLyCuocSong</span>
+                <span class="px-2 py-1 rounded bg-cyan-950/60 text-cyan-300 border border-cyan-800 text-[11px]">#GocNhinSauSac</span>
+              </div>
+              <div class="text-[11px] text-slate-500">Mẹo: Hashtag ngách giúp thuật toán Meta phân phối thẳng đến tệp người xem có độ giữ chân cao nhất.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= MÔ-ĐUN 04: BẢNG KIỂM TRA TIẾN ĐỘ CÁ NHÂN (GAMIFIED CHECKLIST) ================= -->
+      <div id="mo-duon-04" class="p-6 sm:p-8 rounded-2xl bg-slate-900/90 border border-emerald-500/30 shadow-xl space-y-6">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800 pb-4">
+          <div>
+            <span class="text-xs font-bold px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400">MÔ-ĐUN 04</span>
+            <h3 class="text-xl font-bold text-white mt-1">Bảng Kiểm Tra Tiến Độ Tự Động Hóa (Gamified Checklist)</h3>
+            <p class="text-xs text-slate-400">Tự động lưu trạng thái vào trình duyệt qua LocalStorage. Hoàn thành để mở khóa huy hiệu Mastery!</p>
+          </div>
+          <div class="text-right">
+            <span class="text-2xl font-black font-mono text-emerald-400" id="checklistProgressPercent">0%</span>
+            <div class="text-[10px] text-slate-400">Tiến độ hoàn thành</div>
+          </div>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="w-full bg-slate-950 rounded-full h-3 p-0.5 border border-slate-800">
+          <div id="checklistProgressBar" class="bg-gradient-to-r from-emerald-500 to-cyan-500 h-full rounded-full transition-all duration-500" style="width: 0%"></div>
+        </div>
+
+        <!-- Checklist Items -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs" id="checklistItemsContainer">
+          <!-- Dynamically populated via JS -->
+        </div>
+
+        <div class="flex items-center justify-between pt-2">
+          <button onclick="resetChecklist()" class="text-xs text-slate-500 hover:text-rose-400 transition">↺ Đặt lại danh sách</button>
+          <div id="checklistBadgeAchieved" class="hidden px-3 py-1.5 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 font-bold text-xs flex items-center gap-1.5 animate-bounce">
+            <span>🏆</span> CHÚC MỪNG: BẠN ĐÃ LÀ TỔNG CÔNG TRÌNH SƯ TỰ ĐỘNG HÓA!
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= MÔ-ĐUN 05: BÁC SĨ CHẨN ĐOÁN LỖI TỨC THÌ (INSTANT TROUBLESHOOTER) ================= -->
+      <div id="mo-duon-05" class="p-6 sm:p-8 rounded-2xl bg-slate-900/90 border border-rose-500/30 shadow-xl space-y-6">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800 pb-4">
+          <div>
+            <span class="text-xs font-bold px-2 py-0.5 rounded bg-rose-500/20 text-rose-400">MÔ-ĐUN 05</span>
+            <h3 class="text-xl font-bold text-white mt-1">Bác Sĩ Chẩn Đoán Lỗi Tức Thì (Instant Troubleshooter)</h3>
+            <p class="text-xs text-slate-400">Tìm kiếm theo mã lỗi (401, 402, 403, 429, permission, popup, ffmpeg) để nhận ngay giải pháp và lệnh sửa lỗi 1 chạm.</p>
+          </div>
+          <span class="text-xs text-rose-400 font-mono flex items-center gap-1">
+            <span class="w-2 h-2 rounded-full bg-rose-400"></span> Cứu Hộ 24/7
+          </span>
+        </div>
+
+        <!-- Search Input -->
+        <div class="relative">
+          <input type="text" id="troubleSearchInput" oninput="searchTroubleIssues()" placeholder="Gõ từ khóa lỗi: 401, 402, hỏi lại quyền, popup, không tìm thấy ô chọn video, telegram..." class="w-full px-4 py-3 pl-10 rounded-xl bg-slate-950 border border-slate-700 text-white focus:border-rose-500 outline-none text-xs sm:text-sm font-sans">
+          <span class="absolute left-3.5 top-3.5 text-slate-400">🔍</span>
+          <div class="flex gap-1.5 mt-2 overflow-x-auto text-[11px]">
+            <button onclick="setTroubleFilter('401')" class="px-2 py-1 rounded bg-slate-800 text-slate-300 hover:text-white">Lỗi 401</button>
+            <button onclick="setTroubleFilter('402')" class="px-2 py-1 rounded bg-slate-800 text-slate-300 hover:text-white">Lỗi 402 Hết Tiền</button>
+            <button onclick="setTroubleFilter('quyền')" class="px-2 py-1 rounded bg-slate-800 text-slate-300 hover:text-white">Hỏi Quyền Ghi Đè</button>
+            <button onclick="setTroubleFilter('video')" class="px-2 py-1 rounded bg-slate-800 text-slate-300 hover:text-white">Không Thấy Ô Video</button>
+            <button onclick="setTroubleFilter('telegram')" class="px-2 py-1 rounded bg-slate-800 text-slate-300 hover:text-white">Lỗi Telegram</button>
+            <button onclick="setTroubleFilter('')" class="px-2 py-1 rounded bg-slate-800 text-slate-300 hover:text-white">Xem Tất Cả</button>
+          </div>
+        </div>
+
+        <!-- Issue Cards Container -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="troubleContainer">
+          <!-- Dynamically populated via JS -->
+        </div>
+      </div>
+
+      <!-- ================= MÔ-ĐUN 06: TRÌNH THIẾT KẾ LUỒNG TỰ ĐỘNG HÓA (AI WORKFLOW BUILDER) ================= -->
+      <div id="mo-duon-06" class="p-6 sm:p-8 rounded-2xl bg-slate-900/90 border border-purple-500/30 shadow-xl space-y-6">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800 pb-4">
+          <div>
+            <span class="text-xs font-bold px-2 py-0.5 rounded bg-purple-500/20 text-purple-400">MÔ-ĐUN 06</span>
+            <h3 class="text-xl font-bold text-white mt-1">Trình Thiết Kế Luồng Tự Động Hóa (AI Workflow Builder)</h3>
+            <p class="text-xs text-slate-400">Lắp ghép luồng công việc trực quan: Trigger &rarr; Input &rarr; AI Brain &rarr; Action &rarr; Output/Telegram.</p>
+          </div>
+          <button onclick="exportWorkflowConfig()" class="text-xs px-3 py-1.5 rounded-lg bg-purple-600 hover:bg-purple-500 text-white font-bold flex items-center gap-1 shadow-md">
+            <span>💾</span> Xuất Cấu Hình JSON
+          </button>
+        </div>
+
+        <!-- Visual Flow Blocks -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 text-xs">
+          
+          <div class="p-3.5 rounded-xl bg-slate-950 border border-slate-800 space-y-2">
+            <span class="font-bold text-purple-400 uppercase tracking-wider text-[10px]">BƯỚC 1: TRIGGER</span>
+            <select id="wfTrigger" onchange="updateWorkflowPreview()" class="w-full p-2 rounded-lg bg-slate-900 border border-slate-700 text-white focus:border-purple-500 outline-none text-xs">
+              <option value="cron_daily">⏰ Định kỳ 22:00 hàng ngày</option>
+              <option value="folder_watch">📂 Phát hiện file video mới</option>
+              <option value="telegram_cmd">📱 Tin nhắn lệnh Telegram</option>
+              <option value="manual_bat">⚡ Chạy file .bat thủ công</option>
+            </select>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-slate-950 border border-slate-800 space-y-2">
+            <span class="font-bold text-cyan-400 uppercase tracking-wider text-[10px]">BƯỚC 2: INPUT</span>
+            <select id="wfInput" onchange="updateWorkflowPreview()" class="w-full p-2 rounded-lg bg-slate-900 border border-slate-700 text-white focus:border-cyan-500 outline-none text-xs">
+              <option value="broll_pool">🎞️ Kho B-Roll Zen/Thư giãn</option>
+              <option value="voice_record">🎙️ Giọng đọc Audio MP3</option>
+              <option value="blog_post">📝 Bài viết từ lephucnhat.vn</option>
+              <option value="csv_fanpages">📊 Danh sách 25 Fanpage CSV</option>
+            </select>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-slate-950 border border-slate-800 space-y-2">
+            <span class="font-bold text-blue-400 uppercase tracking-wider text-[10px]">BƯỚC 3: AI BRAIN</span>
+            <select id="wfBrain" onchange="updateWorkflowPreview()" class="w-full p-2 rounded-lg bg-slate-900 border border-slate-700 text-white focus:border-blue-500 outline-none text-xs">
+              <option value="dual_router">🧠 Dual-Router (DeepSeek + Gemini)</option>
+              <option value="deepseek_only">⚡ DeepSeek V3 (Sát thủ Caption)</option>
+              <option value="gemini_flash">🚀 Gemini 2.5 Flash (Tốc độ cao)</option>
+              <option value="vertex_cloud">☁️ Google Vertex AI ($300)</option>
+            </select>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-slate-950 border border-slate-800 space-y-2">
+            <span class="font-bold text-amber-400 uppercase tracking-wider text-[10px]">BƯỚC 4: ACTION</span>
+            <select id="wfAction" onchange="updateWorkflowPreview()" class="w-full p-2 rounded-lg bg-slate-900 border border-slate-700 text-white focus:border-amber-500 outline-none text-xs">
+              <option value="ffmpeg_render">🎬 Render FFmpeg 9:16 + Nhạc</option>
+              <option value="playwright_25">🚀 Playwright Đăng 25 Fanpage</option>
+              <option value="git_publish">🌐 Git Push lên GitHub Pages</option>
+              <option value="backup_snapshot">💾 Sao lưu toàn bộ .bak</option>
+            </select>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-slate-950 border border-slate-800 space-y-2">
+            <span class="font-bold text-emerald-400 uppercase tracking-wider text-[10px]">BƯỚC 5: OUTPUT</span>
+            <select id="wfOutput" onchange="updateWorkflowPreview()" class="w-full p-2 rounded-lg bg-slate-900 border border-slate-700 text-white focus:border-emerald-500 outline-none text-xs">
+              <option value="tele_photo">📸 Báo cáo ảnh qua Telegram</option>
+              <option value="markdown_log">📄 Ghi batch_report.md</option>
+              <option value="json_history">📊 Lưu publish_history.json</option>
+              <option value="sound_alert">🔔 Phát âm thanh Windows</option>
+            </select>
+          </div>
+
+        </div>
+
+        <!-- Generated Workflow Blueprint Code -->
+        <div class="space-y-2">
+          <div class="flex justify-between items-center text-xs">
+            <span class="font-bold text-slate-300">Prompt Điều Phối Cho AI Agent:</span>
+            <button onclick="copySnippet('wfPromptBox')" class="text-purple-400 hover:text-white px-2 py-0.5 rounded bg-slate-800 border border-slate-700">📋 Copy Prompt</button>
+          </div>
+          <pre id="wfPromptBox" class="p-4 rounded-xl bg-black/90 font-mono text-[11px] text-purple-300 overflow-x-auto border border-slate-800"></pre>
+        </div>
+      </div>
+
+      <!-- ================= MÔ-ĐUN 07: THƯ VIỆN MẪU TỰ ĐỘNG HÓA THỰC CHIẾN ================= -->
+      <div id="mo-duon-07" class="p-6 sm:p-8 rounded-2xl bg-slate-900/90 border border-amber-500/30 shadow-xl space-y-6">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800 pb-4">
+          <div>
+            <span class="text-xs font-bold px-2 py-0.5 rounded bg-amber-500/20 text-amber-400">MÔ-ĐUN 07</span>
+            <h3 class="text-xl font-bold text-white mt-1">Thư Viện Mẫu Tự Động Hóa Thực Chiến (Template Library)</h3>
+            <p class="text-xs text-slate-400">6 mẫu kịch bản đã kiểm chứng thực tế tại xưởng LPN: Xem cấu trúc, tùy biến và copy chạy ngay.</p>
+          </div>
+          <span class="text-xs text-amber-400 font-mono">6 Mẫu Chuẩn Hóa</span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" id="templateListContainer">
+          <!-- Dynamically populated via JS -->
+        </div>
+
+        <!-- Template View Modal / Box -->
+        <div id="templateDetailView" class="hidden p-4 rounded-xl bg-slate-950 border border-amber-500/30 space-y-3">
+          <div class="flex justify-between items-center">
+            <h4 id="tmplTitle" class="font-bold text-sm text-white">Chi tiết kịch bản mẫu</h4>
+            <div class="flex gap-2">
+              <button onclick="copySnippet('tmplCodeBox')" class="text-xs px-2.5 py-1 rounded bg-slate-800 text-amber-400 border border-slate-700 hover:text-white">📋 Copy Script</button>
+              <button onclick="closeTemplateView()" class="text-xs px-2.5 py-1 rounded bg-slate-800 text-slate-400 hover:text-white">✕ Đóng</button>
+            </div>
+          </div>
+          <pre id="tmplCodeBox" class="p-3 rounded-lg bg-black/90 font-mono text-[11px] text-amber-300 overflow-x-auto max-h-60"></pre>
+        </div>
+      </div>
+
+      <!-- ================= MÔ-ĐUN 08: XƯỞNG CHẾ TẠO TRỢ LÝ AI (AI AGENT BUILDER) ================= -->
+      <div id="mo-duon-08" class="p-6 sm:p-8 rounded-2xl bg-slate-900/90 border border-blue-500/30 shadow-xl space-y-6">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800 pb-4">
+          <div>
+            <span class="text-xs font-bold px-2 py-0.5 rounded bg-blue-500/20 text-blue-400">MÔ-ĐUN 08</span>
+            <h3 class="text-xl font-bold text-white mt-1">Xưởng Chế Tạo Trợ Lý AI (AI Agent Builder)</h3>
+            <p class="text-xs text-slate-400">Định nghĩa vai trò, quyền hạn, công cụ và tiêu chuẩn nghiệm thu để sinh tệp System Prompt chuẩn Antigravity.</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
+          <div class="space-y-1.5">
+            <label class="font-bold text-slate-300">Tên & Vai trò Agent:</label>
+            <input type="text" id="agRole" value="Tổng Công Trình Sư Xuất Bản Đa Kênh LPN" class="w-full px-3 py-2 rounded-lg bg-slate-950 border border-slate-700 text-white outline-none">
+          </div>
+          <div class="space-y-1.5">
+            <label class="font-bold text-slate-300">Mục tiêu tối thượng:</label>
+            <input type="text" id="agGoal" value="Sản xuất video, đăng 25 Fanpage an toàn không dính checkpoint, báo cáo Telegram" class="w-full px-3 py-2 rounded-lg bg-slate-950 border border-slate-700 text-white outline-none">
+          </div>
+          <div class="space-y-1.5">
+            <label class="font-bold text-slate-300">Công cụ được phép sử dụng:</label>
+            <input type="text" id="agTools" value="PowerShell, Python, FFmpeg, Playwright, Git, File Read/Write" class="w-full px-3 py-2 rounded-lg bg-slate-950 border border-slate-700 text-white outline-none">
+          </div>
+          <div class="space-y-1.5">
+            <label class="font-bold text-slate-300">Tiêu chuẩn nghiệm thu (Acceptance Criteria):</label>
+            <input type="text" id="agCriteria" value="Có ảnh chụp màn hình chứng minh trên Meta Business Suite, file báo cáo .md ghi nhận" class="w-full px-3 py-2 rounded-lg bg-slate-950 border border-slate-700 text-white outline-none">
+          </div>
+        </div>
+
+        <div class="space-y-2">
+          <div class="flex justify-between items-center text-xs">
+            <span class="font-bold text-slate-300">System Prompt Tạo Ra:</span>
+            <div class="flex gap-2">
+              <button onclick="generateAgentPrompt()" class="text-blue-400 hover:text-white px-2 py-0.5 rounded bg-slate-800 border border-slate-700">🔄 Biên dịch</button>
+              <button onclick="copySnippet('agPromptBox')" class="text-blue-400 hover:text-white px-2 py-0.5 rounded bg-slate-800 border border-slate-700">📋 Copy</button>
+            </div>
+          </div>
+          <pre id="agPromptBox" class="p-4 rounded-xl bg-black/90 font-mono text-[11px] text-blue-300 overflow-x-auto border border-slate-800 max-h-48"></pre>
+        </div>
+      </div>
+
+      <!-- ================= MÔ-ĐUN 09: TRUNG TÂM QUẢN TRỊ ĐA MÔ HÌNH AI ================= -->
+      <div id="mo-duon-09" class="p-6 sm:p-8 rounded-2xl bg-slate-900/90 border border-cyan-500/30 shadow-xl space-y-6">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800 pb-4">
+          <div>
+            <span class="text-xs font-bold px-2 py-0.5 rounded bg-cyan-500/20 text-cyan-400">MÔ-ĐUN 09</span>
+            <h3 class="text-xl font-bold text-white mt-1">Trung Tâm Quản Trị Đa Mô Hình AI (Multi-AI Simulator & Guide)</h3>
+            <p class="text-xs text-slate-400">Mô phỏng bảng điều khiển kiểm tra kết nối, phân loại mã lỗi thực tế (401/402/403) và hướng dẫn kích hoạt Vertex AI Cloud $300.</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
+          <!-- DeepSeek Card -->
+          <div class="p-4 rounded-xl bg-slate-950 border border-slate-800 space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="font-bold text-white flex items-center gap-1.5">⚡ DeepSeek API</span>
+              <span id="stDeepseek" class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 text-[10px] font-mono">ACTIVE (ONLINE)</span>
+            </div>
+            <p class="text-slate-400 text-[11px]">Chuyên: Viết Caption Viral, Hook 3 giây, tư duy phản biện sắc bén.</p>
+            <div class="font-mono text-[10px] text-slate-500">Mô hình: deepseek-chat (V3) / deepseek-reasoner (R1)</div>
+            <button id="btnTestAiDeepseek" onclick="testAiConnection('deepseek')" class="w-full py-1.5 rounded bg-slate-800 hover:bg-slate-700 text-cyan-300 font-semibold transition">Thử nghiệm kết nối</button>
+          </div>
+
+          <!-- Gemini Card -->
+          <div class="p-4 rounded-xl bg-slate-950 border border-slate-800 space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="font-bold text-white flex items-center gap-1.5">🚀 Gemini API (Free Tier)</span>
+              <span id="stGemini" class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 text-[10px] font-mono">ACTIVE (ONLINE)</span>
+            </div>
+            <p class="text-slate-400 text-[11px]">Chuyên: Xử lý đa phương thức, kiểm duyệt an toàn, tóm tắt nhanh.</p>
+            <div class="font-mono text-[10px] text-slate-500">Mô hình: gemini-2.5-flash / gemini-2.5-flash-lite</div>
+            <button onclick="testAiConnection('gemini')" class="w-full py-1.5 rounded bg-slate-800 hover:bg-slate-700 text-cyan-300 font-semibold transition">Thử nghiệm kết nối</button>
+          </div>
+
+          <!-- Vertex AI Card -->
+          <div class="p-4 rounded-xl bg-slate-950 border border-slate-800 space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="font-bold text-white flex items-center gap-1.5">☁️ Google Vertex AI ($300)</span>
+              <span id="stVertex" class="px-2 py-0.5 rounded bg-blue-500/20 text-blue-400 text-[10px] font-mono">BACKUP READY</span>
+            </div>
+            <p class="text-slate-400 text-[11px]">Chuyên: Tải công việc nặng, không bị nghẽn ngạch, gói khuyến mại $300.</p>
+            <div class="font-mono text-[10px] text-slate-500">Kích hoạt: Google Cloud Console &rarr; Vertex AI Studio</div>
+            <button onclick="testAiConnection('vertex')" class="w-full py-1.5 rounded bg-slate-800 hover:bg-slate-700 text-cyan-300 font-semibold transition">Thử nghiệm kết nối</button>
+          </div>
+        </div>
+
+        <div id="aiTestConsole" class="p-3.5 rounded-xl bg-black/90 font-mono text-[11px] text-slate-400 border border-slate-800">
+          <div class="text-cyan-400 font-bold mb-1">// Bảng điều khiển kiểm tra kết nối AI (Simulator):</div>
+          <div id="aiConsoleLog">Sẵn sàng thử nghiệm. Bấm nút phía trên để kiểm tra tình trạng khóa API.</div>
+        </div>
+      </div>
+
+      <!-- ================= MÔ-ĐUN 10: TRÌNH QUẢN LÝ TÁC VỤ MÁY CỤC BỘ ================= -->
+      <div id="mo-duon-10" class="p-6 sm:p-8 rounded-2xl bg-slate-900/90 border border-emerald-500/30 shadow-xl space-y-6">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800 pb-4">
+          <div>
+            <span class="text-xs font-bold px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400">MÔ-ĐUN 10</span>
+            <h3 class="text-xl font-bold text-white mt-1">Trình Quản Lý Tác Vụ Cục Bộ & Remote (Local Agent Center)</h3>
+            <p class="text-xs text-slate-400">Hướng dẫn thiết lập Chrome Remote Desktop trên điện thoại và bộ lệnh kiểm tra tiến trình ngầm.</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs">
+          <!-- Remote Desktop Guide -->
+          <div class="p-4 rounded-xl bg-slate-950 border border-slate-800 space-y-3">
+            <h4 class="font-bold text-white flex items-center gap-2">
+              <span>📱</span> Cài Đặt Chrome Remote Desktop Trên Điện Thoại:
+            </h4>
+            <ol class="space-y-2 text-slate-300 list-decimal list-inside leading-relaxed">
+              <li>Mở trình duyệt trên máy tính và truy cập: <code class="text-cyan-300">remotedesktop.google.com/access</code>.</li>
+              <li>Bấm cài đặt tiện ích mở rộng Chrome Remote Desktop và đặt mã PIN 6 số an toàn.</li>
+              <li>Tải ứng dụng <strong>Chrome Remote Desktop</strong> từ App Store (iOS) hoặc Google Play (Android).</li>
+              <li>Đăng nhập cùng tài khoản Google &rarr; Chạm vào máy tính của bạn &rarr; Điều khiển màn hình 60fps mọi lúc, mọi nơi.</li>
+            </ol>
+          </div>
+
+          <!-- Windows Task Inspection Script -->
+          <div class="p-4 rounded-xl bg-slate-950 border border-slate-800 space-y-3">
+            <div class="flex justify-between items-center">
+              <h4 class="font-bold text-white flex items-center gap-2">
+                <span>💻</span> Kiểm Tra Tiến Trình Ngầm PowerShell:
+              </h4>
+              <button onclick="copySnippet('taskInspectCode')" class="text-emerald-400 hover:text-white px-2 py-0.5 rounded bg-slate-800 border border-slate-700">Copy</button>
+            </div>
+            <pre id="taskInspectCode" class="p-3 rounded-lg bg-black/90 font-mono text-[11px] text-emerald-300 overflow-x-auto">
+# Xem các tiến trình Python / Playwright đang hoạt động:
+Get-Process -Name python, chrome -ErrorAction SilentlyContinue | Format-Table Id, ProcessName, CPU, WorkingSet64
+# Xem lịch chạy Task Scheduler tự động mỗi đêm:
+Get-ScheduledTask -TaskName "*LPN*" -ErrorAction SilentlyContinue
+            </pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= MÔ-ĐUN 11: BẢNG GIÁM SÁT CHIẾN DỊCH 25 KÊNH (VỚI BỘ ĐỌC JSON THẬT) ================= -->
+      <div id="mo-duon-11" class="p-6 sm:p-8 rounded-2xl bg-slate-900/90 border border-amber-500/30 shadow-xl space-y-6">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800 pb-4">
+          <div>
+            <span class="text-xs font-bold px-2 py-0.5 rounded bg-amber-500/20 text-amber-400">MÔ-ĐUN 11</span>
+            <h3 class="text-xl font-bold text-white mt-1">Bảng Giám Sát Chiến Dịch 25 Kênh (Execution Dashboard)</h3>
+            <p class="text-xs text-slate-400">Bộ đọc file <code class="text-amber-300">browser_publish_history.json</code> trực tiếp trên trình duyệt hoặc xem dữ liệu chiến dịch thực tế hôm nay.</p>
+          </div>
+          <div class="flex items-center gap-2">
+            <label class="cursor-pointer px-3 py-1.5 rounded-lg bg-amber-600 hover:bg-amber-500 text-white font-bold text-xs flex items-center gap-1.5 transition">
+              <span>📂</span> Tải Lên File JSON Của Bạn
+              <input type="file" id="jsonHistoryUploader" accept=".json" onchange="handleHistoryFileUpload(event)" class="hidden">
+            </label>
+            <button onclick="loadSampleHistory()" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold text-xs border border-slate-700 transition">
+              🔄 Xem Dữ Liệu Hôm Nay (19/24)
+            </button>
+          </div>
+        </div>
+
+        <!-- Dashboard Metrics -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-center">
+          <div class="p-3 rounded-xl bg-slate-950 border border-slate-800">
+            <div class="text-2xl font-black text-white font-mono" id="dashTotal">24</div>
+            <div class="text-[10px] text-slate-400">Tổng Kênh Chạy</div>
+          </div>
+          <div class="p-3 rounded-xl bg-slate-950 border border-slate-800">
+            <div class="text-2xl font-black text-emerald-400 font-mono" id="dashSuccess">19</div>
+            <div class="text-[10px] text-slate-400">Thành Công (SUCCESS)</div>
+          </div>
+          <div class="p-3 rounded-xl bg-slate-950 border border-slate-800">
+            <div class="text-2xl font-black text-rose-400 font-mono" id="dashFailed">5</div>
+            <div class="text-[10px] text-slate-400">Cần Khắc Phục (FAILED)</div>
+          </div>
+          <div class="p-3 rounded-xl bg-slate-950 border border-slate-800">
+            <div class="text-2xl font-black text-amber-400 font-mono" id="dashRate">79.2%</div>
+            <div class="text-[10px] text-slate-400">Tỷ Lệ Hoàn Thành</div>
+          </div>
+        </div>
+
+        <!-- Filter & Search in Table -->
+        <div class="flex items-center justify-between gap-3 text-xs">
+          <input type="text" id="fanpageTableSearch" oninput="filterFanpageTable()" placeholder="Lọc theo tên Fanpage, Page ID hoặc Caption..." class="px-3 py-1.5 rounded-lg bg-slate-950 border border-slate-700 text-white outline-none w-full max-w-xs">
+          <div class="flex gap-1">
+            <button onclick="setFanpageStatusFilter('all')" class="px-2.5 py-1 rounded bg-slate-800 text-slate-300 hover:text-white">Tất cả</button>
+            <button id="btnFilterSuccess" onclick="setFanpageStatusFilter('SUCCESS')" class="px-2.5 py-1 rounded bg-emerald-950/60 text-emerald-400 border border-emerald-800">Thành Công</button>
+            <button onclick="setFanpageStatusFilter('FAILED')" class="px-2.5 py-1 rounded bg-rose-950/60 text-rose-400 border border-rose-800">Lỗi</button>
+          </div>
+        </div>
+
+        <!-- Table View -->
+        <div class="overflow-x-auto border border-slate-800 rounded-xl">
+          <table class="w-full text-left text-xs text-slate-300">
+            <thead class="bg-slate-950 text-slate-400 font-mono text-[11px] uppercase border-b border-slate-800">
+              <tr>
+                <th class="p-3">Slot</th>
+                <th class="p-3">Tên Fanpage</th>
+                <th class="p-3">Page ID</th>
+                <th class="p-3">Trạng Thái</th>
+                <th class="p-3">Thời Gian</th>
+                <th class="p-3">Caption Đã Đăng</th>
+              </tr>
+            </thead>
+            <tbody id="fanpageTableBody" class="divide-y divide-slate-800/60 bg-slate-900/40">
+              <!-- Dynamically populated via JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- ================= MÔ-ĐUN 12: TRUNG TÂM SAO LƯU & PHỤC HỒI ================= -->
+      <div id="mo-duon-12" class="p-6 sm:p-8 rounded-2xl bg-slate-900/90 border border-rose-500/30 shadow-xl space-y-6">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800 pb-4">
+          <div>
+            <span class="text-xs font-bold px-2 py-0.5 rounded bg-rose-500/20 text-rose-400">MÔ-ĐUN 12</span>
+            <h3 class="text-xl font-bold text-white mt-1">Trung Tâm Sao Lưu & Phục Hồi (Backup & Recovery Center)</h3>
+            <p class="text-xs text-slate-400">Xuất/Nhập toàn bộ cấu hình, tiến độ và kịch bản ra tệp .json để mang sang máy tính khác, kèm script tự tạo bản sao lưu .bak trên Windows.</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
+          <!-- Web-OS State Export/Import -->
+          <div class="p-4 rounded-xl bg-slate-950 border border-slate-800 space-y-3">
+            <h4 class="font-bold text-white flex items-center gap-2">
+              <span>💾</span> Sao Lưu Dữ Liệu Web-OS (JSON):
+            </h4>
+            <p class="text-slate-400 text-[11px] leading-relaxed">
+              Lưu trữ cấu hình máy tính, danh sách việc đã làm (checklist), kịch bản tự sinh sang file JSON độc lập.
+            </p>
+            <div class="flex gap-2 pt-1">
+              <button onclick="exportWebOsState()" class="px-4 py-2 rounded-lg bg-rose-600 hover:bg-rose-500 text-white font-bold transition flex items-center gap-1.5">
+                <span>⬇️</span> Xuất File JSON Sao Lưu
+              </button>
+              <label class="cursor-pointer px-4 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold border border-slate-700 transition flex items-center gap-1.5">
+                <span>⬆️</span> Nhập Lại Dữ Liệu
+                <input type="file" id="stateImportInput" accept=".json" onchange="importWebOsState(event)" class="hidden">
+              </label>
+            </div>
+          </div>
+
+          <!-- Windows .bak Script Generator -->
+          <div class="p-4 rounded-xl bg-slate-950 border border-slate-800 space-y-3">
+            <div class="flex justify-between items-center">
+              <h4 class="font-bold text-white flex items-center gap-2">
+                <span>🛡️</span> Script Tự Tạo Bản Sao Lưu .bak:
+              </h4>
+              <button onclick="copySnippet('bakScriptBox')" class="text-rose-400 hover:text-white px-2 py-0.5 rounded bg-slate-800 border border-slate-700">Copy</button>
+            </div>
+            <pre id="bakScriptBox" class="p-3 rounded-lg bg-black/90 font-mono text-[11px] text-rose-300 overflow-x-auto">
+# Tự động sao lưu toàn bộ script và cấu hình sang thư mục dna_backups:
+$backupDir = "D:\LPN_Workspace\dna_backups\" + (Get-Date -Format "yyyyMMdd_HHmmss")
+New-Item -ItemType Directory -Force -Path $backupDir
+Get-ChildItem -Path "D:\LPN_Workspace" -Filter "*.py" | ForEach-Object {
+    Copy-Item $_.FullName -Destination $backupDir
+}
+Write-Output "✅ Đã sao lưu hoàn tất vào: $backupDir"
+            </pre>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="mt-20 border-t border-slate-800/80 bg-slate-950 py-12 text-xs text-slate-400">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="space-y-2 text-center md:text-left">
+        <div class="font-black text-sm text-white flex items-center justify-center md:justify-start gap-2">
+          <span>MASTER COMMAND 3.0</span>
+          <span class="text-blue-400">•</span>
+          <span>LEPHUCNHAT.VN</span>
+        </div>
+        <p>Hệ Điều Hành Tự Động Hóa AI Toàn Dân — Phát triển cho cộng đồng vì một Việt Nam tự cường công nghệ.</p>
+        <p class="text-slate-500 font-mono">Chủ dự án: Lê Phúc Nhật | Kiến trúc sư hệ thống: Antigravity AI</p>
+      </div>
+
+      <div class="flex flex-wrap items-center justify-center gap-4 text-xs">
+        <a href="https://lephucnhat.vn" class="text-slate-300 hover:text-blue-400 font-semibold transition">Trang Chủ lephucnhat.vn</a>
+        <a href="https://lephucnhat.vn/he-thong-ai/" class="text-blue-400 font-bold transition">Hệ Thống AI</a>
+        <a href="https://github.com/happyrun09" target="_blank" class="text-slate-300 hover:text-white transition">GitHub Repo</a>
+        <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 hover:text-white transition flex items-center gap-1">
+          ↑ Đầu trang
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= JAVASCRIPT LOGIC TRỌN BỘ 100% VANILLA JS ================= -->
+  <script>
+    /* ================= 1. THEME SWITCHER (DARK / LIGHT) ================= */
+    function initTheme() {
+      const savedTheme = localStorage.getItem('lpn_theme') || 'dark';
+      if (savedTheme === 'light') {
+        document.documentElement.classList.remove('dark');
+        updateThemeIcons('☀️');
+      } else {
+        document.documentElement.classList.add('dark');
+        updateThemeIcons('🌙');
+      }
+    }
+    function toggleTheme() {
+      const isDark = document.documentElement.classList.toggle('dark');
+      const icon = isDark ? '🌙' : '☀️';
+      localStorage.setItem('lpn_theme', isDark ? 'dark' : 'light');
+      updateThemeIcons(icon);
+    }
+    function updateThemeIcons(icon) {
+      const btn = document.getElementById('themeIcon');
+      const btnMobile = document.getElementById('themeIconMobile');
+      if (btn) btn.textContent = icon;
+      if (btnMobile) btnMobile.textContent = icon;
+    }
+
+    /* ================= 2. USER MODES SWITCHER (3 CHẾ ĐỘ) ================= */
+    let currentMode = 'beginner';
+    const modeConfig = {
+      beginner: {
+        icon: '🌱',
+        title: 'Đang xem chế độ: NGƯỜI MỚI (Zero to Hero)',
+        desc: 'Ngôn ngữ đời thường, sơ đồ trực quan từng bước. Bạn chỉ cần nhập thông tin cơ bản &rarr; Bấm tải file về máy &rarr; Bấm đúp chuột là hệ thống tự khởi chạy.',
+        filter: 'core'
+      },
+      creator: {
+        icon: '🎬',
+        title: 'Đang xem chế độ: NHÀ SÁNG TẠO & XÂY KÊNH (Creator & Business)',
+        desc: 'Tập trung tối đa vào sản xuất video Reels hàng loạt, tối ưu Caption 50–100 ký tự kéo bình luận, kiểm tra độ trùng lặp và quản lý chiến dịch 25 Fanpage Meta Business Suite.',
+        filter: 'media'
+      },
+      pro: {
+        icon: '⚡',
+        title: 'Đang xem chế độ: KIẾN TRÚC SƯ HỆ THỐNG (Pro Automation)',
+        desc: 'Đi sâu vào kiến trúc code Python lõi, Playwright xử lý bất đồng bộ, bộ não Dual-AI Router xoay vòng API key, biến môi trường Windows User Env và CI/CD GitHub.',
+        filter: 'ops'
+      }
+    };
+
+    function switchUserMode(mode) {
+      currentMode = mode;
+      localStorage.setItem('lpn_user_mode', mode);
+
+      // Update Pill Buttons
+      document.querySelectorAll('.mode-pill').forEach(btn => {
+        btn.classList.remove('bg-blue-600', 'text-white', 'shadow-md');
+        btn.classList.add('text-slate-400');
+      });
+      const activeBtn = document.getElementById(
+        mode === 'beginner' ? 'modeBtnBeginner' :
+        mode === 'creator' ? 'modeBtnCreator' : 'modeBtnPro'
+      );
+      if (activeBtn) {
+        activeBtn.classList.remove('text-slate-400');
+        activeBtn.classList.add('bg-blue-600', 'text-white', 'shadow-md');
+      }
+
+      // Update Callout Box
+      const conf = modeConfig[mode];
+      document.getElementById('modeIconCallout').textContent = conf.icon;
+      document.getElementById('modeTitleCallout').textContent = conf.title;
+      document.getElementById('modeTextCallout').innerHTML = conf.desc;
+
+      // Filter pillars slightly to match focus
+      filterPillars(conf.filter);
+    }
+
+    /* ================= 3. ARCHITECTURE MAP INSPECTOR ================= */
+    const nodeDetails = {
+      'node-mobile': {
+        badge: 'KHỐI 1: ĐIỆN THOẠI & ĐIỀU KHIỂN TỪ XA',
+        title: 'Telegram Bot & Chrome Remote Desktop Mobile',
+        desc: 'Nhận ảnh chụp màn hình bằng chứng bài đăng từng kênh theo thời gian thực. Điều khiển toàn bộ màn hình máy tính thông qua ứng dụng di động bảo mật 2 lớp.',
+        code: `# Kịch bản bot Telegram thông báo tiến độ:
+bot.send_photo(chat_id, photo, caption="✅ Slot #02: Happy Chay đã đăng bài thành công!")`
+      },
+      'node-pc': {
+        badge: 'KHỐI 2: LOCAL AGENT PC',
+        title: 'Máy tính cá nhân Windows (ASUS TUF Gaming F15)',
+        desc: 'Cấp quyền vĩnh viễn Option 3 cho Agent AI trong Antigravity, nạp biến môi trường hệ thống Windows User Env, điều khiển chạy ngầm PowerShell và Task Scheduler.',
+        code: `# Nạp biến môi trường Windows User Environment:
+[System.Environment]::SetEnvironmentVariable("DEEPSEEK_API_KEY", "sk-xxxx", "User")`
+      },
+      'node-ai': {
+        badge: 'KHỐI 3: DUAL-AI ROUTER',
+        title: 'Bộ Não AI Kép (DeepSeek V3/R1 + Gemini 2.5 Flash)',
+        desc: 'DeepSeek đảm nhận viết hook mở đầu kích thích bình luận; Gemini kiểm duyệt an toàn, tóm tắt dữ liệu lớn. Tự động chuyển đổi nếu một bên gặp lỗi 402 hoặc 429.',
+        code: `# Dual AI Router logic (ai_core_brain.py):
+try:
+    res = ask_deepseek(prompt)
+except Exception:
+    res = ask_gemini(prompt)`
+      },
+      'node-video': {
+        badge: 'KHỐI 4: XƯỞNG REELS FFMPEG',
+        title: 'Kho Nguyên Liệu B-Roll & Render Tự Động',
+        desc: 'Quản lý kho video cảnh đẹp, thư giãn, thiên nhiên. Tự động cắt ghép tỉ lệ dọc 9:16 (1080x1920), hòa trộn nhạc nền thiền và sinh caption 50–100 ký tự vàng.',
+        code: `ffmpeg -i broll.mp4 -i audio.mp3 -c:v libx264 -preset fast -crf 22 -shortest output_reels.mp4`
+      },
+      'node-fb': {
+        badge: 'KHỐI 5: CỖ MÁY PLAYWRIGHT',
+        title: 'Xuất Bản Tự Động 25 Fanpage Meta Business Suite',
+        desc: 'Điều hướng trực tiếp URL Reels Composer theo Page ID, tự động nhấn phím Escape đóng popup, nạp file qua locator attached và giữ nhịp nghỉ 45–75 giây an toàn.',
+        code: `page.goto(f"https://business.facebook.com/latest/reels_composer?page_id={page_id}")
+page.locator('input[type="file"]').set_input_files(file_path)`
+      },
+      'node-web': {
+        badge: 'KHỐI 6: WEB HUB LEPHUCNHAT.VN',
+        title: 'Hệ Điều Hành Web-in-Web Trực Tuyến & GitHub CI/CD',
+        desc: 'Lưu trữ tài liệu, công cụ sinh script, đồng bộ tự động với kho GitHub happyrun09.github.io và phân phối qua mạng CDN toàn cầu.',
+        code: `git add . && git commit -m "deploy: update ai os" && git push origin main`
+      }
+    };
+
+    function inspectArchNode(nodeKey) {
+      const data = nodeDetails[nodeKey];
+      if (!data) return;
+      document.getElementById('detailBadge').textContent = data.badge;
+      document.getElementById('detailTitle').textContent = data.title;
+      document.getElementById('detailDesc').textContent = data.desc;
+      document.getElementById('detailCodeBox').textContent = data.code;
+    }
+
+    function copyDetailCode() {
+      const code = document.getElementById('detailCodeBox').textContent;
+      navigator.clipboard.writeText(code).then(() => {
+        showToast('Đã sao chép mã lệnh khối kiến trúc!');
+      });
+    }
+
+    /* ================= 4. PILLARS FILTERING & COPY ================= */
+    function filterPillars(category) {
+      document.querySelectorAll('.pillar-card').forEach(card => {
+        if (category === 'all' || card.getAttribute('data-category') === category) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+      // Cập nhật màu nút tab đang chọn
+      document.querySelectorAll('.pillar-tab').forEach(btn => {
+        const m = (btn.getAttribute('onclick') || '').match(/filterPillars\('([^']+)'\)/);
+        const active = !!m && m[1] === category;
+        btn.classList.remove('bg-blue-600', 'text-white', 'bg-slate-800', 'text-slate-300');
+        if (active) {
+          btn.classList.add('bg-blue-600', 'text-white');
+        } else {
+          btn.classList.add('bg-slate-800', 'text-slate-300');
+        }
+      });
+    }
+
+    function copySnippet(elementId) {
+      const el = document.getElementById(elementId);
+      if (!el) return;
+      navigator.clipboard.writeText(el.textContent.trim()).then(() => {
+        showToast('Đã sao chép mã lệnh thành công!');
+      });
+    }
+
+    /* ================= 5. MÔ-ĐUN 01: SCRIPT & PROMPT GENERATOR ================= */
+    function updateGeneratedScript() {
+      const p = document.getElementById('genPath').value || 'D:\\LPN_Workspace';
+      const pages = document.getElementById('genPages').value || '25';
+      const topic = document.getElementById('genTopic').value;
+      const tele = document.getElementById('genTelegram').value || 'CHUA_CAU_HINH';
+
+      const promptText = `================ SIÊU CÂU LỆNH ANTIGRAVITY MASTER COMMAND 3.0 ================
+Bạn là Tổng công trình sư tự động hóa AI toàn quyền tại [${p}].
+MỤC TIÊU:
+1. Vận hành cỗ máy sản xuất video Reels chủ đề [${topic}] và xuất bản an toàn cho [${pages}] Fanpage.
+2. Quy định Caption vàng: 50–100 ký tự, mở đầu bằng câu hỏi khiêu khích, cấm ký tự «...», kèm 5 hashtag ngách.
+3. Nhịp an toàn: Giữ delay ngẫu nhiên 45–75 giây giữa các trang trong Meta Business Suite.
+4. Báo cáo Telegram Chat ID: [${tele}]. Chụp ảnh màn hình bằng chứng sau mỗi lượt đăng.
+5. Duy trì PROJECT_STATE.md và tự chữa lành (Self-Healing) khi gặp lỗi, tuyệt đối không dừng luồng.
+==============================================================================`;
+
+      document.getElementById('genOutputBox').textContent = promptText;
+    }
+
+    function copyGeneratedScript() {
+      const text = document.getElementById('genOutputBox').textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        showToast('Đã sao chép Siêu câu lệnh Antigravity!');
+      });
+    }
+
+    function downloadScript(fileName) {
+      const p = document.getElementById('genPath').value || 'D:\\LPN_Workspace';
+      let content = '';
+
+      if (fileName === 'Setup_Tu_Dong.bat') {
+        content = `@echo off
+chcp 65001 >nul
+title KHOI TAO HE THONG TU DONG HOA AI LEPHUCNHAT.VN
+echo [1/4] Kiem tra quyen Administrator...
+echo [2/4] Chuyen den thu muc lam viec: ${p}
+cd /d "${p}"
+echo [3/4] Chay script PowerShell cap quyen tu dong...
+powershell -ExecutionPolicy RemoteSigned -File "${p}\\Setup_Tu_Dong.ps1"
+echo [4/4] Hoan tat! Chuc mung ban da khoi tao thanh cong.
+pause`;
+      } else if (fileName === 'Setup_Tu_Dong.ps1') {
+        content = `# PowerShell Setup Script - Master Command 3.0
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
+Write-Host ">>> Cap quyen PowerShell thanh cong!" -ForegroundColor Green
+
+python -m pip install --upgrade pip
+python -m pip install playwright python-dotenv requests google-genai pyTelegramBotAPI
+python -m playwright install chromium
+Write-Host ">>> Thu vien Python & Playwright Chromium da san sang!" -ForegroundColor Cyan`;
+      } else if (fileName === '.env.template') {
+        content = `# File Mau Cau Hinh Bien Moi Truong - Master Command 3.0
+# Luu y: Khong duoc chia se khoa that len mang!
+DEEPSEEK_API_KEY=sk-xxxx-dien-khoa-deepseek-tai-day
+GEMINI_API_KEY=AQ-xxxx-dien-khoa-gemini-tai-day
+TELEGRAM_BOT_TOKEN=0000000000:xxxx-token-bot-telegram
+TELEGRAM_CHAT_ID=${document.getElementById('genTelegram').value || '123456789'}`;
+      } else if (fileName === 'starter_agent.py') {
+        content = `# starter_agent.py - Dieu Phuc Khoi Dong Tu Dong
+import os, sys, time
+from dotenv import load_dotenv
+
+load_dotenv(override=True)
+print("=== MASTER COMMAND 3.0 PRO AUTOMATION AGENT ===")
+print("Thu muc lam viec: ${p}")
+print("Trang thai: San sang thuc thi!")`;
+      }
+
+      const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = fileName;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      showToast(`Đã tải xuống tệp: ${fileName}`);
+    }
+
+    /* ================= 6. MÔ-ĐUN 02: CAPTION & HOOK SIMULATOR ================= */
+    const nicheHashtagsData = {
+      thien: ['#BinhAnTuTam', '#SongAnNhien', '#ChuaLanhTamHon', '#TrietLyCuocSong', '#GocNhinSauSac'],
+      happyrun: ['#HappyRun108', '#LePhucNhat', '#ChayBoMoiNgay', '#KyLuatBanThan', '#ChinhPhucMucTieu'],
+      trietly: ['#ThuatGiaKim', '#GiacNgoTamHon', '#BaiHocCuocSong', '#PhatTrienBanThan', '#TuDuyTichCuc'],
+      lamnghiep: ['#LamNghiepBenVung', '#HopTacXaKeoSon', '#GiuRungXanh', '#NongSanViet', '#DuocLieuSach'],
+      congnghe: ['#AIChoMoiNguoi', '#TuDongHoaAI', '#MasterCommand', '#CongNghe40', '#PhanMemViet']
+    };
+
+    function analyzeCaption() {
+      const text = document.getElementById('captionInput').value;
+      const count = text.length;
+      document.getElementById('captionCharCount').textContent = count;
+
+      const title = document.getElementById('videoTitleInput').value.trim();
+      const badge = document.getElementById('captionGoldBadge');
+
+      // Rule 1: Length 50 - 100
+      const isLengthOk = count >= 50 && count <= 100;
+      updateCheckItem('chkLength', isLengthOk, `Độ dài: ${count}/100 ký tự ${isLengthOk ? '✅ (Chuẩn vàng)' : count < 50 ? '⚠️ (Quá ngắn < 50)' : '❌ (Quá dài > 100, sẽ bị ẩn nút xem thêm)'}`);
+
+      // Rule 2: Quotes check
+      const hasBadQuotes = /[«»]/.test(text);
+      updateCheckItem('chkQuotes', !hasBadQuotes, hasBadQuotes ? '❌ Có ký tự ngoặc máy móc «...»' : '✅ Không có ký tự lạ máy móc');
+
+      // Rule 3: Question check in first 30 chars
+      const first30 = text.substring(0, 30);
+      const hasQuestion = /[?？]/.test(first30) || /(bạn có|tại sao|bao giờ|ai|đã từng|có bao giờ)/i.test(first30);
+      updateCheckItem('chkQuestion', hasQuestion, hasQuestion ? '✅ Mở đầu bằng câu hỏi gợi mở trong 30 ký tự đầu' : '⚠️ Nên mở đầu bằng câu hỏi (Bạn có/Bao giờ...) để kéo comment');
+
+      // Rule 4: Duplicate with video title
+      const isDuplicate = title.length > 0 && text.toLowerCase().includes(title.toLowerCase());
+      updateCheckItem('chkDuplicate', !isDuplicate, isDuplicate ? '❌ Caption đang lặp lại nguyên văn tiêu đề video!' : '✅ Nội dung bổ trợ độc lập với tiêu đề video');
+
+      if (isLengthOk && !hasBadQuotes && !isDuplicate) {
+        badge.textContent = 'CHUẨN VÀNG 100%';
+        badge.className = 'text-xs font-bold px-2.5 py-1 rounded bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 animate-pulse';
+      } else {
+        badge.textContent = 'CHƯA ĐẠT CHUẨN';
+        badge.className = 'text-xs font-bold px-2.5 py-1 rounded bg-slate-800 text-slate-400 border border-slate-700';
+      }
+    }
+
+    function updateCheckItem(id, passed, text) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.textContent = text;
+      el.className = passed ? 'text-emerald-400 font-medium' : 'text-slate-400';
+    }
+
+    function generateNicheHashtags() {
+      const topic = document.getElementById('hashtagTopicSelect').value;
+      const tags = nicheHashtagsData[topic] || nicheHashtagsData.thien;
+      const box = document.getElementById('hashtagBox');
+      box.innerHTML = '';
+      tags.forEach(t => {
+        const span = document.createElement('span');
+        span.className = 'px-2 py-1 rounded bg-cyan-950/60 text-cyan-300 border border-cyan-800 text-[11px] font-mono';
+        span.textContent = t;
+        box.appendChild(span);
+      });
+      showToast('Đã sinh 5 hashtag ngách tối ưu!');
+    }
+
+    function copyGeneratedHashtags() {
+      const spans = document.querySelectorAll('#hashtagBox span');
+      const tags = Array.from(spans).map(s => s.textContent).join(' ');
+      navigator.clipboard.writeText(tags).then(() => {
+        showToast('Đã copy 5 hashtag ngách!');
+      });
+    }
+
+    /* ================= 7. MÔ-ĐUN 04: GAMIFIED CHECKLIST ================= */
+    const defaultChecklist = [
+      { id: 'c1', label: 'Cấp quyền thực thi PowerShell: Set-ExecutionPolicy RemoteSigned', done: true },
+      { id: 'c2', label: 'Cài đặt Python 3.12, pip, Playwright Chromium và thư viện lõi', done: true },
+      { id: 'c3', label: 'Cấu hình đường dẫn FFmpeg vào biến môi trường hệ thống PATH', done: true },
+      { id: 'c4', label: 'Cấp quyền vĩnh viễn Option 3 (Always allow in this workspace) cho AI Agent', done: true },
+      { id: 'c5', label: 'Tạo file .env hoặc Windows User Env chứa DEEPSEEK_API_KEY & GEMINI_API_KEY', done: true },
+      { id: 'c6', label: 'Quy hoạch kho B-Roll 9:16 và kiểm tra script render FFmpeg', done: false },
+      { id: 'c7', label: 'Cài đặt Chrome Remote Desktop trên điện thoại & gán mã PIN', done: false },
+      { id: 'c8', label: 'Tạo Telegram Bot, lấy Chat ID và thử nghiệm lệnh gửi ảnh chụp màn hình', done: false },
+      { id: 'c9', label: 'Đăng nhập sẵn tài khoản Facebook trên Chrome Profile chuyên dụng', done: true },
+      { id: 'c10', label: 'Chạy thử nghiệm xuất bản 1 kênh và đối soát kết quả trên Meta Business', done: true }
+    ];
+
+    function initChecklist() {
+      let saved = localStorage.getItem('lpn_checklist');
+      let items = saved ? JSON.parse(saved) : defaultChecklist;
+      renderChecklist(items);
+    }
+
+    function renderChecklist(items) {
+      const container = document.getElementById('checklistItemsContainer');
+      container.innerHTML = '';
+
+      let doneCount = 0;
+      items.forEach((item, index) => {
+        if (item.done) doneCount++;
+
+        const div = document.createElement('div');
+        div.className = `p-3 rounded-xl border transition-all flex items-start gap-3 cursor-pointer ${
+          item.done ? 'bg-emerald-950/20 border-emerald-500/40 text-slate-200' : 'bg-slate-950 border-slate-800 text-slate-400 hover:border-slate-700'
+        }`;
+        div.onclick = () => toggleChecklistItem(index);
+
+        div.innerHTML = `
+          <input type="checkbox" ${item.done ? 'checked' : ''} class="mt-0.5 rounded text-emerald-500 focus:ring-0">
+          <span class="text-xs leading-relaxed ${item.done ? 'line-through text-slate-400' : 'text-slate-200'}">${item.label}</span>
+        `;
+        container.appendChild(div);
+      });
+
+      const percent = Math.round((doneCount / items.length) * 100);
+      document.getElementById('checklistProgressPercent').textContent = `${percent}%`;
+      document.getElementById('checklistProgressBar').style.width = `${percent}%`;
+
+      const badge = document.getElementById('checklistBadgeAchieved');
+      if (percent === 100) {
+        badge.classList.remove('hidden');
+      } else {
+        badge.classList.add('hidden');
+      }
+    }
+
+    function toggleChecklistItem(index) {
+      let saved = localStorage.getItem('lpn_checklist');
+      let items = saved ? JSON.parse(saved) : defaultChecklist;
+      items[index].done = !items[index].done;
+      localStorage.setItem('lpn_checklist', JSON.stringify(items));
+      renderChecklist(items);
+    }
+
+    function resetChecklist() {
+      if (confirm('Bạn có chắc muốn đặt lại danh sách kiểm tra về mặc định?')) {
+        localStorage.removeItem('lpn_checklist');
+        initChecklist();
+        showToast('Đã đặt lại danh sách kiểm tra!');
+      }
+    }
+
+    /* ================= 8. MÔ-ĐUN 05: BÁC SĨ CHẨN ĐOÁN LỖI ================= */
+    const troubleData = [
+      {
+        keys: ['401', 'unauthorized', 'api key', 'sai key'],
+        title: 'Mã lỗi 401: Unauthorized (Sai hoặc Hết hạn API Key)',
+        symptom: 'API DeepSeek hoặc Gemini trả về mã lỗi 401, tiến trình dừng không tạo được kịch bản.',
+        cause: 'API Key trong .env bị dán sai ký tự hoặc tài khoản bị vô hiệu hóa khóa.',
+        fix: `# Kiểm tra khóa hiện tại:
+python -c "import os; from dotenv import load_dotenv; load_dotenv(override=True); print(os.getenv('DEEPSEEK_API_KEY')[:8])"
+# Nạp lại khóa mới vào Windows User Env:
+[System.Environment]::SetEnvironmentVariable("DEEPSEEK_API_KEY", "sk-khoa-moi", "User")`
+      },
+      {
+        keys: ['402', 'payment', 'hết tiền', 'insufficient balance'],
+        title: 'Mã lỗi 402: Insufficient Balance (Hết Số Dư Tài Khoản)',
+        symptom: 'DeepSeek báo Insufficient Balance, không sinh được hook.',
+        cause: 'Tài khoản DeepSeek trả trước đã hết số dư $5 nạp ban đầu.',
+        fix: `# Kích hoạt chế độ Dual Router tự động sang Gemini Flash:
+python -c "from ai_core_brain import DualAIBrain; brain = DualAIBrain(); print('Du phong Gemini san sang!')"`
+      },
+      {
+        keys: ['quyền', 'hỏi lại quyền', 'override', 'ghi đè', 'option 3'],
+        title: 'Sự cố Agent dừng luồng hỏi quyền ghi đè tệp',
+        symptom: 'Agent AI dừng giữa đêm chờ người dùng gõ Y/N hoặc chọn Option.',
+        cause: 'Chưa chọn lưu quyền vĩnh viễn Option 3 (Always allow) hoặc script thiếu cờ ghi đè tự động.',
+        fix: `# Thêm tham số ghi đè bắt buộc trong PowerShell & Python:
+Copy-Item -Path $src -Destination $dst -Force
+# Luôn quy định trong GEMINI.md: Toàn quyền thực thi 100% khong hoi lai.`
+      },
+      {
+        keys: ['video', 'input file', 'không thấy ô chọn video', 'composer'],
+        title: 'Playwright không tìm thấy ô chọn file video trên Meta Business',
+        symptom: 'Báo lỗi TimeoutError: không tìm thấy ô nạp tệp video input[type=file].',
+        cause: 'Meta Business Suite hiển thị pop-up hướng dẫn che khuất hoặc dùng iframe.',
+        fix: `# Kỹ thuật Playwright đóng pop-up & đính kèm file:
+page.keyboard.press("Escape")
+page.wait_for_selector('input[type="file"]', state="attached", timeout=15000)
+page.locator('input[type="file"]').set_input_files(video_path)`
+      },
+      {
+        keys: ['telegram', 'chat not found', 'bot'],
+        title: 'Lỗi Telegram Bot: Bad Request: chat not found',
+        symptom: 'Script chạy xong nhưng điện thoại không nhận được thông báo ảnh.',
+        cause: 'Người dùng chưa từng nhấn /start để kích hoạt cuộc trò chuyện với Bot.',
+        fix: `# 1. Mở ứng dụng Telegram trên điện thoại
+# 2. Tìm tên bot của bạn và bấm /start
+# 3. Gửi 1 tin nhắn bất kỳ cho bot rồi chạy lại script`
+      },
+      {
+        keys: ['ffmpeg', 'path', 'not recognized'],
+        title: "Lỗi FFmpeg: The term 'ffmpeg' is not recognized",
+        symptom: 'Script render báo lỗi không tìm thấy câu lệnh ffmpeg.',
+        cause: 'FFmpeg chưa được gán đường dẫn vào biến môi trường hệ thống PATH.',
+        fix: `[System.Environment]::SetEnvironmentVariable("PATH", $env:PATH + ";D:\\LPN_Workspace\\FFmpeg\\ffmpeg-9.0.2-essentials_build\\bin", "User")`
+      }
+    ];
+
+    function searchTroubleIssues() {
+      const q = document.getElementById('troubleSearchInput').value.toLowerCase().trim();
+      renderTroubleList(q);
+    }
+
+    function setTroubleFilter(kw) {
+      document.getElementById('troubleSearchInput').value = kw;
+      renderTroubleList(kw.toLowerCase().trim());
+    }
+
+    function renderTroubleList(query) {
+      const container = document.getElementById('troubleContainer');
+      container.innerHTML = '';
+
+      const filtered = troubleData.filter(item => {
+        if (!query) return true;
+        return item.keys.some(k => k.includes(query)) ||
+               item.title.toLowerCase().includes(query) ||
+               item.symptom.toLowerCase().includes(query);
+      });
+
+      if (filtered.length === 0) {
+        container.innerHTML = `<div class="col-span-2 p-6 rounded-xl bg-slate-950 border border-slate-800 text-center text-slate-400 text-xs">Không tìm thấy mã lỗi phù hợp với từ khóa "${query}". Hãy thử gõ "401", "402", "quyền", hoặc "video".</div>`;
+        return;
+      }
+
+      filtered.forEach((item, idx) => {
+        const div = document.createElement('div');
+        div.className = 'p-4 rounded-xl bg-slate-950 border border-slate-800 space-y-2 text-xs';
+        div.innerHTML = `
+          <div class="flex justify-between items-start">
+            <h4 class="font-bold text-rose-400">${item.title}</h4>
+            <button onclick="copySnippet('fixCode-${idx}')" class="text-[11px] px-2 py-0.5 rounded bg-slate-800 border border-slate-700 text-slate-300 hover:text-white">Copy Lệnh Sửa</button>
+          </div>
+          <p class="text-slate-300"><strong>Triệu chứng:</strong> ${item.symptom}</p>
+          <p class="text-slate-400"><strong>Nguyên nhân gốc:</strong> ${item.cause}</p>
+          <div class="p-2.5 rounded bg-black/80 font-mono text-[11px] text-cyan-300 overflow-x-auto" id="fixCode-${idx}">${item.fix}</div>
+        `;
+        container.appendChild(div);
+      });
+    }
+
+    /* ================= 9. MÔ-ĐUN 06: WORKFLOW BUILDER ================= */
+    function updateWorkflowPreview() {
+      const t = document.getElementById('wfTrigger').value;
+      const i = document.getElementById('wfInput').value;
+      const b = document.getElementById('wfBrain').value;
+      const a = document.getElementById('wfAction').value;
+      const o = document.getElementById('wfOutput').value;
+
+      const prompt = `[AI WORKFLOW BLUEPRINT]
+1. Trigger: ${t}
+2. Input: ${i}
+3. AI Brain: ${b}
+4. Action: ${a}
+5. Output: ${o}
+
+Chiến lược thực thi: Agent AI tự động giám sát nguồn đầu vào, điều phối render video với caption chuẩn vàng 50–100 ký tự và xuất bản theo nhịp an toàn 45–75 giây.`;
+
+      document.getElementById('wfPromptBox').textContent = prompt;
+    }
+
+    function exportWorkflowConfig() {
+      const config = {
+        name: "LPN_Custom_Workflow",
+        trigger: document.getElementById('wfTrigger').value,
+        input: document.getElementById('wfInput').value,
+        brain: document.getElementById('wfBrain').value,
+        action: document.getElementById('wfAction').value,
+        output: document.getElementById('wfOutput').value,
+        created_at: new Date().toISOString()
+      };
+      const blob = new Blob([JSON.stringify(config, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'workflow_config.json';
+      a.click();
+      URL.revokeObjectURL(url);
+      showToast('Đã xuất file cấu hình workflow_config.json!');
+    }
+
+    /* ================= 10. MÔ-ĐUN 07: TEMPLATE LIBRARY ================= */
+    const templatesData = [
+      {
+        id: 'tmpl-1',
+        title: '1. Xưởng Reels 25 Kênh Tự Động',
+        desc: 'Quy trình giải nén B-Roll, render FFmpeg, sinh Caption 50–100 ký tự và xuất bản Playwright 25 Fanpage.',
+        code: `# Kịch bản chạy toàn diện 25 kênh
+python D:\\LPN_Workspace\\auto_reels_producer.py
+python C:\\FB_Auto_Manager\\auto_browser_publisher.py`
+      },
+      {
+        id: 'tmpl-2',
+        title: '2. Đồng Bộ & Xoay Vòng Đa Khóa AI',
+        desc: 'Bộ điều phối Dual-AI Router kết hợp DeepSeek V3 và Gemini 2.5 Flash chống quá tải ngạch.',
+        code: `from ai_core_brain import DualAIBrain
+brain = DualAIBrain()
+reply = brain.ask_deepseek("Viet caption 50 ky tu chu de giac ngo")`
+      },
+      {
+        id: 'tmpl-3',
+        title: '3. Trợ Lý Báo Cáo Telegram Tự Động',
+        desc: 'Gửi ảnh chụp màn hình bằng chứng sau khi hoàn thành từng slot Fanpage về điện thoại di động.',
+        code: `import telebot
+bot = telebot.TeleBot(TOKEN)
+bot.send_photo(CHAT_ID, open("proof.png", "rb"), caption="Xuat ban thanh cong!")`
+      },
+      {
+        id: 'tmpl-4',
+        title: '4. Tự Động Hóa Giáo Dục & Happy Run',
+        desc: 'Quản lý bài giảng truyền cảm hứng V07, lộ trình 108 ngày rèn luyện và hệ thống vinh danh học viên.',
+        code: `# Dong bo bai giang Happy Run sang Web Hub
+python D:\\LPN_Workspace\\Web_Hub\\setup_github.py`
+      },
+      {
+        id: 'tmpl-5',
+        title: '5. Tự Động Hóa HTX Lâm Nghiệp Keo Sơn',
+        desc: 'Kịch bản sản xuất nội dung giới thiệu dược liệu sạch, nông sản bản địa và bảo vệ rừng đầu nguồn.',
+        code: `# Chay kich ban kenh Lam Nghiep
+python D:\\LPN_Workspace\\generate_flawless_25_scripts.py --channel "Keo Son"`
+      },
+      {
+        id: 'tmpl-6',
+        title: '6. Tự Động Đóng Gói Web-in-Web Lên GitHub',
+        desc: 'Commit, tạo bản sao lưu và đẩy code tự động lên nhánh main để GitHub Pages kích hoạt live.',
+        code: `git add . && git commit -m "auto: deploy web-os" && git push origin main`
+      }
+    ];
+
+    function initTemplates() {
+      const container = document.getElementById('templateListContainer');
+      container.innerHTML = '';
+      templatesData.forEach((tmpl, idx) => {
+        const div = document.createElement('div');
+        div.className = 'p-4 rounded-xl bg-slate-950 border border-slate-800 space-y-2.5 text-xs hover:border-amber-500/40 transition-all';
+        div.innerHTML = `
+          <h4 class="font-bold text-white text-sm">${tmpl.title}</h4>
+          <p class="text-slate-400 text-[11px] leading-relaxed">${tmpl.desc}</p>
+          <div class="pt-2 flex gap-2">
+            <button onclick="viewTemplate('${tmpl.id}')" class="px-2.5 py-1 rounded bg-amber-600/20 text-amber-300 border border-amber-500/30 hover:bg-amber-600/30 font-semibold">Xem Script</button>
+            <button onclick="copyTemplateById('${tmpl.id}')" class="px-2.5 py-1 rounded bg-slate-800 text-slate-300 hover:text-white border border-slate-700">Copy</button>
+          </div>
+        `;
+        container.appendChild(div);
+      });
+    }
+
+    function viewTemplate(id) {
+      const tmpl = templatesData.find(t => t.id === id);
+      if (!tmpl) return;
+      document.getElementById('tmplTitle').textContent = tmpl.title;
+      document.getElementById('tmplCodeBox').textContent = tmpl.code;
+      document.getElementById('templateDetailView').classList.remove('hidden');
+    }
+
+    function closeTemplateView() {
+      document.getElementById('templateDetailView').classList.add('hidden');
+    }
+
+    function copySnippetText(txt) {
+      navigator.clipboard.writeText(txt).then(() => {
+        showToast('Đã copy mã script mẫu!');
+      });
+    }
+
+    function copyTemplateById(id) {
+      const tmpl = templatesData.find(t => t.id === id);
+      if (!tmpl) return;
+      copySnippetText(tmpl.code);
+    }
+
+    /* ================= 11. MÔ-ĐUN 08: AGENT BUILDER ================= */
+    function generateAgentPrompt() {
+      const role = document.getElementById('agRole').value;
+      const goal = document.getElementById('agGoal').value;
+      const tools = document.getElementById('agTools').value;
+      const crit = document.getElementById('agCriteria').value;
+
+      const p = `# SYSTEM PROMPT - ANTIGRAVITY AGENT
+Role: ${role}
+Goal: ${goal}
+Authorized Tools: ${tools}
+Execution Rules:
+1. Luon giu quyen tu tri 100%, khong dung luong hoi lai.
+2. Tao file .bak truoc khi sua code.
+3. Kiem tra va giam sat tien do bang PROJECT_STATE.md.
+Acceptance Criteria: ${crit}`;
+
+      document.getElementById('agPromptBox').textContent = p;
+      showToast('Đã biên dịch System Prompt!');
+    }
+
+    /* ================= 12. MÔ-ĐUN 09: MULTI-AI SIMULATOR ================= */
+    function testAiConnection(provider) {
+      const log = document.getElementById('aiConsoleLog');
+      log.innerHTML = `<span class="text-amber-400">⏳ Đang gửi request kiểm tra kết nối tới ${provider.toUpperCase()}...</span>`;
+      setTimeout(() => {
+        if (provider === 'deepseek') {
+          log.innerHTML = `<span class="text-emerald-400">✅ [DEEPSEEK] Kết nối thành công! HTTP 200 OK. Model: deepseek-chat. Độ trễ: 340ms. Sẵn sàng viết hook.</span>`;
+        } else if (provider === 'gemini') {
+          log.innerHTML = `<span class="text-emerald-400">✅ [GEMINI] Kết nối thành công! HTTP 200 OK. Model: gemini-2.5-flash. Độ trễ: 210ms. Hạn ngạch miễn phí khả dụng.</span>`;
+        } else {
+          log.innerHTML = `<span class="text-blue-400">✅ [VERTEX AI] Kết nối thành công! Google Cloud Project Ready. Số dư khuyến mại khả dụng: 300.00 USD.</span>`;
+        }
+      }, 700);
+    }
+
+    /* ================= 13. MÔ-ĐUN 11: 25-CHANNEL DASHBOARD & JSON READER ================= */
+    const sampleHistory = [
+      { slot: "#02", page: "Happy Chay", id: "1384241341443639", status: "SUCCESS", time: "22:18:27", caption: "Bạn có thấy lòng mình lắng lại khi ăn chay? #HappyChay #AnChayLanhManh" },
+      { slot: "#03", page: "THUẬT GIẢ KIM", id: "1431723580016876", status: "SUCCESS", time: "22:20:41", caption: "Bạn có đang tự phá mình mỗi khi khó khăn ập đến? #THUATGIAKIM #TrietLyCuocSong" },
+      { slot: "#04", page: "Về Miền An Nhiên", id: "1436993052820411", status: "FAILED", time: "22:23:32", caption: "Bạn đã bỏ lỡ điều gì khi cứ mãi vội vàng? #VeMienAnNhien #SongAnNhien" },
+      { slot: "#05", page: "GỐC", id: "1282500261620326", status: "FAILED", time: "22:27:51", caption: "Bạn có đang sống đúng với cội rễ của mình? #GOC #DaoLamNguoi" },
+      { slot: "#06", page: "AI Cho Mọi Người", id: "1163227230217449", status: "FAILED", time: "22:31:19", caption: "Bạn đã dùng AI để bớt việc gì hôm nay chưa? #AIChoMoiNguoi #CongNgheAI" },
+      { slot: "#07", page: "Đố Vui Dân Gian", id: "1188616617668643", status: "SUCCESS", time: "22:33:27", caption: "Đố mẹo này bạn có trả lời ngay không? #DoVuiDanGian" },
+      { slot: "#08", page: "Chuyện Thường", id: "1239342765918614", status: "SUCCESS", time: "22:35:33", caption: "Bạn đã từng làm ai đau lòng chỉ vì một phút nóng giận? #ChuyenThuong" },
+      { slot: "#09", page: "108 Ngày", id: "1139267415938725", status: "FAILED", time: "22:38:44", caption: "Bạn đã bỏ cuộc bao nhiêu lần chỉ vì thiếu động lực? #108Ngay" },
+      { slot: "#10", page: "HAI MÀU RỪNG", id: "1102431626292156", status: "SUCCESS", time: "22:40:38", caption: "Bạn đã buông được điều gì chưa? Rừng đổi lá còn lòng người mãi giữ. #HAIMAURUNG" },
+      { slot: "#11", page: "Sự Thật 8 Giây", id: "1067849823080804", status: "SUCCESS", time: "22:42:58", caption: "Bạn đã từng nuôi ong tay áo chưa? #SuThat8Giay #NhanTam" },
+      { slot: "#12", page: "Tuệ Lâm Sâm Ngôn", id: "1100964493098074", status: "SUCCESS", time: "22:45:13", caption: "Bạn có tin phước nhà đến từ sự im lặng đúng lúc? #TueLamSamNgon" },
+      { slot: "#13", page: "Họ Lê Việt Nam", id: "1072871412572587", status: "SUCCESS", time: "22:47:17", caption: "Bạn có tự hào về cội nguồn dòng họ mình? #HoLeVietNam" },
+      { slot: "#14", page: "Phúc Nhật", id: "1042935305570524", status: "SUCCESS", time: "22:49:28", caption: "Bạn đang gánh vác điều gì cho đội ngũ của mình? #PhucNhat" },
+      { slot: "#15", page: "Liên Tục Phát Triển", id: "1020713184465269", status: "SUCCESS", time: "22:51:25", caption: "Bạn đang tiến bộ hơn chính mình ngày hôm qua chứ? #LienTucPhatTrien" },
+      { slot: "#16", page: "An Nhiên Từ Tâm", id: "1108370665685250", status: "SUCCESS", time: "22:53:48", caption: "Điều gì khiến bạn vẫn nặng lòng mãi? #AnNhienTuTam" },
+      { slot: "#17", page: "ĂN RÕ", id: "961841297012988", status: "SUCCESS", time: "22:55:58", caption: "Bữa cơm nhà bạn đang nuôi cơ thể hay nuôi bệnh? #ANRO" },
+      { slot: "#18", page: "NGẪM", id: "951047778090376", status: "FAILED", time: "22:59:08", caption: "Bạn từng cô đơn giữa đám đông chưa? #NGAM #Reels" },
+      { slot: "#19", page: "Lê Phúc Nhật Giác Ngộ", id: "887888061077870", status: "SUCCESS", time: "23:01:27", caption: "Tâm bạn hôm nay có đang tĩnh lặng? #GiacNgoTrongTungNetChu" },
+      { slot: "#20", page: "Chuyện gia đình", id: "634894406384965", status: "SUCCESS", time: "23:04:05", caption: "Bao lâu rồi bạn chưa quây quần bên mâm cơm cùng cả nhà? #ChuyenGiaDinh" },
+      { slot: "#21", page: "HTX Lâm Nghiệp Keo Sơn", id: "120410887820071", status: "SUCCESS", time: "23:06:34", caption: "Rừng Keo Sơn hôm nay có gì mới lạ? #KeoSonKSFC #LamNghiepBenVung" },
+      { slot: "#22", page: "Sâm Bố Chính Sâm Tiến Vua", id: "112974520364288", status: "SUCCESS", time: "23:08:45", caption: "Bạn đã bao giờ thức dậy mà người vẫn nặng trịch? #SamTienVua" },
+      { slot: "#23", page: "HTX Lâm Nghiệp KSFC", id: "108697177283413", status: "SUCCESS", time: "23:10:46", caption: "Rừng xanh có đang nuôi sống bà con mình? #LamNghiepBenVung" },
+      { slot: "#24", page: "Cao Dược Liệu TAPO", id: "104617941002786", status: "SUCCESS", time: "23:12:46", caption: "Bạn có đang giữ ấm bữa sáng đúng cách cho cả nhà? #TAPO #NongSanSach" },
+      { slot: "#25", page: "Mật Mật Ong Rừng", id: "234427604062086", status: "SUCCESS", time: "23:15:20", caption: "Bạn có tin một giọt mật chứa cả khu rừng? #MatMatOngRung" }
+    ];
+
+    let currentHistory = [...sampleHistory];
+    let fanpageStatusFilter = 'all';
+
+    function loadSampleHistory() {
+      currentHistory = [...sampleHistory];
+      renderHistoryTable();
+      showToast('Đã tải dữ liệu chiến dịch mới nhất hôm nay (19/24 thành công)!');
+    }
+
+    function handleHistoryFileUpload(event) {
+      const file = event.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        try {
+          const parsed = JSON.parse(e.target.result);
+          if (Array.isArray(parsed)) {
+            currentHistory = parsed.map((item, idx) => ({
+              slot: item.slot || `#${idx+1}`,
+              page: item.page_name || item.name || item.page || `Fanpage ${idx+1}`,
+              id: item.page_id || item.id || '-',
+              status: (item.status || 'SUCCESS').toUpperCase(),
+              time: item.time || item.updated_at || 'Vừa xong',
+              caption: item.caption || item.text || '(Không có caption)'
+            }));
+          } else if (typeof parsed === 'object') {
+            // If it's a key-value object of pages
+            currentHistory = Object.keys(parsed).map((k, idx) => {
+              const val = parsed[k];
+              return {
+                slot: `#${idx+1}`,
+                page: val.page_name || k,
+                id: val.page_id || k,
+                status: (val.status || 'SUCCESS').toUpperCase(),
+                time: val.published_at || 'Vừa xong',
+                caption: val.caption || '(Đã xuất bản)'
+              };
+            });
+          }
+          renderHistoryTable();
+          showToast(`Đã đọc thành công ${currentHistory.length} kênh từ file của bạn!`);
+        } catch (err) {
+          alert('Lỗi định dạng JSON: ' + err.message);
+        }
+      };
+      reader.readAsText(file);
+    }
+
+    function renderHistoryTable() {
+      const tbody = document.getElementById('fanpageTableBody');
+      tbody.innerHTML = '';
+
+      let successCount = 0;
+      let failedCount = 0;
+
+      const q = (document.getElementById('fanpageTableSearch').value || '').toLowerCase().trim();
+
+      const filtered = currentHistory.filter(item => {
+        const matchesStatus = fanpageStatusFilter === 'all' || item.status === fanpageStatusFilter;
+        const matchesSearch = !q || item.page.toLowerCase().includes(q) || item.id.includes(q) || item.caption.toLowerCase().includes(q);
+        return matchesStatus && matchesSearch;
+      });
+
+      // Recalculate metrics on whole dataset
+      currentHistory.forEach(item => {
+        if (item.status === 'SUCCESS') successCount++;
+        else failedCount++;
+      });
+
+      const total = currentHistory.length;
+      document.getElementById('dashTotal').textContent = total;
+      document.getElementById('dashSuccess').textContent = successCount;
+      document.getElementById('dashFailed').textContent = failedCount;
+      document.getElementById('dashRate').textContent = total > 0 ? `${((successCount/total)*100).toFixed(1)}%` : '0%';
+
+      filtered.forEach(item => {
+        const tr = document.createElement('tr');
+        tr.className = 'hover:bg-slate-800/40 transition';
+        const isSuccess = item.status === 'SUCCESS';
+        tr.innerHTML = `
+          <td class="p-3 font-mono font-bold text-slate-400">${item.slot}</td>
+          <td class="p-3 font-bold text-white">${item.page}</td>
+          <td class="p-3 font-mono text-[11px] text-slate-400">${item.id}</td>
+          <td class="p-3">
+            <span class="px-2 py-0.5 rounded text-[10px] font-bold font-mono ${
+              isSuccess ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30' : 'bg-rose-500/20 text-rose-400 border border-rose-500/30'
+            }">${item.status}</span>
+          </td>
+          <td class="p-3 font-mono text-[11px] text-slate-400">${item.time}</td>
+          <td class="p-3 text-[11px] text-slate-300 max-w-xs truncate" title="${item.caption}">${item.caption}</td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    function filterFanpageTable() {
+      renderHistoryTable();
+    }
+
+    function setFanpageStatusFilter(st) {
+      fanpageStatusFilter = st;
+      renderHistoryTable();
+    }
+
+    /* ================= 14. MÔ-ĐUN 12: BACKUP & RECOVERY ================= */
+    function exportWebOsState() {
+      const state = {
+        app: "MASTER_COMMAND_3_0",
+        author: "Le Phuc Nhat",
+        exported_at: new Date().toISOString(),
+        user_mode: currentMode,
+        checklist: localStorage.getItem('lpn_checklist') || JSON.stringify(defaultChecklist),
+        custom_path: document.getElementById('genPath').value,
+        custom_topic: document.getElementById('genTopic').value,
+        telegram_chat_id: document.getElementById('genTelegram').value
+      };
+      const blob = new Blob([JSON.stringify(state, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `LPN_WebOS_State_${new Date().toISOString().slice(0,10)}.json`;
+      a.click();
+      URL.revokeObjectURL(url);
+      showToast('Đã xuất bản sao lưu cấu hình thành công!');
+    }
+
+    function importWebOsState(event) {
+      const file = event.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        try {
+          const parsed = JSON.parse(e.target.result);
+          if (parsed.checklist) {
+            localStorage.setItem('lpn_checklist', parsed.checklist);
+            initChecklist();
+          }
+          if (parsed.user_mode) {
+            switchUserMode(parsed.user_mode);
+          }
+          if (parsed.custom_path) document.getElementById('genPath').value = parsed.custom_path;
+          if (parsed.custom_topic) document.getElementById('genTopic').value = parsed.custom_topic;
+          if (parsed.telegram_chat_id) document.getElementById('genTelegram').value = parsed.telegram_chat_id;
+          updateGeneratedScript();
+          showToast('Đã khôi phục dữ liệu Web-OS thành công!');
+        } catch (err) {
+          alert('File JSON không hợp lệ: ' + err.message);
+        }
+      };
+      reader.readAsText(file);
+    }
+
+    /* ================= 15. TOAST NOTIFICATION UTILITY ================= */
+    function showToast(message) {
+      let toast = document.getElementById('lpnGlobalToast');
+      if (!toast) {
+        toast = document.createElement('div');
+        toast.id = 'lpnGlobalToast';
+        toast.className = 'fixed bottom-6 right-6 z-50 px-4 py-2.5 rounded-xl bg-blue-600 text-white font-bold text-xs shadow-2xl flex items-center gap-2 transform transition-all duration-300 translate-y-20 opacity-0';
+        document.body.appendChild(toast);
+      }
+      toast.innerHTML = `<span>✨</span> ${message}`;
+      toast.classList.remove('translate-y-20', 'opacity-0');
+      setTimeout(() => {
+        toast.classList.add('translate-y-20', 'opacity-0');
+      }, 3000);
+    }
+
+    /* ================= INITIALIZATION ON LOAD ================= */
+    window.addEventListener('DOMContentLoaded', () => {
+      initTheme();
+      const savedMode = localStorage.getItem('lpn_user_mode') || 'beginner';
+      switchUserMode(savedMode);
+      filterPillars('all');
+      initChecklist();
+      renderTroubleList('');
+      initTemplates();
+      updateWorkflowPreview();
+      updateGeneratedScript();
+      generateAgentPrompt();
+      renderHistoryTable();
+
+      // Mobile theme button bind
+      const mobileBtn = document.getElementById('themeToggleBtnMobile');
+      if (mobileBtn) mobileBtn.addEventListener('click', toggleTheme);
+    });
+  </script>
+</body>
+</html>
