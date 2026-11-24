@@ -1,3 +1,15 @@
+
+window.TIER_BADGE = {
+  1: "Khởi Nguyên Mẫu Hệ",
+  2: "Đời Thứ I • Thủy Tổ",
+  3: "Đời Thứ II • Lưỡng Nghi",
+  4: "Đời Thứ III • Chi Long",
+  5: "Văn Lang • 7 Chặng",
+  6: "Thời Thục Vương • Âu Lạc",
+  7: "Nhà Triệu & Hậu Duệ",
+  8: "Thời Trưng Nữ Vương"
+};
+
 // Dữ liệu Đại Phả Đồ Tông Tộc Đào & Nền Văn Hiến Việt Nam (donghodao.vn)
 // Gốc Khởi Nguyên (Thập Bát Diệp) — Nhà Nước Văn Lang (2.622 Năm / 7 Chặng / 189 Duệ Vương) — Thời Thục Vương — Nhà Triệu — Trưng Nữ Vương (65 Thành)
 
@@ -128,7 +140,9 @@ window.HALL_OF_FAME = [
   { memberId: "d6_dao_nhi", category: "Thời Thục Vương", badge: "Tổng Quản Quân Lương", highlight: "Em vợ Thục Phán An Dương Vương — Trực tiếp chỉ huy xây dựng thành Cổ Loa (Loa Thành) và quản lý quốc khố quân lương nước Âu Lạc." },
   { memberId: "d6_dao_noi", category: "Thời Thục Vương", badge: "Quan Nội Hầu Âu Lạc", highlight: "Đỗ đầu thi võ tuyển tướng, cùng hai con trai Đào Đống, Đào Vực nắm trọn quân đội Âu Lạc, trung liệt tuẫn tiết bảo vệ Loa Thành." },
   { memberId: "d7_dao_thi_hoan", category: "Nhà Triệu Nam Việt", badge: "Thánh Mẫu Vương Triều", highlight: "Thân mẫu của Triệu Vũ Đế (Triệu Đà), ứng mộng Thiên sứ trao râu rồng sinh ra vị vua khai sáng vương triều Nam Việt tự chủ." },
-  { memberId: "d8_dao_ky", category: "Thời Trưng Nữ Vương", badge: "Bắc Bình Vương", highlight: "Đại Nguyên Soái Đào Kỳ (Đào Tam Lang) cùng phu nhân Phương Dung và hai anh Đào Chiêu Hiển, Đào Đô Thống thu phục 65 thành Lĩnh Nam." }
+  { memberId: "d8_dao_ky", category: "Thời Trưng Nữ Vương", badge: "Bắc Bình Vương", highlight: "Đại Nguyên Soái Đào Kỳ (Đào Tam Lang) cùng phu nhân Phương Dung và hai anh Đào Chiêu Hiển, Đào Đô Thống thu phục 65 thành Lĩnh Nam." },
+  { memberId: "d8_dao_hien", category: "Thời Trưng Nữ Vương", badge: "Hổ Nha Đại Tướng", highlight: "Hổ Nha Tướng Quân Đào Chiêu Hiển (Đào Hiển) & Đô Thống Tướng Quân — Anh ruột Bắc Bình Vương Đào Kỳ, trấn giữ biên ải Lĩnh Nam." },
+  { memberId: "d4_chang_7", category: "Văn Lang (2.622 Năm)", badge: "189 Vị Duệ Vương", highlight: "7 Chặng luân chuyển quyền Trưởng Lệnh theo Cửu Cung Lạc Thư (mỗi chặng 27 vị = 189 Duệ Vương) trước khi chuyển giao sang Thục Vương." }
 ];
 
 window.GOLDEN_BOOK = {

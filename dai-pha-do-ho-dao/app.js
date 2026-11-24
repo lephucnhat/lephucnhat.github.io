@@ -283,7 +283,7 @@
 
     el.innerHTML = `<div class="book-container">
       <div class="book-toolbar">
-        <button class="book-tool-btn" style="background:#8B1E1E;color:#fef3c7;border-color:#D4AF37;" onclick="openTamThuModal()">💌 💌 Tâm Thư Đào Tộc Gửi Muôn Đời Con Cháu</button>
+        <button class="book-tool-btn" style="background:#8B1E1E;color:#fef3c7;border-color:#D4AF37;" onclick="openTamThuModal()">💌 Tâm Thư Đào Tộc Gửi Muôn Đời Con Cháu</button>
         <button id="ttsBtn" class="book-tool-btn" onclick="toggleReadAloud()">🔊 Nghe Đọc Phả Ký</button>
         <button id="bookDarkBtn" class="book-tool-btn" onclick="toggleBookDarkMode()">${bookDark ? "☀️ Chế độ Giấy Dó Sáng" : "🌙 Chế độ Đọc Ban Đêm"}</button>
         <button class="book-tool-btn" onclick="window.print()">🖨️ In Sách Gia Phả (A4)</button>
@@ -319,7 +319,7 @@
         <h2 class="book-h2">Phần 1: Lời Nói Đầu & Đạo Hiếu</h2>
         ${meta.foreword.map(p => `<p class="book-p">${esc(p)}</p>`).join("")}
         <div class="book-poem">
-          <div style="font-weight:700;margin-bottom:8px;color:#9e1b1b;">Bài thơ khai khẩn của ${esc(meta.poem.author)} (${esc(meta.poem.date)})</div>
+          <div style="font-weight:700;margin-bottom:8px;color:#9e1b1b;">📜 ${esc(meta.poem.author)} (${esc(meta.poem.date)})</div>
           ${meta.poem.lines.map(l => `<div>${esc(l)}</div>`).join("")}
         </div>
       </div>
@@ -414,7 +414,7 @@
 
     function update() {
       const isVert = s2Orientation === "vertical";
-      const nodeSize = isVert ? [175, 115] : [64, 230];
+      const nodeSize = isVert ? [212, 118] : [70, 250];
       d3.tree().nodeSize(nodeSize)(root);
 
       const nodes = root.descendants();
@@ -436,13 +436,13 @@
         .on("click", (event, d) => { event.stopPropagation(); openMemberModal(d.data.id); });
 
       nodeEnter.append("rect").attr("class", "s1-node-rect")
-        .attr("width", 156).attr("height", 52).attr("x", -78).attr("y", -26);
+        .attr("width", 196).attr("height", 54).attr("x", -98).attr("y", -27);
       nodeEnter.append("text").attr("class", "s1-node-gen")
         .attr("x", 0).attr("y", -8).attr("text-anchor", "middle")
-        .text(d => `Đời ${d.data.gen}${d.data.userAdded ? " • Mới" : (d.data.isMainLine ? " • Trực Hệ" : "")}`);
+        .text(d => `${(window.TIER_BADGE && window.TIER_BADGE[d.data.gen]) || ('Tầng ' + d.data.gen)}`);
       nodeEnter.append("text").attr("class", "s1-node-name")
         .attr("x", 0).attr("y", 11).attr("text-anchor", "middle")
-        .text(d => d.data.name.length > 20 ? d.data.name.slice(0, 19) + "…" : d.data.name);
+        .text(d => getShortCosmicLabel(d.data));
 
       const toggleBtn = nodeEnter.filter(d => (d.children || d._children))
         .append("g").attr("class", "s1-toggle")
@@ -470,10 +470,18 @@
     s2TreeFn = {
       update,
       resetZoom: () => {
-        const t = s2Orientation === "vertical"
-          ? d3.zoomIdentity.translate(width / 2, 70).scale(0.72)
-          : d3.zoomIdentity.translate(120, height / 2).scale(0.75);
-        svg.transition().duration(500).call(zoom.transform, t);
+        const nodes = root.descendants();
+        const isVert = s2Orientation === "vertical";
+        const xs = nodes.map(d => isVert ? d.x : d.y);
+        const ys = nodes.map(d => isVert ? d.y : d.x);
+        const minX = Math.min(...xs) - 120, maxX = Math.max(...xs) + 120;
+        const minY = Math.min(...ys) - 60, maxY = Math.max(...ys) + 80;
+        const treeW = Math.max(maxX - minX, 400);
+        const treeH = Math.max(maxY - minY, 300);
+        const scale = Math.min((width - 40) / treeW, (height - 60) / treeH, 0.95);
+        const tx = width / 2 - ((minX + maxX) / 2) * scale;
+        const ty = (height - 30) / 2 - ((minY + maxY) / 2) * scale;
+        svg.transition().duration(450).call(zoom.transform, d3.zoomIdentity.translate(tx, ty).scale(scale));
       },
       expandAll: () => {
         root.each(d => { if (d._children) { d.children = d._children; d._children = null; } });
@@ -528,101 +536,115 @@
     setTimeout(() => s2TreeFn && s2TreeFn.focusId(id), 120);
   };
 
-  // ----------------- PHONG CÁCH 3: CÂY GIA ĐÌNH (DONATSO/FAMILY-CHART) -----------------
-  let f3ChartInstance = null;
-  async function initStyle3FamilyChart() {
+  // ----------------- PHONG CÁCH 3: CÂY GIA ĐÌNH & PHỐI NGẪU NGỌC BÍCH HOÀNG TRIỀU -----------------
+  let s3Zoom = null;
+  let s3Svg = null;
+  let s3Root = null;
+
+  function initStyle3FamilyChart() {
     const container = document.getElementById("FamilyChartContainer");
-    container.innerHTML = `<div style="padding:40px;text-align:center;opacity:0.8;">Đang khởi tạo thư viện mã nguồn mở donatso/family-chart...</div>`;
-    let f3Lib = window.f3;
-    if (!f3Lib) {
-      try {
-        f3Lib = await import("https://cdn.jsdelivr.net/npm/family-chart@0.9.0/+esm");
-        window.f3 = f3Lib;
-      } catch { f3Lib = null; }
-    }
     container.innerHTML = "";
-    if (!f3Lib) {
-      container.innerHTML = `<div style="padding:40px;text-align:center;"><h3>Không tải được thư viện family-chart từ CDN</h3></div>`;
-      return;
-    }
+    const width = container.clientWidth || window.innerWidth;
+    const height = container.clientHeight || window.innerHeight - 64;
 
-    const nodes = {};
-    const ensure = (id, data, rels = {}) => {
-      nodes[id] = { id, data, rels: { parents: rels.parents || [], spouses: rels.spouses || [], children: rels.children || [] } };
-    };
-    allMembers.forEach(m => {
-      ensure(m.id, {
-        "full name": m.name,
-        "gen": `Đời ${m.gen}`,
-        "dates": [m.birth ? `Sinh: ${m.birth}` : "", m.death ? `Mất: ${m.death}` : ""].filter(Boolean).join(" • ") || (m.role || ""),
-        "gender": m.gender || "M",
-        "rawId": m.id
-      });
-    });
-    allMembers.forEach(m => {
-      const node = nodes[m.id];
-      if (m.parentId && nodes[m.parentId]) {
-        node.rels.parents.push(m.parentId);
-        nodes[m.parentId].rels.children.push(m.id);
-      }
-      if (m.spouses && m.spouses.length) {
-        m.spouses.forEach((sp, idx) => {
-          const spId = `${m.id}_sp_${idx}`;
-          ensure(spId, {
-            "full name": sp.name,
-            "gen": `Phối ngẫu Đời ${m.gen}`,
-            "dates": [sp.birth ? `Sinh: ${sp.birth}` : "", sp.death ? `Mất: ${sp.death}` : ""].filter(Boolean).join(" • ") || (sp.note || "Phối ngẫu"),
-            "gender": m.gender === "M" ? "F" : "M",
-            "rawId": m.id
-          }, { spouses: [m.id], children: [] });
-          node.rels.spouses.push(spId);
-        });
-      }
-    });
-    allMembers.forEach(m => {
-      if (m.parentId && nodes[m.parentId] && nodes[m.parentId].rels.spouses.length) {
-        const sp0 = nodes[m.parentId].rels.spouses[0];
-        nodes[m.id].rels.parents.push(sp0);
-        nodes[sp0].rels.children.push(m.id);
-      }
-    });
+    s3Svg = d3.select("#FamilyChartContainer").append("svg").attr("class", "s3-jade-svg");
+    const g = s3Svg.append("g");
+    s3Zoom = d3.zoom().scaleExtent([0.18, 2.5]).on("zoom", e => g.attr("transform", e.transform));
+    s3Svg.call(s3Zoom);
 
-    f3ChartInstance = f3Lib.createChart("#FamilyChartContainer", Object.values(nodes))
-      .setTransitionTime(600).setCardXSpacing(245).setCardYSpacing(135);
+    s3Root = d3.hierarchy(buildHierarchy());
+    d3.tree().nodeSize([245, 132])(s3Root);
 
-    const f3Card = f3ChartInstance.setCard(f3Lib.CardHtml)
-      .setCardDisplay([["full name"], ["gen"], ["dates"]])
-      .setCardDim({ w: 215, h: 82 })
-      .setOnCardClick((e, d) => {
-        f3ChartInstance.updateMainId(d.data.id);
-        f3ChartInstance.updateTree({});
-        s3CurrentRawId = d.data.data.rawId || d.data.id;
-        document.getElementById("s3FocusName").textContent = `${d.data.data["full name"]} (${d.data.data.gen})`;
+    const nodes = s3Root.descendants();
+    const links = s3Root.links();
+
+    g.selectAll("path.s3-jade-link").data(links).enter().append("path")
+      .attr("class", d => `s3-jade-link ${d.target.data.isMainLine ? "main-line" : ""}`)
+      .attr("d", d => `M${d.source.x},${d.source.y + 36} C${d.source.x},${(d.source.y + d.target.y) / 2} ${d.target.x},${(d.source.y + d.target.y) / 2} ${d.target.x},${d.target.y - 36}`);
+
+    const nodeG = g.selectAll("g.s3-jade-node").data(nodes).enter().append("g")
+      .attr("class", d => `s3-jade-node ${d.data.id === s3CurrentRawId ? "main-focus" : ""} ${(d.data.spouses && d.data.spouses.length) ? "has-spouse" : ""}`)
+      .attr("id", d => `s3-node-${d.data.id}`)
+      .attr("transform", d => `translate(${d.x},${d.y})`)
+      .on("click", (e, d) => {
+        e.stopPropagation();
+        s3FocusMember(d.data.id);
+      })
+      .on("dblclick", (e, d) => {
+        e.stopPropagation();
+        openMemberModal(d.data.id);
       });
 
-    if (typeof f3Card.setCardHtml === "function") {
-      f3Card.setCardHtml(d => {
-        const isFem = d.data.data.gender === "F";
-        return `<div class="f3-jade-card ${isFem ? "female" : ""} ${d.data.main ? "main-focus" : ""}">
-          <div class="f3-jade-gen">${esc(d.data.data.gen || "")}</div>
-          <div class="f3-jade-name">${esc(d.data.data["full name"] || "")}</div>
-          <div class="f3-jade-dates">${esc(d.data.data.dates || "")}</div>
-        </div>`;
+    nodeG.append("rect")
+      .attr("class", "s3-jade-rect")
+      .attr("width", 224)
+      .attr("height", 72)
+      .attr("x", -112)
+      .attr("y", -36);
+
+    nodeG.append("text")
+      .attr("x", 0).attr("y", -16)
+      .attr("text-anchor", "middle")
+      .attr("fill", "#5eead4")
+      .attr("font-size", "10.5px")
+      .attr("font-weight", "700")
+      .text(d => (window.TIER_BADGE && window.TIER_BADGE[d.data.gen]) || `Tầng ${d.data.gen}`);
+
+    nodeG.append("text")
+      .attr("x", 0).attr("y", 4)
+      .attr("text-anchor", "middle")
+      .attr("fill", "#ffffff")
+      .attr("font-family", "var(--font-serif)")
+      .attr("font-size", "13px")
+      .attr("font-weight", "700")
+      .text(d => getShortCosmicLabel(d.data));
+
+    nodeG.append("text")
+      .attr("x", 0).attr("y", 22)
+      .attr("text-anchor", "middle")
+      .attr("fill", d => (d.data.spouses && d.data.spouses.length) ? "#f9a8d4" : "#cbd5e1")
+      .attr("font-size", "10.5px")
+      .text(d => {
+        if (d.data.spouses && d.data.spouses.length) {
+          const sp = d.data.spouses[0].name;
+          return "⚭ " + (sp.length > 25 ? sp.slice(0, 24) + "…" : sp);
+        }
+        const loc = d.data.location || d.data.role || "";
+        return loc.length > 28 ? loc.slice(0, 27) + "…" : loc;
       });
-    }
-    s3CurrentRawId = "d3_dao_truong";
-    f3ChartInstance.updateMainId("d3_dao_truong");
-    f3ChartInstance.updateTree({ initial: true });
+
+    // Mặc định hiển thị toàn cảnh cân đối và làm nổi bật tâm điểm
+    const xs = nodes.map(d => d.x);
+    const ys = nodes.map(d => d.y);
+    const minX = Math.min(...xs) - 140, maxX = Math.max(...xs) + 140;
+    const minY = Math.min(...ys) - 60, maxY = Math.max(...ys) + 80;
+    const scale = Math.min((width - 40) / (maxX - minX), (height - 80) / (maxY - minY), 0.85);
+    const tx = width / 2 - ((minX + maxX) / 2) * scale;
+    const ty = (height - 20) / 2 - ((minY + maxY) / 2) * scale;
+    s3Svg.call(s3Zoom.transform, d3.zoomIdentity.translate(tx, ty).scale(scale));
   }
 
   window.s3FocusMember = function (id) {
-    if (!f3ChartInstance) return;
     s3CurrentRawId = id;
-    f3ChartInstance.updateMainId(id);
-    f3ChartInstance.updateTree({});
     const m = membersById[id];
-    if (m) document.getElementById("s3FocusName").textContent = `${m.name} (Đời ${m.gen})`;
+    if (m) {
+      const lbl = document.getElementById("s3FocusName");
+      if (lbl) lbl.textContent = `${getShortCosmicLabel(m)}`;
+    }
+    if (!s3Svg || !s3Root || !s3Zoom) return;
+    d3.selectAll("#FamilyChartContainer g.s3-jade-node").classed("main-focus", d => d.data.id === id);
+    const found = s3Root.descendants().find(d => d.data.id === id);
+    if (found) {
+      const container = document.getElementById("FamilyChartContainer");
+      const width = container.clientWidth || window.innerWidth;
+      const height = container.clientHeight || window.innerHeight - 64;
+      const scale = 0.92;
+      const tx = width / 2 - found.x * scale;
+      const ty = height / 2 - found.y * scale;
+      s3Svg.transition().duration(550).call(s3Zoom.transform, d3.zoomIdentity.translate(tx, ty).scale(scale));
+    }
   };
+
   window.s3OpenCurrentDetail = function () {
     openMemberModal(s3CurrentRawId || "d3_dao_truong");
   };
@@ -695,27 +717,27 @@
     const root = d3.hierarchy(buildHierarchy());
     if (s4Mode === "radial") {
       const maxDepth = root.height || 7;
-      const stepR = 92;
-      const baseR = 70;
+      const stepR = 96;
+      const baseR = 65;
       const outerRadius = baseR + maxDepth * stepR;
 
       d3.tree()
         .size([2 * Math.PI, outerRadius])
-        .separation((a, b) => (a.parent === b.parent ? 1.45 : 2.2) / Math.max(a.depth, 1))(root);
+        .separation((a, b) => (a.parent === b.parent ? 1.5 : 2.2) / Math.max(a.depth, 1))(root);
 
-      // Gán bán kính từng vòng quỹ đạo rõ ràng để tâm không bao giờ bị co cụm chồng chữ
+      // Gán bán kính từng vòng quỹ đạo và dịch góc nhẹ cho các tầng lẻ để cha và con không bao giờ đè chữ lên nhau
       root.each(d => {
         d.y = d.depth === 0 ? 0 : baseR + d.depth * stepR;
+        if (d.depth === 4) d.x += 0.085; // Tách nhẹ góc Chặng Văn Lang khỏi tia của 10 vị Chi Long
+        if (d.depth === 6) d.x -= 0.09;
       });
 
-      // Vẽ các vòng quỹ đạo đồng tâm cho từng tầng
       for (let depth = 1; depth <= maxDepth; depth++) {
         g.append("circle")
           .attr("class", "s3-orbit")
           .attr("r", baseR + depth * stepR);
       }
 
-      // Vẽ đường nối cong mượt
       g.selectAll("path.s3-link").data(root.links()).enter().append("path")
         .attr("class", d => `s3-link ${d.target.data.isMainLine ? "main-line" : ""}`)
         .attr("d", d3.linkRadial().angle(d => d.x).radius(d => d.y));
@@ -726,48 +748,63 @@
         .on("click", (e, d) => openMemberModal(d.data.id));
 
       node.append("circle")
-        .attr("r", d => d.depth === 0 ? 10 : (d.data.isMainLine ? 7 : 5))
+        .attr("r", d => d.depth === 0 ? 10 : (d.data.isMainLine ? 7 : 5.5))
         .attr("stroke", "#050817")
         .attr("stroke-width", 2)
         .attr("fill", d => d.data.userAdded ? "#34d399" : (d.data.isMainLine ? "#fbbf24" : (d.data.gender === "F" ? "#f472b6" : "#60a5fa")));
 
-      // Nhãn văn bản có viền halo đen đậm (paint-order: stroke) chống đè lên dây nối & tự động tách góc
+      // Toàn bộ nhãn đều đặt NẰM NGANG (horizontal) có viền halo đen đậm, nên chiều cao nhãn chỉ 13px, không bao giờ vươn dọc theo tia để đâm vào vòng quỹ đạo kế tiếp!
       node.append("text")
         .attr("class", "s3-label")
         .style("paint-order", "stroke")
         .style("stroke", "#050817")
-        .style("stroke-width", "4px")
+        .style("stroke-width", "4.5px")
         .style("stroke-linecap", "round")
         .style("stroke-linejoin", "round")
         .style("font-size", d => d.depth <= 2 ? "12px" : "11px")
-        .style("font-weight", d => d.data.isMainLine ? "700" : "500")
+        .style("font-weight", d => d.data.isMainLine ? "700" : "600")
         .style("fill", d => d.data.isMainLine ? "#fde68a" : "#e2e8f0")
-        .attr("dy", d => d.depth === 0 ? "-16px" : (d.depth <= 2 ? "-11px" : "0.32em"))
-        .attr("x", d => {
-          if (d.depth <= 2) return 0;
-          return d.x < Math.PI ? 11 : -11;
-        })
-        .attr("text-anchor", d => {
-          if (d.depth <= 2) return "middle";
-          return d.x < Math.PI ? "start" : "end";
-        })
-        .attr("transform", d => {
-          // Các nút tâm và vòng 1-2 (Mẫu Âu Cơ, Thủy Tổ Đào Ngột, Đào Công Bột, Đào Nghiêu) luôn nằm ngang dễ đọc, không bị dựng đứng đè vào nhau
-          if (d.depth === 0) return null;
-          if (d.depth <= 2) return `rotate(${-(d.x * 180 / Math.PI - 90)})`;
-          return d.x >= Math.PI ? "rotate(180)" : null;
-        })
+        .attr("transform", d => d.depth === 0 ? null : `rotate(${-(d.x * 180 / Math.PI - 90)})`)
+        .attr("text-anchor", "middle")
+        .attr("x", 0)
+        .attr("dy", d => (d.depth % 2 === 0) ? "-12px" : "19px")
         .text(d => getShortCosmicLabel(d.data));
 
-      const fitScale = Math.min(width, height) / (outerRadius * 2.35);
-      svg.call(zoom.transform, d3.zoomIdentity.translate(width / 2, height / 2).scale(Math.max(Math.min(fitScale, 0.95), 0.52)));
+      // Giải thuật chống chồng lấn nhãn ngang (Horizontal Label Relaxation): nếu 2 nhãn gần nhau trên màn hình thì tự động đẩy nhẹ dy
+      const fitScale = Math.min(width, height) / (outerRadius * 2.25);
+      svg.call(zoom.transform, d3.zoomIdentity.translate(width / 2, height / 2).scale(Math.max(Math.min(fitScale, 0.92), 0.54)));
+
+      setTimeout(() => {
+        const texts = Array.from(container.querySelectorAll("text.s3-label"));
+        for (let pass = 0; pass < 4; pass++) {
+          for (let i = 0; i < texts.length; i++) {
+            for (let j = i + 1; j < texts.length; j++) {
+              const rA = texts[i].getBoundingClientRect();
+              const rB = texts[j].getBoundingClientRect();
+              const xOv = Math.max(0, Math.min(rA.right, rB.right) - Math.max(rA.left, rB.left));
+              const yOv = Math.max(0, Math.min(rA.bottom, rB.bottom) - Math.max(rA.top, rB.top));
+              if (xOv > 2 && yOv > 1) {
+                const curDyA = parseFloat(texts[i].getAttribute("dy") || "0");
+                const curDyB = parseFloat(texts[j].getAttribute("dy") || "0");
+                if (rA.top <= rB.top) {
+                  texts[i].setAttribute("dy", `${curDyA - (yOv / 2 + 5)}px`);
+                  texts[j].setAttribute("dy", `${curDyB + (yOv / 2 + 5)}px`);
+                } else {
+                  texts[i].setAttribute("dy", `${curDyA + (yOv / 2 + 5)}px`);
+                  texts[j].setAttribute("dy", `${curDyB - (yOv / 2 + 5)}px`);
+                }
+              }
+            }
+          }
+        }
+      }, 60);
     } else {
       const nodes = root.descendants().map(d => ({ ...d.data, depth: d.depth }));
       const links = root.links().map(l => ({ source: l.source.data.id, target: l.target.data.id, isMain: l.target.data.isMainLine }));
       const sim = d3.forceSimulation(nodes)
         .force("link", d3.forceLink(links).id(d => d.id).distance(115))
         .force("charge", d3.forceManyBody().strength(-460))
-        .force("collide", d3.forceCollide(46))
+        .force("collide", d3.forceCollide(48))
         .force("center", d3.forceCenter(width / 2, height / 2));
       const link = g.selectAll("line").data(links).enter().append("line").attr("class", d => `s3-link ${d.isMain ? "main-line" : ""}`);
       const node = g.selectAll("g.s3-star").data(nodes).enter().append("g").attr("class", "s3-star")
@@ -1689,16 +1726,13 @@
   function initStyle6RoyalSvg() {
     const svgEl = document.getElementById("royalDaoSvg");
     if (!svgEl) return;
-    const wrap = document.getElementById("s6SvgWrap");
-    const w = wrap.clientWidth || window.innerWidth;
-    const h = wrap.clientHeight || (window.innerHeight - 64);
 
-    // Sử dụng d3.zoom trực tiếp trên thẻ #royalDaoSvg để vừa khít khung màn hình 100%
+    // QUAN TRỌNG: Gỡ bỏ viewBox để tránh trình duyệt co SVG lần 1 rồi d3.zoom lại co lần 2 (Double-scaling)
+    svgEl.removeAttribute("viewBox");
     svgEl.setAttribute("width", "100%");
     svgEl.setAttribute("height", "100%");
     s6SvgSel = d3.select("#royalDaoSvg");
 
-    // Bọc nội dung trong 1 group #s6ZoomGroup nếu chưa có
     let zoomG = svgEl.querySelector("#s6ZoomGroup");
     if (!zoomG) {
       zoomG = document.createElementNS("http://www.w3.org/2000/svg", "g");
@@ -1710,12 +1744,11 @@
       svgEl.appendChild(zoomG);
     }
     const gSel = d3.select(zoomG);
-    s6Zoom = d3.zoom().scaleExtent([0.15, 3.2]).on("zoom", (e) => {
+    s6Zoom = d3.zoom().scaleExtent([0.15, 3.0]).on("zoom", (e) => {
       gSel.attr("transform", e.transform);
     });
     s6SvgSel.call(s6Zoom);
 
-    // Gắn sự kiện click trên từng ô của Đại Phả Đồ để mở Bia Ký Chi Tiết
     svgEl.querySelectorAll(".interactive-node").forEach(node => {
       node.addEventListener("click", (e) => {
         e.stopPropagation();
@@ -1725,7 +1758,8 @@
       });
     });
 
-    s6FitScreen();
+    // Mặc định mở Phần I rộng rõ nét tràn chiều ngang màn hình (dễ đọc chữ ngay lập tức!)
+    s6FocusPart(1);
   }
 
   window.s6FitScreen = function () {
@@ -1733,9 +1767,9 @@
     const wrap = document.getElementById("s6SvgWrap");
     const w = wrap.clientWidth || window.innerWidth;
     const h = wrap.clientHeight || (window.innerHeight - 64);
-    const scale = Math.min((w - 30) / 2400, (h - 30) / 3420);
+    const scale = Math.min((w - 40) / 2400, (h - 70) / 3420);
     const tx = (w - 2400 * scale) / 2;
-    const ty = (h - 3420 * scale) / 2;
+    const ty = (h - 3420 * scale) / 2 - 10;
     s6SvgSel.transition().duration(450).call(s6Zoom.transform, d3.zoomIdentity.translate(tx, ty).scale(scale));
   };
 
@@ -1743,13 +1777,14 @@
     if (!s6SvgSel || !s6Zoom) return;
     const wrap = document.getElementById("s6SvgWrap");
     const w = wrap.clientWidth || window.innerWidth;
-    const scale = Math.min((w - 40) / 2400, 0.72);
+    // Scale vừa khít chiều ngang màn hình (trừ 280px góc trái trên cho badge hoặc căn giữa đẹp mắt)
+    const scale = Math.min((w - 80) / 2400, 0.78);
     const tx = (w - 2400 * scale) / 2;
-    let targetY = 0;
-    if (part === 1) targetY = 20;
-    if (part === 2) targetY = -1890 * scale + 30;
-    if (part === 3) targetY = -2750 * scale + 40;
-    s6SvgSel.transition().duration(500).call(s6Zoom.transform, d3.zoomIdentity.translate(tx, targetY).scale(scale));
+    let targetY = 14;
+    if (part === 1) targetY = 14;
+    if (part === 2) targetY = -1920 * scale + 24;
+    if (part === 3) targetY = -2780 * scale + 30;
+    s6SvgSel.transition().duration(450).call(s6Zoom.transform, d3.zoomIdentity.translate(tx, targetY).scale(scale));
   };
 
   window.exportDaoPng4K = function () {

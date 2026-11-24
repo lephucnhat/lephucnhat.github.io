@@ -21,7 +21,7 @@ html, body { height: 100%; overflow: hidden; font-family: var(--font-sans); tran
   padding: 0 14px; backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid rgba(255,255,255,0.12);
 }
-.brand { display: flex; align-items: center; gap: 9px; min-width: 0; flex-shrink: 1; }
+.brand { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
 .brand-seal {
   width: 36px; height: 36px; border-radius: 8px; display: grid; place-items: center;
   font-family: var(--font-serif); font-weight: 800; font-size: 17px; flex-shrink: 0;
@@ -612,4 +612,127 @@ body[data-style="6"] .ctrl-pill, body[data-style="6"] .style-badge-info {
   flex-wrap: wrap;
   gap: 16px;
   box-shadow: 0 10px 26px rgba(110, 13, 13, 0.22);
+}
+
+
+/* KHẮC PHỤC TRIỆT ĐỂ TOPBAR 1366PX: HIỂN THỊ ĐỦ BRAND + 6 PHONG CÁCH + ACTIONS */
+.topbar {
+  padding: 0 10px !important;
+  gap: 6px !important;
+}
+.brand-seal {
+  width: 34px !important;
+  height: 34px !important;
+  font-size: 16px !important;
+}
+.brand-title {
+  font-size: 13.5px !important;
+  letter-spacing: 0.2px;
+}
+.brand-sub {
+  font-size: 10px !important;
+}
+.style-switcher {
+  gap: 2px !important;
+  padding: 3px !important;
+  flex-shrink: 0 !important;
+}
+.style-btn {
+  padding: 5px 7.5px !important;
+  font-size: 11.5px !important;
+  gap: 4px !important;
+}
+.top-actions {
+  gap: 4px !important;
+  flex-shrink: 0 !important;
+}
+.search-input {
+  width: 118px !important;
+  padding: 5px 8px 5px 24px !important;
+  font-size: 11.5px !important;
+}
+.search-input:focus {
+  width: 150px !important;
+}
+.icon-btn {
+  padding: 5px 8px !important;
+  font-size: 11.5px !important;
+}
+
+/* Lưới Bảng Vàng Danh Dự 4 cột × 3 hàng = 12 thẻ đối xứng tuyệt đối */
+.hof-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 12px !important;
+}
+@media (max-width: 1100px) {
+  .hof-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+@media (max-width: 640px) {
+  .hof-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Phong cách 3: Thẻ Cây Gia Đình Ngọc Bích Hoàng Triều Custom D3 */
+.s3-jade-svg {
+  width: 100%;
+  height: 100%;
+  cursor: grab;
+}
+.s3-jade-svg:active {
+  cursor: grabbing;
+}
+.s3-jade-link {
+  fill: none;
+  stroke: rgba(45, 212, 191, 0.38);
+  stroke-width: 2px;
+}
+.s3-jade-link.main-line {
+  stroke: #fbbf24;
+  stroke-width: 2.8px;
+  filter: drop-shadow(0 0 5px rgba(251, 191, 36, 0.45));
+}
+.s3-jade-node {
+  cursor: pointer;
+}
+.s3-jade-rect {
+  rx: 10;
+  ry: 10;
+  fill: #0d2b28;
+  stroke: #2dd4bf;
+  stroke-width: 1.8px;
+  transition: all 0.2s;
+}
+.s3-jade-node.main-focus .s3-jade-rect {
+  fill: #134e4a;
+  stroke: #fbbf24;
+  stroke-width: 2.8px;
+  filter: drop-shadow(0 0 12px rgba(251, 191, 36, 0.5));
+}
+.s3-jade-node.has-spouse .s3-jade-rect {
+  stroke: #f472b6;
+}
+.s3-jade-node:hover .s3-jade-rect {
+  fill: #115e59;
+  stroke: #fde047;
+}
+
+.search-input {
+  width: 105px !important;
+}
+.search-input:focus {
+  width: 135px !important;
+}
+body[data-style="6"] .ctrl-pill {
+  background: rgba(42, 6, 6, 0.94) !important;
+  border: 1.5px solid #d4af37 !important;
+  color: #fde68a !important;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.45);
+}
+body[data-style="6"] .ctrl-pill:hover {
+  background: #8b0000 !important;
+  color: #ffffff !important;
 }
