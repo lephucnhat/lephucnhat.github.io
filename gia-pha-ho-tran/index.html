@@ -28,10 +28,10 @@
 
     <nav class="style-switcher" aria-label="Chọn phong cách giao diện">
       <button class="style-btn active" data-style="1" onclick="switchStyle(1)">📜 1. Sách Gia Phả</button>
-      <button class="style-btn" data-style="2" onclick="switchStyle(2)">🏮 2. Phả Đồ Cổ Điển</button>
+      <button class="style-btn" data-style="2" onclick="switchStyle(2)">🏮 2. Phả Đồ</button>
       <button class="style-btn" data-style="3" onclick="switchStyle(3)">🐉 3. Cây Gia Đình</button>
       <button class="style-btn" data-style="4" onclick="switchStyle(4)">✨ 4. Tinh Tú Đông A</button>
-      <button class="style-btn" data-style="5" onclick="switchStyle(5)">🏆 5. Sổ Vàng & Tra Cứu</button>
+      <button class="style-btn" data-style="5" onclick="switchStyle(5)">🏆 5. Sổ Vàng</button>
     </nav>
 
     <div class="top-actions">
@@ -104,16 +104,23 @@
       </div>
     </section>
 
-    <!-- PHONG CÁCH 4: TINH TÚ NGÂN HÀ -->
+    <!-- PHONG CÁCH 4: TINH TÚ ĐÔNG A -->
     <section class="style-view" data-style="4">
       <canvas id="s3Starfield"></canvas>
       <div class="style-badge-info">
-        <strong>Phong cách 4: Tinh Tú Ngân Hà (D3 Radial Orbit & Force Graph)</strong>
-        24 vòng quỹ đạo đồng tâm tượng trưng cho 24 thế hệ họ Trần tỏa sáng. Kéo thả ngôi sao hoặc chuyển sang Mạng Lưới Trọng Lực.
+        <strong>Phong cách 4: Tinh Tú Đông A (Bản Đồ Sao Huyết Thống)</strong>
+        Lăn chuột thu phóng hoặc lọc theo cụm thế hệ để xem rõ từng chòm sao tổ tiên không bị chồng chữ.
       </div>
       <div id="style4Canvas" style="width:100%;height:100%;"></div>
       <div class="canvas-controls">
         <button id="s4ModeBtn" class="ctrl-pill" onclick="s4ToggleMode()">✦ Chuyển Mạng Lưới Trọng Lực</button>
+        <button class="ctrl-pill" onclick="s4ResetZoom()">⟲ Căn Giữa Bầu Trời</button>
+        <select id="s4FilterSelect" class="ctrl-pill" onchange="s4ApplyFilter()" aria-label="Lọc chòm sao">
+          <option value="ALL">🌌 Toàn bộ Tinh Tú (Tự động giãn nhãn)</option>
+          <option value="MAIN">⭐ Trục Chính Thống Lãng Nam (Đời 1–24)</option>
+          <option value="PHASE1">👑 Hoàng Triều Nhà Trần (Đời 1–12)</option>
+          <option value="PHASE3">🏡 Chi Cụ Chí Hòa (Đời 19–24)</option>
+        </select>
       </div>
     </section>
 

@@ -382,6 +382,13 @@
     svg.call(zoom);
 
     const root = d3.hierarchy(buildHierarchy());
+    // Thu gọn nhẹ các nhánh phụ Hoàng Triều khi mới mở để cây cân đối, chữ to rõ dễ đọc ngay
+    root.each(d => {
+      if (d.depth >= 4 && d.depth <= 11 && !d.data.isMainLine && d.children) {
+        d._children = d.children;
+        d.children = null;
+      }
+    });
 
     function update() {
       const isVert = s2Orientation === "vertical";
@@ -442,8 +449,8 @@
       update,
       resetZoom: () => {
         const t = s2Orientation === "vertical"
-          ? d3.zoomIdentity.translate(width / 2, 70).scale(0.72)
-          : d3.zoomIdentity.translate(120, height / 2).scale(0.75);
+          ? d3.zoomIdentity.translate(width / 2, 65).scale(0.92)
+          : d3.zoomIdentity.translate(110, height / 2).scale(0.92);
         svg.transition().duration(500).call(zoom.transform, t);
       },
       expandAll: () => {
@@ -522,10 +529,12 @@
       nodes[id] = { id, data, rels: { parents: rels.parents || [], spouses: rels.spouses || [], children: rels.children || [] } };
     };
     allMembers.forEach(m => {
+      const spNames = m.spouses && m.spouses.length ? `Vợ/Chồng: ${m.spouses.map(s => s.name).join(", ")}` : "";
+      const dateStr = [m.birth ? `S: ${formatBirth(m)}` : "", m.death ? `M: ${m.death}` : ""].filter(Boolean).join(" • ");
       ensure(m.id, {
         "full name": m.name,
-        "gen": `Đời ${m.gen}`,
-        "dates": [m.birth ? `Sinh: ${m.birth}` : "", m.death ? `Mất: ${m.death}` : ""].filter(Boolean).join(" • ") || (m.role || ""),
+        "gen": `Đời ${m.gen}${m.isMainLine ? " • Trực Hệ" : ""}`,
+        "dates": [dateStr, spNames || m.role || ""].filter(Boolean).join(" | "),
         "gender": m.gender || "M",
         "rawId": m.id
       });
@@ -536,34 +545,18 @@
         node.rels.parents.push(m.parentId);
         nodes[m.parentId].rels.children.push(m.id);
       }
-      if (m.spouses && m.spouses.length) {
-        m.spouses.forEach((sp, idx) => {
-          const spId = `${m.id}_sp_${idx}`;
-          ensure(spId, {
-            "full name": sp.name,
-            "gen": `Phối ngẫu Đời ${m.gen}`,
-            "dates": [sp.birth ? `Sinh: ${sp.birth}` : "", sp.death ? `Mất: ${sp.death}` : ""].filter(Boolean).join(" • ") || (sp.note || "Phối ngẫu"),
-            "gender": m.gender === "M" ? "F" : "M",
-            "rawId": m.id
-          }, { spouses: [m.id], children: [] });
-          node.rels.spouses.push(spId);
-        });
-      }
-    });
-    allMembers.forEach(m => {
-      if (m.parentId && nodes[m.parentId] && nodes[m.parentId].rels.spouses.length) {
-        const sp0 = nodes[m.parentId].rels.spouses[0];
-        nodes[m.id].rels.parents.push(sp0);
-        nodes[sp0].rels.children.push(m.id);
-      }
     });
 
     f3ChartInstance = f3Lib.createChart("#FamilyChartContainer", Object.values(nodes))
-      .setTransitionTime(600).setCardXSpacing(245).setCardYSpacing(135);
+      .setTransitionTime(500).setCardXSpacing(235).setCardYSpacing(135);
+
+    if (typeof f3ChartInstance.setSingleParentEmptyCard === "function") f3ChartInstance.setSingleParentEmptyCard(false);
+    if (typeof f3ChartInstance.setAncestryDepth === "function") f3ChartInstance.setAncestryDepth(2);
+    if (typeof f3ChartInstance.setProgenyDepth === "function") f3ChartInstance.setProgenyDepth(2);
 
     const f3Card = f3ChartInstance.setCard(f3Lib.CardHtml)
       .setCardDisplay([["full name"], ["gen"], ["dates"]])
-      .setCardDim({ w: 215, h: 82 })
+      .setCardDim({ w: 205, h: 82 })
       .setOnCardClick((e, d) => {
         f3ChartInstance.updateMainId(d.data.id);
         f3ChartInstance.updateTree({});
@@ -598,8 +591,11 @@
     openMemberModal(s3CurrentRawId || "d20_chi_hoa");
   };
 
-  // ----------------- PHONG CÁCH 4: TINH TÚ NGÂN HÀ -----------------
+  // ----------------- PHONG CÁCH 4: TINH TÚ ĐÔNG A (CHỐNG ĐÈ CHỮ 100%) -----------------
   let s4Mode = "radial";
+  let s4Filter = "ALL";
+  let s4ZoomReset = null;
+
   function initStyle4Cosmic() {
     const canvas = document.getElementById("s3Starfield");
     if (canvas) {
@@ -624,40 +620,147 @@
     const height = container.clientHeight || window.innerHeight - 64;
     const svg = d3.select("#style4Canvas").append("svg").attr("class", "s3-svg");
     const g = svg.append("g");
-    const zoom = d3.zoom().scaleExtent([0.2, 4]).on("zoom", e => g.attr("transform", e.transform));
-    svg.call(zoom);
 
-    const root = d3.hierarchy(buildHierarchy());
-    if (s4Mode === "radial") {
-      const radius = Math.min(width, height) * 0.44;
-      d3.tree().size([2 * Math.PI, radius * 1.45]).separation((a, b) => (a.parent === b.parent ? 1 : 2) / a.depth)(root);
-      for (let gen = 2; gen <= 24; gen += 3) {
-        g.append("circle").attr("class", "s3-orbit").attr("r", (gen / 24) * radius * 1.45);
+    // Lọc danh sách thành viên theo bộ lọc Chòm Sao
+    const filtered = allMembers.filter(m => {
+      if (s4Filter === "MAIN") return m.isMainLine;
+      if (s4Filter === "PHASE1") return m.gen <= 12;
+      if (s4Filter === "PHASE3") return m.gen >= 19 || m.id === "d1_tran_kinh";
+      return true;
+    });
+    const fMap = new Map(filtered.map(m => [m.id, { ...m }]));
+    const links = [];
+    filtered.forEach(m => {
+      if (m.parentId && fMap.has(m.parentId)) {
+        links.push({ source: fMap.get(m.parentId), target: fMap.get(m.id), isMain: m.isMainLine });
       }
-      g.selectAll("path.s3-link").data(root.links()).enter().append("path")
-        .attr("class", d => `s3-link ${d.target.data.isMainLine ? "main-line" : ""}`)
-        .attr("d", d3.linkRadial().angle(d => d.x).radius(d => d.y));
-      const node = g.selectAll("g.s3-star").data(root.descendants()).enter().append("g")
+    });
+
+    if (s4Mode === "radial") {
+      const ringStep = 44;
+      const byGen = {};
+      fMap.forEach(node => {
+        if (!byGen[node.gen]) byGen[node.gen] = [];
+        byGen[node.gen].push(node);
+      });
+      const gens = Object.keys(byGen).map(Number).sort((a, b) => a - b);
+
+      // Phân bổ đều 360 độ trên từng vòng đời, sắp xếp theo góc của Cha/Mẹ để đường nối mượt mà không cắt chéo
+      gens.forEach((gNum, gIdx) => {
+        const list = byGen[gNum];
+        if (gNum === 1 || list.length === 1 && gIdx === 0) {
+          list[0].angle = 0;
+          list[0].radius = 0;
+          list[0].gx = 0;
+          list[0].gy = 0;
+          return;
+        }
+        list.sort((a, b) => {
+          const pa = a.parentId && fMap.has(a.parentId) ? (fMap.get(a.parentId).angle || 0) : 0;
+          const pb = b.parentId && fMap.has(b.parentId) ? (fMap.get(b.parentId).angle || 0) : 0;
+          if (Math.abs(pa - pb) > 0.001) return pa - pb;
+          return (b.isMainLine ? 1 : 0) - (a.isMainLine ? 1 : 0);
+        });
+        const rBase = (gIdx) * ringStep;
+        g.append("circle").attr("class", "s3-orbit").attr("r", rBase);
+
+        const count = list.length;
+        const startOffset = count === 1 ? (gIdx * 1.15) : ((gIdx * 0.43) % (Math.PI * 2));
+        list.forEach((node, idx) => {
+          const ang = startOffset + (idx / count) * Math.PI * 2;
+          // So le bán kính nhẹ nếu vòng đời có nhiều người (> 8 vị) để nhãn chữ không bao giờ chạm nhau
+          const stagger = count > 8 ? ((idx % 2 === 0 ? -1 : 1) * 12) : 0;
+          const r = rBase + stagger;
+          node.angle = ang;
+          node.radius = r;
+          node.gx = Math.cos(ang - Math.PI / 2) * r;
+          node.gy = Math.sin(ang - Math.PI / 2) * r;
+        });
+      });
+
+      g.selectAll("path.s3-link").data(links).enter().append("path")
+        .attr("class", d => `s3-link ${d.isMain ? "main-line" : ""}`)
+        .attr("d", d => {
+          const mx = (d.source.gx + d.target.gx) / 2;
+          const my = (d.source.gy + d.target.gy) / 2;
+          return `M${d.source.gx},${d.source.gy} Q${mx * 0.85},${my * 0.85} ${d.target.gx},${d.target.gy}`;
+        });
+
+      const nodesArr = Array.from(fMap.values());
+      const node = g.selectAll("g.s3-star").data(nodesArr).enter().append("g")
         .attr("class", "s3-star")
-        .attr("transform", d => `rotate(${d.x * 180 / Math.PI - 90}) translate(${d.y},0)`)
-        .on("click", (e, d) => openMemberModal(d.data.id));
+        .attr("transform", d => `translate(${d.gx},${d.gy})`)
+        .on("click", (e, d) => openMemberModal(d.id));
+
       node.append("circle")
-        .attr("r", d => d.data.isMainLine ? 6 : 4)
-        .attr("fill", d => d.data.userAdded ? "#34d399" : (d.data.isMainLine ? "#fbbf24" : (d.data.gender === "F" ? "#f472b6" : "#60a5fa")));
-      node.append("text").attr("class", "s3-label").attr("dy", "0.31em")
-        .attr("x", d => d.x < Math.PI === !d.children ? 9 : -9)
-        .attr("text-anchor", d => d.x < Math.PI === !d.children ? "start" : "end")
-        .attr("transform", d => d.x >= Math.PI ? "rotate(180)" : null)
-        .text(d => `${d.data.name} (Đ${d.data.gen})`);
-      svg.call(zoom.transform, d3.zoomIdentity.translate(width / 2, height / 2).scale(0.85));
+        .attr("r", d => d.gen === 1 ? 8 : (d.isMainLine ? 6 : 4.5))
+        .attr("fill", d => d.userAdded ? "#34d399" : (d.isMainLine ? "#fbbf24" : (d.gender === "F" ? "#f472b6" : "#60a5fa")));
+
+      // Thuật toán chống đè chữ (Screen-Space AABB Collision Avoidance):
+      // Ưu tiên hiển thị nhãn Trực hệ & nhân vật chính, kiểm tra khung bao 2D của từng nhãn để đảm bảo 0% chồng lấn!
+      const shortName = (str) => str.replace(/\s*\([^)]*\)/g, "").trim();
+      node.append("text").attr("class", "s3-label")
+        .attr("dy", d => d.gen === 1 ? "-12px" : "0.32em")
+        .attr("x", d => d.gen === 1 ? 0 : (d.gx >= 0 ? 9 : -9))
+        .attr("text-anchor", d => d.gen === 1 ? "middle" : (d.gx >= 0 ? "start" : "end"))
+        .text(d => `${shortName(d.name)} (Đ${d.gen})`);
+
+      function updateLabelVisibility(scaleK) {
+        const boxes = [];
+        // Ưu tiên xét các nút Trực hệ và Thủy tổ trước
+        const ordered = [];
+        node.each(function (d) { ordered.push({ el: this, d }); });
+        ordered.sort((a, b) => (b.d.isMainLine ? 1 : 0) - (a.d.isMainLine ? 1 : 0) || a.d.gen - b.d.gen);
+
+        ordered.forEach(({ el, d }) => {
+          const txtEl = el.querySelector(".s3-label");
+          if (!txtEl) return;
+          const labelLen = (shortName(d.name).length + 5) * 6.4 / Math.sqrt(scaleK);
+          const labelH = 14 / Math.sqrt(scaleK);
+          const x1 = d.gx >= 0 ? d.gx + 8 : d.gx - 8 - labelLen;
+          const y1 = d.gy - labelH / 2;
+          const box = { x1, y1, x2: x1 + labelLen, y2: y1 + labelH };
+          const hit = boxes.some(b => !(box.x2 < b.x1 || box.x1 > b.x2 || box.y2 < b.y1 || box.y1 > b.y2));
+          if (!hit) {
+            boxes.push(box);
+            txtEl.style.opacity = "1";
+          } else {
+            txtEl.style.opacity = "0";
+          }
+        });
+      }
+
+      const zoom = d3.zoom().scaleExtent([0.25, 4.5]).on("zoom", e => {
+        g.attr("transform", e.transform);
+        updateLabelVisibility(e.transform.k);
+      });
+      svg.call(zoom);
+
+      const maxGenIdx = Math.max(1, gens.length - 1);
+      const fitScale = Math.min(1.0, Math.min(width, height - 70) * 0.41 / (maxGenIdx * ringStep || 200));
+      s4ZoomReset = () => {
+        svg.transition().duration(500).call(
+          zoom.transform,
+          d3.zoomIdentity.translate(width / 2, (height - 36) / 2).scale(Math.max(0.48, fitScale))
+        );
+      };
+      s4ZoomReset();
+      updateLabelVisibility(Math.max(0.48, fitScale));
     } else {
-      const nodes = root.descendants().map(d => ({ ...d.data }));
-      const links = root.links().map(l => ({ source: l.source.data.id, target: l.target.data.id, isMain: l.target.data.isMainLine }));
+      // Mạng Lưới Trọng Lực (Force Graph) với lực đẩy chống chồng chữ (forceCollide)
+      const nodes = Array.from(fMap.values());
+      const fLinks = links.map(l => ({ source: l.source.id, target: l.target.id, isMain: l.isMain }));
       const sim = d3.forceSimulation(nodes)
-        .force("link", d3.forceLink(links).id(d => d.id).distance(55))
-        .force("charge", d3.forceManyBody().strength(-160))
+        .force("link", d3.forceLink(fLinks).id(d => d.id).distance(72))
+        .force("charge", d3.forceManyBody().strength(-260))
+        .force("collide", d3.forceCollide().radius(42).iterations(2))
+        .force("radial", d3.forceRadial(d => (d.gen - 1) * 32, width / 2, height / 2).strength(0.55))
         .force("center", d3.forceCenter(width / 2, height / 2));
-      const link = g.selectAll("line").data(links).enter().append("line").attr("class", d => `s3-link ${d.isMain ? "main-line" : ""}`);
+
+      const zoom = d3.zoom().scaleExtent([0.25, 4]).on("zoom", e => g.attr("transform", e.transform));
+      svg.call(zoom);
+
+      const link = g.selectAll("line").data(fLinks).enter().append("line").attr("class", d => `s3-link ${d.isMain ? "main-line" : ""}`);
       const node = g.selectAll("g.s3-star").data(nodes).enter().append("g").attr("class", "s3-star")
         .on("click", (e, d) => openMemberModal(d.id))
         .call(d3.drag()
@@ -666,11 +769,14 @@
           .on("end", (e, d) => { if (!e.active) sim.alphaTarget(0); d.fx = null; d.fy = null; }));
       node.append("circle").attr("r", d => d.isMainLine ? 7 : 5)
         .attr("fill", d => d.userAdded ? "#34d399" : (d.isMainLine ? "#fbbf24" : (d.gender === "F" ? "#f472b6" : "#60a5fa")));
-      node.append("text").attr("class", "s3-label").attr("x", 9).attr("dy", "0.35em").text(d => d.name);
+      node.append("text").attr("class", "s3-label").attr("x", 9).attr("dy", "0.35em")
+        .text(d => d.name.replace(/\s*\([^)]*\)/g, ""));
+
       sim.on("tick", () => {
         link.attr("x1", d => d.source.x).attr("y1", d => d.source.y).attr("x2", d => d.target.x).attr("y2", d => d.target.y);
         node.attr("transform", d => `translate(${d.x},${d.y})`);
       });
+      s4ZoomReset = () => svg.transition().duration(500).call(zoom.transform, d3.zoomIdentity.translate(0, 0).scale(1));
     }
   }
   window.s4ToggleMode = function () {
@@ -678,6 +784,11 @@
     document.getElementById("s4ModeBtn").textContent = s4Mode === "radial" ? "✦ Chuyển Mạng Lưới Trọng Lực" : "◎ Chuyển Quỹ Đạo Đồng Tâm";
     renderStyle4Graph();
   };
+  window.s4ApplyFilter = function () {
+    s4Filter = document.getElementById("s4FilterSelect")?.value || "ALL";
+    renderStyle4Graph();
+  };
+  window.s4ResetZoom = () => s4ZoomReset && s4ZoomReset();
 
   // ----------------- PHONG CÁCH 5: BENTO DASHBOARD & TIMELINE -----------------
   let s5BranchFilter = "ALL";
@@ -703,7 +814,10 @@
           ${(window.HALL_OF_FAME || []).map(item => {
             const m = membersById[item.memberId];
             return `<div class="hof-card" onclick="openMemberModal('${esc(item.memberId)}')">
-              <span class="hof-badge">${esc(item.category)} • ${esc(item.badge)}</span>
+              <div class="hof-badges-row">
+                <span class="hof-badge">${esc(item.badge)}</span>
+                <span class="hof-badge secondary">${esc(item.category)}</span>
+              </div>
               <div style="font-family:var(--font-serif);font-weight:700;font-size:15px;color:#fff;margin-bottom:4px;">${esc(m ? m.name : item.badge)}</div>
               <div style="font-size:12.5px;opacity:0.86;line-height:1.5;">${esc(item.highlight)}</div>
             </div>`;
@@ -856,7 +970,7 @@
         <div>
           <label class="form-label">Cha / Mẹ trực tiếp trong phả</label>
           <select id="cfParent" class="form-select">
-            <option value="">-- Chọn (mặc định gắn Chi Chí Hòa nếu để trống) --</option>
+            <option value="">-- Chọn Cha/Mẹ (hoặc để trống) --</option>
             ${parentOptions}
           </select>
         </div>
@@ -1281,16 +1395,23 @@
       ? m.spouses.map(s => `<div>• <strong>${esc(s.name)}</strong>${s.birth ? ` (Sinh: ${esc(s.birth)})` : ""}${s.death ? ` — Mất: ${esc(s.death)}` : ""}${s.note ? ` (${esc(s.note)})` : ""}</div>`).join("")
       : "Chưa ghi nhận trong phả";
 
-    // Chuỗi Mạch Nguồn Huyết Thống từ Đời 1 -> vị hiện tại (Pedigree Breadcrumb)
+    // Chuỗi Mạch Nguồn Huyết Thống từ Đời 1 -> vị hiện tại (Tự động rút gọn nếu > 7 đời để không chiếm chỗ nút bấm)
     const lineageChain = [];
     let curNode = m;
     while (curNode) {
       lineageChain.unshift(curNode);
       curNode = curNode.parentId ? membersById[curNode.parentId] : null;
     }
-    const chainHtml = lineageChain.map(node =>
-      `<span class="lineage-step" onclick="openMemberModal('${esc(node.id)}')">Đ${node.gen}: ${esc(node.gen === 1 ? "Đức Thượng Tổ" : node.name)}</span>`
-    ).join(`<span style="opacity:0.5;">→</span>`);
+    const renderStep = node => `<span class="lineage-step" onclick="openMemberModal('${esc(node.id)}')">Đ${node.gen}: ${esc(node.gen === 1 ? "Đức Thượng Tổ" : node.name.replace(/\s*\([^)]*\)/g, ""))}</span>`;
+    let chainHtml = "";
+    if (lineageChain.length <= 7) {
+      chainHtml = lineageChain.map(renderStep).join(`<span style="opacity:0.5;">→</span>`);
+    } else {
+      const head = lineageChain.slice(0, 2).map(renderStep).join(`<span style="opacity:0.5;">→</span>`);
+      const tail = lineageChain.slice(-3).map(renderStep).join(`<span style="opacity:0.5;">→</span>`);
+      const full = lineageChain.map(renderStep).join(`<span style="opacity:0.5;">→</span>`);
+      chainHtml = `<span id="shortChain">${head} <span class="lineage-step" style="background:rgba(212,175,55,0.22);" onclick="document.getElementById('shortChain').style.display='none';document.getElementById('fullChain').style.display='inline';">… Xem đủ ${lineageChain.length} đời …</span> ${tail}</span><span id="fullChain" style="display:none;">${full}</span>`;
+    }
 
     document.getElementById("modalContent").innerHTML = `
       ${m.photo ? `<img class="member-avatar" src="${esc(m.photo)}" alt="${esc(m.name)}" />` : ""}
@@ -1331,29 +1452,57 @@
   };
 
   window.openMemorialModal = function () {
-    const items = [];
-    const parseMonth = (str) => {
-      const m = String(str).match(/(\d{1,2})\s*\/\s*(\d{1,2})/);
-      return m ? Number(m[2]) * 100 + Number(m[1]) : 9999;
+    const clanItems = [];
+    const royalItems = [];
+    const parseLunarSort = (str) => {
+      const s = String(str);
+      // Ưu tiên bắt "18 tháng Giêng" hoặc "dd/mm ÂL" trước
+      if (/tháng\s*Giêng/i.test(s)) {
+        const dMatch = s.match(/(\d{1,2})\s*tháng\s*Giêng/i);
+        return 100 + (dMatch ? Number(dMatch[1]) : 1);
+      }
+      const alMatch = s.match(/(\d{1,2})\s*\/\s*(\d{1,2})\s*(?:\/19\d\d|\/20\d\d)?\s*\(?ÂL/i);
+      if (alMatch) return Number(alMatch[2]) * 100 + Number(alMatch[1]);
+      const m = s.match(/^(\d{1,2})\s*\/\s*(\d{1,2})(?!\s*\/\s*1[23]\d\d)/);
+      if (m) return Number(m[2]) * 100 + Number(m[1]);
+      return 9999;
     };
+
     allMembers.forEach(m => {
-      if (m.death) items.push({ name: m.name, gen: `Đời ${m.gen}`, date: m.death, extra: m.age || "", sortKey: parseMonth(m.death) });
+      const isRoyal = m.gen <= 12;
+      if (m.death) {
+        const sk = parseLunarSort(m.death);
+        const rec = { name: m.name, gen: `Đời ${m.gen}`, date: m.death, extra: m.age || m.role || "", sortKey: sk };
+        if (isRoyal) {
+          if (/ÂL|tháng\s*Giêng/i.test(m.death) && sk < 9999) royalItems.push(rec);
+        } else {
+          clanItems.push(rec);
+        }
+      }
       if (m.spouses) {
         m.spouses.forEach(s => {
-          if (s.death) items.push({ name: s.name, gen: `Phối ngẫu Đời ${m.gen}`, date: s.death, extra: s.note || "", sortKey: parseMonth(s.death) });
+          if (s.death) {
+            const sk = parseLunarSort(s.death);
+            clanItems.push({ name: s.name, gen: `Phối ngẫu Đời ${m.gen}`, date: s.death, extra: s.note || "", sortKey: sk });
+          }
         });
       }
     });
-    items.sort((a, b) => a.sortKey - b.sortKey);
+    clanItems.sort((a, b) => a.sortKey - b.sortKey);
+    royalItems.sort((a, b) => a.sortKey - b.sortKey);
+
+    const renderList = (arr) => arr.map(it => `<div class="meta-box" style="display:flex;justify-content:space-between;align-items:center;gap:10px;">
+      <div><strong>${esc(it.name)}</strong><div style="font-size:11.5px;opacity:0.75;">${esc(it.gen)} ${it.extra ? "• " + esc(it.extra) : ""}</div></div>
+      <span style="color:#fcd34d;font-weight:700;font-size:13px;white-space:nowrap;">${esc(it.date)}</span>
+    </div>`).join("");
+
     document.getElementById("modalContent").innerHTML = `
-      <span class="modal-tag">LỊCH GIỖ TỔ TIÊN HỌ TRẦN (SẮP XẾP THEO THÁNG)</span>
-      <h2 class="modal-title">Ngày Giỗ & Kỷ Niệm Âm Lịch</h2>
-      <div style="display:flex;flex-direction:column;gap:8px;margin-top:14px;">
-        ${items.map(it => `<div class="meta-box" style="display:flex;justify-content:space-between;align-items:center;">
-          <div><strong>${esc(it.name)}</strong><div style="font-size:11.5px;opacity:0.75;">${esc(it.gen)} ${it.extra ? "• " + esc(it.extra) : ""}</div></div>
-          <span style="color:#fcd34d;font-weight:700;font-size:13px;">${esc(it.date)}</span>
-        </div>`).join("")}
-      </div>
+      <span class="modal-tag">SỔ VÀNG GIỖ CHẠP & NGÀY KỴ ÂM LỊCH</span>
+      <h2 class="modal-title">Lịch Giỗ Tổ Tiên Họ Trần (Tháng Giêng → Tháng Chạp)</h2>
+      <div style="font-weight:700;font-size:13.5px;color:#fcd34d;margin:12px 0 8px;">🕯️ I. Lịch Giỗ Chạp Gia Tộc Họ Trần Lãng Nam (Đời 19 – Đời 24)</div>
+      <div style="display:flex;flex-direction:column;gap:7px;">${renderList(clanItems)}</div>
+      <div style="font-weight:700;font-size:13.5px;color:#38bdf8;margin:16px 0 8px;">👑 II. Ngày Kỵ Âm Lịch Các Bậc Tiên Đế & Danh Tướng Hoàng Triều</div>
+      <div style="display:flex;flex-direction:column;gap:7px;">${renderList(royalItems)}</div>
       <div class="btn-row">
         <button class="btn-primary" onclick="openContributeModal()">+ Bổ sung ngày giỗ còn thiếu</button>
         <button class="btn-secondary" onclick="window.print()">🖨️ In Lịch Giỗ</button>
