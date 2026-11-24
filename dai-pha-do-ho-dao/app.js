@@ -287,8 +287,9 @@
         <button id="ttsBtn" class="book-tool-btn" onclick="toggleReadAloud()">🔊 Nghe Đọc Phả Ký</button>
         <button id="bookDarkBtn" class="book-tool-btn" onclick="toggleBookDarkMode()">${bookDark ? "☀️ Chế độ Giấy Dó Sáng" : "🌙 Chế độ Đọc Ban Đêm"}</button>
         <button class="book-tool-btn" onclick="window.print()">🖨️ In Sách Gia Phả (A4)</button>
+        <button class="book-tool-btn" onclick="openCompassLoshuModal()">🧭 La Bàn Cổ 90° &amp; Lạc Thư</button>
         <button class="book-tool-btn" onclick="openContributeModal()">✍️ Chi/Phái Đóng Góp</button>
-        <button class="book-tool-btn" onclick="switchStyle(2)">🏮 Xem Cây Phả Đồ</button>
+        <button class="book-tool-btn" style="background:#6e0d0d;color:#ffd700;border-color:#d4af37;" onclick="switchStyle(6)">🗺️ Mở Đại Phả Đồ 4K</button>
       </div>
 
       <div class="book-jump-bar">
@@ -329,7 +330,7 @@
         <p class="book-p"><strong>Chìa khóa Phương vị Cổ đại (Định hướng theo Mặt Trời):</strong> ${esc(meta.turningPoint)}</p>
         <div style="margin-top:14px;">
           <div style="font-weight:700;color:#7c1212;font-size:0.96rem;margin-bottom:8px;">🏛️ Dấu Ấn Bát Cổ (古 = 十 Thập + 口 Khẩu — 10 Vị Chi Long Thống Nhất Hiệu Lệnh Xã Tắc Thời Lạc Thư):</div>
-          <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px;">
+          <div class="book-grid-4">
             ${(window.BAT_CO_DATA || []).map(b => `<div class="book-person" style="cursor:default;border-left:3.5px solid #6a1b9a;background:#fcf8ff;">
               <div style="font-weight:700;color:#4a148c;font-size:0.9rem;">${b.idx}. ${esc(b.name)} <span style="color:#8b0000;">(${esc(b.hanzi)})</span></div>
               <div style="font-size:0.82rem;color:#332920;line-height:1.5;margin-top:3px;">${esc(b.desc)}</div>
@@ -354,23 +355,41 @@
       </div>
 
       <div class="book-section">
-        <h2 class="book-h2">Phần 4: Tộc Ước – Gia Huấn – Hương Ước Tông Tộc Đào Việt Nam</h2>
-        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:10px;">
-          ${(meta.tocUoc || []).map(t => `<div class="book-person" style="cursor:default;border-left:3.5px solid #9e1b1b;background:#fffdf8;">
-            <div style="font-weight:700;color:#7c1212;font-size:0.92rem;">📜 ${esc(t.title)}</div>
-            <div style="font-size:0.84rem;color:#332920;line-height:1.55;margin-top:4px;">${esc(t.desc)}</div>
+        <h2 class="book-h2">Phần 4: Tộc Ước – Gia Huấn – Hương Ước Tông Tộc Đào Việt Nam (6 Điều Cốt Lõi)</h2>
+        <div class="book-grid-3">
+          ${(meta.tocUoc || []).map(t => `<div class="book-person" style="cursor:default;border-left:4px solid #9e1b1b;background:#fffdf8;">
+            <div>
+              <div style="font-weight:700;color:#7c1212;font-size:0.95rem;">📜 ${esc(t.title)}</div>
+              <div style="font-size:0.85rem;color:#332920;line-height:1.6;margin-top:6px;">${esc(t.desc)}</div>
+            </div>
           </div>`).join("")}
         </div>
       </div>
 
       <div class="book-section">
-        <h2 class="book-h2">Phần 5: Thư Mục Nguồn Sử Liệu & Tài Liệu Đối Chiếu</h2>
-        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:10px;">
-          ${(window.HISTORICAL_SOURCES || []).map(s => `<div class="book-person" style="cursor:default;background:#fffaf0;">
-            <div style="font-weight:700;color:#7c1212;font-size:0.9rem;">📚 ${esc(s.name)}</div>
-            <div style="font-size:0.78rem;color:#6b5b4b;margin:2px 0 4px;">${esc(s.author)}</div>
-            <div style="font-size:0.82rem;color:#332920;line-height:1.5;">${esc(s.note)}</div>
+        <h2 class="book-h2">Phần 5: Thư Mục Nguồn Sử Liệu, Kim Sử & Thần Tích Đối Chiếu (6 Trụ Cột Bảo Chứng)</h2>
+        <div class="book-grid-3">
+          ${(window.HISTORICAL_SOURCES || []).map(s => `<div class="book-person" style="cursor:default;border-left:4px solid #d4af37;background:#fffaf0;">
+            <div>
+              <div style="font-weight:700;color:#7c1212;font-size:0.94rem;">📚 ${esc(s.name)}</div>
+              <div style="font-size:0.8rem;font-weight:600;color:#8b5a2b;margin:4px 0 6px;">🏛️ ${esc(s.author)}</div>
+              <div style="font-size:0.84rem;color:#332920;line-height:1.58;">${esc(s.note)}</div>
+            </div>
           </div>`).join("")}
+        </div>
+      </div>
+
+      <div class="book-footer-colophon">
+        <div style="display:flex;align-items:center;gap:14px;">
+          <div style="width:54px;height:54px;border-radius:10px;background:#8b0000;border:2px solid #ffd700;display:grid;place-items:center;font-family:var(--font-serif);font-size:26px;font-weight:800;color:#ffd700;flex-shrink:0;">陶</div>
+          <div>
+            <div style="font-family:var(--font-serif);font-weight:800;font-size:1.05rem;color:#ffd700;letter-spacing:0.5px;">ĐẠI PHẢ ĐỒ TÔNG TỘC ĐÀO &amp; NỀN VĂN HIẾN VIỆT NAM</div>
+            <div style="font-size:0.82rem;color:#fef3c7;opacity:0.92;margin-top:2px;">Biểu tượng: Hoa Đào (桃) • Ký hiệu Tông tộc: Chữ Đào (陶) • Hệ thống Văn hiến Đào tộc (donghodao.vn)</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;">
+          <button class="book-tool-btn" style="background:#ffd700;color:#4a0404;border-color:#fff;" onclick="switchStyle(6)">🗺️ Xem Đại Phả Đồ 4K</button>
+          <button class="book-tool-btn" style="background:rgba(255,255,255,0.12);color:#fff;border-color:#d4af37;" onclick="openIncenseModal()">🙏 Dâng Hương Tổ Tiên</button>
         </div>
       </div>
     </div>`;

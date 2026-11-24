@@ -18,11 +18,11 @@
 
   <!-- THANH ĐIỀU HƯỚNG & CHUYỂN ĐỔI 6 PHONG CÁCH ĐẠI PHẢ ĐỒ TÔNG TỘC ĐÀO -->
   <header class="topbar">
-    <div class="brand">
+    <div class="brand" onclick="switchStyle(6)" style="cursor:pointer;" title="Bấm để xem Đại Phả Đồ 4K">
       <div class="brand-seal">陶</div>
       <div class="brand-text">
-        <span class="brand-title">ĐẠI PHẢ ĐỒ TÔNG TỘC ĐÀO — VĂN HIẾN</span>
-        <span class="brand-sub">Thập Bát Diệp • Văn Lang (2.622 Năm / 189 Duệ Vương) • Trưng Vương</span>
+        <span class="brand-title">ĐẠI PHẢ ĐỒ HỌ ĐÀO</span>
+        <span class="brand-sub">Thập Bát Diệp • Văn Lang • Trưng Vương</span>
       </div>
     </div>
 
@@ -30,8 +30,8 @@
       <button class="style-btn" data-style="1" onclick="switchStyle(1)">📜 1. Sách Gia Phả</button>
       <button class="style-btn" data-style="2" onclick="switchStyle(2)">🏮 2. Phả Đồ Cổ Điển</button>
       <button class="style-btn" data-style="3" onclick="switchStyle(3)">🐉 3. Cây Gia Đình</button>
-      <button class="style-btn" data-style="4" onclick="switchStyle(4)">✨ 4. Tinh Tú Đào Tộc</button>
-      <button class="style-btn" data-style="5" onclick="switchStyle(5)">🏆 5. Sổ Vàng &amp; Tra Cứu</button>
+      <button class="style-btn" data-style="4" onclick="switchStyle(4)">✨ 4. Tinh Tú</button>
+      <button class="style-btn" data-style="5" onclick="switchStyle(5)">🏆 5. Sổ Vàng</button>
       <button class="style-btn active" data-style="6" onclick="switchStyle(6)">🗺️ 6. Đại Phả Đồ 4K</button>
     </nav>
 
@@ -41,8 +41,8 @@
         <input id="globalSearch" class="search-input" type="text" placeholder="Tìm Tổ tiên, Chặng..." autocomplete="off" />
         <div id="searchResults" class="search-results"></div>
       </div>
-      <button class="icon-btn" style="background:rgba(212,175,55,0.22);border-color:#d4af37;color:#fcd34d;" onclick="openCompassLoshuModal()" title="La Bàn Mặt Trời Cổ xoay 90° & Cửu Cung Lạc Thư 7 Chặng">🧭 La Bàn &amp; Lạc Thư</button>
-      <button class="icon-btn cta-tamthu" onclick="openTamThuModal()" title="Tâm thư & Khảo luận Đại Phả Đồ Tông Tộc Đào — 24/11/2026">💌 Tâm Thư</button>
+      <button class="icon-btn cta-compass" onclick="openCompassLoshuModal()" title="La Bàn Mặt Trời Cổ xoay 90° & Cửu Cung Lạc Thư 7 Chặng">🧭 La Bàn</button>
+      <button class="icon-btn cta-tamthu" onclick="openTamThuModal()" title="Tâm thư gửi muôn đời con cháu Tông Tộc Đào Việt Nam">💌 Tâm Thư</button>
       <button class="icon-btn cta-contribute" onclick="openContributeModal()" title="Các chi, phái họ Đào điền thêm hoặc sửa thông tin">✍️ Bổ Sung</button>
       <button class="icon-btn" onclick="openMemorialModal()" title="Lịch ngày giỗ & đại lễ tế Tổ âm lịch">🕯️ Ngày Giỗ</button>
       <div class="menu-wrap">

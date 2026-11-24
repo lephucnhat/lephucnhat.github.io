@@ -58,7 +58,8 @@ window.PHAM_PHO_META = {
     { title: "2. Trạng Nguyên Cổ Đường (Giữ Gìn Gia Đạo)", desc: "Kế thừa thiết chế thứ nhất trong Bát Cổ: giữ gìn nề nếp, truyền thống hiếu học, lễ tiết và gia phong Đào tộc qua muôn thế hệ." },
     { title: "3. Tiều Ẩn Cổ Bích & Thượng Tể Cổ Trạch (Đoàn Kết Xã Tắc)", desc: "Đùm bọc, bảo vệ an toàn cho cộng đồng và chia sẻ nguồn lực, lương thực công bằng, tương trợ các chi phái họ Đào trên khắp mọi miền." },
     { title: "4. Hun Đúc Minh Văn & Kim Sử (Bảo Tồn Văn Hiến)", desc: "Kế thừa mạch văn hiến của Đức Đệ Thập: gìn giữ Ngọc phả, Thần tích, Minh văn Trống đồng Đào Xá – Ngọc Lũ – Thạp đồng Đào Thịnh và hệ thống 36 làng Đào Xá." },
-    { title: "5. Trung Liệt Giữ Nước (Hào Khí Cổ Loa – Lĩnh Nam)", desc: "Noi gương Tướng quân Đào Nhị, cha con Quan Nội Hầu Đào Nồi thời Âu Lạc và ba anh em Bắc Bình Vương Đại Nguyên Soái Đào Kỳ, Hổ Nha Tướng Đào Hiển thời Trưng Vương." }
+    { title: "5. Trung Liệt Giữ Nước (Hào Khí Cổ Loa – Lĩnh Nam)", desc: "Noi gương Tướng quân Đào Nhị, cha con Quan Nội Hầu Đào Nồi thời Âu Lạc và ba anh em Bắc Bình Vương Đại Nguyên Soái Đào Kỳ, Hổ Nha Tướng Đào Hiển thời Trưng Vương." },
+    { title: "6. Khai Canh Mở Cõi & Kết Nối Toàn Cầu (Tứ Hải Đồng Tông)", desc: "Tiếp nối truyền thống mở cõi của Đức Đệ Lục (về phương Nam) và Đức Đệ Cửu (về phương Bắc): con cháu họ Đào dù lập nghiệp ở đâu cũng hướng về đất Tổ và ghi danh vào Đại Phả Đồ." }
   ],
   tamThu: {
     title: "TÂM THƯ GỬI MUÔN ĐỜI CON CHÁU TÔNG TỘC ĐÀO VIỆT NAM",
@@ -105,7 +106,8 @@ window.HISTORICAL_SOURCES = [
   { name: "Minh văn Kim sử: Trống đồng Đào Xá, Trống đồng Ngọc Lũ & Thạp đồng Đào Thịnh", author: "Bảo vật Quốc gia — Văn hóa Phùng Nguyên & Đông Sơn", note: "Hiện vật khảo cổ học khắc dấu Tổ Tông, triết lý Thái Cực – Lưỡng Nghi – Tứ Tượng – Bát Quái và lịch pháp Mặt Trời của cư dân Lạc Việt." },
   { name: "Thần tích Thái Phó Đào Công Bột & Ngũ Vị Tôn Ông (Đào Cư, Đào Hồng, Đào Trường, Đào Thạch Khanh, Đào Quý Lân)", author: "Thần tích An Lão (Hải Phòng), Bình Đà (Thanh Oai, Hà Nội) & lưu vực sông Châu (Hà Nam)", note: "Ghi chép công trạng khai mở miền duyên hải hạ lưu của Ngài Đào Công Bột (Kinh Dương Vương) và 5 người con trai trấn giữ Ngũ Phương – Tứ Hướng, lập Trang Tông Chất." },
   { name: "Cụm Thần phả Cổ Loa: Tướng quân Đào Nhị & Quan Nội Hầu Đào Nồi, Đào Đống, Đào Vực", author: "Đền thờ Quan Nội Hầu (Cổ Loa), Miếu Vĩnh Thanh, Đình Ngọc Chi (Đông Anh, Hà Nội) & Hương Canh", note: "Ghi chép lịch sử thời Thục Vương (An Dương Vương): Đào Nhị làm Tổng quản quốc khố quân lương xây thành Cổ Loa; ba cha con Nội Hầu Đào Nồi thống lĩnh quân đội bảo vệ Loa Thành." },
-  { name: "Thần tích Thánh Mẫu Đào Thị Hoan & Ngọc phả Tam Vị Đại Vương Họ Đào thời Trưng Vương", author: "Thần tích xã Thượng Gia (Đồng Sâm, Thái Bình); Đền Hội Phụ (Đông Anh) & Miếu Ba Vua (Thủy Nguyên)", note: "Ghi chép Thánh Mẫu Đào Thị Hoan sinh ra Triệu Vũ Đế (Triệu Đà); và ba anh em Bắc Bình Vương Đại Nguyên Soái Đào Kỳ, Hổ Nha Tướng Đào Chiêu Hiển, Đào Đô Thống thu phục 65 thành Lĩnh Nam." }
+  { name: "Thần tích Thánh Mẫu Đào Thị Hoan & Ngọc phả Tam Vị Đại Vương Họ Đào thời Trưng Vương", author: "Thần tích xã Thượng Gia (Đồng Sâm, Thái Bình); Đền Hội Phụ (Đông Anh) & Miếu Ba Vua (Thủy Nguyên)", note: "Ghi chép Thánh Mẫu Đào Thị Hoan sinh ra Triệu Vũ Đế (Triệu Đà); và ba anh em Bắc Bình Vương Đại Nguyên Soái Đào Kỳ, Hổ Nha Tướng Đào Chiêu Hiển, Đào Đô Thống thu phục 65 thành Lĩnh Nam." },
+  { name: "Đại Việt Sử Ký Toàn Thư & Không gian Văn hóa 36 Làng Đào Xá", author: "Quốc sử quán các triều đại & Di sản Văn hóa Phi vật thể Phú Thọ – Bắc Bộ", note: "Đối chiếu niên đại kỷ Hồng Bàng – Văn Lang (2.622 năm, 2879 – 258 TCN), kỷ Thục, kỷ nhà Triệu, kỷ Trưng Nữ Vương (65 thành) cùng hệ thống lễ hội rước Vua của 36 làng Đào Xá." }
 ];
 
 window.CHANGELOG_HISTORY = [
