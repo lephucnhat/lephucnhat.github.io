@@ -1,0 +1,151 @@
+[
+  {
+    "id": "res-ai-chu-voi",
+    "title": "Ứng dụng AI trong hoạt động khám phá khoa học: “Chú voi ngộ nghĩnh”",
+    "ageGroup": "MG 4–5 tuổi",
+    "type": "Giáo án – STEM",
+    "campus": "Trường chính Cam Chính",
+    "author": "Giáo viên Lê Thị Hoài Thu",
+    "date": "24/11/2026",
+    "description": "Bài giảng điện tử tích hợp hình ảnh và hoạt cảnh trực quan hỗ trợ bằng AI, giúp trẻ khối 4–5 tuổi hào hứng khám phá đặc điểm, môi trường sống và tập tính đáng yêu của loài voi.",
+    "tags": ["Ứng dụng AI", "Khám phá khoa học", "Khối 4-5 tuổi"]
+  },
+  {
+    "id": "res-chuyen-gau-con-sau-rang",
+    "title": "Câu chuyện: “Gấu con bị sâu răng” – Giáo dục kỹ năng vệ sinh răng miệng",
+    "ageGroup": "MG 4–5 tuổi",
+    "type": "Giáo án – STEM",
+    "campus": "Lớp 4–5 tuổi A Cam Chính",
+    "author": "Tổ Mẫu giáo 4–5 tuổi",
+    "date": "18/11/2026",
+    "description": "Học liệu phát triển ngôn ngữ kết hợp giáo dục sức khỏe răng miệng. Đã được tích hợp trực tiếp vào mục 'Góc Bé Vui Học Tại Nhà' với tính năng giọng đọc cô kể chuyện tự động.",
+    "tags": ["Kể chuyện", "Chăm sóc răng miệng", "Góc Bé Vui Học"],
+    "interactiveTarget": "story"
+  },
+  {
+    "id": "res-chu-cai-a-aw-aa",
+    "title": "Hoạt động làm quen chữ cái: a, ă, â (Bộ bài giảng tương tác)",
+    "ageGroup": "MG 5–6 tuổi",
+    "type": "PowerPoint",
+    "campus": "Lớp MG 5–6 tuổi B Cam Chính & A Phân hiệu",
+    "author": "Tổ Mẫu giáo 5–6 tuổi",
+    "date": "15/11/2026",
+    "description": "Bài giảng làm quen nhóm chữ cái a, ă, â thông qua thẻ từ, hình ảnh trực quan và trò chơi phát âm chuẩn tiếng Việt cho trẻ mẫu giáo lớn.",
+    "tags": ["Làm quen chữ cái", "Tiền tiểu học", "a ă â"],
+    "interactiveTarget": "alphabet"
+  },
+  {
+    "id": "res-chu-cai-e-ee",
+    "title": "Chuyên đề cấp tổ: Hoạt động làm quen chữ cái e, ê",
+    "ageGroup": "MG 5–6 tuổi",
+    "type": "Video clip",
+    "campus": "Khối Mẫu giáo 5–6 tuổi",
+    "author": "Tổ Mẫu giáo 5–6 tuổi",
+    "date": "12/11/2026",
+    "description": "Video chuyên đề sinh hoạt chuyên môn cấp tổ hướng dẫn trẻ nhận biết nét chữ, phát âm rõ ràng chữ e, ê qua các hoạt động nhóm sinh động.",
+    "tags": ["Chuyên đề cấp tổ", "Làm quen chữ cái", "e ê"],
+    "interactiveTarget": "alphabet"
+  },
+  {
+    "id": "res-chu-cai-o-oo-ow",
+    "title": "Phương pháp làm quen chữ cái: o, ô, ơ",
+    "ageGroup": "MG 5–6 tuổi",
+    "type": "PowerPoint",
+    "campus": "Lớp MG 5–6 tuổi Cam Sơn",
+    "author": "Điểm trường Cam Sơn",
+    "date": "10/11/2026",
+    "description": "Bài giảng PowerPoint trực quan giúp trẻ mẫu giáo 5–6 tuổi phân biệt nét tròn, dấu mũ và dấu móc của nhóm chữ cái o, ô, ơ qua các trò chơi nhận diện từ vựng sinh động.",
+    "tags": ["Làm quen chữ cái", "Điểm trường Cam Sơn", "o ô ơ"],
+    "interactiveTarget": "alphabet"
+  },
+  {
+    "id": "res-ai-chu-cai-u-uw",
+    "title": "Ứng dụng AI trong hoạt động làm quen chữ cái: u, ư",
+    "ageGroup": "MG 5–6 tuổi",
+    "type": "PowerPoint",
+    "campus": "Khối Mẫu giáo 5–6 tuổi",
+    "author": "Tổ Mẫu giáo 5–6 tuổi",
+    "date": "08/11/2026",
+    "description": "Ứng dụng công nghệ AI thiết kế nhân vật hoạt hình đồng hành cùng bé nhận diện và phát âm chữ cái u, ư.",
+    "tags": ["Ứng dụng AI", "Làm quen chữ cái", "u ư"]
+  },
+  {
+    "id": "res-tro-choi-doan-nhac-cu",
+    "title": "Trò chơi âm nhạc: “Đoán tên nhạc cụ”",
+    "ageGroup": "MG 5–6 tuổi",
+    "type": "Trò chơi",
+    "campus": "Lớp MG 5–6 tuổi B Cam Chính",
+    "author": "Tổ Mẫu giáo 5–6 tuổi",
+    "date": "05/11/2026",
+    "description": "Trò chơi phát triển thính giác và cảm thụ âm nhạc, giúp trẻ phân biệt âm sắc của trống, đàn, phách tre, sắc xô. Có thể chơi trực tiếp tại Góc Bé Vui Học.",
+    "tags": ["Trò chơi âm nhạc", "Phát triển thẩm mỹ", "Góc Bé Vui Học"],
+    "interactiveTarget": "quiz"
+  },
+  {
+    "id": "res-tro-choi-giac-quan",
+    "title": "Trò chơi khám phá: “Giác quan kỳ diệu” & Tìm hiểu 5 giác quan",
+    "ageGroup": "MG 5–6 tuổi",
+    "type": "Trò chơi",
+    "campus": "Lớp MG 5–6 tuổi A Phân hiệu & Cam Sơn",
+    "author": "Tổ Mẫu giáo 5–6 tuổi",
+    "date": "03/11/2026",
+    "description": "Bộ trò chơi và bài giảng giúp bé nhận biết chức năng của thị giác, thính giác, khứu giác, vị giác và xúc giác cùng cách bảo vệ cơ thể.",
+    "tags": ["5 giác quan", "Khám phá khoa học", "Góc Bé Vui Học"],
+    "interactiveTarget": "quiz"
+  },
+  {
+    "id": "res-ai-chuyen-qua-trung",
+    "title": "Ứng dụng AI trong hoạt động phát triển ngôn ngữ: Truyện “Quả trứng”",
+    "ageGroup": "Nhà trẻ 24–36 tháng",
+    "type": "PowerPoint",
+    "campus": "Khối Nhà trẻ 24–36 tháng tuổi",
+    "author": "Tổ Nhà trẻ",
+    "date": "01/11/2026",
+    "description": "Học liệu tranh động AI đầy màu sắc phù hợp với độ tập trung của trẻ nhà trẻ 24–36 tháng, kích thích trẻ tập nói và bắt chước tiếng kêu các con vật.",
+    "tags": ["Nhà trẻ 24-36 tháng", "Phát triển ngôn ngữ", "Ứng dụng AI"]
+  },
+  {
+    "id": "res-tro-choi-tim-doi-dep",
+    "title": "Trò chơi vận động & nhận biết: “Tìm đúng đôi dép”",
+    "ageGroup": "MG 3–4 tuổi",
+    "type": "Video clip",
+    "campus": "Lớp MG 3–4 tuổi Cam Sơn",
+    "author": "Điểm trường Cam Sơn",
+    "date": "28/10/2026",
+    "description": "Hoạt động rèn phản xạ nhanh, kỹ năng ghép đôi tương ứng về màu sắc, kích thước và tính tự lập mang giày dép cho trẻ 3–4 tuổi.",
+    "tags": ["Khối 3-4 tuổi", "Kỹ năng tự phục vụ", "Video clip"]
+  },
+  {
+    "id": "res-tao-hinh-trang-tri-vay",
+    "title": "Hoạt động tạo hình: Trang trí trang phục bạn trai, bạn gái",
+    "ageGroup": "MG 4–5 tuổi",
+    "type": "Video clip",
+    "campus": "Lớp 4–5 tuổi B Phân hiệu",
+    "author": "Tổ Mẫu giáo 4–5 tuổi",
+    "date": "25/10/2026",
+    "description": "Rèn kỹ năng vận động tinh, phối hợp màu sắc và óc sáng tạo thẩm mỹ cho trẻ mẫu giáo nhỡ qua các nguyên vật liệu thiên nhiên.",
+    "tags": ["Hoạt động tạo hình", "Điểm Phân hiệu"]
+  },
+  {
+    "id": "res-ngay-hoi-doc-sach",
+    "title": "Ngày hội đọc sách của bé & Trò chơi vận động “Chuyền vòng qua chân”",
+    "ageGroup": "MG 4–5 tuổi",
+    "type": "Video clip",
+    "campus": "Lớp 4–5 tuổi A Cam Chính & A Phân hiệu",
+    "author": "Tổ Mẫu giáo 4–5 tuổi",
+    "date": "20/10/2026",
+    "description": "Nuôi dưỡng tình yêu sách tranh từ sớm kết hợp trò chơi vận động tập thể rèn sự khéo léo, tinh thần đồng đội.",
+    "tags": ["Văn hóa đọc", "Trò chơi vận động"]
+  },
+  {
+    "id": "res-tai-lieu-steam-sel",
+    "title": "Cẩm nang ứng dụng giáo dục STEAM & Bồi dưỡng cảm xúc xã hội (SEL) cho trẻ mầm non",
+    "ageGroup": "Chung",
+    "type": "Cẩm nang",
+    "campus": "Toàn trường",
+    "author": "Ban Chuyên môn Trường MN Lê Thế Hiếu",
+    "date": "15/10/2026",
+    "description": "Tài liệu bồi dưỡng chuyên môn giúp giáo viên và phụ huynh phối hợp xây dựng 'Lớp học hạnh phúc', phát triển tư duy STEAM và trí tuệ cảm xúc cho trẻ.",
+    "tags": ["Giáo dục STEAM", "Cảm xúc xã hội SEL", "Cẩm nang"]
+  }
+]

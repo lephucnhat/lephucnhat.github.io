@@ -1,0 +1,22 @@
+<!-- Kích thước chuẩn thay logo thật: 240x240px (SVG hoặc PNG nền trong suốt) -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" role="img" aria-label="Logo Trường Mầm non Lê Thế Hiếu">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1B7350"/>
+      <stop offset="100%" stop-color="#289668"/>
+    </linearGradient>
+    <linearGradient id="sunGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FBBF24"/>
+      <stop offset="100%" stop-color="#F59E0B"/>
+    </linearGradient>
+  </defs>
+  <circle cx="60" cy="60" r="56" fill="url(#bgGrad)" stroke="#FFFBEB" stroke-width="4"/>
+  <circle cx="60" cy="60" r="49" fill="none" stroke="#A7F3D0" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <!-- Mặt trời ấm áp -->
+  <circle cx="60" cy="40" r="14" fill="url(#sunGrad)"/>
+  <!-- Búp mầm non & Trang sách mở -->
+  <path d="M60 78 C60 60, 38 50, 32 62 C36 74, 52 78, 60 78 Z" fill="#A7F3D0"/>
+  <path d="M60 78 C60 60, 82 50, 88 62 C84 74, 68 78, 60 78 Z" fill="#6EE7B7"/>
+  <path d="M60 80 L60 48" stroke="#FFFBEB" stroke-width="4" stroke-linecap="round"/>
+  <path d="M28 84 Q44 76 60 86 Q76 76 92 84 L92 92 Q76 84 60 94 Q44 84 28 92 Z" fill="#FFFBEB"/>
+</svg>

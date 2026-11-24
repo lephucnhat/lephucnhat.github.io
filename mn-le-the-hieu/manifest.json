@@ -1,0 +1,24 @@
+{
+  "name": "Trường Mầm non Lê Thế Hiếu - Xã Cam Lộ, Tỉnh Quảng Trị",
+  "short_name": "MN Lê Thế Hiếu",
+  "description": "Cổng thông tin điện tử Trường Mầm non Lê Thế Hiếu, Thôn Cam Chính, xã Cam Lộ, tỉnh Quảng Trị. Ươm mầm xanh trên quê hương vùng Cùa lịch sử.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#FFFDF9",
+  "theme_color": "#1B7350",
+  "lang": "vi",
+  "icons": [
+    {
+      "src": "assets/images/logo.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/images/logo.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

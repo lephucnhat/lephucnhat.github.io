@@ -1,0 +1,75 @@
+<!-- KHUNG ẢNH HERO CHUẨN 16:10 (Kích thước khuyến nghị khi thay ảnh thật của trường: 1280x800px, định dạng JPG/WebP) -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" role="img" aria-label="Trường Mầm non Lê Thế Hiếu - Ươm mầm xanh trên quê hương vùng Cùa lịch sử">
+  <defs>
+    <linearGradient id="sky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#E6F7EF"/>
+      <stop offset="60%" stop-color="#FFFBEB"/>
+      <stop offset="100%" stop-color="#FEF3C7"/>
+    </linearGradient>
+    <linearGradient id="hill1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#289668"/>
+      <stop offset="100%" stop-color="#1B7350"/>
+    </linearGradient>
+    <linearGradient id="hill2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#34D399"/>
+      <stop offset="100%" stop-color="#289668"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" rx="24" fill="url(#sky)"/>
+  <!-- Cầu vồng tuổi thơ dịu nhẹ -->
+  <path d="M 80 360 A 320 320 0 0 1 720 360" fill="none" stroke="#FDE68A" stroke-width="14" opacity="0.55"/>
+  <path d="M 94 360 A 306 306 0 0 1 706 360" fill="none" stroke="#A7F3D0" stroke-width="14" opacity="0.55"/>
+  <!-- Ông mặt trời & Mây -->
+  <circle cx="670" cy="100" r="48" fill="#F59E0B" opacity="0.92"/>
+  <circle cx="670" cy="100" r="66" fill="#FBBF24" opacity="0.24"/>
+  <g fill="#FFFFFF" opacity="0.94">
+    <rect x="75" y="70" width="130" height="36" rx="18"/>
+    <circle cx="110" cy="70" r="22"/>
+    <circle cx="150" cy="66" r="26"/>
+    <rect x="440" y="52" width="110" height="30" rx="15"/>
+    <circle cx="475" cy="52" r="18"/>
+    <circle cx="510" cy="49" r="20"/>
+  </g>
+  <!-- Đồi xanh vùng Cùa Cam Lộ -->
+  <path d="M0 370 Q220 290 460 355 T800 330 L800 500 L0 500 Z" fill="url(#hill2)" opacity="0.78"/>
+  <path d="M0 405 Q280 340 550 390 T800 375 L800 500 L0 500 Z" fill="url(#hill1)"/>
+  <!-- Ngôi trường Mầm non Lê Thế Hiếu thân thiện -->
+  <g transform="translate(175, 160)">
+    <rect x="35" y="75" width="380" height="155" rx="14" fill="#FFFDF9" stroke="#1B7350" stroke-width="4"/>
+    <polygon points="10,78 225,2 440,78" fill="#EF4444" stroke="#B91C1C" stroke-width="4" stroke-linejoin="round"/>
+    <!-- Cột cờ Tổ quốc -->
+    <line x1="225" y1="-35" x2="225" y2="5" stroke="#1C2621" stroke-width="3"/>
+    <rect x="225" y="-35" width="38" height="24" rx="3" fill="#DC2626"/>
+    <polygon points="244,-29 246,-23 252,-23 247,-19 249,-14 244,-17 239,-14 241,-19 236,-23 242,-23" fill="#FACC15"/>
+    <!-- Đồng hồ mái trường -->
+    <circle cx="225" cy="46" r="17" fill="#FFFBEB" stroke="#F59E0B" stroke-width="3.5"/>
+    <path d="M225 37 L225 46 L232 46" stroke="#1B7350" stroke-width="2.5" stroke-linecap="round"/>
+    <!-- Biển tên trường -->
+    <rect x="85" y="88" width="280" height="32" rx="8" fill="#1B7350"/>
+    <text x="225" y="109" font-family="sans-serif" font-size="13.5" font-weight="700" fill="#FFFBEB" text-anchor="middle">TRƯỜNG MẦM NON LÊ THẾ HIẾU</text>
+    <!-- Cửa chính & Cửa sổ lớp học -->
+    <rect x="190" y="145" width="70" height="85" rx="10" fill="#F59E0B"/>
+    <rect x="200" y="155" width="22" height="72" rx="4" fill="#FFFBEB"/>
+    <rect x="228" y="155" width="22" height="72" rx="4" fill="#FFFBEB"/>
+    <rect x="65" y="135" width="50" height="50" rx="8" fill="#A7F3D0" stroke="#1B7350" stroke-width="3"/>
+    <rect x="127" y="135" width="50" height="50" rx="8" fill="#A7F3D0" stroke="#1B7350" stroke-width="3"/>
+    <rect x="275" y="135" width="50" height="50" rx="8" fill="#A7F3D0" stroke="#1B7350" stroke-width="3"/>
+    <rect x="337" y="135" width="50" height="50" rx="8" fill="#A7F3D0" stroke="#1B7350" stroke-width="3"/>
+  </g>
+  <!-- Cây xanh sân trường -->
+  <g transform="translate(80, 245)">
+    <rect x="28" y="80" width="16" height="58" rx="4" fill="#92400E"/>
+    <circle cx="36" cy="55" r="42" fill="#289668"/>
+    <circle cx="18" cy="70" r="28" fill="#34D399"/>
+    <circle cx="54" cy="70" r="28" fill="#1B7350"/>
+  </g>
+  <g transform="translate(630, 238)">
+    <rect x="28" y="85" width="16" height="62" rx="4" fill="#92400E"/>
+    <circle cx="36" cy="58" r="44" fill="#289668"/>
+    <circle cx="16" cy="72" r="30" fill="#34D399"/>
+    <circle cx="56" cy="72" r="30" fill="#1B7350"/>
+  </g>
+  <!-- Băng rôn chào mừng năm học -->
+  <rect x="155" y="434" width="490" height="40" rx="20" fill="#FFFFFF" stroke="#1B7350" stroke-width="2"/>
+  <text x="400" y="459" font-family="sans-serif" font-size="14" font-weight="700" fill="#1B7350" text-anchor="middle">🌱 Ươm mầm xanh trên quê hương vùng Cùa lịch sử • Xã Cam Lộ, Quảng Trị</text>
+</svg>

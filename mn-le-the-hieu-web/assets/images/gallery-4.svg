@@ -1,0 +1,24 @@
+<!-- Kích thước khuyến nghị khi thay ảnh chụp thực tế của trường: 800x500px (Tỷ lệ 16:10, định dạng JPG/WebP) -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" role="img" aria-label="QUY TRÌNH BẾP ĂN BÁN TRÚ MỘT CHIỀU CHUẨN AN TOÀN THỰC PHẨM">
+  <defs>
+    <linearGradient id="grad_9" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#15803D"/>
+      <stop offset="100%" stop-color="#34D399"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" rx="22" fill="#ECFDF5"/>
+  <circle cx="715" cy="85" r="145" fill="#34D399" opacity="0.14"/>
+  <circle cx="85" cy="415" r="165" fill="#15803D" opacity="0.12"/>
+  <rect x="46" y="42" width="708" height="416" rx="20" fill="#FFFFFF" stroke="#15803D" stroke-width="2" stroke-opacity="0.22"/>
+  <rect x="46" y="42" width="708" height="14" rx="7" fill="url(#grad_9)"/>
+  <!-- Vòng tròn biểu tượng trung tâm -->
+  <circle cx="400" cy="168" r="68" fill="#ECFDF5" stroke="#15803D" stroke-width="3"/>
+  <circle cx="400" cy="168" r="56" fill="#FFFFFF" opacity="0.7"/>
+  <text x="400" y="191" font-family="sans-serif" font-size="58" text-anchor="middle">🍎</text>
+  <!-- Tiêu đề & Mô tả -->
+  <text x="400" y="282" font-family="sans-serif" font-size="20.5" font-weight="700" fill="#1C2621" text-anchor="middle">QUY TRÌNH BẾP ĂN BÁN TRÚ MỘT CHIỀU CHUẨN AN TOÀN THỰC PHẨM</text>
+  <text x="400" y="322" font-family="sans-serif" font-size="15.5" font-weight="500" fill="#4B5E54" text-anchor="middle">Thực phẩm tươi sạch có nguồn gốc rõ ràng • Lưu mẫu thức ăn 24 giờ</text>
+  <!-- Huy hiệu chân thẻ -->
+  <rect x="175" y="366" width="450" height="42" rx="21" fill="#ECFDF5" stroke="#15803D" stroke-width="1.5" stroke-opacity="0.35"/>
+  <text x="400" y="392" font-family="sans-serif" font-size="14" font-weight="700" fill="#15803D" text-anchor="middle">🏫 Trường Mầm non Lê Thế Hiếu • Tổ Nuôi dưỡng tận tâm • Bữa ăn ngon miệng, đủ chất</text>
+</svg>

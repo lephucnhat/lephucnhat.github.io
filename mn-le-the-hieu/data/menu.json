@@ -1,0 +1,142 @@
+{
+  "notice": "[DỮ LIỆU MẪU MINH HỌA – CẬP NHẬT TRONG data/menu.json]",
+  "weekLabel": "Tuần lễ mẫu Năm học 2026 – 2027 (Áp dụng quy trình Bếp ăn bán trú một chiều & Lưu mẫu thức ăn 24 giờ)",
+  "nutritionNote": "Thực đơn trên cổng cũ (/hoat-dong-chuyen-mon/to-nuoi-duong/thuc-don-cua-be) hiện đang để trống ('Nội dung đang cập nhật...'). Dưới đây là khung dữ liệu mẫu chuẩn dinh dưỡng mầm non để Tổ Nuôi dưỡng dễ dàng điền thực đơn thực tế hàng tuần vào file data/menu.json.",
+  "days": [
+    {
+      "dayId": "thu-2",
+      "dayName": "Thứ Hai",
+      "shortName": "Thứ 2",
+      "theme": "Khởi đầu tuần mới tràn năng lượng",
+      "meals": {
+        "morning": {
+          "time": "08:30 – 09:00 (Bổ sung sữa học đường / Điểm tâm)",
+          "dish": "Sữa tươi tiệt trùng / Cháo yến mạch thịt bằm ấm bụng",
+          "benefit": "Bổ sung Canxi và năng lượng nhẹ sau giờ thể dục sáng"
+        },
+        "lunch": {
+          "time": "10:45 – 11:30 (Bữa chính trưa bán trú)",
+          "dish": "Cơm trắng dẻo • Thịt heo kho trứng cút • Canh bí đỏ nấu tôm tươi • Chuối chín tráng miệng",
+          "benefit": "Đầy đủ 4 nhóm chất: Đạm, Tinh bột, Chất béo, Vitamin A & chất xơ"
+        },
+        "afternoon": {
+          "time": "14:30 – 15:00 (Bữa phụ chiều sau giấc ngủ trưa)",
+          "dish": "Phở gà ta nấu mềm + Nước cam tươi",
+          "benefit": "Dễ tiêu hóa, tăng đề kháng Vitamin C cho hoạt động chiều"
+        }
+      },
+      "schedule": {
+        "morningActivity": "Đón trẻ, thể dục sáng theo nhạc 'Xòe ra nắm vào' • Hoạt động học: Làm quen chữ cái (a, ă, â) / Khám phá khoa học",
+        "afternoonActivity": "Vận động nhẹ sau ngủ trưa • Rèn kỹ năng vệ sinh răng miệng • Chơi tự chọn ở các góc & Trả trẻ"
+      }
+    },
+    {
+      "dayId": "thu-3",
+      "dayName": "Thứ Ba",
+      "shortName": "Thứ 3",
+      "theme": "Bé khỏe – Bé khéo tay",
+      "meals": {
+        "morning": {
+          "time": "08:30 – 09:00 (Điểm tâm giữa giờ)",
+          "dish": "Sữa hạt dinh dưỡng / Súp gà ngô non",
+          "benefit": "Giàu đạm thực vật và chất xơ tự nhiên"
+        },
+        "lunch": {
+          "time": "10:45 – 11:30 (Bữa chính trưa bán trú)",
+          "dish": "Cơm trắng • Cá thu rim sốt cà chua (đã lọc sạch xương) • Canh rau ngót nấu thịt nạc • Đu đủ chín",
+          "benefit": "Giàu Omega-3 tốt cho trí não và thị lực của trẻ"
+        },
+        "afternoon": {
+          "time": "14:30 – 15:00 (Bữa phụ chiều)",
+          "dish": "Cháo sườn non đậu xanh + Sữa chua men sống",
+          "benefit": "Hỗ trợ hệ tiêu hóa khỏe mạnh, hấp thu dưỡng chất tốt"
+        }
+      },
+      "schedule": {
+        "morningActivity": "Đón trẻ • Thể dục sáng • Hoạt động Tạo hình: Trang trí trang phục bạn trai, bạn gái / Khám phá 5 giác quan",
+        "afternoonActivity": "Nghe kể chuyện 'Gấu con bị sâu răng' • Trò chơi vận động 'Tìm đúng đôi dép' & Trả trẻ"
+      }
+    },
+    {
+      "dayId": "thu-4",
+      "dayName": "Thứ Tư",
+      "shortName": "Thứ 4",
+      "theme": "Bữa ăn gia đình – Gắn kết yêu thương",
+      "meals": {
+        "morning": {
+          "time": "08:30 – 09:00 (Điểm tâm giữa giờ)",
+          "dish": "Sữa tươi học đường / Bánh bông lan mềm",
+          "benefit": "Cung cấp năng lượng cho các hoạt động ngoài trời"
+        },
+        "lunch": {
+          "time": "10:45 – 11:30 (Trải nghiệm Bữa ăn gia đình)",
+          "dish": "Cơm trắng • Thịt gà om nấm hương • Trứng cuộn rau củ • Canh cải ngọt nấu thịt bằm • Dưa hấu ngọt",
+          "benefit": "Rèn kỹ năng tự phục vụ, biết lấy thức ăn vừa đủ và sẻ chia cùng bạn"
+        },
+        "afternoon": {
+          "time": "14:30 – 15:00 (Bữa phụ chiều)",
+          "dish": "Bún mọc giò sống dọc mùng nấu chín kỹ",
+          "benefit": "Đổi vị thanh mát, giàu dinh dưỡng cho buổi chiều"
+        }
+      },
+      "schedule": {
+        "morningActivity": "Đón trẻ • Hoạt động làm quen Toán sơ đẳng & Giáo dục âm nhạc: Trò chơi 'Đoán tên nhạc cụ'",
+        "afternoonActivity": "Thực hành kỹ năng sống: Tự gấp quần áo, sắp xếp đồ dùng cá nhân • Vui chơi ngoài trời & Trả trẻ"
+      }
+    },
+    {
+      "dayId": "thu-5",
+      "dayName": "Thứ Năm",
+      "shortName": "Thứ 5",
+      "theme": "Khám phá STEAM & Thiên nhiên vùng Cùa",
+      "meals": {
+        "morning": {
+          "time": "08:30 – 09:00 (Điểm tâm giữa giờ)",
+          "dish": "Sữa đậu nành ấm / Cháo thịt bò rau củ",
+          "benefit": "Giàu sắt và kẽm giúp bé hồng hào, nhanh nhẹn"
+        },
+        "lunch": {
+          "time": "10:45 – 11:30 (Bữa chính trưa bán trú)",
+          "dish": "Cơm trắng • Tôm thịt rim mặn ngọt • Su su, cà rốt xào thịt • Canh mồng tơi nấu tôm • Thanh long",
+          "benefit": "Tăng cường khoáng chất, chất xơ giúp bé tiêu hóa dễ dàng"
+        },
+        "afternoon": {
+          "time": "14:30 – 15:00 (Bữa phụ chiều)",
+          "dish": "Nui sao nấu thịt bằm, cà rốt + Váng sữa",
+          "benefit": "Món ăn hình ngôi sao bắt mắt giúp trẻ ăn ngon miệng"
+        }
+      },
+      "schedule": {
+        "morningActivity": "Đón trẻ • Ứng dụng AI khám phá khoa học: 'Chú voi ngộ nghĩnh' & 'Chuyện quả trứng'",
+        "afternoonActivity": "Ngày hội đọc sách của bé tại góc thư viện • Trò chơi tập thể 'Chuyền vòng qua chân' & Trả trẻ"
+      }
+    },
+    {
+      "dayId": "thu-6",
+      "dayName": "Thứ Sáu",
+      "shortName": "Thứ 6",
+      "theme": "Nêu gương Bé ngoan – Vui khỏe cuối tuần",
+      "meals": {
+        "morning": {
+          "time": "08:30 – 09:00 (Điểm tâm giữa giờ)",
+          "dish": "Sữa tươi tiệt trùng",
+          "benefit": "Đảm bảo định lượng dinh dưỡng chuẩn hàng ngày"
+        },
+        "lunch": {
+          "time": "10:45 – 11:30 (Bữa chính trưa bán trú)",
+          "dish": "Cơm trắng • Thịt bò hầm khoai tây, cà rốt • Canh bí xanh nấu sườn non • Quýt ngọt tráng miệng",
+          "benefit": "Món hầm mềm giàu dưỡng chất, dễ nhai nuốt cho mọi độ tuổi"
+        },
+        "afternoon": {
+          "time": "14:30 – 15:00 (Bữa phụ chiều)",
+          "dish": "Chè đậu xanh hạt sen thanh mát + Bánh quy bơ",
+          "benefit": "Thanh nhiệt, bổ dưỡng trước khi kết thúc tuần học"
+        }
+      },
+      "schedule": {
+        "morningActivity": "Đón trẻ • Biểu diễn văn nghệ cuối tuần • Tổng vệ sinh lớp học & Chăm sóc góc thiên nhiên",
+        "afternoonActivity": "Sinh hoạt nêu gương Hoa Bé Ngoan • Trao đổi cùng phụ huynh về tình hình tuần qua của bé"
+      }
+    }
+  ]
+}

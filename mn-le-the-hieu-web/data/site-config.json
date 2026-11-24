@@ -1,0 +1,140 @@
+{
+  "schoolName": "Trường Mầm non Lê Thế Hiếu",
+  "schoolShortName": "MN Lê Thế Hiếu",
+  "schoolYear": "Năm học 2026 – 2027",
+  "slogan": "Ươm mầm xanh trên quê hương vùng Cùa lịch sử",
+  "subSlogan": "Môi trường giáo dục mầm non an toàn, ấm áp, lấy trẻ làm trung tâm — Nơi mỗi ngày đến trường của bé là một ngày vui khám phá.",
+  "mergerNote": "Thành lập từ năm học 2026–2027 trên cơ sở hợp nhất Trường Mầm non Bình Minh và Trường Mầm non Hoa Mai theo Quyết định của UBND xã Cam Lộ, tỉnh Quảng Trị.",
+  "governingBody": "Ủy ban Nhân dân xã Cam Lộ – Tỉnh Quảng Trị",
+  "professionalBody": "Sở Giáo dục và Đào tạo tỉnh Quảng Trị",
+  "address": "Thôn Cam Chính, xã Cam Lộ, tỉnh Quảng Trị",
+  "principal": "[HỌ TÊN HIỆU TRƯỞNG]",
+  "vicePrincipals": "[DANH SÁCH PHÓ HIỆU TRƯỞNG]",
+  "phone": "[SỐ ĐIỆN THOẠI NHÀ TRƯỜNG]",
+  "email": "[EMAIL NHÀ TRƯỜNG]",
+  "childProtectionHotline": {
+    "title": "Đường dây nóng Bảo vệ Trẻ em xã Cam Lộ & Quốc gia",
+    "nationalNumber": "111",
+    "nationalLabel": "Tổng đài Quốc gia Bảo vệ Trẻ em (111 - Miễn phí 24/7)",
+    "localLabel": "Đường dây nóng Bảo vệ Trẻ em UBND xã Cam Lộ (Theo Thông báo ngày 16/11/2026)",
+    "localPhone": "[SỐ ĐƯỜNG DÂY NÓNG XÃ CAM LỘ]"
+  },
+  "websiteUrl": "https://mnlethehieu.quangtri.edu.vn",
+  "workingHours": "Thứ Hai – Thứ Sáu: Đón trẻ từ 06:45 | Trả trẻ từ 16:15 – 17:00",
+  "campuses": [
+    {
+      "id": "cam-chinh",
+      "name": "Trường chính Cam Chính (Trụ sở chính)",
+      "address": "Thôn Cam Chính, xã Cam Lộ, tỉnh Quảng Trị",
+      "ageGroups": "Nhà trẻ 24–36 tháng, Mẫu giáo 3–4 tuổi, 4–5 tuổi, 5–6 tuổi",
+      "features": "Khu hiệu bộ, bếp ăn bán trú một chiều chuẩn vệ sinh ATTP, sân chơi xanh và các phòng học chuyên đề.",
+      "isMain": true
+    },
+    {
+      "id": "phan-hieu",
+      "name": "Điểm trường Phân hiệu",
+      "address": "Xã Cam Lộ, tỉnh Quảng Trị",
+      "ageGroups": "Nhà trẻ 24–36 tháng, Mẫu giáo 3–4 tuổi, 4–5 tuổi, 5–6 tuổi",
+      "features": "Khu lớp học khang trang, bếp ăn bán trú, sân vận động ngoài trời và góc khám phá STEAM.",
+      "isMain": false
+    },
+    {
+      "id": "cam-son",
+      "name": "Điểm trường Cam Sơn",
+      "address": "Thôn Cam Sơn, xã Cam Lộ, tỉnh Quảng Trị",
+      "ageGroups": "Mẫu giáo 3–4 tuổi, 4–5 tuổi, 5–6 tuổi",
+      "features": "Không gian học tập thân thiện, gần gũi thiên nhiên, phục vụ thuận tiện cho con em khu vực Cam Sơn.",
+      "isMain": false
+    },
+    {
+      "id": "cam-loc",
+      "name": "Điểm trường Cam Lộc",
+      "address": "Thôn Cam Lộc, xã Cam Lộ, tỉnh Quảng Trị",
+      "ageGroups": "Mẫu giáo 3–5 tuổi",
+      "features": "Lớp học ấm cúng, an toàn, gắn kết chặt chẽ giữa gia đình và nhà trường tại địa bàn thôn Cam Lộc.",
+      "isMain": false
+    },
+    {
+      "id": "diem-bo-sung",
+      "name": "[Vị trí mẫu thêm Điểm trường mới]",
+      "address": "Cập nhật trong data/site-config.json khi nhà trường mở rộng điểm lớp",
+      "ageGroups": "Tùy chỉnh theo phân bổ năm học",
+      "features": "Mẫu cấu hình mở giúp giáo viên phụ trách CNTT dễ dàng bổ sung thông tin điểm trường mà không cần sửa mã nguồn.",
+      "isMain": false,
+      "isTemplate": true
+    }
+  ],
+  "organization": [
+    {
+      "group": "Đảng bộ & Lãnh đạo Nhà trường",
+      "icon": "🏛️",
+      "units": [
+        {
+          "name": "Đảng bộ Trường Mầm non Lê Thế Hiếu",
+          "desc": "Gồm Chi bộ Trường Chính và Chi bộ Phân hiệu — Lãnh đạo toàn diện công tác chính trị, tư tưởng và chuyên môn."
+        },
+        {
+          "name": "Ban Giám hiệu Nhà trường",
+          "desc": "Hiệu trưởng: [HỌ TÊN HIỆU TRƯỞNG] cùng các Phó Hiệu trưởng phụ trách công tác Chuyên môn, Nuôi dưỡng và Cơ sở vật chất."
+        },
+        {
+          "name": "Các Hội đồng & Đoàn thể",
+          "desc": "Hội đồng trường, Hội đồng sư phạm, Công đoàn cơ sở, Chi đoàn Thanh niên và Ban đại diện Cha mẹ trẻ."
+        }
+      ]
+    },
+    {
+      "group": "4 Tổ Chuyên môn Giáo dục theo Độ tuổi",
+      "icon": "🎓",
+      "units": [
+        {
+          "name": "Tổ Nhà trẻ (24 – 36 tháng tuổi)",
+          "desc": "Chăm sóc giấc ngủ, bữa ăn, tập nói, phát triển vận động thô – tinh và cảm xúc an toàn đầu đời cho bé."
+        },
+        {
+          "name": "Tổ Mẫu giáo Bé (3 – 4 tuổi)",
+          "desc": "Hình thành nề nếp tự phục vụ, phát triển ngôn ngữ, nhận biết thế giới xung quanh qua trò chơi."
+        },
+        {
+          "name": "Tổ Mẫu giáo Nhỡ (4 – 5 tuổi)",
+          "desc": "Khám phá khoa học, làm quen toán sơ đẳng, kể chuyện sáng tạo, giáo dục cảm xúc xã hội (SEL) và kỹ năng sống."
+        },
+        {
+          "name": "Tổ Mẫu giáo Lớn (5 – 6 tuổi)",
+          "desc": "Làm quen chữ cái tiếng Việt, ứng dụng giáo dục STEAM, chuẩn bị tâm thế vững vàng cho trẻ vào lớp Một."
+        }
+      ]
+    },
+    {
+      "group": "Khối Nuôi dưỡng & Hành chính – Văn phòng",
+      "icon": "🍲",
+      "units": [
+        {
+          "name": "Tổ Nuôi dưỡng",
+          "desc": "Vận hành quy trình bếp ăn một chiều: Tiếp phẩm tươi sạch, sơ chế, chế biến, lưu mẫu thức ăn 24h và tổ chức Bữa ăn gia đình."
+        },
+        {
+          "name": "Tổ Văn phòng",
+          "desc": "Công tác kế toán, văn thư – lưu trữ, y tế học đường, bảo vệ an ninh trật tự và an toàn trường học."
+        }
+      ]
+    }
+  ],
+  "externalSystems": [
+    {
+      "name": "Hệ thống Quản lý Nhà trường SMAS",
+      "url": "https://smas.edu.vn",
+      "desc": "Đồng bộ hồ sơ học sinh, điểm danh và đánh giá sự phát triển của trẻ (Dành cho Cán bộ – Giáo viên)."
+    },
+    {
+      "name": "Cơ sở dữ liệu Ngành GD&ĐT",
+      "url": "https://csdl.moet.gov.vn",
+      "desc": "Hệ thống CSDL Bộ Giáo dục và Đào tạo & Sở GD&ĐT tỉnh Quảng Trị."
+    },
+    {
+      "name": "Đăng nhập Quản trị CMS Sở GD&ĐT",
+      "url": "https://mnlethehieu.quangtri.edu.vn/ Admin",
+      "desc": "Cổng quản trị nội bộ thuộc hệ thống edu.vn của Sở GD&ĐT Quảng Trị."
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+<!-- Kích thước khuyến nghị khi thay ảnh chụp thực tế của trường: 800x500px (Tỷ lệ 16:10, định dạng JPG/WebP) -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" role="img" aria-label="NGÀY HỘI “BÉ VUI TẾT TRUNG THU” TẠI CÁC ĐIỂM TRƯỜNG">
+  <defs>
+    <linearGradient id="grad_5" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#B45309"/>
+      <stop offset="100%" stop-color="#F59E0B"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" rx="22" fill="#FEF3C7"/>
+  <circle cx="715" cy="85" r="145" fill="#F59E0B" opacity="0.14"/>
+  <circle cx="85" cy="415" r="165" fill="#B45309" opacity="0.12"/>
+  <rect x="46" y="42" width="708" height="416" rx="20" fill="#FFFFFF" stroke="#B45309" stroke-width="2" stroke-opacity="0.22"/>
+  <rect x="46" y="42" width="708" height="14" rx="7" fill="url(#grad_5)"/>
+  <!-- Vòng tròn biểu tượng trung tâm -->
+  <circle cx="400" cy="168" r="68" fill="#FEF3C7" stroke="#B45309" stroke-width="3"/>
+  <circle cx="400" cy="168" r="56" fill="#FFFFFF" opacity="0.7"/>
+  <text x="400" y="191" font-family="sans-serif" font-size="58" text-anchor="middle">🏮</text>
+  <!-- Tiêu đề & Mô tả -->
+  <text x="400" y="282" font-family="sans-serif" font-size="20.5" font-weight="700" fill="#1C2621" text-anchor="middle">NGÀY HỘI “BÉ VUI TẾT TRUNG THU” TẠI CÁC ĐIỂM TRƯỜNG</text>
+  <text x="400" y="322" font-family="sans-serif" font-size="15.5" font-weight="500" fill="#4B5E54" text-anchor="middle">Trường Chính Cam Chính • Điểm Phân hiệu • Điểm trường Cam Sơn</text>
+  <!-- Huy hiệu chân thẻ -->
+  <rect x="175" y="366" width="450" height="42" rx="21" fill="#FEF3C7" stroke="#B45309" stroke-width="1.5" stroke-opacity="0.35"/>
+  <text x="400" y="392" font-family="sans-serif" font-size="14" font-weight="700" fill="#B45309" text-anchor="middle">🏫 Trường Mầm non Lê Thế Hiếu • Hoạt cảnh Chú Cuội – Chị Hằng • Phá cỗ trông trăng</text>
+</svg>
