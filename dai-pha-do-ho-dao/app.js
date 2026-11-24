@@ -627,6 +627,42 @@
     renderStyle4Graph();
   }
 
+  function getShortCosmicLabel(d) {
+    const map = {
+      "d0_au_co": "Mẫu Âu Cơ (Khởi Nguyên)",
+      "d1_dao_ngot": "Thủy Tổ Đào Ngột (Đời I)",
+      "d2_dao_bot": "Đào Công Bột (Kinh Dương)",
+      "d2_dao_nghieu": "Đào Nghiêu (Quý Minh)",
+      "d3_dao_cu": "1. Đào Cư (Thái Sư)",
+      "d3_dao_hong": "2. Đào Hồng (Thái Phó)",
+      "d3_dao_truong": "3. Đào Trường (Trưởng Lệnh)",
+      "d3_dao_thach_khanh": "4. Đào Thạch Khanh",
+      "d3_dao_quy_lan": "5. Đào Quý Lân (Thiếu Long)",
+      "d3_de_luc": "6. Đức Đệ Lục (Hải Dương)",
+      "d3_de_that": "7. Đức Đệ Thất (Sơn Tây)",
+      "d3_de_bat": "8. Đức Đệ Bát (Tông Chất)",
+      "d3_de_cuu": "9. Đức Đệ Cửu (Kinh Bắc)",
+      "d3_de_thap": "10. Đức Đệ Thập (Lạc Thư)",
+      "d3_nam_vi_sau": "5 Vị Sau (Thập Nhất → Thập Ngũ)",
+      "d4_chang_1": "Chặng 1: Vị 1–27 (Phủ Lý)",
+      "d4_chang_2": "Chặng 2: Vị 28–54 (Thủy Đường)",
+      "d4_chang_3": "Chặng 3: Vị 55–81 (Thanh Liệt)",
+      "d4_chang_4": "Chặng 4: Vị 82–108 (Hoài Đức)",
+      "d4_chang_5": "Chặng 5: Vị 109–135 (Thuận Thành)",
+      "d4_chang_6": "Chặng 6: Vị 136–162 (Tứ Kỳ)",
+      "d4_chang_7": "Chặng 7: Vị 163–189 (Phú Lương)",
+      "d6_dao_nhi": "Tướng Quân Đào Nhị (Cổ Loa)",
+      "d6_dao_noi": "Quan Nội Hầu Đào Nồi",
+      "d7_dao_dong": "Tướng Quân Đào Đống",
+      "d7_dao_vuc": "Tướng Quân Đào Vực",
+      "d7_dao_thi_hoan": "Thánh Mẫu Đào Thị Hoan",
+      "d8_dao_ky": "Bắc Bình Vương Đào Kỳ",
+      "d8_dao_hien": "Hổ Nha Tướng Đào Hiển",
+      "d8_dao_do_thong": "Tướng Quân Đào Đô Thống"
+    };
+    return map[d.id] || (d.name.length > 24 ? d.name.slice(0, 22) + "…" : d.name);
+  }
+
   function renderStyle4Graph() {
     const container = document.getElementById("style4Canvas");
     container.innerHTML = "";
@@ -639,33 +675,80 @@
 
     const root = d3.hierarchy(buildHierarchy());
     if (s4Mode === "radial") {
-      const radius = Math.min(width, height) * 0.44;
-      d3.tree().size([2 * Math.PI, radius * 1.45]).separation((a, b) => (a.parent === b.parent ? 1 : 2) / a.depth)(root);
-      for (let gen = 2; gen <= 24; gen += 3) {
-        g.append("circle").attr("class", "s3-orbit").attr("r", (gen / 24) * radius * 1.45);
+      const maxDepth = root.height || 7;
+      const stepR = 92;
+      const baseR = 70;
+      const outerRadius = baseR + maxDepth * stepR;
+
+      d3.tree()
+        .size([2 * Math.PI, outerRadius])
+        .separation((a, b) => (a.parent === b.parent ? 1.45 : 2.2) / Math.max(a.depth, 1))(root);
+
+      // Gán bán kính từng vòng quỹ đạo rõ ràng để tâm không bao giờ bị co cụm chồng chữ
+      root.each(d => {
+        d.y = d.depth === 0 ? 0 : baseR + d.depth * stepR;
+      });
+
+      // Vẽ các vòng quỹ đạo đồng tâm cho từng tầng
+      for (let depth = 1; depth <= maxDepth; depth++) {
+        g.append("circle")
+          .attr("class", "s3-orbit")
+          .attr("r", baseR + depth * stepR);
       }
+
+      // Vẽ đường nối cong mượt
       g.selectAll("path.s3-link").data(root.links()).enter().append("path")
         .attr("class", d => `s3-link ${d.target.data.isMainLine ? "main-line" : ""}`)
         .attr("d", d3.linkRadial().angle(d => d.x).radius(d => d.y));
+
       const node = g.selectAll("g.s3-star").data(root.descendants()).enter().append("g")
         .attr("class", "s3-star")
-        .attr("transform", d => `rotate(${d.x * 180 / Math.PI - 90}) translate(${d.y},0)`)
+        .attr("transform", d => d.depth === 0 ? "translate(0,0)" : `rotate(${d.x * 180 / Math.PI - 90}) translate(${d.y},0)`)
         .on("click", (e, d) => openMemberModal(d.data.id));
+
       node.append("circle")
-        .attr("r", d => d.data.isMainLine ? 6 : 4)
+        .attr("r", d => d.depth === 0 ? 10 : (d.data.isMainLine ? 7 : 5))
+        .attr("stroke", "#050817")
+        .attr("stroke-width", 2)
         .attr("fill", d => d.data.userAdded ? "#34d399" : (d.data.isMainLine ? "#fbbf24" : (d.data.gender === "F" ? "#f472b6" : "#60a5fa")));
-      node.append("text").attr("class", "s3-label").attr("dy", "0.31em")
-        .attr("x", d => d.x < Math.PI === !d.children ? 9 : -9)
-        .attr("text-anchor", d => d.x < Math.PI === !d.children ? "start" : "end")
-        .attr("transform", d => d.x >= Math.PI ? "rotate(180)" : null)
-        .text(d => `${d.data.name} (Đ${d.data.gen})`);
-      svg.call(zoom.transform, d3.zoomIdentity.translate(width / 2, height / 2).scale(0.85));
+
+      // Nhãn văn bản có viền halo đen đậm (paint-order: stroke) chống đè lên dây nối & tự động tách góc
+      node.append("text")
+        .attr("class", "s3-label")
+        .style("paint-order", "stroke")
+        .style("stroke", "#050817")
+        .style("stroke-width", "4px")
+        .style("stroke-linecap", "round")
+        .style("stroke-linejoin", "round")
+        .style("font-size", d => d.depth <= 2 ? "12px" : "11px")
+        .style("font-weight", d => d.data.isMainLine ? "700" : "500")
+        .style("fill", d => d.data.isMainLine ? "#fde68a" : "#e2e8f0")
+        .attr("dy", d => d.depth === 0 ? "-16px" : (d.depth <= 2 ? "-11px" : "0.32em"))
+        .attr("x", d => {
+          if (d.depth <= 2) return 0;
+          return d.x < Math.PI ? 11 : -11;
+        })
+        .attr("text-anchor", d => {
+          if (d.depth <= 2) return "middle";
+          return d.x < Math.PI ? "start" : "end";
+        })
+        .attr("transform", d => {
+          // Các nút tâm và vòng 1-2 (Mẫu Âu Cơ, Thủy Tổ Đào Ngột, Đào Công Bột, Đào Nghiêu) luôn nằm ngang dễ đọc, không bị dựng đứng đè vào nhau
+          if (d.depth === 0) return null;
+          if (d.depth <= 2) return `rotate(${-(d.x * 180 / Math.PI - 90)})`;
+          return d.x >= Math.PI ? "rotate(180)" : null;
+        })
+        .text(d => getShortCosmicLabel(d.data));
+
+      const fitScale = Math.min(width, height) / (outerRadius * 2.35);
+      svg.call(zoom.transform, d3.zoomIdentity.translate(width / 2, height / 2).scale(Math.max(Math.min(fitScale, 0.95), 0.52)));
     } else {
-      const nodes = root.descendants().map(d => ({ ...d.data }));
+      const nodes = root.descendants().map(d => ({ ...d.data, depth: d.depth }));
       const links = root.links().map(l => ({ source: l.source.data.id, target: l.target.data.id, isMain: l.target.data.isMainLine }));
       const sim = d3.forceSimulation(nodes)
-        .force("link", d3.forceLink(links).id(d => d.id).distance(55))
-        .force("charge", d3.forceManyBody().strength(-160))
+        .force("link", d3.forceLink(links).id(d => d.id).distance(115))
+        .force("charge", d3.forceManyBody().strength(-460))
+        .force("collide", d3.forceCollide(46))
         .force("center", d3.forceCenter(width / 2, height / 2));
       const link = g.selectAll("line").data(links).enter().append("line").attr("class", d => `s3-link ${d.isMain ? "main-line" : ""}`);
       const node = g.selectAll("g.s3-star").data(nodes).enter().append("g").attr("class", "s3-star")
@@ -674,16 +757,23 @@
           .on("start", (e, d) => { if (!e.active) sim.alphaTarget(0.3).restart(); d.fx = d.x; d.fy = d.y; })
           .on("drag", (e, d) => { d.fx = e.x; d.fy = e.y; })
           .on("end", (e, d) => { if (!e.active) sim.alphaTarget(0); d.fx = null; d.fy = null; }));
-      node.append("circle").attr("r", d => d.isMainLine ? 7 : 5)
+      node.append("circle").attr("r", d => d.isMainLine ? 8 : 5.5)
+        .attr("stroke", "#050817").attr("stroke-width", 2)
         .attr("fill", d => d.userAdded ? "#34d399" : (d.isMainLine ? "#fbbf24" : (d.gender === "F" ? "#f472b6" : "#60a5fa")));
-      node.append("text").attr("class", "s3-label").attr("x", 9).attr("dy", "0.35em").text(d => d.name);
+      node.append("text").attr("class", "s3-label")
+        .style("paint-order", "stroke")
+        .style("stroke", "#050817")
+        .style("stroke-width", "4px")
+        .style("fill", d => d.isMainLine ? "#fde68a" : "#e2e8f0")
+        .attr("x", 11).attr("dy", "0.35em")
+        .text(d => getShortCosmicLabel(d));
       sim.on("tick", () => {
         link.attr("x1", d => d.source.x).attr("y1", d => d.source.y).attr("x2", d => d.target.x).attr("y2", d => d.target.y);
         node.attr("transform", d => `translate(${d.x},${d.y})`);
       });
     }
   }
-  window.s4ToggleMode = function () {
+    window.s4ToggleMode = function () {
     s4Mode = s4Mode === "radial" ? "force" : "radial";
     document.getElementById("s4ModeBtn").textContent = s4Mode === "radial" ? "✦ Chuyển Mạng Lưới Trọng Lực" : "◎ Chuyển Quỹ Đạo Đồng Tâm";
     renderStyle4Graph();
