@@ -1,15 +1,37 @@
-// Dữ liệu Đại Phả Đồ Tông Tộc Đào & Nền Văn Hiến Việt Nam (donghodao.vn & lephucnhat.vn)
+// Dữ liệu Đại Phả Đồ Tông Tộc Đào & Nền Văn Hiến Việt Nam (donghodao.vn)
 // Gốc Khởi Nguyên (Thập Bát Diệp) — Nhà Nước Văn Lang (2.622 Năm / 7 Chặng / 189 Duệ Vương) — Thời Thục Vương — Nhà Triệu — Trưng Nữ Vương (65 Thành)
+
+window.GEN_LABELS = {
+  1: "Tầng Tiền Khởi Nguyên — Thời Đồ Đá • Chế Độ Mẫu Hệ (Mẫu Âu Cơ Tính Thị)",
+  2: "Đời Thứ I (Thập Bát Diệp) — Đệ Nhất Thủy Tổ Đào Ngột (Thái Cực Nhất Nguyên • Vị Cao Sơn Thứ 1)",
+  3: "Đời Thứ II (Thập Bát Diệp) — Lưỡng Nghi: Ngài Đào Công Bột (Hào Dương) & Ngài Đào Nghiêu (Hào Âm)",
+  4: "Đời Thứ III (Thập Bát Diệp) — Thập Vị Chi Long (Hà Đồ → Lạc Thư Bát Cổ) & 5 Vị Nhánh Đào Nghiêu",
+  5: "Kỷ Nguyên Văn Lang (2.622 Năm) — 7 Chặng Luân Chuyển Quyền Trưởng Lệnh (189 Vị Duệ Vương)",
+  6: "Thời Kỳ Bản Lề 1 — Thời Thục Vương (Nước Âu Lạc • Kinh Đô Cổ Loa)",
+  7: "Thời Kỳ Bản Lề 2 — Nhà Triệu (Vương Triều Nam Việt) & Các Tướng Lĩnh Hậu Duệ",
+  8: "Thời Kỳ Bản Lề 3 — Thời Trưng Nữ Vương (Khôi Phục 65 Thành Trì Cõi Lĩnh Nam)"
+};
+
+window.BAT_CO_DATA = [
+  { idx: 1, name: "Trạng nguyên cổ đường", hanzi: "狀元古堂", desc: "Phụ trách về nề nếp, giáo huấn, truyền thống giữ gìn gia đạo và lễ tiết trong tông tộc." },
+  { idx: 2, name: "Tiều Ẩn cổ bích", hanzi: "樵隱古壁", desc: "Phụ trách tài nguyên, nơi trú ẩn an toàn và dựng tường rào bảo vệ cho cả cộng đồng (Vành đai xã tắc)." },
+  { idx: 3, name: "Dược Lĩnh cổ viên", hanzi: "藥嶺古園", desc: "Vườn thuốc cổ truyền dạy kinh nghiệm nhận biết cây thuốc trị bệnh và cây ăn quả nuôi dân." },
+  { idx: 4, name: "Nhạn Loan cổ độ", hanzi: "雁鸞古渡", desc: "Bến đò cổ phụ trách hệ thống giao thông đường thủy, thuyền bè kết nối các thủy bộ." },
+  { idx: 5, name: "Thượng Tể cổ trạch", hanzi: "上宰古宅", desc: "Phụ trách quản lý, tích trữ, bảo quản và phân phối lương thực đồng đều cho toàn vùng." },
+  { idx: 6, name: "Bào Sơn cổ thành", hanzi: "泡山古城", desc: "Thành cổ phụ trách khai khoáng, rèn đúc, chế tác công cụ sản xuất và binh khí tự vệ." },
+  { idx: 7, name: "Vân Tiên cổ động", hanzi: "雲仙古洞", desc: "Động cổ phụ trách quan sát thiên văn, xem lịch tính toán thời tiết, nghi lễ và lưu giữ ký ức." },
+  { idx: 8, name: "Tinh Phi cổ tháp", hanzi: "精妃古塔", desc: "Tháp cổ phụ trách tuyển chọn, quản lý giống cây trồng, vật nuôi và điều tiết giống vào vụ." }
+];
 
 window.PHAM_PHO_META = {
   title: "ĐẠI PHẢ ĐỒ TÔNG TỘC ĐÀO & NỀN VĂN HIẾN VIỆT NAM",
-  subtitle: "Gốc Khởi Nguyên (Thập Bát Diệp: Đào Ngột, Đào Bột, Đào Nghiêu) • Nhà Nước Văn Lang (2.622 Năm / 7 Chặng / 189 Duệ Vương) • Đến Thời Trưng Nữ Vương (65 Thành)",
+  subtitle: "Biểu tượng: Hoa Đào (桃) • Ký hiệu Tông tộc: Chữ Đào (陶) • Gốc Khởi Nguyên (Thập Bát Diệp) — Nhà Nước Văn Lang (2.622 Năm / 189 Duệ Vương) — Đến Thời Trưng Nữ Vương (65 Thành)",
   couplet: {
     top: "Gốc khởi Thập Bát Diệp, Hà Đồ hợp nhất Lạc Thư khai quốc thống",
     bottom: "Mạch truyền Văn Lang sử, Kim thạch lưu danh Đào Tộc rạng ngàn thu"
   },
   foreword: [
-    "Biểu tượng của Tông tộc là Hoa Đào (桃), ký hiệu Tông tộc là chữ Đào (陶). Nền văn hiến Đào tộc được kiến tạo qua Ba Tầng Lịch Sử vĩ đại: (1) Tầng Khởi Lập (Đời I) với Đệ Nhất Thủy Tổ Đào Ngột (vị Cao Sơn thứ nhất) sinh từ Mẫu Âu Cơ tính thị tại Hạ Hòa, xuôi xuống Thanh Ba (Chí Tiên – Phú Thọ) chấm dứt mẫu hệ, xác lập phụ hệ và đặt ra tục lệ sơ khai đầu tiên; (2) Tầng Định Hình Lễ Chế (Đời III) với Đệ Tam Đào Trường (Trung Hoa Tể Quốc 中華宰國 — dùng chữ Hoa 華 để kiêng húy Hoa Đào 桃) lập Trang Tông Chất bên sông Châu Giang, hoàn thiện thiết chế Trưởng Lệnh và lễ Sùng Tự Tổ Tông; (3) Tầng Hun Đúc & Bảo Tồn với Đức Đệ Thập khởi nguyên Minh văn sơ kỳ, Kinh Dịch và hậu duệ khắc dấu Tổ Tông vào Kim sử (Trống đồng Đào Xá, Ngọc Lũ; Thạp đồng Đào Thịnh).",
+    "Biểu tượng thiêng liêng của Tông tộc là Hoa Đào (桃), ký hiệu Tông tộc là chữ Đào (陶). Nền văn hiến Đào tộc được kiến tạo qua Ba Tầng Lịch Sử vĩ đại: (1) Tầng Khởi Lập (Đời I) với Đệ Nhất Thủy Tổ Đào Ngột (vị Cao Sơn thứ nhất) sinh từ Mẫu Âu Cơ tính thị tại Hạ Hòa, xuôi xuống Thanh Ba (Chí Tiên – Phú Thọ) chấm dứt mẫu hệ, xác lập phụ hệ và đặt ra tục lệ sơ khai đầu tiên; (2) Tầng Định Hình Lễ Chế (Đời III) với Đệ Tam Đào Trường (Trung Hoa Tể Quốc 中華宰國 — dùng chữ Hoa 華 để kiêng húy Hoa Đào 桃) lập Trang Tông Chất bên sông Châu Giang, hoàn thiện thiết chế Trưởng Lệnh và lễ Sùng Tự Tổ Tông; (3) Tầng Hun Đúc & Bảo Tồn với Đức Đệ Thập khởi nguyên Minh văn sơ kỳ, Kinh Dịch và hậu duệ khắc dấu Tổ Tông vào Kim sử (Trống đồng Đào Xá, Ngọc Lũ; Thạp đồng Đào Thịnh).",
     "Thập Bát Diệp (十八葉) gồm trọn vẹn 18 vị Thủy Tổ khởi nguyên trong 3 đời đầu: 1 vị Đời I (Đệ Nhất Thủy Tổ Đào Ngột — Thái Cực Nhất Nguyên) + 2 vị Đời II (Lưỡng Nghi: Hào Dương Ngài Đào Công Bột tức Kinh Dương Vương & Hào Âm Ngài Đào Nghiêu tức Quý Minh Đại Vương) + 15 vị Đời III (5 vị Ngũ Long con Ngài Đào Bột + 10 người con của Ngài Đào Nghiêu).",
     "Tại Trung Cung Giai đoạn 1 ở hạ lưu An Lão (Hải Phòng), Thiếu Long Đệ Ngũ Đào Quý Lân nắm giữ Trung Cung (Đài Rồng) bên cạnh giúp cha Đào Công Bột, 4 người anh lớn trấn giữ 4 phương. Khi Ngài Đào Công Bột hóa, Trung Cung dịch chuyển lên Tây Hồ (Giai đoạn 2): 5 con Ngài Đào Bột hợp nhất với 5 con đầu Ngài Đào Nghiêu thành Thập Vị Chi Long theo Hà Đồ (năm 1032 suy tôn quốc hiệu Lạc Long Quân, thần hiệu Thành hoàng Linh Lang). Tại đây, Đức Đệ Thập cải Chi Long ra Lạc Thư, giao 8 nhiệm vụ chuyên môn thành thiết chế Bát Cổ (古 = 十 Thập + 口 Khẩu — 10 vị Chi Long thống nhất hiệu lệnh đồng bộ toàn vùng Xã Tắc).",
     "Sau bước ngoặt bản lề tại Trang Tông Chất (bờ sông Châu Giang), quyền Trưởng Lệnh được luân chuyển qua 7 Chặng Nhà nước Văn Lang kéo dài 2.622 năm (2879 TCN – 258 TCN) với 189 vị Duệ Vương (mỗi chặng đúng 27 vị, mở đầu bằng vị Đại Tổ và chốt cuối bằng vị Thế Tổ làm Tế lễ chuyển giao), tiếp nối sang thời Thục Vương Âu Lạc, Nhà Triệu Nam Việt và Thời Trưng Nữ Vương (65 thành Lĩnh Nam)."
@@ -39,26 +61,27 @@ window.PHAM_PHO_META = {
     { title: "5. Trung Liệt Giữ Nước (Hào Khí Cổ Loa – Lĩnh Nam)", desc: "Noi gương Tướng quân Đào Nhị, cha con Quan Nội Hầu Đào Nồi thời Âu Lạc và ba anh em Bắc Bình Vương Đại Nguyên Soái Đào Kỳ, Hổ Nha Tướng Đào Hiển thời Trưng Vương." }
   ],
   tamThu: {
-    title: "TÂM THƯ & KHẢO LUẬN ĐẠI PHẢ ĐỒ TÔNG TỘC ĐÀO VIỆT NAM",
-    occasion: "Số hóa Quốc Bảo Đại Phả Đồ Tông Tộc Đào & Nền Văn Hiến — 24 tháng 11 năm 2026",
-    salutation: "Kính cáo trước anh linh Đức Đệ Nhất Thủy Tổ Đào Ngột (Đào Tướng Quân Cao Sơn Đại Vương), Nhị vị Đại Vương Đời Thứ II (Kinh Dương Vương Đào Công Bột & Quý Minh Đại Vương Đào Nghiêu), Thập Vị Chi Long, 189 Vị Duệ Vương Văn Lang, liệt vị Danh Tướng Đào Tộc cùng toàn thể bà con các Chi, các Phái họ Đào Việt Nam trong và ngoài nước!",
+    title: "TÂM THƯ GỬI MUÔN ĐỜI CON CHÁU TÔNG TỘC ĐÀO VIỆT NAM",
+    occasion: "Phụng lập & Số hóa Đại Phả Đồ Tông Tộc Đào — Kính cáo Tiên Tổ Thập Bát Diệp & 189 Vị Duệ Vương",
+    salutation: "Kính cáo trước anh linh Đức Đệ Nhất Thủy Tổ Đào Ngột (Đào Tướng Quân Cao Sơn Đại Vương), Nhị vị Đại Vương Đời Thứ II (Kinh Dương Vương Đào Công Bột & Quý Minh Đại Vương Đào Nghiêu), Thập Vị Chi Long, 189 Vị Duệ Vương Văn Lang, liệt vị Danh Tướng Tiên Tổ cùng toàn thể các bậc Trưởng bối, Chú Bác, Cô Dì, Anh Chị Em và con cháu họ Đào Việt Nam ở khắp mọi miền Tổ quốc và hải ngoại!",
     paragraphs: [
-      "Trải qua hơn bốn thiên niên kỷ dựng nước và giữ nước, dòng họ Đào Việt Nam tự hào mang trong mình mạch nguồn văn hiến khởi nguyên từ vùng đất Tổ Hạ Hòa – Thanh Ba – Phượng Lâu (Phú Thọ) đến miền duyên hải An Lão (Hải Phòng), Tây Hồ (Hà Nội) và Trang Tông Chất bên dòng Châu Giang lịch sử.",
-      "Bức Đại Phả Đồ Tông Tộc Đào & Nền Văn Hiến được hệ thống hóa nhằm giải mã trọn vẹn 3 tầng kiến tạo văn hiến: từ sự chuyển giao chế độ Mẫu hệ (Mẫu Âu Cơ tính thị) sang chế độ Phụ hệ (Đệ Nhất Thủy Tổ Đào Ngột), sự phân lập Lưỡng Nghi (Hào Dương Đào Công Bột – Hào Âm Đào Nghiêu), sự hợp nhất 10 vị Chi Long theo Hà Đồ, đến cuộc cải cách vĩ đại của Đức Đệ Thập đưa Chi Long ra Lạc Thư và lập nên 8 thiết chế Xã Tắc Bát Cổ (古 = 十 Thập + 口 Khẩu).",
-      "Đặc biệt, thông qua chìa khóa Thiên văn cổ đại (Phương cổ định hướng theo Mặt Trời xoay 90° thuận chiều kim đồng hồ = Hướng la bàn từ trường ngày nay), Đại Phả Đồ đã chứng minh sự ăn khớp tuyệt đối giữa 7 cung quẻ Lạc Thư với vị trí địa lý thực tế của 7 Hành Cung Văn Lang (Phủ Lý, Thủy Đường, Thanh Liệt, Hoài Đức, Thuận Thành, Tứ Kỳ, Phú Lương) qua 7 Chặng × 27 vị = 189 vị Duệ Vương trong suốt 2.622 năm.",
-      "Nối tiếp kỷ nguyên Văn Lang, huyết thống và khí phách Đào tộc tiếp tục tỏa sáng rực rỡ qua ba thời kỳ bản lề: Thời Thục Vương (nước Âu Lạc) với Tướng quân Đào Nhị chỉ huy xây thành Cổ Loa và ba cha con Quan Nội Hầu Đào Nồi, Đào Đống, Đào Vực nắm trọn quân đội; Vương triều Nhà Triệu (nước Nam Việt) với Thánh Mẫu Đào Thị Hoan — thân mẫu của Triệu Vũ Đế; và Thời Trưng Nữ Vương (65 thành Lĩnh Nam) với Đại Nguyên Soái Bắc Bình Vương Đào Kỳ, Nữ tướng Phương Dung cùng Hổ Nha Tướng Đào Chiêu Hiển, Đào Đô Thống.",
-      "Kính mong các bậc Trưởng bối, các nhà nghiên cứu cùng con cháu họ Đào khắp 36 làng Đào Xá và mọi miền Tổ quốc cùng tra cứu, chiêm bái và đóng góp bổ sung phả hệ chi/phái của địa phương mình qua nút “✍️ Bổ Sung” để Đại Phả Đồ Tông Tộc Đào mãi mãi là Quốc Bảo trường tồn cùng dân tộc!"
+      "Mỗi khi mùa xuân về trên dải đất hình chữ S, nhìn cánh Hoa Đào (桃) bung nở thắm đỏ giữa đất trời và ngắm nhìn chữ Đào (陶) khắc sâu trên đồ gốm, đồ đồng từ thuở bình minh dân tộc, trong huyết quản mỗi người con họ Đào lại trào dâng niềm xúc động và tự hào khôn tả. Bởi chữ Đào không chỉ là một danh xưng dòng họ — mà là mật mã của cội nguồn, là chứng nhân sống động của buổi đầu dựng nước từ hơn bốn thiên niên kỷ trước.",
+      "Ngược dòng lịch sử về thuở hồng hoang nơi đất Tổ Hạ Hòa – Thanh Ba (Chí Tiên) – Phượng Lâu (Phú Thọ), từ Mẫu Âu Cơ tính thị đã sinh thành Đức Đệ Nhất Thủy Tổ Đào Ngột — bậc Thái Cực Nhất Nguyên đặt nền móng chấm dứt mẫu hệ, xác lập phụ hệ và dựng lập những tục lệ sơ khai đầu tiên. Từ gốc Thái Cực ấy đã khai sinh Lưỡng Nghi: người anh cả Đào Công Bột (Hào Dương — Quốc hiệu Kinh Dương Vương) mang chí lớn xuôi dòng ra miền duyên hải hạ lưu An Lão mở cõi; người em thứ Đào Nghiêu (Hào Âm — Tôn hiệu Quý Minh Đại Vương) ở lại thủ hộ vùng ngã ba sông đất Tổ, tỏa nhánh thành hệ thống 36 làng Đào Xá và vươn dấu tích thờ tự dọc các triền sông lớn tiến thẳng ra biển Đông.",
+      "Giá trị vĩ đại nhất mà Tiên Tổ họ Đào để lại cho hậu thế chính là tinh thần ĐẠI ĐOÀN KẾT ĐỒNG TÂM (Sùng Tự). Khi năm người con của Ngài Đào Công Bột (Ngũ Long) hợp nhất cùng năm người con đầu của Ngài Đào Nghiêu (Ngũ Công) tại Trung Cung Tây Hồ để kết thành Thập Vị Chi Long theo đồ hình Hà Đồ (được suy tôn Quốc hiệu Lạc Long Quân, Thần hiệu Linh Lang), các Ngài đã dạy cho muôn đời sau một bài học bất hủ: Anh em dù ở miền núi hay miền biển, dù thuộc nhánh trưởng hay nhánh thứ, hễ cùng chung một gốc Tổ là phải đồng Tâm phụng Tổ! Và chính từ sự đồng tâm ấy, Đức Đệ Thập đã ẩn mình nơi Trung Cung, cải Chi Long ra Lạc Thư, phân công tám thiết chế Xã Tắc Bát Cổ (chiết tự chữ Cổ 古 = Mười vị 十 đồng thanh một lời 口), khởi nguyên Minh văn, Kinh Dịch để hậu duệ khắc dấu Tổ Tông vào Kim sử trên mặt Trống đồng Đào Xá, Ngọc Lũ và Thạp đồng Đào Thịnh.",
+      "Từ bước ngoặt bản lề tại Trang Tông Chất bên bờ sông Châu Giang — nơi Đức Đệ Tam Đào Trường (Trung Hoa Tể Quốc) thống lĩnh 50 thủy bộ định lập lễ chế Sùng Tự — dòng chảy văn hiến ấy đã vận hành suốt 2.622 năm Nhà nước Văn Lang qua 7 Chặng luân chuyển quyền Trưởng Lệnh với 189 vị Duệ Vương. Khi đối chiếu bằng La bàn Mặt Trời cổ đại (xoay 90° thuận chiều kim đồng hồ), 7 Hành Cung (Phủ Lý, Thủy Đường, Thanh Liệt, Hoài Đức, Thuận Thành, Tứ Kỳ, Phú Lương) hiện lên trùng khớp tuyệt đối với 7 cung quẻ Lạc Thư như một kỳ tích thiên văn – địa lý của Tổ tiên ta. Để rồi khi khép lại Chặng 7, người con họ Đào vẫn kiên cường đứng ở tuyến đầu lịch sử: là Tướng quân Đào Nhị lo quốc khố quân lương xây thành Cổ Loa, là cha con Quan Nội Hầu Đào Nồi trung liệt tuẫn tiết giữ thành thời Âu Lạc; là Thánh Mẫu Đào Thị Hoan sinh thành bậc đế vương thời Nam Việt; là ba anh em Đại Nguyên Soái Bắc Bình Vương Đào Kỳ, Nữ tướng Phương Dung và Hổ Nha Tướng Đào Chiêu Hiển vung gươm thu phục 65 thành trì Lĩnh Nam dưới cờ Trưng Nữ Vương!",
+      "Thưa toàn thể bà con cô bác và các thế hệ con cháu họ Đào! Thời gian có thể làm phai mờ bia đá, binh lửa có thể làm thất lạc nhiều cuốn phả xưa, nhưng dòng máu Đào Tộc và ký ức văn hiến Thập Bát Diệp thì không bao giờ được phép đứt đoạn. Chúng con kính cẩn phụng lập bản Đại Phả Đồ Tông Tộc Đào trên nền tảng số này như một Ngôi Tổ Đường Chung của người họ Đào khắp năm châu. Kính mong mỗi chi, mỗi phái, mỗi gia đình khi mở bức Đại Phả Đồ này hãy tự hào kể cho con cháu nghe về cội nguồn Đào Ngột – Đào Bột – Đào Nghiêu, và hãy bấm vào nút “✍️ Bổ Sung” để ghi danh chi phái, quê hương, ông bà cha mẹ của mình vào mạch nguồn chung.",
+      "Cây ngàn năm vững rễ nhờ đất Tổ, sông vạn dặm cuộn chảy nhờ mạch nguồn. Nguyện cầu anh linh Tiên Tổ Thập Bát Diệp và 189 vị Duệ Vương chứng giám, gia hộ cho đại gia đình Tông Tộc Đào Việt Nam muôn đời đoàn kết, hưng thịnh, hiếu nghĩa và rạng danh văn hiến Lạc Hồng!"
     ],
-    signature: "Ngày Văn Hóa Việt Nam, 24 tháng 11 năm 2026",
-    author: "Hội Đồng Biên Soạn & Số Hóa Đại Phả Đồ Tông Tộc Đào (donghodao.vn • lephucnhat.vn)"
+    signature: "Phụng lập trong niềm thành kính tri ân Tiên Tổ",
+    author: "Hội Đồng Gia Tộc & Ban Biên Soạn Văn Hiến Tông Tộc Đào Việt Nam (donghodao.vn)"
   }
 };
 
 window.OPEN_SOURCE_REFS = [
   {
-    name: "donghodao.vn — Hệ Thống Văn Hiến & Sử Liệu Đào Tộc",
-    url: "https://donghodao.vn/van_lang_trung_vuong.svg",
-    role: "Nguồn dữ liệu gốc Đại Phả Đồ Tông Tộc Đào: Thập Bát Diệp, La bàn Phương vị cổ xoay 90°, Hà Đồ - Lạc Thư Bát Cổ và 7 Chặng Văn Lang (189 Duệ Vương)."
+    name: "Cổng Văn Hiến & Sử Liệu Tông Tộc Đào Việt Nam (donghodao.vn)",
+    url: "https://donghodao.vn/",
+    role: "Cơ sở dữ liệu gốc của Đại Phả Đồ Tông Tộc Đào: Thập Bát Diệp (18 vị Thủy Tổ), La bàn Phương vị cổ xoay 90°, Hà Đồ - Lạc Thư Bát Cổ và 7 Chặng Văn Lang (189 Duệ Vương)."
   },
   {
     name: "d3/d3 (v7) & Interactive Royal SVG 4K Engine",
@@ -72,8 +95,8 @@ window.OPEN_SOURCE_REFS = [
   },
   {
     name: "Chuẩn Xuất/Nhập Phả Hệ Quốc Tế (JSON, CSV Excel, GEDCOM 7.0)",
-    url: "https://lephucnhat.vn/dai-pha-do-ho-dao/",
-    role: "Cho phép các chi, phái họ Đào trên toàn quốc bổ sung thế hệ con cháu và xuất dữ liệu chuẩn quốc tế."
+    url: "https://donghodao.vn/",
+    role: "Cho phép các chi, phái họ Đào trên toàn quốc bổ sung thế hệ con cháu và xuất dữ liệu lưu trữ vĩnh viễn."
   }
 ];
 
@@ -86,10 +109,10 @@ window.HISTORICAL_SOURCES = [
 ];
 
 window.CHANGELOG_HISTORY = [
-  { version: "V5.0 • Chuẩn Quốc Bảo 6 Phong Cách Giao Diện (24/11/2026)", items: [
-    "Đồng bộ hoàn toàn giao diện 6 Phong Cách vừa khít màn hình theo chuẩn Gia Phả Họ Trần: (1) Sách Gia Phả, (2) Phả Đồ Cổ Điển D3, (3) Cây Gia Đình, (4) Tinh Tú Đào Tộc, (5) Sổ Vàng & Tra Cứu, (6) Đại Phả Đồ 4K & La Bàn Lạc Thư.",
-    "Vá sạch lỗi trùng số thứ tự Duệ Vương ở Chặng 4 thành Vị 82 – 108 (đảm bảo 7 Chặng × 27 vị = 189 Duệ Vương), sửa toàn bộ lỗi chính tả và điền đầy đủ 44 vùng dữ liệu Thần tích của 10 vị Chi Long & 7 Chặng Văn Lang.",
-    "Tích hợp đầy đủ các nút Tâm Thư, Bổ Sung Chi/Phái, Lịch Ngày Giỗ/Tế Lễ, Thắp Hương & Lưu Bút, Cỡ chữ cao niên A+, Đọc Phả Ký TTS và Quản trị Admin (Mã khóa: DAOTOC2026)."
+  { version: "V5.5 • Bản Quốc Bảo Hoàn Thiện Tông Tộc Đào (24/11/2026)", items: [
+    "Hoàn thiện 6 Phong Cách Giao Diện vừa khít 100% khung màn hình: (1) Sách Gia Phả, (2) Phả Đồ Cổ Điển D3, (3) Cây Gia Đình, (4) Tinh Tú Đào Tộc, (5) Sổ Vàng & Tra Cứu, (6) Đại Phả Đồ 4K & La Bàn Lạc Thư.",
+    "Chuẩn hóa toàn bộ dữ liệu học thuật: Vá lỗi trùng số thứ tự Duệ Vương ở Chặng 4 thành Vị 82 – 108 (7 Chặng × 27 vị = 189 Duệ Vương), điền đầy đủ 44 vùng dữ liệu Thần tích của 10 vị Chi Long & 7 Chặng Văn Lang.",
+    "Tích hợp Tâm Thư Đào Tộc gửi muôn đời con cháu, bảng giải mã Bát Cổ (古 = 十 + 口), đồ hình La bàn Mặt Trời cổ xoay 90° và Cửu Cung Lạc Thư tương tác."
   ]}
 ];
 
@@ -133,19 +156,19 @@ window.TIMELINE_EVENTS = [
 ];
 
 window.MEMBERS = [
-  // ĐỜI 0: MẪU HỆ KHỞI NGUYÊN
+  // TẦNG 1: MẪU HỆ KHỞI NGUYÊN
   { id: "d0_au_co", name: "Mẫu Âu Cơ Tính Thị", gen: 1, parentId: null, gender: "F", isMainLine: true, branch: "Khởi Nguyên Mẫu Hệ",
     birth: "Thời Đồ Đá", death: "Mùng 7 tháng Giêng (Lễ Tiên Mẫu)", location: "Hạ Hòa – Phú Thọ", role: "Khởi nguyên tính thị mẫu hệ, sinh Đệ Nhất Thủy Tổ Đào Ngột",
     sources: ["Đại Phả Đồ Tông Tộc Đào (donghodao.vn)", "Ngọc phả đất Tổ Hạ Hòa - Phú Thọ"],
     note: "Đại diện cho thời kỳ chế độ mẫu hệ thời Đồ Đá tại vùng đất Tổ Hạ Hòa. Mẫu Âu Cơ tính thị sinh ra Đệ Nhất Thủy Tổ Đào Ngột — mở ra bước ngoặt chấm dứt mẫu hệ, xác lập phụ hệ." },
 
-  // ĐỜI I: ĐỆ NHẤT THỦY TỔ ĐÀO NGỘT (VỊ 1 THẬP BÁT DIỆP)
+  // TẦNG 2 (ĐỜI I): ĐỆ NHẤT THỦY TỔ ĐÀO NGỘT (VỊ 1 THẬP BÁT DIỆP)
   { id: "d1_dao_ngot", name: "Đệ Nhất Thủy Tổ Đào Ngột", gen: 2, parentId: "d0_au_co", gender: "M", isMainLine: true, branch: "Thập Bát Diệp • Đời I",
     birth: "Thái Cực Nhất Nguyên", death: "15 tháng Giêng (Tế Thượng Nguyên)", location: "Hạ Hòa → Thanh Ba (Chí Tiên – Phú Thọ)", role: "Vị Cao Sơn Thứ Nhất • Đào Tướng Quân Cao Sơn Đại Vương",
     sources: ["Đại Phả Đồ Tông Tộc Đào (donghodao.vn)", "Thần tích Chí Tiên - Thanh Ba - Phú Thọ"],
     note: "Đệ Nhất Thủy Tổ họ Đào (Vị thứ 1 trong Thập Bát Diệp). Sinh từ Hạ Hòa, xuôi xuống Thanh Ba (nay là Chí Tiên – Phú Thọ) dựng nghiệp, chấm dứt mẫu hệ, xác lập phụ hệ và đặt ra tục lệ sơ khai đầu tiên. Thái Cực sinh Lưỡng Nghi: Hào Dương (Ngài Đào Công Bột) & Hào Âm (Ngài Đào Nghiêu)." },
 
-  // ĐỜI II: LƯỠNG NGHI ĐÀO BỘT & ĐÀO NGHIÊU (VỊ 2 & 3 THẬP BÁT DIỆP)
+  // TẦNG 3 (ĐỜI II): LƯỠNG NGHI ĐÀO BỘT & ĐÀO NGHIÊU (VỊ 2 & 3 THẬP BÁT DIỆP)
   { id: "d2_dao_bot", name: "Ngài Đào Công Bột (Kinh Dương Vương)", gen: 3, parentId: "d1_dao_ngot", gender: "M", isMainLine: true, branch: "Hào Dương • Nhánh Trưởng",
     birth: "Hào Dương (Con trưởng)", death: "18 tháng Giêng (Lễ Tế Tổ Duyên Hải)", location: "Hạ lưu An Lão (Hải Phòng) & Bình Đà (Hà Nội)", role: "Quốc hiệu Kinh Dương Vương • Vị Cao Sơn Thứ 2 • Thái Phó",
     sources: ["Đại Phả Đồ Tông Tộc Đào", "Thần tích An Lão (Hải Phòng) & Bình Đà (Thanh Oai, Hà Nội)"],
@@ -156,7 +179,7 @@ window.MEMBERS = [
     sources: ["Đại Phả Đồ Tông Tộc Đào", "Thần tích Phượng Lâu (Việt Trì) & 36 làng Đào Xá"],
     note: "Con thứ của Đệ Nhất Thủy Tổ Đào Ngột (Vị thứ 3 trong Thập Bát Diệp). 'Quý' chỉ con út/thứ, 'Minh' là sáng suốt như mặt trời và ánh trăng đêm. Ngài xuôi vùng ngã ba sông Phượng Lâu (Việt Trì) dựng nghiệp; hệ thống di tích thờ Đường Nghiêu lan tỏa dọc các sông lớn tiến thẳng ra biển Đông, lên Bắc tới Sơn Tây, Hà Nam, Giang Tô, xuống Nam tới Hà Tĩnh. Sinh 10 người con (Đệ Lục → Đệ Thập Ngũ)." },
 
-  // ĐỜI III - NHÁNH NGÀI ĐÀO BỘT (5 VỊ NGŨ LONG = CHI LONG 1 -> 5)
+  // TẦNG 4 (ĐỜI III): THẬP VỊ CHI LONG & 5 VỊ SAU (15 VỊ ĐỜI III THẬP BÁT DIỆP)
   { id: "d3_dao_cu", name: "Đệ Nhất Đào Cư (Đông Long Thái Sư)", gen: 4, parentId: "d2_dao_bot", gender: "M", isMainLine: false, branch: "Thập Vị Chi Long • Ngũ Long",
     birth: "Chi Long Đệ Nhất", death: "12 tháng Hai ÂL", location: "An Lão (Hải Phòng) → Hành cung Tứ Kỳ (Hải Dương)", role: "Đông Long Thái Sư • Trấn giữ Phương Đông (cổ)",
     sources: ["Đại Phả Đồ Tông Tộc Đào", "Thần tích Ngũ Vị Tôn Ông"],
@@ -182,7 +205,6 @@ window.MEMBERS = [
     sources: ["Đại Phả Đồ Tông Tộc Đào", "Thần tích Bình Đà (Hà Nội) & Thủy Đường (Hải Phòng)"],
     note: "Con thứ năm của Ngài Đào Công Bột. Nắm giữ Trung Cung Giai đoạn 1 tại Đài Rồng (An Lão) bên cạnh giúp việc điều phối cho cha. Dòng hậu duệ của Ngài đảm nhận Chặng 2 Văn Lang (Vị 28 – 54) tại Hành cung Thủy Đường." },
 
-  // ĐỜI III - NHÁNH NGÀI ĐÀO NGHIÊU (5 CON ĐẦU HỢP CHI LONG 6 -> 10 + 5 CON SAU 11 -> 15)
   { id: "d3_de_luc", name: "Đức Đệ Lục — Đệ Nhất Công", gen: 4, parentId: "d2_dao_nghieu", gender: "M", isMainLine: false, branch: "Thập Vị Chi Long • Ngũ Công",
     birth: "Chi Long Đệ Lục", location: "Hải Dương quận → Tràng An → Hồ Tôn (Biển Hồ)", role: "Chủ tể Hải Dương quận • Tiên phong khai canh phương Nam",
     sources: ["Đại Phả Đồ Tông Tộc Đào (donghodao.vn)"],
@@ -213,7 +235,7 @@ window.MEMBERS = [
     sources: ["Đại Phả Đồ Tông Tộc Đào (donghodao.vn)"],
     note: "Gồm 5 vị: Đệ Thập Nhất, Đệ Thập Nhị, Đệ Thập Tam, Đệ Thập Tứ và Đệ Thập Ngũ (hoàn tất đủ 18 vị Thập Bát Diệp = 1 + 2 + 15). Đều có hậu duệ sinh sôi, cùng hậu duệ Đức Đệ Cửu thiên di khai canh lên phương Bắc theo đường ven biển tới Sơn Tây, Hà Nam, Giang Tô." },
 
-  // ĐỜI IV (TẦNG VĂN LANG): 7 CHẶNG LUÂN CHUYỂN QUYỀN TRƯỞNG LỆNH (189 DUỆ VƯƠNG = 7 × 27)
+  // TẦNG 5 (VĂN LANG 2.622 NĂM): 7 CHẶNG LUÂN CHUYỂN QUYỀN TRƯỞNG LỆNH (189 DUỆ VƯƠNG = 7 × 27)
   { id: "d4_chang_1", name: "Chặng 1 Văn Lang: Duệ Vương Vị 1 – 27", gen: 5, parentId: "d3_dao_truong", gender: "M", isMainLine: true, branch: "7 Chặng Văn Lang (189 Duệ Vương)",
     birth: "Số 3 Lạc Thư • Quẻ Chấn (Mộc)", death: "Tế lễ Thế Tổ Vị 27 chuyển giao", location: "Hành cung Phủ Lý (Bờ sông Châu Giang) • Đông (cổ) → Nam (nay)", role: "Hậu duệ Đệ Tam Đào Trường • Đại Tổ Vị 1 → Thế Tổ Vị 27",
     sources: ["Phần II Đại Phả Đồ Tông Tộc Đào"],
@@ -249,7 +271,7 @@ window.MEMBERS = [
     sources: ["Phần II Đại Phả Đồ Tông Tộc Đào", "Đại Việt Sử Ký Toàn Thư"],
     note: "Chặng thứ 7 — chặng cuối cùng khép lại 2.622 năm Nhà nước Văn Lang (Vị 163 – 189) thuộc dòng hậu duệ Đệ Nhị Đào Hồng. Vị Thế Tổ thứ 189 (Hùng Duệ Vương) đã chuyển giao ngôi vị cho con rể là Thạc Công (lên ngôi Thục Vương - An Dương Vương)." },
 
-  // ĐỜI V (THỜI THỤC VƯƠNG - NƯỚC ÂU LẠC)
+  // TẦNG 6 (THỜI THỤC VƯƠNG - NƯỚC ÂU LẠC)
   { id: "d6_dao_nhi", name: "Tướng Quân Đào Nhị (Tổng Quản Quân Lương)", gen: 6, parentId: "d4_chang_7", gender: "M", isMainLine: true, branch: "Thời Thục Vương • Nước Âu Lạc",
     birth: "Thế kỷ III TCN", death: "12 tháng Tám ÂL (Tế Thành Hoàng Cổ Loa)", location: "Kinh đô Cổ Loa (Đông Anh, Hà Nội)", role: "Em vợ Thục Vương • Chỉ huy xây thành Cổ Loa & quản lý lương thực",
     sources: ["Phần III Đại Phả Đồ Tông Tộc Đào", "Thần tích vùng Cổ Loa - Đông Anh"],
@@ -270,14 +292,14 @@ window.MEMBERS = [
     sources: ["Phần III Đại Phả Đồ Tông Tộc Đào", "Thần phả Cổ Loa"],
     note: "Con trai thứ của Quan Nội Hầu Đào Nồi, cùng cha và anh trai Đào Đống nắm trọn quân đội và tổ chức phòng thủ nước Âu Lạc." },
 
-  // ĐỜI VI (NHÀ TRIỆU - VƯƠNG TRIỀU NAM VIỆT)
+  // TẦNG 7 (NHÀ TRIỆU - VƯƠNG TRIỀU NAM VIỆT)
   { id: "d7_dao_thi_hoan", name: "Thánh Mẫu Đào Thị Hoan", gen: 7, parentId: "d6_dao_nhi", gender: "F", isMainLine: true, branch: "Nhà Triệu • Vương Triều Nam Việt",
     birth: "Thế kỷ III TCN", death: "15 tháng Tám ÂL (Tế Đền Thượng Gia - Đồng Sâm)", location: "Thần tích xã Thượng Gia, tổng Đồng Sâm, huyện Trực Định (Thái Bình)", role: "Thân mẫu của Triệu Vũ Đế (Triệu Đà) — Khai sáng nước Nam Việt",
     spouses: [{ name: "Triệu Đức Công (Quận Linh Sơn, Chân Định)", note: "Thân phụ Triệu Vũ Đế" }],
     sources: ["Phần III Đại Phả Đồ Tông Tộc Đào", "Thần tích xã Thượng Gia, tổng Đồng Sâm, Thái Bình"],
     note: "Theo thần tích cổ lưu giữ tại Thái Bình và donghodao.vn, bà Đào Thị Hoan kết duyên cùng ông Triệu Đức Công, ứng mộng Thiên sứ trao râu rồng mà sinh ra Triệu Vũ Đế (Triệu Đà), trực tiếp mở ra vương triều Nhà Triệu – nước Nam Việt hùng mạnh, khẳng định sợi dây huyết thống trực tiếp của Đào tộc gắn với ngôi vị khai sáng vương triều buổi đầu tự chủ." },
 
-  // ĐỜI VII (THỜI TRƯNG NỮ VƯƠNG - 65 THÀNH LĨNH NAM)
+  // TẦNG 8 (THỜI TRƯNG NỮ VƯƠNG - 65 THÀNH LĨNH NAM)
   { id: "d8_dao_ky", name: "Đại Nguyên Soái Đào Kỳ (Bắc Bình Vương)", gen: 8, parentId: "d7_dao_thi_hoan", gender: "M", isMainLine: true, branch: "Thời Trưng Nữ Vương • 65 Thành Lĩnh Nam",
     birth: "Đầu Công Nguyên (Đào Tam Lang)", death: "13 tháng Tám ÂL (Lễ Tế Đền Hội Phụ & Miếu Ba Vua)", location: "Đền Hội Phụ (Mai Lâm, Đông Anh, Hà Nội) & Miếu Ba Vua (Thủy Nguyên, Hải Phòng)", role: "Đại Nguyên Soái • Bắc Bình Vương • Thống lĩnh ba quân",
     spouses: [{ name: "Nữ tướng Phương Dung Công Chúa", death: "13 tháng Tám ÂL", note: "Cùng chồng thống lĩnh đại quân đánh đuổi Tô Định và chống Mã Viện" }],

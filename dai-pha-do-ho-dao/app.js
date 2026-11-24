@@ -1,4 +1,4 @@
-// Gia Phả Số Tông Tộc Đào Việt Nam — Phiên Bản Hoàn Thiện Toàn Diện (lephucnhat.vn)
+// Đại Phả Đồ Tông Tộc Đào & Nền Văn Hiến Việt Nam — Phiên Bản Quốc Bảo Toàn Diện (donghodao.vn)
 (function () {
   const LS_SUBMISSIONS = "dao_gia_pha_submissions_v1";
   const LS_APPROVED = "dao_gia_pha_approved_v1";
@@ -271,7 +271,7 @@
       }).join("");
       return `<div class="book-gen-group" id="gen-group-${gNum}">
         <div class="book-gen-head" onclick="if(event.target.tagName!=='BUTTON'){const b=this.nextElementSibling;b.style.display=b.style.display==='none'?'grid':'none';}">
-          <span>Đời thứ ${gNum} (${list.length} vị)</span>
+          <span>${esc((window.GEN_LABELS && window.GEN_LABELS[gNum]) || ("Tầng thứ " + gNum))} (${list.length} mục)</span>
           <div style="display:flex;align-items:center;gap:8px;">
             <button class="book-add-inline" onclick="event.stopPropagation(); openContributeModal({gen:${gNum}})">+ Bổ sung Đời ${gNum}</button>
             <span>▾</span>
@@ -283,7 +283,7 @@
 
     el.innerHTML = `<div class="book-container">
       <div class="book-toolbar">
-        <button class="book-tool-btn" style="background:#8B1E1E;color:#fef3c7;border-color:#D4AF37;" onclick="openTamThuModal()">💌 Khảo Luận Đại Phả Đồ (24/11/2026)</button>
+        <button class="book-tool-btn" style="background:#8B1E1E;color:#fef3c7;border-color:#D4AF37;" onclick="openTamThuModal()">💌 💌 Tâm Thư Đào Tộc Gửi Muôn Đời Con Cháu</button>
         <button id="ttsBtn" class="book-tool-btn" onclick="toggleReadAloud()">🔊 Nghe Đọc Phả Ký</button>
         <button id="bookDarkBtn" class="book-tool-btn" onclick="toggleBookDarkMode()">${bookDark ? "☀️ Chế độ Giấy Dó Sáng" : "🌙 Chế độ Đọc Ban Đêm"}</button>
         <button class="book-tool-btn" onclick="window.print()">🖨️ In Sách Gia Phả (A4)</button>
@@ -301,7 +301,7 @@
       </div>
 
       <div class="book-cover">
-        <div><div class="hoanh-phi-placa">❖ ${esc(meta.hoanhPhi || "ĐÔNG A VẠN ĐẠI • ĐỨC LƯU QUANG")} ❖</div></div>
+        <div><div class="hoanh-phi-placa">❖ ${esc(meta.hoanhPhi || "ĐÀO TỘC VĂN HIẾN • THẬP BÁT DIỆP KHỞI NGUYÊN")} ❖</div></div>
         <div class="book-seal-big">TỘC PHẢ TRUYỀN ĐỜI • KHỞI LẬP GIA PHẢ SỐ: NGÀY VĂN HÓA VIỆT NAM 24/11/2026</div>
         <h1 class="book-title">${esc(meta.title)}</h1>
         <p class="book-sub">${esc(meta.subtitle)}</p>
@@ -310,7 +310,7 @@
           <span>“${esc(meta.couplet.bottom)}”</span>
         </div>
         <div style="margin-top:12px;font-size:0.84rem;color:#6e1414;font-style:italic;">
-          Số hóa từ Gia Phả Giấy bởi hậu duệ Đời thứ 23: <strong>Hội Đồng Gia Tộc Họ Đào</strong> • <a href="javascript:void(0)" onclick="openTamThuModal()" style="color:#9e1b1b;font-weight:700;">Đọc Tâm Thư →</a>
+          Phụng lập & Số hóa từ Hệ thống Ngọc Phả, Thần Tích & Minh Văn Kim Sử bởi: <strong>Hội Đồng Gia Tộc Họ Đào Việt Nam (donghodao.vn)</strong> • <a href="javascript:void(0)" onclick="openTamThuModal()" style="color:#9e1b1b;font-weight:700;">Đọc Tâm Thư →</a>
         </div>
       </div>
 
@@ -324,9 +324,18 @@
       </div>
 
       <div class="book-section">
-        <h2 class="book-h2">Phần 2: Nguồn Gốc & Bước Ngoặt Lịch Sử</h2>
+        <h2 class="book-h2">Phần 2: Cội Nguồn Khởi Nguyên & Hệ Quy Chiếu La Bàn Mặt Trời Cổ (Xoay 90°)</h2>
         <p class="book-p">${esc(meta.origin)}</p>
-        <p class="book-p"><strong>Bước ngoặt đổi họ (Đời 7 → Đời 8):</strong> ${esc(meta.turningPoint)}</p>
+        <p class="book-p"><strong>Chìa khóa Phương vị Cổ đại (Định hướng theo Mặt Trời):</strong> ${esc(meta.turningPoint)}</p>
+        <div style="margin-top:14px;">
+          <div style="font-weight:700;color:#7c1212;font-size:0.96rem;margin-bottom:8px;">🏛️ Dấu Ấn Bát Cổ (古 = 十 Thập + 口 Khẩu — 10 Vị Chi Long Thống Nhất Hiệu Lệnh Xã Tắc Thời Lạc Thư):</div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px;">
+            ${(window.BAT_CO_DATA || []).map(b => `<div class="book-person" style="cursor:default;border-left:3.5px solid #6a1b9a;background:#fcf8ff;">
+              <div style="font-weight:700;color:#4a148c;font-size:0.9rem;">${b.idx}. ${esc(b.name)} <span style="color:#8b0000;">(${esc(b.hanzi)})</span></div>
+              <div style="font-size:0.82rem;color:#332920;line-height:1.5;margin-top:3px;">${esc(b.desc)}</div>
+            </div>`).join("")}
+          </div>
+        </div>
       </div>
 
       <div class="book-section">
@@ -689,10 +698,10 @@
 
     el.innerHTML = `<div class="bento-wrap">
       <div class="bento-kpis">
-        <div class="bento-card"><div class="kpi-val">${allMembers.length}</div><div class="kpi-lbl">Thành viên được ghi danh trong phả đồ</div></div>
-        <div class="bento-card"><div class="kpi-val">${Math.max(...allMembers.map(m => m.gen))} Đời</div><div class="kpi-lbl">2.622 Năm Văn Lang (189 Duệ Vương) → Trưng Vương</div></div>
-        <div class="bento-card"><div class="kpi-val">${getSubmissions().length} Hồ Sơ</div><div class="kpi-lbl">Đóng góp mới từ các chi/phái chờ Admin tổng hợp</div></div>
-        <div class="bento-card"><div class="kpi-val">3 Tỉnh/TP</div><div class="kpi-lbl">Phú Thọ • Hải Phòng • Hà Nội • Hà Nam • Bắc Ninh</div></div>
+        <div class="bento-card" onclick="switchStyle(6)" style="cursor:pointer;"><div class="kpi-val">18 Vị</div><div class="kpi-lbl">Thập Bát Diệp Khởi Nguyên (1 Đời I + 2 Đời II + 15 Đời III)</div></div>
+        <div class="bento-card" onclick="openCompassLoshuModal()" style="cursor:pointer;"><div class="kpi-val">189 Vị</div><div class="kpi-lbl">Duệ Vương qua 7 Chặng Văn Lang (2.622 Năm • 7 × 27 Vị)</div></div>
+        <div class="bento-card" onclick="openCompassLoshuModal()" style="cursor:pointer;"><div class="kpi-val">Bát Cổ (八古)</div><div class="kpi-lbl">10 Vị Chi Long hợp nhất Hà Đồ → Lạc Thư Xã Tắc</div></div>
+        <div class="bento-card" onclick="openMemberModal('d8_dao_ky')" style="cursor:pointer;"><div class="kpi-val">65 Thành</div><div class="kpi-lbl">Âu Lạc (Cổ Loa) • Nam Việt • Trưng Nữ Vương Lĩnh Nam</div></div>
       </div>
 
       <div class="bento-card" style="border-color:rgba(212,175,55,0.45);background:linear-gradient(145deg,rgba(139,30,30,0.22),rgba(15,23,42,0.75));">
@@ -857,7 +866,7 @@
         <div>
           <label class="form-label">Cha / Mẹ trực tiếp trong phả</label>
           <select id="cfParent" class="form-select">
-            <option value="">-- Chọn (mặc định gắn Chi Chí Hòa nếu để trống) --</option>
+            <option value="">-- Chọn Tiên Tổ / Nhánh kết nối (mặc định gắn Đệ Tam Đào Trường nếu để trống) --</option>
             ${parentOptions}
           </select>
         </div>
@@ -1025,7 +1034,7 @@
     if (!p.member.name) { showToast("Vui lòng nhập Họ và tên trước khi gửi."); return; }
     const title = encodeURIComponent(`[Gia Phả Họ Đào] ${p.action === "edit" ? "Sửa" : "Thêm"}: ${p.member.name} (Đời ${p.member.gen})`);
     const body = encodeURIComponent(formatPayloadText(p) + "\n\n```json\n" + JSON.stringify(p.member, null, 2) + "\n```");
-    window.open(`https://github.com/lephucnhat/lephucnhat.github.io/issues/new?title=${title}&body=${body}`, "_blank", "noopener");
+    window.open(`https://donghodao.vn/??title=${title}&body=${body}`, "_blank", "noopener");
   };
 
   // ----------------- BẢNG QUẢN TRỊ ADMIN & NHẬP/XUẤT DỮ LIỆU -----------------
@@ -1297,13 +1306,13 @@
       ${m.photo ? `<img class="member-avatar" src="${esc(m.photo)}" alt="${esc(m.name)}" />` : ""}
       <span class="modal-tag">ĐỜI THỨ ${m.gen} • ${esc(m.branch || "Đào Tộc Văn Hiến")}</span>
       <h2 class="modal-title">${esc(m.name)}</h2>
-      <p style="font-size:13.5px;opacity:0.85;margin-bottom:10px;">${esc(m.role || (m.isMainLine ? "Trực hệ truyền thừa chi Lãng Nam" : "Thành viên Phả Chi Họ Đào"))}</p>
+      <p style="font-size:13.5px;opacity:0.85;margin-bottom:10px;">${esc(m.role || (m.isMainLine ? "Trực hệ truyền thừa Tông Tộc Đào Việt Nam" : "Thành viên Phả Chi Họ Đào"))}</p>
       <div class="lineage-path-bar">
         <strong style="color:#fcd34d;margin-right:4px;">🌿 Mạch truyền thừa:</strong> ${chainHtml}
       </div>
       <div class="modal-meta">
         <div class="meta-box"><div class="meta-lbl">Năm sinh / Năm mất</div><div class="meta-val">${formatBirth(m) ? "Sinh: " + esc(formatBirth(m)) : "—"} ${m.death ? "• Mất: " + esc(m.death) : ""} ${m.age ? "(" + esc(m.age) + ")" : ""}</div></div>
-        <div class="meta-box"><div class="meta-lbl">Địa bàn / Lăng tẩm</div><div class="meta-val">${esc(m.location || "Làng Lãng Nam (Đồng Thái, Ninh Cường)")}</div></div>
+        <div class="meta-box"><div class="meta-lbl">Địa bàn / Lăng tẩm</div><div class="meta-val">${esc(m.location || "Đất Tổ Phú Thọ & Châu Thổ Bắc Bộ")}</div></div>
       </div>
       <div class="meta-box" style="margin-bottom:12px;">
         <div class="meta-lbl">Phối ngẫu (Vợ / Chồng)</div>
@@ -1450,7 +1459,7 @@
     utter.lang = "vi-VN";
     utter.rate = 0.95;
     window.speechSynthesis.speak(utter);
-    showToast("🔊 Đang đọc Tâm Thư của hậu duệ Hội Đồng Gia Tộc Họ Đào...");
+    showToast("🔊 Đang đọc Tâm Thư Tông Tộc Đào Việt Nam...");
   };
 
   window.openGuideModal = function () {
@@ -1488,7 +1497,7 @@
     document.getElementById("modalContent").innerHTML = `
       <span class="modal-tag">MÃ NGUỒN MỞ GITHUB TÍCH HỢP</span>
       <h2 class="modal-title">Kiến Trúc & Thư Viện Tham Chiếu</h2>
-      <p style="font-size:13px;opacity:0.85;margin-bottom:14px;">Website Gia Phả Số Tông Tộc Đào Việt Nam kế thừa tinh hoa từ các dự án mã nguồn mở phả hệ trên GitHub & chuẩn UX từ lephucnhat.vn:</p>
+      <p style="font-size:13px;opacity:0.85;margin-bottom:14px;">Hệ thống Đại Phả Đồ Tông Tộc Đào Việt Nam (donghodao.vn) ứng dụng kiến trúc đồ họa phả hệ tương tác chuẩn quốc tế:</p>
       <div style="display:flex;flex-direction:column;gap:10px;">
         ${window.OPEN_SOURCE_REFS.map(r => `<div class="meta-box">
           <a href="${esc(r.url)}" target="_blank" rel="noopener" style="color:#38bdf8;font-weight:700;text-decoration:none;font-size:14px;">↗ ${esc(r.name)}</a>
