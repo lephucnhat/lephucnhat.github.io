@@ -1,6 +1,6 @@
 /**
  * ==========================================================================
- * INTERACTIVE.JS — MODULE TƯƠNG TÁC "GÓC BÉ VUI HỌC", MODAL, LIGHTBOX & PRINT
+ * INTERACTIVE.JS — MODULE TƯƠNG TÁC "GÓC BÉ VUI HỌC", 3 GIỌNG CÔ GIÁO, MODAL & PRINT
  * Trường Mầm non Lê Thế Hiếu — Xã Cam Lộ, Tỉnh Quảng Trị
  * ==========================================================================
  */
@@ -11,95 +11,104 @@ window.MNLTH_Interactive = (function () {
   const Utils = window.MNLTH_Utils;
 
   /* ==========================================================================
-     1. DỮ LIỆU THẺ 1: LÀM QUEN CHỮ CÁI TIẾNG VIỆT (a, ă, â | e, ê | o, ô, ơ)
-        Chuyển hóa từ bộ bài giảng thật của khối MG 5–6 tuổi Cam Chính, Phân hiệu & Cam Sơn
+     1. DỮ LIỆU THẺ 1: LÀM QUEN CHỮ CÁI TIẾNG VIỆT (a, ă, â | e, ê, u | o, ô, ơ)
+        Tích hợp audioKey phát giọng Cô giáo Mầm non chuẩn phòng thu
      ========================================================================== */
   const ALPHABET_GROUPS = {
     'a-aw-aa': [
       {
+        audioKey: 'letter-a',
         letter: 'a',
         upper: 'A',
         name: 'Chữ a',
         word: 'Quả na • Ca nước',
         icon: '🍈',
         poem: 'Chữ a tròn trịa thêm nét móc bên phải — Bé ngoan đọc to: a, quả na ngọt lành!',
-        speech: 'Chữ a. Ví dụ: Quả na, ca nước. Chữ a có một nét cong tròn khép kín và một nét móc dưới bên phải.'
+        speech: 'Chữ a. Ví dụ: Quả na, ca nước. Chữ a tròn trịa thêm nét móc bên phải. Bé ngoan đọc to cùng cô nhé: a, quả na ngọt lành!'
       },
       {
+        audioKey: 'letter-aw',
         letter: 'ă',
         upper: 'Ă',
         name: 'Chữ ă',
         word: 'Khăn mặt • Mặt trăng',
         icon: '🌙',
         poem: 'Chữ ă đội chiếc mũ cong ngửa như vầng trăng khuyết — Bé nhớ giữ khăn mặt sạch sẽ nhé!',
-        speech: 'Chữ ă. Ví dụ: Khăn mặt, ông trăng. Chữ ă có dấu mũ cong ngửa ở phía trên đầu.'
+        speech: 'Chữ ă. Ví dụ: Khăn mặt, mặt trăng. Chữ ă đội chiếc mũ cong ngửa như vầng trăng khuyết. Bé nhớ giữ khăn mặt sạch sẽ nhé!'
       },
       {
+        audioKey: 'letter-aa',
         letter: 'â',
         upper: 'Â',
         name: 'Chữ â',
         word: 'Cái cân • Đôi chân',
         icon: '⚖️',
         poem: 'Chữ â đội chiếc nón chóp nhọn xinh xắn — Bé đi đều đôi chân đến trường!',
-        speech: 'Chữ â. Ví dụ: Cái cân, đôi chân. Chữ â đội chiếc mũ nhọn xinh xắn ở trên đầu.'
+        speech: 'Chữ â. Ví dụ: Cái cân, đôi chân. Chữ â đội chiếc nón chóp nhọn xinh xắn. Bé đi đều đôi chân đến trường!'
       }
     ],
     'e-ee': [
       {
+        audioKey: 'letter-e',
         letter: 'e',
         upper: 'E',
         name: 'Chữ e',
         word: 'Em bé • Xe đạp',
         icon: '🚲',
         poem: 'Chữ e có nét ngang nối nét cong hở phải — Em bé ngoan lễ phép chào cô!',
-        speech: 'Chữ e. Ví dụ: Em bé, xe đạp. Chuyên đề làm quen chữ cái e, ê của khối Mẫu giáo 5 đến 6 tuổi.'
+        speech: 'Chữ e. Ví dụ: Em bé, xe đạp. Chữ e có nét ngang nối nét cong hở phải. Em bé ngoan lễ phép chào cô!'
       },
       {
+        audioKey: 'letter-ee',
         letter: 'ê',
         upper: 'Ê',
         name: 'Chữ ê',
         word: 'Búp bê • Quả khế',
         icon: '🎎',
         poem: 'Chữ ê giống chữ e nhưng đội thêm chiếc nón xinh — Bé yêu búp bê và chùm khế ngọt!',
-        speech: 'Chữ ê. Ví dụ: Búp bê, quả khế. Chữ ê có thêm chiếc mũ nhọn ở phía trên.'
+        speech: 'Chữ ê. Ví dụ: Búp bê, quả khế. Chữ ê giống chữ e nhưng đội thêm chiếc nón xinh ở trên đầu!'
       },
       {
+        audioKey: 'letter-u',
         letter: 'u',
         upper: 'U',
         name: 'Chữ u',
         word: 'Mũ bảo hiểm • Đu đủ',
         icon: '⛑️',
         poem: 'Chữ u mở miệng hướng lên trời — Đi xe cùng bố mẹ, bé nhớ đội mũ bảo hiểm nhé!',
-        speech: 'Chữ u. Ví dụ: Mũ bảo hiểm, quả đu đủ.'
+        speech: 'Chữ u. Ví dụ: Mũ bảo hiểm, quả đu đủ. Đi xe cùng bố mẹ, bé nhớ đội mũ bảo hiểm an toàn nhé!'
       }
     ],
     'o-oo-ow': [
       {
+        audioKey: 'letter-o',
         letter: 'o',
         upper: 'O',
         name: 'Chữ o',
         word: 'Quả bóng • Con ong',
         icon: '🐝',
         poem: 'Chữ o tròn như quả trứng gà — Chú ong chăm chỉ bay đi tìm hoa!',
-        speech: 'Chữ o. Ví dụ: Quả bóng tròn, con ong chăm chỉ. Bài giảng lớp Mẫu giáo 5 đến 6 tuổi điểm trường Cam Sơn.'
+        speech: 'Chữ o. Ví dụ: Quả bóng tròn, con ong chăm chỉ. Chữ o tròn như quả trứng gà!'
       },
       {
+        audioKey: 'letter-oo',
         letter: 'ô',
         upper: 'Ô',
         name: 'Chữ ô',
         word: 'Cô giáo • Cái ô',
         icon: '☂️',
         poem: 'Chữ o đội nón thành chữ ô — Bé yêu cô giáo Trường Mầm non Lê Thế Hiếu!',
-        speech: 'Chữ ô. Ví dụ: Cô giáo hiền từ, cái ô che nắng che mưa.'
+        speech: 'Chữ ô. Ví dụ: Cô giáo hiền từ, cái ô. Chữ o đội nón thành chữ ô, bé yêu cô giáo trường Mầm non Lê Thế Hiếu!'
       },
       {
+        audioKey: 'letter-ow',
         letter: 'ơ',
         upper: 'Ơ',
         name: 'Chữ ơ',
         word: 'Lá cờ Tổ quốc • Quả mơ',
         icon: '🇻🇳',
         poem: 'Chữ ơ có dấu móc nhỏ bên vai phải — Lá cờ đỏ sao vàng tung bay giữa sân trường!',
-        speech: 'Chữ ơ. Ví dụ: Lá cờ Tổ quốc Việt Nam, quả mơ.'
+        speech: 'Chữ ơ. Ví dụ: Lá cờ Tổ quốc Việt Nam, quả mơ. Chữ ơ có dấu móc nhỏ bên vai phải!'
       }
     ]
   };
@@ -141,9 +150,12 @@ window.MNLTH_Interactive = (function () {
     display.innerHTML = `
       <div class="letter-word-example">${activeItem.icon} ${Utils.escapeHTML(activeItem.upper)} ${Utils.escapeHTML(activeItem.letter)} — ${Utils.escapeHTML(activeItem.word)}</div>
       <p style="font-size: var(--text-xs); color: var(--color-text-muted);">${Utils.escapeHTML(activeItem.poem)}</p>
-      <div style="margin-top: 6px;">
+      <div style="margin-top: 8px; display:flex; flex-wrap:wrap; justify-content:center; gap:8px;">
         <button type="button" class="btn-read-more" id="btn-speak-active-letter">
-          🔊 Nghe phát âm "${Utils.escapeHTML(activeItem.letter)}"
+          👩‍🏫 Cô đọc mẫu "${Utils.escapeHTML(activeItem.letter)}"
+        </button>
+        <button type="button" class="mini-tool-chip" id="btn-copy-active-letter" title="Sao chép bài thơ chữ cái gửi Zalo cho phụ huynh">
+          📋 Sao chép bài thơ
         </button>
       </div>
     `;
@@ -159,19 +171,28 @@ window.MNLTH_Interactive = (function () {
     if (speakBtn) {
       speakBtn.addEventListener('click', () => {
         Utils.playGentleTone('success');
-        Utils.speakVietnamese(activeItem.speech, 0.9);
+        Utils.playTeacherAudio(activeItem.audioKey, activeItem.speech, 1.0, null, speakBtn);
+      });
+    }
+
+    const copyBtn = document.getElementById('btn-copy-active-letter');
+    if (copyBtn) {
+      copyBtn.addEventListener('click', () => {
+        Utils.copyTextToClipboard(
+          `[GÓC BÉ HỌC CHỮ CÁI - TRƯỜNG MN LÊ THẾ HIẾU]\n${activeItem.icon} ${activeItem.name} (${activeItem.word}):\n"${activeItem.poem}"`,
+          `📋 Đã sao chép bài học "${activeItem.name}" để gửi Zalo phụ huynh!`
+        );
       });
     }
 
     if (autoSpeak) {
       Utils.playGentleTone('success');
-      Utils.speakVietnamese(activeItem.speech, 0.9);
+      Utils.playTeacherAudio(activeItem.audioKey, activeItem.speech, 1.0, null, speakBtn);
     }
   }
 
   /* ==========================================================================
      2. DỮ LIỆU THẺ 2: NGHE KỂ CHUYỆN "GẤU CON BỊ SÂU RĂNG"
-        (Tài nguyên thật của Lớp 4–5 tuổi A Cam Chính kết hợp Chuyên đề Răng miệng)
      ========================================================================== */
   const STORY_TEXT =
     'Câu chuyện: Gấu con bị sâu răng. ' +
@@ -186,59 +207,66 @@ window.MNLTH_Interactive = (function () {
     const btnPlay = document.getElementById('btn-story-play');
     const btnStop = document.getElementById('btn-story-stop');
     const speedSel = document.getElementById('story-speed-select');
+    const btnCopyStory = document.getElementById('btn-story-copy');
 
     if (btnPlay) {
       btnPlay.addEventListener('click', () => {
-        const rate = speedSel ? parseFloat(speedSel.value) : 0.9;
-        btnPlay.textContent = '🔊 Đang đọc truyện cho bé...';
-        const ok = Utils.speakVietnamese(STORY_TEXT, rate, () => {
-          btnPlay.textContent = '🔊 Nghe cô kể chuyện';
-        });
-        if (!ok) {
-          btnPlay.textContent = '🔊 Nghe cô kể chuyện';
-        }
+        const rate = speedSel ? parseFloat(speedSel.value) : 1.0;
+        Utils.playTeacherAudio('story-gau-con', STORY_TEXT, rate, null, btnPlay);
       });
     }
 
     if (btnStop) {
       btnStop.addEventListener('click', () => {
         Utils.stopSpeech();
-        if (btnPlay) btnPlay.textContent = '🔊 Nghe cô kể chuyện';
-        Utils.showToast('⏹️ Đã tạm dừng giọng kể chuyện.');
+        Utils.showToast('⏹️ Đã tạm dừng giọng cô kể chuyện.');
+      });
+    }
+
+    if (btnCopyStory) {
+      btnCopyStory.addEventListener('click', () => {
+        Utils.copyTextToClipboard(
+          `[TRUYỆN KỂ CHO BÉ - TRƯỜNG MN LÊ THẾ HIẾU]\n${STORY_TEXT}`,
+          '📋 Đã sao chép nội dung truyện "Gấu con bị sâu răng"!'
+        );
       });
     }
   }
 
   /* ==========================================================================
      3. DỮ LIỆU THẺ 3: TRÒ CHƠI NHỎ "ĐOÁN TÊN NHẠC CỤ & GIÁC QUAN KỲ DIỆU"
-        (5 câu hỏi tương tác từ học liệu Lớp MG 5–6 tuổi B Cam Chính & A Phân hiệu)
      ========================================================================== */
   const QUIZ_QUESTIONS = [
     {
+      audioKey: 'quiz-1',
       question: '1. Nhạc cụ nào có mặt tròn, khi cô giáo gõ dùi vào sẽ kêu "Tùng! Tùng! Tùng!" thật rộn rã?',
       options: ['🥁 Cái trống trường em', '🎻 Đàn vi-ô-lông', '🪈 Chiếc sáo trúc'],
       correctIndex: 0,
       explain: 'Hoan hô bé! Cái trống khi gõ sẽ vang lên tiếng "Tùng! Tùng!" báo hiệu giờ học vui.'
     },
     {
+      audioKey: 'quiz-2',
       question: '2. Nhạc cụ nào làm bằng hai thanh tre nhỏ, khi gõ vào nhau phát ra tiếng "Cách! Cách!" giữ nhịp bài hát?',
       options: ['🎹 Đàn pi-a-nô', '🥢 Đôi phách tre', '🎺 Kèn đồng'],
       correctIndex: 1,
       explain: 'Đúng rồi! Đôi phách tre giúp các bạn nhỏ gõ đệm theo nhịp bài hát thật đều.'
     },
     {
+      audioKey: 'quiz-3',
       question: '3. Giác quan nào giúp bé nhìn thấy cầu vồng rực rỡ, hoa nở sân trường và nụ cười hiền của cô giáo?',
       options: ['👀 Đôi mắt (Thị giác)', '👂 Đôi tai (Thính giác)', '👃 Chiếc mũi (Khứu giác)'],
       correctIndex: 0,
       explain: 'Giỏi quá! Đôi mắt là cửa sổ thị giác giúp bé nhìn thấy muôn màu thế giới.'
     },
     {
+      audioKey: 'quiz-4',
       question: '4. Bộ phận nào giúp bé ngửi được hương thơm ngát của nồi cơm mới và hoa bưởi trong vườn?',
       options: ['👅 Cái lưỡi (Vị giác)', '👃 Chiếc mũi (Khứu giác)', '✋ Đôi bàn tay (Xúc giác)'],
       correctIndex: 1,
       explain: 'Chính xác! Chiếc mũi là cơ quan khứu giác giúp bé nhận biết hương thơm.'
     },
     {
+      audioKey: 'quiz-5',
       question: '5. Để có "Nụ cười chắc khỏe" không bị đau như bạn Gấu con, bé cần làm gì mỗi ngày?',
       options: [
         '🦷 Chải răng sáng – tối và hạn chế ăn kẹo ngọt trước khi ngủ',
@@ -271,6 +299,11 @@ window.MNLTH_Interactive = (function () {
         <span>⭐ Điểm bé ngoan: ${quizScore}/${QUIZ_QUESTIONS.length}</span>
       </div>
       <div class="quiz-question">${Utils.escapeHTML(q.question)}</div>
+      <div style="margin-bottom:4px;">
+        <button type="button" class="mini-tool-chip" id="btn-quiz-speak">
+          👩‍🏫 Nghe cô đọc câu đố
+        </button>
+      </div>
       <div class="quiz-options">
         ${q.options
           .map(
@@ -287,6 +320,13 @@ window.MNLTH_Interactive = (function () {
         <button type="button" class="btn-read-more" id="btn-quiz-reset" style="background:var(--color-surface);">🔄 Chơi lại từ đầu</button>
       </div>
     `;
+
+    const speakQuizBtn = document.getElementById('btn-quiz-speak');
+    if (speakQuizBtn) {
+      speakQuizBtn.addEventListener('click', () => {
+        Utils.playTeacherAudio(q.audioKey, q.question, 1.0, null, speakQuizBtn);
+      });
+    }
 
     const feedbackEl = document.getElementById('quiz-feedback-text');
     const optBtns = box.querySelectorAll('[data-quiz-opt]');
@@ -369,7 +409,7 @@ window.MNLTH_Interactive = (function () {
 
   let currentLightboxIdx = 0;
 
-  function openModal({ badge, title, date, bodyHtml, speechText, shareId }) {
+  function openModal({ badge, title, date, bodyHtml, speechText, audioKey, shareId }) {
     const backdrop = document.getElementById('universal-modal');
     const content = document.getElementById('universal-modal-content');
     if (!backdrop || !content) return;
@@ -377,6 +417,8 @@ window.MNLTH_Interactive = (function () {
     Utils.stopSpeech();
 
     const shareUrl = window.location.origin + window.location.pathname + (shareId ? '#' + shareId : '');
+    const voices = Utils.getTeacherVoices();
+    const curVoice = Utils.getCurrentVoice();
 
     content.innerHTML = `
       <div class="modal-header">
@@ -389,18 +431,26 @@ window.MNLTH_Interactive = (function () {
         </div>
         <button type="button" class="modal-close-btn" id="btn-close-modal" aria-label="Đóng cửa sổ">✕</button>
       </div>
-      <div style="display:flex; flex-wrap:wrap; gap:10px; margin-bottom:18px; padding-bottom:14px; border-bottom:1px dashed var(--color-border);">
+      <div style="display:flex; flex-wrap:wrap; align-items:center; gap:10px; margin-bottom:18px; padding-bottom:14px; border-bottom:1px dashed var(--color-border);">
         ${
-          speechText
-            ? `<button type="button" class="btn btn-primary" id="btn-modal-tts" style="padding:8px 16px; min-height:40px;">
-                 🔊 Nghe đọc bài
+          speechText || audioKey
+            ? `<button type="button" class="btn btn-primary" id="btn-modal-tts" style="padding:8px 16px; min-height:42px;">
+                 👩‍🏫 Nghe cô đọc bài
                </button>
-               <button type="button" class="btn btn-secondary" id="btn-modal-tts-stop" style="padding:8px 14px; min-height:40px;">
+               <button type="button" class="btn btn-secondary" id="btn-modal-tts-stop" style="padding:8px 14px; min-height:42px;">
                  ⏹️ Dừng đọc
-               </button>`
+               </button>
+               <select id="modal-voice-select" class="tts-speed-select" data-voice-select aria-label="Chọn giọng cô giáo đọc bài">
+                 ${voices
+                   .map(
+                     (v) =>
+                       `<option value="${Utils.escapeHTML(v.id)}" ${v.id === curVoice.id ? 'selected' : ''}>${Utils.escapeHTML(v.label)}</option>`
+                   )
+                   .join('')}
+               </select>`
             : ''
         }
-        <button type="button" class="btn btn-secondary" id="btn-modal-copy-link" style="padding:8px 16px; min-height:40px;">
+        <button type="button" class="btn btn-secondary" id="btn-modal-copy-link" style="padding:8px 16px; min-height:42px;">
           📋 Sao chép liên kết
         </button>
       </div>
@@ -418,13 +468,17 @@ window.MNLTH_Interactive = (function () {
       closeBtn.addEventListener('click', closeModal);
     }
 
+    const modalVoiceSel = document.getElementById('modal-voice-select');
+    if (modalVoiceSel) {
+      modalVoiceSel.addEventListener('change', (e) => {
+        Utils.setTeacherVoice(e.target.value, true);
+      });
+    }
+
     const ttsBtn = document.getElementById('btn-modal-tts');
-    if (ttsBtn && speechText) {
+    if (ttsBtn && (speechText || audioKey)) {
       ttsBtn.addEventListener('click', () => {
-        ttsBtn.textContent = '🔊 Đang đọc bài...';
-        Utils.speakVietnamese(title + '. ' + speechText, 1.0, () => {
-          ttsBtn.textContent = '🔊 Nghe đọc bài';
-        });
+        Utils.playTeacherAudio(audioKey, title + '. ' + (speechText || ''), 1.0, null, ttsBtn);
       });
     }
 
@@ -432,7 +486,6 @@ window.MNLTH_Interactive = (function () {
     if (ttsStopBtn) {
       ttsStopBtn.addEventListener('click', () => {
         Utils.stopSpeech();
-        if (ttsBtn) ttsBtn.textContent = '🔊 Nghe đọc bài';
       });
     }
 
@@ -493,7 +546,6 @@ window.MNLTH_Interactive = (function () {
           openLightboxItem(currentLightboxIdx);
         }
       }
-      // Phím tắt Ctrl+K mở ô tìm kiếm nhanh
       if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
         e.preventDefault();
         focusQuickSearch();
@@ -547,9 +599,6 @@ window.MNLTH_Interactive = (function () {
     }
   }
 
-  /* ==========================================================================
-     5. IN / LƯU PDF CHUẨN A4 CHO THỰC ĐƠN & KẾ HOẠCH TUẦN
-     ========================================================================== */
   function triggerPrintWeeklyMenu() {
     window.print();
   }

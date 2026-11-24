@@ -1,6 +1,6 @@
 /**
  * ==========================================================================
- * APP.JS — ĐIỀU PHỐI DỮ LIỆU JSON + INLINE FALLBACK, LỌC, TÌM KIẾM & FORM
+ * APP.JS — ĐIỀU PHỐI DỮ LIỆU JSON + INLINE FALLBACK, 3 GIỌNG CÔ GIÁO & MINI TOOLS
  * Trường Mầm non Lê Thế Hiếu — Xã Cam Lộ, Tỉnh Quảng Trị
  * ==========================================================================
  */
@@ -12,7 +12,7 @@
   const Interactive = window.MNLTH_Interactive;
 
   /* ==========================================================================
-     1. DỮ LIỆU FALLBACK NỘI TUYẾN (Đảm bảo mở trực tiếp không bao giờ trắng trang)
+     1. DỮ LIỆU FALLBACK NỘI TUYẾN (Mở trực tiếp 0ms không bao giờ trắng trang)
      ========================================================================== */
   const INLINE_FALLBACK = {
   "siteConfig": {
@@ -760,7 +760,7 @@
   };
 
   /* ==========================================================================
-     2. NẠP DỮ LIỆU TỪ data/*.json (Nếu chạy qua HTTP Server sẽ ưu tiên JSON mới nhất)
+     2. NẠP DỮ LIỆU TỪ data/*.json
      ========================================================================== */
   async function fetchJsonWithFallback(url, fallbackData) {
     try {
@@ -835,21 +835,34 @@
               <p class="campus-meta">📍 <strong>Địa chỉ:</strong> ${Utils.escapeHTML(c.address)}</p>
               <p class="campus-meta">👶 <strong>Độ tuổi:</strong> ${Utils.escapeHTML(c.ageGroups)}</p>
               <p class="campus-meta">${Utils.escapeHTML(c.features)}</p>
+              <div style="margin-top:auto; padding-top:8px; display:flex; gap:6px; flex-wrap:wrap;">
+                <button type="button" class="mini-tool-chip" data-copy-campus="${Utils.escapeHTML(c.name)} - Địa chỉ: ${Utils.escapeHTML(c.address)} (${Utils.escapeHTML(c.ageGroups)})">
+                  📋 Sao chép địa chỉ
+                </button>
+              </div>
             </div>
           `;
         })
         .join('');
+
+      campusContainer.querySelectorAll('[data-copy-campus]').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          Utils.copyTextToClipboard(
+            btn.getAttribute('data-copy-campus'),
+            '📋 Đã sao chép thông tin điểm trường!'
+          );
+        });
+      });
     }
   }
 
   /* ==========================================================================
-     4. RENDER TIN TỨC & SỰ KIỆN (BỐ CỤC BÁO CHÍ BENTO GRID — KHÔNG LẶP TIN)
+     4. RENDER TIN TỨC & SỰ KIỆN (BENTO GRID + NÚT NGHE CÔ ĐỌC NGAY 1 CHẠM)
      ========================================================================== */
   function renderNewsBento() {
     const container = document.getElementById('news-bento-container');
     if (!container || !Array.isArray(state.news) || state.news.length === 0) return;
 
-    // Khử trùng lặp theo id để đảm bảo 100% không bao giờ lặp tin như bản gốc
     const seenIds = new Set();
     const uniqueNews = state.news.filter((item) => {
       if (!item || !item.id || seenIds.has(item.id)) return false;
@@ -870,9 +883,15 @@
           </div>
           <h3 class="news-featured-title">${Utils.escapeHTML(featured.title)}</h3>
           <p class="news-featured-summary">${Utils.escapeHTML(featured.summary)}</p>
-          <div class="news-card-actions">
+          <div class="news-card-actions" style="flex-wrap:wrap;">
             <button type="button" class="btn btn-primary" data-open-news="${Utils.escapeHTML(featured.id)}">
-              📖 Đọc toàn bộ & Nghe đọc bài
+              📖 Đọc chi tiết
+            </button>
+            <button type="button" class="mini-tool-chip" data-speak-news="${Utils.escapeHTML(featured.id)}" title="Nghe giọng cô giáo đọc ngay bản tin này">
+              👩‍🏫 Cô đọc ngay
+            </button>
+            <button type="button" class="mini-tool-chip" data-copy-news="${Utils.escapeHTML(featured.id)}" title="Sao chép tóm tắt gửi Zalo nhóm lớp">
+              📋 Copy gửi Zalo
             </button>
           </div>
         </div>
@@ -889,9 +908,15 @@
                 <span>📅 ${Utils.escapeHTML(item.date)}</span>
               </div>
               <h4 class="news-item-title">${Utils.escapeHTML(item.title)}</h4>
-              <div class="news-card-actions">
+              <div class="news-card-actions" style="flex-wrap:wrap;">
                 <button type="button" class="btn-read-more" data-open-news="${Utils.escapeHTML(item.id)}">
-                  📖 Đọc bài & Nghe 🔊
+                  📖 Đọc bài
+                </button>
+                <button type="button" class="mini-tool-chip" data-speak-news="${Utils.escapeHTML(item.id)}" title="Nghe giọng cô giáo đọc ngay">
+                  👩‍🏫 Nghe cô đọc
+                </button>
+                <button type="button" class="mini-tool-chip" data-copy-news="${Utils.escapeHTML(item.id)}" title="Sao chép bản tin gửi Zalo">
+                  📋 Zalo
                 </button>
               </div>
             </div>
@@ -927,14 +952,39 @@
             ${paragraphs}
           `,
           speechText: speechStr,
+          audioKey: `news-${article.id}`,
           shareId: 'tin-tuc'
         });
+      });
+    });
+
+    container.querySelectorAll('[data-speak-news]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const newsId = btn.getAttribute('data-speak-news');
+        const article = uniqueNews.find((n) => n.id === newsId);
+        if (!article) return;
+        const speechStr = Array.isArray(article.content)
+          ? article.content.join(' ')
+          : article.summary;
+        Utils.playTeacherAudio(`news-${article.id}`, `${article.title}. ${speechStr}`, 1.0, null, btn);
+      });
+    });
+
+    container.querySelectorAll('[data-copy-news]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const newsId = btn.getAttribute('data-copy-news');
+        const article = uniqueNews.find((n) => n.id === newsId);
+        if (!article) return;
+        const text = `[TIN TỨC TRƯỜNG MN LÊ THẾ HIẾU - ${article.date}]
+📌 ${article.title}
+${article.summary}`;
+        Utils.copyTextToClipboard(text, '📋 Đã sao chép bản tin để dán gửi Zalo nhóm lớp!');
       });
     });
   }
 
   /* ==========================================================================
-     5. RENDER THỰC ĐƠN TUẦN & KẾ HOẠCH TUẦN (THỨ 2 -> THỨ 6 + BẢNG IN A4)
+     5. RENDER THỰC ĐƠN TUẦN & KẾ HOẠCH TUẦN (THỨ 2 -> THỨ 6 + NÚT CÔ ĐỌC THỰC ĐƠN)
      ========================================================================== */
   function renderWeeklyMenuAndSchedule() {
     const days = (state.menu && state.menu.days) || [];
@@ -966,9 +1016,17 @@
             🌟 Chủ đề ngày: ${Utils.escapeHTML(activeDay.theme)}
           </h3>
         </div>
-        <button type="button" class="btn btn-primary no-print" id="btn-print-menu-inline">
-          🖨️ In / Lưu PDF chuẩn A4
-        </button>
+        <div class="no-print" style="display:flex; flex-wrap:wrap; gap:8px; align-items:center;">
+          <button type="button" class="mini-tool-chip" id="btn-speak-menu-day" title="Nghe giọng cô giáo đọc thực đơn và lịch học ngày hôm nay">
+            👩‍🏫 Cô đọc Thực đơn ${Utils.escapeHTML(activeDay.shortName)}
+          </button>
+          <button type="button" class="mini-tool-chip" id="btn-copy-menu-day" title="Sao chép thực đơn ngày hôm nay để gửi Zalo cho phụ huynh">
+            📋 Copy Thực đơn gửi Zalo
+          </button>
+          <button type="button" class="btn btn-primary" id="btn-print-menu-inline">
+            🖨️ In / Lưu PDF A4
+          </button>
+        </div>
       </div>
 
       <div class="meals-grid">
@@ -1013,7 +1071,44 @@
       inlinePrintBtn.addEventListener('click', Interactive.triggerPrintWeeklyMenu);
     }
 
-    // Điền bảng tổng hợp cả tuần phục vụ in A4 và tra cứu tổng thể
+    const speakMenuBtn = document.getElementById('btn-speak-menu-day');
+    if (speakMenuBtn) {
+      speakMenuBtn.addEventListener('click', () => {
+        const txt =
+          `Thực đơn và kế hoạch ${activeDay.dayName}, chủ đề: ${activeDay.theme}. ` +
+          `Bữa phụ sáng: ${activeDay.meals.morning.dish}. ` +
+          `Bữa chính trưa bán trú: ${activeDay.meals.lunch.dish}. ` +
+          `Bữa phụ chiều: ${activeDay.meals.afternoon.dish}. ` +
+          `Hoạt động sáng: ${activeDay.schedule.morningActivity}. ` +
+          `Hoạt động chiều: ${activeDay.schedule.afternoonActivity}.`;
+        Utils.playTeacherAudio(`menu-${activeDay.dayId}`, txt, 1.0, null, speakMenuBtn);
+      });
+    }
+
+    const copyMenuBtn = document.getElementById('btn-copy-menu-day');
+    if (copyMenuBtn) {
+      copyMenuBtn.addEventListener('click', () => {
+        const zaloText =
+          `[THỰC ĐƠN & KẾ HOẠCH ${activeDay.dayName.toUpperCase()} - TRƯỜNG MN LÊ THẾ HIẾU]
+` +
+          `🌟 Chủ đề: ${activeDay.theme}
+` +
+          `🥛 Bữa sáng: ${activeDay.meals.morning.dish}
+` +
+          `🍲 Bữa trưa: ${activeDay.meals.lunch.dish}
+` +
+          `🍊 Bữa chiều: ${activeDay.meals.afternoon.dish}
+` +
+          `☀️ Hoạt động sáng: ${activeDay.schedule.morningActivity}
+` +
+          `🌤️ Hoạt động chiều: ${activeDay.schedule.afternoonActivity}`;
+        Utils.copyTextToClipboard(
+          zaloText,
+          `📋 Đã sao chép Thực đơn ${activeDay.dayName} để cô giáo/phụ huynh dán gửi Zalo!`
+        );
+      });
+    }
+
     if (printTableBody) {
       printTableBody.innerHTML = days
         .map(
@@ -1034,7 +1129,7 @@
   }
 
   /* ==========================================================================
-     6. KHO TÀI NGUYÊN SƯ PHẠM (LỌC ĐA ĐIỀU KIỆN + TÌM KIẾM KHÔNG DẤU)
+     6. KHO TÀI NGUYÊN SƯ PHẠM (LỌC ĐA ĐIỀU KIỆN + TÌM KIẾM KHÔNG DẤU + NÚT MINI)
      ========================================================================== */
   function renderResources() {
     const grid = document.getElementById('resources-grid-container');
@@ -1094,11 +1189,16 @@
           </div>
           <h3 class="resource-title">${Utils.escapeHTML(item.title)}</h3>
           <p class="resource-desc">${Utils.escapeHTML(item.description)}</p>
-          <div class="resource-footer">
+          <div class="resource-footer" style="flex-wrap:wrap; gap:8px;">
             <span>🏫 ${Utils.escapeHTML(item.campus)}</span>
-            <button type="button" class="btn-read-more" data-open-res="${Utils.escapeHTML(item.id)}">
-              Xem chi tiết ➔
-            </button>
+            <div style="display:flex; align-items:center; gap:6px; margin-left:auto;">
+              <button type="button" class="mini-tool-chip" data-speak-res="${Utils.escapeHTML(item.id)}" title="Nghe giọng cô giáo giới thiệu học liệu này">
+                👩‍🏫 Nghe cô
+              </button>
+              <button type="button" class="btn-read-more" data-open-res="${Utils.escapeHTML(item.id)}">
+                Xem chi tiết ➔
+              </button>
+            </div>
           </div>
         </article>`
       )
@@ -1123,8 +1223,24 @@
             </div>
           `,
           speechText: `${item.title}. Khối ${item.ageGroup}. ${item.description}`,
+          audioKey: `res-${item.id}`,
           shareId: 'tai-nguyen'
         });
+      });
+    });
+
+    grid.querySelectorAll('[data-speak-res]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const resId = btn.getAttribute('data-speak-res');
+        const item = state.resources.find((r) => r.id === resId);
+        if (!item) return;
+        Utils.playTeacherAudio(
+          `res-${item.id}`,
+          `Học liệu: ${item.title}. Khối ${item.ageGroup}, đơn vị ${item.campus}. ${item.description}`,
+          1.0,
+          null,
+          btn
+        );
       });
     });
   }
@@ -1152,10 +1268,20 @@
         renderResources();
       });
     }
+
+    // Nút gợi ý từ khóa tìm kiếm 1 chạm cho các cô và phụ huynh
+    document.querySelectorAll('[data-quick-keyword]').forEach((chip) => {
+      chip.addEventListener('click', () => {
+        const kw = chip.getAttribute('data-quick-keyword') || '';
+        state.resourceFilter.query = kw;
+        if (sInput) sInput.value = kw;
+        renderResources();
+      });
+    });
   }
 
   /* ==========================================================================
-     7. HỆ THỐNG VĂN BẢN & CÔNG KHAI NĂM HỌC 2026–2027 (CHỈ HIỂN THỊ ĐÚNG CẤP)
+     7. HỆ THỐNG VĂN BẢN & CÔNG KHAI NĂM HỌC 2026–2027 (KÈM NÚT NGHE CÔ ĐỌC)
      ========================================================================== */
   function renderDocuments() {
     const tbody = document.getElementById('documents-tbody');
@@ -1199,9 +1325,14 @@
             <span style="font-size:var(--text-xs);">BH: ${Utils.escapeHTML(doc.issueDate)}<br/>HL: ${Utils.escapeHTML(doc.effectiveDate)}</span>
           </td>
           <td data-label="Thao tác">
-            <button type="button" class="btn-read-more" data-open-doc="${Utils.escapeHTML(doc.id)}">
-              📄 Xem tóm tắt
-            </button>
+            <div style="display:flex; flex-wrap:wrap; gap:6px;">
+              <button type="button" class="mini-tool-chip" data-speak-doc="${Utils.escapeHTML(doc.id)}" title="Nghe giọng cô đọc tóm tắt văn bản">
+                👩‍🏫 Nghe
+              </button>
+              <button type="button" class="btn-read-more" data-open-doc="${Utils.escapeHTML(doc.id)}">
+                📄 Chi tiết
+              </button>
+            </div>
           </td>
         </tr>`
       )
@@ -1227,8 +1358,24 @@
             </div>
           `,
           speechText: `${doc.title}. Cơ quan ban hành: ${doc.issuer}. ${doc.summary}`,
+          audioKey: `doc-${doc.id}`,
           shareId: 'van-ban'
         });
+      });
+    });
+
+    tbody.querySelectorAll('[data-speak-doc]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const docId = btn.getAttribute('data-speak-doc');
+        const doc = state.documents.find((d) => d.id === docId);
+        if (!doc) return;
+        Utils.playTeacherAudio(
+          `doc-${doc.id}`,
+          `${doc.title}. Số hiệu: ${doc.code}, do ${doc.issuer} ban hành ngày ${doc.issueDate}. Nội dung tóm tắt: ${doc.summary}`,
+          1.0,
+          null,
+          btn
+        );
       });
     });
   }
@@ -1253,7 +1400,7 @@
   }
 
   /* ==========================================================================
-     8. FORM Ý KIẾN PHỤ HUYNH & TIỆN ÍCH KẾT NỐI 1 CHẠM (.VCF / QR / COPY)
+     8. FORM Ý KIẾN PHỤ HUYNH & THANH ĐIỀU KHIỂN 3 GIỌNG CÔ GIÁO MẦM NON
      ========================================================================== */
   function initParentFeedbackForm() {
     const form = document.getElementById('parent-feedback-form');
@@ -1340,8 +1487,63 @@
     }
   }
 
+  function initTeacherVoiceControlsAndToolbar() {
+    const curVoice = Utils.getCurrentVoice();
+    Utils.setTeacherVoice(curVoice.id, false);
+
+    // Gắn sự kiện cho mọi dropdown và nút chọn 3 giọng cô giáo
+    document.querySelectorAll('[data-voice-select]').forEach((sel) => {
+      sel.value = curVoice.id;
+      sel.addEventListener('change', (e) => {
+        Utils.setTeacherVoice(e.target.value, true);
+      });
+    });
+
+    document.querySelectorAll('[data-voice-pill]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const vid = btn.getAttribute('data-voice-pill');
+        Utils.setTeacherVoice(vid, true);
+        // Phát thử lời chào ngắn của cô giáo
+        Utils.playTeacherAudio(
+          'welcome',
+          'Cô giáo trường Mầm non Lê Thế Hiếu xin kính chào quý bậc phụ huynh và các bé thân yêu!',
+          1.0,
+          null,
+          null
+        );
+      });
+    });
+
+    const btnHeroWelcomeVoice = document.getElementById('btn-hero-welcome-voice');
+    if (btnHeroWelcomeVoice) {
+      btnHeroWelcomeVoice.addEventListener('click', () => {
+        Utils.playTeacherAudio(
+          'welcome',
+          'Cô giáo trường Mầm non Lê Thế Hiếu xin kính chào quý bậc phụ huynh và các bé thân yêu!',
+          1.0,
+          null,
+          btnHeroWelcomeVoice
+        );
+      });
+    }
+
+    const btnFloatingStop = document.getElementById('btn-floating-stop-audio');
+    if (btnFloatingStop) {
+      btnFloatingStop.addEventListener('click', () => {
+        Utils.stopSpeech();
+        Utils.showToast('⏹️ Đã dừng giọng đọc của cô giáo.');
+      });
+    }
+
+    const btnBackToTop = document.getElementById('btn-floating-top');
+    if (btnBackToTop) {
+      btnBackToTop.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
+  }
+
   function initOneTouchConnectAndHeader() {
-    // Vẽ mã QR trang web
     Utils.renderCleanQRMatrix('school-qr-canvas', state.siteConfig?.websiteUrl || 'https://mnlethehieu.quangtri.edu.vn');
 
     const vcardBtn = document.getElementById('btn-download-vcard');
@@ -1385,18 +1587,17 @@
             </div>
           `,
           speechText: 'Đường dây nóng Bảo vệ Trẻ em xã Cam Lộ và Tổng đài Quốc gia 1 1 1 trực miễn phí 24 trên 7.',
+          audioKey: 'doc-vb-xa-duong-day-nong',
           shareId: 'ket-noi'
         });
       });
     }
 
-    // Nút tìm kiếm nhanh trên Top Bar
     const topSearchBtn = document.getElementById('btn-top-search');
     if (topSearchBtn) {
       topSearchBtn.addEventListener('click', Interactive.focusQuickSearch);
     }
 
-    // Nút Chế độ đọc tập trung
     const readingModeBtn = document.getElementById('btn-reading-mode');
     if (readingModeBtn) {
       readingModeBtn.addEventListener('click', () => {
@@ -1407,13 +1608,11 @@
       });
     }
 
-    // Nút इन PDF ở tiêu đề Góc phụ huynh
     const topPrintBtn = document.getElementById('btn-print-menu-top');
     if (topPrintBtn) {
       topPrintBtn.addEventListener('click', Interactive.triggerPrintWeeklyMenu);
     }
 
-    // Menu Mobile
     const mobileBtn = document.getElementById('btn-mobile-menu');
     const mainNav = document.getElementById('main-navigation');
     if (mobileBtn && mainNav) {
@@ -1438,12 +1637,12 @@
      ========================================================================== */
   async function boot() {
     Utils.initFontScale();
+    initTeacherVoiceControlsAndToolbar();
     Interactive.initAlphabetCard();
     Interactive.initStoryCard();
     Interactive.initQuizCard();
     Interactive.initGalleryAndModalEvents();
 
-    // Render ngay lập tức bằng dữ liệu Fallback để tốc độ phản hồi 0ms
     renderOrganizationAndCampuses();
     renderNewsBento();
     renderWeeklyMenuAndSchedule();
@@ -1455,7 +1654,6 @@
     initParentFeedbackForm();
     initOneTouchConnectAndHeader();
 
-    // Đồng bộ lại từ data/*.json nếu có chỉnh sửa mới từ giáo viên
     await loadAllData();
     renderOrganizationAndCampuses();
     renderNewsBento();

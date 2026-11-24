@@ -1711,3 +1711,140 @@ button {
     text-align: center;
   }
 }
+
+
+/* ==========================================================================
+   14. BỘ NÚT CHỨC NĂNG NHỎ (MINI-TOOLS) & TRẠM CHỌN 3 GIỌNG CÔ GIÁO MẦM NON
+   ========================================================================== */
+.mini-tool-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 6px 12px;
+  min-height: 36px;
+  border-radius: var(--radius-pill);
+  background-color: var(--color-warm-soft);
+  border: 1.5px solid var(--color-warm-border);
+  color: var(--color-warm-dark);
+  font-weight: 700;
+  font-size: var(--text-xs);
+  white-space: nowrap;
+  transition: all var(--transition-fast);
+}
+
+.mini-tool-chip:hover,
+.mini-tool-chip.speaking-active {
+  background-color: var(--color-warm);
+  border-color: var(--color-warm);
+  color: #1C2621;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 10px rgba(245, 158, 11, 0.25);
+}
+
+.voice-selector-strip {
+  background: linear-gradient(90deg, var(--color-primary-soft) 0%, var(--color-warm-soft) 100%);
+  border: 1.5px solid var(--color-primary-border);
+  border-radius: var(--radius-md);
+  padding: 12px 16px;
+  margin-bottom: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.voice-pills-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.voice-pill-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  min-height: 40px;
+  border-radius: var(--radius-pill);
+  background-color: var(--color-surface);
+  border: 1.5px solid var(--color-border);
+  font-weight: 700;
+  font-size: var(--text-xs);
+  color: var(--color-text);
+  transition: all var(--transition-fast);
+}
+
+.voice-pill-btn:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.voice-pill-btn.active {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #FFFFFF;
+  box-shadow: var(--shadow-sm);
+}
+
+.top-voice-select {
+  background: rgba(255, 255, 255, 0.18);
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: var(--radius-pill);
+  padding: 6px 12px;
+  min-height: 40px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.top-voice-select option {
+  color: #1C2621;
+  background: #FFFFFF;
+}
+
+.quick-keyword-bar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+/* Trạm trợ lý nổi góc dưới (Floating Teacher Assistant Bar) */
+.floating-teacher-dock {
+  position: fixed;
+  bottom: 18px;
+  left: 18px;
+  z-index: 1800;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: rgba(255, 253, 249, 0.96);
+  backdrop-filter: blur(10px);
+  border: 2px solid var(--color-primary);
+  padding: 6px 12px;
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-lg);
+}
+
+.floating-voice-badge {
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: var(--color-primary);
+}
+
+.floating-voice-badge.is-playing {
+  color: var(--color-warm-dark);
+}
+
+@media (max-width: 640px) {
+  .floating-teacher-dock {
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    justify-content: space-between;
+  }
+}
