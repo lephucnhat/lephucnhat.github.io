@@ -285,9 +285,9 @@
         <button class="book-tool-btn" style="background:#8B1E1E;color:#fef3c7;border-color:#D4AF37;" onclick="openTamThuModal()">💌 Tâm Thư Đời 23 (24/11/2026)</button>
         <button id="ttsBtn" class="book-tool-btn" onclick="toggleReadAloud()">🔊 Nghe Đọc Phả Ký</button>
         <button id="bookDarkBtn" class="book-tool-btn" onclick="toggleBookDarkMode()">${bookDark ? "☀️ Chế độ Giấy Dó Sáng" : "🌙 Chế độ Đọc Ban Đêm"}</button>
+        <button class="book-tool-btn" onclick="openQrModal()">📱 Mã QR & Thiệp Zalo</button>
         <button class="book-tool-btn" onclick="window.print()">🖨️ In Sách Gia Phả (A4)</button>
         <button class="book-tool-btn" onclick="openContributeModal()">✍️ Chi/Phái Đóng Góp</button>
-        <button class="book-tool-btn" onclick="switchStyle(2)">🏮 Xem Cây Phả Đồ</button>
       </div>
 
       <div class="book-jump-bar">
@@ -310,6 +310,23 @@
         </div>
         <div style="margin-top:12px;font-size:0.84rem;color:#6e1414;font-style:italic;">
           Số hóa từ Gia Phả Giấy bởi hậu duệ Đời thứ 23: <strong>Trần Văn Thuần</strong> • <a href="javascript:void(0)" onclick="openTamThuModal()" style="color:#9e1b1b;font-weight:700;">Đọc Tâm Thư →</a>
+        </div>
+        <div class="book-summary-strip">
+          <div class="book-summary-box">
+            <div style="font-size:11px;font-weight:800;color:#8B1E1E;text-transform:uppercase;">Giai đoạn 1 (Đời 1 – Đời 7)</div>
+            <div style="font-weight:700;font-size:13.5px;margin:2px 0;">Thượng Nguồn & Hoàng Triều Đông A</div>
+            <div style="font-size:12px;opacity:0.82;">Từ Đức Thượng Tổ (1009, Tức Mặc) qua các Hoàng đế, Danh tướng nhà Trần đến Cụ Trần Quốc Hiển (lăng Cồn Cả, 1381).</div>
+          </div>
+          <div class="book-summary-box">
+            <div style="font-size:11px;font-weight:800;color:#8B1E1E;text-transform:uppercase;">Giai đoạn 2 (Đời 8 – Đời 19)</div>
+            <div style="font-weight:700;font-size:13.5px;margin:2px 0;">Mạch Trực Hệ & Khai Khẩn Lãng Nam</div>
+            <div style="font-size:12px;opacity:0.82;">Từ Tổ Vô Vi (bước ngoặt đổi họ Đặng rồi phục hồi họ Trần), công đức khai phá Lãng Nam (1629) đến Cụ Quyền Tự.</div>
+          </div>
+          <div class="book-summary-box">
+            <div style="font-size:11px;font-weight:800;color:#8B1E1E;text-transform:uppercase;">Giai đoạn 3 (Đời 20 – Đời 25+)</div>
+            <div style="font-weight:700;font-size:13.5px;margin:2px 0;">Chi Cụ Tổ Chí Hòa & Hậu Duệ Đương Đại</div>
+            <div style="font-size:12px;opacity:0.82;">Ba nhánh lớn (Ông Đức Long, Ông Văn Thịnh, Ông Đức Vượng) phát triển tại Ninh Bình, Hà Nội, Lâm Đồng & muôn phương.</div>
+          </div>
         </div>
       </div>
 
@@ -420,7 +437,10 @@
         .text(d => `Đời ${d.data.gen}${d.data.userAdded ? " • Mới" : (d.data.isMainLine ? " • Trực Hệ" : "")}`);
       nodeEnter.append("text").attr("class", "s1-node-name")
         .attr("x", 0).attr("y", 11).attr("text-anchor", "middle")
-        .text(d => d.data.name.length > 20 ? d.data.name.slice(0, 19) + "…" : d.data.name);
+        .text(d => {
+          const disp = d.data.gen === 1 ? "Đức Thượng Tổ" : d.data.name;
+          return disp.length > 20 ? disp.slice(0, 19) + "…" : disp;
+        });
 
       const toggleBtn = nodeEnter.filter(d => (d.children || d._children))
         .append("g").attr("class", "s1-toggle")
@@ -448,9 +468,18 @@
     s2TreeFn = {
       update,
       resetZoom: () => {
-        const t = s2Orientation === "vertical"
-          ? d3.zoomIdentity.translate(width / 2, 65).scale(0.92)
-          : d3.zoomIdentity.translate(110, height / 2).scale(0.92);
+        const nodes = root.descendants();
+        const isVert = s2Orientation === "vertical";
+        // Tự động tính tâm khung bao của các thế hệ đầu (Đời 1 -> Đời 7) để toàn bộ nhánh mở không bao giờ bị lệch trái/phải
+        const topNodes = nodes.filter(n => n.depth <= 6);
+        const xs = topNodes.map(n => isVert ? n.x : n.y);
+        const minX = Math.min(...xs), maxX = Math.max(...xs);
+        const midX = (minX + maxX) / 2;
+        const spanX = Math.max(400, maxX - minX + 260);
+        const sc = Math.min(0.92, Math.max(0.62, (width - 80) / spanX));
+        const t = isVert
+          ? d3.zoomIdentity.translate(width / 2 - midX * sc, 65).scale(sc)
+          : d3.zoomIdentity.translate(110, height / 2).scale(0.88);
         svg.transition().duration(500).call(zoom.transform, t);
       },
       expandAll: () => {
@@ -698,12 +727,12 @@
 
       // Thuật toán chống đè chữ (Screen-Space AABB Collision Avoidance):
       // Ưu tiên hiển thị nhãn Trực hệ & nhân vật chính, kiểm tra khung bao 2D của từng nhãn để đảm bảo 0% chồng lấn!
-      const shortName = (str) => str.replace(/\s*\([^)]*\)/g, "").trim();
+      const shortName = (d) => d.gen === 1 ? "Đức Thượng Tổ" : d.name.replace(/\s*\([^)]*\)/g, "").trim();
       node.append("text").attr("class", "s3-label")
         .attr("dy", d => d.gen === 1 ? "-12px" : "0.32em")
         .attr("x", d => d.gen === 1 ? 0 : (d.gx >= 0 ? 9 : -9))
         .attr("text-anchor", d => d.gen === 1 ? "middle" : (d.gx >= 0 ? "start" : "end"))
-        .text(d => `${shortName(d.name)} (Đ${d.gen})`);
+        .text(d => `${shortName(d)} (Đ${d.gen})`);
 
       function updateLabelVisibility(scaleK) {
         const boxes = [];
@@ -715,7 +744,7 @@
         ordered.forEach(({ el, d }) => {
           const txtEl = el.querySelector(".s3-label");
           if (!txtEl) return;
-          const labelLen = (shortName(d.name).length + 5) * 6.4 / Math.sqrt(scaleK);
+          const labelLen = (shortName(d).length + 5) * 6.4 / Math.sqrt(scaleK);
           const labelH = 14 / Math.sqrt(scaleK);
           const x1 = d.gx >= 0 ? d.gx + 8 : d.gx - 8 - labelLen;
           const y1 = d.gy - labelH / 2;
@@ -770,11 +799,35 @@
       node.append("circle").attr("r", d => d.isMainLine ? 7 : 5)
         .attr("fill", d => d.userAdded ? "#34d399" : (d.isMainLine ? "#fbbf24" : (d.gender === "F" ? "#f472b6" : "#60a5fa")));
       node.append("text").attr("class", "s3-label").attr("x", 9).attr("dy", "0.35em")
-        .text(d => d.name.replace(/\s*\([^)]*\)/g, ""));
+        .text(d => d.gen === 1 ? "Đức Thượng Tổ (Đ1)" : `${d.name.replace(/\s*\([^)]*\)/g, "")} (Đ${d.gen})`);
+
+      function hideOverlappingForceLabels() {
+        const boxes = [];
+        const ordered = [];
+        node.each(function (d) { ordered.push({ el: this, d }); });
+        ordered.sort((a, b) => (b.d.isMainLine ? 1 : 0) - (a.d.isMainLine ? 1 : 0) || a.d.gen - b.d.gen);
+        ordered.forEach(({ el, d }) => {
+          const txtEl = el.querySelector(".s3-label");
+          if (!txtEl) return;
+          const w = (txtEl.textContent.length) * 6.6;
+          const h = 15;
+          const box = { x1: d.x + 8, y1: d.y - h / 2, x2: d.x + 8 + w, y2: d.y + h / 2 };
+          const hit = boxes.some(b => !(box.x2 < b.x1 || box.x1 > b.x2 || box.y2 < b.y1 || box.y1 > b.y2));
+          if (!hit) { boxes.push(box); txtEl.style.opacity = "1"; }
+          else { txtEl.style.opacity = "0"; }
+        });
+      }
+
+      // Chạy trước 140 bước mô phỏng để mạng lưới ổn định ngay khi mở và lọc chống đè chữ 100%
+      for (let i = 0; i < 140; i++) sim.tick();
+      link.attr("x1", d => d.source.x).attr("y1", d => d.source.y).attr("x2", d => d.target.x).attr("y2", d => d.target.y);
+      node.attr("transform", d => `translate(${d.x},${d.y})`);
+      hideOverlappingForceLabels();
 
       sim.on("tick", () => {
         link.attr("x1", d => d.source.x).attr("y1", d => d.source.y).attr("x2", d => d.target.x).attr("y2", d => d.target.y);
         node.attr("transform", d => `translate(${d.x},${d.y})`);
+        hideOverlappingForceLabels();
       });
       s4ZoomReset = () => svg.transition().duration(500).call(zoom.transform, d3.zoomIdentity.translate(0, 0).scale(1));
     }
@@ -1613,6 +1666,47 @@
       </div>
     `;
     document.getElementById("globalModal").classList.add("open");
+  };
+
+  window.openQrModal = function () {
+    const liveUrl = "https://lephucnhat.vn/gia-pha-ho-tran/";
+    const qrImg = "qr-tu-duong.png";
+    const qrFallback = `https://api.qrserver.com/v1/create-qr-code/?size=220x220&margin=8&data=${encodeURIComponent(liveUrl)}`;
+    document.getElementById("modalContent").innerHTML = `
+      <span class="modal-tag">KẾT NỐI TỪ ĐƯỜNG SỐ • ĐÔNG A VẠN ĐẠI</span>
+      <h2 class="modal-title">📱 Bảng Mã QR Từ Đường & Thiệp Mời Họ</h2>
+      <p style="font-size:13px;opacity:0.85;margin-bottom:10px;">
+        In bảng mã QR này đặt tại Từ Đường Họ Trần Lãng Nam (Thôn Đồng Thái, xã Ninh Cường, tỉnh Ninh Bình) hoặc gửi thiệp thông báo vào nhóm Zalo để bà con các chi/phái quét mã tra cứu và bổ sung gia phả.
+      </p>
+      <div style="text-align:center;">
+        <div class="qr-frame">
+          <div style="font-family:var(--font-serif);font-weight:800;font-size:14px;color:#8B1E1E;letter-spacing:1px;">❖ PHẢ CHI HỌ TRẦN — LÃNG NAM ❖</div>
+          <img src="${qrImg}" onerror="this.src='${qrFallback}'" alt="QR Gia Phả Họ Trần" style="width:190px;height:190px;border-radius:8px;border:1px solid #e2cfa9;" />
+          <div style="font-size:12px;font-weight:700;color:#1F1A17;">Quét mã mở Gia Phả Số (Đời 1 – Đời 25+)</div>
+          <div style="font-size:11px;color:#6e1414;">lephucnhat.vn/gia-pha-ho-tran</div>
+        </div>
+      </div>
+      <div class="btn-row">
+        <button class="btn-primary" onclick="copyZaloAnnouncement()">📋 Sao Chép Thiệp Gửi Nhóm Zalo Dòng Họ</button>
+        <button class="btn-secondary" onclick="window.print()">🖨️ In Bảng Mã QR Đặt Tại Từ Đường</button>
+      </div>
+    `;
+    document.getElementById("globalModal").classList.add("open");
+  };
+
+  window.copyZaloAnnouncement = function () {
+    const msg = [
+      "🏮 KÍNH BÁO: RA MẮT GIA PHẢ SỐ HỌ TRẦN — LÃNG NAM (ĐỜI 1 – ĐỜI 25+)",
+      "Nhân Ngày Văn Hóa Việt Nam (24/11/2026), với tấm lòng tri ân công đức Tiên Tổ (“Cây có gốc, nước có nguồn”), cuốn Phả Chi Họ Trần Lãng Nam (Thôn Đồng Thái, xã Ninh Cường, tỉnh Ninh Bình) đã chính thức được số hóa trên 5 giao diện tương tác.",
+      "",
+      "👉 Mời các bậc Cao Niên, Chú Bác, Cô Dì, Anh Chị Em các Phái, các Chi, các Nhánh bấm vào xem và bổ sung thông tin gia đình tại:",
+      "🔗 https://lephucnhat.vn/gia-pha-ho-tran/",
+      "",
+      "✍️ Cách bổ sung: Mở trang web -> bấm nút cam “✍️ Bổ Sung” để điền thêm ngày sinh, ngày giỗ, di ảnh, vợ/chồng và con cháu Đời 22–25+ rồi bấm “Sao chép gửi Zalo Admin” để tổng hợp lưu truyền muôn đời!"
+    ].join("\n");
+    navigator.clipboard?.writeText(msg).then(() => {
+      showToast("📋 Đã sao chép Thiệp Thông Báo! Hãy dán ngay vào nhóm Zalo dòng họ.");
+    });
   };
 
   window.openChangelogModal = function () {
