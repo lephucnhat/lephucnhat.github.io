@@ -1,0 +1,30 @@
+{
+  "name": "Lê Phúc Nhật • Hiểu Sâu Sống Tỉnh Hành Đúng",
+  "short_name": "Lê Phúc Nhật",
+  "description": "Không gian Tri thức, Hệ sinh thái 34 Chuyên trang 4D & Danh thiếp thông minh của Lê Phúc Nhật — Chủ tịch HĐQT HTX Lâm Nghiệp Bền Vững Keo Sơn.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#070b14",
+  "theme_color": "#070b14",
+  "lang": "vi-VN",
+  "icons": [
+    {
+      "src": "./icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

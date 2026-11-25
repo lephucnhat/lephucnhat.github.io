@@ -1,104 +1,82 @@
 /**
- * AI ASSISTANT CHATBOT (DEEPSEEK & GOOGLE GEMINI) - TUẤN TỬ TẾ (lephucnhat.vn)
- * Tự động giải đáp 24/7 mọi thắc mắc về Anh Lê Phúc Nhật (Lê Phúc Nhật Từ Tâm),
- * triết lý sống tử tế, sự rộng lượng, hệ sinh thái GTO Media,
- * Hội Doanh Nhân Trẻ Khánh Hòa, kiến tạo cuộc sống kỷ nguyên AI và gia đình.
+ * TRỢ LÝ AI LÊ PHÚC NHẬT (lephucnhat.vn) — CHUẨN BẢO MẬT ZERO-LEAK
+ * Đồng bộ nhận diện: Hiểu Sâu • Sống Tỉnh • Hành Đúng
+ * Chủ tịch HĐQT HTX Lâm Nghiệp Bền Vững Keo Sơn • Chuyên gia AI Thực Chiến Xứ Cùa, Quảng Trị
+ * Bảo mật 100%: Không nhúng khóa API công khai trong mã nguồn tĩnh.
+ * Tự động đồng bộ khóa API từ localStorage của lephucnhat.vn (nếu quản trị viên đã cấu hình).
  */
-
 (function () {
   'use strict';
 
-  // Mã hóa Base64 an toàn cho key hệ thống mặc định
-  const DEFAULT_DEEPSEEK_KEY = atob('c2stNmJjZDIxMDJhZTQ1NDIxYWE5NjlkNjE3MmM2MzA2NGY=');
-  const DEFAULT_GEMINI_KEY = atob('QVEuQWI4Uk42SkRIa1E3WTJjcEhIUGt0Y3pEdHdpY2RJaHFLZjBDUEZCMFRCMnZtNEtzNnc=');
+  // Chống khởi tạo trùng nếu trang nhúng nhiều lần
+  if (window.__LPN_SUBPAGE_AI_INIT__) return;
+  window.__LPN_SUBPAGE_AI_INIT__ = true;
+
+  const FALLBACK_AVATAR_SVG = "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20200%20200%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22bg%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23042f24%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23064e3b%22%2F%3E%3C%2FlinearGradient%3E%3ClinearGradient%20id%3D%22gold%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23fde68a%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23f59e0b%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Ccircle%20cx%3D%22100%22%20cy%3D%22100%22%20r%3D%2296%22%20fill%3D%22url(%23bg)%22%20stroke%3D%22url(%23gold)%22%20stroke-width%3D%226%22%2F%3E%3Ctext%20x%3D%22100%22%20y%3D%22115%22%20text-anchor%3D%22middle%22%20fill%3D%22url(%23gold)%22%20font-family%3D%22Georgia%2C%20serif%22%20font-weight%3D%22bold%22%20font-size%3D%2256%22%3ELPN%3C%2Ftext%3E%3C%2Fsvg%3E";
+  const AVATAR_URL = "../111.jpg";
+
+  function safeGet(k, fb = '') {
+    try { return localStorage.getItem(k) || fb; } catch (e) { return fb; }
+  }
+  function safeSet(k, v) {
+    try { localStorage.setItem(k, v); } catch (e) {}
+  }
+  function safeRemove(k) {
+    try { localStorage.removeItem(k); } catch (e) {}
+  }
 
   const AI_CONFIG = {
-    provider: localStorage.getItem('ttt_ai_provider') || 'deepseek',
-    deepseekKey: localStorage.getItem('ttt_deepseek_key') || DEFAULT_DEEPSEEK_KEY,
-    geminiKey: localStorage.getItem('ttt_gemini_key') || DEFAULT_GEMINI_KEY,
-    geminiModel: 'gemini-3.8-flash',
+    provider: safeGet('lpn_sub_ai_provider', 'auto'),
+    deepseekKey: safeGet('lpn_deepseek_api_key', ''),
+    geminiKey: safeGet('lpn_gemini_api_key', ''),
+    geminiModel: 'gemini-2.5-flash',
     deepseekModel: 'deepseek-chat',
     maxHistory: 10
   };
 
   const SYSTEM_KNOWLEDGE = `
-Bạn là "Trợ lý AI của Doanh nhân Lê Phúc Nhật (Lê Phúc Nhật • Từ Tâm)" - đại diện số thông minh, thanh lịch, uyên bác và giàu lòng nhân ái trên website lephucnhat.vn.
+Bạn là Trợ lý AI chính thức của anh Lê Phúc Nhật (Hiểu Sâu • Sống Tỉnh • Hành Đúng) trên hệ sinh thái giáo trình 4D tại lephucnhat.vn.
 
-THÔNG TIN CHÍNH THỨC VỀ DOANH NHÂN NGUYỄN ANH TUẤN:
-- Họ và tên: NGUYỄN ANH TUẤN (Thương hiệu cá nhân: Lê Phúc Nhật • Từ Tâm).
-- Trang Facebook chính thức: https://www.facebook.com/TuanTuTeTT (5.5K+ Followers).
-- Kênh YouTube: @TuấnTửTếTừTâm (https://www.youtube.com/@Tu%E1%BA%A5nT%E1%BB%ADT%E1%BA%BFT%E1%BB%ABT%C3%A2m).
-- Email liên hệ: tuan@media-gto.com.
-- Website cá nhân: https://lephucnhat.vn/
-- Ngày sinh: 02 / 01 / 1977 (Tuổi Bính Thìn).
-- Hậu phương gia đình: MỘT vợ + HAI con gái. Kỷ niệm ngày cưới: 19 / 12 / 2005.
+THÔNG TIN CHÍNH THỨC VỀ LÊ PHÚC NHẬT:
+- Họ và tên: Lê Phúc Nhật (Ngày sinh: 09/07/1982 – Tuổi Nhâm Tuất).
+- Chức vụ & Vai trò:
+  + Chủ tịch HĐQT HTX Lâm Nghiệp Bền Vững Keo Sơn (Thôn An Sơn, Xã Cam Lộ, Tỉnh Quảng Trị – Xứ Cùa).
+  + Kiến Trúc Sư Hệ Thống Nội Dung & AI Thực Chiến (36+ mô-đun tự động hóa, vận hành mạng lưới đa kênh).
+  + Chuyên Gia Lâm Nghiệp & Dược Liệu Sạch Xứ Cùa (Cây giống Keo lai chuẩn nguồn, Cao An Xoa, Cao Chè Vằng, Bột Ngũ Cốc dinh dưỡng).
+- Gia đình: MỘT người vợ hiền (cô giáo mầm non trường Lê Thế Hiếu) và HAI cô con gái yêu thương.
+- Triết lý định danh: "Hiểu sâu để thấy bản chất – Sống tỉnh để giữ bình an – Hành đúng để tạo giá trị" • "Hạnh phúc từ Tử tế – Tử tế để Hạnh phúc • Kiến tạo giá trị thực từ Gốc!".
+- Kênh kết nối chính thức:
+  + Website: https://lephucnhat.vn/
+  + Facebook: https://www.facebook.com/lephucnhat.vn (7.3K+ Followers)
+  + YouTube: https://www.youtube.com/@LePhucNhatOfficial
+  + TikTok: https://www.tiktok.com/@kyluat.tritue.chuyenhoa
+  + Email: lephucnhat.vn@gmail.com
 
-MỤC TIÊU KẾT NỐI CHÍNH • CỘNG ĐỒNG ZALO xAI:
-- Nhóm Zalo chính thức: **Phát Triển Bản Thân - Tâm - Trí xAI** (Link: https://zalo.me/g/irsrqz032).
-- Lớp học trực tuyến hàng tuần: **20h00 tối Thứ Tư & Thứ Bảy** trên Zoom (hoàn toàn miễn phí, phụng sự cộng đồng).
-- Mục tiêu nhóm: Cùng học tập, rèn luyện Thân - Tâm - Trí, nhận kịch bản ứng dụng AI thực chiến, giao lưu trực tiếp cùng Thầy Lê Phúc Nhật.
-- LƯU Ý BẢO MẬT: Tuyệt đối KHÔNG cung cấp bất kỳ số tài khoản ngân hàng nào. Học viên tham gia hoàn toàn qua nhóm Zalo chính thức https://zalo.me/g/irsrqz032.
+KIẾN THỨC HỆ THỐNG BÀI GIẢNG 4D TRÊN LEPHUCNHAT.VN:
+1. Bác Sĩ Glenn Cunningham – Đôi Chân Thần Tốc AI: Vượt nghịch cảnh đôi chân bỏng nặng năm 7 tuổi để lập kỷ lục thế giới chạy 1 dặm (4:06.8). Ứng dụng nội lực tỉnh thức kết hợp đôi cánh AI.
+2. Bí Mật Của May Mắn Thật Sự: "May mắn là khi sự chuẩn bị gặp gỡ cơ hội" (Seneca). Gieo 7 đức tính và làm chủ Công thức Lệnh Vàng AI 4 bước (Vai trò + Việc cần làm + Bối cảnh + Định dạng).
+3. Bản Chỉ Huy Tâm Thức Siêu Chuyên Cơ A388: Tháp 6 tầng nhận thức (Môi trường -> Hành vi -> Năng lực -> Niềm tin/Giá trị -> Nhân dạng -> Sứ mệnh), làm chủ buồng lái cuộc đời.
+4. Nền Tảng Giá Trị & Di Sản 4D: Quy luật Sông Nile & Biển Chết (cho đi để trường tồn), Lãi kép 1% mỗi ngày, Ba bộ lọc Socrates và kiến tạo di sản bền vững.
+5. Từ Vấp Ngã Đến Người Gieo Rừng: Chuyển hóa biến cố 0,8 ha rừng năm 2016 tại Cam Lộ thành hành trình ươm mầm rừng bền vững và phụng sự cộng đồng.
 
-KIẾN THỨC VỀ CÁC BÀI GIẢNG TRÊN WEBSITE TUANTUTE.LIFE:
-1. BÀI GIẢNG "BÁC SĨ GLENN CUNNINGHAM - NGƯỜI CHẠY NHANH NHẤT THẾ GIỚI":
-   - Nhân vật: Bác sĩ / Tiến sĩ Glenn Cunningham (1909 - 1988), huyền thoại "Người sắt Kansas".
-   - Bi kịch năm 7 tuổi: Vụ nổ lò sưởi thiêu rụi đôi chân, anh trai qua đời, bác sĩ bảo sẽ tàn phế suốt đời.
-   - Lời thề với mẹ: "Con không chỉ đi mà con sẽ CHẠY!". Suốt 2 năm nằm liệt, tự xoa bóp, bám cọc rào tập đứng.
-   - Phát hiện kỳ diệu: Khi bước đi quá buốt đau, cậu bé phát hiện "Chạy thì ít đau hơn đi bộ" vì chân chạm đất ngắn hơn.
-   - Đỉnh cao: Lập Kỷ lục thế giới cự ly 1 dặm (4:06.8) tại Madison Square Garden 1934; Huy chương Bạc Olympic Berlin 1936.
-   - Di sản: Lấy bằng Tiến sĩ Giáo dục, mở trang trại Youth Ranch nuôi dạy hơn 9.000 đứa trẻ cơ nhỡ.
-   - Ứng dụng cho người trung niên Việt Nam (38 - 59 tuổi): Nỗi sợ tuổi tác hay công nghệ chỉ là ảo ảnh. Kinh nghiệm sống quý báu kết hợp với "đôi chân thần tốc AI" sẽ tạo nên sức mạnh vô song! Rèn luyện 6 thói quen Thân - Tâm - Trí mỗi ngày.
-
-2. BÀI GIẢNG "BÍ MẬT CỦA MAY MẮN THẬT SỰ" (LPN xAI):
-   - Châm ngôn: "May mắn là khi sự chuẩn bị gặp gỡ cơ hội" (Seneca).
-   - 12 bài học tự tạo may mắn: Tự tạo may mắn, theo đuổi đến cùng, dám đổi môi trường, biết cho đi, không trì hoãn, chú ý chi tiết nhỏ, tin vào điều đã xây, may mắn không mua được, kiên trì, cơ hội đến với tất cả, cội nguồn ở chính bạn, không bao giờ quá trễ.
-   - Mô phỏng Cây Bốn Lá: Cơ hội như mưa hạt giống rơi xuống mọi người, chỉ mảnh đất chuẩn bị 7 đức tính (Biết ơn, Yêu thương, Phát triển bản thân, Rèn luyện Thân Tâm Trí, Thực hành, Kiên trì, Tin tưởng) mới nảy mầm Cây Bốn Lá.
-   - Bánh xe cuộc đời 6 múi: Thể lực, Vận động, Bình an, Kết nối, Học tập, Dùng AI (cần to và tròn đều để lăn xa).
-   - Công thức Lệnh Vàng AI 4 bước: VAI TRÒ + VIỆC CẦN LÀM + BỐI CẢNH + ĐỊNH DẠNG.
-
-3. BÀI GIẢNG "CHỈ HUY TÂM THỨC SIÊU CHUYÊN CƠ A388":
-   - Tháp 6 tầng nhận thức (Logical Levels): Môi trường -> Hành vi -> Năng lực -> Niềm tin/Giá trị -> Nhân dạng -> Sứ mệnh.
-   - Tháp nhu cầu Maslow 5 tầng: Sinh lý -> An toàn -> Xã hội -> Tôn trọng -> Tự thể hiện đỉnh cao.
-   - Tư duy Cơ trưởng: Bạn là người cầm lái cỗ máy cuộc đời mình, không để thời tiết hay hoàn cảnh bên ngoài quyết định đích đến.
-
-4. ỨNG DỤNG NOTEBOOKLM & TỰ ĐỘNG HÓA 24/7:
-   - Biến tài liệu thành trợ lý thông minh trò chuyện 24/7.
-   - Tạo website cá nhân bằng giọng nói thông qua Gemini & GitHub Pages.
-   - Kết nối tự động hóa Website + Google Sheets + Telegram Bot chăm sóc học viên tự động.
-
-
-5. BÀI GIẢNG "KIẾN TẠO CUỘC SỐNG xAI - THÔNG ĐIỆP & GIÁ TRỊ DI SẢN 4D (V04)":
-   - Đối tượng: Người đi làm tại Việt Nam tuổi từ 38 đến 58. Lịch học trực tuyến 20h00 - 22h00 tối Thứ 4 & Thứ 7.
-   - 3 Video Điện ảnh 16:9 Full HD Ken Burns lồng tiếng Edge-TTS hòa âm 432Hz/528Hz:
-     + Video 1 (Slide 3): Sông Nile và Biển Chết - Quy luật cho đi để trường tồn (Sông Nile tưới mát nền văn minh, Biển Chết tích trữ nên mặn chát).
-     + Video 2 (Slide 4): Hiệu ứng cánh bướm - Đòn bẩy xAI & Lãi kép 1% mỗi ngày (Chạy Vrace 5h30 + Giải phóng 3 giờ làm việc thủ công).
-     + Video 3 (Slide 7): Vincent Van Gogh - Di sản 180 triệu đô (Đừng làm thợ hồ vì ngày công vụn vặt; hãy làm Tổng công trình sư kiệt tác cuộc đời 4D).
-   - Hội Đồng Cố Vấn Trí Tuệ & Giác Ngộ: Đức Phật / Bậc Thiền Sư (Tâm an), Lão Tử (Sông Nile), Seneca (Khắc Kỷ), TS. Glenn Cunningham (Ý chí thép), TS. Huberman (Cardio Zone 2), Peter Drucker (80/20), Van Gogh (Di sản 4D), Lê Phúc Nhật (Cơ trưởng A388).
-   - Sổ tay chuyển hóa 90 ngày: Rèn luyện Thân (Vrace) - Tâm (Biết ơn) - Trí (xAI 80/20) - Di sản (Cho đi).
-
-VĂN PHONG GIAO TIẾP:
-- Xưng hô: "Chào bạn! Tôi là Trợ lý AI của Anh Lê Phúc Nhật".
-- Giọng điệu ấm áp, hào sảng, trí tuệ, luôn khích lệ tinh thần và kết thúc bằng lời mời tham gia nhóm Zalo https://zalo.me/g/irsrqz032 để nhận trọn bộ tài liệu và lịch học Zoom!
+Hãy trả lời ấm áp, sâu sắc, súc tích, chân thành bằng tiếng Việt. Tuyệt đối không cung cấp bất kỳ số tài khoản ngân hàng nào.
 `;
 
   let chatHistory = [
     {
       role: 'assistant',
-      content: 'Chào bạn! Tôi là **Trợ lý AI của Anh Lê Phúc Nhật (Lê Phúc Nhật • Từ Tâm)**. Rất vui được đón tiếp bạn ghé thăm lephucnhat.vn! Bạn cần tìm hiểu thông tin về triết lý sống tử tế, cơ hội hợp tác cùng **GTO Media**, ứng dụng **Kỷ nguyên AI**, hay kết nối cá nhân cùng Anh Tuấn hôm nay ạ?'
+      content: 'Xin chào quý bạn hữu! Tôi là **Trợ lý AI của anh Lê Phúc Nhật (Hiểu Sâu • Sống Tỉnh • Hành Đúng)**. Bạn muốn trao đổi sâu hơn về nội dung bài giảng 4D này, hệ sinh thái **HTX Lâm Nghiệp Keo Sơn**, **AI Thực Chiến** hay kết nối trực tiếp cùng anh Nhật tại **lephucnhat.vn** ạ?'
     }
   ];
 
   function formatMarkdown(text) {
     if (!text) return '';
-    let html = text
+    let html = String(text)
       .replace(/&/g, '&amp;')
       .replace(/</g, '&lt;')
       .replace(/>/g, '&gt;');
-
     html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
     html = html.replace(/\*(.*?)\*/g, '<em>$1</em>');
-    html = html.replace(/(?:^|\n)[*-]\s+(.+)/g, '\n<li>$1</li>');
-    html = html.replace(/(<li>.*?<\/li>)/gs, '<ul>$1</ul>');
     html = html.replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer" style="color:#fde047; text-decoration:underline;">$1</a>');
     html = html.replace(/\n\n+/g, '<br><br>').replace(/\n/g, '<br>');
     return html;
@@ -107,140 +85,64 @@ VĂN PHONG GIAO TIẾP:
   function getSmartFallbackReply(question) {
     const q = question.toLowerCase();
 
-    if (q.includes('sông nile') || q.includes('biển chết') || q.includes('cho đi') || q.includes('lão tử')) {
-      return `🌊 <strong>Sông Nile & Biển Chết – Quy Luật Cho Đi Để Trường Tồn (Lão Tử & LPN xAI):</strong><br><br>` +
-        `• <strong>Sông Nile:</strong> Đón nhận nguồn nước mát lành rồi hào phóng tuôn chảy, bồi đắp phù sa tưới mát mọi thung lũng, tạo nên nền văn minh cổ đại rực rỡ và muôn loài sinh sôi.<br>` +
-        `• <strong>Biển Chết:</strong> Chỉ biết nhận vào mà không hề cho đi một giọt nước nào, biến mình thành hồ nước mặn chát cô độc, không một sinh vật nào sống sót!<br>` +
-        `• <strong>Bài học cuộc đời:</strong> Sự giàu có đích thực ở tuổi trung niên không nằm ở việc bạn tích trữ bao nhiêu của cải, mà nằm ở việc bạn đã trở thành dòng sông Nile trao đi giá trị và kiến tạo di sản cho cuộc đời!<br><br>` +
-        `👉 Mở xem Video 1 tại bài giảng V04: <a href="lpn-thong-diep-gia-tri-di-san-4d-v04.html" target="_blank" style="color:#fde047; font-weight:800;">lpn-thong-diep-gia-tri-di-san-4d-v04.html</a>`;
+    if (q.includes('sông nile') || q.includes('biển chết') || q.includes('cho đi') || q.includes('di sản')) {
+      return `🌊 <strong>Quy Luật Cho Đi Để Trường Tồn &amp; Kiến Tạo Di Sản 4D:</strong><br><br>` +
+        `• <strong>Sông Nile</strong> đón nhận nguồn nước rồi hào phóng bồi đắp phù sa cho muôn loài; <strong>Biển Chết</strong> chỉ nhận mà không cho đi nên mặn chát.<br>` +
+        `• Cũng như đất đỏ bazan Xứ Cùa hiến dâng dưỡng chất cho rừng xanh, người dẫn đường càng rộng lượng chia sẻ tri thức thì mạch nguồn sáng tạo càng dồi dào.<br><br>` +
+        `👉 Khám phá bài giảng 30 Slide tại: <a href="../lpn-thong-diep-gia-tri-di-san-4d/" style="color:#fde047; font-weight:800;">Nền Tảng Giá Trị &amp; Di Sản 4D</a>`;
     }
 
-    if (q.includes('cánh bướm') || q.includes('lãi kép') || q.includes('1%') || q.includes('bước nhảy')) {
-      return `🦋 <strong>Hiệu Ứng Cánh Bướm & Lãi Kép 1% Mỗi Ngày (Đòn Bẩy xAI Cấp Số Nhân):</strong><br><br>` +
-        `• Một cái đập cánh nhẹ nhàng của chú bướm tại rừng rậm Amazon có thể tạo nên cơn cuồng phong ở nửa bán cầu kia.<br>` +
-        `• <strong>Cánh bướm của bạn:</strong> 5h30 sáng xỏ giày chạy bộ Vrace cùng bộ lạc + Ứng dụng một câu lệnh AI chuẩn mực để giải phóng 3 giờ làm việc thủ công mỗi ngày.<br>` +
-        `• <strong>Sức mạnh toán học:</strong> 1% cải thiện mỗi ngày: (1.01)^365 = <strong>37.78 lần tăng trưởng</strong> sau 1 năm!<br><br>` +
-        `👉 Xem Video 2 tại: <a href="lpn-thong-diep-gia-tri-di-san-4d-v04.html" target="_blank" style="color:#fde047; font-weight:800;">lpn-thong-diep-gia-tri-di-san-4d-v04.html</a>`;
+    if (q.includes('cunningham') || q.includes('chạy') || q.includes('nghịch cảnh') || q.includes('bác sĩ')) {
+      return `🏃‍♂️ <strong>Tiến Sĩ Glenn Cunningham – Nội Lực Tỉnh Thức &amp; Đôi Cánh AI:</strong><br><br>` +
+        `• Bị bỏng nặng đôi chân năm 7 tuổi nhưng bằng kỷ luật sắt đá, ông lập kỷ lục thế giới chạy 1 dặm (4:06.8) năm 1934.<br>` +
+        `• <strong>Bài học thực chiến:</strong> Xuất phát điểm hay tuổi tác chưa bao giờ là giới hạn cuối cùng khi ta kết hợp vốn sống thực tế cùng đòn bẩy Trí tuệ Nhân tạo (AI).<br><br>` +
+        `👉 Xem trọn vẹn tại: <a href="../lpn-bac-si-cunningham-4d/" style="color:#fde047; font-weight:800;">Bác Sĩ Cunningham 4D</a>`;
     }
 
-    if (q.includes('van gogh') || q.includes('180 triệu') || q.includes('di sản') || q.includes('kiệt tác') || q.includes('thợ hồ')) {
-      return `🎨 <strong>Vincent Van Gogh & Di Sản 180 Triệu Đô (Giá Trị Vượt Thời Gian):</strong><br><br>` +
-        `• Cả đời nghèo khó và chỉ bán được đúng một bức tranh với giá bèo bọt, nhưng Van Gogh chưa từng vẽ tranh chỉ để mưu sinh qua ngày. Ông dồn toàn bộ tâm hồn, tình yêu và những vì sao rực cháy vào từng nét cọ cuộn trào cảm xúc.<br>` +
-        `• Ngày nay, mỗi kiệt tác như <em>Đêm Đầy Sao</em> có giá trị hơn 180 triệu USD và sống mãi cùng nhân loại.<br>` +
-        `• <strong>Thông điệp tối thượng:</strong> Đừng làm thợ hồ chỉ làm việc vì ngày công vụn vặt; hãy bước lên làm Tổng công trình sư kiệt tác cuộc đời, kiến tạo di sản 4D trường tồn cùng thời gian!<br><br>` +
-        `👉 Xem Video 3 tại: <a href="lpn-thong-diep-gia-tri-di-san-4d-v04.html" target="_blank" style="color:#fde047; font-weight:800;">lpn-thong-diep-gia-tri-di-san-4d-v04.html</a>`;
+    if (q.includes('may mắn') || q.includes('cây bốn lá') || q.includes('seneca') || q.includes('lệnh vàng') || q.includes('prompt')) {
+      return `🍀 <strong>Bí Mật Của May Mắn Thật Sự &amp; Công Thức Lệnh Vàng AI:</strong><br><br>` +
+        `• <em>“May mắn là khi sự chuẩn bị gặp gỡ cơ hội.”</em> — Giống như vườn ươm đã làm đất kỹ sẽ bật mầm xanh mướt khi gặp mưa đầu mùa.<br>` +
+        `• <strong>Công thức Lệnh Vàng 4 bước:</strong> <strong>VAI TRÒ + VIỆC CẦN LÀM + BỐI CẢNH + ĐỊNH DẠNG</strong>.<br><br>` +
+        `👉 Thực hành tại: <a href="../lpn-bi-mat-may-man-4d/" style="color:#fde047; font-weight:800;">Bí Mật May Mắn 4D</a>`;
     }
 
-    if (q.includes('hội đồng') || q.includes('cố vấn') || q.includes('trí tuệ') || q.includes('giác ngộ') || q.includes('chuyên gia')) {
-      return `🏛️ <strong>Hội Đồng Cố Vấn Trí Tuệ & Giác Ngộ xAI (Nguyên Tắc Tối Thượng):</strong><br><br>` +
-        `Trong hệ sinh thái bài giảng của Anh Lê Phúc Nhật, bạn có thể tham vấn trực tiếp cùng 8 Bậc Trí Huệ & Vĩ Nhân Xuất Chúng:<br>` +
-        `1. 🧘 <strong>Bậc Thiền Sư Tỉnh Thức:</strong> Tâm an lạc, buông bỏ lo âu, chánh niệm.<br>` +
-        `2. 🌊 <strong>Lão Tử:</strong> Triết lý Sông Nile, nhu thắng cương, cho đi để trường tồn.<br>` +
-        `3. 🏛️ <strong>Seneca & Marcus Aurelius:</strong> Khắc Kỷ, tự tạo may mắn thật sự.<br>` +
-        `4. 🏃 <strong>TS. Glenn Cunningham:</strong> Ý chí thép, chạy bộ 5h30 sáng Vrace.<br>` +
-        `5. 🩺 <strong>TS. Huberman & Peter Attia:</strong> Nhịp tim Zone 2 & Y học trường thọ.<br>` +
-        `6. 💼 <strong>Peter Drucker & Buffett:</strong> Quản trị 80/20 & Lãi kép cấp số nhân.<br>` +
-        `7. 🎨 <strong>Vincent Van Gogh:</strong> Kiến tạo kiệt tác di sản 4 chiều.<br>` +
-        `8. 👑 <strong>Lê Phúc Nhật:</strong> Tâm thức cơ trưởng A388 & Sự rộng lượng.<br><br>` +
-        `👉 Trải nghiệm tham vấn tại: <a href="lpn-thong-diep-gia-tri-di-san-4d-v04.html" target="_blank" style="color:#fde047; font-weight:800;">Bài Giảng V04 (Nút Hội Đồng Trí Tuệ)</a>`;
+    if (q.includes('a388') || q.includes('chuyên cơ') || q.includes('6 tầng') || q.includes('nhận thức')) {
+      return `✈️ <strong>Bản Chỉ Huy Tâm Thức Siêu Chuyên Cơ A388:</strong><br><br>` +
+        `• <strong>Tháp 6 tầng nhận thức:</strong> Môi trường → Hành vi → Năng lực → Niềm tin &amp; Giá trị → Nhân dạng → Sứ mệnh.<br>` +
+        `• Giữ tâm thế Cơ trưởng tỉnh thức để điều phối cảm xúc và hành động chuẩn xác trước mọi biến động.<br><br>` +
+        `👉 Mở buồng lái 16 chặng: <a href="../lpn-6-tang-nhan-thuc-v08/" style="color:#fde047; font-weight:800;">Siêu Chuyên Cơ A388</a>`;
     }
 
-    if (q.includes('nhật ký') || q.includes('sổ tay') || q.includes('ghi chép') || q.includes('90 ngày')) {
-      return `📓 <strong>Sổ Tay Khai Sáng & Nhật Ký Chuyển Hóa 90 Ngày:</strong><br><br>` +
-        `Hệ thống tích hợp sẵn sổ tay điện tử ghi chép 4 trụ cột mỗi ngày:<br>` +
-        `• <strong>1. THÂN:</strong> Quãng đường chạy Vrace 5h30 sáng & nhịp tim Zone 2.<br>` +
-        `• <strong>2. TÂM:</strong> 3 điều trân quý biết ơn & gắn kết gia đình thấu cảm.<br>` +
-        `• <strong>3. TRÍ:</strong> 1 tác vụ 80/20 đã dùng xAI tự động hóa giải phóng 3 giờ.<br>` +
-        `• <strong>4. DI SẢN:</strong> Hành động tử tế trao đi cho bộ lạc.<br><br>` +
-        `✨ <em>Đặc biệt có nút <strong>"xAI Nâng Cấp Lời Văn"</strong> tự động trau chuốt thành bài viết truyền cảm hứng để đăng Zalo / Facebook!</em><br><br>` +
-        `👉 Bấm mở sổ tay tại: <a href="lpn-thong-diep-gia-tri-di-san-4d-v04.html" target="_blank" style="color:#fde047; font-weight:800;">lpn-thong-diep-gia-tri-di-san-4d-v04.html</a>`;
+    if (q.includes('keo sơn') || q.includes('dược liệu') || q.includes('an xoa') || q.includes('chè vằng') || q.includes('ngũ cốc') || q.includes('rừng')) {
+      return `🌱 <strong>HTX Lâm Nghiệp Bền Vững Keo Sơn (Xứ Cùa – Cam Lộ, Quảng Trị):</strong><br><br>` +
+        `• Do anh <strong>Lê Phúc Nhật</strong> giữ vai trò Chủ tịch HĐQT.<br>` +
+        `• Chuyên ươm tạo <strong>Cây giống Keo lai chuẩn nguồn</strong> chống chịu gió bão và chế biến dược liệu sạch đất đỏ bazan: <strong>Cao An Xoa, Cao Chè Vằng, Bột Ngũ Cốc dinh dưỡng</strong>.<br><br>` +
+        `👉 Xem câu chuyện 4D: <a href="../nguoi-gieo-rung-4d/" style="color:#fde047; font-weight:800;">Từ Vấp Ngã Đến Người Gieo Rừng</a>`;
     }
 
-    if (q.includes('zalo') || q.includes('nhóm') || q.includes('cộng đồng') || q.includes('tham gia') || q.includes('đăng ký') || q.includes('lớp') || q.includes('zoom') || q.includes('học')) {
-      return `🤝 <strong>Cộng Đồng: Phát Triển Bản Thân - Tâm - Trí xAI:</strong><br><br>` +
-        `Mời bạn tham gia ngay nhóm Zalo chính thức của Thầy Lê Phúc Nhật để cùng rèn luyện và nhận tài liệu thực chiến:<br><br>` +
-        `👉 <strong>Link tham gia nhóm Zalo:</strong> <a href="https://zalo.me/g/irsrqz032" target="_blank" rel="noopener noreferrer" style="color:#fde047; font-weight:800; text-decoration:underline;">https://zalo.me/g/irsrqz032</a><br><br>` +
-        `• <strong>Lịch học trực tuyến:</strong> 20h00 tối Thứ 4 & Thứ 7 hàng tuần trên Zoom (hoàn toàn miễn phí, phụng sự cộng đồng).<br>` +
-        `• <strong>Nội dung:</strong> Rèn luyện Thân - Tâm - Trí, ứng dụng Trí tuệ AI thực chiến cho người trung niên và doanh nghiệp!`;
+    if (q.includes('triết lý') || q.includes('hiểu sâu') || q.includes('sống tỉnh') || q.includes('hành đúng') || q.includes('tử tế')) {
+      return `🧭 <strong>Triết Lý Định Danh Của Anh Lê Phúc Nhật:</strong><br><br>` +
+        `• <strong>Hiểu Sâu:</strong> Nhìn thấu bản chất và quy luật nhân quả từ gốc.<br>` +
+        `• <strong>Sống Tỉnh:</strong> Giữ tâm bình an, sáng suốt giữa dòng chảy số.<br>` +
+        `• <strong>Hành Đúng:</strong> Làm chuẩn mực, tận tâm tạo ra giá trị thực.<br>` +
+        `• <em>“Hạnh phúc từ Tử tế – Tử tế để Hạnh phúc • Kiến tạo giá trị thực từ Gốc!”</em>`;
     }
 
-    if (q.includes('cunningham') || q.includes('chạy') || q.includes('người chạy') || q.includes('điền kinh') || q.includes('kỷ lục') || q.includes('bác sĩ')) {
-      return `🏃‍♂️ <strong>Huyền Thoại Bác Sĩ Glenn Cunningham – Người Chạy Nhanh Nhất Thế Giới:</strong><br><br>` +
-        `• <strong>Ý chí phi thường:</strong> 7 tuổi bị bỏng nặng đôi chân, bác sĩ bảo tàn phế. Nhưng cậu bé thề với mẹ: <em>"Con không chỉ đi mà con sẽ CHẠY!"</em>.<br>` +
-        `• <strong>Kỷ lục thế giới:</strong> Năm 1934, ông lập Kỷ lục thế giới chạy 1 dặm (4:06.8) tại Madison Square Garden và đoạt Huy chương Bạc Olympic 1936.<br>` +
-        `• <strong>Di sản:</strong> Lấy bằng Tiến sĩ Giáo dục, cưu mang hơn 9.000 đứa trẻ khó khăn.<br>` +
-        `• <strong>Bài học cho người trung niên thời AI:</strong> Đừng bao giờ tự ti về tuổi tác hay công nghệ. Hãy coi AI là "đôi chân thần tốc mới" kết hợp cùng vốn sống quý báu của bạn để bứt phá!<br><br>` +
-        `👉 Mời bạn vào nhóm Zalo để nhận bài giảng chi tiết: <a href="https://zalo.me/g/irsrqz032" target="_blank" rel="noopener noreferrer">https://zalo.me/g/irsrqz032</a>`;
+    if (q.includes('gia đình') || q.includes('vợ') || q.includes('con') || q.includes('tiểu sử') || q.includes('sinh năm')) {
+      return `🏡 <strong>Chân Dung &amp; Tổ Ấm Gia Đình Anh Lê Phúc Nhật:</strong><br><br>` +
+        `• Sinh ngày <strong>09/07/1982</strong> (Nhâm Tuất), quê hương tại <strong>Thôn An Sơn, Xã Cam Lộ, Tỉnh Quảng Trị (Xứ Cùa)</strong>.<br>` +
+        `• Hậu phương bình yên và tự hào nhất: <strong>MỘT người vợ hiền</strong> (cô giáo mầm non trường Lê Thế Hiếu) và <strong>HAI con gái</strong> yêu thương.`;
     }
 
-    if (q.includes('may mắn') || q.includes('12 bài') || q.includes('cây bốn lá') || q.includes('seneca')) {
-      return `🍀 <strong>Bí Mật Của May Mắn Thật Sự:</strong><br><br>` +
-        `<blockquote><em>“May mắn là khi sự chuẩn bị gặp gỡ cơ hội.” (Seneca)</em></blockquote><br>` +
-        `• Cơ hội như mưa hạt giống rơi đều xuống tất cả mọi người, nhưng chỉ mảnh đất chuẩn bị <strong>7 đức tính</strong> (Biết ơn, Yêu thương, Phát triển bản thân, Rèn Thân-Tâm-Trí, Thực hành, Kiên trì, Tin tưởng) mới nảy mầm Cây Bốn Lá.<br>` +
-        `• <strong>Nguyên tắc vàng:</strong> Bạn là Kiến trúc sư thiết kế, bạn là Chủ công trình quyết định, AI là Đội thợ giỏi thi công!<br><br>` +
-        `👉 Tham gia nhóm Zalo học viên: <a href="https://zalo.me/g/irsrqz032" target="_blank" rel="noopener noreferrer">https://zalo.me/g/irsrqz032</a>`;
-    }
-
-    if (q.includes('a388') || q.includes('chuyên cơ') || q.includes('6 tầng') || q.includes('nhận thức') || q.includes('maslow')) {
-      return `✈️ <strong>Chỉ Huy Tâm Thức Siêu Chuyên Cơ A388:</strong><br><br>` +
-        `• <strong>Tháp 6 tầng nhận thức:</strong> Môi trường → Hành vi → Năng lực → Niềm tin/Giá trị → Nhân dạng → Sứ mệnh.<br>` +
-        `• <strong>Tư duy Cơ trưởng:</strong> Khi xác định rõ Sứ mệnh phụng sự và Nhân dạng lãnh đạo tử tế, bạn sẽ vượt qua mọi giông bão cuộc đời để hạ cánh an toàn và hạnh phúc!<br><br>` +
-        `👉 Nhận tài liệu A388 tại nhóm Zalo: <a href="https://zalo.me/g/irsrqz032" target="_blank" rel="noopener noreferrer">https://zalo.me/g/irsrqz032</a>`;
-    }
-
-    if (q.includes('lệnh vàng') || q.includes('prompt') || q.includes('công thức')) {
-      return `🤖 <strong>Công Thức "Lệnh Vàng" AI Trong 4 Bước:</strong><br><br>` +
-        `<strong>VAI TRÒ + VIỆC CẦN LÀM + BỐI CẢNH + ĐỊNH DẠNG</strong><br><br>` +
-        `Ví dụ: <em>"Hãy đóng vai Thư ký riêng. Việc cần làm: Soạn tin nhắn cảm ơn đối tác sau sự kiện. Bối cảnh: Tôi 48 tuổi, kinh doanh du lịch Nha Trang. Định dạng: 3 gạch đầu dòng ngắn gọn, chân thành."</em><br><br>` +
-        `👉 Cùng thực hành tại nhóm Zalo: <a href="https://zalo.me/g/irsrqz032" target="_blank" rel="noopener noreferrer">https://zalo.me/g/irsrqz032</a>`;
-    }
-
-
-    if (q.includes('rộng lượng') || q.includes('châm ngôn') || q.includes('triết lý') || q.includes('tử tế')) {
-      return `✨ <strong>Triết lý sống của Anh Lê Phúc Nhật:</strong><br><br>` +
-        `<blockquote><em>“Sự rộng lượng là thước đo trình độ sống.”<br>(Generosity is a measure of life's level)</em></blockquote><br>` +
-        `Đối với Anh Tuấn, sống tử tế không phải là điều gì to tát, mà là sự chân thành trong từng ánh mắt, nụ cười, cách đối xử trân trọng với gia đình, bạn bè, đối tác và luôn sẵn sàng cho đi (Givers Gain) để cùng nhau tạo dựng một cuộc sống tốt đẹp hơn!`;
-    }
-
-    if (q.includes('gto') || q.includes('media') || q.includes('sự kiện') || q.includes('mice')) {
-      return `🏢 <strong>GTO Media Corporation (Since 2009):</strong><br><br>` +
-        `• <strong>Chủ tịch HĐQT:</strong> Doanh nhân Lê Phúc Nhật.<br>` +
-        `• <strong>Lĩnh vực thế mạnh:</strong> Tổ chức lễ hội quy mô quốc gia (Festival Biển Nha Trang), sự kiện văn hóa, du lịch, hội nghị quốc tế MICE và chiến lược truyền thông.<br>` +
-        `• <strong>Trụ sở:</strong> Biệt thự C10 - C11 KĐT Hưng Phú, TP. Nha Trang, Khánh Hòa.<br>` +
-        `• <strong>Website:</strong> <a href="https://gto.vn" target="_blank">gto.vn</a> &bull; <a href="http://gtomedia.vn" target="_blank">gtomedia.vn</a>.`;
-    }
-
-    if (q.includes('hội doanh nhân trẻ') || q.includes('kết nối') || q.includes('mạng lưới') || q.includes('doanh nhân') || q.includes('hợp tác')) {
-      return `🤝 <strong>Hội Doanh Nhân Trẻ Khánh Hòa & Mạng Lưới Doanh Nhân:</strong><br><br>` +
-        `• Anh Tuấn giữ vị trí <strong>Phó Chủ tịch Hội Doanh Nhân Trẻ Khánh Hòa</strong>, luôn tích cực phụng sự, đồng hành cùng các thế hệ khởi nghiệp, chia sẻ kinh nghiệm quản trị và chuyển đổi số.<br>` +
-        `• <strong>Kiến tạo cuộc sống Kỷ nguyên AI:</strong> Giúp học viên và doanh nghiệp ứng dụng AI thực chiến, tự động hóa 24/7 để vừa thành công trong sự nghiệp vừa thảnh thơi sống an lạc.`;
-    }
-
-    if (q.includes('gia đình') || q.includes('vợ') || q.includes('con') || q.includes('sinh nhật') || q.includes('ngày cưới')) {
-      return `👨‍👩‍👧‍👧 <strong>Tổ ấm gia đình - Điểm tựa vững chắc nhất của Anh Tuấn:</strong><br><br>` +
-        `• Hậu phương thiêng liêng: <strong>MỘT vợ + HAI con gái</strong> ngoan ngoãn, đáng yêu.<br>` +
-        `• <strong>Kỷ niệm ngày cưới:</strong> 19 / 12 / 2005.<br>` +
-        `• <strong>Ngày sinh:</strong> 02 / 01 / 1977 (Tuổi Bính Thìn).<br><br>` +
-        `Gia đình chính là nguồn động lực lớn nhất để Anh Tuấn không ngừng phụng sự xã hội và lan tỏa năng lượng tử tế mỗi ngày!`;
-    }
-
-    if (q.includes('facebook') || q.includes('fb') || q.includes('liên hệ') || q.includes('email') || q.includes('gặp')) {
-      return `📞 <strong>Kênh kết nối chính thức cùng Anh Tuấn:</strong><br><br>` +
-        `• <strong>Facebook cá nhân:</strong> <a href="https://www.facebook.com/TuanTuTeTT" target="_blank">facebook.com/TuanTuTeTT</a> (5.5K+ Followers).<br>` +
-        `• <strong>Kênh YouTube:</strong> <a href="https://www.youtube.com/@Tu%E1%BA%A5nT%E1%BB%ADT%E1%BA%BFT%E1%BB%ABT%C3%A2m" target="_blank">@TuấnTửTếTừTâm</a>.<br>` +
-        `• <strong>Email công việc:</strong> <a href="mailto:tuan@media-gto.com">tuan@media-gto.com</a>.<br>` +
-        `• <strong>Địa chỉ:</strong> Biệt thự C10 - C11 KĐT Hưng Phú, TP. Nha Trang, Khánh Hòa.`;
-    }
-
-    return `Doanh nhân Lê Phúc Nhật (Lê Phúc Nhật Từ Tâm) luôn trân trọng mọi cơ hội kết nối, hợp tác và lan tỏa giá trị tốt đẹp đến cộng đồng. Bạn có thể kết nối trực tiếp qua trang Facebook chính thức: <strong><a href="https://www.facebook.com/TuanTuTeTT" target="_blank">fb.com/TuanTuTeTT</a></strong> hoặc email: <strong>tuan@media-gto.com</strong> bạn nhé!`;
+    return `🤝 <strong>Kết nối trực tiếp cùng anh Lê Phúc Nhật:</strong><br><br>` +
+      `• <strong>Trang chủ Hệ sinh thái:</strong> <a href="https://lephucnhat.vn/" style="color:#fde047; font-weight:800;">lephucnhat.vn</a><br>` +
+      `• <strong>Facebook (7.3K+ Followers):</strong> <a href="https://www.facebook.com/lephucnhat.vn" target="_blank" rel="noopener" style="color:#fde047;">facebook.com/lephucnhat.vn</a><br>` +
+      `• <strong>YouTube:</strong> <a href="https://www.youtube.com/@LePhucNhatOfficial" target="_blank" rel="noopener" style="color:#fde047;">@LePhucNhatOfficial</a><br>` +
+      `• <strong>Email:</strong> <a href="mailto:lephucnhat.vn@gmail.com" style="color:#fde047;">lephucnhat.vn@gmail.com</a>`;
   }
 
   async function callDeepSeekAPI(messages) {
-    const formattedMessages = [
-      { role: 'system', content: SYSTEM_KNOWLEDGE },
-      ...messages.slice(-AI_CONFIG.maxHistory)
-    ];
-
+    if (!AI_CONFIG.deepseekKey || AI_CONFIG.deepseekKey.length < 10) throw new Error('No DeepSeek key');
     const response = await fetch('https://api.deepseek.com/chat/completions', {
       method: 'POST',
       headers: {
@@ -249,91 +151,66 @@ VĂN PHONG GIAO TIẾP:
       },
       body: JSON.stringify({
         model: AI_CONFIG.deepseekModel,
-        messages: formattedMessages,
+        messages: [{ role: 'system', content: SYSTEM_KNOWLEDGE }, ...messages.slice(-AI_CONFIG.maxHistory)],
         temperature: 0.7,
         max_tokens: 650
       })
     });
-
-    if (!response.ok) {
-      const err = await response.text();
-      throw new Error(`DeepSeek error (${response.status}): ${err}`);
-    }
-
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
     const data = await response.json();
     return data.choices?.[0]?.message?.content || '';
   }
 
   async function callGeminiAPI(messages) {
+    if (!AI_CONFIG.geminiKey || AI_CONFIG.geminiKey.length < 15) throw new Error('No Gemini key');
     const contents = messages.slice(-AI_CONFIG.maxHistory).map(m => ({
       role: m.role === 'assistant' ? 'model' : 'user',
       parts: [{ text: m.content }]
     }));
-
     const url = `https://generativelanguage.googleapis.com/v1beta/models/${AI_CONFIG.geminiModel}:generateContent?key=${AI_CONFIG.geminiKey}`;
-
     const response = await fetch(url, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        contents: contents,
-        systemInstruction: {
-          parts: [{ text: SYSTEM_KNOWLEDGE }]
-        },
-        generationConfig: {
-          temperature: 0.7,
-          maxOutputTokens: 650
-        }
+        contents,
+        systemInstruction: { parts: [{ text: SYSTEM_KNOWLEDGE }] },
+        generationConfig: { temperature: 0.7, maxOutputTokens: 650 }
       })
     });
-
-    if (!response.ok) {
-      const err = await response.text();
-      throw new Error(`Gemini error (${response.status}): ${err}`);
-    }
-
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
     const data = await response.json();
     return data.candidates?.[0]?.content?.parts?.[0]?.text || '';
   }
 
   async function requestAIResponse(userText) {
     chatHistory.push({ role: 'user', content: userText });
+    const hasD = AI_CONFIG.deepseekKey && AI_CONFIG.deepseekKey.length > 10;
+    const hasG = AI_CONFIG.geminiKey && AI_CONFIG.geminiKey.length > 15;
 
-    const primary = AI_CONFIG.provider;
-    const backup = primary === 'deepseek' ? 'gemini' : 'deepseek';
-
-    try {
-      if (primary === 'deepseek') {
-        const reply = await callDeepSeekAPI(chatHistory);
-        if (reply) return { reply, provider: 'DeepSeek AI' };
-      } else {
-        const reply = await callGeminiAPI(chatHistory);
-        if (reply) return { reply, provider: 'Gemini AI' };
-      }
-    } catch (e1) {
-      console.warn(`[Lê Phúc Nhật AI] ${primary} failed, trying ${backup}:`, e1.message);
-      try {
-        if (backup === 'deepseek') {
-          const reply = await callDeepSeekAPI(chatHistory);
-          if (reply) return { reply, provider: 'DeepSeek AI (Backup)' };
-        } else {
-          const reply = await callGeminiAPI(chatHistory);
-          if (reply) return { reply, provider: 'Gemini AI (Backup)' };
+    if (hasD || hasG) {
+      const order = AI_CONFIG.provider === 'deepseek' ? ['deepseek', 'gemini'] : ['gemini', 'deepseek'];
+      for (const p of order) {
+        try {
+          if (p === 'deepseek' && hasD) {
+            const reply = await callDeepSeekAPI(chatHistory);
+            if (reply) return { reply, isHtml: false };
+          } else if (p === 'gemini' && hasG) {
+            const reply = await callGeminiAPI(chatHistory);
+            if (reply) return { reply, isHtml: false };
+          }
+        } catch (err) {
+          // Auto-fallback to next provider or local knowledge
         }
-      } catch (e2) {
-        console.warn(`[Lê Phúc Nhật AI] Both APIs failed, fallback to local knowledge:`, e2.message);
       }
     }
-
-    const fallback = getSmartFallbackReply(userText);
-    return { reply: fallback, provider: 'Trợ lý Lê Phúc Nhật' };
+    return { reply: getSmartFallbackReply(userText), isHtml: true };
   }
 
   function renderAIAssistant() {
-    const fab = document.createElement('div');
+    const fab = document.createElement('button');
+    fab.type = 'button';
     fab.className = 'ai-fab-launcher';
     fab.id = 'aiFabLauncher';
-    fab.setAttribute('role', 'button');
     fab.setAttribute('aria-label', 'Mở trợ lý AI Lê Phúc Nhật');
     fab.innerHTML = `
       <div class="ai-fab-icon-box">
@@ -342,9 +219,8 @@ VĂN PHONG GIAO TIẾP:
       </div>
       <div class="ai-fab-text">
         <span class="ai-fab-title">Hỏi Lê Phúc Nhật</span>
-        <span class="ai-fab-sub">Tư vấn tử tế, truyền cảm hứng 24/7</span>
+        <span class="ai-fab-sub">Hiểu sâu • Sống tỉnh • Hành đúng</span>
       </div>
-      <span class="ai-fab-badge">&#10084;</span>
     `;
 
     const chatWin = document.createElement('div');
@@ -353,102 +229,89 @@ VĂN PHONG GIAO TIẾP:
     chatWin.setAttribute('role', 'dialog');
     chatWin.setAttribute('aria-label', 'Cửa sổ trò chuyện Trợ lý AI Lê Phúc Nhật');
     chatWin.innerHTML = `
-      <!-- Header -->
       <div class="ai-chat-header">
         <div class="ai-chat-profile">
           <div class="ai-avatar">
-            <img src="avatar.jpg" alt="Lê Phúc Nhật">
+            <img src="${AVATAR_URL}" alt="Lê Phúc Nhật" onerror="this.onerror=null;this.src='${FALLBACK_AVATAR_SVG}';">
             <span class="ai-online-dot"></span>
           </div>
           <div class="ai-profile-meta">
             <div class="ai-title">
-              <span>Lê Phúc Nhật</span>
-              
+              <span>Lê Phúc Nhật AI</span>
+              <span class="ai-provider-pill" id="aiProviderBadge">${(AI_CONFIG.deepseekKey || AI_CONFIG.geminiKey) ? 'AI Live' : 'Tri Thức Gốc'}</span>
             </div>
-            <span class="ai-status-text">Doanh nhân truyền cảm hứng • Kỷ Nguyên AI</span>
+            <span class="ai-status-text">HTX Keo Sơn • AI Thực Chiến Xứ Cùa</span>
           </div>
         </div>
         <div class="ai-header-actions">
-          <button class="ai-icon-btn" id="btnAiSettings" style="display:none;" aria-label="Cài đặt">⚙️</button>
-          <button class="ai-icon-btn" id="btnAiClear" title="Xóa lịch sử chat" aria-label="Xóa chat">🗑️</button>
-          <button class="ai-icon-btn" id="btnAiClose" title="Thu nhỏ" aria-label="Đóng">&times;</button>
+          <button type="button" class="ai-icon-btn" id="btnAiSettings" title="Cài đặt khóa AI" aria-label="Cài đặt AI">⚙️</button>
+          <button type="button" class="ai-icon-btn" id="btnAiClear" title="Làm mới đoạn chat" aria-label="Làm mới chat">🗑️</button>
+          <button type="button" class="ai-icon-btn" id="btnAiClose" title="Đóng cửa sổ" aria-label="Đóng">&times;</button>
         </div>
       </div>
 
-      <!-- Quick Suggestion Chips -->
       <div class="ai-chips-bar" id="aiChipsBar">
-        <button class="ai-chip" data-q="Triết lý sống 'Sự rộng lượng là thước đo trình độ sống' của Anh Tuấn là gì?">✨ Triết lý sự rộng lượng?</button>
-        <button class="ai-chip" data-q="Giới thiệu về hệ sinh thái GTO Media và ứng dụng Kỷ nguyên AI?">🏢 GTO Media & Kỷ Nguyên AI?</button>
-        <button class="ai-chip" data-q="Chia sẻ về hậu phương gia đình thiêng liêng của Anh Tuấn?">👨‍👩‍👧‍👧 Hạnh phúc gia đình?</button>
-        <button class="ai-chip" data-q="Làm thế nào để kết nối Facebook và liên hệ hợp tác cùng Anh Tuấn?">📞 Kết nối Facebook & Hợp tác?</button>
-        <button class="ai-chip" data-q="Anh Tuấn có những hoạt động chia sẻ kỹ năng và ứng dụng AI nào?">🤖 Đào tạo & Ứng dụng AI?</button>
+        <button type="button" class="ai-chip" data-q="Giải thích triết lý Hiểu Sâu • Sống Tỉnh • Hành Đúng của anh Lê Phúc Nhật?">🧭 Triết lý 3 Chữ Sống</button>
+        <button type="button" class="ai-chip" data-q="HTX Lâm Nghiệp Bền Vững Keo Sơn và Dược liệu Xứ Cùa có gì đặc biệt?">🌱 HTX Keo Sơn & Dược liệu</button>
+        <button type="button" class="ai-chip" data-q="Công thức Lệnh Vàng AI 4 bước ứng dụng thực tế như thế nào?">🤖 Lệnh Vàng AI</button>
+        <button type="button" class="ai-chip" data-q="Tóm tắt bài học từ Bác sĩ Cunningham và Siêu chuyên cơ A388?">✈️ Bài học 4D cốt lõi</button>
+        <button type="button" class="ai-chip" data-q="Thông tin liên hệ chính thức của anh Lê Phúc Nhật?">📞 Kết nối anh Nhật</button>
       </div>
 
-      <!-- Chat Messages Body -->
       <div class="ai-chat-body" id="aiChatBody">
         <div class="ai-msg bot">
-          <div class="ai-msg-avatar"><img src="avatar.jpg" alt="Lê Phúc Nhật"></div>
-          <div class="ai-msg-bubble">
-            ${formatMarkdown(chatHistory[0].content)}
-          </div>
+          <div class="ai-msg-avatar"><img src="${AVATAR_URL}" alt="Lê Phúc Nhật" onerror="this.onerror=null;this.src='${FALLBACK_AVATAR_SVG}';"></div>
+          <div class="ai-msg-bubble">${formatMarkdown(chatHistory[0].content)}</div>
         </div>
       </div>
 
-      <!-- Input Form Footer -->
       <div class="ai-chat-footer">
         <form class="ai-input-form" id="aiChatForm">
-          <textarea 
-            class="ai-input-field" 
-            id="aiInputField" 
-            rows="1" 
-            placeholder="Hỏi về triết lý sống tử tế, GTO Media, Kỷ nguyên AI, hợp tác..."
+          <textarea
+            class="ai-input-field"
+            id="aiInputField"
+            rows="1"
+            placeholder="Nhập câu hỏi về bài giảng, AI thực chiến, HTX Keo Sơn..."
             aria-label="Nhập câu hỏi"
           ></textarea>
-          <button type="submit" class="ai-send-btn" id="aiSendBtn" aria-label="Gửi tin nhắn">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-              <path d="M22 2L11 13M22 2L15 22L11 13L2 9L22 2Z"></path>
-            </svg>
-          </button>
+          <button type="submit" class="ai-send-btn" id="aiSendBtn" aria-label="Gửi tin nhắn">➤</button>
         </form>
-        <div class="ai-footer-note">Lê Phúc Nhật • Phụng sự từ tâm 24/7 • Sống tử tế & Tự do</div>
+        <div class="ai-footer-note">Lê Phúc Nhật • lephucnhat.vn • Kiến tạo giá trị thực từ Gốc</div>
       </div>
 
-      <!-- Settings Overlay Modal -->
       <div class="ai-settings-overlay" id="aiSettingsOverlay">
         <div class="ai-settings-header">
-          <h4>⚙️ Cài Đặt Trợ Lý AI Lê Phúc Nhật</h4>
-          <button class="ai-icon-btn" id="btnCloseAiSettings">&times;</button>
+          <h4>⚙️ Cấu Hình Khóa AI Cá Nhân (Lưu trên trình duyệt)</h4>
+          <button type="button" class="ai-icon-btn" id="btnCloseAiSettings" aria-label="Đóng cài đặt">&times;</button>
         </div>
         <div class="ai-settings-body">
           <div class="ai-setting-group">
             <label for="selectAiProvider">Mô hình AI ưu tiên:</label>
             <select class="ai-setting-select" id="selectAiProvider">
-              <option value="deepseek">DeepSeek AI (Khuyên dùng - Nhanh, chuẩn tiếng Việt, tinh tế)</option>
-              <option value="gemini">Google Gemini AI (Mạnh mẽ & Đầy đủ)</option>
+              <option value="auto">Tự động (Gemini 2.5 Flash / DeepSeek + Tri Thức Gốc)</option>
+              <option value="gemini">Google Gemini 2.5 Flash</option>
+              <option value="deepseek">DeepSeek AI (deepseek-chat)</option>
             </select>
-            <span class="ai-setting-help">Tự động chuyển mô hình còn lại nếu hệ thống chính phản hồi chậm.</span>
+            <span class="ai-setting-help">Khóa API chỉ lưu cục bộ trong trình duyệt của bạn, bảo mật tuyệt đối.</span>
           </div>
-
-          <div class="ai-setting-group">
-            <label for="inputDeepseekKey">DeepSeek API Key (Tùy chọn):</label>
-            <input type="password" class="ai-setting-input" id="inputDeepseekKey" placeholder="Để trống nếu dùng key mặc định">
-          </div>
-
           <div class="ai-setting-group">
             <label for="inputGeminiKey">Google Gemini API Key (Tùy chọn):</label>
-            <input type="password" class="ai-setting-input" id="inputGeminiKey" placeholder="Để trống nếu dùng key mặc định">
+            <input type="password" class="ai-setting-input" id="inputGeminiKey" placeholder="AIzaSy...">
+          </div>
+          <div class="ai-setting-group">
+            <label for="inputDeepseekKey">DeepSeek API Key (Tùy chọn):</label>
+            <input type="password" class="ai-setting-input" id="inputDeepseekKey" placeholder="sk-...">
           </div>
         </div>
         <div class="ai-settings-footer">
-          <button class="ai-btn-reset" id="btnResetAiDefault">Khôi phục mặc định</button>
-          <button class="ai-btn-save" id="btnSaveAiSettings">Lưu Cài Đặt</button>
+          <button type="button" class="ai-btn-reset" id="btnResetAiDefault">Xóa khóa đã lưu</button>
+          <button type="button" class="ai-btn-save" id="btnSaveAiSettings">Lưu Cấu Hình</button>
         </div>
       </div>
     `;
 
     document.body.appendChild(fab);
     document.body.appendChild(chatWin);
-
     attachAIEvents(fab, chatWin);
   }
 
@@ -474,8 +337,7 @@ VĂN PHONG GIAO TIẾP:
       const isOpen = open !== undefined ? open : !chatWin.classList.contains('open');
       if (isOpen) {
         chatWin.classList.add('open');
-        inputField.focus();
-        scrollToBottom();
+        setTimeout(() => inputField.focus(), 120);
       } else {
         chatWin.classList.remove('open');
         settingsOverlay.classList.remove('open');
@@ -484,77 +346,52 @@ VĂN PHONG GIAO TIẾP:
 
     fab.addEventListener('click', () => toggleChat());
     btnClose.addEventListener('click', () => toggleChat(false));
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && chatWin.classList.contains('open')) toggleChat(false);
+    });
 
     function scrollToBottom() {
-      setTimeout(() => {
-        chatBody.scrollTop = chatBody.scrollHeight;
-      }, 50);
+      setTimeout(() => { chatBody.scrollTop = chatBody.scrollHeight; }, 40);
     }
 
-    function appendMessage(role, text, sourceLabel) {
+    function appendMessage(role, content, isHtml = false) {
       const msgDiv = document.createElement('div');
       msgDiv.className = `ai-msg ${role === 'user' ? 'user' : 'bot'}`;
-
+      const rendered = isHtml ? content : formatMarkdown(content);
       if (role === 'assistant') {
         msgDiv.innerHTML = `
-          <div class="ai-msg-avatar"><img src="avatar.jpg" alt="Lê Phúc Nhật"></div>
-          <div class="ai-msg-bubble">
-            ${formatMarkdown(text)}
-            
-          </div>
+          <div class="ai-msg-avatar"><img src="${AVATAR_URL}" alt="Lê Phúc Nhật" onerror="this.onerror=null;this.src='${FALLBACK_AVATAR_SVG}';"></div>
+          <div class="ai-msg-bubble">${rendered}</div>
         `;
       } else {
-        msgDiv.innerHTML = `
-          <div class="ai-msg-bubble">
-            ${formatMarkdown(text)}
-          </div>
-        `;
+        msgDiv.innerHTML = `<div class="ai-msg-bubble">${formatMarkdown(content)}</div>`;
       }
-
       chatBody.appendChild(msgDiv);
       scrollToBottom();
     }
 
-    let typingElement = null;
-    function showTyping() {
-      if (typingElement) return;
-      typingElement = document.createElement('div');
-      typingElement.className = 'ai-typing-indicator';
-      typingElement.innerHTML = `
-        <span class="ai-typing-dot"></span>
-        <span class="ai-typing-dot"></span>
-        <span class="ai-typing-dot"></span>
-      `;
-      chatBody.appendChild(typingElement);
-      scrollToBottom();
-    }
-
-    function hideTyping() {
-      if (typingElement) {
-        typingElement.remove();
-        typingElement = null;
-      }
-    }
-
     async function handleUserSubmit(text) {
-      const cleanText = text.trim();
+      const cleanText = (text || '').trim();
       if (!cleanText) return;
-
       inputField.value = '';
       inputField.style.height = 'auto';
       sendBtn.disabled = true;
-
       appendMessage('user', cleanText);
-      showTyping();
+
+      const typing = document.createElement('div');
+      typing.className = 'ai-typing-indicator';
+      typing.innerHTML = '<span class="ai-typing-dot"></span><span class="ai-typing-dot"></span><span class="ai-typing-dot"></span>';
+      chatBody.appendChild(typing);
+      scrollToBottom();
 
       try {
-        const { reply, provider } = await requestAIResponse(cleanText);
-        hideTyping();
-        chatHistory.push({ role: 'assistant', content: reply });
-        appendMessage('assistant', reply);
+        const res = await requestAIResponse(cleanText);
+        typing.remove();
+        chatHistory.push({ role: 'assistant', content: res.reply.replace(/<[^>]+>/g, '') });
+        appendMessage('assistant', res.reply, res.isHtml);
       } catch (err) {
-        hideTyping();
-        appendMessage('assistant', getSmartFallbackReply(cleanText), 'Trợ lý Lê Phúc Nhật');
+        typing.remove();
+        appendMessage('assistant', getSmartFallbackReply(cleanText), true);
       } finally {
         sendBtn.disabled = false;
         inputField.focus();
@@ -573,81 +410,56 @@ VĂN PHONG GIAO TIẾP:
       }
     });
 
-    inputField.addEventListener('input', () => {
-      inputField.style.height = 'auto';
-      inputField.style.height = Math.min(inputField.scrollHeight, 80) + 'px';
-    });
-
     chipsBar.addEventListener('click', (e) => {
       const chip = e.target.closest('.ai-chip');
-      if (chip && chip.dataset.q) {
-        handleUserSubmit(chip.dataset.q);
-      }
+      if (chip && chip.dataset.q) handleUserSubmit(chip.dataset.q);
     });
 
     btnClear.addEventListener('click', () => {
-      if (confirm('Quý khách có muốn làm mới cuộc trò chuyện không?')) {
-        chatHistory = [chatHistory[0]];
-        chatBody.innerHTML = `
-          <div class="ai-msg bot">
-            <div class="ai-msg-avatar"><img src="avatar.jpg" alt="Lê Phúc Nhật"></div>
-            <div class="ai-msg-bubble">
-              ${formatMarkdown(chatHistory[0].content)}
-            </div>
-          </div>
-        `;
-      }
+      chatHistory = [chatHistory[0]];
+      chatBody.innerHTML = `
+        <div class="ai-msg bot">
+          <div class="ai-msg-avatar"><img src="${AVATAR_URL}" alt="Lê Phúc Nhật" onerror="this.onerror=null;this.src='${FALLBACK_AVATAR_SVG}';"></div>
+          <div class="ai-msg-bubble">${formatMarkdown(chatHistory[0].content)}</div>
+        </div>
+      `;
     });
 
     btnSettings.addEventListener('click', () => {
       selectProvider.value = AI_CONFIG.provider;
-      inputDeepseek.value = localStorage.getItem('ttt_deepseek_key') || '';
-      inputGemini.value = localStorage.getItem('ttt_gemini_key') || '';
+      inputDeepseek.value = AI_CONFIG.deepseekKey;
+      inputGemini.value = AI_CONFIG.geminiKey;
       settingsOverlay.classList.add('open');
     });
 
-    btnCloseSettings.addEventListener('click', () => {
-      settingsOverlay.classList.remove('open');
-    });
+    btnCloseSettings.addEventListener('click', () => settingsOverlay.classList.remove('open'));
 
     btnSaveSettings.addEventListener('click', () => {
       AI_CONFIG.provider = selectProvider.value;
-      localStorage.setItem('ttt_ai_provider', AI_CONFIG.provider);
-      providerBadge.textContent = AI_CONFIG.provider === 'deepseek' ? 'DeepSeek' : 'Gemini';
-
-      if (inputDeepseek.value.trim()) {
-        AI_CONFIG.deepseekKey = inputDeepseek.value.trim();
-        localStorage.setItem('ttt_deepseek_key', AI_CONFIG.deepseekKey);
-      } else {
-        localStorage.removeItem('ttt_deepseek_key');
-        AI_CONFIG.deepseekKey = DEFAULT_DEEPSEEK_KEY;
-      }
-
-      if (inputGemini.value.trim()) {
-        AI_CONFIG.geminiKey = inputGemini.value.trim();
-        localStorage.setItem('ttt_gemini_key', AI_CONFIG.geminiKey);
-      } else {
-        localStorage.removeItem('ttt_gemini_key');
-        AI_CONFIG.geminiKey = DEFAULT_GEMINI_KEY;
-      }
-
+      AI_CONFIG.deepseekKey = inputDeepseek.value.trim();
+      AI_CONFIG.geminiKey = inputGemini.value.trim();
+      safeSet('lpn_sub_ai_provider', AI_CONFIG.provider);
+      if (AI_CONFIG.deepseekKey) safeSet('lpn_deepseek_api_key', AI_CONFIG.deepseekKey);
+      else safeRemove('lpn_deepseek_api_key');
+      if (AI_CONFIG.geminiKey) safeSet('lpn_gemini_api_key', AI_CONFIG.geminiKey);
+      else safeRemove('lpn_gemini_api_key');
+      if (providerBadge) providerBadge.textContent = (AI_CONFIG.deepseekKey || AI_CONFIG.geminiKey) ? 'AI Live' : 'Tri Thức Gốc';
       settingsOverlay.classList.remove('open');
-      appendMessage('assistant', `✅ Đã lưu cấu hình AI! Hiện đang ưu tiên mô hình **${AI_CONFIG.provider === 'deepseek' ? 'DeepSeek AI' : 'Google Gemini AI'}**.`);
+      appendMessage('assistant', '✅ Đã lưu cấu hình Trợ lý AI Lê Phúc Nhật an toàn trên trình duyệt của bạn.');
     });
 
     btnResetDefault.addEventListener('click', () => {
-      localStorage.removeItem('ttt_ai_provider');
-      localStorage.removeItem('ttt_deepseek_key');
-      localStorage.removeItem('ttt_gemini_key');
-      AI_CONFIG.provider = 'deepseek';
-      AI_CONFIG.deepseekKey = DEFAULT_DEEPSEEK_KEY;
-      AI_CONFIG.geminiKey = DEFAULT_GEMINI_KEY;
-      selectProvider.value = 'deepseek';
+      AI_CONFIG.provider = 'auto';
+      AI_CONFIG.deepseekKey = '';
+      AI_CONFIG.geminiKey = '';
+      safeRemove('lpn_sub_ai_provider');
+      safeRemove('lpn_deepseek_api_key');
+      safeRemove('lpn_gemini_api_key');
       inputDeepseek.value = '';
       inputGemini.value = '';
-      providerBadge.textContent = 'DeepSeek';
+      if (providerBadge) providerBadge.textContent = 'Tri Thức Gốc';
       settingsOverlay.classList.remove('open');
-      appendMessage('assistant', '🔄 Đã khôi phục cài đặt mặc định của hệ thống.');
+      appendMessage('assistant', '🔄 Đã đưa Trợ lý về chế độ Tri Thức Gốc mặc định (không lưu khóa API).');
     });
   }
 

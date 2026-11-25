@@ -859,7 +859,7 @@
     const qrInput = document.getElementById("qrUrlInput");
     const defaultQrUrl = window.location.protocol.startsWith("http")
       ? window.location.href
-      : "https://happyrun09.github.io/checkccrqt/";
+      : "https://lephucnhat.vn/checkccrqt/";
     if (qrInput) qrInput.value = defaultQrUrl;
     function renderQR(url) {
       const box = document.getElementById("qrcode");
