@@ -3245,6 +3245,983 @@
       }
     }
 
+
+    /* ==========================================================================
+       ARCHITECTURAL REBIRTH: SINGLE-LINE HEADER, SVG ICONS & ZERO MOBILE OVERLAP
+       ========================================================================== */
+    .lpn-ico {
+      width: 18px;
+      height: 18px;
+      stroke: currentColor;
+      stroke-width: 1.95;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: none;
+      flex-shrink: 0;
+    }
+
+    .lpn-ico-lg {
+      width: 22px;
+      height: 22px;
+    }
+
+    /* Force single-line ultra-sleek glass header (60px mobile / 62px desktop) */
+    .site-header {
+      height: 60px;
+      display: flex;
+      align-items: center;
+    }
+
+    .header-inner {
+      width: 100%;
+      max-width: 1260px !important;
+      height: 100%;
+      padding: 0 16px !important;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: nowrap !important;
+      gap: 10px !important;
+    }
+
+    .brand-mini {
+      flex-shrink: 0;
+      gap: 9px;
+      min-height: 44px;
+    }
+
+    .brand-mini img {
+      width: 36px;
+      height: 36px;
+    }
+
+    .brand-mini-name {
+      font-size: 0.92rem;
+      white-space: nowrap;
+    }
+
+    .brand-mini-domain {
+      font-size: 0.72rem;
+      white-space: nowrap;
+    }
+
+    .header-nav-links {
+      display: none;
+      align-items: center;
+      gap: 2px;
+      flex-wrap: nowrap;
+    }
+
+    @media (min-width: 1080px) {
+      .site-header {
+        height: 62px;
+        max-width: 1260px;
+        margin: 10px auto 0;
+        top: 10px;
+      }
+      .header-nav-links {
+        display: flex;
+      }
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: nowrap !important;
+      width: auto !important;
+      justify-content: flex-end !important;
+      flex-shrink: 0;
+    }
+
+    .cmd-search-trigger {
+      min-height: 44px;
+      min-width: 44px;
+      padding: 0 13px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.055);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-secondary);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+
+    [data-theme="pearl-light"] .cmd-search-trigger {
+      background: rgba(15, 23, 42, 0.045);
+    }
+
+    .cmd-search-trigger:hover {
+      border-color: var(--accent-gold);
+      color: var(--text-primary);
+    }
+
+    .cmd-kbd-badge {
+      padding: 2px 6px;
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid var(--border-subtle);
+      font-size: 0.68rem;
+      font-weight: 700;
+      color: var(--accent-gold-light);
+      letter-spacing: 0.02em;
+    }
+
+    [data-theme="pearl-light"] .cmd-kbd-badge {
+      background: rgba(15, 23, 42, 0.06);
+    }
+
+    .header-icon-only-btn {
+      width: 44px;
+      height: 44px;
+      min-width: 44px;
+      min-height: 44px;
+      padding: 0;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-primary);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+    }
+
+    [data-theme="pearl-light"] .header-icon-only-btn {
+      background: rgba(15, 23, 42, 0.05);
+    }
+
+    .header-icon-only-btn:hover {
+      border-color: var(--accent-gold);
+      color: var(--accent-gold);
+      transform: translateY(-1px);
+    }
+
+    .mobile-theme-cycle-btn {
+      display: none;
+    }
+
+    .theme-switcher {
+      padding: 2px;
+      gap: 2px;
+      align-items: center;
+    }
+
+    .theme-btn {
+      color: var(--text-secondary);
+    }
+
+    .theme-btn.active {
+      color: var(--accent-gold);
+      background: rgba(245, 158, 11, 0.18);
+    }
+
+    /* Responsive single-line compaction on Mobile & Tablet */
+    @media (max-width: 767px) {
+      .theme-switcher {
+        display: none !important;
+      }
+      .mobile-theme-cycle-btn {
+        display: inline-flex;
+      }
+      .cmd-search-label,
+      .cmd-kbd-badge,
+      .vcard-btn-label {
+        display: none;
+      }
+      .cmd-search-trigger {
+        width: 44px;
+        padding: 0;
+      }
+      .header-btn.primary-gold {
+        width: 44px;
+        min-width: 44px;
+        padding: 0;
+        justify-content: center;
+      }
+      /* CRITICAL FIX: Hide redundant floating AI pill on mobile so it NEVER overlaps the Bottom Dock! */
+      .ai-floating-launcher {
+        display: none !important;
+      }
+      .mobile-quick-dock {
+        left: 10px;
+        right: 10px;
+        bottom: 10px;
+        padding: 6px 8px;
+        border-radius: 22px;
+        gap: 4px;
+      }
+      .dock-item {
+        flex: 1 1 0;
+        min-height: 48px;
+        padding: 6px 4px;
+        font-size: 0.68rem;
+        gap: 3px;
+      }
+      .dock-item.highlight {
+        background: linear-gradient(135deg, rgba(245, 158, 11, 0.24), rgba(16, 185, 129, 0.24));
+        border: 1px solid var(--border-highlight);
+        color: var(--accent-gold-light);
+        font-weight: 700;
+      }
+      [data-theme="pearl-light"] .dock-item.highlight {
+        color: #92400e;
+      }
+      .ai-chat-window {
+        bottom: 76px;
+        max-height: calc(100vh - 96px);
+      }
+      .site-footer {
+        padding-bottom: 96px;
+      }
+    }
+
+
+    /* ==========================================================================
+       3-LANE VALUE COMPASS, INTERACTIVE TIMELINE & PROGRESSIVE 34-WEB SHOWCASE
+       ========================================================================== */
+    .metrics-ribbon {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      padding: 16px 22px;
+      border-radius: 20px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      margin-bottom: 18px;
+    }
+
+    .metric-inline-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding-right: 10px;
+      border-right: 1px solid var(--border-subtle);
+    }
+
+    .metric-inline-item:last-child {
+      border-right: none;
+    }
+
+    .metric-inline-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.75rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--accent-gold-light), var(--accent-emerald));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+
+    .metric-inline-label {
+      font-size: 0.78rem;
+      color: var(--text-secondary);
+      line-height: 1.3;
+    }
+
+    .metric-inline-label strong {
+      display: block;
+      color: var(--text-primary);
+      font-size: 0.84rem;
+    }
+
+    .compass-lanes-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .compass-lane-card {
+      position: relative;
+      padding: 22px 24px;
+      border-radius: 22px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 14px;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      overflow: hidden;
+    }
+
+    .compass-lane-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--accent-gold);
+      box-shadow: var(--shadow-luxury);
+    }
+
+    .compass-lane-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .compass-icon-badge {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.16), rgba(16, 185, 129, 0.16));
+      border: 1px solid var(--border-highlight);
+      color: var(--accent-gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .compass-step-pill {
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent-emerald);
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.28);
+    }
+
+    .compass-lane-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.22rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 6px;
+      line-height: 1.3;
+    }
+
+    .compass-lane-desc {
+      font-size: 0.86rem;
+      color: var(--text-secondary);
+      line-height: 1.58;
+    }
+
+    .compass-lane-cta {
+      font-size: 0.84rem;
+      font-weight: 700;
+      color: var(--accent-gold-light);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      min-height: 44px;
+    }
+
+    /* Interactive Journey Timeline (1982 -> 2016 -> 2018 -> 2026) */
+    .journey-shell {
+      padding: 28px 30px;
+      border-radius: 26px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      box-shadow: var(--shadow-luxury);
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+    }
+
+    .journey-tabs-track {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+
+    .journey-node-btn {
+      min-height: 64px;
+      padding: 12px 16px;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.035);
+      border: 1px solid var(--border-subtle);
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 3px;
+      transition: all 0.25s ease;
+      color: var(--text-secondary);
+    }
+
+    [data-theme="pearl-light"] .journey-node-btn {
+      background: rgba(15, 23, 42, 0.03);
+    }
+
+    .journey-node-btn:hover {
+      border-color: var(--accent-gold);
+      transform: translateY(-2px);
+    }
+
+    .journey-node-btn.active {
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.18), rgba(16, 185, 129, 0.14));
+      border-color: var(--accent-gold);
+      box-shadow: 0 8px 24px var(--accent-gold-glow);
+    }
+
+    .journey-year {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--accent-gold);
+    }
+
+    .journey-node-label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .journey-stage-box {
+      padding: 24px 26px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.07), rgba(245, 158, 11, 0.06));
+      border: 1px solid var(--border-highlight);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 22px;
+      align-items: center;
+    }
+
+    .journey-stage-eyebrow {
+      font-size: 0.74rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--accent-emerald);
+      margin-bottom: 6px;
+    }
+
+    .journey-stage-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.25rem, 2.2vw, 1.55rem);
+      font-weight: 800;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+
+    .journey-stage-story {
+      font-size: 0.91rem;
+      color: var(--text-secondary);
+      line-height: 1.68;
+    }
+
+    /* Tier Tabs, View Mode Toggle & Progressive Showcase for 34 Websites */
+    .my-webs-tier-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      flex-wrap: wrap;
+      padding: 12px 16px;
+      border-radius: 18px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      margin-bottom: 14px;
+    }
+
+    .tier-tabs-group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .tier-tab-btn {
+      min-height: 44px;
+      padding: 8px 15px;
+      border-radius: 12px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--text-secondary);
+      background: transparent;
+      border: 1px solid transparent;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      transition: all 0.2s ease;
+    }
+
+    .tier-tab-btn:hover {
+      color: var(--text-primary);
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .tier-tab-btn.active {
+      background: linear-gradient(135deg, var(--accent-gold), #d97706);
+      color: #090d16;
+      box-shadow: 0 4px 15px var(--accent-gold-glow);
+    }
+
+    .view-mode-toggle {
+      display: inline-flex;
+      padding: 3px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border-subtle);
+      gap: 4px;
+    }
+
+    [data-theme="pearl-light"] .view-mode-toggle {
+      background: rgba(15, 23, 42, 0.04);
+    }
+
+    .view-mode-btn {
+      min-height: 44px;
+      padding: 6px 13px;
+      border-radius: 9px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--text-secondary);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+    }
+
+    .view-mode-btn.active {
+      background: var(--bg-secondary);
+      color: var(--accent-gold);
+      border: 1px solid var(--border-highlight);
+    }
+
+    /* Visual Browser Mockup Topbar inside .my-web-media */
+    .my-web-browser-chrome {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 28px;
+      padding: 0 12px;
+      background: rgba(4, 8, 16, 0.55);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .chrome-dots {
+      display: inline-flex;
+      gap: 5px;
+    }
+
+    .chrome-dots i {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .chrome-dots i:nth-child(1) { background: rgba(248, 113, 113, 0.75); }
+    .chrome-dots i:nth-child(2) { background: rgba(251, 191, 36, 0.75); }
+    .chrome-dots i:nth-child(3) { background: rgba(52, 211, 153, 0.75); }
+
+    .chrome-tier-tag {
+      font-size: 0.65rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #fde68a;
+    }
+
+    .chrome-tier-tag.community {
+      color: #99f6e4;
+    }
+
+    .my-web-media {
+      padding-top: 34px;
+    }
+
+    .my-web-pill {
+      top: 36px;
+    }
+
+    .my-web-svg-emblem {
+      width: 56px;
+      height: 56px;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.09);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fde68a;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    }
+
+    /* COMPACT DIRECTORY INDEX MODE (View all 34 websites in ~1.2 screens!) */
+    #myWebsitesGrid.compact-view {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    #myWebsitesGrid.compact-view .my-web-card {
+      flex-direction: row;
+      align-items: center;
+      padding: 10px 16px;
+      border-radius: 14px;
+      gap: 14px;
+    }
+
+    #myWebsitesGrid.compact-view .my-web-media,
+    #myWebsitesGrid.compact-view .my-web-desc,
+    #myWebsitesGrid.compact-view .my-web-tags,
+    #myWebsitesGrid.compact-view .my-web-badge-note {
+      display: none !important;
+    }
+
+    #myWebsitesGrid.compact-view .my-web-body {
+      padding: 0;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    #myWebsitesGrid.compact-view .my-web-title {
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 0.92rem;
+      margin: 0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    #myWebsitesGrid.compact-view .my-web-title a {
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    #myWebsitesGrid.compact-view .my-web-role {
+      display: none;
+    }
+
+    #myWebsitesGrid.compact-view .my-web-actions {
+      padding-top: 0;
+      margin-top: 0;
+      border-top: none;
+      flex-shrink: 0;
+    }
+
+    .progressive-expand-bar {
+      margin-top: 18px;
+      padding: 18px 22px;
+      border-radius: 20px;
+      background: var(--bg-card);
+      border: 1px dashed var(--border-highlight);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 980px) {
+      .metrics-ribbon {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .metric-inline-item:nth-child(2) {
+        border-right: none;
+      }
+      .compass-lanes-grid {
+        grid-template-columns: 1fr;
+      }
+      .journey-tabs-track {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .journey-stage-box {
+        grid-template-columns: 1fr;
+      }
+      #myWebsitesGrid.compact-view {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .metrics-ribbon {
+        grid-template-columns: 1fr 1fr;
+        padding: 14px;
+      }
+      .metric-inline-item {
+        border-right: none;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+      }
+      .journey-shell {
+        padding: 20px 18px;
+      }
+    }
+
+
+    /* ==========================================================================
+       HIGH-CONVERSION HTX SHELF & EDITORIAL MAGAZINE WISDOM LAYOUT
+       ========================================================================== */
+    .showcase-specs-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin: 10px 0 4px;
+    }
+
+    .showcase-spec-pill {
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(16, 185, 129, 0.12);
+      border: 1px solid rgba(16, 185, 129, 0.32);
+      color: var(--accent-emerald);
+    }
+
+    .showcase-dual-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 6px;
+    }
+
+    .showcase-order-btn {
+      width: 100%;
+      min-height: 44px;
+      padding: 10px 14px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--accent-gold), #d97706);
+      color: #090d16;
+      font-size: 0.82rem;
+      font-weight: 800;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      transition: all 0.22s ease;
+    }
+
+    .showcase-order-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px var(--accent-gold-glow);
+    }
+
+    /* Editorial Magazine Featured Lead Card (#01 spans 2 columns on Desktop) */
+    @media (min-width: 981px) {
+      #wisdomGrid .wisdom-card.editorial-lead {
+        grid-column: span 2;
+        background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(16, 185, 129, 0.08)), var(--bg-card);
+        border-color: var(--border-highlight);
+        padding: 28px 30px;
+      }
+      #wisdomGrid .wisdom-card.editorial-lead .wisdom-title {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.48rem;
+        line-height: 1.3;
+      }
+      #wisdomGrid .wisdom-card.editorial-lead .wisdom-excerpt {
+        font-size: 0.94rem;
+      }
+    }
+
+    .wisdom-read-meta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .wisdom-time-pill {
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-subtle);
+    }
+
+    [data-theme="pearl-light"] .wisdom-time-pill {
+      background: rgba(15, 23, 42, 0.05);
+    }
+
+    .wisdom-card-actions {
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .quick-listen-btn {
+      min-height: 44px;
+      padding: 8px 12px;
+      border-radius: 10px;
+      background: rgba(16, 185, 129, 0.12);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      color: var(--accent-emerald);
+      font-size: 0.78rem;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      transition: all 0.2s ease;
+    }
+
+    .quick-listen-btn:hover,
+    .quick-listen-btn.speaking {
+      background: var(--accent-emerald);
+      color: #041611;
+    }
+
+    [data-theme="pearl-light"] .quick-listen-btn:hover,
+    [data-theme="pearl-light"] .quick-listen-btn.speaking {
+      color: #ffffff;
+    }
+
+
+    /* ==========================================================================
+       COMMAND PALETTE (CTRL+K) & QUOTE-TO-IMAGE STUDIO
+       ========================================================================== */
+    .cmdk-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 1400;
+      background: rgba(3, 7, 18, 0.72);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      display: none;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 10vh 14px 14px;
+    }
+    .cmdk-backdrop.open { display: flex; animation: modalFadeIn 0.16s ease-out; }
+    .cmdk-panel {
+      width: 100%;
+      max-width: 640px;
+      max-height: 72vh;
+      display: flex;
+      flex-direction: column;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-highlight);
+      border-radius: 20px;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+      overflow: hidden;
+    }
+    .cmdk-input-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 0 16px;
+      border-bottom: 1px solid var(--border-subtle);
+      color: var(--text-muted);
+    }
+    .cmdk-input-row input {
+      flex: 1;
+      min-height: 56px;
+      background: transparent;
+      border: none;
+      outline: none;
+      color: var(--text-primary);
+      font-size: 1rem;
+      font-family: inherit;
+    }
+    .cmdk-esc {
+      min-height: 44px;
+      min-width: 44px;
+      padding: 0 10px;
+      border-radius: 10px;
+      border: 1px solid var(--border-subtle);
+      color: var(--text-muted);
+      font-size: 0.72rem;
+      font-weight: 700;
+    }
+    .cmdk-results {
+      overflow-y: auto;
+      padding: 8px;
+      flex: 1;
+    }
+    .cmdk-group-label {
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent-gold);
+      padding: 10px 10px 6px;
+    }
+    .cmdk-item {
+      width: 100%;
+      min-height: 48px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 8px 12px;
+      border-radius: 12px;
+      text-align: left;
+      color: var(--text-primary);
+      background: transparent;
+      border: 1px solid transparent;
+    }
+    .cmdk-item.active, .cmdk-item:hover {
+      background: rgba(245, 158, 11, 0.12);
+      border-color: var(--border-highlight);
+    }
+    .cmdk-item-icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+      background: rgba(16, 185, 129, 0.12);
+      color: var(--accent-emerald);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .cmdk-item-text { min-width: 0; flex: 1; }
+    .cmdk-item-title {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .cmdk-item-sub {
+      display: block;
+      font-size: 0.74rem;
+      color: var(--text-muted);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .cmdk-footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 10px 16px;
+      border-top: 1px solid var(--border-subtle);
+      font-size: 0.72rem;
+      color: var(--text-muted);
+    }
+    .cmdk-empty {
+      padding: 28px 16px;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.88rem;
+    }
+    .quote-preview-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+    }
+    .quote-preview-wrap canvas {
+      width: 100%;
+      max-width: 420px;
+      height: auto;
+      border-radius: 16px;
+      box-shadow: 0 14px 40px rgba(0, 0, 0, 0.5);
+    }
+
   </style>
 </head>
 <body>
@@ -3281,7 +4258,7 @@
   <header class="site-header">
     <nav class="header-inner" aria-label="Điều hướng chính">
       <a href="#heroCard" class="brand-mini">
-        <img src="./111.jpg" width="42" height="42" decoding="async" alt="Lê Phúc Nhật" class="js-avatar-img" />
+        <img src="./111.jpg" width="36" height="36" decoding="async" alt="Lê Phúc Nhật" class="js-avatar-img" />
         <div class="brand-mini-text">
           <span class="brand-mini-name">Lê Phúc Nhật</span>
           <span class="brand-mini-domain">lephucnhat.vn</span>
@@ -3289,30 +4266,38 @@
       </a>
 
       <div class="header-nav-links">
-        <a href="#enterpriseSection" class="nav-pill-link">Hệ Sinh Thái</a>
-        <a href="#myWebsitesSection" class="nav-pill-link">Web Của Tôi</a>
-        <a href="#aiPostsSection" class="nav-pill-link">11 Bài Chiêm Nghiệm</a>
+        <a href="#valueCompassSection" class="nav-pill-link">Hệ Sinh Thái</a>
+        <a href="#journeyTimelineSection" class="nav-pill-link">Hành Trình</a>
+        <a href="#myWebsitesSection" class="nav-pill-link">34 Chuyên Trang</a>
+        <a href="#aiPostsSection" class="nav-pill-link">11 Chiêm Nghiệm</a>
         <a href="#vcardSection" class="nav-pill-link">Danh Thiếp QR</a>
-        <a href="#kindnessSection" class="nav-pill-link">Bức Tường Tử Tế</a>
-      </div>
-
-      <div class="live-location-pill">
-        <span class="online-dot"></span>
-        <span>Quảng Trị, VN • <span id="liveClock">00:00:00</span></span>
       </div>
 
       <div class="header-actions">
-        <button class="header-btn primary-gold" onclick="downloadVCard()">
-          📇 Lưu Danh Bạ
+        <button type="button" class="cmd-search-trigger" id="headerSearchBtn" onclick="openCommandPalette()" aria-label="Tìm kiếm nhanh toàn trang (Ctrl+K)" title="Tìm nhanh mọi nội dung (Ctrl+K)">
+          <svg class="lpn-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          <span class="cmd-search-label">Tìm nhanh...</span>
+          <span class="cmd-kbd-badge">Ctrl K</span>
         </button>
-        <button class="header-btn" onclick="openShareModal()">
-          🔗 Chia Sẻ
-        </button>
+
         <div class="theme-switcher" role="group" aria-label="Chuyển đổi giao diện">
-          <button class="theme-btn active" data-theme-set="royal-dark" title="Tối Hoàng Gia">🌌</button>
-          <button class="theme-btn" data-theme-set="emerald-forest" title="Ngọc Lục Bảo Xứ Cùa">🌿</button>
-          <button class="theme-btn" data-theme-set="pearl-light" title="Sáng Tinh Khôi">☀️</button>
+          <button type="button" class="theme-btn active" data-theme-set="royal-dark" aria-label="Giao diện Tối Hoàng Gia" title="Tối Hoàng Gia"><svg class="lpn-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
+          <button type="button" class="theme-btn" data-theme-set="emerald-forest" aria-label="Giao diện Ngọc Lục Bảo Xứ Cùa" title="Ngọc Lục Bảo Xứ Cùa"><svg class="lpn-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></button>
+          <button type="button" class="theme-btn" data-theme-set="pearl-light" aria-label="Giao diện Sáng Tinh Khôi" title="Sáng Tinh Khôi"><svg class="lpn-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg></button>
         </div>
+
+        <button type="button" class="header-icon-only-btn mobile-theme-cycle-btn" id="mobileThemeCycleBtn" onclick="cycleNextTheme()" aria-label="Đổi chủ đề màu" title="Đổi chủ đề màu">
+          <svg class="lpn-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+
+        <button type="button" class="header-icon-only-btn" onclick="openShareModal()" aria-label="Chia sẻ danh thiếp" title="Chia sẻ danh thiếp">
+          <svg class="lpn-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.59 13.51 6.83 3.98M15.41 6.51l-6.82 3.98"/></svg>
+        </button>
+
+        <button type="button" class="header-btn primary-gold" onclick="downloadVCard()" aria-label="Lưu Danh Bạ (.vcf)" title="Tải danh thiếp vào điện thoại">
+          <svg class="lpn-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3"/><circle cx="9" cy="10" r="2.2"/><path d="M6 16c.6-1.6 1.8-2.4 3-2.4s2.4.8 3 2.4M15 9h3M15 13h3"/></svg>
+          <span class="vcard-btn-label">Lưu Danh Bạ</span>
+        </button>
       </div>
     </nav>
   </header>
@@ -3323,13 +4308,17 @@
     <!-- A. HERO CARD VIP -->
     <section id="heroCard" class="border-beam-card shimmer-surface hero-card">
       <div class="hero-topbar">
-        <span class="mindfulness-pill">❤ Cherish mindfulness • Hiểu sâu Sống tỉnh Hành đúng</span>
+        <span class="mindfulness-pill"><svg class="lpn-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg> <span>Cherish mindfulness • Hiểu sâu Sống tỉnh Hành đúng</span></span>
         <div class="hero-badges-right">
+          <span class="live-location-pill">
+            <span class="online-dot"></span>
+            <span>Quảng Trị • <span id="liveClock">00:00:00</span></span>
+          </span>
           <a href="https://www.facebook.com/lephucnhat.vn" target="_blank" rel="noopener" class="follower-pill">
-            📘 <span>7.3K+ Followers</span>
+            <svg class="lpn-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg> <span>7.3K+ Followers</span>
           </a>
-          <span class="verified-vip-pill" id="verifiedVipBadge" title="Chạm 5 lần hoặc giữ 2 giây để mở Quản trị Admin">
-            ✔ Verified VIP
+          <span class="verified-vip-pill" id="verifiedVipBadge" role="button" tabindex="0" title="Chạm 5 lần hoặc giữ 2 giây để mở Quản trị Admin">
+            <svg class="lpn-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg> <span>Verified VIP</span>
           </span>
         </div>
       </div>
@@ -3341,7 +4330,7 @@
             <img src="./111.jpg" width="176" height="176" fetchpriority="high" decoding="async" alt="Lê Phúc Nhật (Hiểu Sâu Sống Tỉnh Hành Đúng)" class="js-avatar-img" />
             <span class="avatar-status-dot" title="Đang trực tuyến"></span>
           </div>
-          <p class="location-subtext">📍 Xứ Cùa – Cam Lộ, Quảng Trị</p>
+          <p class="location-subtext" style="display:inline-flex;align-items:center;gap:6px;"><svg class="lpn-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><span>Xứ Cùa – Cam Lộ, Quảng Trị</span></p>
           <button class="admin-upload-btn admin-only" onclick="triggerFileUpload('avatarInput')">
             📷 Đổi ảnh đại diện
           </button>
@@ -3371,16 +4360,16 @@
 
           <div class="hero-cta-row">
             <a href="#myWebsitesSection" class="cta-btn primary">
-              🌐 Khám Phá Hệ Sinh Thái (<span class="js-total-webs-count">34</span> Web)
+              <svg class="lpn-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5a14.5 14.5 0 0 1 0 19 14.5 14.5 0 0 1 0-19"/></svg> <span>Khám Phá Hệ Sinh Thái (<span class="js-total-webs-count">34</span> Web)</span>
             </a>
             <button type="button" class="cta-btn emerald" onclick="toggleChatWindow(true)">
-              ✨ Hỏi Trợ Lý AI Lê Phúc Nhật
+              <svg class="lpn-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 1.9 5.8a2 2 0 0 0 1.3 1.3L21 12l-5.8 1.9a2 2 0 0 0-1.3 1.3L12 21l-1.9-5.8a2 2 0 0 0-1.3-1.3L3 12l5.8-1.9a2 2 0 0 0 1.3-1.3Z"/></svg> <span>Hỏi Trợ Lý AI Lê Phúc Nhật</span>
             </button>
             <button type="button" class="cta-btn" onclick="downloadVCard()">
-              📇 Lưu Danh Bạ (.vcf)
+              <svg class="lpn-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3"/><circle cx="9" cy="10" r="2.2"/><path d="M6 16c.6-1.6 1.8-2.4 3-2.4s2.4.8 3 2.4M15 9h3M15 13h3"/></svg> <span>Lưu Danh Bạ (.vcf)</span>
             </button>
             <a href="https://www.facebook.com/lephucnhat.vn" target="_blank" rel="noopener" class="cta-btn">
-              📘 Facebook Chính Thức
+              <svg class="lpn-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg> <span>Facebook Chính Thức</span>
             </a>
           </div>
         </div>
@@ -3398,28 +4387,107 @@
       </div>
     </section>
 
-    <!-- B. 4 CON SỐ THỐNG KÊ HÀNH TRÌNH -->
-    <section aria-label="Con số thống kê hành trình">
-      <div class="stats-grid">
-        <div class="stat-card shimmer-surface">
-          <div class="stat-number">15+</div>
-          <div class="stat-title">Năm kinh nghiệm</div>
-          <p class="stat-desc">Lâm nghiệp bền vững &amp; Dược liệu Xứ Cùa</p>
+    <!-- B. LA BÀN 3 GIÁ TRỊ CỐT LÕI & DẢI THỐNG KÊ THỰC CHỨNG -->
+    <section id="valueCompassSection" class="section-block" aria-label="La bàn 3 giá trị cốt lõi">
+      <div class="metrics-ribbon">
+        <div class="metric-inline-item">
+          <span class="metric-inline-num">15+</span>
+          <span class="metric-inline-label"><strong>Năm Lâm Nghiệp</strong>Dược liệu sạch Xứ Cùa</span>
         </div>
-        <div class="stat-card shimmer-surface">
-          <div class="stat-number">7.3K+</div>
-          <div class="stat-title">Cộng đồng Follower</div>
-          <p class="stat-desc">Facebook @lephucnhat.vn</p>
+        <div class="metric-inline-item">
+          <span class="metric-inline-num">36+</span>
+          <span class="metric-inline-label"><strong>Mô-đun AI Thực Chiến</strong>Tự động hóa 25+ kênh</span>
         </div>
-        <div class="stat-card shimmer-surface">
-          <div class="stat-number">36+</div>
-          <div class="stat-title">Mô-đun &amp; Giải pháp AI</div>
-          <p class="stat-desc">Vận hành 25+ kênh &amp; 34 chuyên trang số</p>
+        <div class="metric-inline-item">
+          <span class="metric-inline-num">34</span>
+          <span class="metric-inline-label"><strong>Chuyên Trang 4D</strong>Giáo trình &amp; Tộc phả số</span>
         </div>
-        <div class="stat-card shimmer-surface">
-          <div class="stat-number">100%</div>
-          <div class="stat-title">Tử Tế &amp; Tận Tâm</div>
-          <p class="stat-desc">Triết lý phụng sự giá trị thực từ Gốc</p>
+        <div class="metric-inline-item">
+          <span class="metric-inline-num">7.3K+</span>
+          <span class="metric-inline-label"><strong>Bạn Hữu Theo Dõi</strong>Phụng sự từ Gốc 100%</span>
+        </div>
+      </div>
+
+      <div class="compass-lanes-grid">
+        <a href="#htxShowcaseShelf" class="compass-lane-card">
+          <div>
+            <div class="compass-lane-top">
+              <div class="compass-icon-badge"><svg class="lpn-ico lpn-ico-lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 5 12h4l-3 7h12l-3-7h4L12 3z"/><path d="M12 19v3"/></svg></div>
+              <span class="compass-step-pill">Trụ cột 01 • Đất rừng</span>
+            </div>
+            <h2 class="compass-lane-title" style="margin-top:14px;">HTX Lâm Nghiệp &amp; Dược Liệu Keo Sơn</h2>
+            <p class="compass-lane-desc">Cây giống keo lai chuẩn nguồn chống bão miền Trung, Cao An Xoa, Cao Chè Vằng và Ngũ cốc bản địa đất đỏ bazan Xứ Cùa.</p>
+          </div>
+          <span class="compass-lane-cta">Xem tiêu chuẩn &amp; Kết nối đặt hàng →</span>
+        </a>
+
+        <a href="#myWebsitesSection" class="compass-lane-card">
+          <div>
+            <div class="compass-lane-top">
+              <div class="compass-icon-badge"><svg class="lpn-ico lpn-ico-lg" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3"/></svg></div>
+              <span class="compass-step-pill">Trụ cột 02 • Công nghệ</span>
+            </div>
+            <h2 class="compass-lane-title" style="margin-top:14px;">Kiến Trúc AI Thực Chiến &amp; 34 Web 4D</h2>
+            <p class="compass-lane-desc">Xưởng sản xuất phim tự động V104, bộ cẩm nang Google AI, siêu giáo trình 4D Cinema và các công trình số phụng sự cộng đồng.</p>
+          </div>
+          <span class="compass-lane-cta">Khám phá triển lãm 34 chuyên trang →</span>
+        </a>
+
+        <a href="#aiPostsSection" class="compass-lane-card">
+          <div>
+            <div class="compass-lane-top">
+              <div class="compass-icon-badge"><svg class="lpn-ico lpn-ico-lg" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg></div>
+              <span class="compass-step-pill">Trụ cột 03 • Tâm thức</span>
+            </div>
+            <h2 class="compass-lane-title" style="margin-top:14px;">Triết Lý Sống Tỉnh &amp; 11 Chiêm Nghiệm</h2>
+            <p class="compass-lane-desc">Đúc kết <em>Hiểu Sâu • Sống Tỉnh • Hành Đúng</em> từ trải nghiệm xương máu, tích hợp đọc giọng nói tiếng Việt và tạo thẻ trích dẫn.</p>
+          </div>
+          <span class="compass-lane-cta">Đọc &amp; Nghe 11 bài chiêm nghiệm →</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- B2. HÀNH TRÌNH NGƯỜI GIEO RỪNG (INTERACTIVE STORYLINE 1982 – 2026) -->
+    <section id="journeyTimelineSection" class="section-block" aria-label="Hành trình Người Gieo Rừng">
+      <div class="section-head">
+        <span class="section-eyebrow">Authentic Storyline • 1982 — 2026</span>
+        <h2 class="section-title">Hành Trình Người Gieo Rừng</h2>
+        <p class="section-desc">Chạm vào từng cột mốc để theo dõi mạch chuyển hóa từ vùng đất đỏ Xứ Cùa đến hệ sinh thái Lâm nghiệp &amp; AI Thực Chiến</p>
+      </div>
+
+      <div class="journey-shell">
+        <div class="journey-tabs-track" role="tablist" aria-label="Các cột mốc hành trình">
+          <button type="button" class="journey-node-btn" data-journey-idx="0" onclick="selectJourneyMilestone(0)">
+            <span class="journey-year">1982</span>
+            <span class="journey-node-label">Khởi nguồn Quảng Trị</span>
+          </button>
+          <button type="button" class="journey-node-btn active" data-journey-idx="1" onclick="selectJourneyMilestone(1)">
+            <span class="journey-year">2016</span>
+            <span class="journey-node-label">Biến cố 0,8 ha Rừng</span>
+          </button>
+          <button type="button" class="journey-node-btn" data-journey-idx="2" onclick="selectJourneyMilestone(2)">
+            <span class="journey-year">2018–2024</span>
+            <span class="journey-node-label">HTX Keo Sơn Vươn Rễ</span>
+          </button>
+          <button type="button" class="journey-node-btn" data-journey-idx="3" onclick="selectJourneyMilestone(3)">
+            <span class="journey-year">2026</span>
+            <span class="journey-node-label">Hệ Sinh Thái Số xAI</span>
+          </button>
+        </div>
+
+        <div class="journey-stage-box" id="journeyStageBox">
+          <div>
+            <div class="journey-stage-eyebrow" id="journeyStageEyebrow">BƯỚC NGOẶT THỨC TỈNH • CAM LỘ 2016</div>
+            <h3 class="journey-stage-title" id="journeyStageTitle">Từ Cú Vấp Ngã 0,8 Ha Rừng Đến Triết Lý Ba Chữ Sống</h3>
+            <p class="journey-stage-story" id="journeyStageStory">
+              Đối diện trực diện với sai lầm thực tiễn trên đồi rừng Cam Lộ năm 2016 chính là khoảnh khắc khai sinh triết lý định danh: <strong>Hiểu sâu để thấy bản chất – Sống tỉnh để giữ bình an – Hành đúng để tạo giá trị thực từ Gốc</strong>. Không đổ lỗi hoàn cảnh, bắt đầu lại từ từng bầu đất và từng mầm cây chuẩn nguồn.
+            </p>
+          </div>
+          <div id="journeyStageActionWrap">
+            <a href="./nguoi-gieo-rung-4d/" target="_blank" rel="noopener noreferrer" class="cta-btn primary" id="journeyStageCta">
+              Xem Bài Giảng 4D →
+            </a>
+          </div>
         </div>
       </div>
     </section>
@@ -3530,14 +4598,13 @@
       </div>
 
       <!-- KỆ TRƯNG BÀY ĐIỂM NHẤN: TIÊU ĐIỂM SẢN PHẨM & GIẢI PHÁP THỰC CHIẾN -->
-      <div class="showcase-shelf-wrap shimmer-surface">
+      <div id="htxShowcaseShelf" class="showcase-shelf-wrap shimmer-surface">
         <div class="showcase-shelf-head">
           <h3 class="showcase-shelf-title">
-            <span>🌟</span>
-            <span>Tiêu Điểm Sản Phẩm HTX Keo Sơn &amp; Giải Pháp AI Thực Chiến</span>
+            <span>Tinh Hoa Đất Đỏ Bazan Xứ Cùa &amp; Giải Pháp AI Thực Chiến</span>
           </h3>
-          <span style="font-size:0.8rem; color:var(--text-secondary);">
-            Chạm vào từng mục để nhận tư vấn trực tiếp từ Trợ lý AI Lê Phúc Nhật
+          <span style="font-size:0.82rem; color:var(--text-secondary);">
+            Minh bạch tiêu chuẩn chất lượng từ Gốc • Kết nối đặt hàng hoặc nhận tư vấn AI 24/7
           </span>
         </div>
 
@@ -3545,57 +4612,93 @@
           <!-- Mục 1 -->
           <div class="showcase-item-card">
             <div>
-              <span class="showcase-badge">🌱 Lâm Nghiệp Bền Vững</span>
+              <span class="showcase-badge">Lâm Nghiệp Bền Vững • HTX Keo Sơn</span>
               <h4 class="showcase-name">Cây Giống Keo Lai Chuẩn Nguồn</h4>
               <p class="showcase-desc">
-                Ươm tạo từ vườn đầu dòng chất lượng cao tại Thôn An Sơn, Cam Lộ. Cây giống keo lai mô và giâm cành khỏe mạnh, bộ rễ cọc phát triển sâu, chống chịu gió bão miền Trung vượt trội.
+                Ươm tạo từ vườn đầu dòng tại Thôn An Sơn, Cam Lộ. Cây giống mô và giâm cành huấn luyện nắng chuẩn kỹ thuật, bộ rễ cọc cắm sâu chống bão miền Trung.
               </p>
+              <div class="showcase-specs-row">
+                <span class="showcase-spec-pill">Tỷ lệ sống &gt;96%</span>
+                <span class="showcase-spec-pill">Xuất vườn số lượng lớn</span>
+              </div>
             </div>
-            <button type="button" class="showcase-ask-btn" onclick="askShowcaseTopic('Cây Giống Keo Lai Chuẩn Nguồn của HTX Keo Sơn: kỹ thuật chọn giống, chăm sóc và liên hệ đặt hàng')">
-              ✨ Hỏi AI chi tiết
-            </button>
+            <div class="showcase-dual-actions">
+              <button type="button" class="showcase-order-btn" onclick="openQuickOrderModal('Cây Giống Keo Lai Chuẩn Nguồn (HTX Keo Sơn)', 'Báo giá số lượng bầu cây giống & lịch giao nhận tại Cam Lộ / Quảng Trị')">
+                <svg class="lpn-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg> <span>Đặt giống / Nhận báo giá</span>
+              </button>
+              <button type="button" class="showcase-ask-btn" onclick="askShowcaseTopic('Cây Giống Keo Lai Chuẩn Nguồn của HTX Keo Sơn: kỹ thuật chọn giống, chăm sóc và liên hệ đặt hàng')">
+                <svg class="lpn-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 1.9 5.8a2 2 0 0 0 1.3 1.3L21 12l-5.8 1.9a2 2 0 0 0-1.3 1.3L12 21l-1.9-5.8a2 2 0 0 0-1.3-1.3L3 12l5.8-1.9a2 2 0 0 0 1.3-1.3Z"/></svg> <span>Hỏi AI kỹ thuật trồng</span>
+              </button>
+            </div>
           </div>
 
           <!-- Mục 2 -->
           <div class="showcase-item-card">
             <div>
-              <span class="showcase-badge">🍵 Tinh Hoa Thảo Dược</span>
-              <h4 class="showcase-name">Cao An Xoa &amp; Cao Chè Vằng Xứ Cùa</h4>
+              <span class="showcase-badge">Tinh Hoa Thảo Dược Xứ Cùa</span>
+              <h4 class="showcase-name">Cao An Xoa &amp; Cao Chè Vằng Nguyên Chất</h4>
               <p class="showcase-desc">
-                Cô đặc truyền thống nhiều giờ liền từ dược liệu sạch vùng đất đỏ bazan Xứ Cùa. Cao An Xoa hỗ trợ giải độc, mát gan; Cao Chè Vằng thanh nhiệt, lợi sữa, giúp giấc ngủ sâu.
+                Cô đặc thủ công nhỏ lửa suốt nhiều giờ từ dược liệu sạch đất đỏ bazan Xứ Cùa. Cao An Xoa mát gan giải độc; Cao Chè Vằng thanh nhiệt, lợi sữa, ngủ sâu.
               </p>
+              <div class="showcase-specs-row">
+                <span class="showcase-spec-pill">100% Thảo mộc sạch</span>
+                <span class="showcase-spec-pill">Không chất bảo quản</span>
+              </div>
             </div>
-            <button type="button" class="showcase-ask-btn" onclick="askShowcaseTopic('Cao An Xoa và Cao Chè Vằng Xứ Cùa của HTX Keo Sơn: công dụng, cách pha uống và điểm khác biệt')">
-              ✨ Hỏi AI chi tiết
-            </button>
+            <div class="showcase-dual-actions">
+              <button type="button" class="showcase-order-btn" onclick="openQuickOrderModal('Cao An Xoa & Cao Chè Vằng Xứ Cùa', 'Đặt mua Cao An Xoa / Cao Chè Vằng nguyên chất từ HTX Keo Sơn')">
+                <svg class="lpn-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg> <span>Đặt mua dược liệu sạch</span>
+              </button>
+              <button type="button" class="showcase-ask-btn" onclick="askShowcaseTopic('Cao An Xoa và Cao Chè Vằng Xứ Cùa của HTX Keo Sơn: công dụng, cách pha uống và điểm khác biệt')">
+                <svg class="lpn-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 1.9 5.8a2 2 0 0 0 1.3 1.3L21 12l-5.8 1.9a2 2 0 0 0-1.3 1.3L12 21l-1.9-5.8a2 2 0 0 0-1.3-1.3L3 12l5.8-1.9a2 2 0 0 0 1.3-1.3Z"/></svg> <span>Hỏi AI công dụng &amp; cách pha</span>
+              </button>
+            </div>
           </div>
 
           <!-- Mục 3 -->
           <div class="showcase-item-card">
             <div>
-              <span class="showcase-badge">🌾 Thực Dưỡng Tự Nhiên</span>
-              <h4 class="showcase-name">Bột Ngũ Cốc Dinh Dưỡng</h4>
+              <span class="showcase-badge">Thực Dưỡng Tự Nhiên</span>
+              <h4 class="showcase-name">Bột Ngũ Cốc Dinh Dưỡng Bản Địa</h4>
               <p class="showcase-desc">
-                Phối trộn theo tỷ lệ vàng từ các loại hạt bản địa tuyển chọn kỹ lưỡng, rang xay thơm dịu, giữ trọn dưỡng chất tự nhiên, bồi bổ sức khỏe lành mạnh cho cả gia đình.
+                Phối trộn tỷ lệ vàng từ các loại đậu hạt tuyển chọn tại quê hương, rang chín thơm dịu, giữ trọn đạm thực vật và chất xơ lành mạnh cho cả gia đình.
               </p>
+              <div class="showcase-specs-row">
+                <span class="showcase-spec-pill">Rang xay mẻ mới</span>
+                <span class="showcase-spec-pill">Không đường tinh luyện</span>
+              </div>
             </div>
-            <button type="button" class="showcase-ask-btn" onclick="askShowcaseTopic('Bột Ngũ Cốc Dinh Dưỡng của HTX Keo Sơn: thành phần hạt, giá trị dinh dưỡng và cách sử dụng')">
-              ✨ Hỏi AI chi tiết
-            </button>
+            <div class="showcase-dual-actions">
+              <button type="button" class="showcase-order-btn" onclick="openQuickOrderModal('Bột Ngũ Cốc Dinh Dưỡng HTX Keo Sơn', 'Đặt mua Bột Ngũ Cốc bản địa rang xay mới cho gia đình')">
+                <svg class="lpn-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg> <span>Đặt mua Ngũ cốc</span>
+              </button>
+              <button type="button" class="showcase-ask-btn" onclick="askShowcaseTopic('Bột Ngũ Cốc Dinh Dưỡng của HTX Keo Sơn: thành phần hạt, giá trị dinh dưỡng và cách sử dụng')">
+                <svg class="lpn-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 1.9 5.8a2 2 0 0 0 1.3 1.3L21 12l-5.8 1.9a2 2 0 0 0-1.3 1.3L12 21l-1.9-5.8a2 2 0 0 0-1.3-1.3L3 12l5.8-1.9a2 2 0 0 0 1.3-1.3Z"/></svg> <span>Hỏi AI thành phần hạt</span>
+              </button>
+            </div>
           </div>
 
           <!-- Mục 4 -->
           <div class="showcase-item-card">
             <div>
-              <span class="showcase-badge">🤖 Hệ Sinh Thái Số</span>
-              <h4 class="showcase-name">Bộ Quy Trình 36+ Mô-đun AI Tự Động Hóa</h4>
+              <span class="showcase-badge">Hệ Sinh Thái Số &amp; Đào Tạo</span>
+              <h4 class="showcase-name">Kiến Trúc 36+ Mô-đun AI Tự Động Hóa</h4>
               <p class="showcase-desc">
-                Tích hợp Gemini, DeepSeek, NotebookLM, Python &amp; PowerShell giúp tự động hóa sản xuất kịch bản, xử lý đa phương tiện và vận hành mạng lưới 25+ kênh nội dung tỉnh thức.
+                Thiết kế hệ thống Website 4D, Tộc phả số, Cổng trường học và quy trình Đa tác tử (Gemini, DeepSeek, NotebookLM, Python) giải phóng 80% việc thủ công.
               </p>
+              <div class="showcase-specs-row">
+                <span class="showcase-spec-pill">25+ Kênh vận hành</span>
+                <span class="showcase-spec-pill">Chuyển giao 1-1 thực chiến</span>
+              </div>
             </div>
-            <button type="button" class="showcase-ask-btn" onclick="askShowcaseTopic('Bộ Quy Trình 36+ Mô-đun AI Tự Động Hóa của anh Lê Phúc Nhật và cách ứng dụng vào công việc thực tế')">
-              ✨ Hỏi AI chi tiết
-            </button>
+            <div class="showcase-dual-actions">
+              <button type="button" class="showcase-order-btn" onclick="openQuickOrderModal('Đồng Hành Kiến Tạo Website 4D & Hệ Thống AI Thực Chiến', 'Đăng ký trao đổi xây dựng Website cá nhân / Tộc phả 4D / Tự động hóa AI')">
+                <svg class="lpn-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg> <span>Đăng ký hợp tác AI</span>
+              </button>
+              <button type="button" class="showcase-ask-btn" onclick="askShowcaseTopic('Bộ Quy Trình 36+ Mô-đun AI Tự Động Hóa của anh Lê Phúc Nhật và cách ứng dụng vào công việc thực tế')">
+                <svg class="lpn-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 1.9 5.8a2 2 0 0 0 1.3 1.3L21 12l-5.8 1.9a2 2 0 0 0-1.3 1.3L12 21l-1.9-5.8a2 2 0 0 0-1.3-1.3L3 12l5.8-1.9a2 2 0 0 0 1.3-1.3Z"/></svg> <span>Hỏi AI lộ trình triển khai</span>
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -3639,15 +4742,38 @@
         </div>
       </div>
 
+      <div class="my-webs-tier-header">
+        <div class="tier-tabs-group" role="tablist" aria-label="Phân tầng hệ sinh thái">
+          <button type="button" class="tier-tab-btn active" data-tier-filter="all" onclick="filterMyWebsitesTier('all', this)">
+            <span>Tất Cả Hệ Sinh Thái (<span class="js-total-webs-count">34</span>)</span>
+          </button>
+          <button type="button" class="tier-tab-btn" data-tier-filter="core" onclick="filterMyWebsitesTier('core', this)">
+            <svg class="lpn-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="m2 4 3 12h14l3-12-6 7-4-7-4 7-6-7zm3 16h14"/></svg> <span>Tài Sản &amp; Giáo Trình LPN (<span id="countTierCore">17</span>)</span>
+          </button>
+          <button type="button" class="tier-tab-btn" data-tier-filter="community" onclick="filterMyWebsitesTier('community', this)">
+            <svg class="lpn-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg> <span>Công Trình Cộng Đồng &amp; Dòng Tộc (<span id="countTierComm">17</span>)</span>
+          </button>
+        </div>
+
+        <div class="view-mode-toggle" role="group" aria-label="Chế độ hiển thị">
+          <button type="button" class="view-mode-btn active" id="viewBtnGrid" onclick="setMyWebsitesViewMode('grid')">
+            <svg class="lpn-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg> <span>Thẻ Trực Quan</span>
+          </button>
+          <button type="button" class="view-mode-btn" id="viewBtnCompact" onclick="setMyWebsitesViewMode('compact')">
+            <svg class="lpn-ico" viewBox="0 0 24 24" aria-hidden="true"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg> <span>Danh Bạ 1 Trang</span>
+          </button>
+        </div>
+      </div>
+
       <div class="my-webs-controls-row">
         <div class="my-webs-filter-bar" role="tablist" aria-label="Lọc danh sách Web của tôi">
-          <button type="button" class="my-webs-filter-btn active" data-filter-cat="all" onclick="filterMyWebsites('all', this)">🌟 Tất Cả (34 Web)</button>
-          <button type="button" class="my-webs-filter-btn" data-filter-cat="forestry" onclick="filterMyWebsites('forestry', this)">🌲 Lâm Nghiệp &amp; Rừng (4)</button>
-          <button type="button" class="my-webs-filter-btn" data-filter-cat="training" onclick="filterMyWebsites('training', this)">🎓 Đào Tạo &amp; Di Sản 4D (11)</button>
-          <button type="button" class="my-webs-filter-btn" data-filter-cat="genealogy" onclick="filterMyWebsites('genealogy', this)">🏛️ Dòng Tộc &amp; Cội Nguồn (6)</button>
-          <button type="button" class="my-webs-filter-btn" data-filter-cat="ai" onclick="filterMyWebsites('ai', this)">🤖 AI &amp; Xưởng Phim (12)</button>
-          <button type="button" class="my-webs-filter-btn" data-filter-cat="education" onclick="filterMyWebsites('education', this)">📖 Sư Phạm &amp; Trường Học (5)</button>
-          <button type="button" class="my-webs-filter-btn" data-filter-cat="lifestyle" onclick="filterMyWebsites('lifestyle', this)">🪷 Ẩm Thực, Kiến Trúc &amp; Đời Sống (4)</button>
+          <button type="button" class="my-webs-filter-btn active" data-filter-cat="all" onclick="filterMyWebsites('all', this)">Tất Cả (34 Web)</button>
+          <button type="button" class="my-webs-filter-btn" data-filter-cat="forestry" onclick="filterMyWebsites('forestry', this)">Lâm Nghiệp &amp; Rừng (4)</button>
+          <button type="button" class="my-webs-filter-btn" data-filter-cat="training" onclick="filterMyWebsites('training', this)">Đào Tạo &amp; Di Sản 4D (11)</button>
+          <button type="button" class="my-webs-filter-btn" data-filter-cat="genealogy" onclick="filterMyWebsites('genealogy', this)">Dòng Tộc &amp; Cội Nguồn (6)</button>
+          <button type="button" class="my-webs-filter-btn" data-filter-cat="ai" onclick="filterMyWebsites('ai', this)">AI &amp; Xưởng Phim (12)</button>
+          <button type="button" class="my-webs-filter-btn" data-filter-cat="education" onclick="filterMyWebsites('education', this)">Sư Phạm &amp; Trường Học (5)</button>
+          <button type="button" class="my-webs-filter-btn" data-filter-cat="lifestyle" onclick="filterMyWebsites('lifestyle', this)">Ẩm Thực, Kiến Trúc &amp; Đời Sống (4)</button>
         </div>
 
         <div class="my-webs-search-box">
@@ -3657,11 +4783,39 @@
       </div>
 
       <div class="my-webs-grid" id="myWebsitesGrid">
+        <!-- MỚI 00. KTCSxAI: NHÀ LÃNH ĐẠO KHÔNG CHỨC DANH (25 TRANG 4D MASTER V18) -->
+        <article class="my-web-card" data-category="training ai" data-tier="flagship" data-featured="true">
+          <div class="my-web-media" style="background: radial-gradient(circle at 50% 50%, #78350f 0%, #1c0a00 100%);">
+            <div class="my-web-browser-chrome"><span class="chrome-dots"><i></i><i></i><i></i></span><span class="chrome-tier-tag">★ Tuyệt Tác Di Sản 4D</span></div>
+            <a href="./ktcs-nha-lanh-dao-khong-chuc-danh-4d/" target="_blank" rel="noopener noreferrer" class="my-web-media-link" title="Mở KTCSxAI: Nhà Lãnh Đạo Không Chức Danh (25 Trang 4D)">
+              <div class="my-web-svg-emblem"><svg viewBox="0 0 24 24" width="38" height="38" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+              <span style="font-size:0.76rem; font-weight:800; color:#fde68a; letter-spacing:1px;">KTCSxAI MASTER • 25 TRANG 4D</span>
+            </a>
+            <div class="my-web-domain"><span class="my-web-dot"></span><span>lephucnhat.vn/ktcs-nha-lanh-dao-khong-chuc-danh-4d/</span></div>
+            <span class="my-web-pill">25 Trang 4D V18</span>
+          </div>
+          <div class="my-web-body">
+            <h3 class="my-web-title"><a href="./ktcs-nha-lanh-dao-khong-chuc-danh-4d/" target="_blank" rel="noopener noreferrer">KTCSxAI: Nhà Lãnh Đạo Không Chức Danh (25 Trang 4D Master V18)</a></h3>
+            <p class="my-web-role">Thầy Lê Phúc Nhật &bull; Robin Sharma &bull; Bản Quyền Kiến Tạo Cuộc Sống xAI</p>
+            <p class="my-web-desc">Khóa đào tạo 4D Cinema 25 trang: Ba vòng tròn lãnh đạo, Thân–Tâm–Trí độ tuổi 39–58, kỳ tích 42km Vrace Hạ Long, công thức 80–10–10, minh triết dân tộc và xưởng thực thi Canvas Google Antigravity.</p>
+            <div class="my-web-tags">
+              <span class="my-web-tag">Lãnh Đạo 4D</span>
+              <span class="my-web-tag">25 Slide Cinema</span>
+              <span class="my-web-tag">Canvas Antigravity</span>
+              <span class="my-web-tag">Sửa &amp; Copy Chữ</span>
+            </div>
+            <div class="my-web-actions">
+              <span class="my-web-badge-note">Master V18</span>
+              <a href="./ktcs-nha-lanh-dao-khong-chuc-danh-4d/" target="_blank" rel="noopener noreferrer" class="my-web-visit-btn">Vào Học 4D ↗</a>
+            </div>
+          </div>
+        </article>
         <!-- MỚI 01. TRƯỜNG MẦM NON LÊ THẾ HIẾU (3 GIỌNG CÔ GIÁO AI) -->
-        <article class="my-web-card" data-category="education ai">
+        <article class="my-web-card" data-category="education ai" data-tier="community" data-featured="true">
           <div class="my-web-media" style="background: radial-gradient(circle at 50% 50%, #0f766e 0%, #042f2e 100%);">
+            <div class="my-web-browser-chrome"><span class="chrome-dots"><i></i><i></i><i></i></span><span class="chrome-tier-tag community">✦ Phụng Sự Cộng Đồng</span></div>
             <a href="./mn-le-the-hieu-web/" target="_blank" rel="noopener noreferrer" class="my-web-media-link" title="Mở Cổng Thông Tin Trường Mầm Non Lê Thế Hiếu">
-              <div style="font-size:2.35rem;">🏫</div>
+              <div class="my-web-svg-emblem"><svg viewBox="0 0 24 24" width="38" height="38" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
               <span style="font-size:0.76rem; font-weight:800; color:#99f6e4; letter-spacing:1px;">MẦM NON LÊ THẾ HIẾU • CAM LỘ</span>
             </a>
             <div class="my-web-domain"><span class="my-web-dot"></span><span>lephucnhat.vn/mn-le-the-hieu-web/</span></div>
@@ -3684,8 +4838,9 @@
         </article>
 
         <!-- MỚI 02. GIA PHẢ SỐ HỌ TRẦN — LÃNG NAM (24 ĐỜI) -->
-        <article class="my-web-card" data-category="genealogy">
+        <article class="my-web-card" data-category="genealogy" data-tier="community" data-featured="false">
           <div class="my-web-media" style="background: radial-gradient(circle at 50% 50%, #7c2d12 0%, #270c03 100%);">
+            <div class="my-web-browser-chrome"><span class="chrome-dots"><i></i><i></i><i></i></span><span class="chrome-tier-tag community">✦ Phụng Sự Cộng Đồng</span></div>
             <a href="./gia-pha-ho-tran/" target="_blank" rel="noopener noreferrer" class="my-web-media-link" title="Mở Gia Phả Số Họ Trần — Lãng Nam">
               <div style="width:60px; height:60px; border-radius:50%; border:2px solid #fbbf24; background:linear-gradient(135deg, #9a3412, #431407); display:flex; align-items:center; justify-content:center; box-shadow:0 0 20px rgba(251,191,36,0.4);">
                 <span style="font-family:'Playfair Display',serif; font-size:1.8rem; color:#fef3c7; font-weight:800;">陳</span>
@@ -3712,10 +4867,11 @@
         </article>
 
         <!-- MỚI 03. LPN STUDIO V104 PRO — XƯỞNG SẢN XUẤT PHIM REELS -->
-        <article class="my-web-card" data-category="ai">
+        <article class="my-web-card" data-category="ai" data-tier="core" data-featured="true">
           <div class="my-web-media" style="background: radial-gradient(circle at 50% 50%, #311042 0%, #0b0414 100%);">
+            <div class="my-web-browser-chrome"><span class="chrome-dots"><i></i><i></i><i></i></span><span class="chrome-tier-tag">★ Tài Sản Cốt Lõi LPN</span></div>
             <a href="./xuong-phim-v104/" target="_blank" rel="noopener noreferrer" class="my-web-media-link" title="Mở LPN Studio V104 Pro">
-              <div style="font-size:2.35rem;">🎬</div>
+              <div class="my-web-svg-emblem"><svg viewBox="0 0 24 24" width="38" height="38" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="3"/><circle cx="12" cy="12" r="3"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2"/></svg></div>
               <span style="font-size:0.76rem; font-weight:800; color:#f0abfc; letter-spacing:1px;">LPN STUDIO V104 PRO • FLOW MATCH</span>
             </a>
             <div class="my-web-domain"><span class="my-web-dot"></span><span>lephucnhat.vn/xuong-phim-v104/</span></div>
@@ -3738,8 +4894,9 @@
         </article>
 
         <!-- 00. ĐẠI PHẢ ĐỒ TÔNG TỘC ĐÀO & NỀN VĂN HIẾN VIỆT NAM (QUỐC BẢO 4K) -->
-        <article class="my-web-card" data-category="genealogy">
+        <article class="my-web-card" data-category="genealogy" data-tier="community" data-featured="true">
           <div class="my-web-media" style="background: radial-gradient(circle at 50% 50%, #7a0c0c 0%, #2a0202 100%);">
+            <div class="my-web-browser-chrome"><span class="chrome-dots"><i></i><i></i><i></i></span><span class="chrome-tier-tag community">✦ Phụng Sự Cộng Đồng</span></div>
             <a href="./dai-pha-do-ho-dao/" target="_blank" rel="noopener noreferrer" class="my-web-media-link" title="Mở Đại Phả Đồ Tông Tộc Đào & Nền Văn Hiến Việt Nam">
               <div style="width:62px; height:62px; border-radius:14px; background:radial-gradient(circle, #9e1414 0%, #4a0404 100%); border:2.5px solid #ffd700; box-shadow:0 0 22px rgba(255,215,0,0.5); display:flex; align-items:center; justify-content:center; font-family:'Noto Serif',serif; font-size:2rem; font-weight:800; color:#ffd700;">陶</div>
               <span style="font-size:0.76rem; font-weight:800; color:#ffd700; letter-spacing:1px;">THẬP BÁT DIỆP • VĂN LANG 2.622 NĂM • TRƯNG VƯƠNG</span>
@@ -3765,8 +4922,9 @@
         </article>
 
         <!-- 0A. TRỢ LÝ SỐ CÔNG TÁC ĐỘI – LIÊN ĐỘI TRƯỜNG TIỂU HỌC LÊ THẾ HIẾU -->
-        <article class="my-web-card" data-category="education ai">
+        <article class="my-web-card" data-category="education ai" data-tier="community" data-featured="false">
           <div class="my-web-media" style="background: radial-gradient(circle at 50% 50%, #b71c1c 0%, #450a0a 100%);">
+            <div class="my-web-browser-chrome"><span class="chrome-dots"><i></i><i></i><i></i></span><span class="chrome-tier-tag community">✦ Phụng Sự Cộng Đồng</span></div>
             <a href="./tro-ly-cong-tac-doi-le-the-hieu/" target="_blank" rel="noopener noreferrer" class="my-web-media-link" title="Mở Trợ Lý Số Công Tác Đội – Liên Đội Trường TH Lê Thế Hiếu">
               <div style="width:62px; height:62px; border-radius:50%; background:#fff; padding:4px; border:2px solid #fde047; box-shadow:0 0 20px rgba(253,224,71,0.45); display:flex; align-items:center; justify-content:center;">
                 <img src="./tro-ly-cong-tac-doi-le-the-hieu/logo-doi.jpg" width="54" height="54" loading="lazy" decoding="async" alt="Huy hiệu Đội TNTP Hồ Chí Minh" style="width:100%; height:100%; object-fit:contain; border-radius:50%;" />
@@ -3794,8 +4952,9 @@
         </article>
 
         <!-- 0B. CẨM NANG HƯỚNG DẪN SỬ DỤNG TRỢ LÝ SỐ CÔNG TÁC ĐỘI LÊ THẾ HIẾU -->
-        <article class="my-web-card" data-category="education training">
+        <article class="my-web-card" data-category="education training" data-tier="community" data-featured="false">
           <div class="my-web-media" style="background: radial-gradient(circle at 50% 50%, #1e3a8a 0%, #09132c 100%);">
+            <div class="my-web-browser-chrome"><span class="chrome-dots"><i></i><i></i><i></i></span><span class="chrome-tier-tag community">✦ Phụng Sự Cộng Đồng</span></div>
             <a href="./huong-dan-cong-tac-doi-le-the-hieu/" target="_blank" rel="noopener noreferrer" class="my-web-media-link" title="Mở Cẩm Nang Hướng Dẫn Sử Dụng Trợ Lý Số Công Tác Đội">
               <div style="width:62px; height:62px; border-radius:50%; background:#fff; padding:4px; border:2px solid #38bdf8; box-shadow:0 0 20px rgba(56,189,248,0.45); display:flex; align-items:center; justify-content:center;">
                 <img src="./huong-dan-cong-tac-doi-le-the-hieu/logo-doi.jpg" width="54" height="54" loading="lazy" decoding="async" alt="Huy hiệu Đội TNTP Hồ Chí Minh" style="width:100%; height:100%; object-fit:contain; border-radius:50%;" />
@@ -3822,10 +4981,11 @@
           </div>
         </article>
         <!-- 0. TỪ VẤP NGÃ ĐẾN NGƯỜI GIEO RỪNG (BÀI GIẢNG 4D CINEMA) -->
-        <article class="my-web-card" data-category="forestry training">
+        <article class="my-web-card" data-category="forestry training" data-tier="core" data-featured="true">
           <div class="my-web-media" style="background: radial-gradient(circle at 50% 50%, #064e3b 0%, #02231a 100%);">
+            <div class="my-web-browser-chrome"><span class="chrome-dots"><i></i><i></i><i></i></span><span class="chrome-tier-tag">★ Tài Sản Cốt Lõi LPN</span></div>
             <a href="./nguoi-gieo-rung-4d/" target="_blank" rel="noopener noreferrer" class="my-web-media-link" title="Mở Bài Giảng 4D: Từ Vấp Ngã Đến Người Gieo Rừng">
-              <div style="font-size:2.4rem;">🌱</div>
+              <div class="my-web-svg-emblem"><svg viewBox="0 0 24 24" width="38" height="38" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 12h5l-3 8h12l-3-8h5L12 2z"/><path d="M12 20v2"/></svg></div>
               <span style="font-size:0.76rem; font-weight:800; color:#6ee7b7; letter-spacing:1px;">DI SẢN SỐ xAI • 4D CINEMA</span>
             </a>
             <div class="my-web-domain"><span class="my-web-dot"></span><span>lephucnhat.vn/nguoi-gieo-rung-4d/</span></div>
@@ -3849,8 +5009,9 @@
         </article>
 
         <!-- 1. Cổng Họ Lê Cộng Hòa Séc -->
-        <article class="my-web-card" data-category="genealogy">
+        <article class="my-web-card" data-category="genealogy" data-tier="community" data-featured="false">
           <div class="my-web-media" style="background: radial-gradient(circle at 50% 50%, #3b0d14 0%, #100406 100%);">
+            <div class="my-web-browser-chrome"><span class="chrome-dots"><i></i><i></i><i></i></span><span class="chrome-tier-tag community">✦ Phụng Sự Cộng Đồng</span></div>
             <a href="./ho-le-cong-hoa-sec/" target="_blank" rel="noopener noreferrer" class="my-web-media-link" title="Mở Cổng Họ Lê Cộng Hòa Séc">
               <div style="width:60px; height:60px; border-radius:50%; border:2px solid #e8b954; background:linear-gradient(135deg, #7f1d1d, #991b1b); display:flex; align-items:center; justify-content:center; box-shadow:0 0 22px rgba(232,185,84,0.4);">
                 <span style="font-family:'Playfair Display',serif; font-size:1.85rem; color:#fff0c2; font-weight:800;">黎</span>
@@ -3877,10 +5038,11 @@
         </article>
 
         <!-- 2. Gia Phả Họ Lê 4D -->
-        <article class="my-web-card" data-category="genealogy">
+        <article class="my-web-card" data-category="genealogy" data-tier="community" data-featured="false">
           <div class="my-web-media" style="background: radial-gradient(circle at 50% 50%, #2f1217 0%, #0d0406 100%);">
+            <div class="my-web-browser-chrome"><span class="chrome-dots"><i></i><i></i><i></i></span><span class="chrome-tier-tag community">✦ Phụng Sự Cộng Đồng</span></div>
             <a href="./gia-pho-ho-le/" target="_blank" rel="noopener noreferrer" class="my-web-media-link" title="Mở Gia Phả Họ Lê 4D">
-              <div style="font-size:2.3rem;">🌳</div>
+              <div class="my-web-svg-emblem"><svg viewBox="0 0 24 24" width="38" height="38" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/></svg></div>
               <span style="font-size:0.76rem; font-weight:800; color:#fbbf24; letter-spacing:1px;">12 TRẠM SƠN MÀI &amp; GIẤY DÓ</span>
             </a>
             <div class="my-web-domain"><span class="my-web-dot"></span><span>lephucnhat.vn/gia-pho-ho-le/</span></div>
@@ -3903,10 +5065,11 @@
         </article>
 
         <!-- 3. Gia Phả Họ Lê Văn -->
-        <article class="my-web-card" data-category="genealogy">
+        <article class="my-web-card" data-category="genealogy" data-tier="community" data-featured="false">
           <div class="my-web-media" style="background: radial-gradient(circle at 50% 50%, #1e1b4b 0%, #090919 100%);">
+            <div class="my-web-browser-chrome"><span class="chrome-dots"><i></i><i></i><i></i></span><span class="chrome-tier-tag community">✦ Phụng Sự Cộng Đồng</span></div>
             <a href="./gia-pho-ho-le-van/" target="_blank" rel="noopener noreferrer" class="my-web-media-link" title="Mở Gia Phả Họ Lê Văn">
-              <div style="font-size:2.3rem;">📜</div>
+              <div class="my-web-svg-emblem"><svg viewBox="0 0 24 24" width="38" height="38" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/></svg></div>
               <span style="font-size:0.76rem; font-weight:800; color:#93c5fd; letter-spacing:1px;">PHƯỜNG AN • 8 THẾ HỆ</span>
             </a>
             <div class="my-web-domain"><span class="my-web-dot"></span><span>lephucnhat.vn/gia-pho-ho-le-van/</span></div>
@@ -3929,10 +5092,11 @@
         </article>
 
         <!-- 4. Kế Hoạch Bài Dạy Tuần 10 -->
-        <article class="my-web-card" data-category="education">
+        <article class="my-web-card" data-category="education" data-tier="community" data-featured="false">
           <div class="my-web-media" style="background: radial-gradient(circle at 50% 50%, #064e3b 0%, #02231a 100%);">
+            <div class="my-web-browser-chrome"><span class="chrome-dots"><i></i><i></i><i></i></span><span class="chrome-tier-tag community">✦ Phụng Sự Cộng Đồng</span></div>
             <a href="./ke-hoach-tuan-10/" target="_blank" rel="noopener noreferrer" class="my-web-media-link" title="Mở Kế Hoạch Bài Dạy Tuần 10 Lớp 4B1">
-              <div style="font-size:2.3rem;">📖</div>
+              <div class="my-web-svg-emblem"><svg viewBox="0 0 24 24" width="38" height="38" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
               <span style="font-size:0.76rem; font-weight:800; color:#6ee7b7; letter-spacing:1px;">15 TIẾT CHUẨN GDPT 2018</span>
             </a>
             <div class="my-web-domain"><span class="my-web-dot"></span><span>lephucnhat.vn/ke-hoach-tuan-10/</span></div>
@@ -3955,10 +5119,11 @@
         </article>
 
         <!-- 5. Hệ Thống AI 3.0 & Xưởng Phim LPN Pro -->
-        <article class="my-web-card" data-category="ai">
+        <article class="my-web-card" data-category="ai" data-tier="core" data-featured="false">
           <div class="my-web-media" style="background: radial-gradient(circle at 50% 50%, #1e3a8a 0%, #081026 100%);">
+            <div class="my-web-browser-chrome"><span class="chrome-dots"><i></i><i></i><i></i></span><span class="chrome-tier-tag">★ Tài Sản Cốt Lõi LPN</span></div>
             <a href="./he-thong-ai/" target="_blank" rel="noopener noreferrer" class="my-web-media-link" title="Mở Hệ Thống AI 3.0">
-              <div style="font-size:2.3rem;">🤖</div>
+              <div class="my-web-svg-emblem"><svg viewBox="0 0 24 24" width="38" height="38" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="3"/><circle cx="12" cy="12" r="3"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2"/></svg></div>
               <span style="font-size:0.76rem; font-weight:800; color:#38bdf8; letter-spacing:1px;">MASTER COMMAND xAI 3.0</span>
             </a>
             <div class="my-web-domain"><span class="my-web-dot"></span><span>lephucnhat.vn/he-thong-ai/</span></div>
@@ -3981,10 +5146,11 @@
         </article>
 
         <!-- 6. Nhà Hàng Chay Liên Hoa -->
-        <article class="my-web-card" data-category="lifestyle">
+        <article class="my-web-card" data-category="lifestyle" data-tier="community" data-featured="false">
           <div class="my-web-media" style="background: radial-gradient(circle at 50% 50%, #14532d 0%, #09130d 100%);">
+            <div class="my-web-browser-chrome"><span class="chrome-dots"><i></i><i></i><i></i></span><span class="chrome-tier-tag community">✦ Phụng Sự Cộng Đồng</span></div>
             <a href="./lien-hoa-chay/" target="_blank" rel="noopener noreferrer" class="my-web-media-link" title="Mở Website Nhà Hàng Chay Liên Hoa">
-              <div style="font-size:2.3rem;">🪷</div>
+              <div class="my-web-svg-emblem"><svg viewBox="0 0 24 24" width="38" height="38" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c2.5 3.5 4 6.5 4 9a4 4 0 0 1-8 0c0-2.5 1.5-5.5 4-9Z"/><path d="M5 13c2 1 4.5 3 7 3s5-2 7-3"/></svg></div>
               <span style="font-size:0.76rem; font-weight:800; color:#4ade80; letter-spacing:1px;">LIÊN HOA CHAY • HẢI DƯƠNG</span>
             </a>
             <div class="my-web-domain"><span class="my-web-dot"></span><span>lephucnhat.vn/lien-hoa-chay/</span></div>
@@ -4007,10 +5173,11 @@
         </article>
 
         <!-- 7. Bài Giảng V07: Đây Đo Đời -->
-        <article class="my-web-card" data-category="lifestyle">
+        <article class="my-web-card" data-category="lifestyle" data-tier="core" data-featured="false">
           <div class="my-web-media" style="background: radial-gradient(circle at 50% 50%, #4a044e 0%, #170119 100%);">
+            <div class="my-web-browser-chrome"><span class="chrome-dots"><i></i><i></i><i></i></span><span class="chrome-tier-tag">★ Tài Sản Cốt Lõi LPN</span></div>
             <a href="./1112_LPN_Happy_Run_Day_Do_Doi_Dech_De_Doi_Do_V07.html" target="_blank" rel="noopener noreferrer" class="my-web-media-link" title="Mở Bài Giảng V07: Đây Đo Đời">
-              <div style="font-size:2.3rem;">🏃</div>
+              <div class="my-web-svg-emblem"><svg viewBox="0 0 24 24" width="38" height="38" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c2.5 3.5 4 6.5 4 9a4 4 0 0 1-8 0c0-2.5 1.5-5.5 4-9Z"/><path d="M5 13c2 1 4.5 3 7 3s5-2 7-3"/></svg></div>
               <span style="font-size:0.76rem; font-weight:800; color:#f472b6; letter-spacing:1px;">TRIẾT LÝ SỐNG V07</span>
             </a>
             <div class="my-web-domain"><span class="my-web-dot"></span><span>lephucnhat.vn/1112_LPN_Happy_Run...</span></div>
@@ -4032,10 +5199,11 @@
           </div>
         </article>
         <!-- 8. KHAI PHÓNG NGƯỜI THẦY BÊN TRONG (22 SLIDE 4D) -->
-        <article class="my-web-card" data-category="training">
+        <article class="my-web-card" data-category="training" data-tier="core" data-featured="true">
           <div class="my-web-media" style="background: radial-gradient(circle at 50% 50%, #431407 0%, #1c0a00 100%);">
+            <div class="my-web-browser-chrome"><span class="chrome-dots"><i></i><i></i><i></i></span><span class="chrome-tier-tag">★ Tài Sản Cốt Lõi LPN</span></div>
             <a href="./lpn-khai-phong-nguoi-thay-4d/" target="_blank" rel="noopener noreferrer" class="my-web-media-link" title="Mở Bài Giảng 4D: Khai Phóng Người Thầy Bên Trong">
-              <div style="font-size:2.3rem;">🎬</div>
+              <div class="my-web-svg-emblem"><svg viewBox="0 0 24 24" width="38" height="38" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div>
               <span style="font-size:0.76rem; font-weight:800; color:#fdba74; letter-spacing:1px;">22 SLIDE 4D CINEMA 16:9</span>
             </a>
             <div class="my-web-domain"><span class="my-web-dot"></span><span>lephucnhat.vn/lpn-khai-phong...</span></div>
@@ -4059,10 +5227,11 @@
         </article>
 
         <!-- 9. NỀN TẢNG GIÁ TRỊ VÀ DI SẢN VĨNH CỬU (30 SLIDE 4D) -->
-        <article class="my-web-card" data-category="training">
+        <article class="my-web-card" data-category="training" data-tier="core" data-featured="false">
           <div class="my-web-media" style="background: radial-gradient(circle at 50% 50%, #1e1b4b 0%, #08071a 100%);">
+            <div class="my-web-browser-chrome"><span class="chrome-dots"><i></i><i></i><i></i></span><span class="chrome-tier-tag">★ Tài Sản Cốt Lõi LPN</span></div>
             <a href="./lpn-thong-diep-gia-tri-di-san-4d/" target="_blank" rel="noopener noreferrer" class="my-web-media-link" title="Mở Bài Giảng 4D: Nền Tảng Giá Trị và Di Sản Vĩnh Cửu">
-              <div style="font-size:2.3rem;">🏛️</div>
+              <div class="my-web-svg-emblem"><svg viewBox="0 0 24 24" width="38" height="38" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div>
               <span style="font-size:0.76rem; font-weight:800; color:#c7d2fe; letter-spacing:1px;">30 SLIDE 4D CINEMA</span>
             </a>
             <div class="my-web-domain"><span class="my-web-dot"></span><span>lephucnhat.vn/lpn-thong-diep...</span></div>
@@ -4085,10 +5254,11 @@
         </article>
 
         <!-- 10. LPN ĐÀO TẠO - SẺ CHIA -->
-        <article class="my-web-card" data-category="training">
+        <article class="my-web-card" data-category="training" data-tier="core" data-featured="false">
           <div class="my-web-media" style="background: radial-gradient(circle at 50% 50%, #064e3b 0%, #02231a 100%);">
+            <div class="my-web-browser-chrome"><span class="chrome-dots"><i></i><i></i><i></i></span><span class="chrome-tier-tag">★ Tài Sản Cốt Lõi LPN</span></div>
             <a href="./lpn-dao-tao-se-chia/" target="_blank" rel="noopener noreferrer" class="my-web-media-link" title="Mở Chuyên Mục LPN Đào Tạo - Sẻ Chia">
-              <div style="font-size:2.3rem;">📅</div>
+              <div class="my-web-svg-emblem"><svg viewBox="0 0 24 24" width="38" height="38" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div>
               <span style="font-size:0.76rem; font-weight:800; color:#6ee7b7; letter-spacing:1px;">KHO LƯU TRỮ GIÁO TRÌNH</span>
             </a>
             <div class="my-web-domain"><span class="my-web-dot"></span><span>lephucnhat.vn/lpn-dao-tao-se-chia/</span></div>
@@ -4111,10 +5281,11 @@
         </article>
 
         <!-- 11. BÁC SĨ CUNNINGHAM & ĐÔI CHÂN THẦN TỐC AI -->
-        <article class="my-web-card" data-category="training">
+        <article class="my-web-card" data-category="training" data-tier="core" data-featured="false">
           <div class="my-web-media" style="background: radial-gradient(circle at 50% 50%, #701a75 0%, #200523 100%);">
+            <div class="my-web-browser-chrome"><span class="chrome-dots"><i></i><i></i><i></i></span><span class="chrome-tier-tag">★ Tài Sản Cốt Lõi LPN</span></div>
             <a href="./lpn-bac-si-cunningham-4d/" target="_blank" rel="noopener noreferrer" class="my-web-media-link" title="Mở Bài Giảng 4D: Bác Sĩ Cunningham">
-              <div style="font-size:2.3rem;">🏃‍♂️</div>
+              <div class="my-web-svg-emblem"><svg viewBox="0 0 24 24" width="38" height="38" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div>
               <span style="font-size:0.76rem; font-weight:800; color:#f0abfc; letter-spacing:1px;">15 TRANG TƯƠNG TÁC 4D</span>
             </a>
             <div class="my-web-domain"><span class="my-web-dot"></span><span>lephucnhat.vn/lpn-bac-si-cunningham...</span></div>
@@ -4137,10 +5308,11 @@
         </article>
 
         <!-- 12. BÍ MẬT CỦA MAY MẮN THẬT SỰ -->
-        <article class="my-web-card" data-category="training">
+        <article class="my-web-card" data-category="training" data-tier="core" data-featured="false">
           <div class="my-web-media" style="background: radial-gradient(circle at 50% 50%, #065f46 0%, #022018 100%);">
+            <div class="my-web-browser-chrome"><span class="chrome-dots"><i></i><i></i><i></i></span><span class="chrome-tier-tag">★ Tài Sản Cốt Lõi LPN</span></div>
             <a href="./lpn-bi-mat-may-man-4d/" target="_blank" rel="noopener noreferrer" class="my-web-media-link" title="Mở Bài Giảng 4D: Bí Mật Của May Mắn Thật Sự">
-              <div style="font-size:2.3rem;">🍀</div>
+              <div class="my-web-svg-emblem"><svg viewBox="0 0 24 24" width="38" height="38" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div>
               <span style="font-size:0.76rem; font-weight:800; color:#a7f3d0; letter-spacing:1px;">15 TRANG TƯƠNG TÁC ĐỈNH CAO</span>
             </a>
             <div class="my-web-domain"><span class="my-web-dot"></span><span>lephucnhat.vn/lpn-bi-mat-may-man...</span></div>
@@ -4163,10 +5335,11 @@
         </article>
 
         <!-- 13. THUYẾT TRÌNH BNI FORCE CHAPTER (15 SLIDE 4D) -->
-        <article class="my-web-card" data-category="training">
+        <article class="my-web-card" data-category="training" data-tier="core" data-featured="false">
           <div class="my-web-media" style="background: radial-gradient(circle at 50% 50%, #1e3a8a 0%, #071330 100%);">
+            <div class="my-web-browser-chrome"><span class="chrome-dots"><i></i><i></i><i></i></span><span class="chrome-tier-tag">★ Tài Sản Cốt Lõi LPN</span></div>
             <a href="./lpn-thuyet-trinh-xai-v03/" target="_blank" rel="noopener noreferrer" class="my-web-media-link" title="Mở Bài Thuyết Trình BNI Force">
-              <div style="font-size:2.3rem;">📊</div>
+              <div class="my-web-svg-emblem"><svg viewBox="0 0 24 24" width="38" height="38" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div>
               <span style="font-size:0.76rem; font-weight:800; color:#93c5fd; letter-spacing:1px;">15 SLIDE BNI FORCE CHAPTER</span>
             </a>
             <div class="my-web-domain"><span class="my-web-dot"></span><span>lephucnhat.vn/lpn-thuyet-trinh...</span></div>
@@ -4189,10 +5362,11 @@
         </article>
 
         <!-- 14. BẢN CHỈ HUY TÂM THỨC SIÊU CHUYÊN CƠ A388 (16 CHẶNG 4D) -->
-        <article class="my-web-card" data-category="training">
+        <article class="my-web-card" data-category="training" data-tier="core" data-featured="false">
           <div class="my-web-media" style="background: radial-gradient(circle at 50% 50%, #0f172a 0%, #020617 100%);">
+            <div class="my-web-browser-chrome"><span class="chrome-dots"><i></i><i></i><i></i></span><span class="chrome-tier-tag">★ Tài Sản Cốt Lõi LPN</span></div>
             <a href="./lpn-6-tang-nhan-thuc-v08/" target="_blank" rel="noopener noreferrer" class="my-web-media-link" title="Mở Bản Chỉ Huy Tâm Thức Siêu Chuyên Cơ A388">
-              <div style="font-size:2.3rem;">✈️</div>
+              <div class="my-web-svg-emblem"><svg viewBox="0 0 24 24" width="38" height="38" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div>
               <span style="font-size:0.76rem; font-weight:800; color:#38bdf8; letter-spacing:1px;">16 CHẶNG 4D • SIÊU CHUYÊN CƠ A388</span>
             </a>
             <div class="my-web-domain"><span class="my-web-dot"></span><span>lephucnhat.vn/lpn-6-tang-nhan-thuc...</span></div>
@@ -4215,10 +5389,11 @@
         </article>
 
         <!-- 15. Cẩm Nang 4D Hệ Sinh Thái Google AI & Lâm Nghiệp Quảng Trị -->
-        <article class="my-web-card" data-category="forestry ai">
+        <article class="my-web-card" data-category="forestry ai" data-tier="core" data-featured="true">
           <div class="my-web-media" style="background: radial-gradient(circle at 50% 50%, #064e3b 0%, #020c08 100%);">
+            <div class="my-web-browser-chrome"><span class="chrome-dots"><i></i><i></i><i></i></span><span class="chrome-tier-tag">★ Tài Sản Cốt Lõi LPN</span></div>
             <a href="./lpn-cam-nang-4d/" target="_blank" rel="noopener noreferrer" class="my-web-media-link" title="Mở Cẩm Nang 4D Google AI & Lâm Nghiệp">
-              <div style="font-size:2.3rem;">🌌</div>
+              <div class="my-web-svg-emblem"><svg viewBox="0 0 24 24" width="38" height="38" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 12h5l-3 8h12l-3-8h5L12 2z"/><path d="M12 20v2"/></svg></div>
               <span style="font-size:0.76rem; font-weight:800; color:#fde047; letter-spacing:1px;">16 CHƯƠNG 4D • GOOGLE AI HUB</span>
             </a>
             <div class="my-web-domain"><span class="my-web-dot"></span><span>lephucnhat.vn/lpn-cam-nang-4d/</span></div>
@@ -4241,10 +5416,11 @@
         </article>
 
                 <!-- 15B. An Sơn Ngày Mới • Cẩm Nang 4D Toàn Diện (Nguyễn Anh Hào) -->
-        <article class="my-web-card" data-category="training ai">
+        <article class="my-web-card" data-category="training ai" data-tier="community" data-featured="false">
           <div class="my-web-media" style="background: radial-gradient(circle at 50% 50%, #0369a1 0%, #06111c 100%);">
+            <div class="my-web-browser-chrome"><span class="chrome-dots"><i></i><i></i><i></i></span><span class="chrome-tier-tag community">✦ Phụng Sự Cộng Đồng</span></div>
             <a href="./an-son-ngay-moi-4d/" target="_blank" rel="noopener noreferrer" class="my-web-media-link" title="Mở Cẩm Nang 4D An Sơn Ngày Mới">
-              <div style="font-size:2.3rem;">🏛️</div>
+              <div class="my-web-svg-emblem"><svg viewBox="0 0 24 24" width="38" height="38" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div>
               <span style="font-size:0.76rem; font-weight:800; color:#7dd3fc; letter-spacing:1px;">12 CHƯƠNG 4D • AN SƠN CAM LỘ</span>
             </a>
             <div class="my-web-domain"><span class="my-web-dot"></span><span>lephucnhat.vn/an-son-ngay-moi-4d/</span></div>
@@ -4267,10 +5443,11 @@
         </article>
 
         <!-- 15C. Cổng Thông Tin Thôn An Sơn Thông Minh (Xã Cam Lộ, Quảng Trị) -->
-        <article class="my-web-card" data-category="ai">
+        <article class="my-web-card" data-category="ai" data-tier="community" data-featured="false">
           <div class="my-web-media" style="background: linear-gradient(120deg, #047857 0%, #059669 45%, #0284c7 100%);">
+            <div class="my-web-browser-chrome"><span class="chrome-dots"><i></i><i></i><i></i></span><span class="chrome-tier-tag community">✦ Phụng Sự Cộng Đồng</span></div>
             <a href="./thon-an-son-thong-minh/" target="_blank" rel="noopener noreferrer" class="my-web-media-link" title="Mở Cổng Thông Tin Thôn An Sơn Thông Minh">
-              <div style="font-size:2.3rem;">🏡</div>
+              <div class="my-web-svg-emblem"><svg viewBox="0 0 24 24" width="38" height="38" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="3"/><circle cx="12" cy="12" r="3"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2"/></svg></div>
               <span style="font-size:0.76rem; font-weight:800; color:#ecfdf5; letter-spacing:1px;">XÃ CAM LỘ • TỈNH QUẢNG TRỊ</span>
             </a>
             <div class="my-web-domain"><span class="my-web-dot"></span><span>lephucnhat.vn/thon-an-son-thong-minh/</span></div>
@@ -4293,10 +5470,11 @@
         </article>
 
         <!-- 16A. Báo Cáo Sáng Kiến 4D Quản Lý & Bảo Vệ Rừng (CheckCCRQT) -->
-        <article class="my-web-card" data-category="forestry ai">
+        <article class="my-web-card" data-category="forestry ai" data-tier="community" data-featured="false">
           <div class="my-web-media" style="background: radial-gradient(circle at 50% 50%, #064e3b 0%, #02231a 100%);">
+            <div class="my-web-browser-chrome"><span class="chrome-dots"><i></i><i></i><i></i></span><span class="chrome-tier-tag community">✦ Phụng Sự Cộng Đồng</span></div>
             <a href="./checkccrqt/bao-cao-sang-kien-4d.html" target="_blank" rel="noopener noreferrer" class="my-web-media-link" title="Mở Báo Cáo Sáng Kiến 4D CheckCCRQT">
-              <div style="font-size:2.3rem;">📋</div>
+              <div class="my-web-svg-emblem"><svg viewBox="0 0 24 24" width="38" height="38" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 12h5l-3 8h12l-3-8h5L12 2z"/><path d="M12 20v2"/></svg></div>
               <span style="font-size:0.76rem; font-weight:800; color:#34d399; letter-spacing:1px;">SÁNG KIẾN 4D • KIỂM LÂM</span>
             </a>
             <div class="my-web-domain"><span class="my-web-dot"></span><span>lephucnhat.vn/checkccrqt/bao-cao-sang-kien-4d.html</span></div>
@@ -4319,10 +5497,11 @@
         </article>
 
         <!-- 16B. CheckCCRQT • EUDR Quảng Trị (Hệ Thống Giám Sát Rừng Đa Cảm Biến) -->
-        <article class="my-web-card" data-category="forestry ai">
+        <article class="my-web-card" data-category="forestry ai" data-tier="community" data-featured="false">
           <div class="my-web-media" style="background: radial-gradient(circle at 50% 50%, #0c4a6e 0%, #031522 100%);">
+            <div class="my-web-browser-chrome"><span class="chrome-dots"><i></i><i></i><i></i></span><span class="chrome-tier-tag community">✦ Phụng Sự Cộng Đồng</span></div>
             <a href="./checkccrqt/" target="_blank" rel="noopener noreferrer" class="my-web-media-link" title="Mở CheckCCRQT EUDR Quảng Trị">
-              <div style="font-size:2.3rem;">🛰️</div>
+              <div class="my-web-svg-emblem"><svg viewBox="0 0 24 24" width="38" height="38" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 12h5l-3 8h12l-3-8h5L12 2z"/><path d="M12 20v2"/></svg></div>
               <span style="font-size:0.76rem; font-weight:800; color:#7dd3fc; letter-spacing:1px;">GIÁM SÁT RỪNG ĐA CẢM BIẾN</span>
             </a>
             <div class="my-web-domain"><span class="my-web-dot"></span><span>lephucnhat.vn/checkccrqt/</span></div>
@@ -4345,10 +5524,11 @@
         </article>
 
         <!-- 17. HAPPY RUN 108 PRO V3 -->
-        <article class="my-web-card" data-category="lifestyle">
+        <article class="my-web-card" data-category="lifestyle" data-tier="core" data-featured="false">
           <div class="my-web-media" style="background: radial-gradient(circle at 50% 50%, #78350f 0%, #1a0b02 100%);">
+            <div class="my-web-browser-chrome"><span class="chrome-dots"><i></i><i></i><i></i></span><span class="chrome-tier-tag">★ Tài Sản Cốt Lõi LPN</span></div>
             <a href="./happyrun-108/" target="_blank" rel="noopener noreferrer" class="my-web-media-link" title="Mở Happy Run 108 Pro V3">
-              <div style="font-size:2.3rem;">🌟</div>
+              <div class="my-web-svg-emblem"><svg viewBox="0 0 24 24" width="38" height="38" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c2.5 3.5 4 6.5 4 9a4 4 0 0 1-8 0c0-2.5 1.5-5.5 4-9Z"/><path d="M5 13c2 1 4.5 3 7 3s5-2 7-3"/></svg></div>
               <span style="font-size:0.76rem; font-weight:800; color:#fde047; letter-spacing:1px;">HAPPY RUN 108 PRO V3</span>
             </a>
             <div class="my-web-domain"><span class="my-web-dot"></span><span>lephucnhat.vn/happyrun-108/</span></div>
@@ -4371,10 +5551,11 @@
         </article>
 
         <!-- 18. Kiến Trúc Xây Dựng Nhật Khang -->
-        <article class="my-web-card" data-category="lifestyle">
+        <article class="my-web-card" data-category="lifestyle" data-tier="community" data-featured="false">
           <div class="my-web-media" style="background: radial-gradient(circle at 50% 50%, #334155 0%, #0f172a 100%);">
+            <div class="my-web-browser-chrome"><span class="chrome-dots"><i></i><i></i><i></i></span><span class="chrome-tier-tag community">✦ Phụng Sự Cộng Đồng</span></div>
             <a href="./kientrucnhatkhang/" target="_blank" rel="noopener noreferrer" class="my-web-media-link" title="Mở Website Kiến Trúc Nhật Khang">
-              <div style="font-size:2.3rem;">🏗️</div>
+              <div class="my-web-svg-emblem"><svg viewBox="0 0 24 24" width="38" height="38" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c2.5 3.5 4 6.5 4 9a4 4 0 0 1-8 0c0-2.5 1.5-5.5 4-9Z"/><path d="M5 13c2 1 4.5 3 7 3s5-2 7-3"/></svg></div>
               <span style="font-size:0.76rem; font-weight:800; color:#fbbf24; letter-spacing:1px;">KIẾN TRÚC NHẬT KHANG • ĐÀ NẴNG</span>
             </a>
             <div class="my-web-domain"><span class="my-web-dot"></span><span>lephucnhat.vn/kientrucnhatkhang/</span></div>
@@ -4397,10 +5578,11 @@
         </article>
 
         <!-- 19. Gia Phả Họ Lê 4D (Bản Lưu Trữ 12 Trạm) -->
-        <article class="my-web-card" data-category="genealogy">
+        <article class="my-web-card" data-category="genealogy" data-tier="community" data-featured="false">
           <div class="my-web-media" style="background: radial-gradient(circle at 50% 50%, #451a03 0%, #140700 100%);">
+            <div class="my-web-browser-chrome"><span class="chrome-dots"><i></i><i></i><i></i></span><span class="chrome-tier-tag community">✦ Phụng Sự Cộng Đồng</span></div>
             <a href="./gia-pho-ho-le-4d/" target="_blank" rel="noopener noreferrer" class="my-web-media-link" title="Mở Gia Phả Họ Lê 4D (Bản 12 Trạm)">
-              <div style="font-size:2.3rem;">🏮</div>
+              <div class="my-web-svg-emblem"><svg viewBox="0 0 24 24" width="38" height="38" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/></svg></div>
               <span style="font-size:0.76rem; font-weight:800; color:#fcd34d; letter-spacing:1px;">GIA PHẢ 4D • PHIÊN BẢN GỐC</span>
             </a>
             <div class="my-web-domain"><span class="my-web-dot"></span><span>lephucnhat.vn/gia-pho-ho-le-4d/</span></div>
@@ -4423,10 +5605,11 @@
         </article>
 
         <!-- 20. KTCS Liên Tục Phát Triển (Notebook 4D) -->
-        <article class="my-web-card" data-category="training">
+        <article class="my-web-card" data-category="training" data-tier="core" data-featured="false">
           <div class="my-web-media" style="background: radial-gradient(circle at 50% 50%, #312e81 0%, #0c0a26 100%);">
+            <div class="my-web-browser-chrome"><span class="chrome-dots"><i></i><i></i><i></i></span><span class="chrome-tier-tag">★ Tài Sản Cốt Lõi LPN</span></div>
             <a href="./ktcs-lien-tuc-phat-trien/" target="_blank" rel="noopener noreferrer" class="my-web-media-link" title="Mở KTCSxAI V04: Đây Đo Đời, Đếch Để Đời Đo">
-              <div style="font-size:2.3rem;">📓</div>
+              <div class="my-web-svg-emblem"><svg viewBox="0 0 24 24" width="38" height="38" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div>
               <span style="font-size:0.76rem; font-weight:800; color:#a5b4fc; letter-spacing:1px;">KTCSxAI V04 • LIVING NOTEBOOK</span>
             </a>
             <div class="my-web-domain"><span class="my-web-dot"></span><span>lephucnhat.vn/ktcs-lien-tuc-phat-trien/</span></div>
@@ -4449,10 +5632,11 @@
         </article>
 
         <!-- 21. KTCS Master Studio V12 & 168 Prompts -->
-        <article class="my-web-card" data-category="ai">
+        <article class="my-web-card" data-category="ai" data-tier="core" data-featured="false">
           <div class="my-web-media" style="background: radial-gradient(circle at 50% 50%, #701a75 0%, #230525 100%);">
+            <div class="my-web-browser-chrome"><span class="chrome-dots"><i></i><i></i><i></i></span><span class="chrome-tier-tag">★ Tài Sản Cốt Lõi LPN</span></div>
             <a href="./ktcs-master-studio-168-prompts/" target="_blank" rel="noopener noreferrer" class="my-web-media-link" title="Mở KTCS Master V12 & 168 Prompts">
-              <div style="font-size:2.3rem;">🎞️</div>
+              <div class="my-web-svg-emblem"><svg viewBox="0 0 24 24" width="38" height="38" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="3"/><circle cx="12" cy="12" r="3"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2"/></svg></div>
               <span style="font-size:0.76rem; font-weight:800; color:#f0abfc; letter-spacing:1px;">MASTER STUDIO V12 • 168 PROMPTS</span>
             </a>
             <div class="my-web-domain"><span class="my-web-dot"></span><span>lephucnhat.vn/ktcs-master-studio...</span></div>
@@ -4475,10 +5659,11 @@
         </article>
 
         <!-- 22. KTCS 1368 Câu Lệnh Google Flow V16 -->
-        <article class="my-web-card" data-category="ai">
+        <article class="my-web-card" data-category="ai" data-tier="core" data-featured="false">
           <div class="my-web-media" style="background: radial-gradient(circle at 50% 50%, #1e1b4b 0%, #050517 100%);">
+            <div class="my-web-browser-chrome"><span class="chrome-dots"><i></i><i></i><i></i></span><span class="chrome-tier-tag">★ Tài Sản Cốt Lõi LPN</span></div>
             <a href="./ktcs-1368-google-flow/" target="_blank" rel="noopener noreferrer" class="my-web-media-link" title="Mở Kho 1368 Câu Lệnh Google Flow">
-              <div style="font-size:2.3rem;">⚡</div>
+              <div class="my-web-svg-emblem"><svg viewBox="0 0 24 24" width="38" height="38" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="3"/><circle cx="12" cy="12" r="3"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2"/></svg></div>
               <span style="font-size:0.76rem; font-weight:800; color:#38bdf8; letter-spacing:1px;">1368 GOOGLE FLOW • SEAMLESS LOOP</span>
             </a>
             <div class="my-web-domain"><span class="my-web-dot"></span><span>lephucnhat.vn/ktcs-1368-google-flow/</span></div>
@@ -4501,10 +5686,11 @@
         </article>
 
         <!-- 23. LPN Portal (Web Hub & Automation) -->
-        <article class="my-web-card" data-category="ai">
+        <article class="my-web-card" data-category="ai" data-tier="core" data-featured="false">
           <div class="my-web-media" style="background: radial-gradient(circle at 50% 50%, #0f172a 0%, #020617 100%);">
+            <div class="my-web-browser-chrome"><span class="chrome-dots"><i></i><i></i><i></i></span><span class="chrome-tier-tag">★ Tài Sản Cốt Lõi LPN</span></div>
             <a href="./lpn-portal/" target="_blank" rel="noopener noreferrer" class="my-web-media-link" title="Mở LPN Web Hub & Automation Portal">
-              <div style="font-size:2.3rem;">🌐</div>
+              <div class="my-web-svg-emblem"><svg viewBox="0 0 24 24" width="38" height="38" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="3"/><circle cx="12" cy="12" r="3"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2"/></svg></div>
               <span style="font-size:0.76rem; font-weight:800; color:#94a3b8; letter-spacing:1px;">LPN WORKSPACE PORTAL</span>
             </a>
             <div class="my-web-domain"><span class="my-web-dot"></span><span>lephucnhat.vn/lpn-portal/</span></div>
@@ -4527,10 +5713,11 @@
         </article>
 
         <!-- 24. Hướng Dẫn Mua Tên Miền lienhoachay.vn -->
-        <article class="my-web-card" data-category="education">
+        <article class="my-web-card" data-category="education" data-tier="community" data-featured="false">
           <div class="my-web-media" style="background: radial-gradient(circle at 50% 50%, #14532d 0%, #051b0e 100%);">
+            <div class="my-web-browser-chrome"><span class="chrome-dots"><i></i><i></i><i></i></span><span class="chrome-tier-tag community">✦ Phụng Sự Cộng Đồng</span></div>
             <a href="./huong-dan-ten-mien/" target="_blank" rel="noopener noreferrer" class="my-web-media-link" title="Mở Hướng Dẫn Tên Miền lienhoachay.vn">
-              <div style="font-size:2.3rem;">🌍</div>
+              <div class="my-web-svg-emblem"><svg viewBox="0 0 24 24" width="38" height="38" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
               <span style="font-size:0.76rem; font-weight:800; color:#86efac; letter-spacing:1px;">HƯỚNG DẪN TÊN MIỀN .VN</span>
             </a>
             <div class="my-web-domain"><span class="my-web-dot"></span><span>lephucnhat.vn/huong-dan-ten-mien/</span></div>
@@ -4553,6 +5740,15 @@
         </article>
 
         <div class="my-webs-empty-state" id="myWebsEmptyState">🔍 Không tìm thấy chuyên trang phù hợp với từ khóa. Hãy thử từ khóa khác hoặc bấm <strong>Tất Cả</strong>!</div>
+      </div>
+
+      <div class="progressive-expand-bar" id="myWebsExpandBar">
+        <button type="button" class="cta-btn primary" id="myWebsExpandBtn" onclick="toggleMyWebsitesExpand()">
+          <span>Khám Phá Trọn Bộ 34 Chuyên Trang (+28 công trình số) ↓</span>
+        </button>
+        <button type="button" class="cta-btn" onclick="setMyWebsitesViewMode('compact')">
+          <span>Xem Nhanh Dạng Danh Bạ 1 Màn Hình</span>
+        </button>
       </div>
 
       <div class="my-webs-trust-banner">
@@ -4689,11 +5885,11 @@
 
       <div class="wisdom-grid" id="wisdomGrid">
         <!-- Bài #01 -->
-        <article class="wisdom-card" data-category="triet-ly" data-article-id="#01">
+        <article class="wisdom-card editorial-lead" data-category="triet-ly" data-article-id="#01">
           <div>
             <div class="wisdom-meta">
               <span>NGHỊCH CẢNH &amp; NỘI LỰC</span>
-              <span class="wisdom-num">#01</span>
+              <span class="wisdom-read-meta"><span class="wisdom-time-pill">2 phút đọc</span><span class="wisdom-num">#01</span></span>
             </div>
             <h3 class="wisdom-title">Từ Đôi Chân Bỏng Nặng Của Glenn Cunningham Đến Đôi Cánh Trí Tuệ AI: Vượt Ngưỡng Bằng Nội Lực Tỉnh Thức</h3>
             <p class="wisdom-excerpt">
@@ -4705,8 +5901,9 @@
               "Nghịch cảnh không định nghĩa chúng ta. Hiểu sâu giới hạn để vượt qua, Sống tỉnh trước biến cố và Hành đúng cùng kỷ luật mỗi ngày mới là thứ kiến tạo vận mệnh."
             </blockquote>
             <div class="wisdom-card-actions">
-              <button class="read-more-btn" onclick="openArticleReader(this)">📖 Đọc trọn vẹn</button>
-              <button class="ask-ai-about-btn" onclick="askAiAboutArticle('Bài #01: Vượt ngưỡng bằng nội lực tỉnh thức và đôi cánh AI')">✨ Thảo luận cùng AI</button>
+              <button type="button" class="read-more-btn" onclick="openArticleReader(this)"><svg class="lpn-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg> <span>Đọc trọn vẹn</span></button>
+              <button type="button" class="quick-listen-btn" onclick="quickSpeakArticleCard(this)"><svg class="lpn-ico" viewBox="0 0 24 24" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg> <span>Nghe</span></button>
+              <button type="button" class="ask-ai-about-btn" onclick="askAiAboutArticle('Bài #01: Vượt ngưỡng bằng nội lực tỉnh thức và đôi cánh AI')"><svg class="lpn-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 1.9 5.8a2 2 0 0 0 1.3 1.3L21 12l-5.8 1.9a2 2 0 0 0-1.3 1.3L12 21l-1.9-5.8a2 2 0 0 0-1.3-1.3L3 12l5.8-1.9a2 2 0 0 0 1.3-1.3Z"/></svg> <span>Hỏi AI</span></button>
             </div>
           </div>
         </article>
@@ -4716,7 +5913,7 @@
           <div>
             <div class="wisdom-meta">
               <span>QUY LUẬT NHÂN QUẢ • GIEO HẠT</span>
-              <span class="wisdom-num">#02</span>
+              <span class="wisdom-read-meta"><span class="wisdom-time-pill">2 phút đọc</span><span class="wisdom-num">#02</span></span>
             </div>
             <h3 class="wisdom-title">Giải Mã "May Mắn Thật Sự": Khi Sự Chuẩn Bị Tỉnh Thức Gặp Gỡ Công Cụ Đúng Thời Đại</h3>
             <p class="wisdom-excerpt">
@@ -4728,8 +5925,9 @@
               "May mắn không rơi xuống từ bầu trời. Đó là khoảnh khắc một tâm trí đã Hiểu sâu - Sống tỉnh bắt gặp công cụ đúng và Hành đúng lúc."
             </blockquote>
             <div class="wisdom-card-actions">
-              <button class="read-more-btn" onclick="openArticleReader(this)">📖 Đọc trọn vẹn</button>
-              <button class="ask-ai-about-btn" onclick="askAiAboutArticle('Bài #02: Giải mã may mắn thật sự và tư duy làm chủ câu lệnh AI')">✨ Thảo luận cùng AI</button>
+              <button type="button" class="read-more-btn" onclick="openArticleReader(this)"><svg class="lpn-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg> <span>Đọc trọn vẹn</span></button>
+              <button type="button" class="quick-listen-btn" onclick="quickSpeakArticleCard(this)"><svg class="lpn-ico" viewBox="0 0 24 24" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg> <span>Nghe</span></button>
+              <button type="button" class="ask-ai-about-btn" onclick="askAiAboutArticle('Bài #02: Giải mã may mắn thật sự và tư duy làm chủ câu lệnh AI')"><svg class="lpn-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 1.9 5.8a2 2 0 0 0 1.3 1.3L21 12l-5.8 1.9a2 2 0 0 0-1.3 1.3L12 21l-1.9-5.8a2 2 0 0 0-1.3-1.3L3 12l5.8-1.9a2 2 0 0 0 1.3-1.3Z"/></svg> <span>Hỏi AI</span></button>
             </div>
           </div>
         </article>
@@ -4739,7 +5937,7 @@
           <div>
             <div class="wisdom-meta">
               <span>PHÁT TRIỂN TỪ GỐC</span>
-              <span class="wisdom-num">#03</span>
+              <span class="wisdom-read-meta"><span class="wisdom-time-pill">2 phút đọc</span><span class="wisdom-num">#03</span></span>
             </div>
             <h3 class="wisdom-title">Gốc Rễ Của Phát Triển Bền Vững: Khi Tri Thức Hiện Đại Hòa Quyện Cùng Đạo Hiếu &amp; Tình Đất Quê Hương</h3>
             <p class="wisdom-excerpt">
@@ -4751,8 +5949,9 @@
               "Cây có gốc mới trổ cành xanh lá, người có nguồn mới vững chãi giữa kỷ nguyên số."
             </blockquote>
             <div class="wisdom-card-actions">
-              <button class="read-more-btn" onclick="openArticleReader(this)">📖 Đọc trọn vẹn</button>
-              <button class="ask-ai-about-btn" onclick="askAiAboutArticle('Bài #03: Gốc rễ phát triển bền vững kết hợp đạo hiếu và công nghệ')">✨ Thảo luận cùng AI</button>
+              <button type="button" class="read-more-btn" onclick="openArticleReader(this)"><svg class="lpn-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg> <span>Đọc trọn vẹn</span></button>
+              <button type="button" class="quick-listen-btn" onclick="quickSpeakArticleCard(this)"><svg class="lpn-ico" viewBox="0 0 24 24" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg> <span>Nghe</span></button>
+              <button type="button" class="ask-ai-about-btn" onclick="askAiAboutArticle('Bài #03: Gốc rễ phát triển bền vững kết hợp đạo hiếu và công nghệ')"><svg class="lpn-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 1.9 5.8a2 2 0 0 0 1.3 1.3L21 12l-5.8 1.9a2 2 0 0 0-1.3 1.3L12 21l-1.9-5.8a2 2 0 0 0-1.3-1.3L3 12l5.8-1.9a2 2 0 0 0 1.3-1.3Z"/></svg> <span>Hỏi AI</span></button>
             </div>
           </div>
         </article>
@@ -4762,7 +5961,7 @@
           <div>
             <div class="wisdom-meta">
               <span>ĐỘ LƯỢNG &amp; TẦM VÓC</span>
-              <span class="wisdom-num">#04</span>
+              <span class="wisdom-read-meta"><span class="wisdom-time-pill">2 phút đọc</span><span class="wisdom-num">#04</span></span>
             </div>
             <h3 class="wisdom-title">Đại Lượng Của Đất Đỏ Bazan: Càng Cho Đi Phù Sa, Rừng Càng Vươn Tầm Đại Ngàn</h3>
             <p class="wisdom-excerpt">
@@ -4774,8 +5973,9 @@
               "Sự hào phóng chia sẻ tri thức không làm ta vơi đi, mà biến ta thành mạch nguồn không bao giờ cạn."
             </blockquote>
             <div class="wisdom-card-actions">
-              <button class="read-more-btn" onclick="openArticleReader(this)">📖 Đọc trọn vẹn</button>
-              <button class="ask-ai-about-btn" onclick="askAiAboutArticle('Bài #04: Sự rộng lượng chia sẻ tri thức trong kinh doanh và công nghệ')">✨ Thảo luận cùng AI</button>
+              <button type="button" class="read-more-btn" onclick="openArticleReader(this)"><svg class="lpn-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg> <span>Đọc trọn vẹn</span></button>
+              <button type="button" class="quick-listen-btn" onclick="quickSpeakArticleCard(this)"><svg class="lpn-ico" viewBox="0 0 24 24" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg> <span>Nghe</span></button>
+              <button type="button" class="ask-ai-about-btn" onclick="askAiAboutArticle('Bài #04: Sự rộng lượng chia sẻ tri thức trong kinh doanh và công nghệ')"><svg class="lpn-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 1.9 5.8a2 2 0 0 0 1.3 1.3L21 12l-5.8 1.9a2 2 0 0 0-1.3 1.3L12 21l-1.9-5.8a2 2 0 0 0-1.3-1.3L3 12l5.8-1.9a2 2 0 0 0 1.3-1.3Z"/></svg> <span>Hỏi AI</span></button>
             </div>
           </div>
         </article>
@@ -4785,7 +5985,7 @@
           <div>
             <div class="wisdom-meta">
               <span>LIÊN MINH CỘNG SINH</span>
-              <span class="wisdom-num">#05</span>
+              <span class="wisdom-read-meta"><span class="wisdom-time-pill">2 phút đọc</span><span class="wisdom-num">#05</span></span>
             </div>
             <h3 class="wisdom-title">Mạng Lưới Rễ Ngầm Dưới Tán Rừng: Triết Lý Kết Nối Giao Thương Bằng Giá Trị Thật</h3>
             <p class="wisdom-excerpt">
@@ -4797,8 +5997,9 @@
               "Muốn đứng vững qua mùa giông bão, đừng mọc như một thân cây đơn độc; hãy đan rễ vào nhau thành một cánh rừng."
             </blockquote>
             <div class="wisdom-card-actions">
-              <button class="read-more-btn" onclick="openArticleReader(this)">📖 Đọc trọn vẹn</button>
-              <button class="ask-ai-about-btn" onclick="askAiAboutArticle('Bài #05: Triết lý liên minh cộng sinh và kết nối giao thương bền vững')">✨ Thảo luận cùng AI</button>
+              <button type="button" class="read-more-btn" onclick="openArticleReader(this)"><svg class="lpn-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg> <span>Đọc trọn vẹn</span></button>
+              <button type="button" class="quick-listen-btn" onclick="quickSpeakArticleCard(this)"><svg class="lpn-ico" viewBox="0 0 24 24" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg> <span>Nghe</span></button>
+              <button type="button" class="ask-ai-about-btn" onclick="askAiAboutArticle('Bài #05: Triết lý liên minh cộng sinh và kết nối giao thương bền vững')"><svg class="lpn-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 1.9 5.8a2 2 0 0 0 1.3 1.3L21 12l-5.8 1.9a2 2 0 0 0-1.3 1.3L12 21l-1.9-5.8a2 2 0 0 0-1.3-1.3L3 12l5.8-1.9a2 2 0 0 0 1.3-1.3Z"/></svg> <span>Hỏi AI</span></button>
             </div>
           </div>
         </article>
@@ -4808,7 +6009,7 @@
           <div>
             <div class="wisdom-meta">
               <span>KIẾN TRÚC VẬN HÀNH</span>
-              <span class="wisdom-num">#06</span>
+              <span class="wisdom-read-meta"><span class="wisdom-time-pill">2 phút đọc</span><span class="wisdom-num">#06</span></span>
             </div>
             <h3 class="wisdom-title">Nghệ Thuật Điều Phối Giao Hưởng: Từ Vườn Ươm Vạn Cây Đến Dàn Nhạc Đa Tác Tử AI</h3>
             <p class="wisdom-excerpt">
@@ -4820,8 +6021,9 @@
               "Tự do thực sự của người lãnh đạo bắt đầu từ ngày hệ thống có thể tự vận hành trơn tru mà không cần tiếng thúc giục."
             </blockquote>
             <div class="wisdom-card-actions">
-              <button class="read-more-btn" onclick="openArticleReader(this)">📖 Đọc trọn vẹn</button>
-              <button class="ask-ai-about-btn" onclick="askAiAboutArticle('Bài #06: Nghệ thuật thiết kế quy trình SOP và điều phối đa tác tử AI')">✨ Thảo luận cùng AI</button>
+              <button type="button" class="read-more-btn" onclick="openArticleReader(this)"><svg class="lpn-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg> <span>Đọc trọn vẹn</span></button>
+              <button type="button" class="quick-listen-btn" onclick="quickSpeakArticleCard(this)"><svg class="lpn-ico" viewBox="0 0 24 24" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg> <span>Nghe</span></button>
+              <button type="button" class="ask-ai-about-btn" onclick="askAiAboutArticle('Bài #06: Nghệ thuật thiết kế quy trình SOP và điều phối đa tác tử AI')"><svg class="lpn-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 1.9 5.8a2 2 0 0 0 1.3 1.3L21 12l-5.8 1.9a2 2 0 0 0-1.3 1.3L12 21l-1.9-5.8a2 2 0 0 0-1.3-1.3L3 12l5.8-1.9a2 2 0 0 0 1.3-1.3Z"/></svg> <span>Hỏi AI</span></button>
             </div>
           </div>
         </article>
@@ -4831,7 +6033,7 @@
           <div>
             <div class="wisdom-meta">
               <span>GIA ĐẠO &amp; ƯƠM MẦM</span>
-              <span class="wisdom-num">#07</span>
+              <span class="wisdom-read-meta"><span class="wisdom-time-pill">2 phút đọc</span><span class="wisdom-num">#07</span></span>
             </div>
             <h3 class="wisdom-title">Bản Giao Hưởng Của Hai Người Gieo Hạt: Khi Vườn Ươm Lâm Nghiệp Gặp Ngôi Trường Mầm Non</h3>
             <p class="wisdom-excerpt">
@@ -4843,8 +6045,9 @@
               "Thành tựu rực rỡ nhất của người đàn ông không nằm ở những tấm biển chức danh, mà ở ánh mắt bình yên của vợ và tiếng cười trong trẻo của các con."
             </blockquote>
             <div class="wisdom-card-actions">
-              <button class="read-more-btn" onclick="openArticleReader(this)">📖 Đọc trọn vẹn</button>
-              <button class="ask-ai-about-btn" onclick="askAiAboutArticle('Bài #07: Sự đồng điệu giữa nghề ươm cây rừng và nghề giáo viên mầm non')">✨ Thảo luận cùng AI</button>
+              <button type="button" class="read-more-btn" onclick="openArticleReader(this)"><svg class="lpn-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg> <span>Đọc trọn vẹn</span></button>
+              <button type="button" class="quick-listen-btn" onclick="quickSpeakArticleCard(this)"><svg class="lpn-ico" viewBox="0 0 24 24" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg> <span>Nghe</span></button>
+              <button type="button" class="ask-ai-about-btn" onclick="askAiAboutArticle('Bài #07: Sự đồng điệu giữa nghề ươm cây rừng và nghề giáo viên mầm non')"><svg class="lpn-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 1.9 5.8a2 2 0 0 0 1.3 1.3L21 12l-5.8 1.9a2 2 0 0 0-1.3 1.3L12 21l-1.9-5.8a2 2 0 0 0-1.3-1.3L3 12l5.8-1.9a2 2 0 0 0 1.3-1.3Z"/></svg> <span>Hỏi AI</span></button>
             </div>
           </div>
         </article>
@@ -4854,7 +6057,7 @@
           <div>
             <div class="wisdom-meta">
               <span>TRUYỀN THÔNG CHÂN THẬT</span>
-              <span class="wisdom-num">#08</span>
+              <span class="wisdom-read-meta"><span class="wisdom-time-pill">2 phút đọc</span><span class="wisdom-num">#08</span></span>
             </div>
             <h3 class="wisdom-title">Khước Từ Hào Quang Ảo: Sức Nặng Của Giọng Nói Thật Giữa Thời Đại Nội Dung Công Nghiệp</h3>
             <p class="wisdom-excerpt">
@@ -4866,8 +6069,9 @@
               "Kỹ xảo có thể chạm tới thị giác trong ba giây, nhưng chỉ có sự chân thành mới neo đậu lại trong trái tim người nghe suốt nhiều năm."
             </blockquote>
             <div class="wisdom-card-actions">
-              <button class="read-more-btn" onclick="openArticleReader(this)">📖 Đọc trọn vẹn</button>
-              <button class="ask-ai-about-btn" onclick="askAiAboutArticle('Bài #08: Giữ gìn sự chân thật trong sáng tạo nội dung số thời AI')">✨ Thảo luận cùng AI</button>
+              <button type="button" class="read-more-btn" onclick="openArticleReader(this)"><svg class="lpn-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg> <span>Đọc trọn vẹn</span></button>
+              <button type="button" class="quick-listen-btn" onclick="quickSpeakArticleCard(this)"><svg class="lpn-ico" viewBox="0 0 24 24" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg> <span>Nghe</span></button>
+              <button type="button" class="ask-ai-about-btn" onclick="askAiAboutArticle('Bài #08: Giữ gìn sự chân thật trong sáng tạo nội dung số thời AI')"><svg class="lpn-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 1.9 5.8a2 2 0 0 0 1.3 1.3L21 12l-5.8 1.9a2 2 0 0 0-1.3 1.3L12 21l-1.9-5.8a2 2 0 0 0-1.3-1.3L3 12l5.8-1.9a2 2 0 0 0 1.3-1.3Z"/></svg> <span>Hỏi AI</span></button>
             </div>
           </div>
         </article>
@@ -4877,7 +6081,7 @@
           <div>
             <div class="wisdom-meta">
               <span>TINH LỌC BẢN CHẤT</span>
-              <span class="wisdom-num">#09</span>
+              <span class="wisdom-read-meta"><span class="wisdom-time-pill">2 phút đọc</span><span class="wisdom-num">#09</span></span>
             </div>
             <h3 class="wisdom-title">Triết Lý Cô Đặc Cao Dược Liệu: Lọc Bỏ Tạp Chất Để Giữ Lại Tinh Hoa Cốt Lõi</h3>
             <p class="wisdom-excerpt">
@@ -4889,8 +6093,9 @@
               "Trí tuệ không phải là tích trữ thật nhiều chữ nghĩa thô, mà là khả năng cô đặc vạn trang sách thành một hành động chuẩn xác."
             </blockquote>
             <div class="wisdom-card-actions">
-              <button class="read-more-btn" onclick="openArticleReader(this)">📖 Đọc trọn vẹn</button>
-              <button class="ask-ai-about-btn" onclick="askAiAboutArticle('Bài #09: Triết lý cô đặc cao dược liệu ứng dụng vào việc lọc thông tin')">✨ Thảo luận cùng AI</button>
+              <button type="button" class="read-more-btn" onclick="openArticleReader(this)"><svg class="lpn-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg> <span>Đọc trọn vẹn</span></button>
+              <button type="button" class="quick-listen-btn" onclick="quickSpeakArticleCard(this)"><svg class="lpn-ico" viewBox="0 0 24 24" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg> <span>Nghe</span></button>
+              <button type="button" class="ask-ai-about-btn" onclick="askAiAboutArticle('Bài #09: Triết lý cô đặc cao dược liệu ứng dụng vào việc lọc thông tin')"><svg class="lpn-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 1.9 5.8a2 2 0 0 0 1.3 1.3L21 12l-5.8 1.9a2 2 0 0 0-1.3 1.3L12 21l-1.9-5.8a2 2 0 0 0-1.3-1.3L3 12l5.8-1.9a2 2 0 0 0 1.3-1.3Z"/></svg> <span>Hỏi AI</span></button>
             </div>
           </div>
         </article>
@@ -4900,7 +6105,7 @@
           <div>
             <div class="wisdom-meta">
               <span>NÔNG THÔN MỚI TỈNH THỨC</span>
-              <span class="wisdom-num">#10</span>
+              <span class="wisdom-read-meta"><span class="wisdom-time-pill">2 phút đọc</span><span class="wisdom-num">#10</span></span>
             </div>
             <h3 class="wisdom-title">Trao Chiếc Cần Câu Số Cho Người Trẻ Quê Mình: Khát Vọng Ly Nông Bất Ly Hương</h3>
             <p class="wisdom-excerpt">
@@ -4912,8 +6117,9 @@
               "Khi tri thức số về tới từng mái nhà thôn xóm, mảnh đất quê hương chính là thung lũng khởi nghiệp màu mỡ nhất."
             </blockquote>
             <div class="wisdom-card-actions">
-              <button class="read-more-btn" onclick="openArticleReader(this)">📖 Đọc trọn vẹn</button>
-              <button class="ask-ai-about-btn" onclick="askAiAboutArticle('Bài #10: Khát vọng ly nông bất ly hương nhờ làm chủ công nghệ số')">✨ Thảo luận cùng AI</button>
+              <button type="button" class="read-more-btn" onclick="openArticleReader(this)"><svg class="lpn-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg> <span>Đọc trọn vẹn</span></button>
+              <button type="button" class="quick-listen-btn" onclick="quickSpeakArticleCard(this)"><svg class="lpn-ico" viewBox="0 0 24 24" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg> <span>Nghe</span></button>
+              <button type="button" class="ask-ai-about-btn" onclick="askAiAboutArticle('Bài #10: Khát vọng ly nông bất ly hương nhờ làm chủ công nghệ số')"><svg class="lpn-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 1.9 5.8a2 2 0 0 0 1.3 1.3L21 12l-5.8 1.9a2 2 0 0 0-1.3 1.3L12 21l-1.9-5.8a2 2 0 0 0-1.3-1.3L3 12l5.8-1.9a2 2 0 0 0 1.3-1.3Z"/></svg> <span>Hỏi AI</span></button>
             </div>
           </div>
         </article>
@@ -4923,7 +6129,7 @@
           <div>
             <div class="wisdom-meta">
               <span>KIỂM TOÁN CUỘC ĐỜI</span>
-              <span class="wisdom-num">#11</span>
+              <span class="wisdom-read-meta"><span class="wisdom-time-pill">2 phút đọc</span><span class="wisdom-num">#11</span></span>
             </div>
             <h3 class="wisdom-title">Bảng Cân Đối Của Lương Tri: Di Sản Lớn Nhất Không Nằm Trong Bản Sao Kê</h3>
             <p class="wisdom-excerpt">
@@ -4935,11 +6141,17 @@
               "Tiền bạc chỉ là tờ biên nhận tạm thời của thị trường; uy tín và lòng biết ơn của con người mới là tài sản vĩnh cửu."
             </blockquote>
             <div class="wisdom-card-actions">
-              <button class="read-more-btn" onclick="openArticleReader(this)">📖 Đọc trọn vẹn</button>
-              <button class="ask-ai-about-btn" onclick="askAiAboutArticle('Bài #11: Kiểm toán cuộc đời và thước đo di sản bằng uy tín, sự tử tế')">✨ Thảo luận cùng AI</button>
+              <button type="button" class="read-more-btn" onclick="openArticleReader(this)"><svg class="lpn-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg> <span>Đọc trọn vẹn</span></button>
+              <button type="button" class="quick-listen-btn" onclick="quickSpeakArticleCard(this)"><svg class="lpn-ico" viewBox="0 0 24 24" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg> <span>Nghe</span></button>
+              <button type="button" class="ask-ai-about-btn" onclick="askAiAboutArticle('Bài #11: Kiểm toán cuộc đời và thước đo di sản bằng uy tín, sự tử tế')"><svg class="lpn-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 1.9 5.8a2 2 0 0 0 1.3 1.3L21 12l-5.8 1.9a2 2 0 0 0-1.3 1.3L12 21l-1.9-5.8a2 2 0 0 0-1.3-1.3L3 12l5.8-1.9a2 2 0 0 0 1.3-1.3Z"/></svg> <span>Hỏi AI</span></button>
             </div>
           </div>
         </article>
+      </div>
+      <div class="progressive-expand-bar" id="wisdomExpandBar">
+        <button type="button" class="cta-btn primary" id="wisdomExpandBtn" onclick="toggleWisdomExpand()">
+          <span>Xem Trọn Bộ 11 Bài Chiêm Nghiệm (+5 bài tâm huyết) ↓</span>
+        </button>
       </div>
     </section>
 
@@ -5054,34 +6266,30 @@
   <!-- 4B. MOBILE BOTTOM QUICK DOCK (CHỈ HIỆN TRÊN MÀN HÌNH < 768PX) -->
   <nav class="mobile-quick-dock" aria-label="Điều hướng nhanh trên di động">
     <a href="#heroCard" class="dock-item">
-      <span class="dock-icon">🏠</span>
+      <svg class="lpn-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
       <span>Đầu trang</span>
     </a>
-    <a href="#enterpriseSection" class="dock-item">
-      <span class="dock-icon">🌱</span>
-      <span>Hệ sinh thái</span>
+    <a href="#valueCompassSection" class="dock-item">
+      <svg class="lpn-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+      <span>Định hướng</span>
     </a>
     <a href="#myWebsitesSection" class="dock-item">
-      <span class="dock-icon">🌐</span>
-      <span>Web của tôi</span>
+      <svg class="lpn-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5a14.5 14.5 0 0 1 0 19 14.5 14.5 0 0 1 0-19"/></svg>
+      <span>34 Web</span>
     </a>
     <a href="#aiPostsSection" class="dock-item">
-      <span class="dock-icon">📚</span>
-      <span>11 Chiêm nghiệm</span>
-    </a>
-    <a href="#vcardSection" class="dock-item">
-      <span class="dock-icon">🔳</span>
-      <span>Mã QR</span>
+      <svg class="lpn-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>
+      <span>Chiêm nghiệm</span>
     </a>
     <button type="button" class="dock-item highlight" onclick="toggleChatWindow(true)">
-      <span class="dock-icon">✨</span>
+      <svg class="lpn-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 1.9 5.8a2 2 0 0 0 1.3 1.3L21 12l-5.8 1.9a2 2 0 0 0-1.3 1.3L12 21l-1.9-5.8a2 2 0 0 0-1.3-1.3L3 12l5.8-1.9a2 2 0 0 0 1.3-1.3Z"/></svg>
       <span>Hỏi AI</span>
     </button>
   </nav>
 
   <!-- 5. FLOATING AI LAUNCHER BUTTON -->
-  <aside class="ai-floating-launcher" onclick="toggleChatWindow()" title="Mở Trợ lý AI Lê Phúc Nhật">
-    <div class="launcher-sparkle-box">✨</div>
+  <aside class="ai-floating-launcher" role="button" tabindex="0" onclick="toggleChatWindow()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleChatWindow();}" title="Mở Trợ lý AI Lê Phúc Nhật">
+    <div class="launcher-sparkle-box" style="color:#090d16;"><svg class="lpn-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 1.9 5.8a2 2 0 0 0 1.3 1.3L21 12l-5.8 1.9a2 2 0 0 0-1.3 1.3L12 21l-1.9-5.8a2 2 0 0 0-1.3-1.3L3 12l5.8-1.9a2 2 0 0 0 1.3-1.3Z"/></svg></div>
     <div class="launcher-text-col">
       <span class="launcher-title">Hỏi Lê Phúc Nhật</span>
       <span class="launcher-sub">AI Tư Vấn Lâm Nghiệp &amp; Tri Thức Số</span>
@@ -5210,6 +6418,9 @@
         </button>
         <button type="button" class="cta-btn" id="readerShareLinkBtn" onclick="shareCurrentArticleLink()">
           🔗 Chia sẻ bài này
+        </button>
+        <button type="button" class="cta-btn" id="readerQuoteImgBtn" onclick="openQuoteStudio()">
+          🖼️ Tải Ảnh Trích Dẫn
         </button>
         <button type="button" class="cta-btn primary" id="readerAskAiBtn">
           ✨ Luận bàn cùng AI
@@ -5425,6 +6636,67 @@
     </div>
   </div>
 
+
+  <!-- Modal J: Kết Nối Đặt Hàng HTX Keo Sơn & Hợp Tác AI Nhanh -->
+  <div class="modal-backdrop" id="quickOrderModal">
+    <div class="modal-card" style="max-width:500px;">
+      <div class="modal-head">
+        <h3 class="modal-title" id="quickOrderTitle">Kết Nối Trực Tiếp Cùng Lê Phúc Nhật</h3>
+        <button type="button" class="modal-close-btn" onclick="closeModal('quickOrderModal')" aria-label="Đóng">✕</button>
+      </div>
+      <p id="quickOrderDesc" style="font-size:0.86rem; color:var(--text-secondary); margin-bottom:14px; line-height:1.6;"></p>
+      <div class="form-group">
+        <label class="form-label" for="quickOrderNoteInput">Nội dung nhu cầu (tùy chỉnh để sao chép hoặc gửi Email):</label>
+        <textarea id="quickOrderNoteInput" class="form-control" rows="3"></textarea>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:10px; margin-top:14px;">
+        <a id="quickOrderEmailBtn" href="mailto:lephucnhat.vn@gmail.com" class="cta-btn primary" style="justify-content:center;">
+          Gửi Yêu Cầu Qua Email Chính Thức
+        </a>
+        <a href="https://www.facebook.com/lephucnhat.vn" target="_blank" rel="noopener" class="cta-btn emerald" style="justify-content:center;">
+          Nhắn Tin Facebook (@lephucnhat.vn)
+        </a>
+        <button type="button" class="cta-btn" style="justify-content:center;" onclick="copyQuickOrderNote()">
+          Sao Chép Nội Dung &amp; Quét Mã QR Zalo
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Command Palette (Ctrl+K) -->
+  <div class="cmdk-backdrop" id="cmdkBackdrop" role="dialog" aria-modal="true" aria-label="Tìm kiếm nhanh toàn trang">
+    <div class="cmdk-panel">
+      <div class="cmdk-input-row">
+        <svg class="lpn-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input type="text" id="cmdkInput" placeholder="Tìm chuyên trang, bài chiêm nghiệm, sản phẩm hoặc lệnh..." autocomplete="off" aria-label="Từ khóa tìm kiếm" />
+        <button type="button" class="cmdk-esc" onclick="closeCommandPalette()" aria-label="Đóng tìm kiếm">ESC</button>
+      </div>
+      <div class="cmdk-results" id="cmdkResults"></div>
+      <div class="cmdk-footer">
+        <span>↑ ↓ di chuyển • Enter mở</span>
+        <span>lephucnhat.vn</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal K: Quote-to-Image Studio -->
+  <div class="modal-backdrop" id="quoteStudioModal">
+    <div class="modal-card" style="max-width:520px;">
+      <div class="modal-head">
+        <h3 class="modal-title">Thẻ Ảnh Trích Dẫn 1080×1080</h3>
+        <button type="button" class="modal-close-btn" onclick="closeModal('quoteStudioModal')" aria-label="Đóng">✕</button>
+      </div>
+      <div class="quote-preview-wrap">
+        <canvas id="quoteCanvas" width="1080" height="1080" aria-label="Xem trước thẻ ảnh trích dẫn"></canvas>
+        <div style="display:flex; gap:10px; flex-wrap:wrap; justify-content:center;">
+          <button type="button" class="cta-btn primary" onclick="downloadQuoteImage()">Tải Ảnh PNG</button>
+          <button type="button" class="cta-btn" onclick="shareQuoteImage()">Chia sẻ ảnh</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- ==========================================================================
        8. JAVASCRIPT LOGIC TRỌN VẸN (SINGLE-FILE ARCHITECTURE)
        ========================================================================== -->
@@ -5577,84 +6849,52 @@
     setInterval(updateClock, 1000);
     updateClock();
 
+    
+    const THEME_CYCLE_ORDER = ['royal-dark', 'emerald-forest', 'pearl-light'];
+    const THEME_LABELS_VI = {
+      'royal-dark': 'Tối Hoàng Gia',
+      'emerald-forest': 'Ngọc Lục Bảo Xứ Cùa',
+      'pearl-light': 'Sáng Tinh Khôi'
+    };
+    const THEME_SVGS = {
+      'royal-dark': '<svg class="lpn-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>',
+      'emerald-forest': '<svg class="lpn-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>',
+      'pearl-light': '<svg class="lpn-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>'
+    };
+
+    function applyThemeEverywhere(targetTheme, announce = false) {
+      document.documentElement.setAttribute('data-theme', targetTheme);
+      safeSetStorage('lpn_theme', targetTheme);
+      refreshCanvasParticleColor();
+      const metaTc = document.getElementById('metaThemeColor');
+      if (metaTc) metaTc.setAttribute('content', targetTheme === 'pearl-light' ? '#f8fafc' : (targetTheme === 'emerald-forest' ? '#041611' : '#070b14'));
+      document.querySelectorAll('.theme-btn').forEach(b => {
+        b.classList.toggle('active', b.getAttribute('data-theme-set') === targetTheme);
+      });
+      const mobBtn = document.getElementById('mobileThemeCycleBtn');
+      if (mobBtn && THEME_SVGS[targetTheme]) mobBtn.innerHTML = THEME_SVGS[targetTheme];
+      if (announce) showToast('Giao diện: ' + (THEME_LABELS_VI[targetTheme] || targetTheme));
+    }
+
+    function cycleNextTheme() {
+      const cur = document.documentElement.getAttribute('data-theme') || 'royal-dark';
+      const idx = THEME_CYCLE_ORDER.indexOf(cur);
+      const next = THEME_CYCLE_ORDER[(idx + 1) % THEME_CYCLE_ORDER.length];
+      applyThemeEverywhere(next, true);
+    }
+
     const themeButtons = document.querySelectorAll('.theme-btn');
     themeButtons.forEach(btn => {
       btn.addEventListener('click', () => {
-        const targetTheme = btn.getAttribute('data-theme-set');
-        document.documentElement.setAttribute('data-theme', targetTheme);
-        safeSetStorage('lpn_theme', targetTheme);
-        refreshCanvasParticleColor();
-        const metaTc = document.getElementById('metaThemeColor');
-        if (metaTc) metaTc.setAttribute('content', targetTheme === 'pearl-light' ? '#f8fafc' : (targetTheme === 'emerald-forest' ? '#041611' : '#070b14'));
-        themeButtons.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
+        applyThemeEverywhere(btn.getAttribute('data-theme-set'), false);
       });
     });
 
     const savedTheme = safeGetStorage('lpn_theme');
     if (savedTheme) {
-      document.documentElement.setAttribute('data-theme', savedTheme);
-      refreshCanvasParticleColor();
-      themeButtons.forEach(b => {
-        if (b.getAttribute('data-theme-set') === savedTheme) b.classList.add('active');
-        else b.classList.remove('active');
-      });
+      applyThemeEverywhere(savedTheme, false);
     }
 
-    /* --------------------------------------------------------------------------
-       C. QUẢN TRỊ ADMIN BÍ MẬT, BẢO VỆ PIN, SĐT/ZALO ĐỘNG & BACKUP/RESTORE JSON
-       -------------------------------------------------------------------------- */
-    let vipClickCount = 0;
-    let vipClickTimer = null;
-    let vipHoldTimer = null;
-    let pinModalMode = 'unlock'; // 'unlock' | 'change'
-    const vipBadge = document.getElementById('verifiedVipBadge');
-
-    function checkAdminPin() {
-      pinModalMode = 'unlock';
-      document.getElementById('adminPinModalTitle').textContent = '🔒 Xác Thực Quản Trị Viên';
-      document.getElementById('adminPinInput').value = '';
-      document.getElementById('newPinGroup').style.display = 'none';
-      openModal('adminPinModal');
-      setTimeout(() => document.getElementById('adminPinInput')?.focus(), 150);
-    }
-
-    function changeAdminPin() {
-      pinModalMode = 'change';
-      document.getElementById('adminPinModalTitle').textContent = '🔑 Đổi Mã PIN Quản Trị';
-      document.getElementById('adminPinInput').value = '';
-      document.getElementById('adminNewPinInput').value = '';
-      document.getElementById('newPinGroup').style.display = 'block';
-      openModal('adminPinModal');
-      setTimeout(() => document.getElementById('adminPinInput')?.focus(), 150);
-    }
-
-    function handleAdminPinSubmit(event) {
-      event.preventDefault();
-      const correctPin = safeGetStorage('lpn_admin_pin', '1982');
-      const inputPin = document.getElementById('adminPinInput').value.trim();
-
-      if (inputPin !== correctPin) {
-        showToast('❌ Mã PIN không chính xác! Quyền truy cập bị từ chối.');
-        return;
-      }
-
-      if (pinModalMode === 'unlock') {
-        document.body.classList.add('is-admin');
-        closeModal('adminPinModal');
-        renderAllWishes();
-        showToast('🛡️ Chào mừng anh Lê Phúc Nhật đã kích hoạt chế độ Quản trị!');
-      } else {
-        const newPin = document.getElementById('adminNewPinInput').value.trim();
-        if (!newPin || newPin.length < 4) {
-          showToast('⚠️ Vui lòng nhập mã PIN mới tối thiểu 4 ký tự!');
-          return;
-        }
-        safeSetStorage('lpn_admin_pin', newPin);
-        closeModal('adminPinModal');
-        showToast('🔑 Đã cập nhật mã PIN Quản trị mới thành công!');
-      }
-    }
 
     if (vipBadge) {
       vipBadge.addEventListener('click', () => {
@@ -5971,23 +7211,123 @@
       applyWisdomFilters();
     }
 
+    let isWisdomExpanded = false;
+    let activeCardSpeakBtn = null;
+
     function applyWisdomFilters() {
       const searchInput = document.getElementById('wisdomSearchInput');
       const keyword = (searchInput ? searchInput.value : '').trim().toLowerCase();
-      const cards = document.querySelectorAll('#wisdomGrid .wisdom-card');
+      const cards = Array.from(document.querySelectorAll('#wisdomGrid .wisdom-card'));
+      const isDefaultState = (currentWisdomCategory === 'all' && !keyword);
 
-      cards.forEach(card => {
+      let matchedCount = 0;
+      let visibleCount = 0;
+
+      cards.forEach((card) => {
         const cardCat = card.getAttribute('data-category');
         const matchCat = (currentWisdomCategory === 'all' || cardCat === currentWisdomCategory);
         const textContent = card.textContent.toLowerCase();
         const matchKeyword = !keyword || textContent.includes(keyword);
 
         if (matchCat && matchKeyword) {
-          card.style.display = 'flex';
+          matchedCount++;
+          const shouldShow = (!isDefaultState || isWisdomExpanded || matchedCount <= 5);
+          card.style.display = shouldShow ? 'flex' : 'none';
+          if (shouldShow) visibleCount++;
         } else {
           card.style.display = 'none';
         }
       });
+
+      const bar = document.getElementById('wisdomExpandBar');
+      const btn = document.getElementById('wisdomExpandBtn');
+      if (bar && btn) {
+        if (isDefaultState && matchedCount > 5) {
+          bar.style.display = 'flex';
+          const hidden = Math.max(0, matchedCount - visibleCount);
+          btn.innerHTML = isWisdomExpanded
+            ? '<span>Thu Gọn Về 5 Bài Tiêu Điểm ↑</span>'
+            : `<span>Xem Trọn Bộ ${matchedCount} Bài Chiêm Nghiệm (+${hidden} bài tâm huyết) ↓</span>`;
+        } else {
+          bar.style.display = 'none';
+        }
+      }
+    }
+
+    function toggleWisdomExpand() {
+      isWisdomExpanded = !isWisdomExpanded;
+      applyWisdomFilters();
+      if (!isWisdomExpanded) {
+        document.getElementById('aiPostsSection')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
+    function quickSpeakArticleCard(btn) {
+      if (!('speechSynthesis' in window)) {
+        showToast('Trình duyệt của bạn chưa hỗ trợ đọc giọng nói trực tiếp.');
+        return;
+      }
+      const wasSame = (activeCardSpeakBtn === btn && window.speechSynthesis.speaking);
+      window.speechSynthesis.cancel();
+      document.querySelectorAll('.quick-listen-btn.speaking').forEach(b => {
+        b.classList.remove('speaking');
+        const sp = b.querySelector('span');
+        if (sp) sp.textContent = 'Nghe';
+      });
+      if (wasSame) {
+        activeCardSpeakBtn = null;
+        showToast('Đã dừng nghe đọc bài chiêm nghiệm.');
+        return;
+      }
+      const card = btn.closest('.wisdom-card');
+      const num = (card?.getAttribute('data-article-id') || '#01').trim();
+      const data = FULL_ARTICLES_DATA[num];
+      const text = data
+        ? `${data.title}. ${data.context} ${data.quote}`
+        : `${card?.querySelector('.wisdom-title')?.textContent || ''}. ${card?.querySelector('.wisdom-excerpt')?.textContent || ''}`;
+
+      const utt = new SpeechSynthesisUtterance(text);
+      utt.lang = 'vi-VN';
+      utt.rate = 0.98;
+      const viVoice = window.speechSynthesis.getVoices().find(v => v.lang && v.lang.toLowerCase().includes('vi'));
+      if (viVoice) utt.voice = viVoice;
+
+      activeCardSpeakBtn = btn;
+      btn.classList.add('speaking');
+      const sp = btn.querySelector('span');
+      if (sp) sp.textContent = 'Dừng';
+
+      const resetBtn = () => {
+        btn.classList.remove('speaking');
+        if (sp) sp.textContent = 'Nghe';
+        if (activeCardSpeakBtn === btn) activeCardSpeakBtn = null;
+      };
+      utt.onend = resetBtn;
+      utt.onerror = resetBtn;
+      window.speechSynthesis.speak(utt);
+      showToast(`Đang đọc nhanh bài ${num}...`);
+    }
+
+    function openQuickOrderModal(productName, descText) {
+      const titleEl = document.getElementById('quickOrderTitle');
+      const descEl = document.getElementById('quickOrderDesc');
+      const noteEl = document.getElementById('quickOrderNoteInput');
+      const emailBtn = document.getElementById('quickOrderEmailBtn');
+      const defaultMsg = `Xin chào anh Lê Phúc Nhật, tôi quan tâm đến "${productName}" từ lephucnhat.vn và mong được trao đổi chi tiết.`;
+      if (titleEl) titleEl.textContent = productName;
+      if (descEl) descEl.textContent = descText;
+      if (noteEl) noteEl.value = defaultMsg;
+      if (emailBtn) {
+        emailBtn.href = `mailto:lephucnhat.vn@gmail.com?subject=${encodeURIComponent('[lephucnhat.vn] ' + productName)}&body=${encodeURIComponent(defaultMsg)}`;
+      }
+      openModal('quickOrderModal');
+    }
+
+    function copyQuickOrderNote() {
+      const note = document.getElementById('quickOrderNoteInput')?.value || '';
+      copyText(note, 'Đã sao chép nội dung liên hệ! Mời bạn quét mã QR Zalo bên dưới.');
+      closeModal('quickOrderModal');
+      openQrLightbox();
     }
 
     function openArticleReader(btn) {
@@ -6937,6 +8277,313 @@ Hãy trả lời bằng tiếng Việt với phong thái từ tốn, ấm áp, s
       showToast('🔄 Đã khôi phục cài đặt AI về chế độ Tri Thức Cốt Lõi mặc định.');
     }
 
+
+    /* --------------------------------------------------------------------------
+       J. COMMAND PALETTE (CTRL+K) — TÌM KIẾM TOÀN TRANG
+       -------------------------------------------------------------------------- */
+    const CMDK_ICONS = {
+      web: '<svg class="lpn-ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5a14.5 14.5 0 0 1 0 19 14.5 14.5 0 0 1 0-19"/></svg>',
+      post: '<svg class="lpn-ico" viewBox="0 0 24 24"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>',
+      product: '<svg class="lpn-ico" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/></svg>',
+      cmd: '<svg class="lpn-ico" viewBox="0 0 24 24"><path d="m12 3 1.9 5.8a2 2 0 0 0 1.3 1.3L21 12l-5.8 1.9a2 2 0 0 0-1.3 1.3L12 21l-1.9-5.8a2 2 0 0 0-1.3-1.3L3 12l5.8-1.9a2 2 0 0 0 1.3-1.3Z"/></svg>'
+    };
+    let cmdkIndex = [];
+    let cmdkFiltered = [];
+    let cmdkActive = 0;
+
+    function cmdkNormalize(s) {
+      return String(s || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/đ/g, 'd');
+    }
+
+    function buildCommandIndex() {
+      const items = [];
+      [
+        { title: 'Hỏi Trợ lý AI Lê Phúc Nhật', sub: 'Mở cửa sổ trò chuyện AI', run: () => toggleChatWindow(true) },
+        { title: 'Tải Danh Bạ (.vcf)', sub: 'Lưu Lê Phúc Nhật vào điện thoại', run: () => downloadVCard() },
+        { title: 'Mở Mã QR Danh Thiếp', sub: 'Phóng to QR kết nối', run: () => openQrLightbox() },
+        { title: 'Đổi Chủ Đề Màu', sub: 'Tối Hoàng Gia • Ngọc Lục Bảo • Sáng Tinh Khôi', run: () => cycleNextTheme() },
+        { title: 'Chia Sẻ Danh Thiếp', sub: 'Facebook • Zalo • Sao chép liên kết', run: () => openShareModal() },
+        { title: 'Hành Trình Người Gieo Rừng', sub: 'Dòng thời gian 1982 — 2026', run: () => document.getElementById('journeyTimelineSection')?.scrollIntoView({ behavior: 'smooth' }) },
+        { title: 'Vũ Trụ Trò Chơi Tỉnh Thức', sub: 'tro-choi.html', run: () => { window.location.href = './tro-choi.html'; } }
+      ].forEach(c => items.push({ type: 'cmd', group: 'Lệnh nhanh', ...c }));
+
+      document.querySelectorAll('#htxShowcaseShelf .showcase-item-card').forEach(card => {
+        const title = card.querySelector('.showcase-name')?.textContent.trim() || '';
+        const sub = card.querySelector('.showcase-badge')?.textContent.trim() || '';
+        const orderBtn = card.querySelector('.showcase-order-btn');
+        items.push({ type: 'product', group: 'Sản phẩm & Giải pháp', title, sub, run: () => orderBtn ? orderBtn.click() : null });
+      });
+
+      document.querySelectorAll('#wisdomGrid .wisdom-card').forEach(card => {
+        const title = card.querySelector('.wisdom-title')?.textContent.trim() || '';
+        const num = card.getAttribute('data-article-id') || '';
+        const btn = card.querySelector('.read-more-btn');
+        items.push({ type: 'post', group: 'Bài chiêm nghiệm', title, sub: `${num} • ${card.querySelector('.wisdom-meta span')?.textContent.trim() || ''}`, extra: card.querySelector('.wisdom-excerpt')?.textContent || '', run: () => btn && openArticleReader(btn) });
+      });
+
+      document.querySelectorAll('#myWebsitesGrid .my-web-card').forEach(card => {
+        const a = card.querySelector('.my-web-title a');
+        if (!a) return;
+        items.push({ type: 'web', group: 'Chuyên trang', title: a.textContent.trim(), sub: card.querySelector('.my-web-role')?.textContent.trim() || '', extra: card.querySelector('.my-web-desc')?.textContent || '', run: () => window.open(a.getAttribute('href'), '_blank', 'noopener') });
+      });
+
+      items.forEach(it => { it._hay = cmdkNormalize(`${it.title} ${it.sub} ${it.extra || ''}`); });
+      cmdkIndex = items;
+    }
+
+    function renderCommandResults() {
+      const box = document.getElementById('cmdkResults');
+      const q = cmdkNormalize(document.getElementById('cmdkInput').value.trim());
+      const terms = q.split(/\s+/).filter(Boolean);
+      cmdkFiltered = terms.length
+        ? cmdkIndex.filter(it => terms.every(t => it._hay.includes(t))).slice(0, 40)
+        : cmdkIndex.filter(it => it.type !== 'web').concat(cmdkIndex.filter(it => it.type === 'web').slice(0, 6));
+      if (cmdkActive >= cmdkFiltered.length) cmdkActive = 0;
+
+      if (!cmdkFiltered.length) {
+        box.innerHTML = '<div class="cmdk-empty">Không tìm thấy kết quả phù hợp. Thử từ khóa khác như “gia phả”, “AI”, “An Xoa”...</div>';
+        return;
+      }
+      let html = '';
+      let lastGroup = '';
+      cmdkFiltered.forEach((it, i) => {
+        if (it.group !== lastGroup) {
+          html += `<div class="cmdk-group-label">${escapeHTML(it.group)}</div>`;
+          lastGroup = it.group;
+        }
+        html += `<button type="button" class="cmdk-item${i === cmdkActive ? ' active' : ''}" data-idx="${i}">
+          <span class="cmdk-item-icon">${CMDK_ICONS[it.type]}</span>
+          <span class="cmdk-item-text"><span class="cmdk-item-title">${escapeHTML(it.title)}</span><span class="cmdk-item-sub">${escapeHTML(it.sub)}</span></span>
+        </button>`;
+      });
+      box.innerHTML = html;
+      box.querySelectorAll('.cmdk-item').forEach(el => {
+        el.addEventListener('click', () => runCommandItem(parseInt(el.dataset.idx, 10)));
+      });
+      box.querySelector('.cmdk-item.active')?.scrollIntoView({ block: 'nearest' });
+    }
+
+    function runCommandItem(i) {
+      const it = cmdkFiltered[i];
+      if (!it) return;
+      closeCommandPalette();
+      setTimeout(() => it.run(), 60);
+    }
+
+    function openCommandPalette() {
+      buildCommandIndex();
+      const bd = document.getElementById('cmdkBackdrop');
+      const input = document.getElementById('cmdkInput');
+      input.value = '';
+      cmdkActive = 0;
+      bd.classList.add('open');
+      document.body.classList.add('modal-open');
+      renderCommandResults();
+      setTimeout(() => input.focus(), 30);
+    }
+
+    function closeCommandPalette() {
+      document.getElementById('cmdkBackdrop')?.classList.remove('open');
+      syncBodyModalLock();
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
+        e.preventDefault();
+        const bd = document.getElementById('cmdkBackdrop');
+        if (bd?.classList.contains('open')) closeCommandPalette(); else openCommandPalette();
+        return;
+      }
+      const bd = document.getElementById('cmdkBackdrop');
+      if (!bd || !bd.classList.contains('open')) return;
+      if (e.key === 'Escape') { e.preventDefault(); e.stopImmediatePropagation(); closeCommandPalette(); }
+      else if (e.key === 'ArrowDown') { e.preventDefault(); cmdkActive = Math.min(cmdkActive + 1, cmdkFiltered.length - 1); renderCommandResults(); }
+      else if (e.key === 'ArrowUp') { e.preventDefault(); cmdkActive = Math.max(cmdkActive - 1, 0); renderCommandResults(); }
+      else if (e.key === 'Enter') { e.preventDefault(); runCommandItem(cmdkActive); }
+    }, true);
+
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('cmdkInput')?.addEventListener('input', () => { cmdkActive = 0; renderCommandResults(); });
+      document.getElementById('cmdkBackdrop')?.addEventListener('click', (e) => {
+        if (e.target.id === 'cmdkBackdrop') closeCommandPalette();
+      });
+    });
+
+    /* --------------------------------------------------------------------------
+       K. QUOTE-TO-IMAGE STUDIO (CANVAS 1080x1080)
+       -------------------------------------------------------------------------- */
+    function loadImageSafe(src) {
+      return new Promise(resolve => {
+        const img = new Image();
+        img.onload = () => resolve(img);
+        img.onerror = () => resolve(null);
+        img.src = src;
+      });
+    }
+
+    function wrapCanvasText(ctx, text, maxWidth) {
+      const words = String(text).split(/\s+/);
+      const lines = [];
+      let line = '';
+      words.forEach(w => {
+        const test = line ? line + ' ' + w : w;
+        if (ctx.measureText(test).width > maxWidth && line) {
+          lines.push(line);
+          line = w;
+        } else {
+          line = test;
+        }
+      });
+      if (line) lines.push(line);
+      return lines;
+    }
+
+    async function renderQuoteCanvas() {
+      const data = currentReaderArticleData;
+      const canvas = document.getElementById('quoteCanvas');
+      if (!data || !canvas) return;
+      const ctx = canvas.getContext('2d');
+      const W = 1080, H = 1080;
+
+      const bg = ctx.createLinearGradient(0, 0, W, H);
+      bg.addColorStop(0, '#071324');
+      bg.addColorStop(0.55, '#06281e');
+      bg.addColorStop(1, '#0b192c');
+      ctx.fillStyle = bg;
+      ctx.fillRect(0, 0, W, H);
+
+      const glow1 = ctx.createRadialGradient(180, 160, 10, 180, 160, 520);
+      glow1.addColorStop(0, 'rgba(245,158,11,0.28)');
+      glow1.addColorStop(1, 'rgba(245,158,11,0)');
+      ctx.fillStyle = glow1;
+      ctx.fillRect(0, 0, W, H);
+      const glow2 = ctx.createRadialGradient(920, 900, 10, 920, 900, 520);
+      glow2.addColorStop(0, 'rgba(16,185,129,0.26)');
+      glow2.addColorStop(1, 'rgba(16,185,129,0)');
+      ctx.fillStyle = glow2;
+      ctx.fillRect(0, 0, W, H);
+
+      ctx.strokeStyle = 'rgba(245,158,11,0.65)';
+      ctx.lineWidth = 3;
+      ctx.beginPath();
+      ctx.roundRect ? ctx.roundRect(40, 40, W - 80, H - 80, 36) : ctx.rect(40, 40, W - 80, H - 80);
+      ctx.stroke();
+
+      ctx.fillStyle = '#34d399';
+      ctx.font = '700 26px "Be Vietnam Pro", Arial, sans-serif';
+      ctx.fillText(`${data.tag} • ${data.num}`.toUpperCase(), 96, 140);
+
+      ctx.fillStyle = 'rgba(245,158,11,0.85)';
+      ctx.font = '700 180px Georgia, "Playfair Display", serif';
+      ctx.fillText('“', 80, 320);
+
+      let fontSize = 56;
+      let lines;
+      do {
+        ctx.font = `italic 600 ${fontSize}px "Playfair Display", Georgia, serif`;
+        lines = wrapCanvasText(ctx, data.quote, W - 200);
+        fontSize -= 2;
+      } while (lines.length * fontSize * 1.38 > 440 && fontSize > 34);
+      fontSize += 2;
+      ctx.fillStyle = '#fef3c7';
+      const lh = fontSize * 1.38;
+      lines.forEach((ln, i) => ctx.fillText(ln, 100, 330 + i * lh));
+
+      ctx.fillStyle = '#cbd5e1';
+      ctx.font = '500 26px "Be Vietnam Pro", Arial, sans-serif';
+      const titleLines = wrapCanvasText(ctx, data.title, W - 200).slice(0, 2);
+      titleLines.forEach((ln, i) => ctx.fillText(ln, 100, 330 + lines.length * lh + 30 + i * 36));
+
+      const [avatar, qr] = await Promise.all([loadImageSafe('./111.jpg'), loadImageSafe('./qr.jpg')]);
+      const footY = 830;
+      ctx.strokeStyle = 'rgba(255,255,255,0.12)';
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.moveTo(96, footY - 40);
+      ctx.lineTo(W - 96, footY - 40);
+      ctx.stroke();
+
+      if (avatar) {
+        const s = Math.min(avatar.width, avatar.height);
+        const sy = Math.max(0, (avatar.height - s) * 0.18);
+        ctx.save();
+        ctx.beginPath();
+        ctx.arc(166, footY + 70, 70, 0, Math.PI * 2);
+        ctx.closePath();
+        ctx.clip();
+        ctx.drawImage(avatar, (avatar.width - s) / 2, sy, s, s, 96, footY, 140, 140);
+        ctx.restore();
+        ctx.strokeStyle = '#f59e0b';
+        ctx.lineWidth = 5;
+        ctx.beginPath();
+        ctx.arc(166, footY + 70, 72, 0, Math.PI * 2);
+        ctx.stroke();
+      }
+
+      ctx.fillStyle = '#fef3c7';
+      ctx.font = '700 42px Georgia, "Playfair Display", serif';
+      ctx.fillText('Lê Phúc Nhật', 270, footY + 58);
+      ctx.fillStyle = '#f59e0b';
+      ctx.font = '700 24px "Be Vietnam Pro", Arial, sans-serif';
+      ctx.fillText('HIỂU SÂU • SỐNG TỈNH • HÀNH ĐÚNG', 270, footY + 100);
+      ctx.fillStyle = '#94a3b8';
+      ctx.font = '600 24px "Be Vietnam Pro", Arial, sans-serif';
+      ctx.fillText('lephucnhat.vn', 270, footY + 138);
+
+      if (qr) {
+        ctx.fillStyle = '#ffffff';
+        ctx.beginPath();
+        ctx.roundRect ? ctx.roundRect(W - 256, footY - 4, 160, 160, 18) : ctx.rect(W - 256, footY - 4, 160, 160);
+        ctx.fill();
+        ctx.drawImage(qr, W - 244, footY + 8, 136, 136);
+      }
+    }
+
+    async function openQuoteStudio() {
+      if (!currentReaderArticleData) return;
+      openModal('quoteStudioModal');
+      if (document.fonts && document.fonts.ready) { try { await document.fonts.ready; } catch (e) {} }
+      await renderQuoteCanvas();
+    }
+
+    function getQuoteFileName() {
+      const n = (currentReaderArticleData?.num || '#00').replace('#', '');
+      return `LePhucNhat_ChiemNghiem_${n}.png`;
+    }
+
+    function downloadQuoteImage() {
+      const canvas = document.getElementById('quoteCanvas');
+      if (!canvas) return;
+      canvas.toBlob(blob => {
+        if (!blob) { showToast('Không thể tạo ảnh. Vui lòng thử lại.'); return; }
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = getQuoteFileName();
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        setTimeout(() => URL.revokeObjectURL(url), 1500);
+        showToast('Đã tải ảnh trích dẫn 1080×1080!');
+      }, 'image/png');
+    }
+
+    function shareQuoteImage() {
+      const canvas = document.getElementById('quoteCanvas');
+      if (!canvas) return;
+      canvas.toBlob(async blob => {
+        if (!blob) return;
+        const file = new File([blob], getQuoteFileName(), { type: 'image/png' });
+        if (navigator.canShare && navigator.canShare({ files: [file] })) {
+          try {
+            await navigator.share({ files: [file], title: currentReaderArticleData.title, text: `“${currentReaderArticleData.quote}” — Lê Phúc Nhật • lephucnhat.vn` });
+          } catch (e) {}
+        } else {
+          downloadQuoteImage();
+        }
+      }, 'image/png');
+    }
+
     /* --------------------------------------------------------------------------
        I. TIỆN ÍCH MODAL, TOAST & KHỞI TẠO TOÀN TRANG
        -------------------------------------------------------------------------- */
@@ -7001,21 +8648,89 @@ Hãy trả lời bằng tiếng Việt với phong thái từ tốn, ấm áp, s
       }, 3200);
     }
 
+        const JOURNEY_MILESTONES = [
+      {
+        eyebrow: 'KHỞI NGUỒN NHÂN DUYÊN • 09/07/1982',
+        title: 'Sinh Ra Giữa Gió Lào & Đất Đỏ Quảng Trị',
+        story: 'Lớn lên tại vùng quê Cam Lộ, Quảng Trị (tuổi Nhâm Tuất), sớm thấm thía giá trị của giọt mồ hôi người nông dân, đạo hiếu gia đình và bản lĩnh kiên cường như rễ cọc cây rừng miền Trung trước bão giông.',
+        ctaText: 'Xem Tổ Ấm & Danh Thiếp →',
+        ctaHref: '#vcardSection',
+        external: false
+      },
+      {
+        eyebrow: 'BƯỚC NGOẶT THỨC TỈNH • CAM LỘ 2016',
+        title: 'Từ Cú Vấp Ngã 0,8 Ha Rừng Đến Triết Lý Ba Chữ Sống',
+        story: 'Đối diện trực diện với sai lầm thực tiễn trên đồi rừng Cam Lộ năm 2016 chính là khoảnh khắc khai sinh triết lý định danh: <strong>Hiểu sâu để thấy bản chất – Sống tỉnh để giữ bình an – Hành đúng để tạo giá trị thực từ Gốc</strong>.',
+        ctaText: 'Mở Bài Giảng 4D Người Gieo Rừng →',
+        ctaHref: './nguoi-gieo-rung-4d/',
+        external: true
+      },
+      {
+        eyebrow: 'KIẾN TẠO THỰC NGHIỆP • 2018 — 2024',
+        title: 'Vươn Rễ HTX Lâm Nghiệp Bền Vững Keo Sơn (Xứ Cùa)',
+        story: 'Dẫn dắt HTX tại Thôn An Sơn, Xã Cam Lộ: chuẩn hóa quy trình vườn ươm vạn bầu cây giống keo lai khỏe mạnh và xưởng nấu cô đặc thủ công Cao An Xoa, Cao Chè Vằng, Bột Ngũ Cốc sạch phục vụ bà con khắp cả nước.',
+        ctaText: 'Xem Kệ Sản Phẩm HTX Keo Sơn →',
+        ctaHref: '#htxShowcaseShelf',
+        external: false
+      },
+      {
+        eyebrow: 'ĐÒN BẨY KỶ NGUYÊN MỚI • 2026',
+        title: 'Hợp Nhất Tinh Hoa Đất Rừng & Hệ Sinh Thái 36+ Mô-đun AI',
+        story: 'Ứng dụng Gemini, DeepSeek, NotebookLM, Python & FFmpeg tự động hóa 25+ kênh truyền thông tỉnh thức và quy tụ 34 chuyên trang giáo trình 4D, tộc phả số, cổng trường học ngay trên ngôi nhà chung <strong>lephucnhat.vn</strong>.',
+        ctaText: 'Khám Phá 34 Chuyên Trang Số →',
+        ctaHref: '#myWebsitesSection',
+        external: false
+      }
+    ];
+
+    function selectJourneyMilestone(idx) {
+      const m = JOURNEY_MILESTONES[idx];
+      if (!m) return;
+      document.querySelectorAll('.journey-node-btn').forEach((btn, i) => {
+        btn.classList.toggle('active', i === idx);
+      });
+      document.getElementById('journeyStageEyebrow').textContent = m.eyebrow;
+      document.getElementById('journeyStageTitle').textContent = m.title;
+      document.getElementById('journeyStageStory').innerHTML = m.story;
+      const cta = document.getElementById('journeyStageCta');
+      if (cta) {
+        cta.textContent = m.ctaText;
+        cta.href = m.ctaHref;
+        if (m.external) {
+          cta.setAttribute('target', '_blank');
+          cta.setAttribute('rel', 'noopener noreferrer');
+        } else {
+          cta.removeAttribute('target');
+          cta.removeAttribute('rel');
+        }
+      }
+    }
+
     let currentMyWebCategory = 'all';
+    let currentMyWebTier = 'all';
+    let currentMyWebViewMode = 'grid'; // 'grid' | 'compact'
+    let isMyWebsExpanded = false;
 
     function syncMyWebsitesCounts() {
       const cards = Array.from(document.querySelectorAll('#myWebsitesGrid .my-web-card'));
       const total = cards.length;
       document.querySelectorAll('.js-total-webs-count').forEach(el => { el.textContent = String(total); });
 
+      const coreCount = cards.filter(c => c.getAttribute('data-tier') === 'core').length;
+      const commCount = cards.filter(c => c.getAttribute('data-tier') === 'community').length;
+      const elCore = document.getElementById('countTierCore');
+      const elComm = document.getElementById('countTierComm');
+      if (elCore) elCore.textContent = String(coreCount);
+      if (elComm) elComm.textContent = String(commCount);
+
       const labelMap = {
-        all: `🌟 Tất Cả (${total} Web)`,
-        forestry: '🌲 Lâm Nghiệp & Rừng',
-        training: '🎓 Đào Tạo & Di Sản 4D',
-        genealogy: '🏛️ Dòng Tộc & Cội Nguồn',
-        ai: '🤖 AI & Xưởng Phim',
-        education: '📖 Sư Phạm & Trường Học',
-        lifestyle: '🪷 Ẩm Thực, Kiến Trúc & Đời Sống'
+        all: `Tất Cả (${total})`,
+        forestry: 'Lâm Nghiệp & Rừng',
+        training: 'Đào Tạo & Di Sản 4D',
+        genealogy: 'Dòng Tộc & Cội Nguồn',
+        ai: 'AI & Xưởng Phim',
+        education: 'Sư Phạm & Trường Học',
+        lifestyle: 'Ẩm Thực, Kiến Trúc & Đời Sống'
       };
 
       document.querySelectorAll('.my-webs-filter-btn').forEach(btn => {
@@ -7028,25 +8743,83 @@ Hãy trả lời bằng tiếng Việt với phong thái từ tốn, ấm áp, s
           btn.textContent = `${labelMap[cat]} (${c})`;
         }
       });
+      applyMyWebsitesFilters();
     }
 
     function applyMyWebsitesFilters() {
       const searchEl = document.getElementById('myWebsSearchInput');
       const kw = (searchEl ? searchEl.value : '').trim().toLowerCase();
-      const cards = document.querySelectorAll('#myWebsitesGrid .my-web-card');
+      const cards = Array.from(document.querySelectorAll('#myWebsitesGrid .my-web-card'));
+      const grid = document.getElementById('myWebsitesGrid');
+      if (grid) grid.classList.toggle('compact-view', currentMyWebViewMode === 'compact');
+
+      const isDefaultShowcaseState = (
+        currentMyWebTier === 'all' &&
+        currentMyWebCategory === 'all' &&
+        !kw &&
+        currentMyWebViewMode === 'grid'
+      );
+
+      let matchedCount = 0;
       let visibleCount = 0;
 
       cards.forEach(card => {
         const cats = (card.dataset.category || '').split(' ');
+        const tier = card.getAttribute('data-tier') || 'core';
+        const isFeatured = card.getAttribute('data-featured') === 'true';
+
+        const matchTier = (currentMyWebTier === 'all' || tier === currentMyWebTier);
         const matchCat = (currentMyWebCategory === 'all' || cats.includes(currentMyWebCategory));
         const matchKw = !kw || card.textContent.toLowerCase().includes(kw);
-        const show = matchCat && matchKw;
-        card.style.display = show ? 'flex' : 'none';
-        if (show) visibleCount++;
+
+        if (matchTier && matchCat && matchKw) {
+          matchedCount++;
+          const shouldShow = (!isDefaultShowcaseState || isMyWebsExpanded || isFeatured);
+          card.style.display = shouldShow ? 'flex' : 'none';
+          if (shouldShow) visibleCount++;
+        } else {
+          card.style.display = 'none';
+        }
       });
 
       const emptyBox = document.getElementById('myWebsEmptyState');
-      if (emptyBox) emptyBox.style.display = visibleCount === 0 ? 'block' : 'none';
+      if (emptyBox) emptyBox.style.display = matchedCount === 0 ? 'block' : 'none';
+
+      const expandBar = document.getElementById('myWebsExpandBar');
+      const expandBtn = document.getElementById('myWebsExpandBtn');
+      if (expandBar && expandBtn) {
+        if (isDefaultShowcaseState) {
+          expandBar.style.display = 'flex';
+          const hiddenCount = Math.max(0, matchedCount - visibleCount);
+          expandBtn.innerHTML = isMyWebsExpanded
+            ? '<span>Thu Gọn Về 6 Tuyệt Tác Tiêu Điểm ↑</span>'
+            : `<span>Khám Phá Trọn Bộ ${matchedCount} Chuyên Trang (+${hiddenCount} công trình số) ↓</span>`;
+        } else {
+          expandBar.style.display = 'none';
+        }
+      }
+    }
+
+    function toggleMyWebsitesExpand() {
+      isMyWebsExpanded = !isMyWebsExpanded;
+      applyMyWebsitesFilters();
+      if (!isMyWebsExpanded) {
+        document.getElementById('myWebsitesSection')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
+    function filterMyWebsitesTier(tier, btn) {
+      currentMyWebTier = tier;
+      document.querySelectorAll('.tier-tab-btn').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+      applyMyWebsitesFilters();
+    }
+
+    function setMyWebsitesViewMode(mode) {
+      currentMyWebViewMode = mode;
+      document.getElementById('viewBtnGrid')?.classList.toggle('active', mode === 'grid');
+      document.getElementById('viewBtnCompact')?.classList.toggle('active', mode === 'compact');
+      applyMyWebsitesFilters();
     }
 
     function filterMyWebsites(category, btn) {
@@ -7070,6 +8843,7 @@ Hãy trả lời bằng tiếng Việt với phong thái từ tốn, ấm áp, s
       }
       renderAllWishes();
       loadCustomWisdomPosts();
+      applyWisdomFilters();
       syncMyWebsitesCounts();
       updateChatModeBadge();
 
